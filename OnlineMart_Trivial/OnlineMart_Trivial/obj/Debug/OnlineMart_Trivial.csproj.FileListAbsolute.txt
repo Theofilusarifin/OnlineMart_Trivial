@@ -1,0 +1,15 @@
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\OnlineMart_Trivial.exe.config
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\OnlineMart_Trivial.exe
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\OnlineMart_Trivial.pdb
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.csproj.AssemblyReference.cache
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormUtama.resources
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.Properties.Resources.resources
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.csproj.GenerateResource.cache
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.csproj.CoreCompileInputs.cache
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.exe
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.pdb
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormLoginRider.resources
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormLoginPegawai.resources
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormLoginKonsumen.resources
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormRegisterKonsumen.resources
+C:\Users\Timotius\Dropbox\My PC (LAPTOP-3M0G38V0)\Documents\Github Desktop\DATABASE UAS\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormRegisterRider.resources

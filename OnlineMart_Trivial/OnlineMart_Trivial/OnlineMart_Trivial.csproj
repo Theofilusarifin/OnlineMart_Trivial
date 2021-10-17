@@ -46,6 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormLoginPegawai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginPegawai.Designer.cs">
+      <DependentUpon>FormLoginPegawai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoginKonsumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginKonsumen.Designer.cs">
+      <DependentUpon>FormLoginKonsumen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoginRider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginRider.Designer.cs">
+      <DependentUpon>FormLoginRider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterKonsumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterKonsumen.Designer.cs">
+      <DependentUpon>FormRegisterKonsumen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterRider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterRider.Designer.cs">
+      <DependentUpon>FormRegisterRider.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUtama.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +84,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormLoginPegawai.resx">
+      <DependentUpon>FormLoginPegawai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginKonsumen.resx">
+      <DependentUpon>FormLoginKonsumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginRider.resx">
+      <DependentUpon>FormLoginRider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterKonsumen.resx">
+      <DependentUpon>FormRegisterKonsumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterRider.resx">
+      <DependentUpon>FormRegisterRider.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.cs</DependentUpon>
     </EmbeddedResource>
@@ -65,6 +110,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +124,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Leave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background_Login_Register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_OnlineMart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

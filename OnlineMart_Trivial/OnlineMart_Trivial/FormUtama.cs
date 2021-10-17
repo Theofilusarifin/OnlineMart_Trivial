@@ -15,12 +15,14 @@ namespace OnlineMart_Trivial
         public FormUtama()
         {
             InitializeComponent();
+            //Background Transparant
+            //pictureBoxLogo.Parent = pictureBoxBackground;
         }
 
         private void FormUtama_Load(object sender, EventArgs e)
         {
             //Ubah form ini (FormUtama) menjadi fullscreen (maximized)
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
 
             //Ubah FormUtama menjadi MdiParent (MdiContainer)
             this.IsMdiContainer = true;
