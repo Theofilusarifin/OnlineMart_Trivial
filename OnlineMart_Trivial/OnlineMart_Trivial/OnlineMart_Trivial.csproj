@@ -137,5 +137,11 @@
   <ItemGroup>
     <None Include="Resources\Logo_OnlineMart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registrasi Konsumen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Onboarding.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
