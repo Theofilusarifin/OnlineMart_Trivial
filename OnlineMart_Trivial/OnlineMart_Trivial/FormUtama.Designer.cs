@@ -51,22 +51,26 @@ namespace OnlineMart_Trivial
             this.historiTransaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cekPesananToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cetakNotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.isiSaldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.isiSaldoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBoxOnboarding = new System.Windows.Forms.PictureBox();
+            this.buttonRegisterRider = new System.Windows.Forms.Button();
+            this.buttonLoginRider = new System.Windows.Forms.Button();
+            this.buttonLoginKonsumen = new System.Windows.Forms.Button();
+            this.buttonRegisterKonsumen = new System.Windows.Forms.Button();
+            this.buttonLoginPegawai = new System.Windows.Forms.Button();
+            this.pictureBoxBackground = new System.Windows.Forms.PictureBox();
             this.menuStripRider.SuspendLayout();
             this.menuStripPegawai.SuspendLayout();
             this.menuStripKonsumen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOnboarding)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripRider
             // 
+            this.menuStripRider.BackColor = System.Drawing.Color.Transparent;
+            this.menuStripRider.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Navbar;
             this.menuStripRider.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.menuStripRider.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.daftarPengirimanToolStripMenuItem,
@@ -79,18 +83,26 @@ namespace OnlineMart_Trivial
             // 
             // daftarPengirimanToolStripMenuItem
             // 
+            this.daftarPengirimanToolStripMenuItem.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
+            this.daftarPengirimanToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.daftarPengirimanToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Scroll;
             this.daftarPengirimanToolStripMenuItem.Name = "daftarPengirimanToolStripMenuItem";
-            this.daftarPengirimanToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
+            this.daftarPengirimanToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
             this.daftarPengirimanToolStripMenuItem.Text = "Daftar Pengiriman";
             // 
             // rekapPendapatanToolStripMenuItem
             // 
+            this.rekapPendapatanToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.rekapPendapatanToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.rekapPendapatanToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Book;
             this.rekapPendapatanToolStripMenuItem.Name = "rekapPendapatanToolStripMenuItem";
-            this.rekapPendapatanToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.rekapPendapatanToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.rekapPendapatanToolStripMenuItem.Text = "Rekap Pendapatan";
             // 
             // menuStripPegawai
             // 
+            this.menuStripPegawai.BackColor = System.Drawing.Color.Transparent;
+            this.menuStripPegawai.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStripPegawai.BackgroundImage")));
             this.menuStripPegawai.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.menuStripPegawai.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pengaturanCabangToolStripMenuItem,
@@ -103,6 +115,8 @@ namespace OnlineMart_Trivial
             // 
             // pengaturanCabangToolStripMenuItem
             // 
+            this.pengaturanCabangToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.pengaturanCabangToolStripMenuItem.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
             this.pengaturanCabangToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cabangToolStripMenuItem,
             this.kategoriToolStripMenuItem,
@@ -110,70 +124,80 @@ namespace OnlineMart_Trivial
             this.metodePembayaranToolStripMenuItem,
             this.promoToolStripMenuItem,
             this.hadiahToolStripMenuItem});
+            this.pengaturanCabangToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.pengaturanCabangToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Settings;
+            this.pengaturanCabangToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.pengaturanCabangToolStripMenuItem.Name = "pengaturanCabangToolStripMenuItem";
-            this.pengaturanCabangToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
-            this.pengaturanCabangToolStripMenuItem.Text = "Pengaturan";
+            this.pengaturanCabangToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.pengaturanCabangToolStripMenuItem.Text = "Pengaturan ▼";
             // 
             // cabangToolStripMenuItem
             // 
             this.cabangToolStripMenuItem.Name = "cabangToolStripMenuItem";
-            this.cabangToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
+            this.cabangToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
             this.cabangToolStripMenuItem.Text = "Cabang";
             // 
             // kategoriToolStripMenuItem
             // 
             this.kategoriToolStripMenuItem.Name = "kategoriToolStripMenuItem";
-            this.kategoriToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
+            this.kategoriToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
             this.kategoriToolStripMenuItem.Text = "Kategori";
             // 
             // barangToolStripMenuItem
             // 
             this.barangToolStripMenuItem.Name = "barangToolStripMenuItem";
-            this.barangToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
+            this.barangToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
             this.barangToolStripMenuItem.Text = "Barang";
             // 
             // metodePembayaranToolStripMenuItem
             // 
             this.metodePembayaranToolStripMenuItem.Name = "metodePembayaranToolStripMenuItem";
-            this.metodePembayaranToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
+            this.metodePembayaranToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
             this.metodePembayaranToolStripMenuItem.Text = "Metode Pembayaran";
             // 
             // promoToolStripMenuItem
             // 
             this.promoToolStripMenuItem.Name = "promoToolStripMenuItem";
-            this.promoToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
+            this.promoToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
             this.promoToolStripMenuItem.Text = "Promo";
             // 
             // hadiahToolStripMenuItem
             // 
             this.hadiahToolStripMenuItem.Name = "hadiahToolStripMenuItem";
-            this.hadiahToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
+            this.hadiahToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
             this.hadiahToolStripMenuItem.Text = "Hadiah";
             // 
             // rekapToolStripMenuItem
             // 
+            this.rekapToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.rekapToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.barangToolStripMenuItem1,
             this.oMASaldoToolStripMenuItem});
+            this.rekapToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.rekapToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Book;
+            this.rekapToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.rekapToolStripMenuItem.Name = "rekapToolStripMenuItem";
-            this.rekapToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
-            this.rekapToolStripMenuItem.Text = "Rekap Penjualan";
+            this.rekapToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
+            this.rekapToolStripMenuItem.Text = "Rekap Penjualan ▼";
             // 
             // barangToolStripMenuItem1
             // 
+            this.barangToolStripMenuItem1.BackColor = System.Drawing.Color.Transparent;
             this.barangToolStripMenuItem1.Name = "barangToolStripMenuItem1";
-            this.barangToolStripMenuItem1.Size = new System.Drawing.Size(159, 24);
+            this.barangToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
             this.barangToolStripMenuItem1.Text = "Barang";
             // 
             // oMASaldoToolStripMenuItem
             // 
             this.oMASaldoToolStripMenuItem.Name = "oMASaldoToolStripMenuItem";
-            this.oMASaldoToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
+            this.oMASaldoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.oMASaldoToolStripMenuItem.Text = "OMA Saldo";
             // 
             // menuStripKonsumen
             // 
             this.menuStripKonsumen.AllowItemReorder = true;
+            this.menuStripKonsumen.BackColor = System.Drawing.Color.Transparent;
+            this.menuStripKonsumen.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Navbar;
             this.menuStripKonsumen.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.menuStripKonsumen.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.barangDanDealsToolStripMenuItem,
@@ -182,8 +206,8 @@ namespace OnlineMart_Trivial
             this.historiTransaksiToolStripMenuItem,
             this.cekPesananToolStripMenuItem,
             this.cetakNotaToolStripMenuItem,
-            this.isiSaldoToolStripMenuItem,
-            this.profileToolStripMenuItem});
+            this.profileToolStripMenuItem,
+            this.isiSaldoToolStripMenuItem});
             this.menuStripKonsumen.Location = new System.Drawing.Point(0, 0);
             this.menuStripKonsumen.Name = "menuStripKonsumen";
             this.menuStripKonsumen.Size = new System.Drawing.Size(1864, 28);
@@ -192,168 +216,204 @@ namespace OnlineMart_Trivial
             // 
             // barangDanDealsToolStripMenuItem
             // 
+            this.barangDanDealsToolStripMenuItem.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
+            this.barangDanDealsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.barangDanDealsToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Box;
             this.barangDanDealsToolStripMenuItem.Name = "barangDanDealsToolStripMenuItem";
-            this.barangDanDealsToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
+            this.barangDanDealsToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
             this.barangDanDealsToolStripMenuItem.Text = "Barang dan Deals";
             // 
             // keranjangToolStripMenuItem
             // 
+            this.keranjangToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.keranjangToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Basket;
             this.keranjangToolStripMenuItem.Name = "keranjangToolStripMenuItem";
-            this.keranjangToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.keranjangToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
             this.keranjangToolStripMenuItem.Text = "Keranjang";
             // 
             // checkoutToolStripMenuItem
             // 
+            this.checkoutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.checkoutToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Ok;
             this.checkoutToolStripMenuItem.Name = "checkoutToolStripMenuItem";
-            this.checkoutToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
+            this.checkoutToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.checkoutToolStripMenuItem.Text = "Checkout";
             // 
             // historiTransaksiToolStripMenuItem
             // 
+            this.historiTransaksiToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.historiTransaksiToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Book;
             this.historiTransaksiToolStripMenuItem.Name = "historiTransaksiToolStripMenuItem";
-            this.historiTransaksiToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.historiTransaksiToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
             this.historiTransaksiToolStripMenuItem.Text = "Histori Transaksi";
             // 
             // cekPesananToolStripMenuItem
             // 
+            this.cekPesananToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.cekPesananToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Search;
             this.cekPesananToolStripMenuItem.Name = "cekPesananToolStripMenuItem";
-            this.cekPesananToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.cekPesananToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.cekPesananToolStripMenuItem.Text = "Cek Pesanan";
             // 
             // cetakNotaToolStripMenuItem
             // 
+            this.cetakNotaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.cetakNotaToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Edit1;
             this.cetakNotaToolStripMenuItem.Name = "cetakNotaToolStripMenuItem";
-            this.cetakNotaToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.cetakNotaToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
             this.cetakNotaToolStripMenuItem.Text = "Cetak Nota";
-            // 
-            // isiSaldoToolStripMenuItem
-            // 
-            this.isiSaldoToolStripMenuItem.Name = "isiSaldoToolStripMenuItem";
-            this.isiSaldoToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
-            this.isiSaldoToolStripMenuItem.Text = "Isi Saldo";
             // 
             // profileToolStripMenuItem
             // 
+            this.profileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.profileToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Contact;
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
             this.profileToolStripMenuItem.Text = "Profile";
             // 
-            // pictureBox1
+            // isiSaldoToolStripMenuItem
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Onboarding;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(231, 108);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1405, 799);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.isiSaldoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.isiSaldoToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Money;
+            this.isiSaldoToolStripMenuItem.Name = "isiSaldoToolStripMenuItem";
+            this.isiSaldoToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.isiSaldoToolStripMenuItem.Text = "Isi Saldo";
             // 
-            // buttonLogin
+            // pictureBoxOnboarding
             // 
-            this.buttonLogin.AutoSize = true;
-            this.buttonLogin.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLogin.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLogin.FlatAppearance.BorderSize = 0;
-            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
-            this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(763, 697);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(317, 39);
-            this.buttonLogin.TabIndex = 6;
-            this.buttonLogin.Text = "Register";
-            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.pictureBoxOnboarding.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxOnboarding.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Onboarding;
+            this.pictureBoxOnboarding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxOnboarding.Location = new System.Drawing.Point(186, 28);
+            this.pictureBoxOnboarding.Name = "pictureBoxOnboarding";
+            this.pictureBoxOnboarding.Size = new System.Drawing.Size(1493, 879);
+            this.pictureBoxOnboarding.TabIndex = 5;
+            this.pictureBoxOnboarding.TabStop = false;
             // 
-            // button1
+            // buttonRegisterRider
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(763, 765);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(317, 39);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonRegisterRider.AutoSize = true;
+            this.buttonRegisterRider.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRegisterRider.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonRegisterRider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRegisterRider.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRegisterRider.FlatAppearance.BorderSize = 0;
+            this.buttonRegisterRider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegisterRider.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonRegisterRider.ForeColor = System.Drawing.Color.White;
+            this.buttonRegisterRider.Location = new System.Drawing.Point(751, 675);
+            this.buttonRegisterRider.Name = "buttonRegisterRider";
+            this.buttonRegisterRider.Size = new System.Drawing.Size(338, 45);
+            this.buttonRegisterRider.TabIndex = 6;
+            this.buttonRegisterRider.Text = "Register";
+            this.buttonRegisterRider.UseVisualStyleBackColor = false;
+            this.buttonRegisterRider.Click += new System.EventHandler(this.buttonRegisterRider_Click);
             // 
-            // button2
+            // buttonLoginRider
             // 
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(232, 765);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(317, 39);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Login";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonLoginRider.AutoSize = true;
+            this.buttonLoginRider.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLoginRider.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonLoginRider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLoginRider.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLoginRider.FlatAppearance.BorderSize = 0;
+            this.buttonLoginRider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLoginRider.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonLoginRider.ForeColor = System.Drawing.Color.White;
+            this.buttonLoginRider.Location = new System.Drawing.Point(751, 749);
+            this.buttonLoginRider.Name = "buttonLoginRider";
+            this.buttonLoginRider.Size = new System.Drawing.Size(338, 45);
+            this.buttonLoginRider.TabIndex = 7;
+            this.buttonLoginRider.Text = "Login";
+            this.buttonLoginRider.UseVisualStyleBackColor = false;
+            this.buttonLoginRider.Click += new System.EventHandler(this.buttonLoginRider_Click);
             // 
-            // button3
+            // buttonLoginKonsumen
             // 
-            this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(232, 697);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(317, 39);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Register";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonLoginKonsumen.AutoSize = true;
+            this.buttonLoginKonsumen.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLoginKonsumen.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonLoginKonsumen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLoginKonsumen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLoginKonsumen.FlatAppearance.BorderSize = 0;
+            this.buttonLoginKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLoginKonsumen.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonLoginKonsumen.ForeColor = System.Drawing.Color.White;
+            this.buttonLoginKonsumen.Location = new System.Drawing.Point(186, 749);
+            this.buttonLoginKonsumen.Name = "buttonLoginKonsumen";
+            this.buttonLoginKonsumen.Size = new System.Drawing.Size(338, 45);
+            this.buttonLoginKonsumen.TabIndex = 8;
+            this.buttonLoginKonsumen.Text = "Login";
+            this.buttonLoginKonsumen.UseVisualStyleBackColor = false;
+            this.buttonLoginKonsumen.Click += new System.EventHandler(this.buttonLoginKonsumen_Click);
             // 
-            // button4
+            // buttonRegisterKonsumen
             // 
-            this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1319, 696);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(317, 39);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Login";
-            this.button4.UseVisualStyleBackColor = false;
+            this.buttonRegisterKonsumen.AutoSize = true;
+            this.buttonRegisterKonsumen.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRegisterKonsumen.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonRegisterKonsumen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRegisterKonsumen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRegisterKonsumen.FlatAppearance.BorderSize = 0;
+            this.buttonRegisterKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegisterKonsumen.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonRegisterKonsumen.ForeColor = System.Drawing.Color.White;
+            this.buttonRegisterKonsumen.Location = new System.Drawing.Point(186, 675);
+            this.buttonRegisterKonsumen.Name = "buttonRegisterKonsumen";
+            this.buttonRegisterKonsumen.Size = new System.Drawing.Size(338, 45);
+            this.buttonRegisterKonsumen.TabIndex = 9;
+            this.buttonRegisterKonsumen.Text = "Register";
+            this.buttonRegisterKonsumen.UseVisualStyleBackColor = false;
+            this.buttonRegisterKonsumen.Click += new System.EventHandler(this.buttonRegisterKonsumen_Click);
+            // 
+            // buttonLoginPegawai
+            // 
+            this.buttonLoginPegawai.AutoSize = true;
+            this.buttonLoginPegawai.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLoginPegawai.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonLoginPegawai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLoginPegawai.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLoginPegawai.FlatAppearance.BorderSize = 0;
+            this.buttonLoginPegawai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLoginPegawai.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonLoginPegawai.ForeColor = System.Drawing.Color.White;
+            this.buttonLoginPegawai.Location = new System.Drawing.Point(1341, 675);
+            this.buttonLoginPegawai.Name = "buttonLoginPegawai";
+            this.buttonLoginPegawai.Size = new System.Drawing.Size(338, 45);
+            this.buttonLoginPegawai.TabIndex = 10;
+            this.buttonLoginPegawai.Text = "Login";
+            this.buttonLoginPegawai.UseVisualStyleBackColor = false;
+            this.buttonLoginPegawai.Click += new System.EventHandler(this.buttonLoginPegawai_Click);
+            // 
+            // pictureBoxBackground
+            // 
+            this.pictureBoxBackground.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBackground.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
+            this.pictureBoxBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxBackground.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxBackground.Name = "pictureBoxBackground";
+            this.pictureBoxBackground.Size = new System.Drawing.Size(1864, 931);
+            this.pictureBoxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBackground.TabIndex = 11;
+            this.pictureBoxBackground.TabStop = false;
             // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1864, 931);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.buttonLogin);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.buttonLoginPegawai);
+            this.Controls.Add(this.buttonRegisterKonsumen);
+            this.Controls.Add(this.buttonLoginKonsumen);
+            this.Controls.Add(this.buttonLoginRider);
+            this.Controls.Add(this.buttonRegisterRider);
+            this.Controls.Add(this.pictureBoxOnboarding);
             this.Controls.Add(this.menuStripPegawai);
             this.Controls.Add(this.menuStripRider);
             this.Controls.Add(this.menuStripKonsumen);
+            this.Controls.Add(this.pictureBoxBackground);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -369,7 +429,8 @@ namespace OnlineMart_Trivial
             this.menuStripPegawai.PerformLayout();
             this.menuStripKonsumen.ResumeLayout(false);
             this.menuStripKonsumen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOnboarding)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,12 +460,13 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem barangToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem oMASaldoToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox pictureBoxOnboarding;
+        private System.Windows.Forms.Button buttonRegisterRider;
+        private System.Windows.Forms.Button buttonLoginRider;
+        private System.Windows.Forms.Button buttonLoginKonsumen;
+        private System.Windows.Forms.Button buttonRegisterKonsumen;
+        private System.Windows.Forms.Button buttonLoginPegawai;
+        private System.Windows.Forms.PictureBox pictureBoxBackground;
     }
 }
 

@@ -143,5 +143,47 @@
   <ItemGroup>
     <None Include="Resources\Onboarding.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Navbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookmark1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
