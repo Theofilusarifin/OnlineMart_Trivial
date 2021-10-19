@@ -36,7 +36,7 @@ namespace OnlineMart_Trivial
             this.textBoxKonfirmasiPassword = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxNama = new System.Windows.Forms.TextBox();
-            this.buttonLogin = new System.Windows.Forms.Button();
+            this.buttonRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelRegistrasi
@@ -49,7 +49,7 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(65)))), ((int)(((byte)(36)))));
             this.labelRegistrasi.Location = new System.Drawing.Point(230, 761);
             this.labelRegistrasi.Name = "labelRegistrasi";
-            this.labelRegistrasi.Size = new System.Drawing.Size(172, 18);
+            this.labelRegistrasi.Size = new System.Drawing.Size(152, 18);
             this.labelRegistrasi.TabIndex = 12;
             this.labelRegistrasi.Text = "&Silahkan Login Disini";
             // 
@@ -105,23 +105,26 @@ namespace OnlineMart_Trivial
             this.textBoxNama.Size = new System.Drawing.Size(339, 16);
             this.textBoxNama.TabIndex = 17;
             // 
-            // buttonLogin
+            // buttonRegister
             // 
-            this.buttonLogin.AutoSize = true;
-            this.buttonLogin.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLogin.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLogin.FlatAppearance.BorderSize = 0;
-            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
-            this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(35, 701);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(366, 41);
-            this.buttonLogin.TabIndex = 16;
-            this.buttonLogin.Text = "Register";
-            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonRegister.AutoSize = true;
+            this.buttonRegister.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRegister.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonRegister.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRegister.FlatAppearance.BorderSize = 0;
+            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegister.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonRegister.ForeColor = System.Drawing.Color.White;
+            this.buttonRegister.Location = new System.Drawing.Point(35, 701);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(366, 41);
+            this.buttonRegister.TabIndex = 16;
+            this.buttonRegister.Text = "Register";
+            this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonLogin_Click);
+            this.buttonRegister.MouseEnter += new System.EventHandler(this.buttonRegister_MouseEnter);
+            this.buttonRegister.MouseLeave += new System.EventHandler(this.buttonRegister_MouseLeave);
             // 
             // FormRegisterRider
             // 
@@ -135,7 +138,7 @@ namespace OnlineMart_Trivial
             this.Controls.Add(this.textBoxKonfirmasiPassword);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxNama);
-            this.Controls.Add(this.buttonLogin);
+            this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.labelRegistrasi);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -157,6 +160,6 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.TextBox textBoxKonfirmasiPassword;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxNama;
-        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Button buttonRegister;
     }
 }

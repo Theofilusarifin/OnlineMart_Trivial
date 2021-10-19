@@ -60,7 +60,7 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(65)))), ((int)(((byte)(36)))));
             this.labelRegistrasi.Location = new System.Drawing.Point(230, 777);
             this.labelRegistrasi.Name = "labelRegistrasi";
-            this.labelRegistrasi.Size = new System.Drawing.Size(172, 18);
+            this.labelRegistrasi.Size = new System.Drawing.Size(152, 18);
             this.labelRegistrasi.TabIndex = 11;
             this.labelRegistrasi.Text = "&Silahkan Login Disini";
             // 
@@ -91,6 +91,7 @@ namespace OnlineMart_Trivial
             this.buttonLogin.TabIndex = 9;
             this.buttonLogin.Text = "Register";
             this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             this.buttonLogin.MouseEnter += new System.EventHandler(this.buttonLogin_MouseEnter);
             this.buttonLogin.MouseLeave += new System.EventHandler(this.buttonLogin_MouseLeave);
             // 

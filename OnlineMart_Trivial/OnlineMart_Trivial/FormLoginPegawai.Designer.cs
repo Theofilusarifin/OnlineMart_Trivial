@@ -73,6 +73,7 @@ namespace OnlineMart_Trivial
             this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             this.buttonLogin.MouseEnter += new System.EventHandler(this.buttonLogin_MouseEnter);
             this.buttonLogin.MouseLeave += new System.EventHandler(this.buttonLogin_MouseLeave);
             // 

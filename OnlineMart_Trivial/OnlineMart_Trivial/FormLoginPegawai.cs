@@ -26,5 +26,19 @@ namespace OnlineMart_Trivial
         {
             buttonLogin.BackgroundImage = Properties.Resources.Button_Hover;
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            FormUtama frm = (FormUtama)this.Owner;
+            frm.pictureBoxOnboarding.Hide();
+            frm.buttonLoginKonsumen.Hide();
+            frm.buttonLoginPegawai.Hide();
+            frm.buttonLoginRider.Hide();
+            frm.buttonRegisterKonsumen.Hide();
+            frm.buttonRegisterRider.Hide();
+            frm.menuStripPegawai.Show();
+
+            this.Close();
+        }
     }
 }

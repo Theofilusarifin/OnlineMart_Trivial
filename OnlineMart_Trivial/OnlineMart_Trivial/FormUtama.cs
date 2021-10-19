@@ -19,14 +19,17 @@ namespace OnlineMart_Trivial
             pictureBoxOnboarding.Parent = pictureBoxBackground;
         }
 
-        public void HideControl()
+        public void ShowControl()
         {
-            pictureBoxOnboarding.Hide();
-            buttonLoginKonsumen.Hide();
-            buttonLoginPegawai.Hide();
-            buttonLoginRider.Hide();
-            buttonRegisterKonsumen.Hide();
-            buttonRegisterRider.Hide();
+            menuStripKonsumen.Hide();
+            menuStripPegawai.Hide();
+            menuStripRider.Hide();
+            pictureBoxOnboarding.Show();
+            buttonLoginKonsumen.Show();
+            buttonLoginPegawai.Show();
+            buttonLoginRider.Show();
+            buttonRegisterKonsumen.Show();
+            buttonRegisterRider.Show();
         }
 
         private void FormUtama_Load(object sender, EventArgs e)
@@ -125,6 +128,12 @@ namespace OnlineMart_Trivial
         private void buttonLoginPegawai_MouseEnter(object sender, EventArgs e)
         {
             buttonLoginPegawai.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            ShowControl();
+            buttonLogout.Hide();
         }
     }
 }

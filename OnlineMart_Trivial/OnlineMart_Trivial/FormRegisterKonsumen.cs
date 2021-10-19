@@ -26,5 +26,10 @@ namespace OnlineMart_Trivial
         {
             buttonLogin.BackgroundImage = Properties.Resources.Button_Hover;
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

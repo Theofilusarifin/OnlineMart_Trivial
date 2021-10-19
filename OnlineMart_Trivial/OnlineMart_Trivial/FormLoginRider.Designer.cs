@@ -57,7 +57,7 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(65)))), ((int)(((byte)(36)))));
             this.labelRegistrasi.Location = new System.Drawing.Point(230, 527);
             this.labelRegistrasi.Name = "labelRegistrasi";
-            this.labelRegistrasi.Size = new System.Drawing.Size(154, 18);
+            this.labelRegistrasi.Size = new System.Drawing.Size(139, 18);
             this.labelRegistrasi.TabIndex = 7;
             this.labelRegistrasi.Text = "&Lakukan Registrasi";
             // 
@@ -82,12 +82,13 @@ namespace OnlineMart_Trivial
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(34, 464);
+            this.buttonLogin.Location = new System.Drawing.Point(31, 460);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(366, 41);
+            this.buttonLogin.Size = new System.Drawing.Size(371, 44);
             this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             this.buttonLogin.MouseEnter += new System.EventHandler(this.buttonLogin_MouseEnter);
             this.buttonLogin.MouseLeave += new System.EventHandler(this.buttonLogin_MouseLeave);
             // 
