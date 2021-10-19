@@ -53,6 +53,8 @@ namespace OnlineMart_Trivial
             this.buttonLogin.TabIndex = 1;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.MouseEnter += new System.EventHandler(this.buttonLogin_MouseEnter);
+            this.buttonLogin.MouseLeave += new System.EventHandler(this.buttonLogin_MouseLeave);
             // 
             // textBoxEmail
             // 

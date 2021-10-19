@@ -16,5 +16,15 @@ namespace OnlineMart_Trivial
         {
             InitializeComponent();
         }
+
+        private void buttonLogin_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLogin.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+
+        private void buttonLogin_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLogin.BackgroundImage = Properties.Resources.Button_Hover;
+        }
     }
 }

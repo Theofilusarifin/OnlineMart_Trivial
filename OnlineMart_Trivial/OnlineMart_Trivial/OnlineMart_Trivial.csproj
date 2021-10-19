@@ -126,9 +126,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Button_Hover.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Button_Leave.png" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +181,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Hover.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

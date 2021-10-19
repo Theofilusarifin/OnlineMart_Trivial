@@ -49,7 +49,7 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(65)))), ((int)(((byte)(36)))));
             this.labelRegistrasi.Location = new System.Drawing.Point(230, 761);
             this.labelRegistrasi.Name = "labelRegistrasi";
-            this.labelRegistrasi.Size = new System.Drawing.Size(152, 18);
+            this.labelRegistrasi.Size = new System.Drawing.Size(172, 18);
             this.labelRegistrasi.TabIndex = 12;
             this.labelRegistrasi.Text = "&Silahkan Login Disini";
             // 

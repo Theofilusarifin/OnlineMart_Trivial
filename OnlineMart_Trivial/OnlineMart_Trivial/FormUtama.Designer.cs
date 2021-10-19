@@ -87,7 +87,7 @@ namespace OnlineMart_Trivial
             this.daftarPengirimanToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.daftarPengirimanToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Scroll;
             this.daftarPengirimanToolStripMenuItem.Name = "daftarPengirimanToolStripMenuItem";
-            this.daftarPengirimanToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.daftarPengirimanToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.daftarPengirimanToolStripMenuItem.Text = "Daftar Pengiriman";
             // 
             // rekapPendapatanToolStripMenuItem
@@ -96,7 +96,7 @@ namespace OnlineMart_Trivial
             this.rekapPendapatanToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.rekapPendapatanToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Book;
             this.rekapPendapatanToolStripMenuItem.Name = "rekapPendapatanToolStripMenuItem";
-            this.rekapPendapatanToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
+            this.rekapPendapatanToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.rekapPendapatanToolStripMenuItem.Text = "Rekap Pendapatan";
             // 
             // menuStripPegawai
@@ -128,43 +128,43 @@ namespace OnlineMart_Trivial
             this.pengaturanCabangToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Settings;
             this.pengaturanCabangToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.pengaturanCabangToolStripMenuItem.Name = "pengaturanCabangToolStripMenuItem";
-            this.pengaturanCabangToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.pengaturanCabangToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.pengaturanCabangToolStripMenuItem.Text = "Pengaturan ▼";
             // 
             // cabangToolStripMenuItem
             // 
             this.cabangToolStripMenuItem.Name = "cabangToolStripMenuItem";
-            this.cabangToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
+            this.cabangToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
             this.cabangToolStripMenuItem.Text = "Cabang";
             // 
             // kategoriToolStripMenuItem
             // 
             this.kategoriToolStripMenuItem.Name = "kategoriToolStripMenuItem";
-            this.kategoriToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
+            this.kategoriToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
             this.kategoriToolStripMenuItem.Text = "Kategori";
             // 
             // barangToolStripMenuItem
             // 
             this.barangToolStripMenuItem.Name = "barangToolStripMenuItem";
-            this.barangToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
+            this.barangToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
             this.barangToolStripMenuItem.Text = "Barang";
             // 
             // metodePembayaranToolStripMenuItem
             // 
             this.metodePembayaranToolStripMenuItem.Name = "metodePembayaranToolStripMenuItem";
-            this.metodePembayaranToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
+            this.metodePembayaranToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
             this.metodePembayaranToolStripMenuItem.Text = "Metode Pembayaran";
             // 
             // promoToolStripMenuItem
             // 
             this.promoToolStripMenuItem.Name = "promoToolStripMenuItem";
-            this.promoToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
+            this.promoToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
             this.promoToolStripMenuItem.Text = "Promo";
             // 
             // hadiahToolStripMenuItem
             // 
             this.hadiahToolStripMenuItem.Name = "hadiahToolStripMenuItem";
-            this.hadiahToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
+            this.hadiahToolStripMenuItem.Size = new System.Drawing.Size(233, 24);
             this.hadiahToolStripMenuItem.Text = "Hadiah";
             // 
             // rekapToolStripMenuItem
@@ -177,20 +177,20 @@ namespace OnlineMart_Trivial
             this.rekapToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Book;
             this.rekapToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.rekapToolStripMenuItem.Name = "rekapToolStripMenuItem";
-            this.rekapToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
+            this.rekapToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.rekapToolStripMenuItem.Text = "Rekap Penjualan ▼";
             // 
             // barangToolStripMenuItem1
             // 
             this.barangToolStripMenuItem1.BackColor = System.Drawing.Color.Transparent;
             this.barangToolStripMenuItem1.Name = "barangToolStripMenuItem1";
-            this.barangToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.barangToolStripMenuItem1.Size = new System.Drawing.Size(159, 24);
             this.barangToolStripMenuItem1.Text = "Barang";
             // 
             // oMASaldoToolStripMenuItem
             // 
             this.oMASaldoToolStripMenuItem.Name = "oMASaldoToolStripMenuItem";
-            this.oMASaldoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.oMASaldoToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
             this.oMASaldoToolStripMenuItem.Text = "OMA Saldo";
             // 
             // menuStripKonsumen
@@ -220,7 +220,7 @@ namespace OnlineMart_Trivial
             this.barangDanDealsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.barangDanDealsToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Box;
             this.barangDanDealsToolStripMenuItem.Name = "barangDanDealsToolStripMenuItem";
-            this.barangDanDealsToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
+            this.barangDanDealsToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
             this.barangDanDealsToolStripMenuItem.Text = "Barang dan Deals";
             // 
             // keranjangToolStripMenuItem
@@ -228,7 +228,7 @@ namespace OnlineMart_Trivial
             this.keranjangToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.keranjangToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Basket;
             this.keranjangToolStripMenuItem.Name = "keranjangToolStripMenuItem";
-            this.keranjangToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.keranjangToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
             this.keranjangToolStripMenuItem.Text = "Keranjang";
             // 
             // checkoutToolStripMenuItem
@@ -236,7 +236,7 @@ namespace OnlineMart_Trivial
             this.checkoutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.checkoutToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Ok;
             this.checkoutToolStripMenuItem.Name = "checkoutToolStripMenuItem";
-            this.checkoutToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+            this.checkoutToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.checkoutToolStripMenuItem.Text = "Checkout";
             // 
             // historiTransaksiToolStripMenuItem
@@ -244,7 +244,7 @@ namespace OnlineMart_Trivial
             this.historiTransaksiToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.historiTransaksiToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Book;
             this.historiTransaksiToolStripMenuItem.Name = "historiTransaksiToolStripMenuItem";
-            this.historiTransaksiToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
+            this.historiTransaksiToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.historiTransaksiToolStripMenuItem.Text = "Histori Transaksi";
             // 
             // cekPesananToolStripMenuItem
@@ -252,7 +252,7 @@ namespace OnlineMart_Trivial
             this.cekPesananToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cekPesananToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Search;
             this.cekPesananToolStripMenuItem.Name = "cekPesananToolStripMenuItem";
-            this.cekPesananToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
+            this.cekPesananToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
             this.cekPesananToolStripMenuItem.Text = "Cek Pesanan";
             // 
             // cetakNotaToolStripMenuItem
@@ -260,7 +260,7 @@ namespace OnlineMart_Trivial
             this.cetakNotaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cetakNotaToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Edit1;
             this.cetakNotaToolStripMenuItem.Name = "cetakNotaToolStripMenuItem";
-            this.cetakNotaToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
+            this.cetakNotaToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
             this.cetakNotaToolStripMenuItem.Text = "Cetak Nota";
             // 
             // profileToolStripMenuItem
@@ -268,7 +268,7 @@ namespace OnlineMart_Trivial
             this.profileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.profileToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Contact;
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.profileToolStripMenuItem.Text = "Profile";
             // 
             // isiSaldoToolStripMenuItem
@@ -276,7 +276,7 @@ namespace OnlineMart_Trivial
             this.isiSaldoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.isiSaldoToolStripMenuItem.Image = global::OnlineMart_Trivial.Properties.Resources.Money;
             this.isiSaldoToolStripMenuItem.Name = "isiSaldoToolStripMenuItem";
-            this.isiSaldoToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.isiSaldoToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.isiSaldoToolStripMenuItem.Text = "Isi Saldo";
             // 
             // pictureBoxOnboarding
@@ -308,6 +308,8 @@ namespace OnlineMart_Trivial
             this.buttonRegisterRider.Text = "Register";
             this.buttonRegisterRider.UseVisualStyleBackColor = false;
             this.buttonRegisterRider.Click += new System.EventHandler(this.buttonRegisterRider_Click);
+            this.buttonRegisterRider.MouseEnter += new System.EventHandler(this.buttonRegisterRider_MouseEnter);
+            this.buttonRegisterRider.MouseLeave += new System.EventHandler(this.buttonRegisterRider_MouseLeave);
             // 
             // buttonLoginRider
             // 
@@ -327,6 +329,8 @@ namespace OnlineMart_Trivial
             this.buttonLoginRider.Text = "Login";
             this.buttonLoginRider.UseVisualStyleBackColor = false;
             this.buttonLoginRider.Click += new System.EventHandler(this.buttonLoginRider_Click);
+            this.buttonLoginRider.MouseEnter += new System.EventHandler(this.buttonLoginRider_MouseEnter);
+            this.buttonLoginRider.MouseLeave += new System.EventHandler(this.buttonLoginRider_MouseLeave);
             // 
             // buttonLoginKonsumen
             // 
@@ -346,6 +350,8 @@ namespace OnlineMart_Trivial
             this.buttonLoginKonsumen.Text = "Login";
             this.buttonLoginKonsumen.UseVisualStyleBackColor = false;
             this.buttonLoginKonsumen.Click += new System.EventHandler(this.buttonLoginKonsumen_Click);
+            this.buttonLoginKonsumen.MouseEnter += new System.EventHandler(this.buttonLoginKonsumen_MouseEnter);
+            this.buttonLoginKonsumen.MouseLeave += new System.EventHandler(this.buttonLoginKonsumen_MouseLeave);
             // 
             // buttonRegisterKonsumen
             // 
@@ -365,6 +371,8 @@ namespace OnlineMart_Trivial
             this.buttonRegisterKonsumen.Text = "Register";
             this.buttonRegisterKonsumen.UseVisualStyleBackColor = false;
             this.buttonRegisterKonsumen.Click += new System.EventHandler(this.buttonRegisterKonsumen_Click);
+            this.buttonRegisterKonsumen.MouseEnter += new System.EventHandler(this.buttonRegisterKonsumen_MouseEnter);
+            this.buttonRegisterKonsumen.MouseLeave += new System.EventHandler(this.buttonRegisterKonsumen_MouseLeave);
             // 
             // buttonLoginPegawai
             // 
@@ -384,6 +392,8 @@ namespace OnlineMart_Trivial
             this.buttonLoginPegawai.Text = "Login";
             this.buttonLoginPegawai.UseVisualStyleBackColor = false;
             this.buttonLoginPegawai.Click += new System.EventHandler(this.buttonLoginPegawai_Click);
+            this.buttonLoginPegawai.MouseEnter += new System.EventHandler(this.buttonLoginPegawai_MouseEnter);
+            this.buttonLoginPegawai.MouseLeave += new System.EventHandler(this.buttonLoginPegawai_MouseLeave);
             // 
             // pictureBoxBackground
             // 

@@ -72,5 +72,59 @@ namespace OnlineMart_Trivial
             frm.Owner = this;
             frm.ShowDialog();
         }
+        private void buttonLoginKonsumen_Enter(object sender, EventArgs e)
+        {
+            buttonRegisterKonsumen.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+
+        //Desain Button Register Konsumen
+        private void buttonRegisterKonsumen_MouseLeave(object sender, EventArgs e)
+        {
+            buttonRegisterKonsumen.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonRegisterKonsumen_MouseEnter(object sender, EventArgs e)
+        {
+            buttonRegisterKonsumen.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+
+        //Desain Button Login Konsumen
+        private void buttonLoginKonsumen_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLoginKonsumen.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonLoginKonsumen_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLoginKonsumen.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+
+        //Desain Button Register Rider
+        private void buttonRegisterRider_MouseLeave(object sender, EventArgs e)
+        {
+            buttonRegisterRider.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonRegisterRider_MouseEnter(object sender, EventArgs e)
+        {
+            buttonRegisterRider.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+
+        //Desain Button Login Rider
+        private void buttonLoginRider_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLoginRider.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonLoginRider_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLoginRider.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+
+        //Desain Button Login Pegawai
+        private void buttonLoginPegawai_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLoginPegawai.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonLoginPegawai_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLoginPegawai.BackgroundImage = Properties.Resources.Button_Hover;
+        }
     }
 }
