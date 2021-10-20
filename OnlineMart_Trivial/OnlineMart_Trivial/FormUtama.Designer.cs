@@ -300,7 +300,7 @@ namespace OnlineMart_Trivial
             this.buttonRegisterRider.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegisterRider.FlatAppearance.BorderSize = 0;
             this.buttonRegisterRider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegisterRider.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonRegisterRider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonRegisterRider.ForeColor = System.Drawing.Color.White;
             this.buttonRegisterRider.Location = new System.Drawing.Point(751, 675);
             this.buttonRegisterRider.Name = "buttonRegisterRider";
@@ -321,7 +321,7 @@ namespace OnlineMart_Trivial
             this.buttonLoginRider.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLoginRider.FlatAppearance.BorderSize = 0;
             this.buttonLoginRider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLoginRider.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonLoginRider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLoginRider.ForeColor = System.Drawing.Color.White;
             this.buttonLoginRider.Location = new System.Drawing.Point(751, 749);
             this.buttonLoginRider.Name = "buttonLoginRider";
@@ -342,7 +342,7 @@ namespace OnlineMart_Trivial
             this.buttonLoginKonsumen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLoginKonsumen.FlatAppearance.BorderSize = 0;
             this.buttonLoginKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLoginKonsumen.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonLoginKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLoginKonsumen.ForeColor = System.Drawing.Color.White;
             this.buttonLoginKonsumen.Location = new System.Drawing.Point(186, 749);
             this.buttonLoginKonsumen.Name = "buttonLoginKonsumen";
@@ -363,7 +363,7 @@ namespace OnlineMart_Trivial
             this.buttonRegisterKonsumen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegisterKonsumen.FlatAppearance.BorderSize = 0;
             this.buttonRegisterKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegisterKonsumen.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonRegisterKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonRegisterKonsumen.ForeColor = System.Drawing.Color.White;
             this.buttonRegisterKonsumen.Location = new System.Drawing.Point(186, 675);
             this.buttonRegisterKonsumen.Name = "buttonRegisterKonsumen";
@@ -384,7 +384,7 @@ namespace OnlineMart_Trivial
             this.buttonLoginPegawai.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLoginPegawai.FlatAppearance.BorderSize = 0;
             this.buttonLoginPegawai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLoginPegawai.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonLoginPegawai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLoginPegawai.ForeColor = System.Drawing.Color.White;
             this.buttonLoginPegawai.Location = new System.Drawing.Point(1341, 675);
             this.buttonLoginPegawai.Name = "buttonLoginPegawai";
@@ -417,9 +417,9 @@ namespace OnlineMart_Trivial
             this.buttonLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogout.FlatAppearance.BorderSize = 0;
             this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogout.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLogout.ForeColor = System.Drawing.Color.White;
-            this.buttonLogout.Location = new System.Drawing.Point(1544, 594);
+            this.buttonLogout.Location = new System.Drawing.Point(1598, 862);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(254, 45);
             this.buttonLogout.TabIndex = 12;

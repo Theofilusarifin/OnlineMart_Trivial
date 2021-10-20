@@ -60,6 +60,7 @@ namespace OnlineMart_Trivial
             FormLoginKonsumen frm = new FormLoginKonsumen();
             frm.Owner = this;
             frm.ShowDialog();
+            buttonLogout.Show();
         }
 
         private void buttonLoginRider_Click(object sender, EventArgs e)
@@ -67,6 +68,7 @@ namespace OnlineMart_Trivial
             FormLoginRider frm = new FormLoginRider();
             frm.Owner = this;
             frm.ShowDialog();
+            buttonLogout.Show();
         }
 
         private void buttonLoginPegawai_Click(object sender, EventArgs e)
@@ -74,6 +76,7 @@ namespace OnlineMart_Trivial
             FormLoginPegawai frm = new FormLoginPegawai();
             frm.Owner = this;
             frm.ShowDialog();
+            buttonLogout.Show();
         }
         private void buttonLoginKonsumen_Enter(object sender, EventArgs e)
         {
@@ -133,6 +136,9 @@ namespace OnlineMart_Trivial
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             ShowControl();
+            menuStripKonsumen.Hide();
+            menuStripPegawai.Hide();
+            menuStripRider.Hide();
             buttonLogout.Hide();
         }
     }

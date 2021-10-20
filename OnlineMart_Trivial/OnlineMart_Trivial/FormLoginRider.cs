@@ -36,7 +36,7 @@ namespace OnlineMart_Trivial
             frm.buttonLoginRider.Hide();
             frm.buttonRegisterKonsumen.Hide();
             frm.buttonRegisterRider.Hide();
-            frm.menuStripPegawai.Show();
+            frm.menuStripRider.Show();
 
             this.Close();
         }
