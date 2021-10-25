@@ -14,10 +14,10 @@ namespace OnlineMart_LIB
         private int idBarang;
         private string nama;
         private int harga;
-        private Kategori idKategori;
+        private Pegawai idKategori;
 
         #region Constructors
-        public Barang(int idBarang, string nama, int harga, Kategori idKategori)
+        public Barang(int idBarang, string nama, int harga, Pegawai idKategori)
         {
             IdBarang = idBarang;
             Nama = nama;
@@ -30,7 +30,7 @@ namespace OnlineMart_LIB
         public int IdBarang { get => idBarang; set => idBarang = value; }
         public string Nama { get => nama; set => nama = value; }
         public int Harga { get => harga; set => harga = value; }
-        public Kategori IdKategori { get => idKategori; set => idKategori = value; }
+        public Pegawai IdKategori { get => idKategori; set => idKategori = value; }
         #endregion
 
         #region Methods

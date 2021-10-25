@@ -47,7 +47,6 @@
     <Compile Include="Cabang.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Gift.cs" />
-    <Compile Include="Kategori.cs" />
     <Compile Include="Koneksi.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Pegawai.cs" />
