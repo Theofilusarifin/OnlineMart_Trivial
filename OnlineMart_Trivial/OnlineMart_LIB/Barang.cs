@@ -11,18 +11,18 @@ namespace OnlineMart_LIB
 {
     public class Barang
     {
-        private int idBarang;
+        /*private int idBarang;
         private string nama;
         private int harga;
-        private Pegawai idKategori;
+        private Kategori kategori;
 
         #region Constructors
-        public Barang(int idBarang, string nama, int harga, Pegawai idKategori)
+        public Barang(int idBarang, string nama, int harga, Kategori kategori)
         {
             IdBarang = idBarang;
             Nama = nama;
             Harga = harga;
-            IdKategori = idKategori;
+            Kategori = kategori;
         }
         #endregion
 
@@ -30,7 +30,7 @@ namespace OnlineMart_LIB
         public int IdBarang { get => idBarang; set => idBarang = value; }
         public string Nama { get => nama; set => nama = value; }
         public int Harga { get => harga; set => harga = value; }
-        public Pegawai IdKategori { get => idKategori; set => idKategori = value; }
+        public Kategori Kategori { get => kategori; set => kategori = value; }
         #endregion
 
         #region Methods
@@ -39,26 +39,26 @@ namespace OnlineMart_LIB
         {
             //string yang menampung sql query insert into
             string sqlInsert = "insert into barangs (id, nama, harga, kategoris_id)" +
-                               "values (" + b.IdBarang + ", '" + b.Nama + "', " + b.Harga + ", '" + b.IdKategori + "')";
+                               " values (" + b.IdBarang + ", '" + b.Nama + "', " + b.Harga + ", '" + b.Kategori. + "')";
 
             //menjalankan perintah sql
             Koneksi.JalankanPerintahDML(sqlInsert);
         }
 
         //Method untuk membaca data Barang
-        /*private static void BacaData(string kriteria, string nilaiKriteria)
+        private static List<Barang> BacaData(string kriteria, string nilaiKriteria)
         {
             string sqlRead;
             if (kriteria == "")
             {
                 sqlRead = "select b.id as Id Barang, b.nama as Nama Barang, b.harga as Harga, k.id as Id Kategori" +
-                      "from barangs as b inner join kategoris as k on b.kategoris_id = k.id";
+                          " from barangs as b inner join kategoris as k on b.kategoris_id = k.id";
             }
             else
             {
                 sqlRead = "select b.id as Id Barang, b.nama as Nama Barang, b.harga as Harga, k.id as Id Kategori" +
-                      "from barangs as b inner join kategoris as k on b.kategoris_id = k.id" +
-                      "where " + kriteria + " like '%" + nilaiKriteria + "%'";
+                          " from barangs as b inner join kategoris as k on b.kategoris_id = k.id" +
+                          " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sqlRead);
@@ -66,16 +66,15 @@ namespace OnlineMart_LIB
             List<Barang> listBarang = new List<Barang>();
             while(hasil.Read() == true)
             {
-                Kategori k = new Kategori(int.Parse(hasil.GetValue(3).ToString()), hasil.GetValue(4).ToString());
+                Kategori k = new Kategori();
 
-                Barang b = new Barang(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(),
-                                      int.Parse(hasil.GetValue(2).ToString()), b);
+                Barang b = new Barang();
                 
                 listBarang.Add(b);
             }
 
-            return listBarang
-        }*/
+            return listBarang;
+        }
 
         //Method untuk menghapus data Barang
         public static Boolean HapusData(string kode)
@@ -92,6 +91,6 @@ namespace OnlineMart_LIB
                 return true;
             }
         }
-        #endregion
+        #endregion*/
     }
 }
