@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineMart_Trivial", "OnlineMart_Trivial\OnlineMart_Trivial.csproj", "{6887F709-241C-4D0B-B267-6BD209BCA527}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineMart_LIB", "OnlineMart_LIB\OnlineMart_LIB.csproj", "{EF7756EC-9141-4B55-82B1-71C7AE55D057}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6887F709-241C-4D0B-B267-6BD209BCA527}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6887F709-241C-4D0B-B267-6BD209BCA527}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6887F709-241C-4D0B-B267-6BD209BCA527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF7756EC-9141-4B55-82B1-71C7AE55D057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF7756EC-9141-4B55-82B1-71C7AE55D057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF7756EC-9141-4B55-82B1-71C7AE55D057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF7756EC-9141-4B55-82B1-71C7AE55D057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

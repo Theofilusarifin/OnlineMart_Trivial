@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Tambahkan using reference
+using OnlineMart_LIB;
+
 namespace OnlineMart_Trivial
 {
     public partial class FormUtama : Form
@@ -39,6 +42,17 @@ namespace OnlineMart_Trivial
             menuStripKonsumen.Hide();
             menuStripPegawai.Hide();
             menuStripRider.Hide();
+
+            try
+            {
+                //Ambil nilai di db setting
+                Koneksi koneksi = new Koneksi();
+                MessageBox.Show("Koneksi Berhasil");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Koneksi Gagal. Pesan Kesalahan : " + ex.Message);
+            }
         }
 
         private void buttonRegisterKonsumen_Click(object sender, EventArgs e)
