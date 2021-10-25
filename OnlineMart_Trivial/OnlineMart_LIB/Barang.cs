@@ -12,5 +12,6 @@ namespace OnlineMart_LIB
     public class Barang
     {
         string test = "Bagian Henri";
+        string salam = "halo"
     }
 }
