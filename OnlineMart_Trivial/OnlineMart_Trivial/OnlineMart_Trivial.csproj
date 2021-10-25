@@ -54,6 +54,42 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>db.settings</DependentUpon>
     </Compile>
+    <Compile Include="FormDaftarBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarBarang.Designer.cs">
+      <DependentUpon>FormDaftarBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarCabang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarCabang.Designer.cs">
+      <DependentUpon>FormDaftarCabang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarGift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarGift.Designer.cs">
+      <DependentUpon>FormDaftarGift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarKategori.Designer.cs">
+      <DependentUpon>FormDaftarKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarOrder.Designer.cs">
+      <DependentUpon>FormDaftarOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarPromo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarPromo.Designer.cs">
+      <DependentUpon>FormDaftarPromo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLoginPegawai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +128,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDaftarBarang.resx">
+      <DependentUpon>FormDaftarBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarCabang.resx">
+      <DependentUpon>FormDaftarCabang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarGift.resx">
+      <DependentUpon>FormDaftarGift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarKategori.resx">
+      <DependentUpon>FormDaftarKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarOrder.resx">
+      <DependentUpon>FormDaftarOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarPromo.resx">
+      <DependentUpon>FormDaftarPromo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLoginPegawai.resx">
       <DependentUpon>FormLoginPegawai.cs</DependentUpon>
     </EmbeddedResource>
