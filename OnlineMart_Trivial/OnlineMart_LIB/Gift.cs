@@ -10,5 +10,6 @@ namespace OnlineMart_LIB
 {
     public class Gift
     {
+        private string id;
     }
 }
