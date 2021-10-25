@@ -11,5 +11,6 @@ namespace OnlineMart_LIB
 {
     public class Barang
     {
+        string test = "Bagian Henri";
     }
 }
