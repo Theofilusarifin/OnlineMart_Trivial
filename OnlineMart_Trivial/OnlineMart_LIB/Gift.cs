@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MySql.Data.MySqlClient;
+
 namespace OnlineMart_LIB
 {
-    class Gift
+    public class Gift
     {
     }
 }
