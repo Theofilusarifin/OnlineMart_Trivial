@@ -34,7 +34,7 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Methods
-        //Method untu menambah data Barang
+        //Method untuk menambah data Barang
         private static void TambahData(Barang b)
         {
             //string yang menampung sql query insert into
@@ -77,6 +77,7 @@ namespace OnlineMart_LIB
             return listBarang
         }*/
 
+        //Method untuk menghapus data Barang
         public static Boolean HapusData(string kode)
         {
             string sqlDelete = "delete from barangs where kodeKategori='" + kode + "'";
