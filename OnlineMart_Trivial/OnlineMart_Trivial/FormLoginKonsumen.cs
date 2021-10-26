@@ -29,18 +29,16 @@ namespace OnlineMart_Trivial
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            FormUtama.role = "konsumen";
+            FormUtama frm = (FormUtama)this.Owner;
+            frm.pictureBoxOnboarding.Hide();
+            frm.buttonLoginKonsumen.Hide();
+            frm.buttonLoginPegawai.Hide();
+            frm.buttonLoginRider.Hide();
+            frm.buttonRegisterKonsumen.Hide();
+            frm.buttonRegisterRider.Hide();
+            frm.menuStripKonsumen.Show();
 
-            FormLoading form = new FormLoading(); //Create Object
-            form.Owner = this;
-            form.Show();
-            this.Hide();
-        }
-
-        private void FormLoginKonsumen_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            FormAuth frm = (FormAuth)this.Owner;
-            frm.Show();
+            this.Close();
         }
     }
 }

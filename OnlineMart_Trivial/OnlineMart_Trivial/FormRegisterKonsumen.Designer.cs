@@ -56,11 +56,11 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.BackColor = System.Drawing.Color.White;
             this.labelRegistrasi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelRegistrasi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelRegistrasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelRegistrasi.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
             this.labelRegistrasi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(65)))), ((int)(((byte)(36)))));
             this.labelRegistrasi.Location = new System.Drawing.Point(230, 777);
             this.labelRegistrasi.Name = "labelRegistrasi";
-            this.labelRegistrasi.Size = new System.Drawing.Size(153, 16);
+            this.labelRegistrasi.Size = new System.Drawing.Size(152, 18);
             this.labelRegistrasi.TabIndex = 11;
             this.labelRegistrasi.Text = "&Silahkan Login Disini";
             // 
@@ -83,7 +83,7 @@ namespace OnlineMart_Trivial
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogin.FlatAppearance.BorderSize = 0;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonLogin.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
             this.buttonLogin.Location = new System.Drawing.Point(36, 716);
             this.buttonLogin.Name = "buttonLogin";
@@ -147,7 +147,6 @@ namespace OnlineMart_Trivial
             this.Name = "FormRegisterKonsumen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrasi Konsumen";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegisterKonsumen_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

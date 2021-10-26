@@ -31,11 +31,5 @@ namespace OnlineMart_Trivial
         {
             this.Close();
         }
-
-        private void FormRegisterKonsumen_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            FormAuth frm = (FormAuth)this.Owner;
-            frm.Show();
-        }
     }
 }
