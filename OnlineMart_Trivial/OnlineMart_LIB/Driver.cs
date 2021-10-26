@@ -13,7 +13,8 @@ namespace OnlineMart_LIB
 		#region Field
 		private int id;
         private string nama;
-        private string email;
+		private string username;
+		private string email;
         private string password;
         private string telepon;
 		#endregion
@@ -23,10 +24,11 @@ namespace OnlineMart_LIB
 		{
 			this.Id = id1;
 		}
-		public Driver(int id, string nama, string email, string password, string telepon)
+		public Driver(int id, string nama, string username, string email, string password, string telepon)
 		{
 			this.Id = id;
 			this.Nama = nama;
+			this.Username = username;
 			this.Email = email;
 			this.Password = password;
 			this.Telepon = telepon;
@@ -44,6 +46,11 @@ namespace OnlineMart_LIB
 			get => nama;
 			set => nama = value;
 		}
+		public string Username
+		{
+			get => username;
+			set => username = value;
+		}
 		public string Email 
 		{
 			get => email; 
@@ -59,6 +66,52 @@ namespace OnlineMart_LIB
 			get => telepon;
 			set => telepon = value;
 		}
-		#endregion
-	}
+        #endregion
+
+        #region METHODS
+        public static void TambahData(Driver driver)
+        {
+            // Querry Insert
+            string sql = "INSERT into drivers (nama, username, email, password, telepon) " +
+                "VALUES ('" + driver.Nama + "', '" + driver.Username + "', '" + driver.Email + "', SHA2('" + driver.password + "', 512), '" + driver.telepon + "')";
+
+            Koneksi.JalankanPerintahDML(sql);
+        }
+
+        public static List<Driver> BacaData(string kriteria, string nilaiKriteria)
+        {
+            string sql = "SELECT nama, username, email, password, telepon, FROM drivers ";
+            if (kriteria != "") sql += "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            //Buat list untuk menampung data
+            List<Driver> listDriver = new List<Driver>();
+
+            while (hasil.Read())
+            {
+				Driver driver = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
+
+                listDriver.Add(driver);
+            }
+
+            return listDriver;
+        }
+
+        public static Driver CekLogin(string username, string password)
+        {
+			string sql = "SELECT nama, username, email, password, telepon, FROM drivers WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            while (hasil.Read())
+            {
+				Driver driver = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
+
+				return driver;
+            }
+            return null;
+        }
+
+        #endregion
+    }
 }

@@ -73,12 +73,12 @@ namespace OnlineMart_LIB
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
-                Pegawai p = new Pegawai(int.Parse(hasil.GetValue(3).ToString()), hasil.GetValue(4).ToString(), hasil.GetValue(5).ToString(),
-                                        hasil.GetValue(6).ToString(), hasil.GetValue(7).ToString());
+                //Pegawai p = new Pegawai(int.Parse(hasil.GetValue(3).ToString()), hasil.GetValue(4).ToString(), hasil.GetValue(5).ToString(),
+                //                        hasil.GetValue(6).ToString(), hasil.GetValue(7).ToString());
 
-                Cabang c = new Cabang(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(), hasil.GetValue(2).ToString(), p);
+                //Cabang c = new Cabang(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(), hasil.GetValue(2).ToString(), p);
                 
-                listCabang.Add(c);
+                //listCabang.Add(c);
             }
 
             return listCabang;
