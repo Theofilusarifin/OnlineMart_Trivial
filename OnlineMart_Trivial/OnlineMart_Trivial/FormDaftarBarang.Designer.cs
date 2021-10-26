@@ -49,6 +49,7 @@ namespace OnlineMart_Trivial
             this.Controls.Add(this.dataGridView);
             this.Name = "FormDaftarBarang";
             this.Text = "FormDaftarBarang";
+            this.Load += new System.EventHandler(this.FormDaftarBarang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 

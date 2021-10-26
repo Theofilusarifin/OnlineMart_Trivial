@@ -35,7 +35,7 @@ namespace OnlineMart_LIB
 
         #region Methods
         //Method untuk menambah data Cabang
-        private static void TambahData(Cabang c)
+        public static void TambahData(Cabang c)
         {
             //string yang menampung sql query insert into
             string sqlInsert = "insert into cabangs (id, nama, alamat, pegawais_id)" +
@@ -46,7 +46,7 @@ namespace OnlineMart_LIB
         }
 
         //Method untuk membaca data Cabang
-        private static List<Cabang> BacaData(string kriteria, string nilaiKriteria)
+        public static List<Cabang> BacaData(string kriteria, string nilaiKriteria)
         {
             string sqlRead;
             if (kriteria == "")

@@ -29,33 +29,34 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.dataGridViewCabang = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCabang)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView
+            // dataGridViewCabang
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(131, 98);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(539, 255);
-            this.dataGridView.TabIndex = 19;
+            this.dataGridViewCabang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCabang.Location = new System.Drawing.Point(131, 98);
+            this.dataGridViewCabang.Name = "dataGridViewCabang";
+            this.dataGridViewCabang.Size = new System.Drawing.Size(539, 255);
+            this.dataGridViewCabang.TabIndex = 19;
             // 
             // FormDaftarCabang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.dataGridViewCabang);
             this.Name = "FormDaftarCabang";
             this.Text = "FormDaftarCabang";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.Load += new System.EventHandler(this.FormDaftarCabang_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCabang)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dataGridViewCabang;
     }
 }

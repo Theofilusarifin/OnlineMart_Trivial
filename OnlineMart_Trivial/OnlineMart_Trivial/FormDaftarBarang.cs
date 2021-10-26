@@ -16,5 +16,10 @@ namespace OnlineMart_Trivial
         {
             InitializeComponent();
         }
+
+        private void FormDaftarBarang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

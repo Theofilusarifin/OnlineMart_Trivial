@@ -88,3 +88,40 @@ C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMar
 C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.exe
 C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.pdb
 C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormLoading.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\OnlineMart_Trivial.exe.config
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\OnlineMart_Trivial.exe
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\OnlineMart_Trivial.pdb
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\OnlineMart_LIB.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\MySql.Data.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\Google.Protobuf.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\Zstandard.Net.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\BouncyCastle.Crypto.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\Ubiety.Dns.Core.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\System.Memory.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\System.Buffers.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\K4os.Compression.LZ4.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\K4os.Hash.xxHash.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\System.Numerics.Vectors.dll
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\OnlineMart_LIB.pdb
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\MySql.Data.xml
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.csproj.AssemblyReference.cache
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarBarang.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarCabang.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarGift.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarKategori.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarOrder.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarPromo.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormLoading.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormLoginPegawai.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormLoginKonsumen.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormLoginRider.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormRegisterKonsumen.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormRegisterRider.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormUtama.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.Properties.Resources.resources
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.csproj.GenerateResource.cache
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.csproj.CoreCompileInputs.cache
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.exe
+D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.pdb
