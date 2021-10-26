@@ -63,9 +63,9 @@ namespace OnlineMart_Trivial
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = global::OnlineMart_Trivial.Properties.Resources.Loading;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(123, 161);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(107, 160);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(260, 108);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(267, 111);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 2;
             this.pictureBoxLogo.TabStop = false;
