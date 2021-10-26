@@ -17,6 +17,19 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
+        #region No Tick Constrols
+        //Optimized Controls(No Tick)
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+        #endregion
+
         private void timerLoading_Tick(object sender, EventArgs e)
         {
             panelLoading.Width += 3;
@@ -25,6 +38,25 @@ namespace OnlineMart_Trivial
                 timerLoading.Stop();
                 this.Close();
             }
+        }
+
+        private void FormLoading_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormUtama.frmUtama.panelLeftNavbar.Show();
+            FormUtama.frmUtama.panelActiveForm.Show();
+            if (FormUtama.role == "konsumen")
+            {
+                FormUtama.frmUtama.panelKonsumen.Show();
+            }
+            else if (FormUtama.role == "rider")
+            {
+                FormUtama.frmUtama.panelRider.Show();
+            }
+            else if (FormUtama.role == "pegawai")
+            {
+                FormUtama.frmUtama.panelPegawai.Show();
+            }
+            else MessageBox.Show("Terjadi error, role tidak terdefinisi");
         }
     }
 }

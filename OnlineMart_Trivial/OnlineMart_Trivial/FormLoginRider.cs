@@ -17,6 +17,19 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
+        #region No Tick Constrols
+        //Optimized Controls(No Tick)
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+        #endregion
+
         private void buttonLogin_MouseLeave(object sender, EventArgs e)
         {
             buttonLogin.BackgroundImage = Properties.Resources.Button_Leave;
@@ -29,7 +42,7 @@ namespace OnlineMart_Trivial
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            FormUtama.role = "pegawai";
+            FormUtama.role = "rider";
 
             FormLoading form = new FormLoading(); //Create Object
             form.Owner = this;
