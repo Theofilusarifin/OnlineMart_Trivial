@@ -29,33 +29,34 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.dataGridViewKategori = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategori)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView
+            // dataGridViewKategori
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(131, 98);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(539, 255);
-            this.dataGridView.TabIndex = 19;
+            this.dataGridViewKategori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKategori.Location = new System.Drawing.Point(131, 98);
+            this.dataGridViewKategori.Name = "dataGridViewKategori";
+            this.dataGridViewKategori.Size = new System.Drawing.Size(539, 255);
+            this.dataGridViewKategori.TabIndex = 19;
             // 
             // FormDaftarKategori
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.dataGridViewKategori);
             this.Name = "FormDaftarKategori";
             this.Text = "FormDaftarKategori";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.Load += new System.EventHandler(this.FormDaftarKategori_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategori)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dataGridViewKategori;
     }
 }

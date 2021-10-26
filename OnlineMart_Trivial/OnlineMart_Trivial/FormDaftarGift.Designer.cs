@@ -29,33 +29,34 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.dataGridViewGift = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGift)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView
+            // dataGridViewGift
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(131, 98);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(539, 255);
-            this.dataGridView.TabIndex = 19;
+            this.dataGridViewGift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGift.Location = new System.Drawing.Point(131, 98);
+            this.dataGridViewGift.Name = "dataGridViewGift";
+            this.dataGridViewGift.Size = new System.Drawing.Size(539, 255);
+            this.dataGridViewGift.TabIndex = 19;
             // 
             // FormDaftarGift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.dataGridViewGift);
             this.Name = "FormDaftarGift";
             this.Text = "FormDaftarGift";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.Load += new System.EventHandler(this.FormDaftarGift_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGift)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dataGridViewGift;
     }
 }
