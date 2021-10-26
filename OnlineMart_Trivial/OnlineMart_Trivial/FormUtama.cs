@@ -15,39 +15,40 @@ namespace OnlineMart_Trivial
 {
     public partial class FormUtama : Form
     {
+        public static string role;
+
         public FormUtama()
         {
             InitializeComponent();
-            //Background Transparant
-            pictureBoxOnboarding.Parent = pictureBoxBackground;
         }
 
-        public void ShowControl()
+        #region No Tick Constrols
+        //Optimized Controls (No Tick)
+        protected override CreateParams CreateParams
         {
-            menuStripKonsumen.Hide();
-            menuStripPegawai.Hide();
-            menuStripRider.Hide();
-            pictureBoxOnboarding.Show();
-            buttonLoginKonsumen.Show();
-            buttonLoginPegawai.Show();
-            buttonLoginRider.Show();
-            buttonRegisterKonsumen.Show();
-            buttonRegisterRider.Show();
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+
+                return cp;
+            }
         }
+        #endregion
 
         private void FormUtama_Load(object sender, EventArgs e)
-        { 
+        {
+            //Ubah form ini (FormUtama) menjadi fullscreen (maximized)
+            this.WindowState = FormWindowState.Maximized;
+
             //Ubah FormUtama menjadi MdiParent (MdiContainer)
             this.IsMdiContainer = true;
-            menuStripKonsumen.Hide();
-            menuStripPegawai.Hide();
-            menuStripRider.Hide();
 
             try
             {
                 //Ambil nilai di db setting
                 Koneksi koneksi = new Koneksi();
-                MessageBox.Show("Koneksi Berhasil");
+                //MessageBox.Show("Koneksi Berhasil");
             }
             catch (Exception ex)
             {
@@ -55,105 +56,20 @@ namespace OnlineMart_Trivial
             }
         }
 
-        private void buttonRegisterKonsumen_Click(object sender, EventArgs e)
+        #region OpenFormAuth
+        int opening = 0;
+        private void timerOpening_Tick(object sender, EventArgs e)
         {
-            FormRegisterKonsumen frm = new FormRegisterKonsumen();
-            frm.Owner = this;
-            frm.ShowDialog();
+            opening++;
+            if (opening == 1)
+            {
+                FormAuth frm = new FormAuth(); //Create Object FormDaftarKategori
+                frm.MdiParent = this; //Set form utama menjadi parent dari objek form yang dibuat
+                frm.Show(); //Tampilkan form
+                // Method ShowDialog() tidak bisa digunakan jika menerapkan MdiParent, bisanya Method Show();
+                timerOpening.Stop();
+            }
         }
-
-        private void buttonRegisterRider_Click(object sender, EventArgs e)
-        {
-            FormRegisterRider frm = new FormRegisterRider();
-            frm.Owner = this;
-            frm.ShowDialog();
-        }
-
-        private void buttonLoginKonsumen_Click(object sender, EventArgs e)
-        {
-            FormLoginKonsumen frm = new FormLoginKonsumen();
-            frm.Owner = this;
-            frm.ShowDialog();
-            buttonLogout.Show();
-        }
-
-        private void buttonLoginRider_Click(object sender, EventArgs e)
-        {
-            FormLoginRider frm = new FormLoginRider();
-            frm.Owner = this;
-            frm.ShowDialog();
-            buttonLogout.Show();
-        }
-
-        private void buttonLoginPegawai_Click(object sender, EventArgs e)
-        {
-            FormLoginPegawai frm = new FormLoginPegawai();
-            frm.Owner = this;
-            frm.ShowDialog();
-            buttonLogout.Show();
-        }
-        private void buttonLoginKonsumen_Enter(object sender, EventArgs e)
-        {
-            buttonRegisterKonsumen.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-
-        //Desain Button Register Konsumen
-        private void buttonRegisterKonsumen_MouseLeave(object sender, EventArgs e)
-        {
-            buttonRegisterKonsumen.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-        private void buttonRegisterKonsumen_MouseEnter(object sender, EventArgs e)
-        {
-            buttonRegisterKonsumen.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-
-        //Desain Button Login Konsumen
-        private void buttonLoginKonsumen_MouseLeave(object sender, EventArgs e)
-        {
-            buttonLoginKonsumen.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-        private void buttonLoginKonsumen_MouseEnter(object sender, EventArgs e)
-        {
-            buttonLoginKonsumen.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-
-        //Desain Button Register Rider
-        private void buttonRegisterRider_MouseLeave(object sender, EventArgs e)
-        {
-            buttonRegisterRider.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-        private void buttonRegisterRider_MouseEnter(object sender, EventArgs e)
-        {
-            buttonRegisterRider.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-
-        //Desain Button Login Rider
-        private void buttonLoginRider_MouseLeave(object sender, EventArgs e)
-        {
-            buttonLoginRider.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-        private void buttonLoginRider_MouseEnter(object sender, EventArgs e)
-        {
-            buttonLoginRider.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-
-        //Desain Button Login Pegawai
-        private void buttonLoginPegawai_MouseLeave(object sender, EventArgs e)
-        {
-            buttonLoginPegawai.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-        private void buttonLoginPegawai_MouseEnter(object sender, EventArgs e)
-        {
-            buttonLoginPegawai.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-
-        private void buttonLogout_Click(object sender, EventArgs e)
-        {
-            ShowControl();
-            menuStripKonsumen.Hide();
-            menuStripPegawai.Hide();
-            menuStripRider.Hide();
-            buttonLogout.Hide();
-        }
+        #endregion
     }
 }

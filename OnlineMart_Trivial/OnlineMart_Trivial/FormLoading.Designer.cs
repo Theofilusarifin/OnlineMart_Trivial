@@ -73,6 +73,7 @@ namespace OnlineMart_Trivial
             // FormLoading
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(527, 424);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.panelBackground);

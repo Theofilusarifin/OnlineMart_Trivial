@@ -45,11 +45,11 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.BackColor = System.Drawing.Color.White;
             this.labelRegistrasi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelRegistrasi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelRegistrasi.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelRegistrasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.labelRegistrasi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(65)))), ((int)(((byte)(36)))));
             this.labelRegistrasi.Location = new System.Drawing.Point(230, 761);
             this.labelRegistrasi.Name = "labelRegistrasi";
-            this.labelRegistrasi.Size = new System.Drawing.Size(152, 18);
+            this.labelRegistrasi.Size = new System.Drawing.Size(153, 16);
             this.labelRegistrasi.TabIndex = 12;
             this.labelRegistrasi.Text = "&Silahkan Login Disini";
             // 
@@ -114,7 +114,7 @@ namespace OnlineMart_Trivial
             this.buttonRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegister.FlatAppearance.BorderSize = 0;
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegister.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonRegister.ForeColor = System.Drawing.Color.White;
             this.buttonRegister.Location = new System.Drawing.Point(35, 701);
             this.buttonRegister.Name = "buttonRegister";
@@ -147,6 +147,7 @@ namespace OnlineMart_Trivial
             this.Name = "FormRegisterRider";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrasi Rider";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegisterRider_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

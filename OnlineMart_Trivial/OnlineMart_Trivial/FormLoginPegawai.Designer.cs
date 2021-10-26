@@ -65,7 +65,7 @@ namespace OnlineMart_Trivial
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogin.FlatAppearance.BorderSize = 0;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
             this.buttonLogin.Location = new System.Drawing.Point(34, 448);
             this.buttonLogin.Name = "buttonLogin";
@@ -94,6 +94,7 @@ namespace OnlineMart_Trivial
             this.Name = "FormLoginPegawai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Pegawai";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoginPegawai_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

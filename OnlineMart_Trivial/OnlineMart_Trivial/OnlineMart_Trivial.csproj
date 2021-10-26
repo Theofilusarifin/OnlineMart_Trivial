@@ -90,6 +90,12 @@
     <Compile Include="FormDaftarPromo.Designer.cs">
       <DependentUpon>FormDaftarPromo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAuth.Designer.cs">
+      <DependentUpon>FormAuth.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLoading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarPromo.resx">
       <DependentUpon>FormDaftarPromo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAuth.resx">
+      <DependentUpon>FormAuth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoading.resx">
       <DependentUpon>FormLoading.cs</DependentUpon>
@@ -262,6 +271,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Loading.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Onboarding1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form Utama.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FormAuth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background_Auth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loader.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
