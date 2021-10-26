@@ -147,6 +147,7 @@ namespace OnlineMart_Trivial
             this.Name = "FormRegisterRider";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrasi Rider";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegisterRider_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

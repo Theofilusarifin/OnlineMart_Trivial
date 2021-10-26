@@ -94,6 +94,7 @@ namespace OnlineMart_Trivial
             this.Name = "FormLoginPegawai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Pegawai";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoginPegawai_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

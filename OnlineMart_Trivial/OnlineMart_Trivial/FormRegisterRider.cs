@@ -30,5 +30,11 @@ namespace OnlineMart_Trivial
         {
             buttonRegister.BackgroundImage = Properties.Resources.Button_Leave;
         }
+
+        private void FormRegisterRider_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormAuth frm = (FormAuth)this.Owner;
+            frm.Show();
+        }
     }
 }
