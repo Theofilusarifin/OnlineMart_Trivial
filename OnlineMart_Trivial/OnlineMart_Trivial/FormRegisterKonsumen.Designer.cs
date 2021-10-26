@@ -147,6 +147,7 @@ namespace OnlineMart_Trivial
             this.Name = "FormRegisterKonsumen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrasi Konsumen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegisterKonsumen_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -110,6 +110,7 @@ namespace OnlineMart_Trivial
             this.Name = "FormLoginKonsumen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Konsumen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoginKonsumen_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

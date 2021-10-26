@@ -63,6 +63,16 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Background_Auth {
+            get {
+                object obj = ResourceManager.GetObject("Background_Auth", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Background_Login_Register {
             get {
                 object obj = ResourceManager.GetObject("Background_Login_Register", resourceCulture);
@@ -176,6 +186,26 @@ namespace OnlineMart_Trivial.Properties {
         internal static System.Drawing.Bitmap Loading {
             get {
                 object obj = ResourceManager.GetObject("Loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Loading_Logo {
+            get {
+                object obj = ResourceManager.GetObject("Loading Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Loading1 {
+            get {
+                object obj = ResourceManager.GetObject("Loading1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
