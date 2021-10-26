@@ -35,7 +35,7 @@ namespace OnlineMart_LIB
 
         #region Methods
         //Method untuk menambah data Barang
-        private static void TambahData(Barang b)
+        public static void TambahData(Barang b)
         {
             //string yang menampung sql query insert into
             string sqlInsert = "insert into barangs (id, nama, harga, kategoris_id)" +
@@ -46,17 +46,19 @@ namespace OnlineMart_LIB
         }
 
         //Method untuk membaca data Barang
-        private static List<Barang> BacaData(string kriteria, string nilaiKriteria)
+        public static List<Barang> BacaData(string kriteria, string nilaiKriteria)
         {
             string sqlRead;
-            if (kriteria == "")
+            if (kriteria == "") //kalau kriteria kosong pake ini
             {
-                sqlRead = "select b.id as Id Barang, b.nama as Nama Barang, b.harga as Harga, k.id as Id Kategori" +
+                sqlRead = "select b.id as Id Barang, b.nama as Nama Barang, b.harga as Harga, k.id as Id Kategori," +
+                          "k.nama as Nama Kategori" +
                           " from barangs as b inner join kategoris as k on b.kategoris_id = k.id";
             }
-            else
+            else // kalau kriteria g kosong pake ini
             {
-                sqlRead = "select b.id as Id Barang, b.nama as Nama Barang, b.harga as Harga, k.id as Id Kategori" +
+                sqlRead = "select b.id as Id Barang, b.nama as Nama Barang, b.harga as Harga, k.id as Id Kategori," +
+                          "k.nama as Nama Kategori" +
                           " from barangs as b inner join kategoris as k on b.kategoris_id = k.id" +
                           " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
@@ -64,11 +66,13 @@ namespace OnlineMart_LIB
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sqlRead);
 
             List<Barang> listBarang = new List<Barang>();
+            //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
                 Kategori k = new Kategori();
 
-                Barang b = new Barang();
+                Barang b = new Barang(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(),
+                                      int.Parse(hasil.GetValue(2).ToString()), k);
                 
                 listBarang.Add(b);
             }
@@ -82,6 +86,7 @@ namespace OnlineMart_LIB
             string sqlDelete = "delete from barangs where kodeKategori='" + kode + "'";
 
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sqlDelete);
+            //Dicek apakah ada data yang berubah atau tidak
             if (jumlahDataBerubah == 0)
             {
                 return false;

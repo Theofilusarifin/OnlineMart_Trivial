@@ -49,15 +49,16 @@ namespace OnlineMart_LIB
         public static List<Cabang> BacaData(string kriteria, string nilaiKriteria)
         {
             string sqlRead;
-            if (kriteria == "")
+            if (kriteria == "") //kalau kriteria kosong pake ini
             {
                 sqlRead = "select c.id as IdCabang, c.nama as Nama Cabang, c.alamat, p.id as IdPegawai," +
                           " p.nama as Nama Pegawai, p.email, p.password, p.telepon" +
                           " from cabangs as c inner join pegawais as p on c.pegawais_id = p.id";
             }
-            else
+            else //kalau kriteria g kosong pake ini
             {
-                sqlRead = "select c.id as IdCabang, c.nama as Nama Cabang, c.alamat as Alamat, p.id as IdPegawai" +
+                sqlRead = "select c.id as IdCabang, c.nama as Nama Cabang, c.alamat, p.id as IdPegawai," +
+                          " p.nama as Nama Pegawai, p.email, p.password, p.telepon" +
                           " from cabangs as c inner join pegawais as p on c.pegawais_id = p.id" +
                           " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
@@ -65,6 +66,7 @@ namespace OnlineMart_LIB
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sqlRead);
 
             List<Cabang> listCabang = new List<Cabang>();
+            //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
                 Pegawai p = new Pegawai(int.Parse(hasil.GetValue(3).ToString()), hasil.GetValue(4).ToString(), hasil.GetValue(5).ToString(),
@@ -84,6 +86,7 @@ namespace OnlineMart_LIB
             string sqlDelete = "delete from cabangs where kodeKategori = '" + kode + "'";
 
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sqlDelete);
+            //Dicek apakah ada data yang berubah atu tidak
             if (jumlahDataBerubah == 0)
             {
                 return false;

@@ -38,6 +38,7 @@ namespace OnlineMart_Trivial
                     bcolUbah.UseColumnTextForButtonValue = true;
                     dataGridViewCabang.Columns.Add(bcolUbah);
 
+
                     DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
 
                     bcolHapus.HeaderText = "Aksi";
