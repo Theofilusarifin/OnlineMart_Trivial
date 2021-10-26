@@ -8,18 +8,24 @@ using MySql.Data.MySqlClient;
 
 namespace OnlineMart_LIB
 {
+
 	public class Promo
 	{
 		#region field
-		private string id;
+		private int id;
 		private string tipe;
 		private string nama;
 		private int diskon;
 		private int diskon_max;
 		private double minimal_belanja;
 		#endregion
+
 		#region constructor
-		public Promo(string id, string tipe, string nama, int diskon, int diskon_max, double minimal_belanja)
+		public Promo (int id)
+		{
+			this.Id = id;
+		}
+		public Promo(int id, string tipe, string nama, int diskon, int diskon_max, double minimal_belanja)
 		{
 			this.Id = id;
 			this.Tipe = tipe;
@@ -29,15 +35,41 @@ namespace OnlineMart_LIB
 			this.Minimal_belanja = minimal_belanja;
 		}
 		#endregion
+
 		#region property
-		public string Id { get => id; set => id = value; }
-		public string Tipe { get => tipe; set => tipe = value; }
-		public string Nama { get => nama; set => nama = value; }
-		public int Diskon { get => diskon; set => diskon = value; }
-		public int Diskon_max { get => diskon_max; set => diskon_max = value; }
-		public double Minimal_belanja { get => minimal_belanja; set => minimal_belanja = value; }
+		public int Id 
+		{
+			get => id; 
+			set => id = value;
+		}
+		public string Tipe 
+		{
+			get => tipe; 
+			set => tipe = value;
+		}
+		public string Nama 
+		{
+			get => nama;
+			set => nama = value;
+		}
+		public int Diskon 
+		{
+			get => diskon;
+			set => diskon = value;
+		}
+		public int Diskon_max 
+		{
+			get => diskon_max;
+			set => diskon_max = value;
+		}
+		public double Minimal_belanja 
+		{
+			get => minimal_belanja; 
+			set => minimal_belanja = value;
+		}
 		#endregion
 
+		#region Method
 		public static List<Promo> BacaData(string kriteria, string nilaiKriteria)
 		{
 			string sql = "";
@@ -57,7 +89,7 @@ namespace OnlineMart_LIB
 
 			while (hasil.Read() == true)
 			{
-				Promo p = new Promo(hasil.GetValue(0).ToString(), hasil.GetValue(1).ToString(), hasil.GetValue(2).ToString(), int.Parse(hasil.GetValue(3).ToString()), int.Parse(hasil.GetValue(4).ToString()), int.Parse(hasil.GetValue(5).ToString()));
+				Promo p = new Promo(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(), hasil.GetValue(2).ToString(), int.Parse(hasil.GetValue(3).ToString()), int.Parse(hasil.GetValue(4).ToString()), int.Parse(hasil.GetValue(5).ToString()));
 				//GetValue(0) menandakan kita mengambil data dari kolom pertama tabel promo dimana kolom pertama adalah kolom kode promo. GetValue(1) berarti kita mengambil data dari kolom ke 2 tabel promo dimana kolom kedua adalah kolom nama promo
 				listpromo.Add(p);
 			}
@@ -84,5 +116,6 @@ namespace OnlineMart_LIB
 				return true;
 			}
 		}
+		#endregion
 	}
 }

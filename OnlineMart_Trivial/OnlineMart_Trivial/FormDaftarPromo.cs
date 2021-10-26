@@ -26,6 +26,23 @@ namespace OnlineMart_Trivial
 			if (listPromo.Count > 0)
 			{
 				dataGridViewPromo.DataSource = listPromo; //menampilkan data
+
+				if (!dataGridViewPromo.Columns.Contains("buttonUbah"))
+				{
+					DataGridViewButtonColumn bcol = new DataGridViewButtonColumn();
+					bcol.HeaderText = "Aksi";
+					bcol.Text = "Ubah";
+					bcol.Name = "btnUbahGrid";
+					bcol.UseColumnTextForButtonValue = true;
+					dataGridViewPromo.Columns.Add(bcol);
+
+					DataGridViewButtonColumn bcol2 = new DataGridViewButtonColumn();
+					bcol2.HeaderText = "Aksi";
+					bcol2.Text = "Hapus";
+					bcol2.Name = "btnHapusGrid";
+					bcol2.UseColumnTextForButtonValue = true;
+					dataGridViewPromo.Columns.Add(bcol2);
+				}
 			}
 			else
 			{

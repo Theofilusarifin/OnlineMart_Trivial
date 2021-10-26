@@ -29,33 +29,37 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(131, 98);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(539, 255);
-            this.dataGridView.TabIndex = 19;
-            // 
-            // FormDaftarOrder
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView);
-            this.Name = "FormDaftarOrder";
-            this.Text = "FormDaftarOrder";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.ResumeLayout(false);
+			this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// dataGridViewOrder
+			// 
+			this.dataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridViewOrder.Location = new System.Drawing.Point(175, 121);
+			this.dataGridViewOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dataGridViewOrder.Name = "dataGridViewOrder";
+			this.dataGridViewOrder.RowHeadersWidth = 51;
+			this.dataGridViewOrder.Size = new System.Drawing.Size(719, 314);
+			this.dataGridViewOrder.TabIndex = 19;
+			// 
+			// FormDaftarOrder
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(1067, 554);
+			this.Controls.Add(this.dataGridViewOrder);
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Name = "FormDaftarOrder";
+			this.Text = "FormDaftarOrder";
+			this.Load += new System.EventHandler(this.FormDaftarOrder_Load);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
+			this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dataGridViewOrder;
     }
 }

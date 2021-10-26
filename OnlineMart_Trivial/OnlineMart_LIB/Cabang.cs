@@ -17,6 +17,10 @@ namespace OnlineMart_LIB
         private Pegawai pegawai;
 
         #region Constructors
+        public Cabang (int idCabang)
+		{
+            IdCabang = idCabang;
+        }
         public Cabang(int idCabang, string nama, string alamat, Pegawai pegawai)
         {
             IdCabang = idCabang;
