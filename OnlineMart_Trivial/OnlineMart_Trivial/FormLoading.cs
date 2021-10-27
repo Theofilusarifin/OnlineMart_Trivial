@@ -44,9 +44,6 @@ namespace OnlineMart_Trivial
         {
             FormUtama.frmUtama.panelLeftNavbar.Show();
             FormUtama.frmUtama.panelActiveForm.Show();
-            FormUtama.frmUtama.panelTitleActiveForm.Show();
-            FormUtama.frmUtama.panelHeader.Show();
-            FormUtama.frmUtama.panelFooter.Show();
             FormUtama.frmUtama.panelLeftNavbar.BringToFront();
 
             if (FormUtama.role == "konsumen")

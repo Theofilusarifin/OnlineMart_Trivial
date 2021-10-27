@@ -60,8 +60,6 @@ namespace OnlineMart_Trivial
                     form.Owner = this;
                     form.Show();
                     this.Hide();
-
-                    MessageBox.Show("Login berhasil. Selamat menggunakan OnlineMart.", "Informasi");
                 }
                 else
                 {

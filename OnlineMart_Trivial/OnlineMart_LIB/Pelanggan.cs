@@ -96,8 +96,8 @@ namespace OnlineMart_LIB
 		public static void TambahData(Pelanggan pelanggan)
 		{
 			// Querry Insert
-			string sql = "INSERT into pelanggans (nama, username, email, password, telepon) " +
-				"VALUES ('" + pelanggan.Nama + "', '" + pelanggan.Username + "', '" + pelanggan.Email + "', SHA2('" + pelanggan.password + "', 512), '" + pelanggan.telepon + "')";
+			string sql = "INSERT into pelanggans (nama, username, email, password, telepon, saldo, poin) " +
+				"VALUES ('" + pelanggan.Nama + "', '" + pelanggan.Username + "', '" + pelanggan.Email + "', SHA2('" + pelanggan.Password + "', 512), '" + pelanggan.Telepon + "', " + pelanggan.Saldo + ", " + pelanggan.poin + ")";
 
 			Koneksi.JalankanPerintahDML(sql);
 		}

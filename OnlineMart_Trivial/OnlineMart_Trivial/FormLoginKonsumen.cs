@@ -62,8 +62,6 @@ namespace OnlineMart_Trivial
                     form.Show();
                     this.Hide();
 
-                    MessageBox.Show("Login berhasil. Selamat menggunakan OnlineMart.", "Informasi");
-
                     //this.DialogResult = DialogResult.OK;
                     //this.Close(); //Tutup FormLogin
                 }

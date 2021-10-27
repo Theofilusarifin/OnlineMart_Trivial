@@ -62,13 +62,6 @@ namespace OnlineMart_Trivial
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelActiveForm = new System.Windows.Forms.Panel();
-            this.buttonKeluar = new System.Windows.Forms.Button();
-            this.panelFooter = new System.Windows.Forms.Panel();
-            this.labelwelcome = new System.Windows.Forms.Label();
-            this.labelUsername = new System.Windows.Forms.Label();
-            this.labelEnjoy = new System.Windows.Forms.Label();
-            this.panelTitleActiveForm = new System.Windows.Forms.Panel();
-            this.panelHeader = new System.Windows.Forms.Panel();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPegawai.SuspendLayout();
             this.panelRekapPenjualan.SuspendLayout();
@@ -77,8 +70,6 @@ namespace OnlineMart_Trivial
             this.panelKonsumen.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelFooter.SuspendLayout();
-            this.panelTitleActiveForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerLoading
@@ -535,94 +526,12 @@ namespace OnlineMart_Trivial
             this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
             // 
-            // buttonKeluar
-            // 
-            this.buttonKeluar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonKeluar.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonKeluar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonKeluar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonKeluar.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKeluar.ForeColor = System.Drawing.Color.White;
-            this.buttonKeluar.Location = new System.Drawing.Point(1398, 0);
-            this.buttonKeluar.Name = "buttonKeluar";
-            this.buttonKeluar.Size = new System.Drawing.Size(216, 51);
-            this.buttonKeluar.TabIndex = 4;
-            this.buttonKeluar.Text = "KELUAR";
-            this.buttonKeluar.UseVisualStyleBackColor = false;
-            // 
-            // panelFooter
-            // 
-            this.panelFooter.BackColor = System.Drawing.Color.White;
-            this.panelFooter.Controls.Add(this.buttonKeluar);
-            this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(250, 880);
-            this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(1614, 51);
-            this.panelFooter.TabIndex = 5;
-            this.panelFooter.Visible = false;
-            // 
-            // labelwelcome
-            // 
-            this.labelwelcome.AutoSize = true;
-            this.labelwelcome.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelwelcome.Location = new System.Drawing.Point(20, 12);
-            this.labelwelcome.Name = "labelwelcome";
-            this.labelwelcome.Size = new System.Drawing.Size(152, 22);
-            this.labelwelcome.TabIndex = 0;
-            this.labelwelcome.Text = "Welcome Back, ";
-            // 
-            // labelUsername
-            // 
-            this.labelUsername.AutoSize = true;
-            this.labelUsername.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.Location = new System.Drawing.Point(168, 12);
-            this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(47, 22);
-            this.labelUsername.TabIndex = 1;
-            this.labelUsername.Text = "Test";
-            // 
-            // labelEnjoy
-            // 
-            this.labelEnjoy.AutoSize = true;
-            this.labelEnjoy.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEnjoy.Location = new System.Drawing.Point(20, 44);
-            this.labelEnjoy.Name = "labelEnjoy";
-            this.labelEnjoy.Size = new System.Drawing.Size(161, 22);
-            this.labelEnjoy.TabIndex = 2;
-            this.labelEnjoy.Text = "Have A Nice Day!";
-            // 
-            // panelTitleActiveForm
-            // 
-            this.panelTitleActiveForm.BackColor = System.Drawing.Color.White;
-            this.panelTitleActiveForm.Controls.Add(this.labelEnjoy);
-            this.panelTitleActiveForm.Controls.Add(this.labelUsername);
-            this.panelTitleActiveForm.Controls.Add(this.labelwelcome);
-            this.panelTitleActiveForm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleActiveForm.Location = new System.Drawing.Point(250, 67);
-            this.panelTitleActiveForm.Name = "panelTitleActiveForm";
-            this.panelTitleActiveForm.Size = new System.Drawing.Size(1614, 81);
-            this.panelTitleActiveForm.TabIndex = 2;
-            this.panelTitleActiveForm.Visible = false;
-            // 
-            // panelHeader
-            // 
-            this.panelHeader.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(250, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1614, 67);
-            this.panelHeader.TabIndex = 3;
-            this.panelHeader.Visible = false;
-            // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
             this.ClientSize = new System.Drawing.Size(1864, 931);
-            this.Controls.Add(this.panelFooter);
-            this.Controls.Add(this.panelTitleActiveForm);
-            this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelActiveForm);
             this.Controls.Add(this.panelLeftNavbar);
             this.DoubleBuffered = true;
@@ -640,9 +549,6 @@ namespace OnlineMart_Trivial
             this.panelKonsumen.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelFooter.ResumeLayout(false);
-            this.panelTitleActiveForm.ResumeLayout(false);
-            this.panelTitleActiveForm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -679,13 +585,6 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Panel panelLogo;
         public System.Windows.Forms.Button buttonLogout;
         public System.Windows.Forms.Panel panelActiveForm;
-        private System.Windows.Forms.Button buttonKeluar;
-        public System.Windows.Forms.Panel panelFooter;
-        private System.Windows.Forms.Label labelwelcome;
-        public System.Windows.Forms.Label labelUsername;
-        private System.Windows.Forms.Label labelEnjoy;
-        public System.Windows.Forms.Panel panelTitleActiveForm;
-        public System.Windows.Forms.Panel panelHeader;
     }
 }
 
