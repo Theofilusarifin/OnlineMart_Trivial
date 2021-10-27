@@ -28,7 +28,7 @@ namespace OnlineMart_LIB
         #region Method    
         public static void TambahData(Kategori k)
         {
-            string sqlInsert = "Insert into Kategori (Id, Nama) values ('" + k.Id + "','" + k.Nama + "')";
+            string sqlInsert = "Insert into kategoris (Id, Nama)" +  " values ('" + k.Id + "','" + k.Nama + "')";
 
             Koneksi.JalankanPerintahDML(sqlInsert);
         }
@@ -41,7 +41,7 @@ namespace OnlineMart_LIB
             }
             else
             {
-                sqlRead = "select * from kategoris where " + kriteria + " like '&" + nilaiKriteria + "&'";
+                sqlRead = "select * from kategoris where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sqlRead);
@@ -57,7 +57,7 @@ namespace OnlineMart_LIB
         }
         public static Boolean HapusData(string id)
         {
-            string sqlDelete = "delete from kategoris where '" + id + "'";
+            string sqlDelete = "delete from kategoris where id = '" + id + "'";
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sqlDelete);
 
             if(jumlahDataBerubah == 0)

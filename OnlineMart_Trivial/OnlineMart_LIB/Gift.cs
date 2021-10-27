@@ -32,7 +32,7 @@ namespace OnlineMart_LIB
         #region Methods
         public static void TambahData(Gift g)
         {
-            string sqlInsert = "Insert into gift (id, nama, jumlah_poin)" + " values (" + g.Id + ", '" + g.Nama + "', " + g.JumlahPoin + "')";
+            string sqlInsert = "Insert into gifts (id, nama, jumlah_poin)" + " values ('" + g.Id + "', '" + g.Nama + "', '" + g.JumlahPoin + "')";
 
             //menjalankan perintah SQL
             Koneksi.JalankanPerintahDML(sqlInsert);
@@ -47,7 +47,7 @@ namespace OnlineMart_LIB
             }
             else
             {
-                sqlRead = "select * from gifts where " + kriteria + " like '&" + nilaiKriteria + "&'";
+                sqlRead = "select * from gifts where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
 
             // baru dibaca pakai method Query
