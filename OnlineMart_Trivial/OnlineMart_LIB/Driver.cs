@@ -108,7 +108,7 @@ namespace OnlineMart_LIB
 		
         public static Driver CekLogin(string username, string password)
         {
-			string sql = "SELECT nama, username, email, password, telepon, FROM drivers WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512)";
+			string sql = "SELECT id, nama, username, email, password, telepon FROM drivers WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512)";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             while (hasil.Read())
@@ -119,7 +119,6 @@ namespace OnlineMart_LIB
             }
             return null;
         }
-
         #endregion
     }
 }

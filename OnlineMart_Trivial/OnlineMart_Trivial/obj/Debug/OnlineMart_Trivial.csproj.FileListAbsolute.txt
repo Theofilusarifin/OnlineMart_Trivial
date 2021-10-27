@@ -168,3 +168,4 @@ C:\Users\vitaz 7th element\OneDrive\Documents\GitHub\OnlineMart_Trivial\OnlineMa
 C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormAuth.resources
 D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormAuth.resources
 D:\Kuliah\Semester 3\Database\UAS\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.csproj.CopyComplete
+C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormAuth.resources
