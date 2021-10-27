@@ -62,6 +62,8 @@ namespace OnlineMart_Trivial
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelActiveForm = new System.Windows.Forms.Panel();
+            this.panelTitleActiveForm = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPegawai.SuspendLayout();
             this.panelRekapPenjualan.SuspendLayout();
@@ -519,12 +521,26 @@ namespace OnlineMart_Trivial
             // 
             // panelActiveForm
             // 
-            this.panelActiveForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelActiveForm.Location = new System.Drawing.Point(250, 0);
+            this.panelActiveForm.Location = new System.Drawing.Point(250, 137);
             this.panelActiveForm.Name = "panelActiveForm";
-            this.panelActiveForm.Size = new System.Drawing.Size(1614, 931);
+            this.panelActiveForm.Size = new System.Drawing.Size(1614, 794);
             this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
+            // 
+            // panelTitleActiveForm
+            // 
+            this.panelTitleActiveForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleActiveForm.Location = new System.Drawing.Point(250, 0);
+            this.panelTitleActiveForm.Name = "panelTitleActiveForm";
+            this.panelTitleActiveForm.Size = new System.Drawing.Size(1614, 53);
+            this.panelTitleActiveForm.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(285, 88);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 3;
             // 
             // FormUtama
             // 
@@ -532,6 +548,8 @@ namespace OnlineMart_Trivial
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
             this.ClientSize = new System.Drawing.Size(1864, 931);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelTitleActiveForm);
             this.Controls.Add(this.panelActiveForm);
             this.Controls.Add(this.panelLeftNavbar);
             this.DoubleBuffered = true;
@@ -585,6 +603,8 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Panel panelLogo;
         public System.Windows.Forms.Button buttonLogout;
         public System.Windows.Forms.Panel panelActiveForm;
+        private System.Windows.Forms.Panel panelTitleActiveForm;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
