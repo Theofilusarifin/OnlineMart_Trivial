@@ -93,15 +93,15 @@ namespace OnlineMart_LIB
 		{
 			// Querry Insert
 			string sql = "insert into pelanggans (nama, username, email, password, telepon, saldo, poin) " +
-				"values ('" + p.Nama + "', '" + p.Username + "', '" + p.Email + "', SHA2('" + p.Password + "', 512), '" + p.Telepon + "', " + p.Saldo + ", " + p.poin + ")";
+				"values ('" + p.Nama + "', '" + p.Username + "', '" + p.Email + "', SHA2('" + p.Password + "', 512), '" + p.Telepon + "', " + p.Saldo + ", " + p.Poin + ")";
 
 			Koneksi.JalankanPerintahDML(sql);
 		}
 
 		public static List<Pelanggan> BacaData(string kriteria, string nilaiKriteria)
 		{
-			string sql = "SELECT nama, username, email, password, telepon, saldo, poin,  FROM pelanggans ";
-			if (kriteria != "") sql += "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+			string sql = "select nama, username, email, password, telepon, saldo, poin from pelanggans ";
+			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
@@ -110,9 +110,9 @@ namespace OnlineMart_LIB
 
 			while (hasil.Read())
 			{
-				Pelanggan pelanggan = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
+				Pelanggan p = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
 
-				listPelanggan.Add(pelanggan);
+				listPelanggan.Add(p);
 			}
 
 			return listPelanggan;
@@ -120,7 +120,7 @@ namespace OnlineMart_LIB
 
 		public static Pelanggan CekLogin(string username, string password)
 		{
-			string sql = "SELECT id, nama, username, email, password, telepon, saldo, poin FROM pelanggans WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512)";
+			string sql = "select id, nama, username, email, password, telepon, saldo, poin from pelanggans where username = '" + username + "' and password = SHA2('" + password + "', 512)";
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			while (hasil.Read())

@@ -77,7 +77,7 @@ namespace OnlineMart_LIB
         {
             // Querry Insert
             string sql = "insert into drivers (nama, username, email, password, telepon) " +
-                "values ('" + driver.Nama + "', '" + driver.Username + "', '" + driver.Email + "', SHA2('" + driver.password + "', 512), '" + driver.telepon + "')";
+                "values ('" + driver.Nama + "', '" + driver.Username + "', '" + driver.Email + "', SHA2('" + driver.Password + "', 512), '" + driver.Telepon + "')";
 
 			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
@@ -96,9 +96,9 @@ namespace OnlineMart_LIB
 
             while (hasil.Read())
             {
-				Driver driver = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
+				Driver d = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
 
-                listDriver.Add(driver);
+                listDriver.Add(d);
             }
 
             return listDriver;
@@ -107,16 +107,16 @@ namespace OnlineMart_LIB
 		public static Boolean UbahData(Driver d)
 		{
 			// Querry Insert
-			string sql = "update drivers set nama = '" + d.Nama + "', alamat = '" + d.Alamat + "', pegawai = " + d.Pegawai.Id + " where id = " + d.Id;
+			string sql = "update drivers set nama = '" + d.Nama + "', username = '" + d.Username + "', email = '" + d.Email + "', password = SHA2('" + d.Password + "', 512), telepon = '" + d.Telepon + "' where id = " + d.Id;
 			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
 		//Method untuk menghapus data Cabang
-		public static Boolean HapusData(Cabang c)
+		public static Boolean HapusData(Driver d)
 		{
-			string sql = "delete from drivers where id = " + c.Id;
+			string sql = "delete from drivers where id = " + d.Id;
 
 			int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
 			//Dicek apakah ada data yang berubah atau tidak
@@ -126,7 +126,7 @@ namespace OnlineMart_LIB
 
 		public static Driver CekLogin(string username, string password)
         {
-			string sql = "SELECT id, nama, username, email, password, telepon FROM drivers WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512)";
+			string sql = "select id, nama, username, email, password, telepon from drivers where username = '" + username + "' and password = SHA2('" + password + "', 512)";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             while (hasil.Read())
