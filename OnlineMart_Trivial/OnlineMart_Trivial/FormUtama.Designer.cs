@@ -91,7 +91,7 @@ namespace OnlineMart_Trivial
             this.panelLeftNavbar.ForeColor = System.Drawing.Color.White;
             this.panelLeftNavbar.Location = new System.Drawing.Point(0, 0);
             this.panelLeftNavbar.Name = "panelLeftNavbar";
-            this.panelLeftNavbar.Size = new System.Drawing.Size(250, 931);
+            this.panelLeftNavbar.Size = new System.Drawing.Size(250, 750);
             this.panelLeftNavbar.TabIndex = 0;
             this.panelLeftNavbar.Visible = false;
             // 
@@ -124,7 +124,7 @@ namespace OnlineMart_Trivial
             this.btnRekapOmaSaldo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRekapOmaSaldo.FlatAppearance.BorderSize = 0;
             this.btnRekapOmaSaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRekapOmaSaldo.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRekapOmaSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRekapOmaSaldo.Location = new System.Drawing.Point(0, 45);
             this.btnRekapOmaSaldo.Name = "btnRekapOmaSaldo";
             this.btnRekapOmaSaldo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -140,7 +140,7 @@ namespace OnlineMart_Trivial
             this.btnRekapBarang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRekapBarang.FlatAppearance.BorderSize = 0;
             this.btnRekapBarang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRekapBarang.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRekapBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRekapBarang.Location = new System.Drawing.Point(0, 0);
             this.btnRekapBarang.Name = "btnRekapBarang";
             this.btnRekapBarang.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -156,7 +156,7 @@ namespace OnlineMart_Trivial
             this.buttonRekapPenjualan.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonRekapPenjualan.FlatAppearance.BorderSize = 0;
             this.buttonRekapPenjualan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRekapPenjualan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRekapPenjualan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRekapPenjualan.Location = new System.Drawing.Point(0, 335);
             this.buttonRekapPenjualan.Name = "buttonRekapPenjualan";
             this.buttonRekapPenjualan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -187,7 +187,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanHadiah.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonPengaturanHadiah.FlatAppearance.BorderSize = 0;
             this.buttonPengaturanHadiah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPengaturanHadiah.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPengaturanHadiah.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPengaturanHadiah.Location = new System.Drawing.Point(0, 225);
             this.buttonPengaturanHadiah.Name = "buttonPengaturanHadiah";
             this.buttonPengaturanHadiah.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -203,7 +203,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanPromo.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonPengaturanPromo.FlatAppearance.BorderSize = 0;
             this.buttonPengaturanPromo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPengaturanPromo.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPengaturanPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPengaturanPromo.Location = new System.Drawing.Point(0, 180);
             this.buttonPengaturanPromo.Name = "buttonPengaturanPromo";
             this.buttonPengaturanPromo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -219,7 +219,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanMetode.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonPengaturanMetode.FlatAppearance.BorderSize = 0;
             this.buttonPengaturanMetode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPengaturanMetode.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPengaturanMetode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPengaturanMetode.Location = new System.Drawing.Point(0, 135);
             this.buttonPengaturanMetode.Name = "buttonPengaturanMetode";
             this.buttonPengaturanMetode.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -235,7 +235,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanBarang.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonPengaturanBarang.FlatAppearance.BorderSize = 0;
             this.buttonPengaturanBarang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPengaturanBarang.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPengaturanBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPengaturanBarang.Location = new System.Drawing.Point(0, 90);
             this.buttonPengaturanBarang.Name = "buttonPengaturanBarang";
             this.buttonPengaturanBarang.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -251,7 +251,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanKategori.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonPengaturanKategori.FlatAppearance.BorderSize = 0;
             this.buttonPengaturanKategori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPengaturanKategori.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPengaturanKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPengaturanKategori.ForeColor = System.Drawing.Color.White;
             this.buttonPengaturanKategori.Location = new System.Drawing.Point(0, 45);
             this.buttonPengaturanKategori.Name = "buttonPengaturanKategori";
@@ -268,7 +268,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanCabang.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonPengaturanCabang.FlatAppearance.BorderSize = 0;
             this.buttonPengaturanCabang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPengaturanCabang.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPengaturanCabang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPengaturanCabang.ForeColor = System.Drawing.Color.White;
             this.buttonPengaturanCabang.Location = new System.Drawing.Point(0, 0);
             this.buttonPengaturanCabang.Name = "buttonPengaturanCabang";
@@ -285,7 +285,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturan.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonPengaturan.FlatAppearance.BorderSize = 0;
             this.buttonPengaturan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPengaturan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPengaturan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPengaturan.Location = new System.Drawing.Point(0, 0);
             this.buttonPengaturan.Name = "buttonPengaturan";
             this.buttonPengaturan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -312,7 +312,7 @@ namespace OnlineMart_Trivial
             this.buttonRekapPendapatan.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonRekapPendapatan.FlatAppearance.BorderSize = 0;
             this.buttonRekapPendapatan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRekapPendapatan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRekapPendapatan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRekapPendapatan.Location = new System.Drawing.Point(0, 45);
             this.buttonRekapPendapatan.Name = "buttonRekapPendapatan";
             this.buttonRekapPendapatan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -328,7 +328,7 @@ namespace OnlineMart_Trivial
             this.buttonDaftarPengiriman.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonDaftarPengiriman.FlatAppearance.BorderSize = 0;
             this.buttonDaftarPengiriman.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDaftarPengiriman.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDaftarPengiriman.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDaftarPengiriman.Location = new System.Drawing.Point(0, 0);
             this.buttonDaftarPengiriman.Name = "buttonDaftarPengiriman";
             this.buttonDaftarPengiriman.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -361,7 +361,7 @@ namespace OnlineMart_Trivial
             this.buttonIsiSaldo.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonIsiSaldo.FlatAppearance.BorderSize = 0;
             this.buttonIsiSaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIsiSaldo.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIsiSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIsiSaldo.Location = new System.Drawing.Point(0, 315);
             this.buttonIsiSaldo.Name = "buttonIsiSaldo";
             this.buttonIsiSaldo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -377,7 +377,7 @@ namespace OnlineMart_Trivial
             this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonProfile.FlatAppearance.BorderSize = 0;
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProfile.Location = new System.Drawing.Point(0, 270);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -393,7 +393,7 @@ namespace OnlineMart_Trivial
             this.buttonCetakNota.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonCetakNota.FlatAppearance.BorderSize = 0;
             this.buttonCetakNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCetakNota.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCetakNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCetakNota.Location = new System.Drawing.Point(0, 225);
             this.buttonCetakNota.Name = "buttonCetakNota";
             this.buttonCetakNota.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -409,7 +409,7 @@ namespace OnlineMart_Trivial
             this.buttonCekPesanan.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonCekPesanan.FlatAppearance.BorderSize = 0;
             this.buttonCekPesanan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCekPesanan.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCekPesanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCekPesanan.Location = new System.Drawing.Point(0, 180);
             this.buttonCekPesanan.Name = "buttonCekPesanan";
             this.buttonCekPesanan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -425,7 +425,7 @@ namespace OnlineMart_Trivial
             this.buttonHistoriTransaksi.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonHistoriTransaksi.FlatAppearance.BorderSize = 0;
             this.buttonHistoriTransaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHistoriTransaksi.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHistoriTransaksi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHistoriTransaksi.Location = new System.Drawing.Point(0, 135);
             this.buttonHistoriTransaksi.Name = "buttonHistoriTransaksi";
             this.buttonHistoriTransaksi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -441,7 +441,7 @@ namespace OnlineMart_Trivial
             this.buttonCheckout.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonCheckout.FlatAppearance.BorderSize = 0;
             this.buttonCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCheckout.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCheckout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCheckout.Location = new System.Drawing.Point(0, 90);
             this.buttonCheckout.Name = "buttonCheckout";
             this.buttonCheckout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -457,7 +457,7 @@ namespace OnlineMart_Trivial
             this.buttonKeranjang.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonKeranjang.FlatAppearance.BorderSize = 0;
             this.buttonKeranjang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKeranjang.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonKeranjang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKeranjang.Location = new System.Drawing.Point(0, 45);
             this.buttonKeranjang.Name = "buttonKeranjang";
             this.buttonKeranjang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -472,7 +472,7 @@ namespace OnlineMart_Trivial
             this.buttonBarangDeals.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonBarangDeals.FlatAppearance.BorderSize = 0;
             this.buttonBarangDeals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBarangDeals.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBarangDeals.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBarangDeals.Location = new System.Drawing.Point(0, 0);
             this.buttonBarangDeals.Name = "buttonBarangDeals";
             this.buttonBarangDeals.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -487,7 +487,7 @@ namespace OnlineMart_Trivial
             this.buttonLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonLogout.FlatAppearance.BorderSize = 0;
             this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogout.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogout.Location = new System.Drawing.Point(0, 1252);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -522,7 +522,7 @@ namespace OnlineMart_Trivial
             this.panelActiveForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelActiveForm.Location = new System.Drawing.Point(250, 0);
             this.panelActiveForm.Name = "panelActiveForm";
-            this.panelActiveForm.Size = new System.Drawing.Size(1614, 931);
+            this.panelActiveForm.Size = new System.Drawing.Size(1120, 750);
             this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
             // 
@@ -531,12 +531,12 @@ namespace OnlineMart_Trivial
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
-            this.ClientSize = new System.Drawing.Size(1864, 931);
+            this.ClientSize = new System.Drawing.Size(1370, 750);
             this.Controls.Add(this.panelActiveForm);
             this.Controls.Add(this.panelLeftNavbar);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1880, 970);
+            this.MinimumSize = new System.Drawing.Size(1302, 766);
             this.Name = "FormUtama";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Online Mart";
