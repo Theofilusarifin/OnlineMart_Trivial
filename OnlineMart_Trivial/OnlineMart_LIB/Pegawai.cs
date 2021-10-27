@@ -27,6 +27,14 @@ namespace OnlineMart_LIB
             Password = password;
             Telepon = telepon;
         }
+        public Pegawai(string nama, string username, string email, string password, string telepon)
+        {
+            Nama = nama;
+            Username = username;
+            Email = email;
+            Password = password;
+            Telepon = telepon;
+        }
         #endregion
 
         #region Properties
@@ -67,7 +75,7 @@ namespace OnlineMart_LIB
         {
             // Querry Insert
             string sql = "INSERT into pegawais (nama, username, email, password, telepon) " +
-                "VALUES ('" + pegawai.Nama + "', '" + pegawai.Username + "', '" + pegawai.Email + "', SHA2('" + pegawai.password + "', 512), '" + pegawai.telepon + "')";
+                "VALUES ('" + pegawai.Nama + "', '" + pegawai.Username + "', '" + pegawai.Email + "', SHA2('" + pegawai.Password + "', 512), '" + pegawai.Telepon + "')";
 
             Koneksi.JalankanPerintahDML(sql);
         }
@@ -94,7 +102,7 @@ namespace OnlineMart_LIB
 
         public static Pegawai CekLogin(string username, string password)
         {
-            string sql = "SELECT nama, username, email, password, telepon, FROM pegawais WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512)";
+            string sql = "SELECT id, nama, username, email, password, telepon FROM pegawais WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512)";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             while (hasil.Read())
