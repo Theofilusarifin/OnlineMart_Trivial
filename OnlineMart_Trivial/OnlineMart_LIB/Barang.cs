@@ -38,7 +38,7 @@ namespace OnlineMart_LIB
         public static void TambahData(Barang b)
         {
             //string yang menampung sql query insert into
-            string sqlInsert = "insert into barangs (id, nama, harga, kategoris_id)" +
+            string sqlInsert = "insert into barangs (id, nama, harga, kategori_id)" +
                                " values ('" + b.IdBarang + "', '" + b.Nama + "', '" + b.Harga + "', '" + b.Kategori.Id + "')";
 
             //menjalankan perintah sql
@@ -53,13 +53,13 @@ namespace OnlineMart_LIB
             {
                 sqlRead = "select b.id as 'Id Barang', b.nama as 'Nama Barang', b.harga as 'Harga', k.id as 'Id Kategori'," +
                           " k.nama as 'Nama Kategori'" +
-                          " from barangs as b inner join kategoris as k on b.kategoris_id = k.id";
+                          " from barangs as b inner join kategoris as k on b.kategori_id = k.id";
             }
             else // kalau kriteria g kosong pake ini
             {
                 sqlRead = "select b.id as 'Id Barang', b.nama as 'Nama Barang', b.harga as 'Harga', k.id as 'Id Kategori'," +
                           " k.nama as 'Nama Kategori'" +
-                          " from barangs as b inner join kategoris as k on b.kategoris_id = k.id" +
+                          " from barangs as b inner join kategoris as k on b.kategori_id = k.id" +
                           " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
 

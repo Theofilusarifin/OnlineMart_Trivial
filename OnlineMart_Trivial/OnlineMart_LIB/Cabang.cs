@@ -42,7 +42,7 @@ namespace OnlineMart_LIB
         public static void TambahData(Cabang c)
         {
             //string yang menampung sql query insert into
-            string sqlInsert = "insert into cabangs (id, nama, alamat, pegawais_id)" +
+            string sqlInsert = "insert into cabangs (id, nama, alamat, pegawai_id)" +
                                " values (" + c.IdCabang + ", '" + c.Nama + "', '" + c.Alamat + "', '" + c.Pegawai.IdPegawai + "')";
 
             //menjalankan perintah sql
@@ -55,15 +55,17 @@ namespace OnlineMart_LIB
             string sqlRead;
             if (kriteria == "") //kalau kriteria kosong pake ini
             {
-                sqlRead = "select c.id as 'Id Cabang', c.nama as 'Nama Cabang', c.alamat as 'Alamat', p.id as 'IdPegawai'," +
-                          " p.nama as 'Nama Pegawai', p.email as 'E-mail', p.password as 'Password', p.telepon as 'No Telp'" +
-                          " from cabangs as c inner join pegawais as p on c.pegawais_id = p.id";
+                sqlRead = "select c.id as 'Id Cabang', c.nama as 'Nama Cabang', c.alamat as 'Alamat', p.id as 'Id Pegawai'," +
+                          " p.nama as 'Nama Pegawai', p.username as 'Username', p.email as 'E-mail', p.password as 'Password'," +
+                          " p.telepon as 'No Telp'" +
+                          " from cabangs as c inner join pegawais as p on c.pegawai_id = p.id";
             }
             else //kalau kriteria g kosong pake ini
             {
-                sqlRead = "select c.id as 'Id Cabang', c.nama as 'Nama Cabang', c.alamat as 'Alamat', p.id as 'IdPegawai'," +
-                          " p.nama as 'Nama Pegawai', p.email as 'E-mail', p.password as 'Password', p.telepon as 'No Telp'" +
-                          " from cabangs as c inner join pegawais as p on c.pegawais_id = p.id" +
+                sqlRead = "select c.id as 'Id Cabang', c.nama as 'Nama Cabang', c.alamat as 'Alamat', p.id as 'Id Pegawai'," +
+                          " p.nama as 'Nama Pegawai', p.username as 'Username', p.email as 'E-mail', p.password as 'Password'," +
+                          " p.telepon as 'No Telp'" +
+                          " from cabangs as c inner join pegawais as p on c.pegawai_id = p.id" +
                           " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
 
@@ -73,8 +75,9 @@ namespace OnlineMart_LIB
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
-                Pegawai p = new Pegawai(hasil.GetInt32(4), hasil.GetString(5), hasil.GetString(6), hasil.GetString(7), hasil.GetString(8),
-                                        hasil.GetString(9));
+
+                Pegawai p = new Pegawai(hasil.GetInt32(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6), hasil.GetString(7),
+                                        hasil.GetString(8));
 
                 Cabang c = new Cabang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), p);
                 
