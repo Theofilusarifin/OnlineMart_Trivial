@@ -31,7 +31,7 @@ namespace OnlineMart_Trivial
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLoginPegawai));
             this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -46,15 +46,15 @@ namespace OnlineMart_Trivial
             this.textBoxPassword.Size = new System.Drawing.Size(338, 16);
             this.textBoxPassword.TabIndex = 8;
             // 
-            // textBoxEmail
+            // textBoxUsername
             // 
-            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxEmail.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
-            this.textBoxEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxEmail.Location = new System.Drawing.Point(48, 302);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(339, 16);
-            this.textBoxEmail.TabIndex = 6;
+            this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUsername.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxUsername.ForeColor = System.Drawing.Color.DimGray;
+            this.textBoxUsername.Location = new System.Drawing.Point(48, 302);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(339, 16);
+            this.textBoxUsername.TabIndex = 6;
             // 
             // buttonLogin
             // 
@@ -65,7 +65,7 @@ namespace OnlineMart_Trivial
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogin.FlatAppearance.BorderSize = 0;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
             this.buttonLogin.Location = new System.Drawing.Point(34, 448);
             this.buttonLogin.Name = "buttonLogin";
@@ -81,11 +81,11 @@ namespace OnlineMart_Trivial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Login_Pegawai;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(434, 541);
             this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.buttonLogin);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -103,7 +103,7 @@ namespace OnlineMart_Trivial
         #endregion
 
         private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Button buttonLogin;
     }
 }

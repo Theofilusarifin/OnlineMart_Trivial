@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using OnlineMart_LIB;
+
 namespace OnlineMart_Trivial
 {
     public partial class FormRegisterRider : Form
@@ -18,7 +20,22 @@ namespace OnlineMart_Trivial
         }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                if (textBoxPassword.Text == textBoxKonfirmasiPassword.Text)
+                {
+                    //Ciptakan objek yang akan ditambahkan
+                    Driver driver = new Driver(textBoxNama.Text, textBoxUsername.Text, textBoxEmail.Text, textBoxPassword.Text, textBoxNomorTelepon.Text);
+                    Driver.TambahData(driver);
+                    MessageBox.Show("Registrasi Telah Berhasil! Harap lakukan login dengan akun anda.", "Info");
+                    this.Close();
+                }
+                else MessageBox.Show("Password Tidak Sama", "Kesalahan");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Penyimpanan gagal. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
 
         private void buttonRegister_MouseEnter(object sender, EventArgs e)

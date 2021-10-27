@@ -183,6 +183,26 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Form_Regis_Rider {
+            get {
+                object obj = ResourceManager.GetObject("Form Regis Rider", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Form_Regis_Rider1 {
+            get {
+                object obj = ResourceManager.GetObject("Form Regis Rider1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Loading {
             get {
                 object obj = ResourceManager.GetObject("Loading", resourceCulture);
@@ -206,6 +226,36 @@ namespace OnlineMart_Trivial.Properties {
         internal static System.Drawing.Bitmap Loading1 {
             get {
                 object obj = ResourceManager.GetObject("Loading1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Login_Konsumen {
+            get {
+                object obj = ResourceManager.GetObject("Login Konsumen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Login_Pegawai {
+            get {
+                object obj = ResourceManager.GetObject("Login Pegawai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Login_rider {
+            get {
+                object obj = ResourceManager.GetObject("Login rider", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using OnlineMart_LIB;
+
 namespace OnlineMart_Trivial
 {
     public partial class FormLoginKonsumen : Form
@@ -42,12 +44,39 @@ namespace OnlineMart_Trivial
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            FormUtama.role = "konsumen";
+            try
+            {
+                //Create Objek Koneksi
+                Koneksi koneksi = new Koneksi();
+                // Username dan Password
+                Pelanggan pelanggan = Pelanggan.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
 
-            FormLoading form = new FormLoading(); //Create Object
-            form.Owner = this;
-            form.Show();
-            this.Hide();
+                if (!(pelanggan is null)) //Jika ditemukan pegawai dengan username dan password yang cocok
+                {
+                    FormUtama.role = "konsumen";
+                    // Tampilkan kode, nama, dan jabatan pegwai yang sedang login ke label yang ada di FormUtama
+                    FormUtama.konsumen = pelanggan;
+
+                    FormLoading form = new FormLoading(); //Create Object
+                    form.Owner = this;
+                    form.Show();
+                    this.Hide();
+
+                    MessageBox.Show("Login berhasil. Selamat menggunakan OnlineMart.", "Informasi");
+
+                    //this.DialogResult = DialogResult.OK;
+                    //this.Close(); //Tutup FormLogin
+                }
+                else
+                {
+                    MessageBox.Show(this, "Username tidak ditemukan atau password salah");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Koneksi gagal. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
 
         private void FormLoginKonsumen_FormClosing(object sender, FormClosingEventArgs e)

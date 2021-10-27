@@ -31,7 +31,7 @@ namespace OnlineMart_Trivial
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLoginKonsumen));
             this.buttonLogin = new System.Windows.Forms.Button();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.labelRegistrasi = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -45,9 +45,9 @@ namespace OnlineMart_Trivial
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogin.FlatAppearance.BorderSize = 0;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(35, 467);
+            this.buttonLogin.Location = new System.Drawing.Point(35, 466);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(366, 41);
             this.buttonLogin.TabIndex = 1;
@@ -57,15 +57,15 @@ namespace OnlineMart_Trivial
             this.buttonLogin.MouseEnter += new System.EventHandler(this.buttonLogin_MouseEnter);
             this.buttonLogin.MouseLeave += new System.EventHandler(this.buttonLogin_MouseLeave);
             // 
-            // textBoxEmail
+            // textBoxUsername
             // 
-            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxEmail.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
-            this.textBoxEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxEmail.Location = new System.Drawing.Point(49, 321);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(339, 16);
-            this.textBoxEmail.TabIndex = 2;
+            this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUsername.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxUsername.ForeColor = System.Drawing.Color.DimGray;
+            this.textBoxUsername.Location = new System.Drawing.Point(49, 321);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(339, 16);
+            this.textBoxUsername.TabIndex = 2;
             // 
             // labelRegistrasi
             // 
@@ -73,11 +73,11 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.BackColor = System.Drawing.Color.White;
             this.labelRegistrasi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelRegistrasi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelRegistrasi.Font = new System.Drawing.Font("Montserrat Medium", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelRegistrasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.labelRegistrasi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(65)))), ((int)(((byte)(36)))));
-            this.labelRegistrasi.Location = new System.Drawing.Point(231, 527);
+            this.labelRegistrasi.Location = new System.Drawing.Point(234, 528);
             this.labelRegistrasi.Name = "labelRegistrasi";
-            this.labelRegistrasi.Size = new System.Drawing.Size(139, 18);
+            this.labelRegistrasi.Size = new System.Drawing.Size(141, 16);
             this.labelRegistrasi.TabIndex = 3;
             this.labelRegistrasi.Text = "&Lakukan Registrasi";
             // 
@@ -86,7 +86,7 @@ namespace OnlineMart_Trivial
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
             this.textBoxPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxPassword.Location = new System.Drawing.Point(49, 403);
+            this.textBoxPassword.Location = new System.Drawing.Point(49, 402);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⚉';
             this.textBoxPassword.Size = new System.Drawing.Size(338, 16);
@@ -96,12 +96,12 @@ namespace OnlineMart_Trivial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Login_Konsumen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(434, 599);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelRegistrasi);
-            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.buttonLogin);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -119,7 +119,7 @@ namespace OnlineMart_Trivial
         #endregion
 
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Label labelRegistrasi;
         private System.Windows.Forms.TextBox textBoxPassword;
     }

@@ -24,6 +24,14 @@ namespace OnlineMart_LIB
 		{
 			this.Id = id1;
 		}
+		public Driver(string nama, string username, string email, string password, string telepon)
+		{
+			this.Nama = nama;
+			this.Username = username;
+			this.Email = email;
+			this.Password = password;
+			this.Telepon = telepon;
+		}
 		public Driver(int id, string nama, string username, string email, string password, string telepon)
 		{
 			this.Id = id;
@@ -97,10 +105,10 @@ namespace OnlineMart_LIB
 
             return listDriver;
         }
-
+		
         public static Driver CekLogin(string username, string password)
         {
-			string sql = "SELECT nama, username, email, password, telepon, FROM drivers WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512";
+			string sql = "SELECT nama, username, email, password, telepon, FROM drivers WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512)";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             while (hasil.Read())

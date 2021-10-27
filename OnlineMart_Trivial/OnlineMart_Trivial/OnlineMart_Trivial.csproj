@@ -285,5 +285,20 @@
   <ItemGroup>
     <None Include="Resources\White Logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form Regis Rider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form Regis Rider1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login rider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Pegawai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Konsumen.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

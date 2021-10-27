@@ -17,6 +17,10 @@ namespace OnlineMart_Trivial
     {
         public static FormUtama frmUtama = null;
         public static string role;
+        public static Pegawai pegawai;
+        public static Driver rider;
+        public static Pelanggan konsumen;
+
 
         public FormUtama()
         {
