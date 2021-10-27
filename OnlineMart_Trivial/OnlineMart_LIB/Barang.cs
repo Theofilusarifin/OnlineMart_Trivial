@@ -76,12 +76,14 @@ namespace OnlineMart_LIB
             string sqlRead;
             if (kriteria == "") //kalau kriteria kosong pake ini
             {
-                sqlRead = "select b.id, b.nama, b.harga, k.id, k.nama" +
+                sqlRead = "select b.id as 'Id Barang', b.nama as 'Nama Barang', b.harga as 'Harga', k.id as 'Id Kategori'," +
+                          " k.nama as 'Nama Kategori'" +
                           " from barangs as b inner join kategoris as k on b.kategori_id = k.id";
             }
             else // kalau kriteria g kosong pake ini
             {
-                sqlRead = "select b.id, b.nama, b.harga, k.id, k.nama" +
+                sqlRead = "select b.id as 'Id Barang', b.nama as 'Nama Barang', b.harga as 'Harga', k.id as 'Id Kategori'," +
+                          " k.nama as 'Nama Kategori'" +
                           " from barangs as b inner join kategoris as k on b.kategori_id = k.id" +
                           " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 =======

@@ -16,7 +16,7 @@ namespace OnlineMart_Trivial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDaftarBarang());
+            Application.Run(new FormUtama());
         }
     }
 }
