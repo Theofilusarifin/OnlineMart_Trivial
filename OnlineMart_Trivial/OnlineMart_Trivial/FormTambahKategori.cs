@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnlineMart_LIB;
 
 namespace OnlineMart_Trivial
 {
@@ -15,6 +16,11 @@ namespace OnlineMart_Trivial
         public FormTambahKategori()
         {
             InitializeComponent();
+        }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

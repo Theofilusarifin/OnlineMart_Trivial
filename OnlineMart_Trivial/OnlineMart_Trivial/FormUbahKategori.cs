@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using OnlineMart_LIB;
+
 namespace OnlineMart_Trivial
 {
     public partial class FormUbahKategori : Form
@@ -15,6 +17,11 @@ namespace OnlineMart_Trivial
         public FormUbahKategori()
         {
             InitializeComponent();
+        }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
