@@ -133,6 +133,42 @@
     <Compile Include="FormRegisterRider.Designer.cs">
       <DependentUpon>FormRegisterRider.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTambahBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahBarang.Designer.cs">
+      <DependentUpon>FormTambahBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahCabang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahCabang.Designer.cs">
+      <DependentUpon>FormTambahCabang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahKategori.Designer.cs">
+      <DependentUpon>FormTambahKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUbahBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahBarang.Designer.cs">
+      <DependentUpon>FormUbahBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUbahCabang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahCabang.Designer.cs">
+      <DependentUpon>FormUbahCabang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUbahKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahKategori.Designer.cs">
+      <DependentUpon>FormUbahKategori.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUtama.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +215,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegisterRider.resx">
       <DependentUpon>FormRegisterRider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahBarang.resx">
+      <DependentUpon>FormTambahBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahCabang.resx">
+      <DependentUpon>FormTambahCabang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahKategori.resx">
+      <DependentUpon>FormTambahKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahBarang.resx">
+      <DependentUpon>FormUbahBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahCabang.resx">
+      <DependentUpon>FormUbahCabang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahKategori.resx">
+      <DependentUpon>FormUbahKategori.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.cs</DependentUpon>
@@ -302,6 +356,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\White Logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tambah Kategori.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tambah barang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tambah Cabang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ubah Kategori.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ubah Cabang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ubah barang.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
