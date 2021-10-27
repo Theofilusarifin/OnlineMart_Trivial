@@ -11,7 +11,7 @@ namespace OnlineMart_LIB
 {
     public class Barang
     {
-        /*private int idBarang;
+        private int idBarang;
         private string nama;
         private int harga;
         private Kategori kategori;
@@ -39,7 +39,7 @@ namespace OnlineMart_LIB
         {
             //string yang menampung sql query insert into
             string sqlInsert = "insert into barangs (id, nama, harga, kategoris_id)" +
-                               " values (" + b.IdBarang + ", '" + b.Nama + "', " + b.Harga + ", '" + b.Kategori. + "')";
+                               " values (" + b.IdBarang + ", '" + b.Nama + "', " + b.Harga + ", '" + b.Kategori.Id + "')";
 
             //menjalankan perintah sql
             Koneksi.JalankanPerintahDML(sqlInsert);
@@ -69,10 +69,9 @@ namespace OnlineMart_LIB
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
-                Kategori k = new Kategori();
+                Kategori k = new Kategori(hasil.GetInt32(3), hasil.GetString(4));
 
-                Barang b = new Barang(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(),
-                                      int.Parse(hasil.GetValue(2).ToString()), k);
+                Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
                 
                 listBarang.Add(b);
             }
@@ -83,7 +82,7 @@ namespace OnlineMart_LIB
         //Method untuk menghapus data Barang
         public static Boolean HapusData(string kode)
         {
-            string sqlDelete = "delete from barangs where kodeKategori='" + kode + "'";
+            string sqlDelete = "delete from barangs where kodeKategori = '" + kode + "'";
 
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sqlDelete);
             //Dicek apakah ada data yang berubah atau tidak
@@ -96,6 +95,6 @@ namespace OnlineMart_LIB
                 return true;
             }
         }
-        #endregion*/
+        #endregion
     }
 }

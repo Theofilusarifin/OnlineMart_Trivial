@@ -22,7 +22,7 @@ namespace OnlineMart_Trivial
 
         private void FormDaftarBarang_Load(object sender, EventArgs e)
         {
-            /*listBarang = Barang.BacaData("", "");
+            listBarang = Barang.BacaData("", "");
 
             if(listBarang.Count > 0)
             {
@@ -51,7 +51,7 @@ namespace OnlineMart_Trivial
             else
             {
                 dataGridViewBarang.DataSource = null;
-            }*/
+            }
         }
     }
 }

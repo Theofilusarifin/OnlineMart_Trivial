@@ -73,12 +73,12 @@ namespace OnlineMart_LIB
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
-                //Pegawai p = new Pegawai(int.Parse(hasil.GetValue(3).ToString()), hasil.GetValue(4).ToString(), hasil.GetValue(5).ToString(),
-                //                        hasil.GetValue(6).ToString(), hasil.GetValue(7).ToString());
+                Pegawai p = new Pegawai(hasil.GetInt32(4), hasil.GetString(5), hasil.GetString(6), hasil.GetString(7), hasil.GetString(8),
+                                        hasil.GetString(9));
 
-                //Cabang c = new Cabang(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(), hasil.GetValue(2).ToString(), p);
+                Cabang c = new Cabang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), p);
                 
-                //listCabang.Add(c);
+                listCabang.Add(c);
             }
 
             return listCabang;
@@ -90,7 +90,7 @@ namespace OnlineMart_LIB
             string sqlDelete = "delete from cabangs where kodeKategori = '" + kode + "'";
 
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sqlDelete);
-            //Dicek apakah ada data yang berubah atu tidak
+            //Dicek apakah ada data yang berubah atau tidak
             if (jumlahDataBerubah == 0)
             {
                 return false;
