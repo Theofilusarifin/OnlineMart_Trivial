@@ -60,7 +60,7 @@ namespace OnlineMart_LIB
         public static Boolean TambahData(Barang b)
         {
             //string yang menampung sql query insert into
-            string sql = "insert into barangs (id, nama, harga, kategori_id) values ('" + b.Id + "', '" + b.Nama + "', '" + b.Harga + "', '" + b.Kategori.Id + "')";
+            string sql = "insert into barangs (nama, harga, kategori_id) values ('" + b.Nama + "', " + b.Harga + ", " + b.Kategori.Id + ")";
 
             //menjalankan perintah sql
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
@@ -72,26 +72,10 @@ namespace OnlineMart_LIB
         //Method untuk membaca data Barang
         public static List<Barang> BacaData(string kriteria, string nilaiKriteria)
         {
-<<<<<<< Updated upstream
-            string sqlRead;
-            if (kriteria == "") //kalau kriteria kosong pake ini
-            {
-                sqlRead = "select b.id as 'Id Barang', b.nama as 'Nama Barang', b.harga as 'Harga', k.id as 'Id Kategori'," +
-                          " k.nama as 'Nama Kategori'" +
-                          " from barangs as b inner join kategoris as k on b.kategori_id = k.id";
-            }
-            else // kalau kriteria g kosong pake ini
-            {
-                sqlRead = "select b.id as 'Id Barang', b.nama as 'Nama Barang', b.harga as 'Harga', k.id as 'Id Kategori'," +
-                          " k.nama as 'Nama Kategori'" +
-                          " from barangs as b inner join kategoris as k on b.kategori_id = k.id" +
-                          " where " + kriteria + " like '%" + nilaiKriteria + "%'";
-=======
             string sql = "select B.id, B.nama, B.harga, K.id, K.nama from barangs as B inner join kategoris as K on B.kategori_id = K.id ";
             if (kriteria != "") //apabila kriteria tidak kosong
             {
                 sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
->>>>>>> Stashed changes
             }
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -112,7 +96,7 @@ namespace OnlineMart_LIB
         public static Boolean UbahData(Barang b)
         {
             // Querry Insert
-            string sql = "update barangs set nama = '" + b.Nama + "', harga = " + b.Harga + ", kategori_id = " + b.Kategori.Id + " WHERE id = " + b.Id;
+            string sql = "update barangs set nama = '" + b.Nama + "', harga = " + b.Harga + ", kategori_id = " + b.Kategori.Id + " where id = " + b.Id;
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
@@ -121,7 +105,7 @@ namespace OnlineMart_LIB
         //Method untuk menghapus data Barang
         public static Boolean HapusData(Barang barang)
         {
-            string sql = "delete from barangs where id = '" + barang.Id + "'";
+            string sql = "delete from barangs where id = " + barang.Id;
 
             int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
             //Dicek apakah ada data yang berubah atau tidak

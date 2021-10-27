@@ -89,13 +89,15 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region METHODS
-		public static void TambahData(Pelanggan p)
+		public static Boolean TambahData(Pelanggan p)
 		{
 			// Querry Insert
 			string sql = "insert into pelanggans (nama, username, email, password, telepon, saldo, poin) " +
 				"values ('" + p.Nama + "', '" + p.Username + "', '" + p.Email + "', SHA2('" + p.Password + "', 512), '" + p.Telepon + "', " + p.Saldo + ", " + p.Poin + ")";
 
-			Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
 		}
 
 		public static List<Pelanggan> BacaData(string kriteria, string nilaiKriteria)
@@ -116,6 +118,24 @@ namespace OnlineMart_LIB
 			}
 
 			return listPelanggan;
+		}
+
+		public static Boolean UbahData(Pelanggan p)
+		{
+			// Querry Insert
+			string sql = "update pelanggans set nama = '" + p.Nama + "', username = '" + p.Username + "', email = '" + p.Email + "', password = SHA2('" + p.Password + "', 512), telepon = '" + p.Telepon + "' where id = " + p.Id;
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
+		}
+
+		public static Boolean HapusData(Pelanggan p)
+		{
+			string sql = "delete from pelanggans where id = " + p.Id;
+			int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
+			//Dicek apakah ada data yang berubah atau tidak
+			if (jumlahDataDihapus == 0) return false;
+			else return true;
 		}
 
 		public static Pelanggan CekLogin(string username, string password)

@@ -21,13 +21,17 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region constructor
-		public Promo (int id)
-		{
-			this.Id = id;
-		}
 		public Promo(int id, string tipe, string nama, int diskon, int diskon_max, double minimal_belanja)
 		{
 			this.Id = id;
+			this.Tipe = tipe;
+			this.Nama = nama;
+			this.Diskon = diskon;
+			this.Diskon_max = diskon_max;
+			this.Minimal_belanja = minimal_belanja;
+		}
+		public Promo(string tipe, string nama, int diskon, int diskon_max, double minimal_belanja)
+		{
 			this.Tipe = tipe;
 			this.Nama = nama;
 			this.Diskon = diskon;

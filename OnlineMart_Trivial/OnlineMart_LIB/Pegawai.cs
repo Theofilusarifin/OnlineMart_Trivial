@@ -74,7 +74,7 @@ namespace OnlineMart_LIB
         public static Boolean TambahData(Pegawai p)
         {
             // Querry Insert
-            string sql = "indert into pegawais (nama, username, email, password, telepon) " +
+            string sql = "insert into pegawais (nama, username, email, password, telepon) " +
                 " values ('" + p.Nama + "', '" + p.Username + "', '" + p.Email + "', SHA2('" + p.Password + "', 512), '" + p.Telepon + "')";
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
@@ -84,7 +84,7 @@ namespace OnlineMart_LIB
 
         public static List<Pegawai> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select nama, username, email, password, telepon, from pegawais ";
+            string sql = "select nama, username, email, password, telepon from pegawais ";
             if (kriteria != "") sql += "where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -105,15 +105,15 @@ namespace OnlineMart_LIB
         public static Boolean UbahData(Pegawai p)
         {
             // Querry Insert
-            string sql = "update kategoris set nama = '" + p.Nama + "' where id = " + p.Id;
+            string sql = "update pegawais set nama = '" + p.Nama + "', username = '" + p.Username + "', email = '" + p.Email + "', password = SHA2('" + p.Password + "', 512), telepon = '" + p.Telepon + "' where id = " + p.Id;
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-        public static Boolean HapusData(Kategori k)
+        public static Boolean HapusData(Pegawai p)
         {
-            string sql = "delete from kategoris where id = " + k.Id;
+            string sql = "delete from pegawais where id = " + p.Id;
             int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
             //Dicek apakah ada data yang berubah atau tidak
             if (jumlahDataDihapus == 0) return false;

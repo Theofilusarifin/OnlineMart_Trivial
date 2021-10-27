@@ -40,7 +40,7 @@ namespace OnlineMart_LIB
         #region Method    
         public static Boolean TambahData(Kategori k)
         {
-            string sql = "insert into kategoris (Id, Nama) values ('" + k.Id + "','" + k.Nama + "')";
+            string sql = "insert into kategoris (nama) values ('" + k.Nama + "')";
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
@@ -66,8 +66,7 @@ namespace OnlineMart_LIB
         public static Boolean UbahData(Kategori k)
         {
             // Querry Insert
-            string sql = "update drivers set nama = '" + k.Nama + "', username = '" + k.Username + "', email = '" + k.Email + "', password = SHA2('" + k.password + "', 512), telepon = '" + k.Telepon + "'" +
-                " where id = " + k.Id;
+            string sql = "update kategoris set nama = '" + k.Nama + "' where id = " + k.Id;
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
