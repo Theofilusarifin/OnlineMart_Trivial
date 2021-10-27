@@ -49,6 +49,18 @@ namespace OnlineMart_LIB
             Koneksi.JalankanPerintahDML(sqlInsert);
         }
 
+        public static Boolean UbahData(Cabang c)
+        {
+            // Querry Insert
+            string sql = "UPDATE cabangs SET Nama = '" + c.Nama + "', TglLahir = '" + c.TglLahir.ToString("yyyy-MM-dd") + "', " +
+                         "Alamat = '" + c.Alamat + "', Gaji = " + c.Gaji + ", Username = '" + c.Username + "', Password = SHA2('" +
+                         c.Password + "', 512), IdJabatan = '" + c.Jabatan + "' " +
+                         " WHERE KodePegawai = " + c.KodePegawai;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
+
         //Method untuk membaca data Cabang
         public static List<Cabang> BacaData(string kriteria, string nilaiKriteria)
         {
