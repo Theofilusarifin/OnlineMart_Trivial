@@ -13,45 +13,68 @@ namespace OnlineMart_Trivial
 {
     public partial class FormDaftarBarang : Form
     {
+        public List<Barang> listBarang = new List<Barang>();
+        
         public FormDaftarBarang()
         {
             InitializeComponent();
         }
 
-        public List<Barang> listBarang = new List<Barang>();
-
-        private void FormDaftarBarang_Load(object sender, EventArgs e)
+        private void FormatDataGrid()
         {
-            listBarang = Barang.BacaData("", "");
+            //Kosongi semua kolom di datagridview
+            dataGridView.Columns.Clear();
 
-            if(listBarang.Count > 0)
+            //Menambah kolom di datagridview
+            dataGridView.Columns.Add("id", "Id");
+            dataGridView.Columns.Add("nama", "Nama Barang");
+            dataGridView.Columns.Add("harga", "Harga Barang");
+            dataGridView.Columns.Add("kategori_id", "Kategori");
+
+            //Agar lebar kolom dapat menyesuaikan panjang / isi data
+            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.ReadOnly = true;
+        }
+
+        private void TampilDataGrid()
+        {
+            //Kosongi isi datagridview
+            dataGridView.Rows.Clear();
+
+            if (listBarang.Count > 0)
             {
-                dataGridViewBarang.DataSource = listBarang;
-
-                if(!dataGridViewBarang.Columns.Contains("btnUbahGrid"))
+                foreach (Barang b in listBarang)
                 {
-                    DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
-
-                    bcolUbah.HeaderText = "Aksi";
-                    bcolUbah.Text = "Ubah";
-                    bcolUbah.Name = "btnUbahGrid";
-                    bcolUbah.UseColumnTextForButtonValue = true;
-                    dataGridViewBarang.Columns.Add(bcolUbah);
-
-
-                    DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
-
-                    bcolHapus.HeaderText = "Aksi";
-                    bcolHapus.Text = "Hapus";
-                    bcolHapus.Name = "btnHapusGrid";
-                    bcolHapus.UseColumnTextForButtonValue = true;
-                    dataGridViewBarang.Columns.Add(bcolHapus);
+                    dataGridView.Rows.Add(b.Id, b.Nama, b.Harga, b.Kategori.Nama);
                 }
             }
             else
             {
-                dataGridViewBarang.DataSource = null;
+                dataGridView.DataSource = null;
             }
+        }
+
+        private void FormDaftarBarang_Load(object sender, EventArgs e)
+        {
+            // Panggil Method untuk menambah kolom pada datagridview
+            FormatDataGrid();
+
+            // Tampilkan semua data
+            listBarang = Barang.BacaData("", "");
+
+            //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+            TampilDataGrid();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

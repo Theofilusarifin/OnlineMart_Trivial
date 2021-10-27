@@ -519,6 +519,7 @@ namespace OnlineMart_Trivial
             // 
             // panelActiveForm
             // 
+            this.panelActiveForm.BackColor = System.Drawing.Color.White;
             this.panelActiveForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelActiveForm.Location = new System.Drawing.Point(250, 0);
             this.panelActiveForm.Name = "panelActiveForm";

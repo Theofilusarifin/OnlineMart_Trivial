@@ -72,11 +72,12 @@ namespace OnlineMart_Trivial
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
+            //childForm.Dock = DockStyle.Fill;
             panelActiveForm.Controls.Add(childForm);
             panelActiveForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+
         }
         #endregion
 

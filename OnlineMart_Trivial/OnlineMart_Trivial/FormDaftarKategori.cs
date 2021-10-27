@@ -19,36 +19,55 @@ namespace OnlineMart_Trivial
         }
 
         public List<Kategori> listKategori = new List<Kategori>();
-        private void FormDaftarKategori_Load(object sender, EventArgs e)
+
+        private void FormatDataGrid()
         {
-            listKategori = Kategori.BacaData("", "");
+            //Kosongi semua kolom di datagridview
+            dataGridView.Columns.Clear();
 
-            if(listKategori.Count > 0)
+            //Menambah kolom di datagridview
+            dataGridView.Columns.Add("id", "Id");
+            dataGridView.Columns.Add("nama", "Nama Barang");
+
+            //Agar lebar kolom dapat menyesuaikan panjang / isi data
+            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.ReadOnly = true;
+        }
+
+        private void TampilDataGrid()
+        {
+            //Kosongi isi datagridview
+            dataGridView.Rows.Clear();
+
+            if (listKategori.Count > 0)
             {
-                dataGridViewKategori.DataSource = listKategori;
-
-                if(!dataGridViewKategori.Columns.Contains("btnUbahGrid"))
+                foreach (Kategori k in listKategori)
                 {
-                    DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
-
-                    bcolUbah.HeaderText = "Aksi";
-                    bcolUbah.Text = "Ubah";
-                    bcolUbah.Name = "btnUbahGrid";
-                    bcolUbah.UseColumnTextForButtonValue = true;
-                    dataGridViewKategori.Columns.Add(bcolUbah);
-
-                    DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
-                    bcolHapus.HeaderText = "Aksi";
-                    bcolHapus.Text = "Hapus";
-                    bcolHapus.Name = "btnHapusGrid";
-                    bcolHapus.UseColumnTextForButtonValue = true;
-                    dataGridViewKategori.Columns.Add(bcolHapus);
+                    dataGridView.Rows.Add(k.Id, k.Nama);
                 }
             }
             else
             {
-                dataGridViewKategori = null;
+                dataGridView.DataSource = null;
             }
         }
+
+        private void FormDaftarKategori_Load(object sender, EventArgs e)
+        {
+            // Panggil Method untuk menambah kolom pada datagridview
+            FormatDataGrid();
+
+            // Tampilkan semua data
+            listKategori = Kategori.BacaData("", "");
+
+            //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+            TampilDataGrid();
+        }
+
+
     }
 }

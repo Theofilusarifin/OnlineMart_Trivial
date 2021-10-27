@@ -71,7 +71,7 @@ namespace OnlineMart_LIB
         //Method untuk membaca data Cabang
         public static List<Cabang> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select C.id, C.nama, C.alamat, P.id, P.nama, P.username, P.email, P.password p.telepon from cabangs as C inner join pegawais as P on C.pegawai_id = P.id ";
+            string sql = "select C.id, C.nama, C.alamat, P.id, P.nama, P.username, P.email, P.password, p.telepon from cabangs as C inner join pegawais as P on C.pegawai_id = P.id ";
             if (kriteria != "") //kalau tidak kosong tambahkan ini
             {
                 sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";

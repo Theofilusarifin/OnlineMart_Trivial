@@ -21,7 +21,7 @@ namespace OnlineMart_Trivial
 
 		private void FormDaftarOrder_Load(object sender, EventArgs e)
 		{
-			listOrder = Order.BacaData("", "");
+			//listOrder = Order.BacaData("", "");
 
 			if (listOrder.Count > 0)
 			{
