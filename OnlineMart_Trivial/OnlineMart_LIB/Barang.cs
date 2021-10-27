@@ -11,15 +11,21 @@ namespace OnlineMart_LIB
 {
     public class Barang
     {
-        private int idBarang;
+        private int id;
         private string nama;
         private int harga;
         private Kategori kategori;
 
         #region Constructors
-        public Barang(int idBarang, string nama, int harga, Kategori kategori)
+        public Barang(int id, string nama, int harga, Kategori kategori)
         {
-            IdBarang = idBarang;
+            Id = id;
+            Nama = nama;
+            Harga = harga;
+            Kategori = kategori;
+        }
+        public Barang(string nama, int harga, Kategori kategori)
+        {
             Nama = nama;
             Harga = harga;
             Kategori = kategori;
@@ -27,27 +33,46 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Properties
-        public int IdBarang { get => idBarang; set => idBarang = value; }
-        public string Nama { get => nama; set => nama = value; }
-        public int Harga { get => harga; set => harga = value; }
-        public Kategori Kategori { get => kategori; set => kategori = value; }
+        public int Id 
+        { 
+            get => id; 
+            set => id = value; 
+        }
+        public string Nama 
+        { 
+            get => nama; 
+            set => nama = value; 
+        }
+        public int Harga 
+        { 
+            get => harga; 
+            set => harga = value; 
+        }
+        public Kategori Kategori 
+        { 
+            get => kategori; 
+            set => kategori = value; 
+        }
         #endregion
 
         #region Methods
         //Method untuk menambah data Barang
-        public static void TambahData(Barang b)
+        public static Boolean TambahData(Barang b)
         {
             //string yang menampung sql query insert into
-            string sqlInsert = "insert into barangs (id, nama, harga, kategori_id)" +
-                               " values ('" + b.IdBarang + "', '" + b.Nama + "', '" + b.Harga + "', '" + b.Kategori.Id + "')";
+            string sql = "insert into barangs (id, nama, harga, kategori_id) values ('" + b.Id + "', '" + b.Nama + "', '" + b.Harga + "', '" + b.Kategori.Id + "')";
 
             //menjalankan perintah sql
-            Koneksi.JalankanPerintahDML(sqlInsert);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+
         }
 
         //Method untuk membaca data Barang
         public static List<Barang> BacaData(string kriteria, string nilaiKriteria)
         {
+<<<<<<< Updated upstream
             string sqlRead;
             if (kriteria == "") //kalau kriteria kosong pake ini
             {
@@ -59,9 +84,15 @@ namespace OnlineMart_LIB
                 sqlRead = "select b.id, b.nama, b.harga, k.id, k.nama" +
                           " from barangs as b inner join kategoris as k on b.kategori_id = k.id" +
                           " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+=======
+            string sql = "select B.id, B.nama, B.harga, K.id, K.nama from barangs as B inner join kategoris as K on B.kategori_id = K.id ";
+            if (kriteria != "") //apabila kriteria tidak kosong
+            {
+                sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+>>>>>>> Stashed changes
             }
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sqlRead);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Barang> listBarang = new List<Barang>();
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
@@ -76,22 +107,24 @@ namespace OnlineMart_LIB
 
             return listBarang;
         }
+        public static Boolean UbahData(Barang b)
+        {
+            // Querry Insert
+            string sql = "update barangs set nama = '" + b.Nama + "', harga = " + b.Harga + ", kategori_id = " + b.Kategori.Id + " WHERE id = " + b.Id;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
 
         //Method untuk menghapus data Barang
-        public static Boolean HapusData(string id)
+        public static Boolean HapusData(Barang barang)
         {
-            string sqlDelete = "delete from barangs where id = '" + id + "'";
+            string sql = "delete from barangs where id = '" + barang.Id + "'";
 
-            int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sqlDelete);
+            int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
             //Dicek apakah ada data yang berubah atau tidak
-            if (jumlahDataBerubah == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            if (jumlahDihapus == 0) return false;
+            else return true;
         }
         #endregion
     }

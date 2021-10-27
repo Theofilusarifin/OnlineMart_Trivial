@@ -20,21 +20,17 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Constructor
-		public Driver(int id1)
+		public Driver(int id, string nama, string username, string email, string password, string telepon)
 		{
-			this.Id = id1;
-		}
-		public Driver(string nama, string username, string email, string password, string telepon)
-		{
+			this.Id = id;
 			this.Nama = nama;
 			this.Username = username;
 			this.Email = email;
 			this.Password = password;
 			this.Telepon = telepon;
 		}
-		public Driver(int id, string nama, string username, string email, string password, string telepon)
+		public Driver(string nama, string username, string email, string password, string telepon)
 		{
-			this.Id = id;
 			this.Nama = nama;
 			this.Username = username;
 			this.Email = email;
@@ -77,19 +73,21 @@ namespace OnlineMart_LIB
         #endregion
 
         #region METHODS
-        public static void TambahData(Driver driver)
+        public static Boolean TambahData(Driver driver)
         {
             // Querry Insert
-            string sql = "INSERT into drivers (nama, username, email, password, telepon) " +
-                "VALUES ('" + driver.Nama + "', '" + driver.Username + "', '" + driver.Email + "', SHA2('" + driver.password + "', 512), '" + driver.telepon + "')";
+            string sql = "insert into drivers (nama, username, email, password, telepon) " +
+                "values ('" + driver.Nama + "', '" + driver.Username + "', '" + driver.Email + "', SHA2('" + driver.password + "', 512), '" + driver.telepon + "')";
 
-            Koneksi.JalankanPerintahDML(sql);
-        }
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
+		}
 
         public static List<Driver> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "SELECT nama, username, email, password, telepon, FROM drivers ";
-            if (kriteria != "") sql += "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+            string sql = "select nama, username, email, password, telepon from drivers ";
+            if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
@@ -105,8 +103,28 @@ namespace OnlineMart_LIB
 
             return listDriver;
         }
-		
-        public static Driver CekLogin(string username, string password)
+
+		public static Boolean UbahData(Driver d)
+		{
+			// Querry Insert
+			string sql = "update drivers set nama = '" + d.Nama + "', alamat = '" + d.Alamat + "', pegawai = " + d.Pegawai.Id + " where id = " + d.Id;
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
+		}
+
+		//Method untuk menghapus data Cabang
+		public static Boolean HapusData(Cabang c)
+		{
+			string sql = "delete from drivers where id = " + c.Id;
+
+			int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
+			//Dicek apakah ada data yang berubah atau tidak
+			if (jumlahDataDihapus == 0) return false;
+			else return true;
+		}
+
+		public static Driver CekLogin(string username, string password)
         {
 			string sql = "SELECT id, nama, username, email, password, telepon FROM drivers WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512)";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);

@@ -22,20 +22,6 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Constructor
-		public Pelanggan (int id1)
-		{
-			this.Id = id1;
-		}
-		public Pelanggan(string nama, string username, string email, string password, string telepon)
-		{
-			this.Nama = nama;
-			this.Username = username;
-			this.Email = email;
-			this.Password = password;
-			this.Telepon = telepon;
-			this.Saldo = 0;
-			this.Poin = 0;
-		}
 		public Pelanggan(int id, string nama, string username, string email, string password, string telepon, double saldo, double poin)
 		{
 			this.Id = id;
@@ -46,6 +32,16 @@ namespace OnlineMart_LIB
 			this.Telepon = telepon;
 			this.Saldo = saldo;
 			this.Poin = poin;
+		}
+		public Pelanggan(string nama, string username, string email, string password, string telepon)
+		{
+			this.Nama = nama;
+			this.Username = username;
+			this.Email = email;
+			this.Password = password;
+			this.Telepon = telepon;
+			this.Saldo = 0;
+			this.Poin = 0;
 		}
 		#endregion
 
@@ -93,11 +89,11 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region METHODS
-		public static void TambahData(Pelanggan pelanggan)
+		public static void TambahData(Pelanggan p)
 		{
 			// Querry Insert
-			string sql = "INSERT into pelanggans (nama, username, email, password, telepon, saldo, poin) " +
-				"VALUES ('" + pelanggan.Nama + "', '" + pelanggan.Username + "', '" + pelanggan.Email + "', SHA2('" + pelanggan.Password + "', 512), '" + pelanggan.Telepon + "', " + pelanggan.Saldo + ", " + pelanggan.poin + ")";
+			string sql = "insert into pelanggans (nama, username, email, password, telepon, saldo, poin) " +
+				"values ('" + p.Nama + "', '" + p.Username + "', '" + p.Email + "', SHA2('" + p.Password + "', 512), '" + p.Telepon + "', " + p.Saldo + ", " + p.poin + ")";
 
 			Koneksi.JalankanPerintahDML(sql);
 		}

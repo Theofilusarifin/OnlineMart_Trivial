@@ -11,19 +11,21 @@ namespace OnlineMart_LIB
 {
     public class Cabang
     {
-        private int idCabang;
+        private int id;
         private string nama;
         private string alamat;
         private Pegawai pegawai;
 
         #region Constructors
-        public Cabang (int idCabang)
-		{
-            IdCabang = idCabang;
-        }
-        public Cabang(int idCabang, string nama, string alamat, Pegawai pegawai)
+        public Cabang(int id, string nama, string alamat, Pegawai pegawai)
         {
-            IdCabang = idCabang;
+            Id = id;
+            Nama = nama;
+            Alamat = alamat;
+            Pegawai = pegawai;
+        }
+        public Cabang(string nama, string alamat, Pegawai pegawai)
+        {
             Nama = nama;
             Alamat = alamat;
             Pegawai = pegawai;
@@ -31,10 +33,26 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Properties
-        public int IdCabang { get => idCabang; set => idCabang = value; }
-        public string Nama { get => nama; set => nama = value; }
-        public string Alamat { get => alamat; set => alamat = value; }
-        public Pegawai Pegawai { get => pegawai; set => pegawai = value; }
+        public int Id 
+        { 
+            get => id; 
+            set => id = value; 
+        }
+        public string Nama 
+        { 
+            get => nama; 
+            set => nama = value; 
+        }
+        public string Alamat 
+        { 
+            get => alamat; 
+            set => alamat = value; 
+        }
+        public Pegawai Pegawai 
+        { 
+            get => pegawai; 
+            set => pegawai = value; 
+        }
         #endregion
 
         #region Methods
@@ -42,31 +60,19 @@ namespace OnlineMart_LIB
         public static void TambahData(Cabang c)
         {
             //string yang menampung sql query insert into
-            string sqlInsert = "insert into cabangs (id, nama, alamat, pegawai_id)" +
-                               " values (" + c.IdCabang + ", '" + c.Nama + "', '" + c.Alamat + "', '" + c.Pegawai.IdPegawai + "')";
+            string sql = "insert into cabangs (id, nama, alamat, pegawai_id) values (" + c.Id + ", '" + c.Nama + "', '" + c.Alamat + "', '" + c.Pegawai.Id + "')";
 
             //menjalankan perintah sql
-            Koneksi.JalankanPerintahDML(sqlInsert);
-        }
-
-        public static Boolean UbahData(Cabang c)
-        {
-            // Querry Insert
-            string sql = "UPDATE cabangs SET Nama = '" + c.Nama + "', TglLahir = '" + c.TglLahir.ToString("yyyy-MM-dd") + "', " +
-                         "Alamat = '" + c.Alamat + "', Gaji = " + c.Gaji + ", Username = '" + c.Username + "', Password = SHA2('" +
-                         c.Password + "', 512), IdJabatan = '" + c.Jabatan + "' " +
-                         " WHERE KodePegawai = " + c.KodePegawai;
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
-            if (jumlahDitambah == 0) return false;
-            else return true;
+            Koneksi.JalankanPerintahDML(sql);
         }
 
         //Method untuk membaca data Cabang
         public static List<Cabang> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sqlRead;
-            if (kriteria == "") //kalau kriteria kosong pake ini
+            string sql = "select C.id, C.nama, C.alamat, P.id, P.nama, P.username, P.email, P.password p.telepon from cabangs as C inner join pegawais as P on C.pegawai_id = P.id ";
+            if (kriteria != "") //kalau tidak kosong tambahkan ini
             {
+<<<<<<< Updated upstream
                 sqlRead = "select c.id, c.nama, c.alamat, p.id, p.nama, p.username, p.email, p.password, p.telepon" +
                           " from cabangs as c inner join pegawais as p on c.pegawai_id = p.id";
             }
@@ -75,17 +81,19 @@ namespace OnlineMart_LIB
                 sqlRead = "select c.id, c.nama, c.alamat, p.id, p.nama, p.username, p.email, p.password, p.telepon" +
                           " from cabangs as c inner join pegawais as p on c.pegawai_id = p.id" +
                           " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+=======
+                sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+>>>>>>> Stashed changes
             }
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sqlRead);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Cabang> listCabang = new List<Cabang>();
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
 
-                Pegawai p = new Pegawai(hasil.GetInt32(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6), hasil.GetString(7),
-                                        hasil.GetString(8));
+                Pegawai p = new Pegawai(hasil.GetInt32(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6), hasil.GetString(7), hasil.GetString(8));
 
                 Cabang c = new Cabang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), p);
                 
@@ -95,21 +103,24 @@ namespace OnlineMart_LIB
             return listCabang;
         }
 
-        //Method untuk menghapus data Cabang
-        public static Boolean HapusData(string id)
+        public static Boolean UbahData(Cabang c)
         {
-            string sqlDelete = "delete from cabangs where id = '" + id + "'";
+            // Querry Insert
+            string sql = "update cabangs set nama = '" + c.Nama + "', alamat = '" + c.Alamat + "', pegawai = " + c.Pegawai.Id + " where id = " + c.Id;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
 
-            int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sqlDelete);
+        //Method untuk menghapus data Cabang
+        public static Boolean HapusData(Cabang c)
+        {
+            string sql = "delete from cabangs where id = " + c.Id;
+
+            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
             //Dicek apakah ada data yang berubah atau tidak
-            if (jumlahDataBerubah == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            if (jumlahDataDihapus == 0) return false;
+            else return true;
         }
         #endregion
     }

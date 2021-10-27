@@ -18,59 +18,69 @@ namespace OnlineMart_LIB
             Id = id;
             Nama = nama;
         }
+        public Kategori(string nama)
+        {
+            Nama = nama;
+        }
         #endregion
 
         #region Properties
-        public int Id { get => id; set => id = value; }
-        public string Nama { get => nama; set => nama = value; }
+        public int Id 
+        { 
+            get => id; 
+            set => id = value; 
+        }
+        public string Nama 
+        { 
+            get => nama; 
+            set => nama = value; 
+        }
         #endregion
 
         #region Method    
-        public static void TambahData(Kategori k)
+        public static Boolean TambahData(Kategori k)
         {
-            string sqlInsert = "Insert into kategoris (Id, Nama)" +  " values ('" + k.Id + "','" + k.Nama + "')";
+            string sql = "insert into kategoris (Id, Nama) values ('" + k.Id + "','" + k.Nama + "')";
 
-            Koneksi.JalankanPerintahDML(sqlInsert);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
         }
         public static List<Kategori> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sqlRead = "";
-            if(kriteria == "")
-            {
-                sqlRead = "select * from kategoris";
-            }
-            else
-            {
-                sqlRead = "select * from kategoris where " + kriteria + " like '%" + nilaiKriteria + "%'";
-            }
+            string sql = "select * from kategoris ";
+            if(kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sqlRead);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Kategori> listKategori = new List<Kategori>();
 
             while(hasil.Read() == true)
             {
-                Kategori k = new Kategori(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString());
+                Kategori k = new Kategori( hasil.GetInt32(0), hasil.GetString(1));
                 listKategori.Add(k);
             }
             return listKategori;
         }
-        public static Boolean HapusData(string id)
-        {
-            string sqlDelete = "delete from kategoris where id = '" + id + "'";
-            int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sqlDelete);
 
-            if(jumlahDataBerubah == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+        public static Boolean UbahData(Kategori k)
+        {
+            // Querry Insert
+            string sql = "update drivers set nama = '" + k.Nama + "', username = '" + k.Username + "', email = '" + k.Email + "', password = SHA2('" + k.password + "', 512), telepon = '" + k.Telepon + "'" +
+                " where id = " + k.Id;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
         }
 
-       
+        public static Boolean HapusData(Kategori k)
+        {
+            string sql = "delete from kategoris where id = " + k.Id;
+            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
+            //Dicek apakah ada data yang berubah atau tidak
+            if (jumlahDataDihapus == 0) return false;
+            else return true;
+        }
         #endregion
     }
 }

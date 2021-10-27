@@ -10,7 +10,7 @@ namespace OnlineMart_LIB
 {
     public class Pegawai
     {
-        private int idPegawai;
+        private int id;
         private string nama;
         private string username;
         private string email;
@@ -18,9 +18,9 @@ namespace OnlineMart_LIB
         private string telepon;
 
         #region Constructors
-        public Pegawai(int idPegawai, string nama, string username, string email, string password, string telepon)
+        public Pegawai(int id, string nama, string username, string email, string password, string telepon)
         {
-            IdPegawai = idPegawai;
+            Id = id;
             Nama = nama;
             Username = username;
             Email = email;
@@ -38,10 +38,10 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Properties
-        public int IdPegawai 
+        public int Id 
         { 
-            get => idPegawai; 
-            set => idPegawai = value; 
+            get => id; 
+            set => id = value; 
         }
         public string Nama 
         { 
@@ -71,19 +71,21 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Methods
-        public static void TambahData(Pegawai pegawai)
+        public static Boolean TambahData(Pegawai p)
         {
             // Querry Insert
-            string sql = "INSERT into pegawais (nama, username, email, password, telepon) " +
-                "VALUES ('" + pegawai.Nama + "', '" + pegawai.Username + "', '" + pegawai.Email + "', SHA2('" + pegawai.Password + "', 512), '" + pegawai.Telepon + "')";
+            string sql = "indert into pegawais (nama, username, email, password, telepon) " +
+                " values ('" + p.Nama + "', '" + p.Username + "', '" + p.Email + "', SHA2('" + p.Password + "', 512), '" + p.Telepon + "')";
 
-            Koneksi.JalankanPerintahDML(sql);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
         }
 
         public static List<Pegawai> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "SELECT nama, username, email, password, telepon, FROM pegawais ";
-            if (kriteria != "") sql += "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+            string sql = "select nama, username, email, password, telepon, from pegawais ";
+            if (kriteria != "") sql += "where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
@@ -92,17 +94,35 @@ namespace OnlineMart_LIB
 
             while (hasil.Read())
             {
-                Pegawai pegawai = new Pegawai(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
+                Pegawai p = new Pegawai(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
 
-                listPegawai.Add(pegawai);
+                listPegawai.Add(p);
             }
 
             return listPegawai;
         }
 
+        public static Boolean UbahData(Pegawai p)
+        {
+            // Querry Insert
+            string sql = "update kategoris set nama = '" + p.Nama + "' where id = " + p.Id;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
+
+        public static Boolean HapusData(Kategori k)
+        {
+            string sql = "delete from kategoris where id = " + k.Id;
+            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
+            //Dicek apakah ada data yang berubah atau tidak
+            if (jumlahDataDihapus == 0) return false;
+            else return true;
+        }
+
         public static Pegawai CekLogin(string username, string password)
         {
-            string sql = "SELECT id, nama, username, email, password, telepon FROM pegawais WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512)";
+            string sql = "select id, nama, username, email, password, telepon from pegawais where username = '" + username + "' and password = SHA2('" + password + "', 512)";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             while (hasil.Read())
