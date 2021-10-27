@@ -55,16 +55,12 @@ namespace OnlineMart_LIB
             string sqlRead;
             if (kriteria == "") //kalau kriteria kosong pake ini
             {
-                sqlRead = "select c.id as 'Id Cabang', c.nama as 'Nama Cabang', c.alamat as 'Alamat', p.id as 'Id Pegawai'," +
-                          " p.nama as 'Nama Pegawai', p.username as 'Username', p.email as 'E-mail', p.password as 'Password'," +
-                          " p.telepon as 'No Telp'" +
+                sqlRead = "select c.id, c.nama, c.alamat, p.id, p.nama, p.username, p.email, p.password, p.telepon" +
                           " from cabangs as c inner join pegawais as p on c.pegawai_id = p.id";
             }
             else //kalau kriteria g kosong pake ini
             {
-                sqlRead = "select c.id as 'Id Cabang', c.nama as 'Nama Cabang', c.alamat as 'Alamat', p.id as 'Id Pegawai'," +
-                          " p.nama as 'Nama Pegawai', p.username as 'Username', p.email as 'E-mail', p.password as 'Password'," +
-                          " p.telepon as 'No Telp'" +
+                sqlRead = "select c.id, c.nama, c.alamat, p.id, p.nama, p.username, p.email, p.password, p.telepon" +
                           " from cabangs as c inner join pegawais as p on c.pegawai_id = p.id" +
                           " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }

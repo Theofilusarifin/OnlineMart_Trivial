@@ -40,6 +40,7 @@ namespace OnlineMart_Trivial
             this.dataGridViewBarang.Name = "dataGridViewBarang";
             this.dataGridViewBarang.Size = new System.Drawing.Size(539, 255);
             this.dataGridViewBarang.TabIndex = 18;
+            this.dataGridViewBarang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBarang_CellContentClick);
             // 
             // FormDaftarBarang
             // 

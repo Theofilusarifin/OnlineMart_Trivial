@@ -40,6 +40,7 @@ namespace OnlineMart_Trivial
             this.dataGridViewCabang.Name = "dataGridViewCabang";
             this.dataGridViewCabang.Size = new System.Drawing.Size(539, 255);
             this.dataGridViewCabang.TabIndex = 19;
+            this.dataGridViewCabang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCabang_CellContentClick);
             // 
             // FormDaftarCabang
             // 
