@@ -39,7 +39,7 @@ namespace OnlineMart_LIB
         {
             //string yang menampung sql query insert into
             string sqlInsert = "insert into barangs (id, nama, harga, kategoris_id)" +
-                               " values (" + b.IdBarang + ", '" + b.Nama + "', " + b.Harga + ", '" + b.Kategori.Id + "')";
+                               " values ('" + b.IdBarang + "', '" + b.Nama + "', '" + b.Harga + "', '" + b.Kategori.Id + "')";
 
             //menjalankan perintah sql
             Koneksi.JalankanPerintahDML(sqlInsert);
@@ -51,14 +51,14 @@ namespace OnlineMart_LIB
             string sqlRead;
             if (kriteria == "") //kalau kriteria kosong pake ini
             {
-                sqlRead = "select b.id as Id Barang, b.nama as Nama Barang, b.harga as Harga, k.id as Id Kategori," +
-                          "k.nama as Nama Kategori" +
+                sqlRead = "select b.id as 'Id Barang', b.nama as 'Nama Barang', b.harga as 'Harga', k.id as 'Id Kategori'," +
+                          " k.nama as 'Nama Kategori'" +
                           " from barangs as b inner join kategoris as k on b.kategoris_id = k.id";
             }
             else // kalau kriteria g kosong pake ini
             {
-                sqlRead = "select b.id as Id Barang, b.nama as Nama Barang, b.harga as Harga, k.id as Id Kategori," +
-                          "k.nama as Nama Kategori" +
+                sqlRead = "select b.id as 'Id Barang', b.nama as 'Nama Barang', b.harga as 'Harga', k.id as 'Id Kategori'," +
+                          " k.nama as 'Nama Kategori'" +
                           " from barangs as b inner join kategoris as k on b.kategoris_id = k.id" +
                           " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
@@ -80,9 +80,9 @@ namespace OnlineMart_LIB
         }
 
         //Method untuk menghapus data Barang
-        public static Boolean HapusData(string kode)
+        public static Boolean HapusData(string id)
         {
-            string sqlDelete = "delete from barangs where kodeKategori = '" + kode + "'";
+            string sqlDelete = "delete from barangs where id = '" + id + "'";
 
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sqlDelete);
             //Dicek apakah ada data yang berubah atau tidak

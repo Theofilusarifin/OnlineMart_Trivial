@@ -55,14 +55,14 @@ namespace OnlineMart_LIB
             string sqlRead;
             if (kriteria == "") //kalau kriteria kosong pake ini
             {
-                sqlRead = "select c.id as IdCabang, c.nama as Nama Cabang, c.alamat, p.id as IdPegawai," +
-                          " p.nama as Nama Pegawai, p.email, p.password, p.telepon" +
+                sqlRead = "select c.id as 'Id Cabang', c.nama as 'Nama Cabang', c.alamat as 'Alamat', p.id as 'IdPegawai'," +
+                          " p.nama as 'Nama Pegawai', p.email as 'E-mail', p.password as 'Password', p.telepon as 'No Telp'" +
                           " from cabangs as c inner join pegawais as p on c.pegawais_id = p.id";
             }
             else //kalau kriteria g kosong pake ini
             {
-                sqlRead = "select c.id as IdCabang, c.nama as Nama Cabang, c.alamat, p.id as IdPegawai," +
-                          " p.nama as Nama Pegawai, p.email, p.password, p.telepon" +
+                sqlRead = "select c.id as 'Id Cabang', c.nama as 'Nama Cabang', c.alamat as 'Alamat', p.id as 'IdPegawai'," +
+                          " p.nama as 'Nama Pegawai', p.email as 'E-mail', p.password as 'Password', p.telepon as 'No Telp'" +
                           " from cabangs as c inner join pegawais as p on c.pegawais_id = p.id" +
                           " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
@@ -85,9 +85,9 @@ namespace OnlineMart_LIB
         }
 
         //Method untuk menghapus data Cabang
-        public static Boolean HapusData(string kode)
+        public static Boolean HapusData(string id)
         {
-            string sqlDelete = "delete from cabangs where kodeKategori = '" + kode + "'";
+            string sqlDelete = "delete from cabangs where id = '" + id + "'";
 
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sqlDelete);
             //Dicek apakah ada data yang berubah atau tidak
