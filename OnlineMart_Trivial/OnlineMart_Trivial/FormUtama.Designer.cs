@@ -521,25 +521,25 @@ namespace OnlineMart_Trivial
             // 
             // panelActiveForm
             // 
-            this.panelActiveForm.Location = new System.Drawing.Point(250, 137);
+            this.panelActiveForm.Location = new System.Drawing.Point(340, 173);
             this.panelActiveForm.Name = "panelActiveForm";
-            this.panelActiveForm.Size = new System.Drawing.Size(1614, 794);
+            this.panelActiveForm.Size = new System.Drawing.Size(1271, 364);
             this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
             // 
             // panelTitleActiveForm
             // 
-            this.panelTitleActiveForm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleActiveForm.Location = new System.Drawing.Point(250, 0);
+            this.panelTitleActiveForm.Location = new System.Drawing.Point(357, 560);
             this.panelTitleActiveForm.Name = "panelTitleActiveForm";
-            this.panelTitleActiveForm.Size = new System.Drawing.Size(1614, 53);
+            this.panelTitleActiveForm.Size = new System.Drawing.Size(1045, 53);
             this.panelTitleActiveForm.TabIndex = 2;
+            this.panelTitleActiveForm.Visible = false;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(285, 88);
+            this.panel1.Location = new System.Drawing.Point(393, 100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.Size = new System.Drawing.Size(200, 67);
             this.panel1.TabIndex = 3;
             // 
             // FormUtama
@@ -548,8 +548,8 @@ namespace OnlineMart_Trivial
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
             this.ClientSize = new System.Drawing.Size(1864, 931);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTitleActiveForm);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelActiveForm);
             this.Controls.Add(this.panelLeftNavbar);
             this.DoubleBuffered = true;
