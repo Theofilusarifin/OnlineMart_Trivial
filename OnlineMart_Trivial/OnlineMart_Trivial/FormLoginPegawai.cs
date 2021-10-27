@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnlineMart_LIB;
 
 namespace OnlineMart_Trivial
 {
@@ -42,12 +43,35 @@ namespace OnlineMart_Trivial
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            FormUtama.role = "pegawai";
+            try
+            {
+                //create object baru
+                Koneksi koneksi = new Koneksi();
+                //create username dan password
+                Pegawai pegawai = Pegawai.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
 
-            FormLoading form = new FormLoading(); //Create Object
-            form.Owner = this;
-            form.Show();
-            this.Hide();
+                //kalau username dan pass nya benar
+                if(!(pegawai is null))
+                {
+                    FormUtama.role = "pegawai";
+                    FormUtama.pegawai = pegawai;
+
+                    FormLoading form = new FormLoading(); //Create Object
+                    form.Owner = this;
+                    form.Show();
+                    this.Hide();
+
+                    MessageBox.Show("Login berhasil. Selamat menggunakan OnlineMart.", "Informasi");
+                }
+                else
+                {
+                    MessageBox.Show(this, "Username tidak ditemukan atau password salah");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Koneksi gagal. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }        
         }
 
         private void FormLoginPegawai_FormClosing(object sender, FormClosingEventArgs e)
