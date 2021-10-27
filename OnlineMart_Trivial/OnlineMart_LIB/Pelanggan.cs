@@ -124,7 +124,7 @@ namespace OnlineMart_LIB
 
 		public static Pelanggan CekLogin(string username, string password)
 		{
-			string sql = "SELECT nama, username, email, password, telepon FROM pelanggans WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512)";
+			string sql = "SELECT id, nama, username, email, password, telepon, saldo, poin FROM pelanggans WHERE username = '" + username + "' AND password = SHA2('" + password + "', 512)";
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			while (hasil.Read())
