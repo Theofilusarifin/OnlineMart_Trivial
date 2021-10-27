@@ -509,7 +509,7 @@ namespace OnlineMart_Trivial
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::OnlineMart_Trivial.Properties.Resources.White_Logo;
+            this.pictureBox1.Image = global::OnlineMart_Trivial.Properties.Resources.White_Logo1;
             this.pictureBox1.Location = new System.Drawing.Point(12, 46);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(199, 87);
