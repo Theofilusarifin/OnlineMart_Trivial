@@ -56,6 +56,26 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
+        #region OpenChildForm
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            //Kalau ada form active, close dulu
+            if (activeForm != null) 
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelActiveForm.Controls.Add(childForm);
+            panelActiveForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        #endregion
+
         #region FormLoad
         private void FormUtama_Load(object sender, EventArgs e)
         {
@@ -152,14 +172,17 @@ namespace OnlineMart_Trivial
         private void buttonPengaturanCabang_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            openChildForm(new FormDaftarCabang());
         }
         private void buttonPengaturanKategori_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            openChildForm(new FormDaftarKategori());
         }
         private void buttonPengaturanBarang_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            openChildForm(new FormDaftarBarang());
         }
         private void buttonPengaturanMetode_Click(object sender, EventArgs e)
         {
