@@ -43,7 +43,7 @@ namespace OnlineMart_LIB
         {
             //string yang menampung sql query insert into
             string sqlInsert = "insert into cabangs (id, nama, alamat, pegawais_id)" +
-                               " values (" + c.IdCabang + ", '" + c.Nama + "', " + c.Alamat + ", '" + c.Pegawai.IdPegawai + "')";
+                               " values (" + c.IdCabang + ", '" + c.Nama + "', '" + c.Alamat + "', '" + c.Pegawai.IdPegawai + "')";
 
             //menjalankan perintah sql
             Koneksi.JalankanPerintahDML(sqlInsert);
