@@ -38,22 +38,22 @@ namespace OnlineMart_Trivial
             // textBoxPassword
             // 
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPassword.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.textBoxPassword.ForeColor = System.Drawing.Color.DimGray;
             this.textBoxPassword.Location = new System.Drawing.Point(48, 384);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⚉';
-            this.textBoxPassword.Size = new System.Drawing.Size(338, 16);
+            this.textBoxPassword.Size = new System.Drawing.Size(338, 15);
             this.textBoxPassword.TabIndex = 8;
             // 
             // textBoxUsername
             // 
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUsername.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.textBoxUsername.ForeColor = System.Drawing.Color.DimGray;
             this.textBoxUsername.Location = new System.Drawing.Point(48, 302);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(339, 16);
+            this.textBoxUsername.Size = new System.Drawing.Size(339, 15);
             this.textBoxUsername.TabIndex = 6;
             // 
             // buttonLogin
