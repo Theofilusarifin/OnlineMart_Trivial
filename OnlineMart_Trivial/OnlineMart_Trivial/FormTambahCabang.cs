@@ -25,7 +25,7 @@ namespace OnlineMart_Trivial
             listPegawai = Pegawai.BacaData("", "");
 
             comboBoxPegawai.DataSource = listPegawai;
-            comboBoxPegawai.DisplayMember = "Nama";
+            comboBoxPegawai.DisplayMember = "nama";
 
             comboBoxPegawai.DropDownStyle = ComboBoxStyle.DropDownList;
         }

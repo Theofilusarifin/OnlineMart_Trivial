@@ -78,11 +78,11 @@ namespace OnlineMart_Trivial
             // comboBoxPegawai
             // 
             this.comboBoxPegawai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPegawai.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPegawai.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPegawai.FormattingEnabled = true;
             this.comboBoxPegawai.Location = new System.Drawing.Point(39, 486);
             this.comboBoxPegawai.Name = "comboBoxPegawai";
-            this.comboBoxPegawai.Size = new System.Drawing.Size(393, 33);
+            this.comboBoxPegawai.Size = new System.Drawing.Size(393, 30);
             this.comboBoxPegawai.TabIndex = 29;
             // 
             // FormTambahCabang

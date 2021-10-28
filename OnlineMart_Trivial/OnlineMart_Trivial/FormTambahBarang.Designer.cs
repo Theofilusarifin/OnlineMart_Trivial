@@ -77,11 +77,11 @@ namespace OnlineMart_Trivial
             // comboBoxKategori
             // 
             this.comboBoxKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKategori.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxKategori.Font = new System.Drawing.Font("Montserrat", 12F);
             this.comboBoxKategori.FormattingEnabled = true;
             this.comboBoxKategori.Location = new System.Drawing.Point(39, 445);
             this.comboBoxKategori.Name = "comboBoxKategori";
-            this.comboBoxKategori.Size = new System.Drawing.Size(393, 37);
+            this.comboBoxKategori.Size = new System.Drawing.Size(393, 30);
             this.comboBoxKategori.TabIndex = 27;
             // 
             // FormTambahBarang

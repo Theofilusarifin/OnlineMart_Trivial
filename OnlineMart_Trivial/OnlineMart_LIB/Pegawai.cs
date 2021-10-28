@@ -84,8 +84,8 @@ namespace OnlineMart_LIB
 
         public static List<Pegawai> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select nama, username, email, password, telepon from pegawais ";
-            if (kriteria != "") sql += "where " + kriteria + " like '%" + nilaiKriteria + "%'";
+            string sql = "select id, nama, username, email, password, telepon from pegawais ";
+            if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
