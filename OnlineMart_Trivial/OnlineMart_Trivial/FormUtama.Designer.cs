@@ -65,7 +65,6 @@ namespace OnlineMart_Trivial
             this.panelActiveForm = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelwelcome = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelNama = new System.Windows.Forms.Label();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPegawai.SuspendLayout();
@@ -541,9 +540,9 @@ namespace OnlineMart_Trivial
             this.panelActiveForm.BackColor = System.Drawing.Color.Transparent;
             this.panelActiveForm.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
             this.panelActiveForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelActiveForm.Location = new System.Drawing.Point(0, 140);
+            this.panelActiveForm.Location = new System.Drawing.Point(0, 87);
             this.panelActiveForm.Name = "panelActiveForm";
-            this.panelActiveForm.Size = new System.Drawing.Size(1534, 821);
+            this.panelActiveForm.Size = new System.Drawing.Size(1534, 874);
             this.panelActiveForm.TabIndex = 3;
             this.panelActiveForm.Visible = false;
             // 
@@ -552,13 +551,12 @@ namespace OnlineMart_Trivial
             this.panelHeader.BackColor = System.Drawing.Color.Transparent;
             this.panelHeader.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
             this.panelHeader.Controls.Add(this.labelNama);
-            this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Controls.Add(this.labelwelcome);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1534, 140);
+            this.panelHeader.Size = new System.Drawing.Size(1534, 87);
             this.panelHeader.TabIndex = 2;
             this.panelHeader.Visible = false;
             // 
@@ -573,18 +571,6 @@ namespace OnlineMart_Trivial
             this.labelwelcome.Size = new System.Drawing.Size(171, 26);
             this.labelwelcome.TabIndex = 0;
             this.labelwelcome.Text = "Welcome Back,";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(62)))), ((int)(((byte)(34)))));
-            this.label1.Location = new System.Drawing.Point(46, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Have A Nice Day!";
             // 
             // labelNama
             // 
@@ -663,7 +649,6 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Panel panelActiveForm;
         public System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label labelNama;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelwelcome;
     }
 }
