@@ -58,21 +58,9 @@ namespace OnlineMart_Trivial
             {
                 dataGridView.DataSource = null;
             }
-        }
-
-        private void FormDaftarBarang_Load(object sender, EventArgs e)
-        {
-            //Panggil Method untuk menambah kolom pada datagridview
-            FormatDataGrid();
-
-            //Tampilkan semua data
-            listBarang = Barang.BacaData("", "");
-
-            //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
-            TampilDataGrid();
 
             //Tampilkan button Ubah dan Hapus
-            if(!dataGridView.Columns.Contains("btnUbahGrid"))
+            if (!dataGridView.Columns.Contains("btnUbahGrid"))
             {
                 DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
 
@@ -90,6 +78,18 @@ namespace OnlineMart_Trivial
                 bcolHapus.UseColumnTextForButtonValue = true;
                 dataGridView.Columns.Add(bcolHapus);
             }
+        }
+
+        private void FormDaftarBarang_Load(object sender, EventArgs e)
+        {
+            //Panggil Method untuk menambah kolom pada datagridview
+            FormatDataGrid();
+
+            //Tampilkan semua data
+            listBarang = Barang.BacaData("", "");
+
+            //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+            TampilDataGrid();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
