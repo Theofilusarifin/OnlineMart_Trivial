@@ -103,9 +103,9 @@ namespace OnlineMart_LIB
         }
 
         //Method untuk menghapus data Barang
-        public static Boolean HapusData(Barang barang)
+        public static Boolean HapusData(int id)
         {
-            string sql = "delete from barangs where id = " + barang.Id;
+            string sql = "delete from barangs where id = " + id;
 
             int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
             //Dicek apakah ada data yang berubah atau tidak

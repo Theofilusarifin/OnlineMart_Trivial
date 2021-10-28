@@ -47,6 +47,7 @@ namespace OnlineMart_Trivial
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(354, 201);
             this.dataGridView.TabIndex = 18;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // buttonClose
             // 

@@ -62,19 +62,72 @@ namespace OnlineMart_Trivial
 
         private void FormDaftarBarang_Load(object sender, EventArgs e)
         {
-            // Panggil Method untuk menambah kolom pada datagridview
+            //Panggil Method untuk menambah kolom pada datagridview
             FormatDataGrid();
 
-            // Tampilkan semua data
+            //Tampilkan semua data
             listBarang = Barang.BacaData("", "");
 
             //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
             TampilDataGrid();
+
+            //Tampilkan button Ubah dan Hapus
+            if(!dataGridView.Columns.Contains("btnUbahGrid"))
+            {
+                DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
+
+                bcolUbah.HeaderText = "Aksi";
+                bcolUbah.Text = "Ubah";
+                bcolUbah.Name = "btnUbahGrid";
+                bcolUbah.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolUbah);
+
+                DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
+
+                bcolHapus.HeaderText = "Aksi";
+                bcolHapus.Text = "Hapus";
+                bcolHapus.Name = "btnHapusGrid";
+                bcolHapus.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolHapus);
+            }
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Menghapus data bila button hapus diklik
+            int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString());
+            
+
+            //Kalau button hapus diklik
+            if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
+            {
+                string idHapus = dataGridView.CurrentRow.Cells["Id"].Value.ToString();
+                string namaHapus = dataGridView.CurrentRow.Cells["Nama"].Value.ToString();
+
+                //User ditanya sesuai dibawah
+                DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",
+                                                     "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //Kalau User klik yes barang akan dihapus
+                if(hasil == DialogResult.Yes)
+                {
+                    Boolean hapus = Barang.HapusData(id);
+
+                    if (hapus == true)
+                    {
+                        MessageBox.Show("Penghapusan data berhasil");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Penghapusan data gagal");
+                    }
+                }
+                
+            }
         }
     }
 }
