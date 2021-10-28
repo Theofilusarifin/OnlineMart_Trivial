@@ -92,6 +92,40 @@ namespace OnlineMart_Trivial
             TampilDataGrid();
         }
 
+        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
+        {
+            string kriteria = "";
+            switch (comboBoxKriteria.Text)
+            {
+                case "Id":
+                    kriteria = "B.id";
+                    break;
+
+                case "Nama":
+                    kriteria = "B.nama";
+                    break;
+
+                case "Harga":
+                    kriteria = "B.harga";
+                    break;
+
+                case "Kategori":
+                    kriteria = "K.nama";
+                    break;
+            }
+
+            listBarang = Barang.BacaData(kriteria, textBoxKriteria.Text);
+            FormatDataGrid();
+            TampilDataGrid();
+        }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            FormTambahBarang tambah = new FormTambahBarang();
+            tambah.Owner = this;
+            tambah.Show();
+        }
+
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -150,9 +184,6 @@ namespace OnlineMart_Trivial
 
         }
 
-        private void buttonTambah_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

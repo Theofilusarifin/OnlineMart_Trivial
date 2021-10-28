@@ -33,7 +33,7 @@ namespace OnlineMart_Trivial
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonTambah = new System.Windows.Forms.Button();
             this.textBoxKriteria = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxKriteria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -106,14 +106,20 @@ namespace OnlineMart_Trivial
             this.textBoxKriteria.Name = "textBoxKriteria";
             this.textBoxKriteria.Size = new System.Drawing.Size(111, 20);
             this.textBoxKriteria.TabIndex = 0;
+            this.textBoxKriteria.TextChanged += new System.EventHandler(this.textBoxKriteria_TextChanged);
             // 
-            // comboBox1
+            // comboBoxKriteria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(308, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(248, 21);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxKriteria.FormattingEnabled = true;
+            this.comboBoxKriteria.Items.AddRange(new object[] {
+            "Id",
+            "Nama Barang",
+            "Harga Barang",
+            "Kategori"});
+            this.comboBoxKriteria.Location = new System.Drawing.Point(308, 51);
+            this.comboBoxKriteria.Name = "comboBoxKriteria";
+            this.comboBoxKriteria.Size = new System.Drawing.Size(248, 21);
+            this.comboBoxKriteria.TabIndex = 1;
             // 
             // label1
             // 
@@ -143,7 +149,7 @@ namespace OnlineMart_Trivial
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonTambah);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxKriteria);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.textBoxKriteria);
             this.Controls.Add(this.dataGridView);
@@ -163,7 +169,7 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonTambah;
         private System.Windows.Forms.TextBox textBoxKriteria;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxKriteria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
