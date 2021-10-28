@@ -29,38 +29,40 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonTambah = new System.Windows.Forms.Button();
+            this.buttonUbah = new System.Windows.Forms.Button();
             this.textBoxNama = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // buttonTambah
+            // buttonUbah
             // 
-            this.buttonTambah.AutoSize = true;
-            this.buttonTambah.BackColor = System.Drawing.Color.Transparent;
-            this.buttonTambah.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonTambah.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonTambah.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonTambah.FlatAppearance.BorderSize = 0;
-            this.buttonTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
-            this.buttonTambah.ForeColor = System.Drawing.Color.White;
-            this.buttonTambah.Location = new System.Drawing.Point(40, 373);
-            this.buttonTambah.Name = "buttonTambah";
-            this.buttonTambah.Size = new System.Drawing.Size(393, 45);
-            this.buttonTambah.TabIndex = 7;
-            this.buttonTambah.Text = "Tambah";
-            this.buttonTambah.UseVisualStyleBackColor = false;
-            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
+            this.buttonUbah.AutoSize = true;
+            this.buttonUbah.BackColor = System.Drawing.Color.Transparent;
+            this.buttonUbah.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonUbah.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonUbah.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonUbah.FlatAppearance.BorderSize = 0;
+            this.buttonUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUbah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonUbah.ForeColor = System.Drawing.Color.White;
+            this.buttonUbah.Location = new System.Drawing.Point(40, 373);
+            this.buttonUbah.Name = "buttonUbah";
+            this.buttonUbah.Size = new System.Drawing.Size(393, 45);
+            this.buttonUbah.TabIndex = 1;
+            this.buttonUbah.Text = "Ubah";
+            this.buttonUbah.UseVisualStyleBackColor = false;
+            this.buttonUbah.Click += new System.EventHandler(this.buttonUbah_Click);
+            this.buttonUbah.MouseEnter += new System.EventHandler(this.buttonUbah_MouseEnter);
+            this.buttonUbah.MouseLeave += new System.EventHandler(this.buttonUbah_MouseLeave);
             // 
             // textBoxNama
             // 
             this.textBoxNama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxNama.Location = new System.Drawing.Point(51, 284);
+            this.textBoxNama.Location = new System.Drawing.Point(51, 283);
             this.textBoxNama.Name = "textBoxNama";
-            this.textBoxNama.Size = new System.Drawing.Size(370, 16);
-            this.textBoxNama.TabIndex = 18;
+            this.textBoxNama.Size = new System.Drawing.Size(370, 20);
+            this.textBoxNama.TabIndex = 0;
             // 
             // FormUbahKategori
             // 
@@ -70,11 +72,12 @@ namespace OnlineMart_Trivial
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(467, 472);
             this.Controls.Add(this.textBoxNama);
-            this.Controls.Add(this.buttonTambah);
+            this.Controls.Add(this.buttonUbah);
             this.DoubleBuffered = true;
             this.Name = "FormUbahKategori";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ubah Kategori";
+            this.Load += new System.EventHandler(this.FormUbahKategori_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,7 +85,7 @@ namespace OnlineMart_Trivial
 
         #endregion
 
-        private System.Windows.Forms.Button buttonTambah;
+        private System.Windows.Forms.Button buttonUbah;
         private System.Windows.Forms.TextBox textBoxNama;
     }
 }

@@ -383,6 +383,16 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Tambah_Cabang1 {
+            get {
+                object obj = ResourceManager.GetObject("Tambah Cabang1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Tambah_Kategori {
             get {
                 object obj = ResourceManager.GetObject("Tambah Kategori", resourceCulture);
@@ -406,6 +416,16 @@ namespace OnlineMart_Trivial.Properties {
         internal static System.Drawing.Bitmap Ubah_Cabang {
             get {
                 object obj = ResourceManager.GetObject("Ubah Cabang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ubah_Cabang1 {
+            get {
+                object obj = ResourceManager.GetObject("Ubah Cabang1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

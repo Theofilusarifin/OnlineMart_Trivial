@@ -18,6 +18,10 @@ namespace OnlineMart_LIB
             Id = id;
             Nama = nama;
         }
+        public Kategori(int id)
+        {
+            Id = id;
+        }
         public Kategori(string nama)
         {
             Nama = nama;
@@ -67,6 +71,19 @@ namespace OnlineMart_LIB
         public static Kategori AmbilData(string nama)
         {
             string sql = "select distinct * from kategoris where nama = '" + nama + "'";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            hasil.Read();
+
+            Kategori k = new Kategori(hasil.GetInt32(0), hasil.GetString(1));
+
+            return k;
+        }
+
+        public static Kategori AmbilData(int id)
+        {
+            string sql = "select distinct * from kategoris where id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 

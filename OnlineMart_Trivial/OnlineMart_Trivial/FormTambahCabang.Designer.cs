@@ -91,7 +91,7 @@ namespace OnlineMart_Trivial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Tambah_Cabang;
+            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Tambah_Cabang1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(467, 680);
             this.Controls.Add(this.comboBoxPegawai);

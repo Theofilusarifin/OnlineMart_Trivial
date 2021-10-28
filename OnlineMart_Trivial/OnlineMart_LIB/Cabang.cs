@@ -71,7 +71,7 @@ namespace OnlineMart_LIB
         //Method untuk membaca data Cabang
         public static List<Cabang> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select C.id, C.nama, C.alamat, P.id, P.nama, P.username, P.email, P.password, p.telepon from cabangs as C inner join pegawais as P on C.pegawai_id = P.id ";
+            string sql = "select C.id, C.nama, C.alamat, P.id, P.nama, P.username, P.email, P.password, P.telepon from cabangs as C inner join pegawais as P on C.pegawai_id = P.id ";
             if (kriteria != "") //kalau tidak kosong tambahkan ini
             {
                 sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
@@ -94,10 +94,25 @@ namespace OnlineMart_LIB
             return listCabang;
         }
 
+        public static Cabang AmbilData(int id)
+        {
+            string sql = "select C.id, C.nama, C.alamat, P.id, P.nama, P.username, P.email, P.password, P.telepon from cabangs as C inner join pegawais as P on C.pegawai_id = P.id where C.id = " + id;
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            hasil.Read();
+            
+            Pegawai p = new Pegawai(hasil.GetInt32(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6), hasil.GetString(7), hasil.GetString(8));
+
+            Cabang c = new Cabang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), p);
+
+            return c;
+        }
+
         public static Boolean UbahData(Cabang c)
         {
             // Querry Insert
-            string sql = "update cabangs set nama = '" + c.Nama + "', alamat = '" + c.Alamat + "', pegawai = " + c.Pegawai.Id + " where id = " + c.Id;
+            string sql = "update cabangs set nama = '" + c.Nama + "', alamat = '" + c.Alamat + "', pegawai_id = " + c.Pegawai.Id + " where id = " + c.Id;
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;

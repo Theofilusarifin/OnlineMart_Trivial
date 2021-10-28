@@ -49,21 +49,23 @@ namespace OnlineMart_Trivial
             this.buttonUbah.Location = new System.Drawing.Point(39, 581);
             this.buttonUbah.Name = "buttonUbah";
             this.buttonUbah.Size = new System.Drawing.Size(393, 45);
-            this.buttonUbah.TabIndex = 4;
+            this.buttonUbah.TabIndex = 3;
             this.buttonUbah.Text = "Ubah";
             this.buttonUbah.UseVisualStyleBackColor = false;
             this.buttonUbah.Click += new System.EventHandler(this.buttonUbah_Click);
+            this.buttonUbah.MouseEnter += new System.EventHandler(this.buttonUbah_MouseEnter);
+            this.buttonUbah.MouseLeave += new System.EventHandler(this.buttonUbah_MouseLeave);
             // 
             // textBoxAlamat
             // 
             this.textBoxAlamat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxAlamat.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxAlamat.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxAlamat.Location = new System.Drawing.Point(51, 367);
+            this.textBoxAlamat.Location = new System.Drawing.Point(50, 368);
             this.textBoxAlamat.Multiline = true;
             this.textBoxAlamat.Name = "textBoxAlamat";
             this.textBoxAlamat.Size = new System.Drawing.Size(370, 59);
-            this.textBoxAlamat.TabIndex = 21;
+            this.textBoxAlamat.TabIndex = 1;
             // 
             // textBoxNama
             // 
@@ -73,7 +75,7 @@ namespace OnlineMart_Trivial
             this.textBoxNama.Location = new System.Drawing.Point(51, 283);
             this.textBoxNama.Name = "textBoxNama";
             this.textBoxNama.Size = new System.Drawing.Size(370, 20);
-            this.textBoxNama.TabIndex = 22;
+            this.textBoxNama.TabIndex = 0;
             // 
             // comboBoxPegawai
             // 
@@ -83,13 +85,13 @@ namespace OnlineMart_Trivial
             this.comboBoxPegawai.Location = new System.Drawing.Point(39, 487);
             this.comboBoxPegawai.Name = "comboBoxPegawai";
             this.comboBoxPegawai.Size = new System.Drawing.Size(393, 34);
-            this.comboBoxPegawai.TabIndex = 30;
+            this.comboBoxPegawai.TabIndex = 2;
             // 
             // FormUbahCabang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Ubah_Cabang;
+            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Ubah_Cabang1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(467, 680);
             this.Controls.Add(this.comboBoxPegawai);

@@ -102,6 +102,19 @@ namespace OnlineMart_LIB
             return listPegawai;
         }
 
+        public static Pegawai AmbilData(string nama)
+        {
+            string sql = "select distinct * from pegawais where nama = '" + nama + "'";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            hasil.Read();
+            
+            Pegawai p = new Pegawai(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
+
+            return p;
+        }
+
         public static Boolean UbahData(Pegawai p)
         {
             // Querry Insert

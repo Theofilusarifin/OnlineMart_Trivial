@@ -64,7 +64,7 @@ namespace OnlineMart_Trivial
             this.textBoxNama.Location = new System.Drawing.Point(52, 280);
             this.textBoxNama.Name = "textBoxNama";
             this.textBoxNama.Size = new System.Drawing.Size(370, 20);
-            this.textBoxNama.TabIndex = 23;
+            this.textBoxNama.TabIndex = 0;
             // 
             // textBoxHarga
             // 
@@ -74,7 +74,7 @@ namespace OnlineMart_Trivial
             this.textBoxHarga.Location = new System.Drawing.Point(52, 364);
             this.textBoxHarga.Name = "textBoxHarga";
             this.textBoxHarga.Size = new System.Drawing.Size(370, 20);
-            this.textBoxHarga.TabIndex = 24;
+            this.textBoxHarga.TabIndex = 1;
             // 
             // comboBoxKategori
             // 
@@ -84,7 +84,7 @@ namespace OnlineMart_Trivial
             this.comboBoxKategori.Location = new System.Drawing.Point(39, 444);
             this.comboBoxKategori.Name = "comboBoxKategori";
             this.comboBoxKategori.Size = new System.Drawing.Size(393, 34);
-            this.comboBoxKategori.TabIndex = 28;
+            this.comboBoxKategori.TabIndex = 2;
             // 
             // FormUbahBarang
             // 

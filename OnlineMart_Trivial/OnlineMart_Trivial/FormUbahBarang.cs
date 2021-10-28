@@ -29,10 +29,10 @@ namespace OnlineMart_Trivial
 
             comboBoxKategori.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            //Ambil data barang yang sesuai id
+            //Ambil data yang sesuai id
             Barang b = Barang.AmbilData(IdDipilih);
 
-            //Tampilkan data barang di text box
+            //Tampilkan data di text box
             textBoxNama.Text = b.Nama;
             textBoxHarga.Text = b.Harga.ToString();
             comboBoxKategori.Text = b.Kategori.Nama;
@@ -69,11 +69,11 @@ namespace OnlineMart_Trivial
         #region DesignButton
         private void buttonUbah_MouseEnter(object sender, EventArgs e)
         {
-
+            buttonUbah.BackgroundImage = Properties.Resources.Button_Hover;
         }
         private void buttonUbah_MouseLeave(object sender, EventArgs e)
         {
-
+            buttonUbah.BackgroundImage = Properties.Resources.Button_Leave;
         }
         #endregion
     }
