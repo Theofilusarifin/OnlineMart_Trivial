@@ -18,9 +18,16 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
+        List<Kategori> listKategori = new List<Kategori>();
+
         private void FormUbahBarang_Load(object sender, EventArgs e)
         {
+            listKategori = Kategori.BacaData("", "");
 
+            comboBoxKategori.DataSource = listKategori;
+            comboBoxKategori.DisplayMember = "Nama";
+
+            comboBoxKategori.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void buttonUbah_Click(object sender, EventArgs e)

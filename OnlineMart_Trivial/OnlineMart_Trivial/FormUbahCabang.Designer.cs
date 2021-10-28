@@ -32,7 +32,7 @@ namespace OnlineMart_Trivial
             this.buttonUbah = new System.Windows.Forms.Button();
             this.textBoxAlamat = new System.Windows.Forms.TextBox();
             this.textBoxNama = new System.Windows.Forms.TextBox();
-            this.comboBoxCabang = new System.Windows.Forms.ComboBox();
+            this.comboBoxPegawai = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonUbah
@@ -57,7 +57,7 @@ namespace OnlineMart_Trivial
             // textBoxAlamat
             // 
             this.textBoxAlamat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAlamat.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxAlamat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.textBoxAlamat.ForeColor = System.Drawing.Color.DimGray;
             this.textBoxAlamat.Location = new System.Drawing.Point(51, 369);
             this.textBoxAlamat.Multiline = true;
@@ -68,22 +68,22 @@ namespace OnlineMart_Trivial
             // textBoxNama
             // 
             this.textBoxNama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
             this.textBoxNama.Location = new System.Drawing.Point(51, 283);
             this.textBoxNama.Name = "textBoxNama";
-            this.textBoxNama.Size = new System.Drawing.Size(370, 16);
+            this.textBoxNama.Size = new System.Drawing.Size(370, 15);
             this.textBoxNama.TabIndex = 22;
             // 
-            // comboBoxCabang
+            // comboBoxPegawai
             // 
-            this.comboBoxCabang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCabang.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCabang.FormattingEnabled = true;
-            this.comboBoxCabang.Location = new System.Drawing.Point(39, 487);
-            this.comboBoxCabang.Name = "comboBoxCabang";
-            this.comboBoxCabang.Size = new System.Drawing.Size(393, 37);
-            this.comboBoxCabang.TabIndex = 30;
+            this.comboBoxPegawai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPegawai.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPegawai.FormattingEnabled = true;
+            this.comboBoxPegawai.Location = new System.Drawing.Point(39, 487);
+            this.comboBoxPegawai.Name = "comboBoxPegawai";
+            this.comboBoxPegawai.Size = new System.Drawing.Size(393, 33);
+            this.comboBoxPegawai.TabIndex = 30;
             // 
             // FormUbahCabang
             // 
@@ -92,7 +92,7 @@ namespace OnlineMart_Trivial
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Ubah_Cabang;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(467, 680);
-            this.Controls.Add(this.comboBoxCabang);
+            this.Controls.Add(this.comboBoxPegawai);
             this.Controls.Add(this.textBoxNama);
             this.Controls.Add(this.textBoxAlamat);
             this.Controls.Add(this.buttonUbah);
@@ -111,6 +111,6 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.Button buttonUbah;
         private System.Windows.Forms.TextBox textBoxAlamat;
         private System.Windows.Forms.TextBox textBoxNama;
-        private System.Windows.Forms.ComboBox comboBoxCabang;
+        private System.Windows.Forms.ComboBox comboBoxPegawai;
     }
 }

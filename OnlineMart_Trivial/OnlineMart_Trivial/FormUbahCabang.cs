@@ -19,9 +19,16 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
+        List<Pegawai> listPegawai = new List<Pegawai>();
+
         private void FormUbahCabang_Load(object sender, EventArgs e)
         {
+            listPegawai = Pegawai.BacaData("", "");
 
+            comboBoxPegawai.DataSource = listPegawai;
+            comboBoxPegawai.DisplayMember = "Nama";
+
+            comboBoxPegawai.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void buttonUbah_Click(object sender, EventArgs e)
