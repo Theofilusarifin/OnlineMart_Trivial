@@ -55,6 +55,7 @@ namespace OnlineMart_Trivial
                 {
                     FormUtama.role = "rider";
                     FormUtama.rider = rider;
+                    FormUtama.frmUtama.labelNama.Text = rider.Nama;
 
                     FormLoading form = new FormLoading(); //Create Object
                     form.Owner = this;

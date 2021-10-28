@@ -55,6 +55,7 @@ namespace OnlineMart_Trivial
                 {
                     FormUtama.role = "pegawai";
                     FormUtama.pegawai = pegawai;
+                    FormUtama.frmUtama.labelNama.Text = pegawai.Nama;
 
                     FormLoading form = new FormLoading(); //Create Object
                     form.Owner = this;

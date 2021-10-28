@@ -46,6 +46,7 @@ namespace OnlineMart_LIB
             if (jumlahDitambah == 0) return false;
             else return true;
         }
+
         public static List<Kategori> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "select * from kategoris ";

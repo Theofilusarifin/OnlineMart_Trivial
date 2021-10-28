@@ -64,8 +64,8 @@ namespace OnlineMart_Trivial
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelActiveForm = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.labelwelcome = new System.Windows.Forms.Label();
             this.labelNama = new System.Windows.Forms.Label();
+            this.labelwelcome = new System.Windows.Forms.Label();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPegawai.SuspendLayout();
             this.panelRekapPenjualan.SuspendLayout();
@@ -560,18 +560,6 @@ namespace OnlineMart_Trivial
             this.panelHeader.TabIndex = 2;
             this.panelHeader.Visible = false;
             // 
-            // labelwelcome
-            // 
-            this.labelwelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelwelcome.AutoSize = true;
-            this.labelwelcome.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelwelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(62)))), ((int)(((byte)(34)))));
-            this.labelwelcome.Location = new System.Drawing.Point(46, 30);
-            this.labelwelcome.Name = "labelwelcome";
-            this.labelwelcome.Size = new System.Drawing.Size(171, 26);
-            this.labelwelcome.TabIndex = 0;
-            this.labelwelcome.Text = "Welcome Back,";
-            // 
             // labelNama
             // 
             this.labelNama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -583,6 +571,18 @@ namespace OnlineMart_Trivial
             this.labelNama.Size = new System.Drawing.Size(73, 26);
             this.labelNama.TabIndex = 2;
             this.labelNama.Text = "Nama";
+            // 
+            // labelwelcome
+            // 
+            this.labelwelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelwelcome.AutoSize = true;
+            this.labelwelcome.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelwelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(62)))), ((int)(((byte)(34)))));
+            this.labelwelcome.Location = new System.Drawing.Point(46, 30);
+            this.labelwelcome.Name = "labelwelcome";
+            this.labelwelcome.Size = new System.Drawing.Size(171, 26);
+            this.labelwelcome.TabIndex = 0;
+            this.labelwelcome.Text = "Welcome Back,";
             // 
             // FormUtama
             // 
@@ -648,8 +648,8 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Panel panelLeft;
         public System.Windows.Forms.Panel panelActiveForm;
         public System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.Label labelwelcome;
+        public System.Windows.Forms.Label labelNama;
     }
 }
 

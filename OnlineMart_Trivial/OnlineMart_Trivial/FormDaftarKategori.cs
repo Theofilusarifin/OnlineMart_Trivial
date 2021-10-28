@@ -19,7 +19,9 @@ namespace OnlineMart_Trivial
         }
 
         public List<Kategori> listKategori = new List<Kategori>();
+        
 
+        #region Methods
         private void FormatDataGrid()
         {
             //Kosongi semua kolom di datagridview
@@ -54,8 +56,30 @@ namespace OnlineMart_Trivial
             {
                 dataGridView.DataSource = null;
             }
-        }
 
+            //Tampilkan button Ubah dan Hapus
+            if (!dataGridView.Columns.Contains("btnUbahGrid"))
+            {
+                DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
+
+                bcolUbah.HeaderText = "Aksi";
+                bcolUbah.Text = "Ubah";
+                bcolUbah.Name = "btnUbahGrid";
+                bcolUbah.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolUbah);
+
+                DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
+
+                bcolHapus.HeaderText = "Aksi";
+                bcolHapus.Text = "Hapus";
+                bcolHapus.Name = "btnHapusGrid";
+                bcolHapus.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolHapus);
+            }
+        }
+        #endregion
+
+        #region FormLoad
         private void FormDaftarKategori_Load(object sender, EventArgs e)
         {
             // Panggil Method untuk menambah kolom pada datagridview
@@ -67,7 +91,94 @@ namespace OnlineMart_Trivial
             //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
             TampilDataGrid();
         }
+        #endregion
+
+        #region TextBox
+        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
+        {
+            string kriteria = "";
+            switch (comboBoxKriteria.Text)
+            {
+                case "Id":
+                    kriteria = "id";
+                    break;
+
+                case "Nama Kategori":
+                    kriteria = "nama";
+                    break;
+            }
+
+            listKategori = Kategori.BacaData(kriteria, textBoxKriteria.Text);
+            FormatDataGrid();
+            TampilDataGrid();
+        }
+        #endregion
+
+        #region DataGrid
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Menghapus data bila button hapus diklik
+            int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString());
 
 
+            //Kalau button hapus diklik
+            if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
+            {
+                string idHapus = dataGridView.CurrentRow.Cells["Id"].Value.ToString();
+                string namaHapus = dataGridView.CurrentRow.Cells["Nama"].Value.ToString();
+
+                //User ditanya sesuai dibawah
+                DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",
+                                                     "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //Kalau User klik yes barang akan dihapus
+                if (hasil == DialogResult.Yes)
+                {
+                    Boolean hapus = Barang.HapusData(id);
+
+                    if (hapus == true)
+                    {
+                        MessageBox.Show("Penghapusan data berhasil");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Penghapusan data gagal");
+                    }
+                }
+
+            }
+        }
+        #endregion
+
+        #region Desain Button
+        private void buttonTambah_MouseEnter(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonTambah_MouseLeave(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonClose_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonClose_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
+
+        #region Button
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            FormTambahKategori tambah = new FormTambahKategori();
+            tambah.Owner = this;
+            tambah.Show();
+        }
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
     }
 }

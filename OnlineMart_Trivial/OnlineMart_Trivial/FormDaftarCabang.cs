@@ -20,6 +20,7 @@ namespace OnlineMart_Trivial
 
         public List<Cabang> listCabang = new List<Cabang>();
 
+        #region Methods
         private void FormatDataGrid()
         {
             //Kosongi semua kolom di datagridview
@@ -79,7 +80,9 @@ namespace OnlineMart_Trivial
                 dataGridView.Columns.Add(bcolHapus);
             }
         }
+        #endregion
 
+        #region FormLoad
         private void FormDaftarCabang_Load(object sender, EventArgs e)
         {
             // Panggil Method untuk menambah kolom pada datagridview
@@ -91,7 +94,9 @@ namespace OnlineMart_Trivial
             //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
             TampilDataGrid();
         }
+        #endregion
 
+        #region Textbox
         private void textBoxKriteria_TextChanged(object sender, EventArgs e)
         {
             string kriteria = "";
@@ -101,7 +106,7 @@ namespace OnlineMart_Trivial
                     kriteria = "C.id";
                     break;
 
-                case "Nama":
+                case "Nama Cabang":
                     kriteria = "C.nama";
                     break;
 
@@ -118,7 +123,9 @@ namespace OnlineMart_Trivial
             FormatDataGrid();
             TampilDataGrid();
         }
+        #endregion
 
+        #region DataGrid
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //Menghapus data bila button hapus diklik
@@ -151,19 +158,41 @@ namespace OnlineMart_Trivial
 
             }
         }
+        #endregion
 
+        #region Desain Button
+        private void buttonTambah_MouseEnter(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+
+        private void buttonTambah_MouseLeave(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+
+        private void buttonClose_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+
+        private void buttonClose_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
+
+        #region Button
         private void buttonTambah_Click(object sender, EventArgs e)
         {
             FormTambahCabang tambah = new FormTambahCabang();
             tambah.Owner = this;
             tambah.Show();
         }
-
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
-        
+        #endregion
     }
 }

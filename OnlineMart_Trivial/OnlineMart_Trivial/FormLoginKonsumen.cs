@@ -54,8 +54,9 @@ namespace OnlineMart_Trivial
                 if (!(pelanggan is null)) //Jika ditemukan pegawai dengan username dan password yang cocok
                 {
                     FormUtama.role = "konsumen";
-                    // Tampilkan kode, nama, dan jabatan pegwai yang sedang login ke label yang ada di FormUtama
+                    // tampilkan nama yang sedang login ke label yang ada di FormUtama
                     FormUtama.konsumen = pelanggan;
+                    FormUtama.frmUtama.labelNama.Text = pelanggan.Nama;
 
                     FormLoading form = new FormLoading(); //Create Object
                     form.Owner = this;

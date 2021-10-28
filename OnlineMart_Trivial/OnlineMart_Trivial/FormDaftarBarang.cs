@@ -20,6 +20,7 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
+        #region Methods
         private void FormatDataGrid()
         {
             //Kosongi semua kolom di datagridview
@@ -79,7 +80,9 @@ namespace OnlineMart_Trivial
                 dataGridView.Columns.Add(bcolHapus);
             }
         }
+        #endregion
 
+        #region FormLoad
         private void FormDaftarBarang_Load(object sender, EventArgs e)
         {
             //Panggil Method untuk menambah kolom pada datagridview
@@ -91,7 +94,9 @@ namespace OnlineMart_Trivial
             //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
             TampilDataGrid();
         }
+        #endregion
 
+        #region TextBox
         private void textBoxKriteria_TextChanged(object sender, EventArgs e)
         {
             string kriteria = "";
@@ -101,11 +106,11 @@ namespace OnlineMart_Trivial
                     kriteria = "B.id";
                     break;
 
-                case "Nama":
+                case "Nama Barang":
                     kriteria = "B.nama";
                     break;
 
-                case "Harga":
+                case "Harga Barang":
                     kriteria = "B.harga";
                     break;
 
@@ -118,19 +123,9 @@ namespace OnlineMart_Trivial
             FormatDataGrid();
             TampilDataGrid();
         }
+        #endregion
 
-        private void buttonTambah_Click(object sender, EventArgs e)
-        {
-            FormTambahBarang tambah = new FormTambahBarang();
-            tambah.Owner = this;
-            tambah.Show();
-        }
-
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        #region DataGrid
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //Menghapus data bila button hapus diklik
@@ -163,27 +158,40 @@ namespace OnlineMart_Trivial
                 
             }
         }
+        #endregion
 
+        #region Desain Button
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
         }
-
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
         }
-
         private void buttonClose_MouseEnter(object sender, EventArgs e)
         {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
 
         }
-
-        private void buttonClose_Leave(object sender, EventArgs e)
+        private void buttonClose_MouseLeave(object sender, EventArgs e)
         {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
 
+        #region Button
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            FormTambahBarang tambah = new FormTambahBarang();
+            tambah.Owner = this;
+            tambah.Show();
         }
 
-        
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
     }
 }
