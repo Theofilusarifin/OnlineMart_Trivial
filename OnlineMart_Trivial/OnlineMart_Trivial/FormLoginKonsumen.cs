@@ -69,6 +69,7 @@ namespace OnlineMart_Trivial
                 else
                 {
                     MessageBox.Show(this, "Username tidak ditemukan atau password salah");
+                    textBoxUsername.Focus();
                 }
 
             }
@@ -82,6 +83,11 @@ namespace OnlineMart_Trivial
         {
             FormAuth frm = (FormAuth)this.Owner;
             frm.Show();
+        }
+
+        private void FormLoginKonsumen_Load(object sender, EventArgs e)
+        {
+            textBoxUsername.Focus();
         }
     }
 }

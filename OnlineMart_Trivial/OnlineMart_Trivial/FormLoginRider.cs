@@ -70,6 +70,7 @@ namespace OnlineMart_Trivial
             catch (Exception ex)
             {
                 MessageBox.Show("Koneksi gagal. Pesan kesalahan : " + ex.Message, "Kesalahan");
+                textBoxUsername.Focus();
             }
         }
 
@@ -77,6 +78,11 @@ namespace OnlineMart_Trivial
         {
             FormAuth frm = (FormAuth)this.Owner;
             frm.Show();
+        }
+
+        private void FormLoginRider_Load(object sender, EventArgs e)
+        {
+            textBoxUsername.Focus();
         }
     }
 }

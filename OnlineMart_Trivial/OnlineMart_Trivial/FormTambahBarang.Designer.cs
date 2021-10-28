@@ -59,31 +59,31 @@ namespace OnlineMart_Trivial
             // textBoxHarga
             // 
             this.textBoxHarga.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxHarga.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxHarga.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxHarga.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxHarga.Location = new System.Drawing.Point(50, 366);
+            this.textBoxHarga.Location = new System.Drawing.Point(50, 364);
             this.textBoxHarga.Name = "textBoxHarga";
-            this.textBoxHarga.Size = new System.Drawing.Size(370, 16);
+            this.textBoxHarga.Size = new System.Drawing.Size(370, 20);
             this.textBoxHarga.TabIndex = 26;
             // 
             // textBoxNama
             // 
             this.textBoxNama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxNama.Location = new System.Drawing.Point(50, 282);
+            this.textBoxNama.Location = new System.Drawing.Point(50, 280);
             this.textBoxNama.Name = "textBoxNama";
-            this.textBoxNama.Size = new System.Drawing.Size(370, 16);
+            this.textBoxNama.Size = new System.Drawing.Size(370, 20);
             this.textBoxNama.TabIndex = 25;
             // 
             // comboBoxKategori
             // 
             this.comboBoxKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKategori.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.comboBoxKategori.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKategori.FormattingEnabled = true;
             this.comboBoxKategori.Location = new System.Drawing.Point(39, 445);
             this.comboBoxKategori.Name = "comboBoxKategori";
-            this.comboBoxKategori.Size = new System.Drawing.Size(393, 30);
+            this.comboBoxKategori.Size = new System.Drawing.Size(393, 34);
             this.comboBoxKategori.TabIndex = 27;
             // 
             // FormTambahBarang

@@ -53,35 +53,37 @@ namespace OnlineMart_Trivial
             this.buttonUbah.Text = "Ubah";
             this.buttonUbah.UseVisualStyleBackColor = false;
             this.buttonUbah.Click += new System.EventHandler(this.buttonUbah_Click);
+            this.buttonUbah.MouseEnter += new System.EventHandler(this.buttonUbah_MouseEnter);
+            this.buttonUbah.MouseLeave += new System.EventHandler(this.buttonUbah_MouseLeave);
             // 
             // textBoxNama
             // 
             this.textBoxNama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxNama.Location = new System.Drawing.Point(52, 282);
+            this.textBoxNama.Location = new System.Drawing.Point(52, 280);
             this.textBoxNama.Name = "textBoxNama";
-            this.textBoxNama.Size = new System.Drawing.Size(370, 16);
+            this.textBoxNama.Size = new System.Drawing.Size(370, 20);
             this.textBoxNama.TabIndex = 23;
             // 
             // textBoxHarga
             // 
             this.textBoxHarga.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxHarga.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxHarga.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxHarga.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxHarga.Location = new System.Drawing.Point(52, 366);
+            this.textBoxHarga.Location = new System.Drawing.Point(52, 364);
             this.textBoxHarga.Name = "textBoxHarga";
-            this.textBoxHarga.Size = new System.Drawing.Size(370, 16);
+            this.textBoxHarga.Size = new System.Drawing.Size(370, 20);
             this.textBoxHarga.TabIndex = 24;
             // 
             // comboBoxKategori
             // 
             this.comboBoxKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKategori.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxKategori.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKategori.FormattingEnabled = true;
             this.comboBoxKategori.Location = new System.Drawing.Point(39, 444);
             this.comboBoxKategori.Name = "comboBoxKategori";
-            this.comboBoxKategori.Size = new System.Drawing.Size(393, 37);
+            this.comboBoxKategori.Size = new System.Drawing.Size(393, 34);
             this.comboBoxKategori.TabIndex = 28;
             // 
             // FormUbahBarang

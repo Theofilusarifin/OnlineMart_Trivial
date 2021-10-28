@@ -59,19 +59,19 @@ namespace OnlineMart_Trivial
             // textBoxNama
             // 
             this.textBoxNama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxNama.Location = new System.Drawing.Point(51, 283);
+            this.textBoxNama.Location = new System.Drawing.Point(51, 282);
             this.textBoxNama.Name = "textBoxNama";
-            this.textBoxNama.Size = new System.Drawing.Size(370, 15);
+            this.textBoxNama.Size = new System.Drawing.Size(370, 20);
             this.textBoxNama.TabIndex = 19;
             // 
             // textBoxAlamat
             // 
             this.textBoxAlamat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAlamat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxAlamat.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxAlamat.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxAlamat.Location = new System.Drawing.Point(51, 369);
+            this.textBoxAlamat.Location = new System.Drawing.Point(51, 368);
             this.textBoxAlamat.Multiline = true;
             this.textBoxAlamat.Name = "textBoxAlamat";
             this.textBoxAlamat.Size = new System.Drawing.Size(370, 59);

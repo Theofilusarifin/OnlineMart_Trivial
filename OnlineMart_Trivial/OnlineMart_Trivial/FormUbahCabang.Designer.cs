@@ -57,9 +57,9 @@ namespace OnlineMart_Trivial
             // textBoxAlamat
             // 
             this.textBoxAlamat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAlamat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxAlamat.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxAlamat.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxAlamat.Location = new System.Drawing.Point(51, 369);
+            this.textBoxAlamat.Location = new System.Drawing.Point(51, 367);
             this.textBoxAlamat.Multiline = true;
             this.textBoxAlamat.Name = "textBoxAlamat";
             this.textBoxAlamat.Size = new System.Drawing.Size(370, 59);
@@ -68,21 +68,21 @@ namespace OnlineMart_Trivial
             // textBoxNama
             // 
             this.textBoxNama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
             this.textBoxNama.Location = new System.Drawing.Point(51, 283);
             this.textBoxNama.Name = "textBoxNama";
-            this.textBoxNama.Size = new System.Drawing.Size(370, 15);
+            this.textBoxNama.Size = new System.Drawing.Size(370, 20);
             this.textBoxNama.TabIndex = 22;
             // 
             // comboBoxPegawai
             // 
             this.comboBoxPegawai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPegawai.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPegawai.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPegawai.FormattingEnabled = true;
             this.comboBoxPegawai.Location = new System.Drawing.Point(39, 487);
             this.comboBoxPegawai.Name = "comboBoxPegawai";
-            this.comboBoxPegawai.Size = new System.Drawing.Size(393, 33);
+            this.comboBoxPegawai.Size = new System.Drawing.Size(393, 34);
             this.comboBoxPegawai.TabIndex = 30;
             // 
             // FormUbahCabang

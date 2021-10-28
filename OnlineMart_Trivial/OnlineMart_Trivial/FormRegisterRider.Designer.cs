@@ -51,60 +51,60 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.Location = new System.Drawing.Point(231, 782);
             this.labelRegistrasi.Name = "labelRegistrasi";
             this.labelRegistrasi.Size = new System.Drawing.Size(153, 16);
-            this.labelRegistrasi.TabIndex = 12;
+            this.labelRegistrasi.TabIndex = 7;
             this.labelRegistrasi.Text = "&Silahkan Login Disini";
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxEmail.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxEmail.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxEmail.Location = new System.Drawing.Point(48, 522);
+            this.textBoxEmail.Location = new System.Drawing.Point(49, 519);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(338, 16);
-            this.textBoxEmail.TabIndex = 21;
+            this.textBoxEmail.Size = new System.Drawing.Size(338, 20);
+            this.textBoxEmail.TabIndex = 3;
             // 
             // textBoxNomorTelepon
             // 
             this.textBoxNomorTelepon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNomorTelepon.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxNomorTelepon.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxNomorTelepon.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxNomorTelepon.Location = new System.Drawing.Point(46, 448);
+            this.textBoxNomorTelepon.Location = new System.Drawing.Point(49, 444);
             this.textBoxNomorTelepon.Name = "textBoxNomorTelepon";
-            this.textBoxNomorTelepon.Size = new System.Drawing.Size(338, 16);
-            this.textBoxNomorTelepon.TabIndex = 20;
+            this.textBoxNomorTelepon.Size = new System.Drawing.Size(338, 20);
+            this.textBoxNomorTelepon.TabIndex = 2;
             // 
             // textBoxKonfirmasiPassword
             // 
             this.textBoxKonfirmasiPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxKonfirmasiPassword.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxKonfirmasiPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxKonfirmasiPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxKonfirmasiPassword.Location = new System.Drawing.Point(46, 670);
+            this.textBoxKonfirmasiPassword.Location = new System.Drawing.Point(49, 668);
             this.textBoxKonfirmasiPassword.Name = "textBoxKonfirmasiPassword";
             this.textBoxKonfirmasiPassword.PasswordChar = '⚉';
-            this.textBoxKonfirmasiPassword.Size = new System.Drawing.Size(338, 16);
-            this.textBoxKonfirmasiPassword.TabIndex = 19;
+            this.textBoxKonfirmasiPassword.Size = new System.Drawing.Size(338, 19);
+            this.textBoxKonfirmasiPassword.TabIndex = 5;
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPassword.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxPassword.Location = new System.Drawing.Point(48, 596);
+            this.textBoxPassword.Location = new System.Drawing.Point(49, 594);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⚉';
-            this.textBoxPassword.Size = new System.Drawing.Size(338, 16);
-            this.textBoxPassword.TabIndex = 18;
+            this.textBoxPassword.Size = new System.Drawing.Size(338, 19);
+            this.textBoxPassword.TabIndex = 4;
             // 
             // textBoxNama
             // 
             this.textBoxNama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxNama.Location = new System.Drawing.Point(47, 297);
+            this.textBoxNama.Location = new System.Drawing.Point(48, 294);
             this.textBoxNama.Name = "textBoxNama";
-            this.textBoxNama.Size = new System.Drawing.Size(339, 16);
-            this.textBoxNama.TabIndex = 17;
+            this.textBoxNama.Size = new System.Drawing.Size(339, 20);
+            this.textBoxNama.TabIndex = 0;
             // 
             // buttonRegister
             // 
@@ -120,7 +120,7 @@ namespace OnlineMart_Trivial
             this.buttonRegister.Location = new System.Drawing.Point(33, 728);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(373, 41);
-            this.buttonRegister.TabIndex = 16;
+            this.buttonRegister.TabIndex = 6;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -130,12 +130,12 @@ namespace OnlineMart_Trivial
             // textBoxUsername
             // 
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUsername.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxUsername.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxUsername.Location = new System.Drawing.Point(46, 372);
+            this.textBoxUsername.Location = new System.Drawing.Point(48, 368);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(339, 16);
-            this.textBoxUsername.TabIndex = 22;
+            this.textBoxUsername.Size = new System.Drawing.Size(339, 20);
+            this.textBoxUsername.TabIndex = 1;
             // 
             // FormRegisterRider
             // 
@@ -161,6 +161,7 @@ namespace OnlineMart_Trivial
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrasi Rider";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegisterRider_FormClosing);
+            this.Load += new System.EventHandler(this.FormRegisterRider_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

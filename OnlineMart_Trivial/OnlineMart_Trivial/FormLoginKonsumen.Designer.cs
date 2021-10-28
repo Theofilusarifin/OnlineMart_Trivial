@@ -50,7 +50,7 @@ namespace OnlineMart_Trivial
             this.buttonLogin.Location = new System.Drawing.Point(35, 466);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(366, 41);
-            this.buttonLogin.TabIndex = 1;
+            this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -60,12 +60,12 @@ namespace OnlineMart_Trivial
             // textBoxUsername
             // 
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUsername.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxUsername.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxUsername.Location = new System.Drawing.Point(49, 321);
+            this.textBoxUsername.Location = new System.Drawing.Point(49, 319);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(339, 16);
-            this.textBoxUsername.TabIndex = 2;
+            this.textBoxUsername.Size = new System.Drawing.Size(339, 20);
+            this.textBoxUsername.TabIndex = 0;
             // 
             // labelRegistrasi
             // 
@@ -84,13 +84,13 @@ namespace OnlineMart_Trivial
             // textBoxPassword
             // 
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPassword.Font = new System.Drawing.Font("Montserrat", 9.5F, System.Drawing.FontStyle.Bold);
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxPassword.Location = new System.Drawing.Point(49, 402);
+            this.textBoxPassword.Location = new System.Drawing.Point(49, 400);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⚉';
-            this.textBoxPassword.Size = new System.Drawing.Size(338, 16);
-            this.textBoxPassword.TabIndex = 4;
+            this.textBoxPassword.Size = new System.Drawing.Size(338, 19);
+            this.textBoxPassword.TabIndex = 1;
             // 
             // FormLoginKonsumen
             // 
@@ -111,6 +111,7 @@ namespace OnlineMart_Trivial
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Konsumen";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoginKonsumen_FormClosing);
+            this.Load += new System.EventHandler(this.FormLoginKonsumen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

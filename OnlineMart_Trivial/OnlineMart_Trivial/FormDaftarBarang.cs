@@ -161,6 +161,14 @@ namespace OnlineMart_Trivial
                     }
 
                 }
+                //Kalau button ubah diklik
+                if (e.ColumnIndex == dataGridView.Columns["btnUbahGrid"].Index && e.RowIndex >= 0)
+                {
+                    FormUbahBarang.IdDipilih = id;
+                    FormUbahBarang frm = new FormUbahBarang();
+                    frm.Owner = this;
+                    frm.Show();
+                }
             }
             catch (Exception ex)
             {

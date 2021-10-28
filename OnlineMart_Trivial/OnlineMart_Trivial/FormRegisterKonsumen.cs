@@ -67,5 +67,10 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Penyimpanan gagal. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+
+        private void FormRegisterKonsumen_Load(object sender, EventArgs e)
+        {
+            textBoxNama.Focus();
+        }
     }
 }

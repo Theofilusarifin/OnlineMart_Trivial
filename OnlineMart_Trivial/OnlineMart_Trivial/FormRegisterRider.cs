@@ -42,7 +42,7 @@ namespace OnlineMart_Trivial
                     Driver driver = new Driver(textBoxNama.Text, textBoxUsername.Text, textBoxEmail.Text, textBoxPassword.Text, textBoxNomorTelepon.Text);
                     Driver.TambahData(driver);
                     MessageBox.Show("Registrasi Telah Berhasil! Harap lakukan login dengan akun anda.", "Info");
-                    this.Close();
+                    ////this.Close();
                 }
                 else MessageBox.Show("Password Tidak Sama", "Kesalahan");
             }
@@ -66,6 +66,11 @@ namespace OnlineMart_Trivial
         {
             FormAuth frm = (FormAuth)this.Owner;
             frm.Show();
+        }
+
+        private void FormRegisterRider_Load(object sender, EventArgs e)
+        {
+            textBoxNama.Focus();
         }
     }
 }

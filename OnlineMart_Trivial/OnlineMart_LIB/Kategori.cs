@@ -64,6 +64,19 @@ namespace OnlineMart_LIB
             return listKategori;
         }
 
+        public static Kategori AmbilData(string nama)
+        {
+            string sql = "select distinct * from kategoris where nama = '" + nama + "'";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            hasil.Read();
+
+            Kategori k = new Kategori(hasil.GetInt32(0), hasil.GetString(1));
+
+            return k;
+        }
+
         public static Boolean UbahData(Kategori k)
         {
             // Querry Insert
