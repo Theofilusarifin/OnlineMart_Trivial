@@ -129,5 +129,30 @@ namespace OnlineMart_Trivial
                 
             }
         }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonClose_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonClose_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

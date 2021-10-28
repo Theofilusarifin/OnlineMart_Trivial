@@ -44,7 +44,7 @@ namespace OnlineMart_Trivial
             this.pictureBox1.Image = global::OnlineMart_Trivial.Properties.Resources.Background_Auth;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1711, 929);
+            this.pictureBox1.Size = new System.Drawing.Size(1556, 884);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -60,7 +60,7 @@ namespace OnlineMart_Trivial
             this.buttonLoginPegawai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLoginPegawai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLoginPegawai.ForeColor = System.Drawing.Color.White;
-            this.buttonLoginPegawai.Location = new System.Drawing.Point(1271, 660);
+            this.buttonLoginPegawai.Location = new System.Drawing.Point(1144, 630);
             this.buttonLoginPegawai.Name = "buttonLoginPegawai";
             this.buttonLoginPegawai.Size = new System.Drawing.Size(287, 43);
             this.buttonLoginPegawai.TabIndex = 16;
@@ -81,7 +81,7 @@ namespace OnlineMart_Trivial
             this.buttonRegisterKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegisterKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonRegisterKonsumen.ForeColor = System.Drawing.Color.White;
-            this.buttonRegisterKonsumen.Location = new System.Drawing.Point(170, 732);
+            this.buttonRegisterKonsumen.Location = new System.Drawing.Point(137, 690);
             this.buttonRegisterKonsumen.Name = "buttonRegisterKonsumen";
             this.buttonRegisterKonsumen.Size = new System.Drawing.Size(287, 43);
             this.buttonRegisterKonsumen.TabIndex = 15;
@@ -102,7 +102,7 @@ namespace OnlineMart_Trivial
             this.buttonLoginKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLoginKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLoginKonsumen.ForeColor = System.Drawing.Color.White;
-            this.buttonLoginKonsumen.Location = new System.Drawing.Point(170, 660);
+            this.buttonLoginKonsumen.Location = new System.Drawing.Point(137, 630);
             this.buttonLoginKonsumen.Name = "buttonLoginKonsumen";
             this.buttonLoginKonsumen.Size = new System.Drawing.Size(287, 43);
             this.buttonLoginKonsumen.TabIndex = 14;
@@ -123,7 +123,7 @@ namespace OnlineMart_Trivial
             this.buttonLoginRider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLoginRider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLoginRider.ForeColor = System.Drawing.Color.White;
-            this.buttonLoginRider.Location = new System.Drawing.Point(731, 660);
+            this.buttonLoginRider.Location = new System.Drawing.Point(654, 630);
             this.buttonLoginRider.Name = "buttonLoginRider";
             this.buttonLoginRider.Size = new System.Drawing.Size(287, 43);
             this.buttonLoginRider.TabIndex = 13;
@@ -144,7 +144,7 @@ namespace OnlineMart_Trivial
             this.buttonRegisterRider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegisterRider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonRegisterRider.ForeColor = System.Drawing.Color.White;
-            this.buttonRegisterRider.Location = new System.Drawing.Point(731, 732);
+            this.buttonRegisterRider.Location = new System.Drawing.Point(654, 690);
             this.buttonRegisterRider.Name = "buttonRegisterRider";
             this.buttonRegisterRider.Size = new System.Drawing.Size(287, 43);
             this.buttonRegisterRider.TabIndex = 12;
@@ -158,7 +158,7 @@ namespace OnlineMart_Trivial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1711, 929);
+            this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.buttonLoginPegawai);
             this.Controls.Add(this.buttonRegisterKonsumen);
             this.Controls.Add(this.buttonLoginKonsumen);

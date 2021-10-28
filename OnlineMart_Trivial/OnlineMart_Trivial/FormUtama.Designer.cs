@@ -61,7 +61,9 @@ namespace OnlineMart_Trivial
             this.buttonLogout = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelLeft = new System.Windows.Forms.Panel();
             this.panelActiveForm = new System.Windows.Forms.Panel();
+            this.panelHeader = new System.Windows.Forms.Panel();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPegawai.SuspendLayout();
             this.panelRekapPenjualan.SuspendLayout();
@@ -70,6 +72,7 @@ namespace OnlineMart_Trivial
             this.panelKonsumen.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerLoading
@@ -91,7 +94,7 @@ namespace OnlineMart_Trivial
             this.panelLeftNavbar.ForeColor = System.Drawing.Color.White;
             this.panelLeftNavbar.Location = new System.Drawing.Point(0, 0);
             this.panelLeftNavbar.Name = "panelLeftNavbar";
-            this.panelLeftNavbar.Size = new System.Drawing.Size(250, 750);
+            this.panelLeftNavbar.Size = new System.Drawing.Size(250, 961);
             this.panelLeftNavbar.TabIndex = 0;
             this.panelLeftNavbar.Visible = false;
             // 
@@ -517,27 +520,49 @@ namespace OnlineMart_Trivial
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panelLeft
+            // 
+            this.panelLeft.BackColor = System.Drawing.Color.Transparent;
+            this.panelLeft.Controls.Add(this.panelActiveForm);
+            this.panelLeft.Controls.Add(this.panelHeader);
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLeft.Location = new System.Drawing.Point(250, 0);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(1534, 961);
+            this.panelLeft.TabIndex = 1;
+            this.panelLeft.Visible = false;
+            // 
             // panelActiveForm
             // 
             this.panelActiveForm.BackColor = System.Drawing.Color.White;
             this.panelActiveForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelActiveForm.Location = new System.Drawing.Point(250, 0);
+            this.panelActiveForm.Location = new System.Drawing.Point(0, 94);
             this.panelActiveForm.Name = "panelActiveForm";
-            this.panelActiveForm.Size = new System.Drawing.Size(1120, 750);
-            this.panelActiveForm.TabIndex = 1;
+            this.panelActiveForm.Size = new System.Drawing.Size(1534, 867);
+            this.panelActiveForm.TabIndex = 3;
             this.panelActiveForm.Visible = false;
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.White;
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(1534, 94);
+            this.panelHeader.TabIndex = 2;
+            this.panelHeader.Visible = false;
             // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
-            this.ClientSize = new System.Drawing.Size(1370, 750);
-            this.Controls.Add(this.panelActiveForm);
+            this.ClientSize = new System.Drawing.Size(1784, 961);
+            this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelLeftNavbar);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1302, 766);
+            this.MinimumSize = new System.Drawing.Size(1800, 1000);
             this.Name = "FormUtama";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Online Mart";
@@ -550,6 +575,7 @@ namespace OnlineMart_Trivial
             this.panelKonsumen.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelLeft.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -585,7 +611,9 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Panel panelKonsumen;
         public System.Windows.Forms.Panel panelLogo;
         public System.Windows.Forms.Button buttonLogout;
+        public System.Windows.Forms.Panel panelLeft;
         public System.Windows.Forms.Panel panelActiveForm;
+        public System.Windows.Forms.Panel panelHeader;
     }
 }
 

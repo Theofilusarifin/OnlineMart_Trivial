@@ -64,15 +64,11 @@ namespace OnlineMart_Trivial
         private Form activeForm = null;
         private void openChildForm(Form childForm)
         {
-            //Kalau ada form active, close dulu
-            if (activeForm != null) 
-            {
-                activeForm.Close();
-            }
+            if (activeForm != null) activeForm.Close();
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            //childForm.Dock = DockStyle.Fill;
+            childForm.Dock = DockStyle.Fill;
             panelActiveForm.Controls.Add(childForm);
             panelActiveForm.Tag = childForm;
             childForm.BringToFront();
@@ -85,7 +81,7 @@ namespace OnlineMart_Trivial
         private void FormUtama_Load(object sender, EventArgs e)
         {
             //Ubah form ini (FormUtama) menjadi fullscreen (maximized)
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
 
             //Ubah FormUtama menjadi MdiParent (MdiContainer)
             this.IsMdiContainer = true;

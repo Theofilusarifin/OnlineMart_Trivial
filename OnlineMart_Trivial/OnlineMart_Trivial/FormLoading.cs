@@ -43,6 +43,8 @@ namespace OnlineMart_Trivial
         private void FormLoading_FormClosing(object sender, FormClosingEventArgs e)
         {
             FormUtama.frmUtama.panelLeftNavbar.Show();
+            FormUtama.frmUtama.panelLeft.Show();
+            FormUtama.frmUtama.panelHeader.Show();
             FormUtama.frmUtama.panelActiveForm.Show();
             FormUtama.frmUtama.panelLeftNavbar.BringToFront();
 
