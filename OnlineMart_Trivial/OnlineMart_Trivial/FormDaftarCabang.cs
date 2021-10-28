@@ -58,6 +58,26 @@ namespace OnlineMart_Trivial
             {
                 dataGridView.DataSource = null;
             }
+
+            //Tampilkan button Ubah dan Hapus
+            if (!dataGridView.Columns.Contains("btnUbahGrid"))
+            {
+                DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
+
+                bcolUbah.HeaderText = "Aksi";
+                bcolUbah.Text = "Ubah";
+                bcolUbah.Name = "btnUbahGrid";
+                bcolUbah.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolUbah);
+
+                DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
+
+                bcolHapus.HeaderText = "Aksi";
+                bcolHapus.Text = "Hapus";
+                bcolHapus.Name = "btnHapusGrid";
+                bcolHapus.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolHapus);
+            }
         }
 
         private void FormDaftarCabang_Load(object sender, EventArgs e)
@@ -70,6 +90,54 @@ namespace OnlineMart_Trivial
 
             //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
             TampilDataGrid();
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Menghapus data bila button hapus diklik
+            int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString());
+
+
+            //Kalau button hapus diklik
+            if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
+            {
+                string idHapus = dataGridView.CurrentRow.Cells["Id"].Value.ToString();
+                string namaHapus = dataGridView.CurrentRow.Cells["Nama"].Value.ToString();
+
+                //User ditanya sesuai dibawah
+                DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",
+                                                     "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //Kalau User klik yes barang akan dihapus
+                if (hasil == DialogResult.Yes)
+                {
+                    Boolean hapus = Barang.HapusData(id);
+
+                    if (hapus == true)
+                    {
+                        MessageBox.Show("Penghapusan data berhasil");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Penghapusan data gagal");
+                    }
+                }
+
+            }
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void comboBoxKriteria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

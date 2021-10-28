@@ -104,9 +104,9 @@ namespace OnlineMart_LIB
         }
 
         //Method untuk menghapus data Cabang
-        public static Boolean HapusData(Cabang c)
+        public static Boolean HapusData(int id)
         {
-            string sql = "delete from cabangs where id = " + c.Id;
+            string sql = "delete from cabangs where id = " + id;
 
             int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
             //Dicek apakah ada data yang berubah atau tidak
