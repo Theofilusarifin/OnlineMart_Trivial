@@ -83,7 +83,7 @@ namespace OnlineMart_Trivial
         #endregion
 
         #region FormLoad
-        private void FormDaftarCabang_Load(object sender, EventArgs e)
+        public void FormDaftarCabang_Load(object sender, EventArgs e)
         {
             // Panggil Method untuk menambah kolom pada datagridview
             FormatDataGrid();
@@ -128,34 +128,43 @@ namespace OnlineMart_Trivial
         #region DataGrid
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Menghapus data bila button hapus diklik
-            int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString());
-
-
-            //Kalau button hapus diklik
-            if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
+            try
             {
-                string idHapus = dataGridView.CurrentRow.Cells["Id"].Value.ToString();
-                string namaHapus = dataGridView.CurrentRow.Cells["Nama"].Value.ToString();
+                //Menghapus data bila button hapus diklik
+                int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString());
 
-                //User ditanya sesuai dibawah
-                DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",
-                                                     "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                //Kalau User klik yes barang akan dihapus
-                if (hasil == DialogResult.Yes)
+
+                //Kalau button hapus diklik
+                if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
                 {
-                    Boolean hapus = Barang.HapusData(id);
+                    string idHapus = dataGridView.CurrentRow.Cells["Id"].Value.ToString();
+                    string namaHapus = dataGridView.CurrentRow.Cells["Nama"].Value.ToString();
 
-                    if (hapus == true)
+                    //User ditanya sesuai dibawah
+                    DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",
+                                                         "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    //Kalau User klik yes barang akan dihapus
+                    if (hasil == DialogResult.Yes)
                     {
-                        MessageBox.Show("Penghapusan data berhasil");
+                        Boolean hapus = Barang.HapusData(id);
+
+                        if (hapus == true)
+                        {
+                            MessageBox.Show("Penghapusan data berhasil");
+                            // Refresh Halaman
+                            FormDaftarCabang_Load(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Penghapusan data gagal");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Penghapusan data gagal");
-                    }
+
                 }
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
         #endregion

@@ -120,9 +120,9 @@ namespace OnlineMart_Trivial
             this.panelRekapPenjualan.Controls.Add(this.btnRekapOmaSaldo);
             this.panelRekapPenjualan.Controls.Add(this.btnRekapBarang);
             this.panelRekapPenjualan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRekapPenjualan.Location = new System.Drawing.Point(0, 380);
+            this.panelRekapPenjualan.Location = new System.Drawing.Point(0, 360);
             this.panelRekapPenjualan.Name = "panelRekapPenjualan";
-            this.panelRekapPenjualan.Size = new System.Drawing.Size(233, 111);
+            this.panelRekapPenjualan.Size = new System.Drawing.Size(233, 89);
             this.panelRekapPenjualan.TabIndex = 15;
             // 
             // btnRekapOmaSaldo
@@ -163,7 +163,7 @@ namespace OnlineMart_Trivial
             this.buttonRekapPenjualan.FlatAppearance.BorderSize = 0;
             this.buttonRekapPenjualan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRekapPenjualan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRekapPenjualan.Location = new System.Drawing.Point(0, 335);
+            this.buttonRekapPenjualan.Location = new System.Drawing.Point(0, 315);
             this.buttonRekapPenjualan.Name = "buttonRekapPenjualan";
             this.buttonRekapPenjualan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonRekapPenjualan.Size = new System.Drawing.Size(233, 45);
@@ -185,7 +185,7 @@ namespace OnlineMart_Trivial
             this.panelPengaturan.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPengaturan.Location = new System.Drawing.Point(0, 45);
             this.panelPengaturan.Name = "panelPengaturan";
-            this.panelPengaturan.Size = new System.Drawing.Size(233, 290);
+            this.panelPengaturan.Size = new System.Drawing.Size(233, 270);
             this.panelPengaturan.TabIndex = 1;
             // 
             // buttonPengaturanHadiah

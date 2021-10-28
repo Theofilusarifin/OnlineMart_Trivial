@@ -40,12 +40,28 @@ namespace OnlineMart_Trivial
 
                 Cabang.TambahData(cabang);
 
-                MessageBox.Show("Data Barang berhasil ditambahkan", "Informasi");
+                MessageBox.Show("Data Cabang berhasil ditambahkan", "Informasi");
+
+                // Update Data Di Form Daftar
+                FormDaftarCabang frm = (FormDaftarCabang)this.Owner;
+                frm.FormDaftarCabang_Load(sender, e);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data Barang gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
+                MessageBox.Show("Data Cabang gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+
+        #region DesainButton
+        private void buttonTambah_MouseEnter(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonTambah_MouseLeave(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
     }
+
 }

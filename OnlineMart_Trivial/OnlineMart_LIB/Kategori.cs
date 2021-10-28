@@ -73,9 +73,9 @@ namespace OnlineMart_LIB
             else return true;
         }
 
-        public static Boolean HapusData(Kategori k)
+        public static Boolean HapusData(int id)
         {
-            string sql = "delete from kategoris where id = " + k.Id;
+            string sql = "delete from kategoris where id = " + id;
             int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
             //Dicek apakah ada data yang berubah atau tidak
             if (jumlahDataDihapus == 0) return false;
