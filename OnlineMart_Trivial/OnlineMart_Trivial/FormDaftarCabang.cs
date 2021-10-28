@@ -92,6 +92,33 @@ namespace OnlineMart_Trivial
             TampilDataGrid();
         }
 
+        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
+        {
+            string kriteria = "";
+            switch (comboBoxKriteria.Text)
+            {
+                case "Id":
+                    kriteria = "C.id";
+                    break;
+
+                case "Nama":
+                    kriteria = "C.nama";
+                    break;
+
+                case "Alamat":
+                    kriteria = "C.alamat";
+                    break;
+
+                case "Pegawai":
+                    kriteria = "P.nama";
+                    break;
+            }
+
+            listCabang = Cabang.BacaData(kriteria, textBoxKriteria.Text);
+            FormatDataGrid();
+            TampilDataGrid();
+        }
+
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //Menghapus data bila button hapus diklik
@@ -125,19 +152,16 @@ namespace OnlineMart_Trivial
             }
         }
 
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            FormTambahCabang tambah = new FormTambahCabang();
+            tambah.Owner = this;
+            tambah.Show();
+        }
+
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void comboBoxKriteria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
