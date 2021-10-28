@@ -47,7 +47,7 @@ namespace OnlineMart_Trivial
             this.buttonTambah.Location = new System.Drawing.Point(40, 373);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(393, 45);
-            this.buttonTambah.TabIndex = 6;
+            this.buttonTambah.TabIndex = 1;
             this.buttonTambah.Text = "Tambah";
             this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
@@ -62,7 +62,7 @@ namespace OnlineMart_Trivial
             this.textBoxNama.Location = new System.Drawing.Point(51, 284);
             this.textBoxNama.Name = "textBoxNama";
             this.textBoxNama.Size = new System.Drawing.Size(370, 20);
-            this.textBoxNama.TabIndex = 19;
+            this.textBoxNama.TabIndex = 0;
             // 
             // FormTambahKategori
             // 
@@ -77,6 +77,7 @@ namespace OnlineMart_Trivial
             this.Name = "FormTambahKategori";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tambah Kategori";
+            this.Load += new System.EventHandler(this.FormTambahKategori_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

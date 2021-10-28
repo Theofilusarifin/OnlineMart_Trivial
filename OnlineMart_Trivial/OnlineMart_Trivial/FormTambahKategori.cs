@@ -48,5 +48,10 @@ namespace OnlineMart_Trivial
             buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
         }
         #endregion
+
+        private void FormTambahKategori_Load(object sender, EventArgs e)
+        {
+            textBoxNama.Focus();
+        }
     }
 }

@@ -49,7 +49,7 @@ namespace OnlineMart_Trivial
             this.buttonTambah.Location = new System.Drawing.Point(39, 581);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(393, 45);
-            this.buttonTambah.TabIndex = 5;
+            this.buttonTambah.TabIndex = 3;
             this.buttonTambah.Text = "Tambah";
             this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
@@ -64,7 +64,7 @@ namespace OnlineMart_Trivial
             this.textBoxNama.Location = new System.Drawing.Point(51, 282);
             this.textBoxNama.Name = "textBoxNama";
             this.textBoxNama.Size = new System.Drawing.Size(370, 20);
-            this.textBoxNama.TabIndex = 19;
+            this.textBoxNama.TabIndex = 0;
             // 
             // textBoxAlamat
             // 
@@ -75,17 +75,17 @@ namespace OnlineMart_Trivial
             this.textBoxAlamat.Multiline = true;
             this.textBoxAlamat.Name = "textBoxAlamat";
             this.textBoxAlamat.Size = new System.Drawing.Size(370, 59);
-            this.textBoxAlamat.TabIndex = 20;
+            this.textBoxAlamat.TabIndex = 1;
             // 
             // comboBoxPegawai
             // 
             this.comboBoxPegawai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPegawai.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPegawai.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPegawai.FormattingEnabled = true;
             this.comboBoxPegawai.Location = new System.Drawing.Point(39, 486);
             this.comboBoxPegawai.Name = "comboBoxPegawai";
-            this.comboBoxPegawai.Size = new System.Drawing.Size(393, 30);
-            this.comboBoxPegawai.TabIndex = 29;
+            this.comboBoxPegawai.Size = new System.Drawing.Size(393, 34);
+            this.comboBoxPegawai.TabIndex = 2;
             // 
             // FormTambahCabang
             // 

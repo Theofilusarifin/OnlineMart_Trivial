@@ -28,6 +28,8 @@ namespace OnlineMart_Trivial
             comboBoxPegawai.DisplayMember = "nama";
 
             comboBoxPegawai.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            textBoxNama.Focus();
         }
 
         private void buttonTambah_Click(object sender, EventArgs e)

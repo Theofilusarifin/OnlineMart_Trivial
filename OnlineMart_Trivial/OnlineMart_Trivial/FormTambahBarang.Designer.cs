@@ -49,7 +49,7 @@ namespace OnlineMart_Trivial
             this.buttonTambah.Location = new System.Drawing.Point(39, 537);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(393, 45);
-            this.buttonTambah.TabIndex = 2;
+            this.buttonTambah.TabIndex = 3;
             this.buttonTambah.Text = "Tambah";
             this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
@@ -64,7 +64,7 @@ namespace OnlineMart_Trivial
             this.textBoxHarga.Location = new System.Drawing.Point(50, 364);
             this.textBoxHarga.Name = "textBoxHarga";
             this.textBoxHarga.Size = new System.Drawing.Size(370, 20);
-            this.textBoxHarga.TabIndex = 26;
+            this.textBoxHarga.TabIndex = 1;
             // 
             // textBoxNama
             // 
@@ -74,7 +74,7 @@ namespace OnlineMart_Trivial
             this.textBoxNama.Location = new System.Drawing.Point(50, 280);
             this.textBoxNama.Name = "textBoxNama";
             this.textBoxNama.Size = new System.Drawing.Size(370, 20);
-            this.textBoxNama.TabIndex = 25;
+            this.textBoxNama.TabIndex = 0;
             // 
             // comboBoxKategori
             // 
@@ -84,7 +84,7 @@ namespace OnlineMart_Trivial
             this.comboBoxKategori.Location = new System.Drawing.Point(39, 445);
             this.comboBoxKategori.Name = "comboBoxKategori";
             this.comboBoxKategori.Size = new System.Drawing.Size(393, 34);
-            this.comboBoxKategori.TabIndex = 27;
+            this.comboBoxKategori.TabIndex = 2;
             // 
             // FormTambahBarang
             // 
