@@ -18,13 +18,13 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
-        List<Kategori> listKategori = new List<Kategori>();
+        List<Pegawai> listPegawai = new List<Pegawai>();
 
         private void FormTambahCabang_Load(object sender, EventArgs e)
         {
-            listKategori = Kategori.BacaData("", "");
+            listPegawai = Pegawai.BacaData("", "");
 
-            comboBoxPegawai.DataSource = listKategori;
+            comboBoxPegawai.DataSource = listPegawai;
             comboBoxPegawai.DisplayMember = "Nama";
 
             comboBoxPegawai.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -32,7 +32,20 @@ namespace OnlineMart_Trivial
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Pegawai pegawai = (Pegawai)comboBoxPegawai.SelectedItem;
 
+                Cabang cabang = new Cabang(textBoxNama.Text, textBoxAlamat.Text, pegawai);
+
+                Cabang.TambahData(cabang);
+
+                MessageBox.Show("Data Barang berhasil ditambahkan", "Informasi");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Barang gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
     }
 }
