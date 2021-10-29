@@ -40,18 +40,41 @@ namespace OnlineMart_LIB
         }
         public string Nama 
         { 
-            get => nama; 
-            set => nama = value; 
+            get => nama;
+			set
+			{
+                if (value != "")
+				{
+                    nama = value;
+                }
+                else
+                {
+                    throw (new ArgumentException("Tolong inputkan nama cabang"));
+                }
+            }
         }
         public string Alamat 
         { 
-            get => alamat; 
-            set => alamat = value; 
+            get => alamat;
+            set
+            {
+                if (value != "")
+                {
+                    alamat = value;
+                }
+                else
+                {
+                    throw (new ArgumentException("Tolong inputkan alamat cabang"));
+                }
+            } 
         }
         public Pegawai Pegawai 
         { 
-            get => pegawai; 
-            set => pegawai = value; 
+            get => pegawai;
+            set
+            {
+                pegawai = value;
+            }
         }
         #endregion
 

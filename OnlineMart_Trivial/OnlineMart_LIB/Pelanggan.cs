@@ -53,29 +53,80 @@ namespace OnlineMart_LIB
 		}
 		public string Nama 
 		{ 
-			get => nama; 
-			set => nama = value;
+			get => nama;
+			set
+			{
+				if (value != "")
+				{
+					nama = value;
+				}
+				else
+				{
+					throw (new ArgumentException("Tolong inputkan nama pelanggan"));
+				}
+			}
 		}
 		public string Username 
 		{ 
-			get => username; 
-			set => username = value; 
+			get => username;
+			set
+			{
+				if (value != "")
+				{
+					username = value;
+				}
+				else
+				{
+					throw (new ArgumentException("Tolong inputkan username pelanggan"));
+				}
+			}
 		}
 		public string Email 
 		{
-			get => email; 
-			set => email = value;
+			get => email;
+			set
+			{
+				if (value != "")
+				{
+					email = value;
+				}
+				else
+				{
+					throw (new ArgumentException("Tolong inputkan email pelanggan"));
+				}
+			}
 		}
 		public string Password
 		{
 			get => password;
-			set => password = value;
+			set
+			{
+				if (value != "")
+				{
+					password = value;
+				}
+				else
+				{
+					throw (new ArgumentException("Tolong inputkan password pelanggan"));
+				}
+			}
 		}
-		public string Telepon 
+		public string Telepon
 		{
-			get => telepon; 
-			set => telepon = value;
+			get => telepon;
+			set
+			{
+				if (value != "")
+				{
+					telepon = value;
+				}
+				else
+				{
+					throw (new ArgumentException("Tolong inputkan telepon pelanggan"));
+				}
+			}
 		}
+
 		public double Saldo 
 		{
 			get => saldo; 

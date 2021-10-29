@@ -48,27 +48,77 @@ namespace OnlineMart_LIB
 		public string Nama
 		{ 
 			get => nama;
-			set => nama = value;
+			set
+			{
+				if (value != "")
+				{
+					nama = value;
+				}
+				else
+				{
+					throw (new ArgumentException("Tolong inputkan nama driver"));
+				}
+			}
 		}
 		public string Username
 		{
 			get => username;
-			set => username = value;
+			set
+			{
+				if (value != "")
+				{
+					username = value;
+				}
+				else
+				{
+					throw (new ArgumentException("Tolong inputkan username driver"));
+				}
+			}
 		}
 		public string Email 
 		{
-			get => email; 
-			set => email = value;
+			get => email;
+			set
+			{
+				if (value != "")
+				{
+					email = value;
+				}
+				else
+				{
+					throw (new ArgumentException("Tolong inputkan email driver"));
+				}
+			}
 		}
 		public string Password 
 		{
-			get => password; 
-			set => password = value;
+			get => password;
+			set
+			{
+				if (value != "")
+				{
+					password = value;
+				}
+				else
+				{
+					throw (new ArgumentException("Tolong inputkan password driver"));
+				}
+			}
 		}
 		public string Telepon 
 		{
 			get => telepon;
-			set => telepon = value;
+			set
+			{
+				if (value != "")
+				{
+					telepon = value;
+				}
+				else
+				{
+					throw (new ArgumentException("Tolong inputkan telepon driver"));
+				}
+			}
 		}
         #endregion
 

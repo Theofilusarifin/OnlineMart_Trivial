@@ -36,8 +36,18 @@ namespace OnlineMart_LIB
         }
         public string Nama 
         { 
-            get => nama; 
-            set => nama = value; 
+            get => nama;
+            set
+            {
+                if (value != "")
+                {
+                    nama = value;
+                }
+                else
+                {
+                    throw (new ArgumentException("Tolong inputkan nama kategori"));
+                }
+            }
         }
         #endregion
 

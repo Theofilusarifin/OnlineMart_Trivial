@@ -35,18 +35,38 @@ namespace OnlineMart_LIB
         #region Properties
         public int Id 
         { 
-            get => id; 
-            set => id = value; 
+            get => id;
+            set => id = value;
         }
         public string Nama 
         { 
-            get => nama; 
-            set => nama = value; 
+            get => nama;
+            set
+            {
+                if (value != "")
+                {
+                    nama = value;
+                }
+                else
+                {
+                    throw (new ArgumentException("Tolong inputkan nama barang"));
+                }
+            }
         }
         public int Harga 
         { 
-            get => harga; 
-            set => harga = value; 
+            get => harga;
+            set
+            {
+                if (value != null)
+                {
+                    harga = value;
+                }
+                else
+                {
+                    throw (new ArgumentException("Tolong inputkan harga barang"));
+                }
+            }
         }
         public Kategori Kategori 
         { 

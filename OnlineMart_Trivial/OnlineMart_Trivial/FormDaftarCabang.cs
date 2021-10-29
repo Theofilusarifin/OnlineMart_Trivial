@@ -146,7 +146,7 @@ namespace OnlineMart_Trivial
                     //Kalau User klik yes barang akan dihapus
                     if (hasil == DialogResult.Yes)
                     {
-                        Boolean hapus = Barang.HapusData(id);
+                        Boolean hapus = Cabang.HapusData(id);
 
                         if (hapus == true)
                         {
