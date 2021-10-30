@@ -135,7 +135,7 @@ namespace OnlineMart_Trivial
             this.btnRekapOmaSaldo.Name = "btnRekapOmaSaldo";
             this.btnRekapOmaSaldo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnRekapOmaSaldo.Size = new System.Drawing.Size(233, 45);
-            this.btnRekapOmaSaldo.TabIndex = 11;
+            this.btnRekapOmaSaldo.TabIndex = 1;
             this.btnRekapOmaSaldo.Text = "OMA SALDO";
             this.btnRekapOmaSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRekapOmaSaldo.UseVisualStyleBackColor = true;
@@ -151,7 +151,7 @@ namespace OnlineMart_Trivial
             this.btnRekapBarang.Name = "btnRekapBarang";
             this.btnRekapBarang.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnRekapBarang.Size = new System.Drawing.Size(233, 45);
-            this.btnRekapBarang.TabIndex = 10;
+            this.btnRekapBarang.TabIndex = 0;
             this.btnRekapBarang.Text = "BARANG";
             this.btnRekapBarang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRekapBarang.UseVisualStyleBackColor = true;
@@ -198,7 +198,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanHadiah.Name = "buttonPengaturanHadiah";
             this.buttonPengaturanHadiah.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonPengaturanHadiah.Size = new System.Drawing.Size(233, 45);
-            this.buttonPengaturanHadiah.TabIndex = 14;
+            this.buttonPengaturanHadiah.TabIndex = 5;
             this.buttonPengaturanHadiah.Text = "HADIAH";
             this.buttonPengaturanHadiah.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPengaturanHadiah.UseVisualStyleBackColor = true;
@@ -214,7 +214,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanPromo.Name = "buttonPengaturanPromo";
             this.buttonPengaturanPromo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonPengaturanPromo.Size = new System.Drawing.Size(233, 45);
-            this.buttonPengaturanPromo.TabIndex = 15;
+            this.buttonPengaturanPromo.TabIndex = 4;
             this.buttonPengaturanPromo.Text = "PROMO";
             this.buttonPengaturanPromo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPengaturanPromo.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanMetode.Name = "buttonPengaturanMetode";
             this.buttonPengaturanMetode.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonPengaturanMetode.Size = new System.Drawing.Size(233, 45);
-            this.buttonPengaturanMetode.TabIndex = 16;
+            this.buttonPengaturanMetode.TabIndex = 3;
             this.buttonPengaturanMetode.Text = "METODE PEMBAYARAN";
             this.buttonPengaturanMetode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPengaturanMetode.UseVisualStyleBackColor = true;
@@ -246,7 +246,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanBarang.Name = "buttonPengaturanBarang";
             this.buttonPengaturanBarang.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonPengaturanBarang.Size = new System.Drawing.Size(233, 45);
-            this.buttonPengaturanBarang.TabIndex = 17;
+            this.buttonPengaturanBarang.TabIndex = 2;
             this.buttonPengaturanBarang.Text = "BARANG";
             this.buttonPengaturanBarang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPengaturanBarang.UseVisualStyleBackColor = true;
@@ -263,7 +263,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanKategori.Name = "buttonPengaturanKategori";
             this.buttonPengaturanKategori.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonPengaturanKategori.Size = new System.Drawing.Size(233, 45);
-            this.buttonPengaturanKategori.TabIndex = 12;
+            this.buttonPengaturanKategori.TabIndex = 1;
             this.buttonPengaturanKategori.Text = "KATEGORI";
             this.buttonPengaturanKategori.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPengaturanKategori.UseVisualStyleBackColor = true;
@@ -280,7 +280,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanCabang.Name = "buttonPengaturanCabang";
             this.buttonPengaturanCabang.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonPengaturanCabang.Size = new System.Drawing.Size(233, 45);
-            this.buttonPengaturanCabang.TabIndex = 13;
+            this.buttonPengaturanCabang.TabIndex = 0;
             this.buttonPengaturanCabang.Text = "CABANG";
             this.buttonPengaturanCabang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPengaturanCabang.UseVisualStyleBackColor = true;
@@ -296,7 +296,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturan.Name = "buttonPengaturan";
             this.buttonPengaturan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonPengaturan.Size = new System.Drawing.Size(233, 45);
-            this.buttonPengaturan.TabIndex = 9;
+            this.buttonPengaturan.TabIndex = 0;
             this.buttonPengaturan.Text = "PENGATURAN";
             this.buttonPengaturan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPengaturan.UseVisualStyleBackColor = true;
@@ -323,7 +323,7 @@ namespace OnlineMart_Trivial
             this.buttonRekapPendapatan.Name = "buttonRekapPendapatan";
             this.buttonRekapPendapatan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonRekapPendapatan.Size = new System.Drawing.Size(233, 45);
-            this.buttonRekapPendapatan.TabIndex = 15;
+            this.buttonRekapPendapatan.TabIndex = 1;
             this.buttonRekapPendapatan.Text = "REKAP PENDAPATAN";
             this.buttonRekapPendapatan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonRekapPendapatan.UseVisualStyleBackColor = true;
@@ -339,7 +339,7 @@ namespace OnlineMart_Trivial
             this.buttonDaftarPengiriman.Name = "buttonDaftarPengiriman";
             this.buttonDaftarPengiriman.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonDaftarPengiriman.Size = new System.Drawing.Size(233, 45);
-            this.buttonDaftarPengiriman.TabIndex = 16;
+            this.buttonDaftarPengiriman.TabIndex = 0;
             this.buttonDaftarPengiriman.Text = "DAFTAR PENGIRIMAN";
             this.buttonDaftarPengiriman.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDaftarPengiriman.UseVisualStyleBackColor = true;
@@ -372,7 +372,7 @@ namespace OnlineMart_Trivial
             this.buttonIsiSaldo.Name = "buttonIsiSaldo";
             this.buttonIsiSaldo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonIsiSaldo.Size = new System.Drawing.Size(233, 45);
-            this.buttonIsiSaldo.TabIndex = 1;
+            this.buttonIsiSaldo.TabIndex = 7;
             this.buttonIsiSaldo.Text = "ISI SALDO";
             this.buttonIsiSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonIsiSaldo.UseVisualStyleBackColor = true;
@@ -388,7 +388,7 @@ namespace OnlineMart_Trivial
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonProfile.Size = new System.Drawing.Size(233, 45);
-            this.buttonProfile.TabIndex = 2;
+            this.buttonProfile.TabIndex = 6;
             this.buttonProfile.Text = "PROFILE";
             this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonProfile.UseVisualStyleBackColor = true;
@@ -404,7 +404,7 @@ namespace OnlineMart_Trivial
             this.buttonCetakNota.Name = "buttonCetakNota";
             this.buttonCetakNota.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonCetakNota.Size = new System.Drawing.Size(233, 45);
-            this.buttonCetakNota.TabIndex = 3;
+            this.buttonCetakNota.TabIndex = 5;
             this.buttonCetakNota.Text = "CETAK NOTA";
             this.buttonCetakNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCetakNota.UseVisualStyleBackColor = true;
@@ -436,7 +436,7 @@ namespace OnlineMart_Trivial
             this.buttonHistoriTransaksi.Name = "buttonHistoriTransaksi";
             this.buttonHistoriTransaksi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonHistoriTransaksi.Size = new System.Drawing.Size(233, 45);
-            this.buttonHistoriTransaksi.TabIndex = 5;
+            this.buttonHistoriTransaksi.TabIndex = 3;
             this.buttonHistoriTransaksi.Text = "HISTORI TRANSAKSI";
             this.buttonHistoriTransaksi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonHistoriTransaksi.UseVisualStyleBackColor = true;
@@ -452,7 +452,7 @@ namespace OnlineMart_Trivial
             this.buttonCheckout.Name = "buttonCheckout";
             this.buttonCheckout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonCheckout.Size = new System.Drawing.Size(233, 45);
-            this.buttonCheckout.TabIndex = 6;
+            this.buttonCheckout.TabIndex = 2;
             this.buttonCheckout.Text = "CHECKOUT";
             this.buttonCheckout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCheckout.UseVisualStyleBackColor = true;
@@ -468,7 +468,7 @@ namespace OnlineMart_Trivial
             this.buttonKeranjang.Name = "buttonKeranjang";
             this.buttonKeranjang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonKeranjang.Size = new System.Drawing.Size(233, 45);
-            this.buttonKeranjang.TabIndex = 7;
+            this.buttonKeranjang.TabIndex = 1;
             this.buttonKeranjang.Text = "KERANJANG";
             this.buttonKeranjang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonKeranjang.UseVisualStyleBackColor = true;
@@ -483,7 +483,7 @@ namespace OnlineMart_Trivial
             this.buttonBarangDeals.Name = "buttonBarangDeals";
             this.buttonBarangDeals.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonBarangDeals.Size = new System.Drawing.Size(233, 45);
-            this.buttonBarangDeals.TabIndex = 8;
+            this.buttonBarangDeals.TabIndex = 0;
             this.buttonBarangDeals.Text = "BARANG DAN DEALS";
             this.buttonBarangDeals.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBarangDeals.UseVisualStyleBackColor = true;
@@ -498,7 +498,7 @@ namespace OnlineMart_Trivial
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonLogout.Size = new System.Drawing.Size(233, 45);
-            this.buttonLogout.TabIndex = 12;
+            this.buttonLogout.TabIndex = 1;
             this.buttonLogout.Text = "LOGOUT";
             this.buttonLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -511,7 +511,7 @@ namespace OnlineMart_Trivial
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(233, 184);
-            this.panelLogo.TabIndex = 2;
+            this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -543,7 +543,7 @@ namespace OnlineMart_Trivial
             this.panelActiveForm.Location = new System.Drawing.Point(0, 87);
             this.panelActiveForm.Name = "panelActiveForm";
             this.panelActiveForm.Size = new System.Drawing.Size(1534, 874);
-            this.panelActiveForm.TabIndex = 3;
+            this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
             // 
             // panelHeader
@@ -557,7 +557,7 @@ namespace OnlineMart_Trivial
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1534, 87);
-            this.panelHeader.TabIndex = 2;
+            this.panelHeader.TabIndex = 0;
             this.panelHeader.Visible = false;
             // 
             // labelNama
@@ -569,7 +569,7 @@ namespace OnlineMart_Trivial
             this.labelNama.Location = new System.Drawing.Point(213, 30);
             this.labelNama.Name = "labelNama";
             this.labelNama.Size = new System.Drawing.Size(73, 26);
-            this.labelNama.TabIndex = 2;
+            this.labelNama.TabIndex = 1;
             this.labelNama.Text = "Nama";
             // 
             // labelwelcome

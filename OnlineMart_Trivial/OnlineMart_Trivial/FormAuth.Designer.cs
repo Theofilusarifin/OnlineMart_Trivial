@@ -63,7 +63,7 @@ namespace OnlineMart_Trivial
             this.buttonLoginPegawai.Location = new System.Drawing.Point(1144, 630);
             this.buttonLoginPegawai.Name = "buttonLoginPegawai";
             this.buttonLoginPegawai.Size = new System.Drawing.Size(287, 43);
-            this.buttonLoginPegawai.TabIndex = 16;
+            this.buttonLoginPegawai.TabIndex = 4;
             this.buttonLoginPegawai.Text = "Login";
             this.buttonLoginPegawai.UseVisualStyleBackColor = false;
             this.buttonLoginPegawai.Click += new System.EventHandler(this.buttonLoginPegawai_Click);
@@ -84,7 +84,7 @@ namespace OnlineMart_Trivial
             this.buttonRegisterKonsumen.Location = new System.Drawing.Point(137, 690);
             this.buttonRegisterKonsumen.Name = "buttonRegisterKonsumen";
             this.buttonRegisterKonsumen.Size = new System.Drawing.Size(287, 43);
-            this.buttonRegisterKonsumen.TabIndex = 15;
+            this.buttonRegisterKonsumen.TabIndex = 1;
             this.buttonRegisterKonsumen.Text = "Register";
             this.buttonRegisterKonsumen.UseVisualStyleBackColor = false;
             this.buttonRegisterKonsumen.Click += new System.EventHandler(this.buttonRegisterKonsumen_Click);
@@ -105,7 +105,7 @@ namespace OnlineMart_Trivial
             this.buttonLoginKonsumen.Location = new System.Drawing.Point(137, 630);
             this.buttonLoginKonsumen.Name = "buttonLoginKonsumen";
             this.buttonLoginKonsumen.Size = new System.Drawing.Size(287, 43);
-            this.buttonLoginKonsumen.TabIndex = 14;
+            this.buttonLoginKonsumen.TabIndex = 0;
             this.buttonLoginKonsumen.Text = "Login";
             this.buttonLoginKonsumen.UseVisualStyleBackColor = false;
             this.buttonLoginKonsumen.Click += new System.EventHandler(this.buttonLoginKonsumen_Click);
@@ -126,7 +126,7 @@ namespace OnlineMart_Trivial
             this.buttonLoginRider.Location = new System.Drawing.Point(654, 630);
             this.buttonLoginRider.Name = "buttonLoginRider";
             this.buttonLoginRider.Size = new System.Drawing.Size(287, 43);
-            this.buttonLoginRider.TabIndex = 13;
+            this.buttonLoginRider.TabIndex = 2;
             this.buttonLoginRider.Text = "Login";
             this.buttonLoginRider.UseVisualStyleBackColor = false;
             this.buttonLoginRider.Click += new System.EventHandler(this.buttonLoginRider_Click);
@@ -147,7 +147,7 @@ namespace OnlineMart_Trivial
             this.buttonRegisterRider.Location = new System.Drawing.Point(654, 690);
             this.buttonRegisterRider.Name = "buttonRegisterRider";
             this.buttonRegisterRider.Size = new System.Drawing.Size(287, 43);
-            this.buttonRegisterRider.TabIndex = 12;
+            this.buttonRegisterRider.TabIndex = 3;
             this.buttonRegisterRider.Text = "Register";
             this.buttonRegisterRider.UseVisualStyleBackColor = false;
             this.buttonRegisterRider.Click += new System.EventHandler(this.buttonRegisterRider_Click);

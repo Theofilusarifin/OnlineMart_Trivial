@@ -58,7 +58,7 @@ namespace OnlineMart_LIB
             get => harga;
             set
             {
-                if (value != null)
+                if (value.ToString() != "")
                 {
                     harga = value;
                 }

@@ -209,7 +209,28 @@ namespace OnlineMart_Trivial
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-
+            //User ditanya sesuai dibawah
+            DialogResult hasil = MessageBox.Show(this, "Anda yakin ingin logout?","LOGOUT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //Kalau User klik yes barang akan dihapus
+            if (hasil == DialogResult.Yes)
+            {
+                role = null;
+                pegawai = null;
+                rider = null;
+                konsumen = null;
+                panelKonsumen.Hide();
+                panelPegawai.Hide();
+                panelRider.Hide();
+                labelNama.Text = "";
+                panelLeftNavbar.Hide();
+                panelLeft.Hide();
+                panelHeader.Hide();
+                panelActiveForm.Hide();
+                FormAuth frm = new FormAuth(); //Create Object
+                frm.MdiParent = this; //Set form utama menjadi parent dari objek form yang dibuat
+                frm.Show(); //Tampilkan form
+                            // Method ShowDialog() tidak bisa digunakan jika menerapkan MdiParent, bisanya Method Show();
+            }
         }
     }
 }

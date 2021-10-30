@@ -51,7 +51,7 @@ namespace OnlineMart_Trivial
             this.dataGridView.Location = new System.Drawing.Point(308, 113);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(740, 201);
-            this.dataGridView.TabIndex = 18;
+            this.dataGridView.TabIndex = 1;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // buttonClose
@@ -69,7 +69,7 @@ namespace OnlineMart_Trivial
             this.buttonClose.Location = new System.Drawing.Point(920, 336);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(128, 39);
-            this.buttonClose.TabIndex = 10;
+            this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
@@ -91,7 +91,7 @@ namespace OnlineMart_Trivial
             this.buttonTambah.Location = new System.Drawing.Point(308, 336);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(142, 39);
-            this.buttonTambah.TabIndex = 11;
+            this.buttonTambah.TabIndex = 2;
             this.buttonTambah.Text = "Tambah Data";
             this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
@@ -122,7 +122,7 @@ namespace OnlineMart_Trivial
             this.comboBoxKriteria.Location = new System.Drawing.Point(308, 51);
             this.comboBoxKriteria.Name = "comboBoxKriteria";
             this.comboBoxKriteria.Size = new System.Drawing.Size(248, 30);
-            this.comboBoxKriteria.TabIndex = 1;
+            this.comboBoxKriteria.TabIndex = 5;
             // 
             // label1
             // 
@@ -131,7 +131,7 @@ namespace OnlineMart_Trivial
             this.label1.Location = new System.Drawing.Point(305, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 18);
-            this.label1.TabIndex = 19;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Cari Berdasarkan :";
             // 
             // pictureBox1
