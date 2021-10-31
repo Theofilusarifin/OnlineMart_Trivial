@@ -71,6 +71,12 @@ namespace OnlineMart_Trivial
         private void FormRegisterRider_Load(object sender, EventArgs e)
         {
             textBoxNama.Focus();
+            textBoxNama.Text = "Giyuu Tomioka";
+            textBoxEmail.Text = "Giyuu@gmail.com";
+            textBoxUsername.Text = "Giyuu";
+            textBoxNomorTelepon.Text = "080180183081";
+            textBoxPassword.Text = "password";
+            textBoxKonfirmasiPassword.Text = "password";
         }
     }
 }

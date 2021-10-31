@@ -47,6 +47,8 @@ namespace OnlineMart_Trivial
                 // Update Data Di Form Daftar
                 FormDaftarCabang frm = (FormDaftarCabang)this.Owner;
                 frm.FormDaftarCabang_Load(sender, e);
+
+                this.Close();
             }
             catch (Exception ex)
             {

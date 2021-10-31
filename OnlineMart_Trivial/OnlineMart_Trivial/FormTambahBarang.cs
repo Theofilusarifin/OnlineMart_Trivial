@@ -47,8 +47,10 @@ namespace OnlineMart_Trivial
                 // Update Data Di Form Daftar
                 FormDaftarBarang frm = (FormDaftarBarang)this.Owner;
                 frm.FormDaftarBarang_Load(sender, e);
+
+                this.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Data Barang gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }

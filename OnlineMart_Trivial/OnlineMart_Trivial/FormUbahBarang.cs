@@ -58,7 +58,6 @@ namespace OnlineMart_Trivial
                 frm.FormDaftarBarang_Load(sender, e);
 
                 this.Close();
-
             }
             catch (Exception ex)
             {

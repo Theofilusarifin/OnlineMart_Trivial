@@ -56,6 +56,7 @@ namespace OnlineMart_Trivial
                 frm.Show(); //Tampilkan form
                 // Method ShowDialog() tidak bisa digunakan jika menerapkan MdiParent, bisanya Method Show();
                 timerLoading.Stop();
+                opening = 0;
             }
         }
         #endregion
