@@ -154,7 +154,8 @@ namespace OnlineMart_Trivial
         #region ButtonRider
         private void buttonDaftarPengiriman_Click(object sender, EventArgs e)
         {
-
+            HideSubMenu();
+            openChildForm(new FormDaftarPengiriman());
         }
         private void buttonRekapPendapatan_Click(object sender, EventArgs e)
         {
@@ -208,6 +209,7 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
+        #region ButtonLogout
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             //User ditanya sesuai dibawah
@@ -232,6 +234,8 @@ namespace OnlineMart_Trivial
                 frm.Show(); //Tampilkan form
                             // Method ShowDialog() tidak bisa digunakan jika menerapkan MdiParent, bisanya Method Show();
             }
+            
         }
+        #endregion
     }
 }

@@ -91,6 +91,12 @@
     <Compile Include="FormDaftarOrder.Designer.cs">
       <DependentUpon>FormDaftarOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDaftarPengiriman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarPengiriman.Designer.cs">
+      <DependentUpon>FormDaftarPengiriman.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDaftarPromo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarOrder.resx">
       <DependentUpon>FormDaftarOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarPengiriman.resx">
+      <DependentUpon>FormDaftarPengiriman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarPromo.resx">
       <DependentUpon>FormDaftarPromo.cs</DependentUpon>
