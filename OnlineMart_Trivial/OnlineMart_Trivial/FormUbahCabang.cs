@@ -39,6 +39,7 @@ namespace OnlineMart_Trivial
             textBoxNama.Text = c.Nama;
             textBoxAlamat.Text = c.Alamat;
             comboBoxPegawai.Text = c.Pegawai.Nama;
+
         }
 
         private void buttonUbah_Click(object sender, EventArgs e)

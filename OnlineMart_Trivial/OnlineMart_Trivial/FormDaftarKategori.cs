@@ -32,8 +32,8 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Add("nama", "Nama Barang");
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
             dataGridView.AllowUserToAddRows = false;
@@ -66,6 +66,10 @@ namespace OnlineMart_Trivial
                 bcolUbah.Text = "Ubah";
                 bcolUbah.Name = "btnUbahGrid";
                 bcolUbah.UseColumnTextForButtonValue = true;
+                bcolUbah.FlatStyle = FlatStyle.Flat;
+                bcolUbah.DefaultCellStyle.Font = new Font("Montserrat", 9, FontStyle.Bold);
+                bcolUbah.DefaultCellStyle.ForeColor = Color.White;
+                bcolUbah.DefaultCellStyle.BackColor = Color.FromArgb(227, 65, 35);
                 dataGridView.Columns.Add(bcolUbah);
 
                 DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
@@ -74,6 +78,10 @@ namespace OnlineMart_Trivial
                 bcolHapus.Text = "Hapus";
                 bcolHapus.Name = "btnHapusGrid";
                 bcolHapus.UseColumnTextForButtonValue = true;
+                bcolHapus.FlatStyle = FlatStyle.Flat;
+                bcolHapus.DefaultCellStyle.Font = new Font("Montserrat", 9, FontStyle.Bold);
+                bcolHapus.DefaultCellStyle.ForeColor = Color.White;
+                bcolHapus.DefaultCellStyle.BackColor = Color.FromArgb(227, 65, 35);
                 dataGridView.Columns.Add(bcolHapus);
             }
         }
