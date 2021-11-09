@@ -20,6 +20,10 @@ namespace OnlineMart_LIB
 			this.Id = id;
 			this.Name = name;
 		}
+		public Metode_pembayarans(string name)
+		{
+			this.Name = name;
+		}
 		#endregion
 
 		#region property
@@ -49,11 +53,14 @@ namespace OnlineMart_LIB
 			{
 				sql += "select * from metode_pembayarans"; //Apabila tidak ada kriteria
 			}
-			else
+			else if (kriteria == "nama")
 			{
 				sql += "select id, nama from metode_pembayarans where " + kriteria + " like '%" + nilaiKriteria + "%'"; //Apabila ada kriteria
 			}
-
+			else
+			{
+				sql += "select id, nama from metode_pembayarans where " + kriteria + " = " + nilaiKriteria; //Apabila ada kriteria
+			}
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			List<Metode_pembayarans> listPembayaran = new List<Metode_pembayarans>();
@@ -77,6 +84,23 @@ namespace OnlineMart_LIB
 			Metode_pembayarans m = new Metode_pembayarans(hasil.GetInt32(0), hasil.GetString(1));
 
 			return m;
+		}
+		public static Boolean HapusData(int id)
+		{
+			string sql = "delete from metode_pembayarans where id = " + id;
+
+			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
+			//Dicek apakah ada data yang berubah atau tidak
+			if (jumlahDihapus == 0) return false;
+			else return true;
+		}
+		public static Boolean UbahData(Metode_pembayarans m)
+		{
+			// Querry Insert
+			string sql = "update metode_pembayarans set nama = '" + m.Name + "' where id = " + m.Id;
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
 		}
 		#endregion
 	}

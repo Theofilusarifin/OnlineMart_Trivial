@@ -16,5 +16,10 @@ namespace OnlineMart_Trivial
         {
             InitializeComponent();
         }
-    }
+
+		private void buttonUbah_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
