@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace OnlineMart_LIB
 {
-	class Metode_pembayarans
+	public class Metode_pembayarans
 	{
 		#region field
 		private int id;
@@ -64,6 +64,19 @@ namespace OnlineMart_LIB
 				listPembayaran.Add(metode_Pembayarans);
 			}
 			return listPembayaran;
+		}
+		public static Metode_pembayarans AmbilData(int id)
+		{
+			string sql = "select id, nama from metode_pembayarans where id = " + id;
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+			hasil.Read();
+
+			//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
+			Metode_pembayarans m = new Metode_pembayarans(hasil.GetInt32(0), hasil.GetString(1));
+
+			return m;
 		}
 		#endregion
 	}

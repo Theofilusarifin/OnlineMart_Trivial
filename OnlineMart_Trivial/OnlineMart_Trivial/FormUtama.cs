@@ -20,7 +20,7 @@ namespace OnlineMart_Trivial
         public static Pegawai pegawai;
         public static Driver rider;
         public static Pelanggan konsumen;
-        public List<Barang> keranjang = new List<Barang>();
+        public static List<Barang> keranjang = new List<Barang>();
 
         public FormUtama()
         {

@@ -300,6 +300,9 @@
     <EmbeddedResource Include="FormIsiSaldo.resx">
       <DependentUpon>FormIsiSaldo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormKeranjang.resx">
+      <DependentUpon>FormKeranjang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLoading.resx">
       <DependentUpon>FormLoading.cs</DependentUpon>
     </EmbeddedResource>
