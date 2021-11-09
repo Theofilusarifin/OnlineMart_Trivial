@@ -147,7 +147,9 @@ namespace OnlineMart_Trivial
         }
         private void buttonIsiSaldo_Click(object sender, EventArgs e)
         {
-
+            FormIsiSaldo frm = new FormIsiSaldo();
+            frm.Owner = this;
+            frm.Show();
         }
         #endregion
 

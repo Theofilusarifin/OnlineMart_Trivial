@@ -61,11 +61,23 @@
     <Compile Include="FormAuth.Designer.cs">
       <DependentUpon>FormAuth.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCheckout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCheckout.Designer.cs">
+      <DependentUpon>FormCheckout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDaftarBarang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDaftarBarang.Designer.cs">
       <DependentUpon>FormDaftarBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarBarangInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarBarangInfo.Designer.cs">
+      <DependentUpon>FormDaftarBarangInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDaftarCabang.cs">
       <SubType>Form</SubType>
@@ -73,17 +85,35 @@
     <Compile Include="FormDaftarCabang.Designer.cs">
       <DependentUpon>FormDaftarCabang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDaftarDeals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarDeals.Designer.cs">
+      <DependentUpon>FormDaftarDeals.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDaftarGift.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDaftarGift.Designer.cs">
       <DependentUpon>FormDaftarGift.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDaftarHadiah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarHadiah.Designer.cs">
+      <DependentUpon>FormDaftarHadiah.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDaftarKategori.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDaftarKategori.Designer.cs">
       <DependentUpon>FormDaftarKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarMetodePembayaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarMetodePembayaran.Designer.cs">
+      <DependentUpon>FormDaftarMetodePembayaran.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDaftarOrder.cs">
       <SubType>Form</SubType>
@@ -102,6 +132,18 @@
     </Compile>
     <Compile Include="FormDaftarPromo.Designer.cs">
       <DependentUpon>FormDaftarPromo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIsiSaldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIsiSaldo.Designer.cs">
+      <DependentUpon>FormIsiSaldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKeranjang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKeranjang.Designer.cs">
+      <DependentUpon>FormKeranjang.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLoading.cs">
       <SubType>Form</SubType>
@@ -151,11 +193,29 @@
     <Compile Include="FormTambahCabang.Designer.cs">
       <DependentUpon>FormTambahCabang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTambahHadiah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahHadiah.Designer.cs">
+      <DependentUpon>FormTambahHadiah.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTambahKategori.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTambahKategori.Designer.cs">
       <DependentUpon>FormTambahKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahMetodePembayaran.cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahMetodePembayaran.cs.Designer.cs">
+      <DependentUpon>FormTambahMetodePembayaran.cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahPromo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahPromo.Designer.cs">
+      <DependentUpon>FormTambahPromo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUbahBarang.cs">
       <SubType>Form</SubType>
@@ -169,11 +229,29 @@
     <Compile Include="FormUbahCabang.Designer.cs">
       <DependentUpon>FormUbahCabang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUbahHadiah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahHadiah.Designer.cs">
+      <DependentUpon>FormUbahHadiah.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUbahKategori.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormUbahKategori.Designer.cs">
       <DependentUpon>FormUbahKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUbahMetodePembayaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahMetodePembayaran.Designer.cs">
+      <DependentUpon>FormUbahMetodePembayaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUbahPromo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahPromo.Designer.cs">
+      <DependentUpon>FormUbahPromo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUtama.cs">
       <SubType>Form</SubType>
@@ -206,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarPromo.resx">
       <DependentUpon>FormDaftarPromo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIsiSaldo.resx">
+      <DependentUpon>FormIsiSaldo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoading.resx">
       <DependentUpon>FormLoading.cs</DependentUpon>
@@ -392,6 +473,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tambah Cabang1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form Isi Saldo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
