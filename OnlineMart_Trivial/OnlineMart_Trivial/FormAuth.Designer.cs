@@ -44,7 +44,7 @@ namespace OnlineMart_Trivial
             this.pictureBox1.Image = global::OnlineMart_Trivial.Properties.Resources.Background_Auth;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1386, 788);
+            this.pictureBox1.Size = new System.Drawing.Size(1556, 884);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -158,7 +158,7 @@ namespace OnlineMart_Trivial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.buttonLoginPegawai);
             this.Controls.Add(this.buttonRegisterKonsumen);
             this.Controls.Add(this.buttonLoginKonsumen);

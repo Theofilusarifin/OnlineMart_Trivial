@@ -97,7 +97,7 @@ namespace OnlineMart_Trivial
             this.panelLeftNavbar.ForeColor = System.Drawing.Color.White;
             this.panelLeftNavbar.Location = new System.Drawing.Point(0, 0);
             this.panelLeftNavbar.Name = "panelLeftNavbar";
-            this.panelLeftNavbar.Size = new System.Drawing.Size(250, 749);
+            this.panelLeftNavbar.Size = new System.Drawing.Size(250, 961);
             this.panelLeftNavbar.TabIndex = 0;
             this.panelLeftNavbar.Visible = false;
             // 
@@ -531,7 +531,7 @@ namespace OnlineMart_Trivial
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLeft.Location = new System.Drawing.Point(250, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(1120, 749);
+            this.panelLeft.Size = new System.Drawing.Size(1534, 961);
             this.panelLeft.TabIndex = 1;
             this.panelLeft.Visible = false;
             // 
@@ -556,7 +556,7 @@ namespace OnlineMart_Trivial
             this.panelHeader.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1120, 87);
+            this.panelHeader.Size = new System.Drawing.Size(1534, 87);
             this.panelHeader.TabIndex = 0;
             this.panelHeader.Visible = false;
             // 
@@ -564,11 +564,11 @@ namespace OnlineMart_Trivial
             // 
             this.labelNama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNama.AutoSize = true;
-            this.labelNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNama.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(62)))), ((int)(((byte)(34)))));
-            this.labelNama.Location = new System.Drawing.Point(-201, 30);
+            this.labelNama.Location = new System.Drawing.Point(213, 30);
             this.labelNama.Name = "labelNama";
-            this.labelNama.Size = new System.Drawing.Size(64, 24);
+            this.labelNama.Size = new System.Drawing.Size(73, 26);
             this.labelNama.TabIndex = 1;
             this.labelNama.Text = "Nama";
             // 
@@ -576,11 +576,11 @@ namespace OnlineMart_Trivial
             // 
             this.labelwelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelwelcome.AutoSize = true;
-            this.labelwelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelwelcome.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelwelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(62)))), ((int)(((byte)(34)))));
-            this.labelwelcome.Location = new System.Drawing.Point(-368, 30);
+            this.labelwelcome.Location = new System.Drawing.Point(46, 30);
             this.labelwelcome.Name = "labelwelcome";
-            this.labelwelcome.Size = new System.Drawing.Size(155, 24);
+            this.labelwelcome.Size = new System.Drawing.Size(171, 26);
             this.labelwelcome.TabIndex = 0;
             this.labelwelcome.Text = "Welcome Back,";
             // 
@@ -589,14 +589,14 @@ namespace OnlineMart_Trivial
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1784, 961);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelLeftNavbar);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1364, 726);
+            this.MinimumSize = new System.Drawing.Size(1800, 1000);
             this.Name = "FormUtama";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Online Mart";
