@@ -193,6 +193,16 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Form_Isi_Saldo {
+            get {
+                object obj = ResourceManager.GetObject("Form Isi Saldo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Form_Regis_Rider {
             get {
                 object obj = ResourceManager.GetObject("Form Regis Rider", resourceCulture);
