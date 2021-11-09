@@ -16,5 +16,25 @@ namespace OnlineMart_Trivial
         {
             InitializeComponent();
         }
+
+        private void FormTambahHadiah_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNama_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxHarga_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonUbah_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
