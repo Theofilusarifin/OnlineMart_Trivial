@@ -78,7 +78,7 @@ namespace OnlineMart_LIB
 				return true;
 		}
 
-        /*public static List<Order> BacaData(string kriteria, string nilaiKriteria)
+        public static List<Order> BacaData(string kriteria, string nilaiKriteria)
         {
 			string sql = "select o.id, o.tanggal_waktu, o.alamat_tujuan, o.ongkos_kirim, o.total_bayar, o.cara_bayar, " +
 						 "c.id, c.nama, c.alamat, p.id, p.nama, p.username, p.email, p.password, p.telepon, " +
@@ -91,26 +91,34 @@ namespace OnlineMart_LIB
 						 "inner join pelanggans as pe on o.pelanggan_id = pe.id " +
 						 "inner join promos as pr on o.promo_id = pr.id";
 
-
+            if (kriteria != "") //kalau tidak kosong tambahkan ini
+            {
+                sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+            }
 
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-            List<Order> listOrder = new List<Order>(); //Untuk menampung data
+            List<Order> listOrder = new List<Order>();
+            //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while (hasil.Read())
             {
-				Pegawai p = new Pegawai
-                Cabang c = new Cabang()
-                Driver d = new Driver
-                Pelanggan pe = new Pelanggan
-                Promo pr = new Promo
+                Pegawai p = new Pegawai(hasil.GetInt32(9), hasil.GetString(10), hasil.GetString(11), hasil.GetString(12), 
+                    hasil.GetString(13), hasil.GetString(14));
+                Cabang c = new Cabang(hasil.GetInt32(6), hasil.GetString(7), hasil.GetString(8), p);
+                Driver d = new Driver(hasil.GetInt32(15), hasil.GetString(16), hasil.GetString(17), hasil.GetString(18), 
+                    hasil.GetString(19), hasil.GetString(20));
+                Pelanggan pe = new Pelanggan(hasil.GetInt32(21), hasil.GetString(22), hasil.GetString(23), hasil.GetString(24), 
+                    hasil.GetString(25), hasil.GetString(26), hasil.GetDouble(27), hasil.GetDouble(28));
+                Promo pr = new Promo(hasil.GetInt32(29), hasil.GetString(30), hasil.GetString(31), hasil.GetInt32(32), 
+                    hasil.GetInt32(33), hasil.GetDouble(34));
 
                 Order o = new Order(hasil.GetInt32(0), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4),
-                    hasil.GetString(5), c, d, pe, pr, hasil.GetString(), hasil.GetString());
+                    hasil.GetString(5), c, d, pe, pr, hasil.GetString(35), hasil.GetString(36));
 
                 listOrder.Add(o);
             }
             return listOrder;
-        }*/
+        }
         #endregion
     }
 }

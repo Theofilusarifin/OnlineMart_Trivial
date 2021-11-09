@@ -103,5 +103,17 @@ namespace OnlineMart_Trivial
             }
         }
         #endregion
+
+        private void FormDaftarPengiriman_Load(object sender, EventArgs e)
+        {
+            // Panggil Method untuk menambah kolom pada datagridview
+            FormatDataGrid();
+
+            // Tampilkan semua data
+            listOrder = Order.BacaData("driver_id", FormUtama.rider.Id.ToString());
+
+            //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+            TampilDataGrid();
+        }
     }
 }
