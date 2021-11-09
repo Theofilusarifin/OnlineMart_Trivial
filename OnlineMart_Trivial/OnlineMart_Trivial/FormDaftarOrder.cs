@@ -25,28 +25,28 @@ namespace OnlineMart_Trivial
 
 			if (listOrder.Count > 0)
 			{
-				dataGridViewOrder.DataSource = listOrder; //menampilkan data
+				dataGridView.DataSource = listOrder; //menampilkan data
 
-				if (!dataGridViewOrder.Columns.Contains("buttonUbah"))
+				if (!dataGridView.Columns.Contains("buttonUbah"))
 				{
 					DataGridViewButtonColumn bcol = new DataGridViewButtonColumn();
 					bcol.HeaderText = "Aksi";
 					bcol.Text = "Ubah";
 					bcol.Name = "btnUbahGrid";
 					bcol.UseColumnTextForButtonValue = true;
-					dataGridViewOrder.Columns.Add(bcol);
+					dataGridView.Columns.Add(bcol);
 
 					DataGridViewButtonColumn bcol2 = new DataGridViewButtonColumn();
 					bcol2.HeaderText = "Aksi";
 					bcol2.Text = "Hapus";
 					bcol2.Name = "btnHapusGrid";
 					bcol2.UseColumnTextForButtonValue = true;
-					dataGridViewOrder.Columns.Add(bcol2);
+					dataGridView.Columns.Add(bcol2);
 				}
 			}
 			else
 			{
-				dataGridViewOrder.DataSource = null;
+				dataGridView.DataSource = null;
 			}
 		}
 	}

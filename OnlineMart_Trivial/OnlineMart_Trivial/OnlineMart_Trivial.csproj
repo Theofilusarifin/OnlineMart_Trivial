@@ -267,14 +267,26 @@
     <EmbeddedResource Include="FormDaftarBarang.resx">
       <DependentUpon>FormDaftarBarang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarBarangInfo.resx">
+      <DependentUpon>FormDaftarBarangInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarCabang.resx">
       <DependentUpon>FormDaftarCabang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarDeals.resx">
+      <DependentUpon>FormDaftarDeals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarGift.resx">
       <DependentUpon>FormDaftarGift.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarHadiah.resx">
+      <DependentUpon>FormDaftarHadiah.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarKategori.resx">
       <DependentUpon>FormDaftarKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarMetodePembayaran.resx">
+      <DependentUpon>FormDaftarMetodePembayaran.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarOrder.resx">
       <DependentUpon>FormDaftarOrder.cs</DependentUpon>
