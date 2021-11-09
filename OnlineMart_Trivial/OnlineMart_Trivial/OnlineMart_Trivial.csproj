@@ -267,14 +267,26 @@
     <EmbeddedResource Include="FormDaftarBarang.resx">
       <DependentUpon>FormDaftarBarang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarBarangInfo.resx">
+      <DependentUpon>FormDaftarBarangInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarCabang.resx">
       <DependentUpon>FormDaftarCabang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarDeals.resx">
+      <DependentUpon>FormDaftarDeals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarGift.resx">
       <DependentUpon>FormDaftarGift.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarHadiah.resx">
+      <DependentUpon>FormDaftarHadiah.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarKategori.resx">
       <DependentUpon>FormDaftarKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarMetodePembayaran.resx">
+      <DependentUpon>FormDaftarMetodePembayaran.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarOrder.resx">
       <DependentUpon>FormDaftarOrder.cs</DependentUpon>
@@ -287,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormIsiSaldo.resx">
       <DependentUpon>FormIsiSaldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKeranjang.resx">
+      <DependentUpon>FormKeranjang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoading.resx">
       <DependentUpon>FormLoading.cs</DependentUpon>
@@ -312,8 +327,17 @@
     <EmbeddedResource Include="FormTambahCabang.resx">
       <DependentUpon>FormTambahCabang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahHadiah.resx">
+      <DependentUpon>FormTambahHadiah.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTambahKategori.resx">
       <DependentUpon>FormTambahKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahMetodePembayaran.cs.resx">
+      <DependentUpon>FormTambahMetodePembayaran.cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahPromo.resx">
+      <DependentUpon>FormTambahPromo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUbahBarang.resx">
       <DependentUpon>FormUbahBarang.cs</DependentUpon>
@@ -321,8 +345,17 @@
     <EmbeddedResource Include="FormUbahCabang.resx">
       <DependentUpon>FormUbahCabang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahHadiah.resx">
+      <DependentUpon>FormUbahHadiah.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUbahKategori.resx">
       <DependentUpon>FormUbahKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahMetodePembayaran.resx">
+      <DependentUpon>FormUbahMetodePembayaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahPromo.resx">
+      <DependentUpon>FormUbahPromo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.cs</DependentUpon>
@@ -476,6 +509,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Form Isi Saldo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ubah Hadiah.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tambah Hadiah.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tambah Promo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ubah Promo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tambah Metode Pembayaran.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ubah Metode Pembayaran.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

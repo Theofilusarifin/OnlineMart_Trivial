@@ -27,9 +27,9 @@ namespace OnlineMart_Trivial
             if(listGift.Count > 0)
             {
                 //kalau ada data maka tampilkan di data grid
-                dataGridViewGift.DataSource = listGift;
+                dataGridView.DataSource = listGift;
 
-                if(!dataGridViewGift.Columns.Contains("btnUbahGrid"))
+                if(!dataGridView.Columns.Contains("btnUbahGrid"))
                 {
                     DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
 
@@ -37,19 +37,19 @@ namespace OnlineMart_Trivial
                     bcolUbah.Text = "Ubah";
                     bcolUbah.Name = "btnUbahGrid";
                     bcolUbah.UseColumnTextForButtonValue = true;
-                    dataGridViewGift.Columns.Add(bcolUbah);
+                    dataGridView.Columns.Add(bcolUbah);
 
                     DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
                     bcolHapus.HeaderText = "Aksi";
                     bcolHapus.Text = "Hapus";
                     bcolHapus.Name = "btnHapusGrid";
                     bcolHapus.UseColumnTextForButtonValue = true;
-                    dataGridViewGift.Columns.Add(bcolHapus);
+                    dataGridView.Columns.Add(bcolHapus);
                 }
             }
             else
             {
-                dataGridViewGift.DataSource = null;
+                dataGridView.DataSource = null;
             }
         }
     }

@@ -87,6 +87,20 @@ namespace OnlineMart_Trivial
                 bcolHapus.DefaultCellStyle.BackColor = Color.FromArgb(227, 65, 35);
 
                 dataGridView.Columns.Add(bcolHapus);
+
+                //Button tambah ke keranjang
+                DataGridViewButtonColumn bcolTambahKeranjang = new DataGridViewButtonColumn();
+
+                bcolTambahKeranjang.HeaderText = "Aksi";
+                bcolTambahKeranjang.Text = "Tambahkan ke keranjang";
+                bcolTambahKeranjang.Name = "btnTambahKeranjang";
+                bcolTambahKeranjang.UseColumnTextForButtonValue = true;
+                bcolTambahKeranjang.FlatStyle = FlatStyle.Flat;
+                bcolTambahKeranjang.DefaultCellStyle.Font = new Font("Montserrat", 9, FontStyle.Bold);
+                bcolTambahKeranjang.DefaultCellStyle.ForeColor = Color.White;
+                bcolTambahKeranjang.DefaultCellStyle.BackColor = Color.FromArgb(227, 65, 35);
+
+                dataGridView.Columns.Add(bcolTambahKeranjang);
             }
         }
         #endregion
@@ -168,7 +182,6 @@ namespace OnlineMart_Trivial
                             MessageBox.Show("Penghapusan data gagal");
                         }
                     }
-
                 }
                 //Kalau button ubah diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnUbahGrid"].Index && e.RowIndex >= 0)
@@ -177,6 +190,13 @@ namespace OnlineMart_Trivial
                     FormUbahBarang frm = new FormUbahBarang();
                     frm.Owner = this;
                     frm.Show();
+                }
+                //Kalau button Tambah ke keranjang diklik
+                if (e.ColumnIndex == dataGridView.Columns["btnTambahKeranjang"].Index && e.RowIndex >= 0)
+                {
+                    Barang b = Barang.AmbilData(id);
+                    FormUtama.keranjang.Add(b); //Untuk menambahkan barang ke dalam keranjang
+                    MessageBox.Show("Barang berhasil di tambahkan ke dalam keranjang");
                 }
             }
             catch (Exception ex)
@@ -218,6 +238,18 @@ namespace OnlineMart_Trivial
         {
             this.Close();
         }
-        #endregion
-    }
+		#endregion
+
+		private void buttonKeranjang_Click(object sender, EventArgs e)
+		{
+            FormKeranjang formKeranjang = new FormKeranjang();
+            formKeranjang.Owner = this;
+            formKeranjang.ShowDialog();
+		}
+
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
