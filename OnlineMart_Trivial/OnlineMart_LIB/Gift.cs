@@ -21,6 +21,11 @@ namespace OnlineMart_LIB
             Nama = nama;
             JumlahPoin = jumlahPoin;
         }
+        public Gift(string nama, int jumlahPoin)
+        {
+            Nama = nama;
+            JumlahPoin = jumlahPoin;
+        }
         #endregion
 
         #region Properties
@@ -63,7 +68,7 @@ namespace OnlineMart_LIB
             return listGift;
         }
 
-        public static Boolean HapusData(string id)
+        public static Boolean HapusData(int id)
         {
             string sqlDelete = "delete from gifts where id ='" + id + "'";
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sqlDelete);
@@ -77,6 +82,27 @@ namespace OnlineMart_LIB
             {
                 return true;
             }
+        }
+        public static Boolean UbahData(Gift g)
+        {
+            // Querry Insert
+            string sql = "update gifts set nama = '" + g.Nama + "', jumlah_poin = " + g.JumlahPoin + " where id = " + g.id;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
+        public static Gift AmbilData(int id)
+        {
+            string sql = "select id, nama, jumlah_poin from gifts where id = " + id;
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            hasil.Read();
+
+            //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
+            Gift g = new Gift(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2));
+
+            return g;
         }
         #endregion
     }

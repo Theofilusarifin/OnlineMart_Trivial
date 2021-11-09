@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnlineMart_LIB;
 
 namespace OnlineMart_Trivial
 {
@@ -34,7 +35,24 @@ namespace OnlineMart_Trivial
 
         private void buttonUbah_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Gift g = new Gift(textBoxNama.Text, int.Parse(textBoxHarga.Text));
 
+                Gift.TambahData(g);
+
+                MessageBox.Show("Data Gift berhasil ditambahkan", "Informasi");
+
+                // Update Data Di Form Daftar
+                FormDaftarHadiah frm = (FormDaftarHadiah)this.Owner;
+                frm.FormDaftarGift_Load(sender, e);
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Kategori gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
     }
 }

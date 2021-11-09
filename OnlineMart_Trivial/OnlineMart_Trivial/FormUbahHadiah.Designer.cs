@@ -40,7 +40,7 @@ namespace OnlineMart_Trivial
 			this.textBoxNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
 			this.textBoxNama.Location = new System.Drawing.Point(69, 343);
-			this.textBoxNama.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBoxNama.Margin = new System.Windows.Forms.Padding(4);
 			this.textBoxNama.Name = "textBoxNama";
 			this.textBoxNama.Size = new System.Drawing.Size(493, 23);
 			this.textBoxNama.TabIndex = 2;
@@ -51,7 +51,7 @@ namespace OnlineMart_Trivial
 			this.textBoxHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textBoxHarga.ForeColor = System.Drawing.Color.DimGray;
 			this.textBoxHarga.Location = new System.Drawing.Point(69, 447);
-			this.textBoxHarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBoxHarga.Margin = new System.Windows.Forms.Padding(4);
 			this.textBoxHarga.Name = "textBoxHarga";
 			this.textBoxHarga.Size = new System.Drawing.Size(493, 23);
 			this.textBoxHarga.TabIndex = 3;
@@ -68,7 +68,7 @@ namespace OnlineMart_Trivial
 			this.buttonUbah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
 			this.buttonUbah.ForeColor = System.Drawing.Color.White;
 			this.buttonUbah.Location = new System.Drawing.Point(51, 555);
-			this.buttonUbah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.buttonUbah.Margin = new System.Windows.Forms.Padding(4);
 			this.buttonUbah.Name = "buttonUbah";
 			this.buttonUbah.Size = new System.Drawing.Size(524, 55);
 			this.buttonUbah.TabIndex = 4;
@@ -87,10 +87,11 @@ namespace OnlineMart_Trivial
 			this.Controls.Add(this.textBoxHarga);
 			this.Controls.Add(this.textBoxNama);
 			this.DoubleBuffered = true;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "FormUbahHadiah";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Ubah Hadiah";
+			this.Load += new System.EventHandler(this.FormUbahHadiah_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

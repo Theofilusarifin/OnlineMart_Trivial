@@ -131,7 +131,6 @@ namespace OnlineMart_LIB
 
             return c;
         }
-        MySqlInfoMessageEventHandler 
         public static Boolean UbahData(Cabang c)
         {
             // Querry Insert
