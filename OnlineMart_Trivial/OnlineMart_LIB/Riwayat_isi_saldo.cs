@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace OnlineMart_LIB
 {
-    class Riwayat_isi_saldo
+    public class Riwayat_isi_saldo
     {
         #region Fields
         private int id;
@@ -94,6 +94,25 @@ namespace OnlineMart_LIB
             Riwayat_isi_saldo r = new Riwayat_isi_saldo(hasil.GetInt32(5), hasil.GetDateTime(6), hasil.GetInt32(7), p);
 
             return r;
+        }
+        public static Boolean UbahData(Riwayat_isi_saldo r)
+        {
+            // Querry Insert
+            string sql = "update riwata_isi_saldos set waktu = '" + r.Waktu + "', isi_saldo = '" + r.isiSaldo + "', pegawai_id = " + r.Pelanggan.Id + " where id = " + r.Id;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
+
+        //hapus data
+        public static Boolean HapusData(int id)
+        {
+            string sql = "delete from riwayat_isi_saldos where id = " + id;
+
+            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
+            //menegcek data berubah atau tidak
+            if (jumlahDataDihapus == 0) return false;
+            else return true;
         }
         #endregion
     }
