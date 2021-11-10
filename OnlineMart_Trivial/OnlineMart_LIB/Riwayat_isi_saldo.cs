@@ -24,6 +24,12 @@ namespace OnlineMart_LIB
             this.isiSaldo = isiSaldo;
             this.pelanggan = pelanggan;
         }
+        public Riwayat_isi_saldo( DateTime waktu, int isiSaldo, Pelanggan pelanggan)
+        {
+            this.waktu = waktu;
+            this.isiSaldo = isiSaldo;
+            this.pelanggan = pelanggan;
+        }
         #endregion
 
         #region Properties

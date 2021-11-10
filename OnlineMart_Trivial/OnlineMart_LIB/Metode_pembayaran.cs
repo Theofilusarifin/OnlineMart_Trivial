@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace OnlineMart_LIB
 {
-	public class Metode_pembayarans
+	public class Metode_pembayaran
 	{
 		#region field
 		private int id;
@@ -15,12 +15,12 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region constructor
-		public Metode_pembayarans(int id, string name)
+		public Metode_pembayaran(int id, string name)
 		{
 			this.Id = id;
 			this.Name = name;
 		}
-		public Metode_pembayarans(string name)
+		public Metode_pembayaran(string name)
 		{
 			this.Name = name;
 		}
@@ -32,7 +32,7 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Method
-		public static Boolean TambahData (Metode_pembayarans m)
+		public static Boolean TambahData (Metode_pembayaran m)
 		{
 			string sql = "insert into metode_pembayarans (nama) " + "values ('" + m.Name + "')";
 
@@ -46,7 +46,7 @@ namespace OnlineMart_LIB
 				return true;
 			}
 		}
-		public static List<Metode_pembayarans> BacaData(string kriteria, string nilaiKriteria)
+		public static List<Metode_pembayaran> BacaData(string kriteria, string nilaiKriteria)
 		{
 			string sql = "";
 			if (kriteria == "" && nilaiKriteria == "")
@@ -63,16 +63,16 @@ namespace OnlineMart_LIB
 			}
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-			List<Metode_pembayarans> listPembayaran = new List<Metode_pembayarans>();
+			List<Metode_pembayaran> listPembayaran = new List<Metode_pembayaran>();
 			while (hasil.Read())
 			{
-				Metode_pembayarans metode_Pembayarans = new Metode_pembayarans(hasil.GetInt32(0), hasil.GetString(1));
+				Metode_pembayaran metode_Pembayarans = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
 
 				listPembayaran.Add(metode_Pembayarans);
 			}
 			return listPembayaran;
 		}
-		public static Metode_pembayarans AmbilData(int id)
+		public static Metode_pembayaran AmbilData(int id)
 		{
 			string sql = "select id, nama from metode_pembayarans where id = " + id;
 
@@ -81,7 +81,7 @@ namespace OnlineMart_LIB
 			hasil.Read();
 
 			//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
-			Metode_pembayarans m = new Metode_pembayarans(hasil.GetInt32(0), hasil.GetString(1));
+			Metode_pembayaran m = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
 
 			return m;
 		}
@@ -94,7 +94,7 @@ namespace OnlineMart_LIB
 			if (jumlahDihapus == 0) return false;
 			else return true;
 		}
-		public static Boolean UbahData(Metode_pembayarans m)
+		public static Boolean UbahData(Metode_pembayaran m)
 		{
 			// Querry Insert
 			string sql = "update metode_pembayarans set nama = '" + m.Name + "' where id = " + m.Id;

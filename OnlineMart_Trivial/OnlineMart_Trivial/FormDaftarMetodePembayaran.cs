@@ -13,7 +13,7 @@ namespace OnlineMart_Trivial
 {
     public partial class FormDaftarMetodePembayaran : Form
     {
-        public List<Metode_pembayarans> listMetode = new List<Metode_pembayarans>();
+        public List<Metode_pembayaran> listMetode = new List<Metode_pembayaran>();
         public FormDaftarMetodePembayaran()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace OnlineMart_Trivial
 
             if (listMetode.Count > 0)
             {
-                foreach (Metode_pembayarans m in listMetode)
+                foreach (Metode_pembayaran m in listMetode)
                 {
                     dataGridView.Rows.Add(m.Id, m.Name);
                 }
@@ -62,9 +62,6 @@ namespace OnlineMart_Trivial
                 bcolUbah.Name = "btnUbahGrid";
                 bcolUbah.UseColumnTextForButtonValue = true;
                 bcolUbah.FlatStyle = FlatStyle.Flat;
-                bcolUbah.DefaultCellStyle.Font = new Font("Montserrat", 9, FontStyle.Bold);
-                bcolUbah.DefaultCellStyle.ForeColor = Color.White;
-                bcolUbah.DefaultCellStyle.BackColor = Color.FromArgb(227, 65, 35);
                 dataGridView.Columns.Add(bcolUbah);
 
                 DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
@@ -74,9 +71,6 @@ namespace OnlineMart_Trivial
                 bcolHapus.Name = "btnHapusGrid";
                 bcolHapus.UseColumnTextForButtonValue = true;
                 bcolHapus.FlatStyle = FlatStyle.Flat;
-                bcolHapus.DefaultCellStyle.Font = new Font("Montserrat", 9, FontStyle.Bold);
-                bcolHapus.DefaultCellStyle.ForeColor = Color.White;
-                bcolHapus.DefaultCellStyle.BackColor = Color.FromArgb(227, 65, 35);
 
                 dataGridView.Columns.Add(bcolHapus);
             }
@@ -88,10 +82,12 @@ namespace OnlineMart_Trivial
             FormatDataGrid();
 
             //Tampilkan semua data
-            listMetode = Metode_pembayarans.BacaData("", "");
+            listMetode = Metode_pembayaran.BacaData("", "");
 
             //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
             TampilDataGrid();
+
+            comboBoxKriteria.Text = "Id";
         }
 
 		private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -114,7 +110,7 @@ namespace OnlineMart_Trivial
                     //Kalau User klik yes barang akan dihapus
                     if (hasil == DialogResult.Yes)
                     {
-                        Boolean hapus = Metode_pembayarans.HapusData(id);
+                        Boolean hapus = Metode_pembayaran.HapusData(id);
 
                         if (hapus == true)
                         {
@@ -164,7 +160,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listMetode = Metode_pembayarans.BacaData(kriteria, textBoxKriteria.Text);
+            listMetode = Metode_pembayaran.BacaData(kriteria, textBoxKriteria.Text);
             FormatDataGrid();
             TampilDataGrid();
         }

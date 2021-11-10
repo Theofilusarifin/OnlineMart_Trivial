@@ -17,33 +17,29 @@ namespace OnlineMart_LIB
         private float ongkos_kirim;
         private float total_bayar;
         private string cara_bayar;
-        Cabang cabang;
-        Driver driver;
-        Pelanggan pelanggan;
-        Promo promo;
-        //status dan metode pembayaran dibuat string karena apabila dibuat enum, nanti error soalnya nda bisa dijadikan property
-        //+ dipanggil di method lain. Nanti untuk status dan metode pembayaran dikasih combo box dan outputnya berupa string
-        //jadi bisa di pake di dalam method + constructor
         string status;
-		string metode_pembayaran;
+        Cabang cabang;
+        Pelanggan pelanggan;
+        Driver driver;
+        Metode_pembayaran metode_pembayaran;
+        Promo promo;
         #endregion
 
         #region Constructors
-        public Order(int id, DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, 
-            Cabang cabang, Driver driver, Pelanggan pelanggan, Promo promo, string status, string metode_pembayaran)
+        public Order(int id, DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Cabang cabang, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo)
         {
-            Id = id;
-            Tanggal_waktu = tanggal_waktu;
-            Alamat_tujuan = alamat_tujuan;
-            Ongkos_kirim = ongkos_kirim;
-            Total_bayar = total_bayar;
-            Cara_bayar = cara_bayar;
-            Cabang = cabang;
-            Driver = driver;
-            Pelanggan = pelanggan;
-            Promo = promo;
-            Status = status;
-            Metode_pembayaran = metode_pembayaran;
+            this.Id = id;
+            this.Tanggal_waktu = tanggal_waktu;
+            this.Alamat_tujuan = alamat_tujuan;
+            this.Ongkos_kirim = ongkos_kirim;
+            this.Total_bayar = total_bayar;
+            this.Cara_bayar = cara_bayar;
+            this.Status = status;
+            this.Cabang = cabang;
+            this.Pelanggan = pelanggan;
+            this.Driver = driver;
+            this.Metode_pembayaran = metode_pembayaran;
+            this.Promo = promo;
         }
         #endregion
 
@@ -54,12 +50,12 @@ namespace OnlineMart_LIB
         public float Ongkos_kirim { get => ongkos_kirim; set => ongkos_kirim = value; }
         public float Total_bayar { get => total_bayar; set => total_bayar = value; }
         public string Cara_bayar { get => cara_bayar; set => cara_bayar = value; }
-        public Cabang Cabang { get => cabang; set => cabang = value; }
-        public Driver Driver { get => driver; set => driver = value; }
-        public Pelanggan Pelanggan { get => pelanggan; set => pelanggan = value; }
-        public Promo Promo { get => promo; set => promo = value; }
         public string Status { get => status; set => status = value; }
-        public string Metode_pembayaran { get => metode_pembayaran; set => metode_pembayaran = value; }
+        public Cabang Cabang { get => cabang; set => cabang = value; }
+        public Pelanggan Pelanggan { get => pelanggan; set => pelanggan = value; }
+        public Driver Driver { get => driver; set => driver = value; }
+        public Metode_pembayaran Metode_pembayaran { get => metode_pembayaran; set => metode_pembayaran = value; }
+        public Promo Promo { get => promo; set => promo = value; }
         #endregion
 
         #region Method
@@ -112,10 +108,10 @@ namespace OnlineMart_LIB
                 Promo pr = new Promo(hasil.GetInt32(29), hasil.GetString(30), hasil.GetString(31), hasil.GetInt32(32), 
                     hasil.GetInt32(33), hasil.GetDouble(34));
 
-                Order o = new Order(hasil.GetInt32(0), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4),
-                    hasil.GetString(5), c, d, pe, pr, hasil.GetString(35), hasil.GetString(36));
+                //Order o = new Order(hasil.GetInt32(0), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4),
+                //    hasil.GetString(5), c, d, pe, pr, hasil.GetString(35), hasil.GetString(36));
 
-                listOrder.Add(o);
+                //listOrder.Add(o);
             }
             return listOrder;
         }

@@ -48,9 +48,10 @@
     <Compile Include="Cabang.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Gift.cs" />
+    <Compile Include="Gift_Redeem.cs" />
     <Compile Include="Kategori.cs" />
     <Compile Include="Koneksi.cs" />
-    <Compile Include="Metode_pembayarans.cs" />
+    <Compile Include="Metode_pembayaran.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Pegawai.cs" />
     <Compile Include="Pelanggan.cs" />

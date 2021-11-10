@@ -150,6 +150,7 @@ namespace OnlineMart_Trivial
             this.Controls.Add(this.dataGridView);
             this.Name = "FormDaftarDeals";
             this.Text = "FormDaftarDeals";
+            this.Load += new System.EventHandler(this.FormDaftarDeals_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

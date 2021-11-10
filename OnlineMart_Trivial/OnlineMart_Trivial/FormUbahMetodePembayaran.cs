@@ -23,11 +23,11 @@ namespace OnlineMart_Trivial
 		{
             try
             {
-                Metode_pembayarans m = Metode_pembayarans.AmbilData(IdDipilih);
+                Metode_pembayaran m = Metode_pembayaran.AmbilData(IdDipilih);
 
                 //Ubah menjadi data baru
                 m.Name = textBoxNama.Text;
-                Metode_pembayarans.UbahData(m);
+                Metode_pembayaran.UbahData(m);
 
                 MessageBox.Show("Perubahan berhasil tersimpan!", "Info");
 
@@ -46,7 +46,7 @@ namespace OnlineMart_Trivial
 		private void FormUbahMetodePembayaran_Load(object sender, EventArgs e)
 		{
             //Ambil data yang sesuai id
-            Metode_pembayarans m = Metode_pembayarans.AmbilData(IdDipilih);
+            Metode_pembayaran m = Metode_pembayaran.AmbilData(IdDipilih);
 
             //Tampilkan data di text box
             textBoxNama.Text = m.Name;

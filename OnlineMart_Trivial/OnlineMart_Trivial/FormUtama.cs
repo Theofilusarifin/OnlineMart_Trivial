@@ -192,14 +192,17 @@ namespace OnlineMart_Trivial
         private void buttonPengaturanMetode_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            openChildForm(new FormDaftarMetodePembayaran());
         }
         private void buttonPengaturanPromo_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            openChildForm(new FormDaftarPromo());
         }
         private void buttonPengaturanHadiah_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+            openChildForm(new FormDaftarHadiah());
         }
         private void btnRekapBarang_Click(object sender, EventArgs e)
         {

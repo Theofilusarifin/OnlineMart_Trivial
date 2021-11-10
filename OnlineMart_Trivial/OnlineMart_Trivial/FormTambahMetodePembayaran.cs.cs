@@ -22,9 +22,9 @@ namespace OnlineMart_Trivial
 		{
             try
             {
-                Metode_pembayarans m = new Metode_pembayarans(textBoxNama.Text);
+                Metode_pembayaran m = new Metode_pembayaran(textBoxNama.Text);
 
-                Metode_pembayarans.TambahData(m);
+                Metode_pembayaran.TambahData(m);
 
                 MessageBox.Show("Data Metode Pembayaran berhasil ditambahkan", "Informasi");
 
