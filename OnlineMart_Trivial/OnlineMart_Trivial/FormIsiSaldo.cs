@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnlineMart_LIB;
 
 namespace OnlineMart_Trivial
 {
@@ -16,10 +17,34 @@ namespace OnlineMart_Trivial
         {
             InitializeComponent();
         }
-
+        public List<Metode_pembayaran> listMetodePembayaran = new List<Metode_pembayaran>();
         private void FormIsiSaldo_Load(object sender, EventArgs e)
         {
+           listMetodePembayaran = Metode_pembayaran.BacaData("","");
 
+            comboBoxMetodePembayaran.DataSource = listMetodePembayaran;
+            comboBoxMetodePembayaran.DisplayMember = "Nama";
+
+            comboBoxMetodePembayaran.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void buttonBeli_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //menambahkan riwayt isi saldo
+                Riwayat_isi_saldo r = new Riwayat_isi_saldo(DateTime.Now, int.Parse(textBoxSaldo.Text), FormUtama.konsumen);
+                Riwayat_isi_saldo.TambahData(r);
+
+                //update saldo
+                Pelanggan.TambahSaldo(FormUtama.konsumen, int.Parse(textBoxSaldo.Text));
+
+                MessageBox.Show("Isi saldo telah berhasil");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Terjadi error dalam melakukan isi saldo. Pesan kesalahan: " + ex.Message);
+            }
         }
     }
 }

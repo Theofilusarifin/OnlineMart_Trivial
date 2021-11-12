@@ -179,8 +179,16 @@ namespace OnlineMart_LIB
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
+        public static Boolean TambahSaldo(Pelanggan p, int penambahanSaldo)
+        {
+            // Querry Insert
+            string sql = "update pelanggans set saldo = saldo + " + penambahanSaldo + " where id = " + p.Id;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
 
-		public static Boolean HapusData(Pelanggan p)
+        public static Boolean HapusData(Pelanggan p)
 		{
 			string sql = "delete from pelanggans where id = " + p.Id;
 			int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
