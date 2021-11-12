@@ -120,6 +120,27 @@ namespace OnlineMart_LIB
 				return true;
 			}
 		}
-		#endregion
-	}
+        public static Promo AmbilData(int id)
+        {
+            string sql = "select id, nama from promos where id = " + id;
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            hasil.Read();
+
+            //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
+          Promo p = new Promo(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetInt32(3), hasil.GetInt32(4), hasil.GetDouble(5));
+
+            return p;
+        }
+        public static Boolean UbahData(Promo p)
+        {
+            // Querry Insert
+            string sql = "update promos set nama = '" + p.Nama + "' where id = " + p.Id;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
+        #endregion
+    }
 }
