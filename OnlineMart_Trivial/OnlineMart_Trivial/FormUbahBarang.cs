@@ -42,7 +42,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                Kategori kDipilih = Kategori.AmbilData(comboBoxKategori.Text);
+                Kategori kDipilih = (Kategori)comboBoxKategori.SelectedItem;
                 Barang blama = Barang.AmbilData(IdDipilih);
                 
                 //Ubah menjadi data baru

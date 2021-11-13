@@ -63,7 +63,7 @@ namespace OnlineMart_LIB
 
         public static List<Kategori> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select * from kategoris ";
+            string sql = "select id, nama from kategoris ";
             if(kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -77,23 +77,9 @@ namespace OnlineMart_LIB
             }
             return listKategori;
         }
-
-        public static Kategori AmbilData(string nama)
-        {
-            string sql = "select distinct * from kategoris where nama = '" + nama + "'";
-
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-
-            hasil.Read();
-
-            Kategori k = new Kategori(hasil.GetInt32(0), hasil.GetString(1));
-
-            return k;
-        }
-
         public static Kategori AmbilData(int id)
         {
-            string sql = "select distinct * from kategoris where id = " + id;
+            string sql = "select id, nama from kategoris where id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 

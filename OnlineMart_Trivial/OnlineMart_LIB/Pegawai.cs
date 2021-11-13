@@ -43,15 +43,15 @@ namespace OnlineMart_LIB
             get => id; 
             set => id = value; 
         }
-        public string Nama 
-        { 
-            get => nama; 
-            set => nama = value; 
-        }
         public string Username 
         { 
             get => username; 
             set => username = value; 
+        }
+        public string Nama 
+        { 
+            get => nama; 
+            set => nama = value; 
         }
         public string Email 
         { 
@@ -102,9 +102,9 @@ namespace OnlineMart_LIB
             return listPegawai;
         }
 
-        public static Pegawai AmbilData(string nama)
+        public static Pegawai AmbilData(int id)
         {
-            string sql = "select distinct * from pegawais where nama = '" + nama + "'";
+            string sql = "select id, nama, username, email, password, telepon from pegawais where id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 

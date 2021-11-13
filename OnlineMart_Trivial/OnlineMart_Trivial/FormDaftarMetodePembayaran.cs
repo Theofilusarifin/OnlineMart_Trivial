@@ -44,7 +44,7 @@ namespace OnlineMart_Trivial
             {
                 foreach (Metode_pembayaran m in listMetode)
                 {
-                    dataGridView.Rows.Add(m.Id, m.Name);
+                    dataGridView.Rows.Add(m.Id, m.Nama);
                 }
             }
             else

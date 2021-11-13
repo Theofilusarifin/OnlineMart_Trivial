@@ -46,7 +46,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                Pegawai pDipilih = Pegawai.AmbilData(comboBoxPegawai.Text);
+                Pegawai pDipilih = (Pegawai)comboBoxPegawai.SelectedItem;
                 Cabang clama = Cabang.AmbilData(IdDipilih);
 
                 //Ubah menjadi data baru

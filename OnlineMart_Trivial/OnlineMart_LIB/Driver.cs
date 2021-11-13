@@ -136,7 +136,7 @@ namespace OnlineMart_LIB
 
         public static List<Driver> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select nama, username, email, password, telepon from drivers ";
+            string sql = "select id, nama, username, email, password, telepon from drivers ";
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -154,9 +154,22 @@ namespace OnlineMart_LIB
             return listDriver;
         }
 
+		public static Driver AmbilData(int id)
+		{
+			string sql = "select id, nama, username, email, password, telepon from drivers where id = " + id;
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+			hasil.Read();
+
+			Driver d = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
+
+			return d;
+		}
+
 		public static Boolean UbahData(Driver d)
 		{
-			// Querry Insert
+			// Querry
 			string sql = "update drivers set nama = '" + d.Nama + "', username = '" + d.Username + "', email = '" + d.Email + "', password = SHA2('" + d.Password + "', 512), telepon = '" + d.Telepon + "' where id = " + d.Id;
 			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;

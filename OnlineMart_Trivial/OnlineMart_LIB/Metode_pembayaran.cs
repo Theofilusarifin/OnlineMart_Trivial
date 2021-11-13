@@ -11,67 +11,52 @@ namespace OnlineMart_LIB
 	{
 		#region field
 		private int id;
-		private string name;
+		private string nama;
 		#endregion
 
 		#region constructor
-		public Metode_pembayaran(int id, string name)
+		public Metode_pembayaran(int id, string nama)
 		{
 			this.Id = id;
-			this.Name = name;
+			this.Nama = nama;
 		}
-		public Metode_pembayaran(string name)
+		public Metode_pembayaran(string nama)
 		{
-			this.Name = name;
+			this.Nama = nama;
 		}
 		#endregion
 
 		#region property
 		public int Id { get => id; set => id = value; }
-		public string Name { get => name; set => name = value; }
+		public string Nama { get => nama; set => nama = value; }
 		#endregion
 
 		#region Method
 		public static Boolean TambahData (Metode_pembayaran m)
 		{
-			string sql = "insert into metode_pembayarans (nama) " + "values ('" + m.Name + "')";
+			string sql = "insert into metode_pembayarans (nama) values ('" + m.Nama + "')";
 
 			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
-			if (jumlahDitambah == 0)
-			{
-				return false;
-			}
-			else
-			{
-				return true;
-			}
+			if (jumlahDitambah == 0) return false;
+			else return true;
 		}
 		public static List<Metode_pembayaran> BacaData(string kriteria, string nilaiKriteria)
 		{
-			string sql = "";
-			if (kriteria == "" && nilaiKriteria == "")
-			{
-				sql += "select * from metode_pembayarans"; //Apabila tidak ada kriteria
-			}
-			else if (kriteria == "nama")
-			{
-				sql += "select id, nama from metode_pembayarans where " + kriteria + " like '%" + nilaiKriteria + "%'"; //Apabila ada kriteria
-			}
-			else
-			{
-				sql += "select id, nama from metode_pembayarans where " + kriteria + " = " + nilaiKriteria; //Apabila ada kriteria
-			}
+			string sql = "select id, nama from metode_pembayarans ";
+			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-			List<Metode_pembayaran> listPembayaran = new List<Metode_pembayaran>();
-			while (hasil.Read())
-			{
-				Metode_pembayaran metode_Pembayarans = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
+			List<Metode_pembayaran> listMetodePembayaran = new List<Metode_pembayaran>();
 
-				listPembayaran.Add(metode_Pembayarans);
+			while (hasil.Read() == true)
+			{
+				Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
+				listMetodePembayaran.Add(mp);
 			}
-			return listPembayaran;
+			return listMetodePembayaran;
 		}
+
 		public static Metode_pembayaran AmbilData(int id)
 		{
 			string sql = "select id, nama from metode_pembayarans where id = " + id;
@@ -85,6 +70,15 @@ namespace OnlineMart_LIB
 
 			return m;
 		}
+		public static Boolean UbahData(Metode_pembayaran m)
+		{
+			// Querry Insert
+			string sql = "update metode_pembayarans set nama = '" + m.Nama + "' where id = " + m.Id;
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
+		}
+
 		public static Boolean HapusData(int id)
 		{
 			string sql = "delete from metode_pembayarans where id = " + id;
@@ -92,14 +86,6 @@ namespace OnlineMart_LIB
 			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
 			//Dicek apakah ada data yang berubah atau tidak
 			if (jumlahDihapus == 0) return false;
-			else return true;
-		}
-		public static Boolean UbahData(Metode_pembayaran m)
-		{
-			// Querry Insert
-			string sql = "update metode_pembayarans set nama = '" + m.Name + "' where id = " + m.Id;
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
-			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 		#endregion

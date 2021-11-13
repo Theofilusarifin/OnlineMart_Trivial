@@ -170,6 +170,19 @@ namespace OnlineMart_LIB
 
 			return listPelanggan;
 		}
+		
+		public static Pelanggan AmbilData(int id)
+		{
+			string sql = "select id, nama, username, email, password, telepon, saldo, poin from pelanggans where id = " + id;
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+			hasil.Read();
+
+			Pelanggan p = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
+
+			return p;
+		}
 
 		public static Boolean UbahData(Pelanggan p)
 		{
@@ -179,6 +192,7 @@ namespace OnlineMart_LIB
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
+
         public static Boolean TambahSaldo(Pelanggan p, int penambahanSaldo)
         {
             // Querry Insert

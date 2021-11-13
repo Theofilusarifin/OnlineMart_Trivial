@@ -26,7 +26,7 @@ namespace OnlineMart_Trivial
                 Metode_pembayaran m = Metode_pembayaran.AmbilData(IdDipilih);
 
                 //Ubah menjadi data baru
-                m.Name = textBoxNama.Text;
+                m.Nama = textBoxNama.Text;
                 Metode_pembayaran.UbahData(m);
 
                 MessageBox.Show("Perubahan berhasil tersimpan!", "Info");
@@ -49,7 +49,7 @@ namespace OnlineMart_Trivial
             Metode_pembayaran m = Metode_pembayaran.AmbilData(IdDipilih);
 
             //Tampilkan data di text box
-            textBoxNama.Text = m.Name;
+            textBoxNama.Text = m.Nama;
         }
 	}
 }

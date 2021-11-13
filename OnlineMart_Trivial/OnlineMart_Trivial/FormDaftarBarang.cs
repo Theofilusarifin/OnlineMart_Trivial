@@ -13,7 +13,7 @@ namespace OnlineMart_Trivial
 {
     public partial class FormDaftarBarang : Form
     {
-        public List<Barang> listBarang = new List<Barang>();
+        public static List<Barang> listBarang = new List<Barang>();
         
         public FormDaftarBarang()
         {
@@ -90,10 +90,6 @@ namespace OnlineMart_Trivial
                 bcolTambahKeranjang.Name = "btnTambahKeranjang";
                 bcolTambahKeranjang.UseColumnTextForButtonValue = true;
                 bcolTambahKeranjang.FlatStyle = FlatStyle.Flat;
-                bcolTambahKeranjang.DefaultCellStyle.Font = new Font("Montserrat", 9, FontStyle.Bold);
-                bcolTambahKeranjang.DefaultCellStyle.ForeColor = Color.White;
-                bcolTambahKeranjang.DefaultCellStyle.BackColor = Color.FromArgb(227, 65, 35);
-
                 dataGridView.Columns.Add(bcolTambahKeranjang);
             }
         }

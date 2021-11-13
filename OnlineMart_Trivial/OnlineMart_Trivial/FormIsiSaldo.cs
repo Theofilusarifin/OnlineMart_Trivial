@@ -39,7 +39,12 @@ namespace OnlineMart_Trivial
                 //update saldo
                 Pelanggan.TambahSaldo(FormUtama.konsumen, int.Parse(textBoxSaldo.Text));
 
-                MessageBox.Show("Isi saldo telah berhasil");
+                MessageBox.Show("Isi saldo telah berhasil", "Informasi");
+
+                // Reset User Interface
+                textBoxSaldo.Clear();
+                comboBoxMetodePembayaran.Text = "";
+                textBoxSaldo.Focus();
             }
             catch(Exception ex)
             {

@@ -92,7 +92,7 @@ namespace OnlineMart_LIB
         //Method untuk membaca data Barang
         public static List<Barang> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select B.id, B.nama, B.harga, K.id, K.nama from barangs as B inner join kategoris as K on B.kategori_id = K.id ";
+            string sql = "select id, nama, harga, kategori_id from barangs ";
             if (kriteria != "") //apabila kriteria tidak kosong
             {
                 sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
@@ -104,7 +104,7 @@ namespace OnlineMart_LIB
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
-                Kategori k = new Kategori(hasil.GetInt32(3), hasil.GetString(4));
+                Kategori k = Kategori.AmbilData(hasil.GetInt32(3));
 
                 Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
                 
@@ -116,14 +116,14 @@ namespace OnlineMart_LIB
 
         public static Barang AmbilData(int id)
         {
-            string sql = "select B.id, B.nama, B.harga, K.id, K.nama from barangs as B inner join kategoris as K on B.kategori_id = K.id where B.id = " + id;
+            string sql = "select id, nama, harga, kategori_id from barangs where id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             hasil.Read();
 
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
-            Kategori k = new Kategori(hasil.GetInt32(3), hasil.GetString(4));
+            Kategori k = Kategori.AmbilData(hasil.GetInt32(3));
 
             Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
 
