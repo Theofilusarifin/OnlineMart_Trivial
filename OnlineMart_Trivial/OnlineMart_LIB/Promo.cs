@@ -11,36 +11,39 @@ namespace OnlineMart_LIB
 
 	public class Promo
 	{
-		#region field
+		#region Fields
 		private int id;
 		private string tipe;
 		private string nama;
 		private int diskon;
 		private int diskon_max;
 		private float minimal_belanja;
+		List<Order> listOrder;
 		#endregion
 
-		#region constructor
+		#region Constructors
 		public Promo(int id, string tipe, string nama, int diskon, int diskon_max, float minimal_belanja)
 		{
-			this.Id = id;
-			this.Tipe = tipe;
-			this.Nama = nama;
-			this.Diskon = diskon;
-			this.Diskon_max = diskon_max;
-			this.Minimal_belanja = minimal_belanja;
+			Id = id;
+			Tipe = tipe;
+			Nama = nama;
+			Diskon = diskon;
+			Diskon_max = diskon_max;
+			Minimal_belanja = minimal_belanja;
+			ListOrder = new List<Order>();
 		}
 		public Promo(string tipe, string nama, int diskon, int diskon_max, float minimal_belanja)
 		{
-			this.Tipe = tipe;
-			this.Nama = nama;
-			this.Diskon = diskon;
-			this.Diskon_max = diskon_max;
-			this.Minimal_belanja = minimal_belanja;
+			Tipe = tipe;
+			Nama = nama;
+			Diskon = diskon;
+			Diskon_max = diskon_max;
+			Minimal_belanja = minimal_belanja;
+			ListOrder = new List<Order>();
 		}
 		#endregion
 
-		#region property
+		#region Properties
 		public int Id 
 		{
 			get => id; 
@@ -71,10 +74,15 @@ namespace OnlineMart_LIB
 			get => minimal_belanja; 
 			set => minimal_belanja = value;
 		}
-		#endregion
+        public List<Order> ListOrder 
+		{ 
+			get => listOrder; 
+			private set => listOrder = value; 
+		}
+        #endregion
 
-		#region Method
-		public static void TambahData(Promo p)
+        #region Methods
+        public static void TambahData(Promo p)
 		{
 			string sql = "Insert into promos (tipe, nama, diskon, diskon_max, minimal_belanja) "
 				+ " values('" + p.Tipe + "', '" + p.Nama + "', " + p.Diskon + ", " + p.Diskon_max + ", " + p.Minimal_belanja + ")";

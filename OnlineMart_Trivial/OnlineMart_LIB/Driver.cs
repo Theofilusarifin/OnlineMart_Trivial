@@ -17,25 +17,28 @@ namespace OnlineMart_LIB
 		private string email;
         private string password;
         private string telepon;
+		List<Order> listOrder;
 		#endregion
 
 		#region Constructor
 		public Driver(int id, string nama, string username, string email, string password, string telepon)
 		{
-			this.Id = id;
-			this.Nama = nama;
-			this.Username = username;
-			this.Email = email;
-			this.Password = password;
-			this.Telepon = telepon;
+			Id = id;
+			Nama = nama;
+			Username = username;
+			Email = email;
+			Password = password;
+			Telepon = telepon;
+			ListOrder = new List<Order>();
 		}
 		public Driver(string nama, string username, string email, string password, string telepon)
 		{
-			this.Nama = nama;
-			this.Username = username;
-			this.Email = email;
-			this.Password = password;
-			this.Telepon = telepon;
+			Nama = nama;
+			Username = username;
+			Email = email;
+			Password = password;
+			Telepon = telepon;
+			ListOrder = new List<Order>();
 		}
 		#endregion
 
@@ -120,9 +123,15 @@ namespace OnlineMart_LIB
 				}
 			}
 		}
+
+        public List<Order> ListOrder 
+		{ 
+			get => listOrder; 
+			private set => listOrder = value; 
+		}
         #endregion
 
-        #region METHODS
+        #region Methods
         public static Boolean TambahData(Driver driver)
         {
             // Querry Insert

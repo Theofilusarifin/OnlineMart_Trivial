@@ -15,7 +15,8 @@ namespace OnlineMart_LIB
         private string nama;
         private int harga;
         private Kategori kategori;
-
+        List<Barang_Cabang> listBarangCabang; // Composition
+        List<Barang_Order> listBarangOrder; // Composition
         #region Constructors
         public Barang(int id, string nama, int harga, Kategori kategori)
         {
@@ -23,12 +24,16 @@ namespace OnlineMart_LIB
             Nama = nama;
             Harga = harga;
             Kategori = kategori;
+            ListBarangCabang = new List<Barang_Cabang>();
+            ListBarangOrder = new List<Barang_Order>();
         }
         public Barang(string nama, int harga, Kategori kategori)
         {
             Nama = nama;
             Harga = harga;
             Kategori = kategori;
+            ListBarangCabang = new List<Barang_Cabang>();
+            ListBarangOrder = new List<Barang_Order>();
         }
         #endregion
 
@@ -72,6 +77,16 @@ namespace OnlineMart_LIB
         { 
             get => kategori; 
             set => kategori = value; 
+        }
+        public List<Barang_Cabang> ListBarangCabang 
+        { 
+            get => listBarangCabang; 
+            private set => listBarangCabang = value; 
+        }
+        public List<Barang_Order> ListBarangOrder 
+        { 
+            get => listBarangOrder; 
+            private set => listBarangOrder = value; 
         }
         #endregion
 
@@ -123,7 +138,7 @@ namespace OnlineMart_LIB
             hasil.Read();
 
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
-            Kategori k = Kategori.AmbilData(hasil.GetInt32(3));
+            Kategori k = Kategori.AmbilData(hasil.GetInt32(3)); 
 
             Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
 

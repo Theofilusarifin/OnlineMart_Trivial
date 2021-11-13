@@ -24,41 +24,43 @@ namespace OnlineMart_LIB
         Metode_pembayaran metode_pembayaran;
         Promo promo;
         Gift_Redeem gift_redeem;
+        List<Barang_Order> listBarangOrder; // Composition
         #endregion
 
         #region Constructors
         public Order(int id, DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Cabang cabang, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem)
         {
-            this.Id = id;
-            this.Tanggal_waktu = tanggal_waktu;
-            this.Alamat_tujuan = alamat_tujuan;
-            this.Ongkos_kirim = ongkos_kirim;
-            this.Total_bayar = total_bayar;
-            this.Cara_bayar = cara_bayar;
-            this.Status = status;
-            this.Cabang = cabang;
-            this.Pelanggan = pelanggan;
-            this.Driver = driver;
-            this.Metode_pembayaran = metode_pembayaran;
-            this.Promo = promo;
-            this.Gift_redeem = gift_redeem;
+            Id = id;
+            Tanggal_waktu = tanggal_waktu;
+            Alamat_tujuan = alamat_tujuan;
+            Ongkos_kirim = ongkos_kirim;
+            Total_bayar = total_bayar;
+            Cara_bayar = cara_bayar;
+            Status = status;
+            Cabang = cabang;
+            Pelanggan = pelanggan;
+            Driver = driver;
+            Metode_pembayaran = metode_pembayaran;
+            Promo = promo;
+            Gift_redeem = gift_redeem;
+            ListBarangOrder = new List<Barang_Order>();
         }
 
         public Order(DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Cabang cabang, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem)
         {
-            this.Id = Id;
-            this.Tanggal_waktu = tanggal_waktu;
-            this.Alamat_tujuan = alamat_tujuan;
-            this.Ongkos_kirim = ongkos_kirim;
-            this.Total_bayar = total_bayar;
-            this.Cara_bayar = cara_bayar;
-            this.Status = status;
-            this.Cabang = cabang;
-            this.Pelanggan = pelanggan;
-            this.Driver = driver;
-            this.Metode_pembayaran = metode_pembayaran;
-            this.Promo = promo;
-            this.Gift_redeem = gift_redeem;
+            Tanggal_waktu = tanggal_waktu;
+            Alamat_tujuan = alamat_tujuan;
+            Ongkos_kirim = ongkos_kirim;
+            Total_bayar = total_bayar;
+            Cara_bayar = cara_bayar;
+            Status = status;
+            Cabang = cabang;
+            Pelanggan = pelanggan;
+            Driver = driver;
+            Metode_pembayaran = metode_pembayaran;
+            Promo = promo;
+            Gift_redeem = gift_redeem;
+            ListBarangOrder = new List<Barang_Order>();
         }
         #endregion
 
@@ -127,6 +129,11 @@ namespace OnlineMart_LIB
         { 
             get => gift_redeem; 
             set => gift_redeem = value; 
+        }
+        public List<Barang_Order> ListBarangOrder
+        { 
+            get => listBarangOrder; 
+            private set => listBarangOrder = value; 
         }
         #endregion
 

@@ -19,29 +19,36 @@ namespace OnlineMart_LIB
 		private string telepon;
         private double saldo;
         private double poin;
+		List<Order> listOrder;
+		List<Riwayat_isi_saldo> listRiwayatIsiSaldo;
 		#endregion
 
 		#region Constructor
 		public Pelanggan(int id, string nama, string username, string email, string password, string telepon, double saldo, double poin)
 		{
-			this.Id = id;
-			this.Nama = nama;
-			this.Username = username;
-			this.Email = email;
-			this.Password = password;
-			this.Telepon = telepon;
-			this.Saldo = saldo;
-			this.Poin = poin;
+			Id = id;
+			Nama = nama;
+			Username = username;
+			Email = email;
+			Password = password;
+			Telepon = telepon;
+			Saldo = saldo;
+			Poin = poin;
+			ListOrder = new List<Order>();
+			ListRiwayatIsiSaldo = new List<Riwayat_isi_saldo>();
 		}
 		public Pelanggan(string nama, string username, string email, string password, string telepon)
 		{
-			this.Nama = nama;
-			this.Username = username;
-			this.Email = email;
-			this.Password = password;
-			this.Telepon = telepon;
-			this.Saldo = 0;
-			this.Poin = 0;
+			Id = id;
+			Nama = nama;
+			Username = username;
+			Email = email;
+			Password = password;
+			Telepon = telepon;
+			Saldo = 0;
+			Poin = 0;
+			ListOrder = new List<Order>();
+			ListRiwayatIsiSaldo = new List<Riwayat_isi_saldo>();
 		}
 		#endregion
 
@@ -137,10 +144,20 @@ namespace OnlineMart_LIB
 			get => poin; 
 			set => poin = value;
 		}
-		#endregion
+        public List<Order> ListOrder 
+		{ 
+			get => listOrder;
+			private set => listOrder = value; 
+		}
+        public List<Riwayat_isi_saldo> ListRiwayatIsiSaldo 
+		{ 
+			get => listRiwayatIsiSaldo; 
+			private set => listRiwayatIsiSaldo = value; 
+		}
+        #endregion
 
-		#region METHODS
-		public static Boolean TambahData(Pelanggan p)
+        #region Methods
+        public static Boolean TambahData(Pelanggan p)
 		{
 			// Querry Insert
 			string sql = "insert into pelanggans (nama, username, email, password, telepon, saldo, poin) " +

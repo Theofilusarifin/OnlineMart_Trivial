@@ -14,35 +14,57 @@ namespace OnlineMart_LIB
 		private DateTime waktu;
 		private string poin_redeem;
 		private Gift gift;
-        #endregion
+		List<Order> listOrder;
+		#endregion
 
-        #region Constructor
-        public Gift_Redeem(int id, DateTime waktu, string poin_redeem, Gift gift)
+		#region Constructor
+		public Gift_Redeem(int id, DateTime waktu, string poin_redeem, Gift gift)
         {
-            this.Id = id;
-            this.Waktu = waktu;
-            this.Poin_redeem = poin_redeem;
-            this.Gift = gift;
-        }
-
+            Id = id;
+            Waktu = waktu;
+            Poin_redeem = poin_redeem;
+            Gift = gift;
+			ListOrder = new List<Order>();
+		}
 		public Gift_Redeem(DateTime waktu, string poin_redeem, Gift gift)
 		{
-			this.Id = id;
-			this.Waktu = waktu;
-			this.Poin_redeem = poin_redeem;
-			this.Gift = gift;
+			Waktu = waktu;
+			Poin_redeem = poin_redeem;
+			Gift = gift;
+			ListOrder = new List<Order>();
 		}
 		#endregion
 
 		#region Property
-		public int Id { get => id; set => id = value; }
-		public DateTime Waktu { get => waktu; set => waktu = value; }
-		public string Poin_redeem { get => poin_redeem; set => poin_redeem = value; }
-		public Gift Gift { get => gift; set => gift = value; }
-		#endregion
+		public int Id 
+		{ 
+			get => id; 
+			set => id = value; 
+		}
+		public DateTime Waktu 
+		{ 
+			get => waktu; 
+			set => waktu = value; 
+		}
+		public string Poin_redeem 
+		{ 
+			get => poin_redeem; 
+			set => poin_redeem = value; 
+		}
+		public Gift Gift 
+		{ 
+			get => gift; 
+			set => gift = value; 
+		}
+        public List<Order> ListOrder 
+		{ 
+			get => listOrder; 
+			private set => listOrder = value; 
+		}
+        #endregion
 
-		#region Methods
-		public static Boolean TambahData(Gift_Redeem gr)
+        #region Methods
+        public static Boolean TambahData(Gift_Redeem gr)
 		{
 			// Querry Insert
 			string sql = "Insert into gift_redeems (id, waktu, poin_redeem, gift_id) values (" + gr.Id + ", '" + gr.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + gr.Poin_redeem + "', " + gr.Gift.Id + ")";

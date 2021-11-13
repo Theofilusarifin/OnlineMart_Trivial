@@ -10,9 +10,12 @@ namespace OnlineMart_LIB
 {
     public class Gift
     {
+        #region Fields
         private int id;
         private string nama;
         private int jumlahPoin;
+        List<Gift_Redeem> listGiftRedeem;
+        #endregion
 
         #region Constructors
         public Gift(int id, string nama, int jumlahPoin)
@@ -20,18 +23,37 @@ namespace OnlineMart_LIB
             Id = id;
             Nama = nama;
             JumlahPoin = jumlahPoin;
+            ListGiftRedeem = new List<Gift_Redeem>();
         }
         public Gift(string nama, int jumlahPoin)
         {
             Nama = nama;
             JumlahPoin = jumlahPoin;
+            ListGiftRedeem = new List<Gift_Redeem>();
         }
         #endregion
 
         #region Properties
-        public int Id { get => id; set => id = value; }
-        public string Nama { get => nama; set => nama = value; }
-        public int JumlahPoin { get => jumlahPoin; set => jumlahPoin = value; }
+        public int Id 
+        { 
+            get => id; 
+            set => id = value; 
+        }
+        public string Nama 
+        {
+            get => nama; 
+            set => nama = value; 
+        }
+        public int JumlahPoin 
+        { 
+            get => jumlahPoin; 
+            set => jumlahPoin = value; 
+        }
+        public List<Gift_Redeem> ListGiftRedeem 
+        { 
+            get => listGiftRedeem; 
+            private set => listGiftRedeem = value; 
+        }
         #endregion
 
         #region Methods

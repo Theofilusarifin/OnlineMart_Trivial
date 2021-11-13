@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Barang.cs" />
+    <Compile Include="Barang_Cabang.cs" />
     <Compile Include="Barang_Order.cs" />
     <Compile Include="Cabang.cs" />
     <Compile Include="Driver.cs" />

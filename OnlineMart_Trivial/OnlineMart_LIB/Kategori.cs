@@ -11,20 +11,19 @@ namespace OnlineMart_LIB
     {
         private int id;
         private string nama;
+        List<Barang> listBarang;
 
         #region Constructors
         public Kategori(int id, string nama)
         {
             Id = id;
             Nama = nama;
-        }
-        public Kategori(int id)
-        {
-            Id = id;
+            ListBarang = new List<Barang>();
         }
         public Kategori(string nama)
         {
             Nama = nama;
+            ListBarang = new List<Barang>();
         }
         #endregion
 
@@ -48,6 +47,12 @@ namespace OnlineMart_LIB
                     throw (new ArgumentException("Tolong inputkan nama kategori"));
                 }
             }
+        }
+
+        public List<Barang> ListBarang 
+        { 
+            get => listBarang; 
+            private set => listBarang = value; 
         }
         #endregion
 

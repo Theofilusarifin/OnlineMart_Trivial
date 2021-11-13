@@ -9,30 +9,46 @@ namespace OnlineMart_LIB
 {
 	public class Metode_pembayaran
 	{
-		#region field
+		#region Field
 		private int id;
 		private string nama;
+		List<Order> listOrder;
 		#endregion
 
-		#region constructor
+		#region Constructor
 		public Metode_pembayaran(int id, string nama)
 		{
-			this.Id = id;
-			this.Nama = nama;
+			Id = id;
+			Nama = nama;
+			ListOrder = new List<Order>();
 		}
 		public Metode_pembayaran(string nama)
 		{
-			this.Nama = nama;
+			Nama = nama;
+			ListOrder = new List<Order>();
 		}
 		#endregion
 
-		#region property
-		public int Id { get => id; set => id = value; }
-		public string Nama { get => nama; set => nama = value; }
-		#endregion
+		#region Property
+		public int Id 
+		{ 
+			get => id; 
+			set => id = value; 
+		}
+		public string Nama 
+		{ 
+			get => nama; 
+			set => nama = value; 
+		}
+        public List<Order> ListOrder 
+		{ 
+			get => listOrder; 
+			private set => listOrder = value; 
+		}
+        #endregion
 
-		#region Method
-		public static Boolean TambahData (Metode_pembayaran m)
+        #region Method
+        public static Boolean TambahData (Metode_pembayaran m)
 		{
 			string sql = "insert into metode_pembayarans (nama) values ('" + m.Nama + "')";
 

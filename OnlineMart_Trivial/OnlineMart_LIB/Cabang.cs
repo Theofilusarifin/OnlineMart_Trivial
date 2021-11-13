@@ -15,6 +15,7 @@ namespace OnlineMart_LIB
         private string nama;
         private string alamat;
         private Pegawai pegawai;
+        List<Order> listOrder;
 
         #region Constructors
         public Cabang(int id, string nama, string alamat, Pegawai pegawai)
@@ -23,12 +24,14 @@ namespace OnlineMart_LIB
             Nama = nama;
             Alamat = alamat;
             Pegawai = pegawai;
+            ListOrder = new List<Order>();
         }
         public Cabang(string nama, string alamat, Pegawai pegawai)
         {
             Nama = nama;
             Alamat = alamat;
             Pegawai = pegawai;
+            ListOrder = new List<Order>();
         }
         #endregion
 
@@ -75,6 +78,12 @@ namespace OnlineMart_LIB
             {
                 pegawai = value;
             }
+        }
+
+        public List<Order> ListOrder 
+        { 
+            get => listOrder; 
+            private set => listOrder = value; 
         }
         #endregion
 

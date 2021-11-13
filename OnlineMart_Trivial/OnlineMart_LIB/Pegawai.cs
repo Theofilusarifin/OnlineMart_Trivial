@@ -10,12 +10,15 @@ namespace OnlineMart_LIB
 {
     public class Pegawai
     {
+        #region Fields
         private int id;
         private string nama;
         private string username;
         private string email;
         private string password;
         private string telepon;
+        List<Cabang> listCabang; // Composition
+        #endregion
 
         #region Constructors
         public Pegawai(int id, string nama, string username, string email, string password, string telepon)
@@ -26,7 +29,8 @@ namespace OnlineMart_LIB
             Email = email;
             Password = password;
             Telepon = telepon;
-        }
+            ListCabang = new List<Cabang>();
+        } 
         public Pegawai(string nama, string username, string email, string password, string telepon)
         {
             Nama = nama;
@@ -34,6 +38,7 @@ namespace OnlineMart_LIB
             Email = email;
             Password = password;
             Telepon = telepon;
+            ListCabang = new List<Cabang>();
         }
         #endregion
 
@@ -67,6 +72,11 @@ namespace OnlineMart_LIB
         { 
             get => telepon; 
             set => telepon = value; 
+        }
+        public List<Cabang> ListCabang 
+        { 
+            get => listCabang; 
+            private set => listCabang = value; 
         }
         #endregion
 
