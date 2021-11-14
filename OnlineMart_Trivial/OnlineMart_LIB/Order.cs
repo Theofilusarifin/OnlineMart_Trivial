@@ -153,7 +153,7 @@ namespace OnlineMart_LIB
 
         public static List<Order> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from promos ";
+            string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders ";
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -178,7 +178,7 @@ namespace OnlineMart_LIB
 
                 //Ambil Barang_Order
                 string barang_order = "select bo.barang_id, bo.jumlah, bo.harga from barang_order as bo " +
-                "inner join orders as o on bo.order_id = o.id where o.id = " + o.id;
+                "inner join orders as o on bo.order_id = o.id where o.id = " + o.Id;
 
                 MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_order);
 

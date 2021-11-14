@@ -146,17 +146,17 @@ namespace OnlineMart_LIB
                 }
 
                 //Ambil Order
-                string order_join = "select o.id from orders as o inner join cabangs as c on o.cabang_id = c.id where c.id = " + c.id;
+                //string order_join = "select o.id from orders as o inner join cabangs as c on o.cabang_id = c.id where c.id = " + c.id;
                 
-                MySqlDataReader hasil_join2 = Koneksi.JalankanPerintahQuery(order_join);
+                //MySqlDataReader hasil_join2 = Koneksi.JalankanPerintahQuery(order_join);
 
-                while (hasil_join2.Read())
-                {
-                    Order o_join = Order.AmbilData(hasil_join2.GetInt32(0));
+                //while (hasil_join2.Read())
+                //{
+                //    Order o_join = Order.AmbilData(hasil_join2.GetInt32(0));
                     
-                    //Tambahkan hasil join ke aggregation relationship
-                    c.ListOrder.Add(o_join);
-                }
+                //    //Tambahkan hasil join ke aggregation relationship
+                //    c.ListOrder.Add(o_join);
+                //}
 
                 listCabang.Add(c);
             }
