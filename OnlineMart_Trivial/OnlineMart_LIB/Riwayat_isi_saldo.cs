@@ -33,37 +33,47 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Properties
-        public int Id { get => id; set => id = value; }
-        public DateTime Waktu { get => waktu; set => waktu = value; }
-        public int IsiSaldo { get => isiSaldo; set => isiSaldo = value; }
-        public Pelanggan Pelanggan { get => pelanggan; set => pelanggan = value; }
+        public int Id 
+        { 
+            get => id; 
+            set => id = value; 
+        }
+        public DateTime Waktu 
+        { 
+            get => waktu; 
+            set => waktu = value; 
+        }
+        public int IsiSaldo 
+        { 
+            get => isiSaldo; 
+            set => isiSaldo = value; 
+        }
+        public Pelanggan Pelanggan 
+        { 
+            get => pelanggan; 
+            set => pelanggan = value; 
+        }
         #endregion
 
         #region Methods
         public static Boolean TambahData(Riwayat_isi_saldo r)
         {
             //menampung string
-            string sql = "Insert into riwayat_isi_saldos (waktu, isi_saldo, pelanggan_id) values ('" + r.Waktu + "', '" + r.IsiSaldo + "', " + r.Pelanggan.Id + ")";
+            string sql = "insert into riwayat_isi_saldos (waktu, isi_saldo, pelanggan_id) values ('" + r.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " + r.IsiSaldo + ", " + r.Pelanggan.Id + ")";
 
             //menjalankan perintah sql
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
-            if(jumlahDitambah == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            if (jumlahDitambah == 0) return false;
+            else return true;
         }
         public static List<Riwayat_isi_saldo> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select R.id, R.waktu, R.isi_saldo, P.id, P.nama, P.email, P.password, P.telepon, P.saldo, P.poin from riwayat_isi_saldos inner join " +
-                         "pelanggans as P on R.pelanggan.id = P.id";
-            if(kriteria != "")// kalau tidak kosong maka
+            string sql = "select id, waktu, isi_saldo, pelanggan_id from riwayat_isi_saldos ";
+            if (kriteria != "") //apabila kriteria tidak kosong
             {
                 sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
+            
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Riwayat_isi_saldo> listRiwayat = new List<Riwayat_isi_saldo>();
@@ -71,10 +81,10 @@ namespace OnlineMart_LIB
             while (hasil.Read() == true)
             {
 
-                Pelanggan p = new Pelanggan(hasil.GetString(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4));
+                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(3));
 
-                Riwayat_isi_saldo r = new Riwayat_isi_saldo(hasil.GetInt32(5), hasil.GetDateTime(6), hasil.GetInt32(7), p);               
-                   
+                Riwayat_isi_saldo r = new Riwayat_isi_saldo(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetInt32(2), p);               
+              
                 listRiwayat.Add(r);
             }
 
@@ -82,23 +92,22 @@ namespace OnlineMart_LIB
         }
         public static Riwayat_isi_saldo AmbilData(int id)
         {
-            string sql = "select R.Id, R.waktu, R.isi_saldo, P.id, P.nama, P.email, P.password, P.telepon, P.saldo, P.poin from riwayat_isi_saldos as R inner join " +
-                         " pelanggans as P on R.pelanggan_id = P.id where R.id = " + id;
+            string sql = "select id, waktu, isi_saldo, pelanggan_id from riwayat_isi_saldos where id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             hasil.Read();
 
-            Pelanggan p = new Pelanggan(hasil.GetString(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4));
+            Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(3));
 
-            Riwayat_isi_saldo r = new Riwayat_isi_saldo(hasil.GetInt32(5), hasil.GetDateTime(6), hasil.GetInt32(7), p);
+            Riwayat_isi_saldo r = new Riwayat_isi_saldo(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetInt32(2), p);
 
             return r;
         }
         public static Boolean UbahData(Riwayat_isi_saldo r)
         {
             // Querry Insert
-            string sql = "update riwata_isi_saldos set waktu = '" + r.Waktu + "', isi_saldo = '" + r.isiSaldo + "', pegawai_id = " + r.Pelanggan.Id + " where id = " + r.Id;
+            string sql = "update riwayat_isi_saldos set waktu = '" + r.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', isi_saldo = " + r.isiSaldo + ", pelanggan_id = " + r.Pelanggan.Id + " where id = " + r.Id;
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;

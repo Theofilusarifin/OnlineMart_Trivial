@@ -11,11 +11,14 @@ namespace OnlineMart_LIB
 {
     public class Cabang
     {
+        #region Fields
         private int id;
         private string nama;
         private string alamat;
         private Pegawai pegawai;
-        List<Order> listOrder;
+        List<Order> listOrder; //Aggregation
+        List<Barang_Cabang> listBarangCabang; // Composition
+        #endregion
 
         #region Constructors
         public Cabang(int id, string nama, string alamat, Pegawai pegawai)
@@ -25,6 +28,7 @@ namespace OnlineMart_LIB
             Alamat = alamat;
             Pegawai = pegawai;
             ListOrder = new List<Order>();
+            ListBarangCabang = new List<Barang_Cabang>();
         }
         public Cabang(string nama, string alamat, Pegawai pegawai)
         {
@@ -32,6 +36,7 @@ namespace OnlineMart_LIB
             Alamat = alamat;
             Pegawai = pegawai;
             ListOrder = new List<Order>();
+            ListBarangCabang = new List<Barang_Cabang>();
         }
         #endregion
 
@@ -85,6 +90,11 @@ namespace OnlineMart_LIB
             get => listOrder; 
             private set => listOrder = value; 
         }
+        public List<Barang_Cabang> ListBarangCabang 
+        { 
+            get => listBarangCabang; 
+            private set => listBarangCabang = value; 
+        }
         #endregion
 
         #region Methods
@@ -119,7 +129,36 @@ namespace OnlineMart_LIB
                 Pegawai p = Pegawai.AmbilData(hasil.GetInt32(3));
 
                 Cabang c = new Cabang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), p);
+
+                //Ambil Barang_Cabang
+                string barang_cabang = "select bc.barang_id, bc.stok from barang_cabang as bc " +
+                "inner join cabangs as c on bc.cabang_id = c.id where c.id = " + c.id;
+
+                MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_cabang);
+
+                while (hasil_join.Read())
+                {
+                    Barang b_join = Barang.AmbilData(hasil_join.GetInt32(0));
+
+                    Barang_Cabang bc = new Barang_Cabang(c, b_join, hasil_join.GetInt32(1));
+
+                    //Tambahkan hasil join ke composition relationship
+                    c.ListBarangCabang.Add(bc);
+                }
+
+                //Ambil Order
+                string order_join = "select o.id from orders as o inner join cabangs as c on o.cabang_id = c.id where c.id = " + c.id;
                 
+                MySqlDataReader hasil_join2 = Koneksi.JalankanPerintahQuery(order_join);
+
+                while (hasil_join2.Read())
+                {
+                    Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
+                    
+                    //Tambahkan hasil join ke aggregation relationship
+                    c.ListOrder.Add(o_join);
+                }
+
                 listCabang.Add(c);
             }
 

@@ -78,6 +78,19 @@ namespace OnlineMart_LIB
             while(hasil.Read() == true)
             {
                 Kategori k = new Kategori( hasil.GetInt32(0), hasil.GetString(1));
+
+                //Ambil Barang
+                string barang_join = "select b.id from barangs as b inner join kategoris as k on b.kategori_id = k.id where k.id = " + k.id;
+
+                MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_join);
+
+                while (hasil_join.Read())
+                {
+                    Barang b_join = Barang.AmbilData(hasil_join.GetInt32(0));
+
+                    //Tambahkan hasil join ke aggregation relationship
+                    k.ListBarang.Add(b_join);
+                }
                 listKategori.Add(k);
             }
             return listKategori;

@@ -182,6 +182,32 @@ namespace OnlineMart_LIB
 			{
 				Pelanggan p = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
 
+				//Ambil Order
+				string order_join = "select o.id from orders as o inner join pelanggans as p on o.pelanggan_id = p.id where p.id = " + p.id;
+
+				MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(order_join);
+
+				while (hasil_join.Read())
+				{
+					Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
+
+					//Tambahkan hasil join ke aggregation relationship
+					p.ListOrder.Add(o_join);
+				}
+
+				//Ambil Riwayat Isi Saldo
+				string riwayat_join = "select rwi.id from riwayat_isi_saldos as rwi inner join pelanggans as p on rwi.pelanggan_id = p.id where p.id = " + p.id;
+
+				MySqlDataReader hasil_join2 = Koneksi.JalankanPerintahQuery(riwayat_join);
+
+				while (hasil_join2.Read())
+				{
+					Riwayat_isi_saldo rwi_join = Riwayat_isi_saldo.AmbilData(hasil_join2.GetInt32(0));
+
+					//Tambahkan hasil join ke aggregation relationship
+					p.ListRiwayatIsiSaldo.Add(rwi_join);
+				}
+
 				listPelanggan.Add(p);
 			}
 
@@ -212,7 +238,6 @@ namespace OnlineMart_LIB
 
         public static Boolean TambahSaldo(Pelanggan p, int penambahanSaldo)
         {
-            // Querry Insert
             string sql = "update pelanggans set saldo = saldo + " + penambahanSaldo + " where id = " + p.Id;
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;

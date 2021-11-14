@@ -82,11 +82,15 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Methods
-        public static void TambahData(Promo p)
+        public static Boolean TambahData(Promo p)
 		{
-			string sql = "Insert into promos (tipe, nama, diskon, diskon_max, minimal_belanja) "
+			string sql = "insert into promos (tipe, nama, diskon, diskon_max, minimal_belanja) "
 				+ " values('" + p.Tipe + "', '" + p.Nama + "', " + p.Diskon + ", " + p.Diskon_max + ", " + p.Minimal_belanja + ")";
 			Koneksi.JalankanPerintahDML(sql);
+
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
 		}
 
 		public static List<Promo> BacaData(string kriteria, string nilaiKriteria)
@@ -102,6 +106,19 @@ namespace OnlineMart_LIB
 			while (hasil.Read())
 			{
 				Promo p = new Promo(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetInt32(3), hasil.GetInt32(4), hasil.GetFloat(5));
+
+				//Ambil Order
+				string order_join = "select o.id from orders as o inner join promos as p on o.gift_redeem_id = p.id where p.id = " + p.id;
+
+				MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(order_join);
+
+				while (hasil_join.Read())
+				{
+					Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
+
+					//Tambahkan hasil join ke aggregation relationship
+					p.ListOrder.Add(o_join);
+				}
 
 				listpromo.Add(p);
 			}
