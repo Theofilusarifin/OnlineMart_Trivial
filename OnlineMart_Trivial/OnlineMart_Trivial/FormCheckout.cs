@@ -115,9 +115,6 @@ namespace OnlineMart_Trivial
             comboBoxMetodeBayar.DisplayMember = "Nama";
             comboBoxMetodeBayar.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            //generate id order yyyyMMddxxxx (yyyy-MM-dd-xxxx) detail ada di class order
-            FormKeranjang.thisOrder.Id = int.Parse(Order.GenerateIdOrder());
-
             FormatDataGrid();
 
             Order.BacaData("id", FormKeranjang.thisOrder.Id.ToString());
@@ -129,7 +126,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                //Kalau button bayar diklik
+                //Kalau button bayar di datagrid diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnBayar"].Index && e.RowIndex >= 0)
                 {
                     //ambil data order ini

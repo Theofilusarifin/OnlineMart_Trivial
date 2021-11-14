@@ -85,10 +85,6 @@
     <Compile Include="FormDaftarCabang.Designer.cs">
       <DependentUpon>FormDaftarCabang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDaftarDeals.cs" />
-    <Compile Include="FormDaftarDeals.Designer.cs">
-      <DependentUpon>FormDaftarDeals.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormDaftarHadiah.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,10 +168,6 @@
     </Compile>
     <Compile Include="FormRegisterRider.Designer.cs">
       <DependentUpon>FormRegisterRider.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormRiwayatIsiSaldo.cs" />
-    <Compile Include="FormRiwayatIsiSaldo.Designer.cs">
-      <DependentUpon>FormRiwayatIsiSaldo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTambahBarang.cs">
       <SubType>Form</SubType>
@@ -272,9 +264,6 @@
     <EmbeddedResource Include="FormDaftarCabang.resx">
       <DependentUpon>FormDaftarCabang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDaftarDeals.resx">
-      <DependentUpon>FormDaftarDeals.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarHadiah.resx">
       <DependentUpon>FormDaftarHadiah.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,9 +305,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegisterRider.resx">
       <DependentUpon>FormRegisterRider.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormRiwayatIsiSaldo.resx">
-      <DependentUpon>FormRiwayatIsiSaldo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahBarang.resx">
       <DependentUpon>FormTambahBarang.cs</DependentUpon>

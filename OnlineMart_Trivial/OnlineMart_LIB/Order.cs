@@ -197,6 +197,55 @@ namespace OnlineMart_LIB
             return listOrder;
         }
 
+        public static Boolean UbahData(Order o)
+        {
+            // Querry Insert
+            string sql = "update barangs set tanggal_waktu = '" + o.Tanggal_waktu + "', alamat_tujuan = '" + o.Alamat_tujuan + "', " +
+                         "ongkos_kirim = '" + o.Ongkos_kirim + "', total_bayar = '" + o.Total_bayar + "', cara_bayar = '" + o.Cara_bayar + "', " +
+                         "status = '" + o.Status + "', cabang_id = '" + o.Cabang.Id + "', pelanggan_id = '" + o.Pelanggan.Id + "', " +
+                         "driver_id = '" + o.Driver.Id + "', metode_pembayaran_id = '" + o.Metode_pembayaran.Id + "', " +
+                         "promo_id = '" + o.Promo.Id + "', gift_redeem_id = '" + o.Gift_redeem.Id + "'";
+
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
+
+        // membuat id order dengan format yyyyMMddxxxx (yyyy-MM-dd-xxxx)
+        // yyyy = tahun ini, MM = bulan ini, dd = hari ini, xxxx = transaksi ke x hari ini
+        public static string GenerateIdOrder()
+        {
+            // ambil no urut transaksi hari ini (tanggal sistem)
+            string sql = "select right(id, 4) as NoUrutTransaksi" +
+                         " from orders" +
+                         " where Date(tanggal_waktu) = Date(CURRENT_DATE)" +
+                         " order by tanggal_waktu DESC limit 1";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            string hasilNoNota = "";
+            if (hasil.Read()) // jika ditemukan nota jual di tanggal hari ini
+            {
+                if (hasil.GetString(0) != "")
+                {
+                    int noUrutTrans = int.Parse(hasil.GetString(0)) + 1;
+                    //gunakan PadLeftuntuk menambahkan 0 di depan
+                    hasilNoNota = DateTime.Now.Year +
+                                  DateTime.Now.Month.ToString().PadLeft(2, '0') +
+                                  DateTime.Now.Day.ToString().PadLeft(2, '0') +
+                                  noUrutTrans.ToString().PadLeft(4, '0');
+                }
+            }
+            else
+            {
+                hasilNoNota = DateTime.Now.Year +
+                                  DateTime.Now.Month.ToString().PadLeft(2, '0') +
+                                  DateTime.Now.Day.ToString().PadLeft(2, '0') +
+                                  "0001";
+            }
+            return hasilNoNota;
+        }
+
         public static Order AmbilData(int id)
         {
             string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders where id = " + id;

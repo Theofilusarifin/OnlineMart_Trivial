@@ -81,6 +81,9 @@ namespace OnlineMart_Trivial
 
         private void FormKeranjang_Load(object sender, EventArgs e)
 		{
+            //generate id order yyyyMMddxxxx (yyyy-MM-dd-xxxx) detail ada di class order
+            thisOrder.Id = int.Parse(Order.GenerateIdOrder());
+
             //Panggil Method untuk menambah kolom pada datagridview
             FormatDataGrid();
 
