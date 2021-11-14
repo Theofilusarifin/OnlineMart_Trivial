@@ -13,8 +13,8 @@ namespace OnlineMart_LIB
 		private int id;
 		private DateTime waktu;
 		private string poin_redeem;
-		private Gift gift;
-		List<Order> listOrder;
+		private Gift gift; //Aggregation
+		List<Order> listOrder; //Aggregation
 		#endregion
 
 		#region Constructor

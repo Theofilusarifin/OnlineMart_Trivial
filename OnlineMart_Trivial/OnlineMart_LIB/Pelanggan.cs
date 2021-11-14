@@ -19,8 +19,8 @@ namespace OnlineMart_LIB
 		private string telepon;
         private double saldo;
         private double poin;
-		List<Order> listOrder;
-		List<Riwayat_isi_saldo> listRiwayatIsiSaldo;
+		List<Order> listOrder; //Aggregation
+		List<Riwayat_isi_saldo> listRiwayatIsiSaldo; //Aggregation
 		#endregion
 
 		#region Constructor

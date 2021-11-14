@@ -18,7 +18,7 @@ namespace OnlineMart_LIB
 		private int diskon;
 		private int diskon_max;
 		private float minimal_belanja;
-		List<Order> listOrder;
+		List<Order> listOrder; //Aggregation
 		#endregion
 
 		#region Constructors

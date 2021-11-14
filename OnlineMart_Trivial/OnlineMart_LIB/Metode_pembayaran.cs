@@ -12,7 +12,7 @@ namespace OnlineMart_LIB
 		#region Field
 		private int id;
 		private string nama;
-		List<Order> listOrder;
+		List<Order> listOrder; //Aggregation
 		#endregion
 
 		#region Constructor

@@ -18,12 +18,12 @@ namespace OnlineMart_LIB
         private float total_bayar;
         private string cara_bayar;
         string status;
-        Cabang cabang;
-        Pelanggan pelanggan;
-        Driver driver;
-        Metode_pembayaran metode_pembayaran;
-        Promo promo;
-        Gift_Redeem gift_redeem;
+        Cabang cabang; //Aggregation
+        Pelanggan pelanggan; //Aggregation
+        Driver driver; //Aggregation
+        Metode_pembayaran metode_pembayaran; //Aggregation
+        Promo promo; //Aggregation
+        Gift_Redeem gift_redeem; //Aggregation
         List<Barang_Order> listBarangOrder; // Composition
         #endregion
 

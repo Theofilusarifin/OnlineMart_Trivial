@@ -11,7 +11,7 @@ namespace OnlineMart_LIB
     {
         private int id;
         private string nama;
-        List<Barang> listBarang;
+        List<Barang> listBarang; //Aggregation
 
         #region Constructors
         public Kategori(int id, string nama)

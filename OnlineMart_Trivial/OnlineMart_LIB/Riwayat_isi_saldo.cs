@@ -13,7 +13,7 @@ namespace OnlineMart_LIB
         private int id;
         private DateTime waktu;
         private int isiSaldo;
-        private Pelanggan pelanggan;
+        private Pelanggan pelanggan; //Aggregation
         #endregion
 
         #region Constructors

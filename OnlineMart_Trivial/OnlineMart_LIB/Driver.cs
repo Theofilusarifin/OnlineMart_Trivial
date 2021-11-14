@@ -17,7 +17,7 @@ namespace OnlineMart_LIB
 		private string email;
         private string password;
         private string telepon;
-		List<Order> listOrder;
+		List<Order> listOrder; //Aggregation
 		#endregion
 
 		#region Constructor
