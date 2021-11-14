@@ -104,6 +104,7 @@ namespace OnlineMart_Trivial
             this.buttonUbah.TabIndex = 9;
             this.buttonUbah.Text = "Ubah";
             this.buttonUbah.UseVisualStyleBackColor = false;
+            this.buttonUbah.Click += new System.EventHandler(this.buttonUbah_Click);
             // 
             // FormUbahPromo
             // 

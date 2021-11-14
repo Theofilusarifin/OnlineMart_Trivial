@@ -125,43 +125,121 @@ namespace OnlineMart_Trivial
         #endregion
 
         #region ButtonKonsumen
+        private void buttonKeranjang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        private void buttonBarangDeals_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
         private void buttonCheckout_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         private void buttonHistoriTransaksi_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         private void buttonCekPesanan_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         private void buttonCetakNota_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         private void buttonProfile_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         private void buttonIsiSaldo_Click(object sender, EventArgs e)
         {
-            FormIsiSaldo frm = new FormIsiSaldo();
-            frm.Owner = this;
-            frm.Show();
+            try
+            {
+                FormIsiSaldo frm = new FormIsiSaldo();
+                frm.Owner = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         #endregion
 
         #region ButtonRider
         private void buttonDaftarPengiriman_Click(object sender, EventArgs e)
         {
-            HideSubMenu();
-            openChildForm(new FormDaftarPengiriman());
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormDaftarPengiriman());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         private void buttonRekapPendapatan_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         #endregion
 
@@ -170,76 +248,140 @@ namespace OnlineMart_Trivial
         {
             ShowSubMenu(panelPengaturan);
         }
+        private void buttonPengaturanCabang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormDaftarCabang());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        private void buttonPengaturanKategori_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormDaftarKategori());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        private void buttonPengaturanBarang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormDaftarBarang());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        private void buttonPengaturanMetode_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormDaftarMetodePembayaran());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        private void buttonPengaturanPromo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormDaftarPromo());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        private void buttonPengaturanHadiah_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormDaftarHadiah());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+
         private void buttonRekapPenjualan_Click(object sender, EventArgs e)
         {
             ShowSubMenu(panelRekapPenjualan);
         }
-        private void buttonPengaturanCabang_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-            openChildForm(new FormDaftarCabang());
-        }
-        private void buttonPengaturanKategori_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-            openChildForm(new FormDaftarKategori());
-        }
-        private void buttonPengaturanBarang_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-            openChildForm(new FormDaftarBarang());
-        }
-        private void buttonPengaturanMetode_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-            openChildForm(new FormDaftarMetodePembayaran());
-        }
-        private void buttonPengaturanPromo_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-            openChildForm(new FormDaftarPromo());
-        }
-        private void buttonPengaturanHadiah_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-            openChildForm(new FormDaftarHadiah());
-        }
+
         private void btnRekapBarang_Click(object sender, EventArgs e)
         {
-            HideSubMenu();
+            try
+            {
+                HideSubMenu();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         private void btnRekapOmaSaldo_Click(object sender, EventArgs e)
         {
-            HideSubMenu();
+            try
+            {
+                HideSubMenu();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         #endregion
 
         #region ButtonLogout
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            //User ditanya sesuai dibawah
-            DialogResult hasil = MessageBox.Show(this, "Anda yakin ingin logout?","LOGOUT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            //Kalau User klik yes barang akan dihapus
-            if (hasil == DialogResult.Yes)
+            try
             {
-                role = null;
-                pegawai = null;
-                rider = null;
-                konsumen = null;
-                panelKonsumen.Hide();
-                panelPegawai.Hide();
-                panelRider.Hide();
-                labelNama.Text = "";
-                panelLeftNavbar.Hide();
-                panelLeft.Hide();
-                panelHeader.Hide();
-                panelActiveForm.Hide();
-                FormAuth frm = new FormAuth(); //Create Object
-                frm.MdiParent = this; //Set form utama menjadi parent dari objek form yang dibuat
-                frm.Show(); //Tampilkan form
-                            // Method ShowDialog() tidak bisa digunakan jika menerapkan MdiParent, bisanya Method Show();
+                //User ditanya sesuai dibawah
+                DialogResult hasil = MessageBox.Show(this, "Anda yakin ingin logout?", "LOGOUT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                //Kalau User klik yes barang akan dihapus
+                if (hasil == DialogResult.Yes)
+                {
+                    role = null;
+                    pegawai = null;
+                    rider = null;
+                    konsumen = null;
+                    panelKonsumen.Hide();
+                    panelPegawai.Hide();
+                    panelRider.Hide();
+                    labelNama.Text = "";
+                    panelLeftNavbar.Hide();
+                    panelLeft.Hide();
+                    panelHeader.Hide();
+                    panelActiveForm.Hide();
+                    FormAuth frm = new FormAuth(); //Create Object
+                    frm.MdiParent = this; //Set form utama menjadi parent dari objek form yang dibuat
+                    frm.Show(); //Tampilkan form
+                                // Method ShowDialog() tidak bisa digunakan jika menerapkan MdiParent, bisanya Method Show();
+                }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         #endregion
     }

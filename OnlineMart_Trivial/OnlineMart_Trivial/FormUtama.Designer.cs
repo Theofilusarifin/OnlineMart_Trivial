@@ -472,6 +472,7 @@ namespace OnlineMart_Trivial
             this.buttonKeranjang.Text = "KERANJANG";
             this.buttonKeranjang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonKeranjang.UseVisualStyleBackColor = true;
+            this.buttonKeranjang.Click += new System.EventHandler(this.buttonKeranjang_Click);
             // 
             // buttonBarangDeals
             // 
@@ -487,6 +488,7 @@ namespace OnlineMart_Trivial
             this.buttonBarangDeals.Text = "BARANG DAN DEALS";
             this.buttonBarangDeals.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBarangDeals.UseVisualStyleBackColor = true;
+            this.buttonBarangDeals.Click += new System.EventHandler(this.buttonBarangDeals_Click);
             // 
             // buttonLogout
             // 
@@ -542,7 +544,7 @@ namespace OnlineMart_Trivial
             this.panelActiveForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelActiveForm.Location = new System.Drawing.Point(0, 87);
             this.panelActiveForm.Name = "panelActiveForm";
-            this.panelActiveForm.Size = new System.Drawing.Size(1120, 662);
+            this.panelActiveForm.Size = new System.Drawing.Size(1534, 874);
             this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
             // 

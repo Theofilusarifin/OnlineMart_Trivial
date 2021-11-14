@@ -82,7 +82,7 @@ namespace OnlineMart_LIB
                 Gift g = new Gift(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2));
 
                 //Ambil Gift_Redeems
-                string gift_redeems = "select gr.id from gift_redeems as gr inner join gifts as g on gr.gift_id = g_id where g.id = " + g.id;
+                string gift_redeems = "select gr.id from gift_redeems as gr inner join gifts as g on gr.gift_id = g.id where g.id = " + g.id;
 
                 MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(gift_redeems);
 

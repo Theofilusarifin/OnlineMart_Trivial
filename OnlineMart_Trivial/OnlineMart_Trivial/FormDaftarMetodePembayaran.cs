@@ -18,6 +18,8 @@ namespace OnlineMart_Trivial
         {
             InitializeComponent();
         }
+
+        #region Methods
         private void FormatDataGrid()
         {
             //Kosongi semua kolom di datagridview
@@ -25,7 +27,7 @@ namespace OnlineMart_Trivial
 
             //Menambah kolom di datagridview
             dataGridView.Columns.Add("id", "Id");
-            dataGridView.Columns.Add("nama", "Nama Metode");
+            dataGridView.Columns.Add("nama", "Nama");
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
             dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -61,48 +63,76 @@ namespace OnlineMart_Trivial
                 bcolUbah.Text = "Ubah";
                 bcolUbah.Name = "btnUbahGrid";
                 bcolUbah.UseColumnTextForButtonValue = true;
-                bcolUbah.FlatStyle = FlatStyle.Flat;
                 dataGridView.Columns.Add(bcolUbah);
-
                 DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
 
                 bcolHapus.HeaderText = "Aksi";
                 bcolHapus.Text = "Hapus";
                 bcolHapus.Name = "btnHapusGrid";
                 bcolHapus.UseColumnTextForButtonValue = true;
-                bcolHapus.FlatStyle = FlatStyle.Flat;
-
                 dataGridView.Columns.Add(bcolHapus);
             }
         }
+        #endregion
 
-		public void FormDaftarMetodePembayaran_Load_1(object sender, EventArgs e)
+        #region FormLoad
+        public void FormDaftarMetodePembayaran_Load_1(object sender, EventArgs e)
 		{
-            //Panggil Method untuk menambah kolom pada datagridview
-            FormatDataGrid();
+            try
+            {
+                //Panggil Method untuk menambah kolom pada datagridview
+                FormatDataGrid();
 
-            //Tampilkan semua data
-            listMetode = Metode_pembayaran.BacaData("", "");
+                //Tampilkan semua data
+                listMetode = Metode_pembayaran.BacaData("", "");
 
-            //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
-            TampilDataGrid();
+                //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+                TampilDataGrid();
 
-            comboBoxKriteria.Text = "Id";
+                comboBoxKriteria.Text = "Id";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
+        #endregion
 
-		private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        #region Textbox
+        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
+        {
+            string kriteria = "";
+            switch (comboBoxKriteria.Text)
+            {
+                case "Id":
+                    kriteria = "id";
+                    break;
+
+                case "Nama":
+                    kriteria = "nama";
+                    break;
+            }
+
+            listMetode = Metode_pembayaran.BacaData(kriteria, textBoxKriteria.Text);
+            FormatDataGrid();
+            TampilDataGrid();
+        }
+        #endregion
+
+        #region Datagrid
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			try
 			{
                 //Menghapus data bila button hapus diklik
-                int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString());
+                int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
 
 
                 //Kalau button hapus diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
                 {
-                    string idHapus = dataGridView.CurrentRow.Cells["Id"].Value.ToString();
-                    string namaHapus = dataGridView.CurrentRow.Cells["Nama"].Value.ToString();
+                    string idHapus = dataGridView.CurrentRow.Cells["id"].Value.ToString();
+                    string namaHapus = dataGridView.CurrentRow.Cells["nama"].Value.ToString();
 
                     //User ditanya sesuai dibawah
                     DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",
@@ -138,36 +168,38 @@ namespace OnlineMart_Trivial
                 MessageBox.Show(ex.Message);
 			}
 		}
+        #endregion
 
-		private void buttonTambah_Click(object sender, EventArgs e)
-		{
+        #region Desain Button
+        private void buttonTambah_MouseEnter(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonTambah_MouseLeave(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonClose_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonClose_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
+
+        #region Button
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
             FormTambahMetodePembayaran formTambahMetodePembayaran = new FormTambahMetodePembayaran();
             formTambahMetodePembayaran.Owner = this;
             formTambahMetodePembayaran.ShowDialog();
-		}
-
-		private void textBoxKriteria_TextChanged(object sender, EventArgs e)
-		{
-            string kriteria = "";
-            switch (comboBoxKriteria.Text)
-            {
-                case "ID":
-                    kriteria = "id";
-                    break;
-
-                case "Nama":
-                    kriteria = "nama";
-                    break;
-            }
-
-            listMetode = Metode_pembayaran.BacaData(kriteria, textBoxKriteria.Text);
-            FormatDataGrid();
-            TampilDataGrid();
         }
-
-		private void buttonClose_Click(object sender, EventArgs e)
-		{
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
             this.Close();
-		}
-	}
+        }
+        #endregion
+    }
 }

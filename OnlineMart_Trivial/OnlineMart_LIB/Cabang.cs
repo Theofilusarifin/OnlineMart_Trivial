@@ -113,7 +113,7 @@ namespace OnlineMart_LIB
         //Method untuk membaca data Cabang
         public static List<Cabang> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select id, nama, alamat, pegawai_id ";
+            string sql = "select id, nama, alamat, pegawai_id from cabangs ";
             if (kriteria != "") //kalau tidak kosong tambahkan ini
             {
                 sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
@@ -125,7 +125,6 @@ namespace OnlineMart_LIB
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
-
                 Pegawai p = Pegawai.AmbilData(hasil.GetInt32(3));
 
                 Cabang c = new Cabang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), p);
@@ -153,7 +152,7 @@ namespace OnlineMart_LIB
 
                 while (hasil_join2.Read())
                 {
-                    Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
+                    Order o_join = Order.AmbilData(hasil_join2.GetInt32(0));
                     
                     //Tambahkan hasil join ke aggregation relationship
                     c.ListOrder.Add(o_join);

@@ -140,7 +140,7 @@ namespace OnlineMart_LIB
         #region Method
         public static Boolean TambahData(Order o)
 		{
-			string sql = "inset into orders (tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
+			string sql = "insert into orders (tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
                 "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id) " +
 				"values ('" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + o.Alamat_tujuan + "', " + o.Ongkos_kirim + ", " +
 				o.Total_bayar + ", '" + o.Cara_bayar + "', " + o.Cabang.Id + ", " + o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " +
@@ -199,7 +199,7 @@ namespace OnlineMart_LIB
 
         public static Order AmbilData(int id)
         {
-            string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from promos where id = " + id;
+            string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders where id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 

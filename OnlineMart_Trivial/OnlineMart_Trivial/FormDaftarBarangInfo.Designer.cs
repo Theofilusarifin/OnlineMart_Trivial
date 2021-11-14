@@ -38,6 +38,7 @@ namespace OnlineMart_Trivial
             this.ClientSize = new System.Drawing.Size(1099, 407);
             this.Name = "FormDaftarBarangInfo";
             this.Text = "FormDaftarBarangInfo";
+            this.Load += new System.EventHandler(this.FormDaftarBarangInfo_Load);
             this.ResumeLayout(false);
 
         }

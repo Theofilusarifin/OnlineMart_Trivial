@@ -77,6 +77,9 @@ namespace OnlineMart_Trivial
             this.buttonTambah.TabIndex = 36;
             this.buttonTambah.Text = "Tambah Data";
             this.buttonTambah.UseVisualStyleBackColor = false;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
+            this.buttonTambah.MouseEnter += new System.EventHandler(this.buttonTambah_MouseEnter);
+            this.buttonTambah.MouseLeave += new System.EventHandler(this.buttonTambah_MouseLeave);
             // 
             // comboBoxKriteria
             // 
@@ -85,9 +88,10 @@ namespace OnlineMart_Trivial
             this.comboBoxKriteria.FormattingEnabled = true;
             this.comboBoxKriteria.Items.AddRange(new object[] {
             "Id",
-            "Nama Cabang",
-            "Alamat",
-            "Pegawai"});
+            "Tipe",
+            "Diskon",
+            "Diskon Maksimal",
+            "Minimal Belanja"});
             this.comboBoxKriteria.Location = new System.Drawing.Point(308, 52);
             this.comboBoxKriteria.Name = "comboBoxKriteria";
             this.comboBoxKriteria.Size = new System.Drawing.Size(248, 28);
@@ -111,6 +115,9 @@ namespace OnlineMart_Trivial
             this.buttonClose.TabIndex = 37;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.MouseEnter += new System.EventHandler(this.buttonClose_MouseEnter);
+            this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
             // 
             // textBoxKriteria
             // 
@@ -120,6 +127,7 @@ namespace OnlineMart_Trivial
             this.textBoxKriteria.Name = "textBoxKriteria";
             this.textBoxKriteria.Size = new System.Drawing.Size(446, 26);
             this.textBoxKriteria.TabIndex = 34;
+            this.textBoxKriteria.TextChanged += new System.EventHandler(this.textBoxKriteria_TextChanged);
             // 
             // dataGridView
             // 
@@ -133,6 +141,7 @@ namespace OnlineMart_Trivial
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(740, 201);
             this.dataGridView.TabIndex = 35;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // FormDaftarPromo
             // 

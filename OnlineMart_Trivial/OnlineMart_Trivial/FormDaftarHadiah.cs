@@ -20,36 +20,84 @@ namespace OnlineMart_Trivial
 
         public List<Gift> listGift = new List<Gift>();
 
-        public void FormDaftarGift_Load(object sender, EventArgs e)
+        #region Methods
+        private void FormatDataGrid()
         {
-            listGift = Gift.BacaData("","");
+            //Kosongi semua kolom di datagridview
+            dataGridView.Columns.Clear();
 
-            if(listGift.Count > 0)
+            //Menambah kolom di datagridview
+            dataGridView.Columns.Add("id", "Id");
+            dataGridView.Columns.Add("nama", "Nama Hadiah");
+            dataGridView.Columns.Add("jumlah_poin", "Jumlah Poin");
+
+            //Agar lebar kolom dapat menyesuaikan panjang / isi data
+            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["jumlah_poin"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.ReadOnly = true;
+        }
+
+        private void TampilDataGrid()
+        {
+            //Kosongi isi datagridview
+            dataGridView.Rows.Clear();
+
+            if (listGift.Count > 0)
             {
-                //kalau ada data maka tampilkan di data grid
-                dataGridView.DataSource = listGift;
-
-                if(!dataGridView.Columns.Contains("btnUbahGrid"))
+                foreach (Gift g in listGift)
                 {
-                    DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
-
-                    bcolUbah.HeaderText = "Aksi";
-                    bcolUbah.Text = "Ubah";
-                    bcolUbah.Name = "btnUbahGrid";
-                    bcolUbah.UseColumnTextForButtonValue = true;
-                    dataGridView.Columns.Add(bcolUbah);
-
-                    DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
-                    bcolHapus.HeaderText = "Aksi";
-                    bcolHapus.Text = "Hapus";
-                    bcolHapus.Name = "btnHapusGrid";
-                    bcolHapus.UseColumnTextForButtonValue = true;
-                    dataGridView.Columns.Add(bcolHapus);
+                    dataGridView.Rows.Add(g.Id, g.Nama, g.JumlahPoin);
                 }
             }
             else
             {
                 dataGridView.DataSource = null;
+            }
+
+            //Tampilkan button Ubah dan Hapus
+
+            if (!dataGridView.Columns.Contains("btnUbahGrid"))
+            {
+                DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
+
+                bcolUbah.HeaderText = "Aksi";
+                bcolUbah.Text = "Ubah";
+                bcolUbah.Name = "btnUbahGrid";
+                bcolUbah.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolUbah);
+
+                DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
+                bcolHapus.HeaderText = "Aksi";
+                bcolHapus.Text = "Hapus";
+                bcolHapus.Name = "btnHapusGrid";
+                bcolHapus.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolHapus);
+            }
+        }
+        #endregion
+
+        public void FormDaftarGift_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                // Panggil Method untuk menambah kolom pada datagridview
+                FormatDataGrid();
+
+                // Tampilkan semua data
+                listGift = Gift.BacaData("", "");
+
+                //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+                TampilDataGrid();
+
+                comboBoxKriteria.Text = "Id";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
 
@@ -58,13 +106,13 @@ namespace OnlineMart_Trivial
             try
             {
                 //Menghapus data bila button hapus diklik
-                int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString());
+                int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
 
                 //Kalau button hapus diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
                 {
-                    string idHapus = dataGridView.CurrentRow.Cells["Id"].Value.ToString();
-                    string namaHapus = dataGridView.CurrentRow.Cells["Nama"].Value.ToString();
+                    string idHapus = dataGridView.CurrentRow.Cells["id"].Value.ToString();
+                    string namaHapus = dataGridView.CurrentRow.Cells["nama"].Value.ToString();
 
                     //User ditanya sesuai dibawah
                     DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",
@@ -101,16 +149,65 @@ namespace OnlineMart_Trivial
             }
         }
 
-		private void buttonTambah_Click(object sender, EventArgs e)
-		{
+        #region Textbox
+        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
+        {
+            string kriteria = "";
+            switch (comboBoxKriteria.Text)
+            {
+                case "Id":
+                    kriteria = "id";
+                    break;
+
+                case "Nama Hadiah":
+                    kriteria = "nama";
+                    break;
+
+                case "Jumlah Poin":
+                    kriteria = "jumlah_poin";
+                    break;
+            }
+
+            listGift = Gift.BacaData(kriteria, textBoxKriteria.Text);
+            FormatDataGrid();
+            TampilDataGrid();
+        }
+        #endregion
+
+        #region Desain Button
+        private void buttonTambah_MouseEnter(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+
+        private void buttonTambah_MouseLeave(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+
+        private void buttonClose_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+
+        private void buttonClose_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
+
+        #region Button
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
             FormTambahHadiah formTambahHadiah = new FormTambahHadiah();
             formTambahHadiah.Owner = this;
             formTambahHadiah.ShowDialog();
         }
 
-		private void buttonClose_Click(object sender, EventArgs e)
-		{
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
             this.Close();
-		}
-	}
+        }
+        #endregion
+    }
 }

@@ -19,35 +19,209 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
-		private void FormDaftarPromo_Load(object sender, EventArgs e)
-		{
-			listPromo = Promo.BacaData("", "");
+        #region Methods
+        private void FormatDataGrid()
+        {
+            //Kosongi semua kolom di datagridview
+            dataGridView.Columns.Clear();
 
-			if (listPromo.Count > 0)
-			{
-				dataGridView.DataSource = listPromo; //menampilkan data
+            //Menambah kolom di datagridview
+            dataGridView.Columns.Add("id", "Id");
+            dataGridView.Columns.Add("tipe", "Tipe");
+            dataGridView.Columns.Add("diskon", "Diskon");
+            dataGridView.Columns.Add("diskon_max", "Diskon Maksimal");
+            dataGridView.Columns.Add("minimal_belanja", "Minimal Belanja");
 
-				if (!dataGridView.Columns.Contains("buttonUbah"))
-				{
-					DataGridViewButtonColumn bcol = new DataGridViewButtonColumn();
-					bcol.HeaderText = "Aksi";
-					bcol.Text = "Ubah";
-					bcol.Name = "btnUbahGrid";
-					bcol.UseColumnTextForButtonValue = true;
-					dataGridView.Columns.Add(bcol);
 
-					DataGridViewButtonColumn bcol2 = new DataGridViewButtonColumn();
-					bcol2.HeaderText = "Aksi";
-					bcol2.Text = "Hapus";
-					bcol2.Name = "btnHapusGrid";
-					bcol2.UseColumnTextForButtonValue = true;
-					dataGridView.Columns.Add(bcol2);
-				}
-			}
-			else
-			{
-				dataGridView.DataSource = null;
-			}
-		}
-	}
+            //Agar lebar kolom dapat menyesuaikan panjang / isi data
+            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["tipe"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["diskon"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["diskon_max"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["minimal_belanja"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.ReadOnly = true;
+        }
+
+        private void TampilDataGrid()
+        {
+            //Kosongi isi datagridview
+            dataGridView.Rows.Clear();
+
+            if (listPromo.Count > 0)
+            {
+                foreach (Promo p in listPromo)
+                {
+                    dataGridView.Rows.Add(p.Id, p.Tipe, p.Nama, p.Diskon, p.Diskon_max, p.Minimal_belanja);
+                }
+            }
+            else
+            {
+                dataGridView.DataSource = null;
+            }
+
+            //Tampilkan button Ubah dan Hapus
+            if (!dataGridView.Columns.Contains("btnUbahGrid"))
+            {
+                DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
+
+                bcolUbah.HeaderText = "Aksi";
+                bcolUbah.Text = "Ubah";
+                bcolUbah.Name = "btnUbahGrid";
+                bcolUbah.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolUbah);
+
+                DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
+
+                bcolHapus.HeaderText = "Aksi";
+                bcolHapus.Text = "Hapus";
+                bcolHapus.Name = "btnHapusGrid";
+                bcolHapus.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolHapus);
+            }
+        }
+        #endregion
+
+        #region FormLoad
+        private void FormDaftarPromo_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                // Panggil Method untuk menambah kolom pada datagridview
+                FormatDataGrid();
+
+                // Tampilkan semua data
+                listPromo = Promo.BacaData("", "");
+
+                //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+                TampilDataGrid();
+
+                comboBoxKriteria.Text = "Id";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        #endregion
+
+        #region TextBox
+        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
+        {
+            string kriteria = "";
+            switch (comboBoxKriteria.Text)
+            {
+                case "Id":
+                    kriteria = "id";
+                    break;
+
+                case "Tipe":
+                    kriteria = "tipe";
+                    break;
+
+                case "Diskon":
+                    kriteria = "diskon";
+                    break;
+
+                case "Diskon Maksimal":
+                    kriteria = "diskon_max";
+                    break;
+
+                case "Minimal Belanja":
+                    kriteria = "minimal_belanja";
+                    break;
+            }
+
+            listPromo = Promo.BacaData(kriteria, textBoxKriteria.Text);
+            FormatDataGrid();
+            TampilDataGrid();
+        }
+        #endregion
+
+        #region DataGrid
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //Menghapus data bila button hapus diklik
+                int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
+
+
+                //Kalau button hapus diklik
+                if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
+                {
+                    string idHapus = dataGridView.CurrentRow.Cells["id"].Value.ToString();
+                    string namaHapus = dataGridView.CurrentRow.Cells["tipe"].Value.ToString();
+
+                    //User ditanya sesuai dibawah
+                    DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",
+                                                         "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    //Kalau User klik yes barang akan dihapus
+                    if (hasil == DialogResult.Yes)
+                    {
+                        Boolean hapus = Promo.HapusData(id);
+
+                        if (hapus == true)
+                        {
+                            MessageBox.Show("Penghapusan data berhasil");
+                            //Refresh Halaman
+                            FormDaftarPromo_Load(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Penghapusan data gagal");
+                        }
+                    }
+
+                }
+                //Kalau button ubah diklik
+                if (e.ColumnIndex == dataGridView.Columns["btnUbahGrid"].Index && e.RowIndex >= 0)
+                {
+                    FormUbahPromo.IdDipilih = id;
+                    FormUbahPromo frm = new FormUbahPromo();
+                    frm.Owner = this;
+                    frm.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        #endregion
+
+        #region Desain Button
+        private void buttonTambah_MouseEnter(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonTambah_MouseLeave(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonClose_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonClose_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
+
+        #region Button
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            FormTambahPromo tambah = new FormTambahPromo();
+            tambah.Owner = this;
+            tambah.Show();
+        }
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+    }
 }

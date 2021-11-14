@@ -69,7 +69,6 @@ namespace OnlineMart_Trivial
                 bcolUbah.Text = "Ubah";
                 bcolUbah.Name = "btnUbahGrid";
                 bcolUbah.UseColumnTextForButtonValue = true;
-                bcolUbah.FlatStyle = FlatStyle.Flat;
                 dataGridView.Columns.Add(bcolUbah);
 
                 DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
@@ -78,8 +77,6 @@ namespace OnlineMart_Trivial
                 bcolHapus.Text = "Hapus";
                 bcolHapus.Name = "btnHapusGrid";
                 bcolHapus.UseColumnTextForButtonValue = true;
-                bcolHapus.FlatStyle = FlatStyle.Flat;
-
                 dataGridView.Columns.Add(bcolHapus);
 
                 //Button tambah ke keranjang
@@ -89,7 +86,6 @@ namespace OnlineMart_Trivial
                 bcolTambahKeranjang.Text = "Tambahkan ke keranjang";
                 bcolTambahKeranjang.Name = "btnTambahKeranjang";
                 bcolTambahKeranjang.UseColumnTextForButtonValue = true;
-                bcolTambahKeranjang.FlatStyle = FlatStyle.Flat;
                 dataGridView.Columns.Add(bcolTambahKeranjang);
             }
         }
@@ -98,16 +94,23 @@ namespace OnlineMart_Trivial
         #region FormLoad
         public void FormDaftarBarang_Load(object sender, EventArgs e)
         {
-            //Panggil Method untuk menambah kolom pada datagridview
-            FormatDataGrid();
+            try
+            {
+                //Panggil Method untuk menambah kolom pada datagridview
+                FormatDataGrid();
 
-            //Tampilkan semua data
-            listBarang = Barang.BacaData("", "");
+                //Tampilkan semua data
+                listBarang = Barang.BacaData("", "");
 
-            //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
-            TampilDataGrid();
+                //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+                TampilDataGrid();
 
-            comboBoxKriteria.Text = "Id";
+                comboBoxKriteria.Text = "Id";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         #endregion
 
@@ -118,19 +121,15 @@ namespace OnlineMart_Trivial
             switch (comboBoxKriteria.Text)
             {
                 case "Id":
-                    kriteria = "B.id";
+                    kriteria = "id";
                     break;
 
                 case "Nama Barang":
-                    kriteria = "B.nama";
+                    kriteria = "nama";
                     break;
 
                 case "Harga Barang":
-                    kriteria = "B.harga";
-                    break;
-
-                case "Kategori":
-                    kriteria = "K.nama";
+                    kriteria = "harga";
                     break;
             }
 
@@ -146,14 +145,14 @@ namespace OnlineMart_Trivial
             try
             {
                 //Menghapus data bila button hapus diklik
-                int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString());
+                int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
 
 
                 //Kalau button hapus diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
                 {
-                    string idHapus = dataGridView.CurrentRow.Cells["Id"].Value.ToString();
-                    string namaHapus = dataGridView.CurrentRow.Cells["Nama"].Value.ToString();
+                    string idHapus = dataGridView.CurrentRow.Cells["id"].Value.ToString();
+                    string namaHapus = dataGridView.CurrentRow.Cells["nama"].Value.ToString();
 
                     //User ditanya sesuai dibawah
                     DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",

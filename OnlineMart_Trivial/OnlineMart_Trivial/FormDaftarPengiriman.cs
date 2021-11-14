@@ -28,34 +28,35 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Clear();
 
             //Menambah kolom di datagridview
-            dataGridView.Columns.Add("tanggal_waktu", "tanggal waktu");
-            dataGridView.Columns.Add("alamat_tujuan", "alamat tujuan");
-            dataGridView.Columns.Add("ongkos_kirim", "ongkos kirim");
-            dataGridView.Columns.Add("total_bayar", "total bayar");
-            dataGridView.Columns.Add("cara_bayar", "cara bayar");
-            dataGridView.Columns.Add("cabang_id", "Cabang");
-            dataGridView.Columns.Add("pelanggan_id", "Pelanggan");
-            dataGridView.Columns.Add("promo_id", "Promo");
+            dataGridView.Columns.Add("id", "Id");
+            dataGridView.Columns.Add("tanggal_waktu", "Tanggal");
+            dataGridView.Columns.Add("alamat_tujuan", "Alamat");
+            dataGridView.Columns.Add("ongkos_kirim", "Ongkos Kirim");
+            dataGridView.Columns.Add("total_bayar", "Total Bayar");
+            dataGridView.Columns.Add("cara_bayar", "Cara Bayar");
             dataGridView.Columns.Add("status", "Status");
-            dataGridView.Columns.Add("metode_pembayaran", "Metode Pembayaran");
+            dataGridView.Columns.Add("cabang_id", "Nama Cabang");
+            dataGridView.Columns.Add("driver_id", "Nama Driver");
+            dataGridView.Columns.Add("promo_id", "Id Promo");
+            dataGridView.Columns.Add("gift_redeem_id", "Id Hadiah");
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
+            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["tanggal_waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["alamat_tujuan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["ongkos_kirim"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["total_bayar"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["cara_bayar"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["cabang_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["pelanggan_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["promo_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["status"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["metode_pembayaran"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["cabang_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["driver_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["promo_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["gift_redeem_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
             dataGridView.AllowUserToAddRows = false;
             dataGridView.ReadOnly = true;
         }
-
         private void TampilDataGrid()
         {
             //Kosongi isi datagridview
@@ -65,51 +66,38 @@ namespace OnlineMart_Trivial
             {
                 foreach (Order o in listOrder)
                 {
-                    dataGridView.Rows.Add(o.Tanggal_waktu, o.Alamat_tujuan, o.Ongkos_kirim, o.Total_bayar, o.Cara_bayar, o.Cabang.Nama,
-                        o.Pelanggan.Nama, o.Promo.Nama, o.Status, o.Metode_pembayaran);
+                    dataGridView.Rows.Add(o.Id, o.Tanggal_waktu, o.Alamat_tujuan, o.Ongkos_kirim, o.Total_bayar, o.Cara_bayar, o.Status, o.Cabang.Nama, o.Driver.Nama, o.Promo.Id, o.Gift_redeem.Id);
                 }
             }
             else
             {
                 dataGridView.DataSource = null;
             }
-
-            //Tampilkan button Ubah dan Hapus
-            if (!dataGridView.Columns.Contains("btnUbahGrid"))
-            {
-                DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
-
-                bcolUbah.HeaderText = "Aksi";
-                bcolUbah.Text = "Ubah";
-                bcolUbah.Name = "btnUbahGrid";
-                bcolUbah.UseColumnTextForButtonValue = true;
-                bcolUbah.FlatStyle = FlatStyle.Flat;
-                dataGridView.Columns.Add(bcolUbah);
-
-                DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
-
-                bcolHapus.HeaderText = "Aksi";
-                bcolHapus.Text = "Hapus";
-                bcolHapus.Name = "btnHapusGrid";
-                bcolHapus.UseColumnTextForButtonValue = true;
-                bcolHapus.FlatStyle = FlatStyle.Flat;
-                dataGridView.Columns.Add(bcolHapus);
-            }
         }
         #endregion
 
         private void FormDaftarPengiriman_Load(object sender, EventArgs e)
         {
-            // Panggil Method untuk menambah kolom pada datagridview
-            FormatDataGrid();
+            try
+            {
+                //Panggil Method untuk menambah kolom pada datagridview
+                FormatDataGrid();
 
-            // Tampilkan semua data
-            listOrder = Order.BacaData("driver_id", FormUtama.rider.Id.ToString());
+                // ORDER DI WHERE DULU SESUAI PEGAWAI ID!
 
-            //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
-            TampilDataGrid();
+                //Tampilkan semua data
+                listOrder = Order.BacaData("", "");
 
-            comboBoxKriteria.Text = "Id";
+                //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+                TampilDataGrid();
+
+                comboBoxKriteria.Text = "Id";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+            
         }
     }
 }

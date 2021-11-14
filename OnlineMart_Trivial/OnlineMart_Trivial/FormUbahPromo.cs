@@ -12,9 +12,16 @@ namespace OnlineMart_Trivial
 {
     public partial class FormUbahPromo : Form
     {
+        public static int IdDipilih;
+
         public FormUbahPromo()
         {
             InitializeComponent();
+        }
+
+        private void buttonUbah_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
