@@ -29,7 +29,7 @@ namespace OnlineMart_Trivial
             //Menambah kolom di datagridview
             dataGridView.Columns.Add("id", "Id");
             dataGridView.Columns.Add("nama", "Nama Hadiah");
-            dataGridView.Columns.Add("jumlah_poin", "Jumlah Poin");
+            dataGridView.Columns.Add("jumlah_poin", "Harga");
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
             dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -163,7 +163,7 @@ namespace OnlineMart_Trivial
                     kriteria = "nama";
                     break;
 
-                case "Jumlah Poin":
+                case "Harga":
                     kriteria = "jumlah_poin";
                     break;
             }

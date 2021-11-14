@@ -51,6 +51,7 @@ namespace OnlineMart_Trivial
 
             //Tampilkan data di text box
             textBoxNama.Text = g.Nama;
+            textBoxHarga.Text = g.JumlahPoin.ToString();
         }
 	}
 }

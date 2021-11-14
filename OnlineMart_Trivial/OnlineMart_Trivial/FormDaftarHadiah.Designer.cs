@@ -89,7 +89,7 @@ namespace OnlineMart_Trivial
             this.comboBoxKriteria.Items.AddRange(new object[] {
             "Id",
             "Nama Hadiah",
-            "Jumlah Poin"});
+            "Harga"});
             this.comboBoxKriteria.Location = new System.Drawing.Point(308, 50);
             this.comboBoxKriteria.Name = "comboBoxKriteria";
             this.comboBoxKriteria.Size = new System.Drawing.Size(248, 30);
