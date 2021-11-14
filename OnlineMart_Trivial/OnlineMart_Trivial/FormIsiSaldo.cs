@@ -41,10 +41,7 @@ namespace OnlineMart_Trivial
 
                 MessageBox.Show("Isi saldo telah berhasil", "Informasi");
 
-                // Reset User Interface
-                textBoxSaldo.Clear();
-                comboBoxMetodePembayaran.Text = "";
-                textBoxSaldo.Focus();
+                this.Close();
             }
             catch(Exception ex)
             {
