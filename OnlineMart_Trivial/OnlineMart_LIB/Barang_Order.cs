@@ -48,6 +48,9 @@ namespace OnlineMart_LIB
 			get => harga; 
 			set => harga = value; 
 		}
-		#endregion
-	}
+        #endregion
+
+        #region Methods
+        #endregion
+    }
 }

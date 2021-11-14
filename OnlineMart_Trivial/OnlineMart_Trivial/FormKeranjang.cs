@@ -13,10 +13,14 @@ namespace OnlineMart_Trivial
 {
     public partial class FormKeranjang : Form
     {
+        public static Order thisOrder;
+
         public FormKeranjang()
         {
             InitializeComponent();
         }
+
+        #region Methods
         private void FormatDataGrid()
         {
             //Kosongi semua kolom di datagridview
@@ -38,6 +42,7 @@ namespace OnlineMart_Trivial
             dataGridViewKeranjang.AllowUserToAddRows = false;
             dataGridViewKeranjang.ReadOnly = true;
         }
+
         private void TampilDataGrid()
         {
             //Kosongi isi datagridview
@@ -55,7 +60,7 @@ namespace OnlineMart_Trivial
                 dataGridViewKeranjang.DataSource = null;
             }
 
-            //Tampilkan button Ubah dan Hapus
+            //Tampilkan button dan Hapus
             if (!dataGridViewKeranjang.Columns.Contains("btnHapusGrid"))
             {
                 DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
@@ -72,6 +77,8 @@ namespace OnlineMart_Trivial
                 dataGridViewKeranjang.Columns.Add(bcolHapus);
             }
         }
+        #endregion
+
         private void FormKeranjang_Load(object sender, EventArgs e)
 		{
             //Panggil Method untuk menambah kolom pada datagridview
@@ -112,7 +119,7 @@ namespace OnlineMart_Trivial
                     }
 					else
 					{
-                        MessageBox.Show("Penghapusan digagalkan");
+                        MessageBox.Show("Penghapusan gagal");
 					}
                 }
             }
@@ -121,5 +128,14 @@ namespace OnlineMart_Trivial
                 MessageBox.Show(ex.Message);
 			}
 		}
-	}
+
+        private void buttonCheckout_Click(object sender, EventArgs e)
+        {
+            FormCheckout checkout = new FormCheckout();
+            checkout.Owner = this;
+            checkout.Show();
+
+            this.Close();
+        }
+    }
 }

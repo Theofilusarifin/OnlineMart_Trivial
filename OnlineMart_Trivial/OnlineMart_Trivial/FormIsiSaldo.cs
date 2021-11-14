@@ -32,7 +32,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                //menambahkan riwayt isi saldo
+                //menambahkan riwayat isi saldo
                 Riwayat_isi_saldo r = new Riwayat_isi_saldo(DateTime.Now, int.Parse(textBoxSaldo.Text), FormUtama.konsumen);
                 Riwayat_isi_saldo.TambahData(r);
 
