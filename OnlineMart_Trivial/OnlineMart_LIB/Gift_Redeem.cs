@@ -112,16 +112,18 @@ namespace OnlineMart_LIB
 
 		public static Gift_Redeem AmbilData(int id)
 		{
-			string sql = "id, waktu, poin_redeem, gift_id from gift_redeems where id = " + id;
+			string sql = "select id, waktu, poin_redeem, gift_id from gift_redeems where id = " + id;
 
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-			hasil.Read();
+			Gift g = null;
+			Gift_Redeem gr = null;
 
-			Gift g = Gift.AmbilData(hasil.GetInt32(3));
-
-			Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), g);
-
+			while (hasil.Read())
+            {
+				g = Gift.AmbilData(hasil.GetInt32(3));
+				gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), g);
+			}
 			return gr;
 		}
 

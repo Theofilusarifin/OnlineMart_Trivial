@@ -107,7 +107,7 @@ namespace OnlineMart_LIB
                 Pegawai p = new Pegawai(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
 
                 //Ambil Cabang
-                string cabang = "select c.id from cabangs as c inner join pegawais as p on c.pegawai_id = p_id where p.id = " + p.id;
+                string cabang = "select c.id from cabangs as c inner join pegawais as p on c.pegawai_id = p_id where p.id = " + p.Id;
 
                 MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(cabang);
 

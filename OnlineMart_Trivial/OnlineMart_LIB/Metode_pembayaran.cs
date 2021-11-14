@@ -93,11 +93,14 @@ namespace OnlineMart_LIB
 
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-			hasil.Read();
+			Metode_pembayaran m = null;
 
-			//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
-			Metode_pembayaran m = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
-
+			while (hasil.Read())
+			{
+				//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
+				m = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
+			}
+			
 			return m;
 		}
 		public static Boolean UbahData(Metode_pembayaran m)

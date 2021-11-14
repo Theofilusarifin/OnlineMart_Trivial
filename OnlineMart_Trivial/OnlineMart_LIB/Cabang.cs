@@ -131,7 +131,7 @@ namespace OnlineMart_LIB
 
                 //Ambil Barang_Cabang
                 string barang_cabang = "select bc.barang_id, bc.stok from barang_cabang as bc " +
-                "inner join cabangs as c on bc.cabang_id = c.id where c.id = " + c.id;
+                "inner join cabangs as c on bc.cabang_id = c.id where c.id = " + c.Id;
 
                 MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_cabang);
 
@@ -146,17 +146,17 @@ namespace OnlineMart_LIB
                 }
 
                 //Ambil Order
-                //string order_join = "select o.id from orders as o inner join cabangs as c on o.cabang_id = c.id where c.id = " + c.id;
-                
-                //MySqlDataReader hasil_join2 = Koneksi.JalankanPerintahQuery(order_join);
+                string order_join = "select o.id from orders as o inner join cabangs as c on o.cabang_id = c.id where c.id = " + c.Id;
 
-                //while (hasil_join2.Read())
-                //{
-                //    Order o_join = Order.AmbilData(hasil_join2.GetInt32(0));
-                    
-                //    //Tambahkan hasil join ke aggregation relationship
-                //    c.ListOrder.Add(o_join);
-                //}
+                MySqlDataReader hasil_join2 = Koneksi.JalankanPerintahQuery(order_join);
+
+                while (hasil_join2.Read())
+                {
+                    Order o_join = Order.AmbilData(hasil_join2.GetInt32(0));
+
+                    //Tambahkan hasil join ke aggregation relationship
+                    c.ListOrder.Add(o_join);
+                }
 
                 listCabang.Add(c);
             }
@@ -166,7 +166,7 @@ namespace OnlineMart_LIB
 
         public static Cabang AmbilData(int id)
         {
-            string sql = "select id, nama, alamat, pegawai_id where id = " + id;
+            string sql = "select id, nama, alamat, pegawai_id from cabangs where id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 

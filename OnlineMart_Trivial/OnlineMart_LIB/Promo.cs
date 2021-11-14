@@ -132,11 +132,12 @@ namespace OnlineMart_LIB
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-            hasil.Read();
+			Promo p = null;
 
-			//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
-			Promo p = new Promo(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetInt32(3), hasil.GetInt32(4), hasil.GetFloat(5));
-
+			while (hasil.Read())
+            {
+				p = new Promo(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetInt32(3), hasil.GetInt32(4), hasil.GetFloat(5));
+            }
 			return p;
         }
 

@@ -85,8 +85,8 @@ namespace OnlineMart_Trivial
         #region FormLoad
         public void FormDaftarCabang_Load(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 // Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
 
@@ -97,11 +97,11 @@ namespace OnlineMart_Trivial
                 TampilDataGrid();
 
                 comboBoxKriteria.Text = "Id";
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         #endregion
 
