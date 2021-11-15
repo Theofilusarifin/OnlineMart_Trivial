@@ -61,79 +61,86 @@ namespace OnlineMart_Trivial
 
         private void TampilDataGrid()
         {
-            //Kosongi isi datagridview
-            dataGridView.Rows.Clear();
-
-            // dimasukkin ke barang_order supaya bisa hitung subtotal sama jumlah barang
-            #region Keranjang to Barang_Order
-            // kalau keranjang ada isinya/barangnya
-            if (FormUtama.keranjang.Count > 0)
+            try
             {
-                // untuk setiap barang
-                foreach(Barang b in FormUtama.keranjang)
+                //Kosongi isi datagridview
+                dataGridView.Rows.Clear();
+
+                bool helper = false;
+
+                // dimasukkin ke barang_order supaya bisa hitung subtotal sama jumlah barang
+                #region Keranjang to Barang_Order
+                // kalau keranjang ada isinya/barangnya
+                if (FormUtama.keranjang.Count > 0)
                 {
-                    // kalau list barang order tidak kosong
-                    if(listBarangOrder.Count != 0)
+                    // untuk setiap barang
+                    foreach (Barang b in FormUtama.keranjang)
                     {
-                        // untuk setiap barang order
-                        foreach (Barang_Order bo in listBarangOrder)
+                        // kalau list barang order tidak kosong
+                        if (listBarangOrder.Count != 0)
                         {
-                            // kalau id barang di keranjang dan list barang order sama
-                            if (b.Id == bo.Barang.Id)
+                            // untuk setiap barang order
+                            foreach (Barang_Order bo in listBarangOrder)
                             {
-                                // tambah jumlah dan harga
-                                bo.Jumlah += 1;
-                                bo.Harga += b.Harga;
+                                // kalau id barang di keranjang dan list barang order sama
+                                if (b.Id == bo.Barang.Id)
+                                {
+                                    helper = true;
+
+                                    // tambah jumlah dan harga
+                                    bo.Jumlah += 1;
+                                    bo.Harga += b.Harga;
+                                }
                             }
+                            // kalau tidak ada id yang sama, maka masukkan langsung ke barang order dengan jumlah default 1 dan harga sesuai harga barang
+                            if (helper == false)
+                            {
+                                barang_order = new Barang_Order(b, thisOrder, 1, b.Harga);
+                                listBarangOrder.Add(barang_order);
+                            }
+
                         }
-                        // kalau tidak ada id yang sama, maka masukkan langsung ke barang order dengan jumlah default 1 dan harga sesuai harga barang
-                        /*else
+                        else // kalau list barang order kosong
                         {
                             barang_order = new Barang_Order(b, thisOrder, 1, b.Harga);
                             listBarangOrder.Add(barang_order);
-                        }*/
+                        }
 
                     }
-                    else // kalau list barang order kosong
-                    {
-                        barang_order = new Barang_Order(b, thisOrder, 1, b.Harga);
-                        listBarangOrder.Add(barang_order);
-                    }
-                    
                 }
-            }
-            #endregion
+                #endregion
 
-            // kalau barang order ada isinya
-            if (listBarangOrder.Count > 0)
-            {
-                // untuk setiap barang di list barang order
-                foreach (Barang_Order bo in listBarangOrder)
+                // kalau barang order ada isinya
+                if (listBarangOrder.Count > 0)
                 {
-                    // tunjukkan di datagrid dengan tipe Barang_Order
-                    dataGridView.Rows.Add(bo.Barang.Id, bo.Barang.Nama, bo.Barang.Harga, bo.Barang.Kategori.Nama, bo.Jumlah, bo.Harga /*subtotal*/);
+                    // untuk setiap barang di list barang order
+                    foreach (Barang_Order bo in listBarangOrder)
+                    {
+                        // tunjukkan di datagrid dengan tipe Barang_Order
+                        dataGridView.Rows.Add(bo.Barang.Id, bo.Barang.Nama, bo.Barang.Harga, bo.Barang.Kategori.Nama, bo.Jumlah, bo.Harga /*subtotal*/);
+                    }
+                }
+                else
+                {
+                    dataGridView.DataSource = null;
+                }
+
+                //Tampilkan button dan Hapus
+                if (!dataGridView.Columns.Contains("btnHapusGrid"))
+                {
+                    DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
+
+                    bcolHapus.HeaderText = "Aksi";
+                    bcolHapus.Text = "Hapus";
+                    bcolHapus.Name = "btnHapusGrid";
+                    bcolHapus.UseColumnTextForButtonValue = true;
+
+                    dataGridView.Columns.Add(bcolHapus);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                dataGridView.DataSource = null;
-            }
-
-            //Tampilkan button dan Hapus
-            if (!dataGridView.Columns.Contains("btnHapusGrid"))
-            {
-                DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
-
-                bcolHapus.HeaderText = "Aksi";
-                bcolHapus.Text = "Hapus";
-                bcolHapus.Name = "btnHapusGrid";
-                bcolHapus.UseColumnTextForButtonValue = true;
-                bcolHapus.FlatStyle = FlatStyle.Flat;
-                bcolHapus.DefaultCellStyle.Font = new Font("Montserrat", 9, FontStyle.Bold);
-                bcolHapus.DefaultCellStyle.ForeColor = Color.White;
-                bcolHapus.DefaultCellStyle.BackColor = Color.FromArgb(227, 65, 35);
-
-                dataGridView.Columns.Add(bcolHapus);
+                MessageBox.Show(ex.Message);
             }
         }
         #endregion

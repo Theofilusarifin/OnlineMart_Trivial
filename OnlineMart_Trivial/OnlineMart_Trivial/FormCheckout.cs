@@ -143,12 +143,21 @@ namespace OnlineMart_Trivial
 
         private void buttonBayar_Click(object sender, EventArgs e)
         {
-            FormKeranjang.thisOrder.Status = "Pesanan Diproses";
+            try 
+            {
+                FormKeranjang.thisOrder.Status = "Pesanan Diproses";
 
-            Order.TambahData(FormKeranjang.thisOrder);
+                Order.TambahData(FormKeranjang.thisOrder);
 
-            FormKeranjang.thisOrder = null;
-            FormUtama.keranjang.Clear();
+                FormKeranjang.thisOrder = null;
+                FormUtama.keranjang.Clear();
+
+                MessageBox.Show("Pembayaran berhasil. Pesanan sedang diproses", "Info");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
