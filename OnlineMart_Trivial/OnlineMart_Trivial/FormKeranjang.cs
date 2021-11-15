@@ -206,6 +206,11 @@ namespace OnlineMart_Trivial
 
         private void buttonCheckout_Click(object sender, EventArgs e)
         {
+            foreach(Barang_Order bo in listBarangOrder)
+            {
+                thisOrder.Total_bayar += bo.Harga;
+            }
+
             FormCheckout checkout = new FormCheckout();
             checkout.Owner = this;
             checkout.Show();
