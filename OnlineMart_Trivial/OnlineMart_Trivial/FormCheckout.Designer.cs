@@ -29,30 +29,18 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonKeranjang = new System.Windows.Forms.Button();
             this.comboBoxPromo = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.buttonClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonBayar = new System.Windows.Forms.Button();
             this.comboBoxMetodeBayar = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxAlamat = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonKeranjang
-            // 
-            this.buttonKeranjang.Location = new System.Drawing.Point(561, 344);
-            this.buttonKeranjang.Name = "buttonKeranjang";
-            this.buttonKeranjang.Size = new System.Drawing.Size(124, 23);
-            this.buttonKeranjang.TabIndex = 31;
-            this.buttonKeranjang.Text = "kembali ke keranjang";
-            this.buttonKeranjang.UseVisualStyleBackColor = true;
-            this.buttonKeranjang.Click += new System.EventHandler(this.buttonKeranjang_Click);
             // 
             // comboBoxPromo
             // 
@@ -126,25 +114,6 @@ namespace OnlineMart_Trivial
             this.label3.TabIndex = 40;
             this.label3.Text = "Promo";
             // 
-            // buttonBayar
-            // 
-            this.buttonBayar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBayar.AutoSize = true;
-            this.buttonBayar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBayar.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonBayar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonBayar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBayar.FlatAppearance.BorderSize = 0;
-            this.buttonBayar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
-            this.buttonBayar.ForeColor = System.Drawing.Color.White;
-            this.buttonBayar.Location = new System.Drawing.Point(309, 336);
-            this.buttonBayar.Name = "buttonBayar";
-            this.buttonBayar.Size = new System.Drawing.Size(128, 39);
-            this.buttonBayar.TabIndex = 41;
-            this.buttonBayar.Text = "Bayar";
-            this.buttonBayar.UseVisualStyleBackColor = false;
-            // 
             // comboBoxMetodeBayar
             // 
             this.comboBoxMetodeBayar.Font = new System.Drawing.Font("Montserrat", 12F);
@@ -180,7 +149,6 @@ namespace OnlineMart_Trivial
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1099, 407);
-            this.Controls.Add(this.buttonBayar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -190,7 +158,6 @@ namespace OnlineMart_Trivial
             this.Controls.Add(this.comboBoxPromo);
             this.Controls.Add(this.comboBoxMetodeBayar);
             this.Controls.Add(this.textBoxAlamat);
-            this.Controls.Add(this.buttonKeranjang);
             this.Name = "FormCheckout";
             this.Text = "FormCheckout";
             this.Load += new System.EventHandler(this.FormCheckout_Load);
@@ -202,14 +169,12 @@ namespace OnlineMart_Trivial
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonKeranjang;
         private System.Windows.Forms.ComboBox comboBoxPromo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonBayar;
         private System.Windows.Forms.ComboBox comboBoxMetodeBayar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxAlamat;

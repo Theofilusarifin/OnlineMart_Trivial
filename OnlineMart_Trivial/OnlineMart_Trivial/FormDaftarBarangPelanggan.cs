@@ -59,6 +59,19 @@ namespace OnlineMart_Trivial
             {
                 dataGridView.DataSource = null;
             }
+
+            //Tampilkan button Ubah dan Hapus
+            if (!dataGridView.Columns.Contains("btnTambahKeranjang"))
+            {
+                //Button tambah ke keranjang
+                DataGridViewButtonColumn bcolTambahKeranjang = new DataGridViewButtonColumn();
+
+                bcolTambahKeranjang.HeaderText = "Masukkan Ke Keranjang";
+                bcolTambahKeranjang.Text = "Masukkan";
+                bcolTambahKeranjang.Name = "btnTambahKeranjang";
+                bcolTambahKeranjang.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolTambahKeranjang);
+            }
         }
         #endregion
 
@@ -108,6 +121,28 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
+        #region Datagrid
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
+
+                //Kalau button Tambah ke keranjang diklik
+                if (e.ColumnIndex == dataGridView.Columns["btnTambahKeranjang"].Index && e.RowIndex >= 0)
+                {
+                    Barang b = Barang.AmbilData(id);
+                    FormUtama.keranjang.Add(b); //Untuk menambahkan barang ke dalam keranjang
+                    MessageBox.Show("Barang berhasil di tambahkan ke dalam keranjang");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        #endregion
+
         #region Desain Button
         private void buttonClose_MouseEnter(object sender, EventArgs e)
         {
@@ -125,5 +160,6 @@ namespace OnlineMart_Trivial
             this.Close();
         }
         #endregion
+
     }
 }

@@ -96,6 +96,7 @@ namespace OnlineMart_Trivial
             this.buttonCheckout.TabIndex = 44;
             this.buttonCheckout.Text = "Checkout";
             this.buttonCheckout.UseVisualStyleBackColor = false;
+            this.buttonCheckout.Click += new System.EventHandler(this.buttonCheckout_Click);
             // 
             // FormKeranjang
             // 

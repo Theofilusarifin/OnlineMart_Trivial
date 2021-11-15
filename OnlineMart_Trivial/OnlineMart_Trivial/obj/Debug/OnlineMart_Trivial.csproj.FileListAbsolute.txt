@@ -285,3 +285,4 @@ D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\De
 D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormUbahMetodePembayaran.resources
 D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormUbahPromo.resources
 C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormCheckout.resources
+C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarBarangPelanggan.resources

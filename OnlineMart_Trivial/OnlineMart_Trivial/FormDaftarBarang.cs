@@ -182,13 +182,6 @@ namespace OnlineMart_Trivial
                     frm.Owner = this;
                     frm.Show();
                 }
-                //Kalau button Tambah ke keranjang diklik
-                if (e.ColumnIndex == dataGridView.Columns["btnTambahKeranjang"].Index && e.RowIndex >= 0)
-                {
-                    Barang b = Barang.AmbilData(id);
-                    FormUtama.keranjang.Add(b); //Untuk menambahkan barang ke dalam keranjang
-                    MessageBox.Show("Barang berhasil di tambahkan ke dalam keranjang");
-                }
             }
             catch (Exception ex)
             {

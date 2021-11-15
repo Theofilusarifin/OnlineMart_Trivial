@@ -88,6 +88,7 @@ namespace OnlineMart_Trivial
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.Size = new System.Drawing.Size(740, 201);
             this.dataGridView.TabIndex = 30;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // pictureBox1
             // 

@@ -98,7 +98,6 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
-
         private void FormCheckout_Load(object sender, EventArgs e)
         {
             pelanggan = FormUtama.konsumen;
@@ -147,34 +146,29 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Pembayaran gagal. Pesan kesalahan : " + ex.Message, "Error");
             }
         }
-
-        private void buttonKeranjang_Click(object sender, EventArgs e)
-        {
-            //panggil form keranjang
-            FormKeranjang keranjang = new FormKeranjang();
-            keranjang.Owner = this;
-            keranjang.Show();
-
-            //tutup form ini
-            this.Close();
-        }
-
         private void comboBoxMetodeBayar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //ambil metode pembayaran yang dipilih
-            Metode_pembayaran metodeDipilih = (Metode_pembayaran)comboBoxMetodeBayar.SelectedItem;
+            try
+            {
+                //ambil metode pembayaran yang dipilih
+                Metode_pembayaran metodeDipilih = (Metode_pembayaran)comboBoxMetodeBayar.SelectedItem;
 
-            //ambil data order ini
-            Order orderLama = Order.AmbilData(FormKeranjang.thisOrder.Id);
+                //ambil data order ini
+                Order orderLama = Order.AmbilData(FormKeranjang.thisOrder.Id);
 
-            //ganti metode pembayaran sesuai dengan yang dipilih pelanggan
-            orderLama.Metode_pembayaran = metodeDipilih;
+                //ganti metode pembayaran sesuai dengan yang dipilih pelanggan
+                orderLama.Metode_pembayaran = metodeDipilih;
 
-            //ganti data lama dengan data baru
-            Order.UbahData(orderLama);
+                //ganti data lama dengan data baru
+                Order.UbahData(orderLama);
 
-            //refresh form
-            FormCheckout_Load(sender,e);
+                //refresh form
+                FormCheckout_Load(sender,e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Error");
+            }
         }
 
         private void comboBoxPromo_SelectedIndexChanged(object sender, EventArgs e)

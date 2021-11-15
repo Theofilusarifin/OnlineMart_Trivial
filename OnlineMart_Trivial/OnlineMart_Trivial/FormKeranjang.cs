@@ -79,19 +79,29 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
+        #region FormLoad
         private void FormKeranjang_Load(object sender, EventArgs e)
 		{
-            //generate id order yyyyMMddxxxx (yyyy-MM-dd-xxxx) detail ada di class order
-            thisOrder.Id = int.Parse(Order.GenerateIdOrder());
+            try
+            {
+                //generate id order yyyyMMddxxxx (yyyy-MM-dd-xxxx) detail ada di class order
+                thisOrder.Id = int.Parse(Order.GenerateIdOrder());
 
-            //Panggil Method untuk menambah kolom pada datagridview
-            FormatDataGrid();
+                //Panggil Method untuk menambah kolom pada datagridview
+                FormatDataGrid();
 
-            //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
-            TampilDataGrid();
-		}
+                //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+                TampilDataGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
 
-		private void dataGridViewKeranjang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        #region Datagrid
+        private void dataGridViewKeranjang_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			try
 			{
@@ -132,6 +142,7 @@ namespace OnlineMart_Trivial
 			}
 		}
 
+        #endregion
         private void buttonCheckout_Click(object sender, EventArgs e)
         {
             FormCheckout checkout = new FormCheckout();
