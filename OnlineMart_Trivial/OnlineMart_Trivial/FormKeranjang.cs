@@ -13,9 +13,10 @@ namespace OnlineMart_Trivial
 {
     public partial class FormKeranjang : Form
     {
-        public static Order thisOrder;
+        public static Order thisOrder = new Order();
+        public static bool IdGenerated = false;
 
-        List<Barang_Order> listBarangOrder = thisOrder.ListBarangOrder;
+        public static List<Barang_Order> listBarangOrder = thisOrder.ListBarangOrder;
         Barang_Order barang_order;
 
         public FormKeranjang()
@@ -146,13 +147,18 @@ namespace OnlineMart_Trivial
         #endregion
 
         #region FormLoad
-        private void FormKeranjang_Load(object sender, EventArgs e)
+        public void FormKeranjang_Load(object sender, EventArgs e)
 		{
             try
             {
                 //generate id order yyyyMMddxxxx (yyyy-MM-dd-xxxx) detail ada di class order
-                if(thisOrder.Id == 0)
+                if (thisOrder.Id == 0 && !IdGenerated)
+                {
                     thisOrder.Id = long.Parse(Order.GenerateIdOrder());
+
+                    // Set IdGenerated ke true agar tidak generate id baru
+                    IdGenerated = true;
+                }
 
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
@@ -213,16 +219,16 @@ namespace OnlineMart_Trivial
 
         private void buttonCheckout_Click(object sender, EventArgs e)
         {
-            foreach(Barang_Order bo in listBarangOrder)
+            thisOrder.Total_bayar = 0;
+
+            thisOrder.Gift_redeem = Gift_Redeem.AmbilData(1);
+
+            foreach (Barang_Order bo in listBarangOrder)
             {
                 thisOrder.Total_bayar += bo.Harga;
             }
 
-            FormCheckout checkout = new FormCheckout();
-            checkout.Owner = this;
-            checkout.Show();
-
-            this.Close();
+            MessageBox.Show("Checkout Berhasil! silahkan buka Form Checkout untuk melakukan pembayaran");
         }
     }
 }

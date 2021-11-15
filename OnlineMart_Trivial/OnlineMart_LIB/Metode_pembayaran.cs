@@ -69,21 +69,43 @@ namespace OnlineMart_LIB
 			{
 				Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
 
-				//Ambil Order
-				string order_join = "select o.id from orders as o inner join metode_pembayarans as mp on o.metode_pembayaran_id = mp.id where mp.id = " + mp.id;
+				////Ambil Order
+				//string order_join = "select o.id from orders as o inner join metode_pembayarans as mp on o.metode_pembayaran_id = mp.id where mp.id = " + mp.id;
 
-				MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(order_join);
+				//MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(order_join);
 
-				while (hasil_join.Read())
-				{
-					Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
+				//while (hasil_join.Read())
+				//{
+				//	Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
 
-					//Tambahkan hasil join ke aggregation relationship
-					mp.ListOrder.Add(o_join);
-				}
+				//	//Tambahkan hasil join ke aggregation relationship
+				//	mp.ListOrder.Add(o_join);
+				//}
 
 				listMetodePembayaran.Add(mp);
 			}
+			return listMetodePembayaran;
+		}
+
+		public static List<Metode_pembayaran> BacaData(string kriteria, string nilaiKriteria, Koneksi kParam)
+		{
+			string sql = "select id, nama from metode_pembayarans ";
+			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParam);
+
+			List<Metode_pembayaran> listMetodePembayaran = new List<Metode_pembayaran>();
+
+			while (hasil.Read() == true)
+			{
+				Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
+
+				listMetodePembayaran.Add(mp);
+			}
+
+			hasil.Close();
+			hasil.Dispose();
+
 			return listMetodePembayaran;
 		}
 

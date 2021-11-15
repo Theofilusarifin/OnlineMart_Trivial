@@ -123,37 +123,37 @@ namespace OnlineMart_LIB
 
                 Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
                 
-                //Ambil Barang_Cabang
-                string barang_cabang = "select bc.cabang_id, bc.stok from barang_cabang as bc " +
-                "inner join barangs as b on bc.barang_id = b.id where b.id = " + b.id;
+                ////Ambil Barang_Cabang
+                //string barang_cabang = "select bc.cabang_id, bc.stok from barang_cabang as bc " +
+                //"inner join barangs as b on bc.barang_id = b.id where b.id = " + b.id;
 
-                MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_cabang);
+                //MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_cabang);
 
-                while (hasil_join.Read())
-                {
-                    Cabang c_join = Cabang.AmbilData(hasil_join.GetInt32(0));
+                //while (hasil_join.Read())
+                //{
+                //    Cabang c_join = Cabang.AmbilData(hasil_join.GetInt32(0));
 
-                    Barang_Cabang bc = new Barang_Cabang(c_join, b, hasil_join.GetInt32(1));
+                //    Barang_Cabang bc = new Barang_Cabang(c_join, b, hasil_join.GetInt32(1));
 
-                    //Tambahkan hasil join ke composition relationship
-                    b.ListBarangCabang.Add(bc);
-                }
+                //    //Tambahkan hasil join ke composition relationship
+                //    b.ListBarangCabang.Add(bc);
+                //}
 
-                //Ambil Barang_Order
-                string barang_order = "select bo.order_id, bo.jumlah, bo.harga from barang_order as bo " +
-                "inner join barangs as b on bo.barang_id = b.id where b.id = " + b.id;
+                ////Ambil Barang_Order
+                //string barang_order = "select bo.order_id, bo.jumlah, bo.harga from barang_order as bo " +
+                //"inner join barangs as b on bo.barang_id = b.id where b.id = " + b.id;
 
-                MySqlDataReader hasil_join2 = Koneksi.JalankanPerintahQuery(barang_order);
+                //MySqlDataReader hasil_join2 = Koneksi.JalankanPerintahQuery(barang_order);
 
-                while (hasil_join2.Read())
-                {
-                    Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
+                //while (hasil_join2.Read())
+                //{
+                //    Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
 
-                    Barang_Order bo = new Barang_Order(b, o_join, hasil_join.GetInt32(1), hasil_join.GetFloat(2));
+                //    Barang_Order bo = new Barang_Order(b, o_join, hasil_join.GetInt32(1), hasil_join.GetFloat(2));
 
-                    //Tambahkan hasil join ke composition relationship
-                    b.ListBarangOrder.Add(bo);
-                }
+                //    //Tambahkan hasil join ke composition relationship
+                //    b.ListBarangOrder.Add(bo);
+                //}
 
                 listBarang.Add(b);
             }

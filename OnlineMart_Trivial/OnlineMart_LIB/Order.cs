@@ -28,6 +28,18 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Constructors
+        public Order()
+        {
+            Id = 0;
+            Tanggal_waktu = DateTime.Now;
+            Alamat_tujuan = "";
+            Ongkos_kirim = 10000;
+            Total_bayar = 0;
+            Cara_bayar = "Transfer";
+            Status = "Menunggu Pembayaran";
+            ListBarangOrder = new List<Barang_Order>();
+        }
+
         public Order(long id, DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Cabang cabang, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem)
         {
             Id = id;
@@ -140,10 +152,10 @@ namespace OnlineMart_LIB
         #region Method
         public static Boolean TambahData(Order o)
 		{
-			string sql = "insert into orders (tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
+			string sql = "insert into orders (id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
                          "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id) " +
-				         "values ('" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + o.Alamat_tujuan + "', " + 
-                         o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "', " + o.Cabang.Id + ", " + 
+				         "values (" + o.Id + ", '" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + o.Alamat_tujuan + "', " + 
+                         o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "','" + o.Status + "', " + o.Cabang.Id + ", " + 
                          o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " + + o.Promo.Id + ", " + 
                          o.Gift_redeem.Id + ")";
 
@@ -256,22 +268,24 @@ namespace OnlineMart_LIB
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-            hasil.Read();
+            Order o = null;
 
-            Cabang c = Cabang.AmbilData(hasil.GetInt32(7));
+            while (hasil.Read())
+            {
+                Cabang c = Cabang.AmbilData(hasil.GetInt32(7));
 
-            Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(8));
+                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(8));
 
-            Driver d = Driver.AmbilData(hasil.GetInt32(9));
+                Driver d = Driver.AmbilData(hasil.GetInt32(9));
 
-            Metode_pembayaran mp = Metode_pembayaran.AmbilData(hasil.GetInt32(10));
+                Metode_pembayaran mp = Metode_pembayaran.AmbilData(hasil.GetInt32(10));
 
-            Promo pr = Promo.AmbilData(hasil.GetInt32(11));
+                Promo pr = Promo.AmbilData(hasil.GetInt32(11));
 
-            Gift_Redeem gr = Gift_Redeem.AmbilData(hasil.GetInt32(12));
+                Gift_Redeem gr = Gift_Redeem.AmbilData(hasil.GetInt32(12));
 
-            Order o = new Order(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
-
+                o = new Order(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
+            }
             return o;
         }
         #endregion

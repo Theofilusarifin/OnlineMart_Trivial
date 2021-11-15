@@ -80,7 +80,7 @@ namespace OnlineMart_Trivial
             // 
             // buttonCheckout
             // 
-            this.buttonCheckout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCheckout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonCheckout.AutoSize = true;
             this.buttonCheckout.BackColor = System.Drawing.Color.Transparent;
             this.buttonCheckout.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
@@ -120,8 +120,8 @@ namespace OnlineMart_Trivial
 
 		#endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonClose;
+        public System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonCheckout;
     }
 }

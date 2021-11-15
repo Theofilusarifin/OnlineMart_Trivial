@@ -19,74 +19,66 @@ namespace OnlineMart_Trivial
         List<Promo> promo = new List<Promo>();
         List<Driver> kurir = new List<Driver>();
 
-        Pelanggan pelanggan;
-
         public FormCheckout()
         {
             InitializeComponent();
+        }
+
+        private void CheckButtonStatus()
+        {
+            // kalau salah satu dari metode pembayaran dan driver kosong atau keduanya kosong, maka buttonBayar tidak bisa diklik
+            if (!(FormKeranjang.thisOrder.Metode_pembayaran == null) && !(FormKeranjang.thisOrder.Driver == null)) buttonBayar.Enabled = true;
+            // kalau keduanya punya data maka button bisa diklik
+            else buttonBayar.Enabled = false;
         }
 
         private void FormCheckout_Load(object sender, EventArgs e)
         {
             try
             {
-                pelanggan = FormUtama.konsumen;
+                if (FormKeranjang.thisOrder.Id == 0)
+                {
+                    MessageBox.Show("Lakukan Checkout Keranjang Terlebih Dahulu!");
+                    this.Close();
+                }
+                else
+                {
+                    #region Default value data order
+                    textBoxId.Text = FormKeranjang.thisOrder.Id.ToString();
+                    textBoxTotalBayar.Text = FormKeranjang.thisOrder.Total_bayar.ToString();
+                    textBoxOngkosKirim.Text = 10000.ToString();
 
-                #region Default value data order
-                textBoxId.Text = FormKeranjang.thisOrder.Id.ToString();
+                    FormKeranjang.thisOrder.Cabang = Cabang.AmbilData(1);
+                    FormKeranjang.thisOrder.Pelanggan = FormUtama.konsumen;
+                    #endregion
 
-                FormKeranjang.thisOrder.Tanggal_waktu = DateTime.Now;
+                    #region combobox
 
-                textBoxOngkosKirim.Text = 10000.ToString();
+                    //memunculkan promo yang ada di combobox
+                    promo = Promo.BacaData("", "", FormUtama.koneksi);
+                    comboBoxPromo.DataSource = promo;
+                    comboBoxPromo.DisplayMember = "Nama";
+                    comboBoxPromo.DropDownStyle = ComboBoxStyle.DropDownList;
 
-                FormKeranjang.thisOrder.Cara_bayar = "Transfer";
+                    //memunculkan metode pembayaran yang ada di combobox
+                    metode = Metode_pembayaran.BacaData("", "", FormUtama.koneksi);
+                    comboBoxMetodeBayar.DataSource = metode;
+                    comboBoxMetodeBayar.DisplayMember = "Nama";
+                    comboBoxMetodeBayar.DropDownStyle = ComboBoxStyle.DropDownList;
 
-                FormKeranjang.thisOrder.Status = "Menunggu Pembayaran";
-
-                FormKeranjang.thisOrder.Cabang.Id = 1;
-
-                FormKeranjang.thisOrder.Pelanggan.Id = pelanggan.Id;
-                #endregion
-
-                #region combobox
-                //memunculkan promo yang ada di combobox
-                promo = Promo.BacaData("", "");
-                comboBoxMetodeBayar.DataSource = promo;
-                comboBoxMetodeBayar.DisplayMember = "Nama";
-                comboBoxMetodeBayar.DropDownStyle = ComboBoxStyle.DropDownList;
-
-                //memunculkan metode pembayaran yang ada di combobox
-                metode = Metode_pembayaran.BacaData("", "");
-                comboBoxMetodeBayar.DataSource = metode;
-                comboBoxMetodeBayar.DisplayMember = "Nama";
-                comboBoxMetodeBayar.DropDownStyle = ComboBoxStyle.DropDownList;
-
-                //memunculkan kurir yang ada di combobox
-                kurir = Driver.BacaData("", "");
-                comboBoxMetodeBayar.DataSource = kurir;
-                comboBoxMetodeBayar.DisplayMember = "Nama";
-                comboBoxMetodeBayar.DropDownStyle = ComboBoxStyle.DropDownList;
-                #endregion
-
-                Order.BacaData("id", FormKeranjang.thisOrder.Id.ToString());
-
-                // kalau salah satu dari metode pembayaran dan driver kosong atau keduanya kosong, maka buttonBayar tidak bisa diklik
-                if (FormKeranjang.thisOrder.Metode_pembayaran == null || FormKeranjang.thisOrder.Driver == null)
-                    buttonBayar.Enabled = false;
-                else // kalau keduanya punya data maka button bisa diklik
-                    buttonBayar.Enabled = true;
+                    //memunculkan kurir yang ada di combobox
+                    kurir = Driver.BacaData("", "", FormUtama.koneksi);
+                    comboBoxKurir.DataSource = kurir;
+                    comboBoxKurir.DisplayMember = "Nama";
+                    comboBoxKurir.DropDownStyle = ComboBoxStyle.DropDownList;
+                    #endregion
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Error");
             }
         }
-
-        private void textBoxAlamat_TextChanged(object sender, EventArgs e)
-        {
-            FormKeranjang.thisOrder.Alamat_tujuan = textBoxAlamat.Text;
-        }
-
         private void comboBoxPromo_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -96,8 +88,8 @@ namespace OnlineMart_Trivial
 
                 FormKeranjang.thisOrder.Promo = promoDipilih;
 
-                //refresh form
-                FormCheckout_Load(sender, e);
+                //Check Button Status
+                CheckButtonStatus();
             }
             catch (Exception ex)
             {
@@ -114,8 +106,8 @@ namespace OnlineMart_Trivial
 
                 FormKeranjang.thisOrder.Metode_pembayaran = metodeDipilih;
 
-                //refresh form
-                FormCheckout_Load(sender,e);
+                //Check Button Status
+                CheckButtonStatus();
             }
             catch (Exception ex)
             {
@@ -132,8 +124,8 @@ namespace OnlineMart_Trivial
 
                 FormKeranjang.thisOrder.Driver = kurirDipilih;
 
-                //refresh form
-                FormCheckout_Load(sender, e);
+                //Check Button Status
+                CheckButtonStatus();
             }
             catch (Exception ex)
             {
@@ -143,16 +135,27 @@ namespace OnlineMart_Trivial
 
         private void buttonBayar_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
+                FormKeranjang.thisOrder.Alamat_tujuan = textBoxAlamat.Text;
+
                 FormKeranjang.thisOrder.Status = "Pesanan Diproses";
 
                 Order.TambahData(FormKeranjang.thisOrder);
+
+                foreach (Barang_Order bo in FormKeranjang.listBarangOrder)
+                {
+                    Barang_Order.TambahData(bo);
+                }
 
                 FormKeranjang.thisOrder = null;
                 FormUtama.keranjang.Clear();
 
                 MessageBox.Show("Pembayaran berhasil. Pesanan sedang diproses", "Info");
+
+                FormKeranjang.IdGenerated = false;
+
+                this.Close();
             }
             catch (Exception ex)
             {

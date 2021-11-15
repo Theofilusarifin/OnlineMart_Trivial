@@ -21,6 +21,7 @@ namespace OnlineMart_Trivial
         public static Driver rider;
         public static Pelanggan konsumen;
         public static List<Barang> keranjang = new List<Barang>();
+        public static Koneksi koneksi;
 
         public FormUtama()
         {
@@ -90,7 +91,7 @@ namespace OnlineMart_Trivial
             try
             {
                 //Ambil nilai di db setting
-                Koneksi koneksi = new Koneksi();
+                koneksi = new Koneksi();
                 //MessageBox.Show("Koneksi Berhasil");
             }
             catch (Exception ex)
@@ -140,7 +141,14 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                openChildForm(new FormKeranjang());
+                if (keranjang.Count() == 0)
+                {
+                    MessageBox.Show("Lakukan Checkout Keranjang Terlebih Dahulu!");
+                }
+                else
+                {
+                    openChildForm(new FormKeranjang());
+                }
             }
             catch (Exception ex)
             {

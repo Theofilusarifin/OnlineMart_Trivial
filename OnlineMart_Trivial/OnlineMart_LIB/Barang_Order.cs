@@ -48,9 +48,19 @@ namespace OnlineMart_LIB
 			get => harga; 
 			set => harga = value; 
 		}
-        #endregion
+		#endregion
 
-        #region Methods
-        #endregion
-    }
+		#region Methods
+		public static Boolean TambahData(Barang_Order bo)
+		{
+			// Querry Insert
+			string sql = "insert into barang_order (jumlah, harga, order_id, barang_id) " +
+				"values (" + bo.Jumlah + ", " + bo.Harga + ", " + bo.Order.Id + ", " + bo.Barang.Id + ")";
+
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
+		}
+		#endregion
+	}
 }

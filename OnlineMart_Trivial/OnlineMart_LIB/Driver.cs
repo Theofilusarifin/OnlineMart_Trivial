@@ -163,6 +163,29 @@ namespace OnlineMart_LIB
             return listDriver;
         }
 
+		public static List<Driver> BacaData(string kriteria, string nilaiKriteria, Koneksi kParam)
+		{
+			string sql = "select id, nama, username, email, password, telepon from drivers ";
+			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParam);
+
+			//Buat list untuk menampung data
+			List<Driver> listDriver = new List<Driver>();
+
+			while (hasil.Read())
+			{
+				Driver d = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
+
+				listDriver.Add(d);
+			}
+
+			hasil.Close();
+			hasil.Dispose();
+
+			return listDriver;
+		}
+
 		public static Driver AmbilData(int id)
 		{
 			string sql = "select id, nama, username, email, password, telepon from drivers where id = " + id;

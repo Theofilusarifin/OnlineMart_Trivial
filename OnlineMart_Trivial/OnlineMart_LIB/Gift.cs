@@ -81,18 +81,18 @@ namespace OnlineMart_LIB
             {
                 Gift g = new Gift(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2));
 
-                //Ambil Gift_Redeems
-                string gift_redeems = "select gr.id from gift_redeems as gr inner join gifts as g on gr.gift_id = g.id where g.id = " + g.id;
+                ////Ambil Gift_Redeems
+                //string gift_redeems = "select gr.id from gift_redeems as gr inner join gifts as g on gr.gift_id = g.id where g.id = " + g.id;
 
-                MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(gift_redeems);
+                //MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(gift_redeems);
 
-                while (hasil_join.Read())
-                {
-                    Gift_Redeem gr_join = Gift_Redeem.AmbilData(hasil_join.GetInt32(0));
+                //while (hasil_join.Read())
+                //{
+                //    Gift_Redeem gr_join = Gift_Redeem.AmbilData(hasil_join.GetInt32(0));
 
-                    //Tambahkan hasil join ke aggregation relationship
-                    g.ListGiftRedeem.Add(gr_join);
-                }
+                //    //Tambahkan hasil join ke aggregation relationship
+                //    g.ListGiftRedeem.Add(gr_join);
+                //}
 
                 listGift.Add(g);
             }
