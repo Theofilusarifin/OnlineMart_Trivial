@@ -37,7 +37,7 @@ namespace OnlineMart_Trivial
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data Kategori gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
+                MessageBox.Show("Data Metode Pembayaran gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
 	}

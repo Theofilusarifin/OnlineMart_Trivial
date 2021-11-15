@@ -85,7 +85,7 @@ namespace OnlineMart_Trivial
         #endregion
 
         #region FormLoad
-        private void FormDaftarPromo_Load(object sender, EventArgs e)
+        public void FormDaftarPromo_Load(object sender, EventArgs e)
         {
             try
             {

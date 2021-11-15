@@ -43,10 +43,10 @@ namespace OnlineMart_Trivial
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F);
             this.label1.Location = new System.Drawing.Point(305, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 16);
+            this.label1.Size = new System.Drawing.Size(153, 22);
             this.label1.TabIndex = 31;
             this.label1.Text = "Cari Berdasarkan :";
             // 

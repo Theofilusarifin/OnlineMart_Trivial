@@ -125,22 +125,22 @@ namespace OnlineMart_Trivial
         #endregion
 
         #region ButtonKonsumen
-        private void buttonKeranjang_Click(object sender, EventArgs e)
+        private void buttonBarangDeals_Click(object sender, EventArgs e)
         {
             try
             {
-
+                openChildForm(new FormDaftarBarangPelanggan());
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
-        private void buttonBarangDeals_Click(object sender, EventArgs e)
+        private void buttonKeranjang_Click(object sender, EventArgs e)
         {
             try
             {
-
+                openChildForm(new FormKeranjang());
             }
             catch (Exception ex)
             {
@@ -151,7 +151,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
-
+                openChildForm(new FormCheckout());
             }
             catch (Exception ex)
             {
@@ -191,17 +191,6 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
-        private void buttonProfile_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
-            }
-        }
         private void buttonIsiSaldo_Click(object sender, EventArgs e)
         {
             try
@@ -209,6 +198,17 @@ namespace OnlineMart_Trivial
                 FormIsiSaldo frm = new FormIsiSaldo();
                 frm.Owner = this;
                 frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
             }
             catch (Exception ex)
             {

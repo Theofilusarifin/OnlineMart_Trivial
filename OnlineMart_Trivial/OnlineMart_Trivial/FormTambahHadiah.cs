@@ -18,21 +18,6 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
-        private void FormTambahHadiah_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxNama_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxHarga_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonUbah_Click(object sender, EventArgs e)
         {
             try
@@ -51,7 +36,7 @@ namespace OnlineMart_Trivial
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data Kategori gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
+                MessageBox.Show("Data Gift gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
     }

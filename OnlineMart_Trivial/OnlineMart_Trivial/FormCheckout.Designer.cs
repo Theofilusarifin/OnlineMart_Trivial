@@ -29,13 +29,49 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.buttonKeranjang = new System.Windows.Forms.Button();
-            this.textBoxAlamat = new System.Windows.Forms.TextBox();
-            this.comboBoxMetodeBayar = new System.Windows.Forms.ComboBox();
             this.comboBoxPromo = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonBayar = new System.Windows.Forms.Button();
+            this.comboBoxMetodeBayar = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxAlamat = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // buttonKeranjang
+            // 
+            this.buttonKeranjang.Location = new System.Drawing.Point(561, 344);
+            this.buttonKeranjang.Name = "buttonKeranjang";
+            this.buttonKeranjang.Size = new System.Drawing.Size(124, 23);
+            this.buttonKeranjang.TabIndex = 31;
+            this.buttonKeranjang.Text = "kembali ke keranjang";
+            this.buttonKeranjang.UseVisualStyleBackColor = true;
+            this.buttonKeranjang.Click += new System.EventHandler(this.buttonKeranjang_Click);
+            // 
+            // comboBoxPromo
+            // 
+            this.comboBoxPromo.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.comboBoxPromo.FormattingEnabled = true;
+            this.comboBoxPromo.Location = new System.Drawing.Point(927, 51);
+            this.comboBoxPromo.Name = "comboBoxPromo";
+            this.comboBoxPromo.Size = new System.Drawing.Size(121, 30);
+            this.comboBoxPromo.TabIndex = 34;
+            this.comboBoxPromo.SelectedIndexChanged += new System.EventHandler(this.comboBoxPromo_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(278, 407);
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
             // 
             // dataGridView
             // 
@@ -45,60 +81,120 @@ namespace OnlineMart_Trivial
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView.Location = new System.Drawing.Point(37, 113);
+            this.dataGridView.Location = new System.Drawing.Point(308, 113);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.Size = new System.Drawing.Size(740, 201);
-            this.dataGridView.TabIndex = 29;
-            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            this.dataGridView.TabIndex = 36;
             // 
-            // buttonKeranjang
+            // buttonClose
             // 
-            this.buttonKeranjang.Location = new System.Drawing.Point(37, 352);
-            this.buttonKeranjang.Name = "buttonKeranjang";
-            this.buttonKeranjang.Size = new System.Drawing.Size(124, 23);
-            this.buttonKeranjang.TabIndex = 31;
-            this.buttonKeranjang.Text = "kembali ke keranjang";
-            this.buttonKeranjang.UseVisualStyleBackColor = true;
-            this.buttonKeranjang.Click += new System.EventHandler(this.buttonKeranjang_Click);
+            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonClose.AutoSize = true;
+            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClose.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonClose.ForeColor = System.Drawing.Color.White;
+            this.buttonClose.Location = new System.Drawing.Point(920, 336);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(128, 39);
+            this.buttonClose.TabIndex = 37;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = false;
             // 
-            // textBoxAlamat
+            // label2
             // 
-            this.textBoxAlamat.Location = new System.Drawing.Point(37, 49);
-            this.textBoxAlamat.Name = "textBoxAlamat";
-            this.textBoxAlamat.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAlamat.TabIndex = 32;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label2.Location = new System.Drawing.Point(766, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 22);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Metode Bayar :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label3.Location = new System.Drawing.Point(924, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 22);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Promo";
+            // 
+            // buttonBayar
+            // 
+            this.buttonBayar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBayar.AutoSize = true;
+            this.buttonBayar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBayar.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonBayar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBayar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBayar.FlatAppearance.BorderSize = 0;
+            this.buttonBayar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonBayar.ForeColor = System.Drawing.Color.White;
+            this.buttonBayar.Location = new System.Drawing.Point(309, 336);
+            this.buttonBayar.Name = "buttonBayar";
+            this.buttonBayar.Size = new System.Drawing.Size(128, 39);
+            this.buttonBayar.TabIndex = 41;
+            this.buttonBayar.Text = "Bayar";
+            this.buttonBayar.UseVisualStyleBackColor = false;
             // 
             // comboBoxMetodeBayar
             // 
+            this.comboBoxMetodeBayar.Font = new System.Drawing.Font("Montserrat", 12F);
             this.comboBoxMetodeBayar.FormattingEnabled = true;
-            this.comboBoxMetodeBayar.Location = new System.Drawing.Point(423, 49);
+            this.comboBoxMetodeBayar.Location = new System.Drawing.Point(769, 51);
             this.comboBoxMetodeBayar.Name = "comboBoxMetodeBayar";
-            this.comboBoxMetodeBayar.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxMetodeBayar.Size = new System.Drawing.Size(121, 30);
             this.comboBoxMetodeBayar.TabIndex = 33;
             this.comboBoxMetodeBayar.SelectedIndexChanged += new System.EventHandler(this.comboBoxMetodeBayar_SelectedIndexChanged);
             // 
-            // comboBoxPromo
+            // label1
             // 
-            this.comboBoxPromo.FormattingEnabled = true;
-            this.comboBoxPromo.Location = new System.Drawing.Point(581, 49);
-            this.comboBoxPromo.Name = "comboBoxPromo";
-            this.comboBoxPromo.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxPromo.TabIndex = 34;
-            this.comboBoxPromo.SelectedIndexChanged += new System.EventHandler(this.comboBoxPromo_SelectedIndexChanged);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label1.Location = new System.Drawing.Point(305, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 22);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Alamat :";
+            // 
+            // textBoxAlamat
+            // 
+            this.textBoxAlamat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAlamat.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.textBoxAlamat.Location = new System.Drawing.Point(308, 52);
+            this.textBoxAlamat.Name = "textBoxAlamat";
+            this.textBoxAlamat.Size = new System.Drawing.Size(346, 27);
+            this.textBoxAlamat.TabIndex = 32;
             // 
             // FormCheckout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1099, 407);
+            this.Controls.Add(this.buttonBayar);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonClose);
+            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBoxPromo);
             this.Controls.Add(this.comboBoxMetodeBayar);
             this.Controls.Add(this.textBoxAlamat);
             this.Controls.Add(this.buttonKeranjang);
-            this.Controls.Add(this.dataGridView);
             this.Name = "FormCheckout";
             this.Text = "FormCheckout";
             this.Load += new System.EventHandler(this.FormCheckout_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -106,11 +202,16 @@ namespace OnlineMart_Trivial
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonKeranjang;
-        private System.Windows.Forms.TextBox textBoxAlamat;
-        private System.Windows.Forms.ComboBox comboBoxMetodeBayar;
         private System.Windows.Forms.ComboBox comboBoxPromo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonBayar;
+        private System.Windows.Forms.ComboBox comboBoxMetodeBayar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxAlamat;
     }
 }

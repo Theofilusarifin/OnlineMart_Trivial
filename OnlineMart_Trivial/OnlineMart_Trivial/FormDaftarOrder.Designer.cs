@@ -29,32 +29,23 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxKriteria = new System.Windows.Forms.ComboBox();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.textBoxKriteria = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 407);
-            this.pictureBox1.TabIndex = 62;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F);
             this.label1.Location = new System.Drawing.Point(305, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 18);
+            this.label1.Size = new System.Drawing.Size(153, 22);
             this.label1.TabIndex = 60;
             this.label1.Text = "Cari Berdasarkan :";
             // 
@@ -75,28 +66,6 @@ namespace OnlineMart_Trivial
             this.comboBoxKriteria.Name = "comboBoxKriteria";
             this.comboBoxKriteria.Size = new System.Drawing.Size(248, 30);
             this.comboBoxKriteria.TabIndex = 61;
-            // 
-            // buttonClose
-            // 
-            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClose.AutoSize = true;
-            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
-            this.buttonClose.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonClose.FlatAppearance.BorderSize = 0;
-            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
-            this.buttonClose.ForeColor = System.Drawing.Color.White;
-            this.buttonClose.Location = new System.Drawing.Point(920, 336);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(128, 39);
-            this.buttonClose.TabIndex = 59;
-            this.buttonClose.Text = "Close";
-            this.buttonClose.UseVisualStyleBackColor = false;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            this.buttonClose.MouseEnter += new System.EventHandler(this.buttonClose_MouseEnter);
-            this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
             // 
             // textBoxKriteria
             // 
@@ -122,6 +91,37 @@ namespace OnlineMart_Trivial
             this.dataGridView.Size = new System.Drawing.Size(740, 201);
             this.dataGridView.TabIndex = 57;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(278, 407);
+            this.pictureBox1.TabIndex = 62;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonClose.AutoSize = true;
+            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClose.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonClose.ForeColor = System.Drawing.Color.White;
+            this.buttonClose.Location = new System.Drawing.Point(920, 336);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(128, 39);
+            this.buttonClose.TabIndex = 59;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.MouseEnter += new System.EventHandler(this.buttonClose_MouseEnter);
+            this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
+            // 
             // FormDaftarOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,8 +138,8 @@ namespace OnlineMart_Trivial
             this.ShowInTaskbar = false;
             this.Text = "FormDaftarOrder";
             this.Load += new System.EventHandler(this.FormDaftarOrder_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

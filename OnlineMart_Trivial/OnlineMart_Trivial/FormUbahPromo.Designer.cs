@@ -123,6 +123,7 @@ namespace OnlineMart_Trivial
             this.Name = "FormUbahPromo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ubah Promo";
+            this.Load += new System.EventHandler(this.FormUbahPromo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

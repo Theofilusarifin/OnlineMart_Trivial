@@ -230,17 +230,5 @@ namespace OnlineMart_Trivial
             this.Close();
         }
 		#endregion
-
-		private void buttonKeranjang_Click(object sender, EventArgs e)
-		{
-            FormKeranjang formKeranjang = new FormKeranjang();
-            formKeranjang.Owner = this;
-            formKeranjang.ShowDialog();
-		}
-
-		private void pictureBox1_Click(object sender, EventArgs e)
-		{
-
-		}
-	}
+    }
 }

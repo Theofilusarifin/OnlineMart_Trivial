@@ -64,6 +64,7 @@ namespace OnlineMart_Trivial
             this.buttonTambah.TabIndex = 3;
             this.buttonTambah.Text = "Tambah";
             this.buttonTambah.UseVisualStyleBackColor = false;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
             // textBoxTipe
             // 

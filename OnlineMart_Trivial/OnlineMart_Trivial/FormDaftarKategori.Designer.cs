@@ -29,16 +29,63 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonTambah = new System.Windows.Forms.Button();
             this.comboBoxKriteria = new System.Windows.Forms.ComboBox();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.textBoxKriteria = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonTambah = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // comboBoxKriteria
+            // 
+            this.comboBoxKriteria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxKriteria.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxKriteria.FormattingEnabled = true;
+            this.comboBoxKriteria.Items.AddRange(new object[] {
+            "Id",
+            "Nama Kategori"});
+            this.comboBoxKriteria.Location = new System.Drawing.Point(308, 51);
+            this.comboBoxKriteria.Name = "comboBoxKriteria";
+            this.comboBoxKriteria.Size = new System.Drawing.Size(248, 30);
+            this.comboBoxKriteria.TabIndex = 0;
+            // 
+            // textBoxKriteria
+            // 
+            this.textBoxKriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxKriteria.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKriteria.Location = new System.Drawing.Point(602, 52);
+            this.textBoxKriteria.Name = "textBoxKriteria";
+            this.textBoxKriteria.Size = new System.Drawing.Size(446, 27);
+            this.textBoxKriteria.TabIndex = 1;
+            this.textBoxKriteria.TextChanged += new System.EventHandler(this.textBoxKriteria_TextChanged);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView.Location = new System.Drawing.Point(308, 113);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(740, 201);
+            this.dataGridView.TabIndex = 2;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label1.Location = new System.Drawing.Point(305, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(153, 22);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Cari Berdasarkan :";
             // 
             // pictureBox1
             // 
@@ -71,19 +118,6 @@ namespace OnlineMart_Trivial
             this.buttonTambah.MouseEnter += new System.EventHandler(this.buttonTambah_MouseEnter);
             this.buttonTambah.MouseLeave += new System.EventHandler(this.buttonTambah_MouseLeave);
             // 
-            // comboBoxKriteria
-            // 
-            this.comboBoxKriteria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKriteria.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxKriteria.FormattingEnabled = true;
-            this.comboBoxKriteria.Items.AddRange(new object[] {
-            "Id",
-            "Nama Kategori"});
-            this.comboBoxKriteria.Location = new System.Drawing.Point(308, 51);
-            this.comboBoxKriteria.Name = "comboBoxKriteria";
-            this.comboBoxKriteria.Size = new System.Drawing.Size(248, 30);
-            this.comboBoxKriteria.TabIndex = 0;
-            // 
             // buttonClose
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -106,40 +140,6 @@ namespace OnlineMart_Trivial
             this.buttonClose.MouseEnter += new System.EventHandler(this.buttonClose_MouseEnter);
             this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
             // 
-            // textBoxKriteria
-            // 
-            this.textBoxKriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxKriteria.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxKriteria.Location = new System.Drawing.Point(602, 52);
-            this.textBoxKriteria.Name = "textBoxKriteria";
-            this.textBoxKriteria.Size = new System.Drawing.Size(446, 27);
-            this.textBoxKriteria.TabIndex = 1;
-            this.textBoxKriteria.TextChanged += new System.EventHandler(this.textBoxKriteria_TextChanged);
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView.Location = new System.Drawing.Point(308, 113);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(740, 201);
-            this.dataGridView.TabIndex = 2;
-            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(305, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 18);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Cari Berdasarkan :";
-            // 
             // FormDaftarKategori
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,8 +156,8 @@ namespace OnlineMart_Trivial
             this.Name = "FormDaftarKategori";
             this.Text = "FormDaftarKategori";
             this.Load += new System.EventHandler(this.FormDaftarKategori_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

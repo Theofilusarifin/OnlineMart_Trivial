@@ -24,44 +24,44 @@ namespace OnlineMart_Trivial
         private void FormatDataGrid()
         {
             //Kosongi semua kolom di datagridview
-            dataGridViewKeranjang.Columns.Clear();
+            dataGridView.Columns.Clear();
 
             //Menambah kolom di datagridview
-            dataGridViewKeranjang.Columns.Add("id", "Id");
-            dataGridViewKeranjang.Columns.Add("nama", "Nama Barang");
-            dataGridViewKeranjang.Columns.Add("harga", "Harga Barang");
-            dataGridViewKeranjang.Columns.Add("kategori_id", "Kategori");
+            dataGridView.Columns.Add("id", "Id");
+            dataGridView.Columns.Add("nama", "Nama Barang");
+            dataGridView.Columns.Add("harga", "Harga Barang");
+            dataGridView.Columns.Add("kategori_id", "Kategori");
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridViewKeranjang.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewKeranjang.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewKeranjang.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewKeranjang.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
-            dataGridViewKeranjang.AllowUserToAddRows = false;
-            dataGridViewKeranjang.ReadOnly = true;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.ReadOnly = true;
         }
 
         private void TampilDataGrid()
         {
             //Kosongi isi datagridview
-            dataGridViewKeranjang.Rows.Clear();
+            dataGridView.Rows.Clear();
 
             if (FormUtama.keranjang.Count > 0)
             {
                 foreach (Barang b in FormUtama.keranjang)
                 {
-                    dataGridViewKeranjang.Rows.Add(b.Id, b.Nama, b.Harga, b.Kategori.Nama);
+                    dataGridView.Rows.Add(b.Id, b.Nama, b.Harga, b.Kategori.Nama);
                 }
             }
             else
             {
-                dataGridViewKeranjang.DataSource = null;
+                dataGridView.DataSource = null;
             }
 
             //Tampilkan button dan Hapus
-            if (!dataGridViewKeranjang.Columns.Contains("btnHapusGrid"))
+            if (!dataGridView.Columns.Contains("btnHapusGrid"))
             {
                 DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
 
@@ -74,7 +74,7 @@ namespace OnlineMart_Trivial
                 bcolHapus.DefaultCellStyle.ForeColor = Color.White;
                 bcolHapus.DefaultCellStyle.BackColor = Color.FromArgb(227, 65, 35);
 
-                dataGridViewKeranjang.Columns.Add(bcolHapus);
+                dataGridView.Columns.Add(bcolHapus);
             }
         }
         #endregion
@@ -96,12 +96,12 @@ namespace OnlineMart_Trivial
 			try
 			{
                 //Menghapus data bila button hapus diklik
-                int id = int.Parse(dataGridViewKeranjang.CurrentRow.Cells["Id"].Value.ToString());
+                int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString());
                 //Kalau button hapus diklik
-                if (e.ColumnIndex == dataGridViewKeranjang.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
+                if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
                 {
-                    string idHapus = dataGridViewKeranjang.CurrentRow.Cells["Id"].Value.ToString();
-                    string namaHapus = dataGridViewKeranjang.CurrentRow.Cells["Nama"].Value.ToString();
+                    string idHapus = dataGridView.CurrentRow.Cells["Id"].Value.ToString();
+                    string namaHapus = dataGridView.CurrentRow.Cells["Nama"].Value.ToString();
 
                     //User ditanya sesuai dibawah
                     DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",

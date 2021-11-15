@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnlineMart_LIB;
+
 
 namespace OnlineMart_Trivial
 {
@@ -15,6 +17,29 @@ namespace OnlineMart_Trivial
         public FormTambahPromo()
         {
             InitializeComponent();
+        }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Promo p = new Promo(textBoxTipe.Text, textBoxNama.Text, int.Parse(textBoxDiskon.Text), int.Parse(textBoxDiskonMaksimal.Text), float.Parse(textBoxPembelanjaanMinimum.Text));
+
+                Promo.TambahData(p);
+
+                MessageBox.Show("Data Promo berhasil ditambahkan", "Informasi");
+
+                // Update Data Di Form Daftar
+                FormDaftarPromo frm = (FormDaftarPromo)this.Owner;
+                frm.FormDaftarPromo_Load(sender, e);
+
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Promo gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
     }
 }
