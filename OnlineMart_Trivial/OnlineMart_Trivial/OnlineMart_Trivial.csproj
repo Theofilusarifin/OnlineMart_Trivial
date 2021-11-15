@@ -522,5 +522,8 @@
   <ItemGroup>
     <None Include="Resources\Ubah Metode Pembayaran.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checkout Belanja.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

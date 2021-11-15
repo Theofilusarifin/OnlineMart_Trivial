@@ -143,14 +143,5 @@ namespace OnlineMart_Trivial
 		}
 
         #endregion
-
-        private void buttonCheckout_Click(object sender, EventArgs e)
-        {
-            FormCheckout checkout = new FormCheckout();
-            checkout.Owner = this;
-            checkout.Show();
-
-            this.Close();
-        }
     }
 }

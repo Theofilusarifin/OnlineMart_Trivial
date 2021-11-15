@@ -29,154 +29,147 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxPromo = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.buttonClose = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxMetodeBayar = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxId = new System.Windows.Forms.TextBox();
             this.textBoxAlamat = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.textBoxOngkosKirim = new System.Windows.Forms.TextBox();
+            this.textBoxTotalBayar = new System.Windows.Forms.TextBox();
+            this.comboBoxPromo = new System.Windows.Forms.ComboBox();
+            this.comboBoxMetodeBayar = new System.Windows.Forms.ComboBox();
+            this.comboBoxKurir = new System.Windows.Forms.ComboBox();
+            this.buttonBayar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBoxPromo
+            // textBoxId
             // 
-            this.comboBoxPromo.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.comboBoxPromo.FormattingEnabled = true;
-            this.comboBoxPromo.Location = new System.Drawing.Point(927, 51);
-            this.comboBoxPromo.Name = "comboBoxPromo";
-            this.comboBoxPromo.Size = new System.Drawing.Size(121, 30);
-            this.comboBoxPromo.TabIndex = 34;
-            this.comboBoxPromo.SelectedIndexChanged += new System.EventHandler(this.comboBoxPromo_SelectedIndexChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 407);
-            this.pictureBox1.TabIndex = 35;
-            this.pictureBox1.TabStop = false;
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView.Location = new System.Drawing.Point(308, 113);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersWidth = 51;
-            this.dataGridView.Size = new System.Drawing.Size(740, 201);
-            this.dataGridView.TabIndex = 36;
-            // 
-            // buttonClose
-            // 
-            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClose.AutoSize = true;
-            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
-            this.buttonClose.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonClose.FlatAppearance.BorderSize = 0;
-            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
-            this.buttonClose.ForeColor = System.Drawing.Color.White;
-            this.buttonClose.Location = new System.Drawing.Point(920, 336);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(128, 39);
-            this.buttonClose.TabIndex = 37;
-            this.buttonClose.Text = "Close";
-            this.buttonClose.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.label2.Location = new System.Drawing.Point(766, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 22);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Metode Bayar :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.label3.Location = new System.Drawing.Point(924, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 22);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Promo";
-            // 
-            // comboBoxMetodeBayar
-            // 
-            this.comboBoxMetodeBayar.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.comboBoxMetodeBayar.FormattingEnabled = true;
-            this.comboBoxMetodeBayar.Location = new System.Drawing.Point(769, 51);
-            this.comboBoxMetodeBayar.Name = "comboBoxMetodeBayar";
-            this.comboBoxMetodeBayar.Size = new System.Drawing.Size(121, 30);
-            this.comboBoxMetodeBayar.TabIndex = 33;
-            this.comboBoxMetodeBayar.SelectedIndexChanged += new System.EventHandler(this.comboBoxMetodeBayar_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.label1.Location = new System.Drawing.Point(305, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 22);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Alamat :";
+            this.textBoxId.BackColor = System.Drawing.Color.White;
+            this.textBoxId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxId.Enabled = false;
+            this.textBoxId.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxId.ForeColor = System.Drawing.Color.Transparent;
+            this.textBoxId.Location = new System.Drawing.Point(49, 280);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.Size = new System.Drawing.Size(370, 20);
+            this.textBoxId.TabIndex = 2;
             // 
             // textBoxAlamat
             // 
-            this.textBoxAlamat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAlamat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxAlamat.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.textBoxAlamat.Location = new System.Drawing.Point(308, 52);
+            this.textBoxAlamat.ForeColor = System.Drawing.Color.DimGray;
+            this.textBoxAlamat.Location = new System.Drawing.Point(49, 366);
+            this.textBoxAlamat.Multiline = true;
             this.textBoxAlamat.Name = "textBoxAlamat";
-            this.textBoxAlamat.Size = new System.Drawing.Size(346, 27);
-            this.textBoxAlamat.TabIndex = 32;
+            this.textBoxAlamat.Size = new System.Drawing.Size(370, 59);
+            this.textBoxAlamat.TabIndex = 3;
+            // 
+            // textBoxOngkosKirim
+            // 
+            this.textBoxOngkosKirim.BackColor = System.Drawing.Color.White;
+            this.textBoxOngkosKirim.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxOngkosKirim.Enabled = false;
+            this.textBoxOngkosKirim.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxOngkosKirim.ForeColor = System.Drawing.Color.Transparent;
+            this.textBoxOngkosKirim.Location = new System.Drawing.Point(49, 493);
+            this.textBoxOngkosKirim.Name = "textBoxOngkosKirim";
+            this.textBoxOngkosKirim.Size = new System.Drawing.Size(370, 20);
+            this.textBoxOngkosKirim.TabIndex = 4;
+            // 
+            // textBoxTotalBayar
+            // 
+            this.textBoxTotalBayar.BackColor = System.Drawing.Color.White;
+            this.textBoxTotalBayar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTotalBayar.Enabled = false;
+            this.textBoxTotalBayar.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTotalBayar.ForeColor = System.Drawing.Color.Transparent;
+            this.textBoxTotalBayar.Location = new System.Drawing.Point(49, 574);
+            this.textBoxTotalBayar.Name = "textBoxTotalBayar";
+            this.textBoxTotalBayar.Size = new System.Drawing.Size(370, 20);
+            this.textBoxTotalBayar.TabIndex = 5;
+            // 
+            // comboBoxPromo
+            // 
+            this.comboBoxPromo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPromo.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPromo.FormattingEnabled = true;
+            this.comboBoxPromo.Location = new System.Drawing.Point(39, 656);
+            this.comboBoxPromo.Name = "comboBoxPromo";
+            this.comboBoxPromo.Size = new System.Drawing.Size(393, 34);
+            this.comboBoxPromo.TabIndex = 6;
+            // 
+            // comboBoxMetodeBayar
+            // 
+            this.comboBoxMetodeBayar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMetodeBayar.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMetodeBayar.FormattingEnabled = true;
+            this.comboBoxMetodeBayar.Location = new System.Drawing.Point(39, 745);
+            this.comboBoxMetodeBayar.Name = "comboBoxMetodeBayar";
+            this.comboBoxMetodeBayar.Size = new System.Drawing.Size(393, 34);
+            this.comboBoxMetodeBayar.TabIndex = 7;
+            // 
+            // comboBoxKurir
+            // 
+            this.comboBoxKurir.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxKurir.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxKurir.FormattingEnabled = true;
+            this.comboBoxKurir.Location = new System.Drawing.Point(39, 834);
+            this.comboBoxKurir.Name = "comboBoxKurir";
+            this.comboBoxKurir.Size = new System.Drawing.Size(393, 34);
+            this.comboBoxKurir.TabIndex = 8;
+            // 
+            // buttonBayar
+            // 
+            this.buttonBayar.AutoSize = true;
+            this.buttonBayar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBayar.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonBayar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBayar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBayar.FlatAppearance.BorderSize = 0;
+            this.buttonBayar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonBayar.ForeColor = System.Drawing.Color.White;
+            this.buttonBayar.Location = new System.Drawing.Point(39, 918);
+            this.buttonBayar.Name = "buttonBayar";
+            this.buttonBayar.Size = new System.Drawing.Size(393, 45);
+            this.buttonBayar.TabIndex = 9;
+            this.buttonBayar.Text = "Bayar";
+            this.buttonBayar.UseVisualStyleBackColor = false;
+            this.buttonBayar.Click += new System.EventHandler(this.buttonBayar_Click);
             // 
             // FormCheckout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1099, 407);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBoxPromo);
+            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Checkout_Belanja;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(467, 1018);
+            this.Controls.Add(this.buttonBayar);
+            this.Controls.Add(this.comboBoxKurir);
             this.Controls.Add(this.comboBoxMetodeBayar);
+            this.Controls.Add(this.comboBoxPromo);
+            this.Controls.Add(this.textBoxTotalBayar);
+            this.Controls.Add(this.textBoxOngkosKirim);
+            this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.textBoxAlamat);
+            this.DoubleBuffered = true;
             this.Name = "FormCheckout";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCheckout";
             this.Load += new System.EventHandler(this.FormCheckout_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBoxPromo;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBoxMetodeBayar;
-        private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.TextBox textBoxAlamat;
+        private System.Windows.Forms.TextBox textBoxOngkosKirim;
+        private System.Windows.Forms.TextBox textBoxTotalBayar;
+        private System.Windows.Forms.ComboBox comboBoxPromo;
+        private System.Windows.Forms.ComboBox comboBoxMetodeBayar;
+        private System.Windows.Forms.ComboBox comboBoxKurir;
+        private System.Windows.Forms.Button buttonBayar;
     }
 }

@@ -151,7 +151,9 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                openChildForm(new FormCheckout());
+                FormCheckout checkout = new FormCheckout();
+                checkout.Owner = this;
+                checkout.Show();
             }
             catch (Exception ex)
             {

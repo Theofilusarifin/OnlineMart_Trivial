@@ -118,8 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Basket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Basket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Registrasi Konsumen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Registrasi Konsumen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Form Regis Rider1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Form Regis Rider1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bookmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bookmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bookmark1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bookmark1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,20 +142,14 @@
   <data name="Background_Login_Register" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background_Login_Register.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Navbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Navbar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Form Isi Saldo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Form Isi Saldo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Loading Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Loading Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Registrasi Konsumen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Registrasi Konsumen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login Pegawai" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login Pegawai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,17 +163,20 @@
   <data name="Tambah Hadiah" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah Hadiah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Basket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Basket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Money" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="White Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\White Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="White Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\White Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tambah Promo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah Promo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,9 +190,6 @@
   <data name="Tambah barang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah barang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ubah Hadiah" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ubah Hadiah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Background_Auth" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background_Auth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,6 +198,9 @@
   </data>
   <data name="Ubah barang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ubah barang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ubah Metode Pembayaran" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ubah Metode Pembayaran.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Onboarding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Onboarding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,8 +217,8 @@
   <data name="Form Regis Rider" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Form Regis Rider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bookmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bookmark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Navbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Navbar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login Konsumen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login Konsumen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,8 +229,8 @@
   <data name="Button_Leave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_Leave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Form Regis Rider1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Form Regis Rider1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Book" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,8 +244,8 @@
   <data name="Logo_OnlineMart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_OnlineMart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Loading Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Loading Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ubah Hadiah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ubah Hadiah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ubah Cabang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ubah Cabang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,7 +259,7 @@
   <data name="Tambah Cabang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah Cabang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ubah Metode Pembayaran" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ubah Metode Pembayaran.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Checkout Belanja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Checkout Belanja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
