@@ -11,7 +11,7 @@ namespace OnlineMart_LIB
     public class Order
     {
 		#region Field
-		private int id;
+		private long id;
         private DateTime tanggal_waktu;
         private string alamat_tujuan;
         private float ongkos_kirim;
@@ -28,7 +28,7 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Constructors
-        public Order(int id, DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Cabang cabang, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem)
+        public Order(long id, DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Cabang cabang, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem)
         {
             Id = id;
             Tanggal_waktu = tanggal_waktu;
@@ -65,7 +65,7 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Properties
-        public int Id 
+        public long Id 
         { 
             get => id; 
             set => id = value; 
@@ -141,10 +141,11 @@ namespace OnlineMart_LIB
         public static Boolean TambahData(Order o)
 		{
 			string sql = "insert into orders (tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
-                "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id) " +
-				"values ('" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + o.Alamat_tujuan + "', " + o.Ongkos_kirim + ", " +
-				o.Total_bayar + ", '" + o.Cara_bayar + "', " + o.Cabang.Id + ", " + o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " +
-				+ o.Promo.Id + ", " + o.Gift_redeem.Id + ")";
+                         "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id) " +
+				         "values ('" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + o.Alamat_tujuan + "', " + 
+                         o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "', " + o.Cabang.Id + ", " + 
+                         o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " + + o.Promo.Id + ", " + 
+                         o.Gift_redeem.Id + ")";
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
@@ -153,14 +154,15 @@ namespace OnlineMart_LIB
 
         public static List<Order> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders ";
+            string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
+                         "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders ";
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Order> listOrder = new List<Order>();
 
-            while (hasil.Read() == true)
+            while (hasil.Read())
             {
                 Cabang c = Cabang.AmbilData(hasil.GetInt32(7));
 
@@ -174,11 +176,11 @@ namespace OnlineMart_LIB
 
                 Gift_Redeem gr = Gift_Redeem.AmbilData(hasil.GetInt32(12));
 
-                Order o = new Order(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
+                Order o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
 
                 //Ambil Barang_Order
                 string barang_order = "select bo.barang_id, bo.jumlah, bo.harga from barang_order as bo " +
-                "inner join orders as o on bo.order_id = o.id where o.id = " + o.Id;
+                                      "inner join orders as o on bo.order_id = o.id where o.id = " + o.Id;
 
                 MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_order);
 
@@ -246,9 +248,11 @@ namespace OnlineMart_LIB
             return hasilNoNota;
         }
 
-        public static Order AmbilData(int id)
+        public static Order AmbilData(long id)
         {
-            string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders where id = " + id;
+            string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, " +
+                         "status, cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id" +
+                         " from orders where id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 

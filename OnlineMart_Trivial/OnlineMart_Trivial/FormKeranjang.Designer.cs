@@ -32,6 +32,7 @@ namespace OnlineMart_Trivial
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonCheckout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -77,11 +78,32 @@ namespace OnlineMart_Trivial
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = false;
             // 
+            // buttonCheckout
+            // 
+            this.buttonCheckout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCheckout.AutoSize = true;
+            this.buttonCheckout.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCheckout.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonCheckout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCheckout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCheckout.FlatAppearance.BorderSize = 0;
+            this.buttonCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCheckout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonCheckout.ForeColor = System.Drawing.Color.White;
+            this.buttonCheckout.Location = new System.Drawing.Point(308, 337);
+            this.buttonCheckout.Name = "buttonCheckout";
+            this.buttonCheckout.Size = new System.Drawing.Size(128, 39);
+            this.buttonCheckout.TabIndex = 44;
+            this.buttonCheckout.Text = "Checkout";
+            this.buttonCheckout.UseVisualStyleBackColor = false;
+            this.buttonCheckout.Click += new System.EventHandler(this.buttonCheckout_Click);
+            // 
             // FormKeranjang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1099, 407);
+            this.Controls.Add(this.buttonCheckout);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.pictureBox1);
@@ -100,5 +122,6 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Button buttonCheckout;
     }
 }

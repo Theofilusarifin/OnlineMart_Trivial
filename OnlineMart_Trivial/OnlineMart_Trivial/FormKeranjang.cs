@@ -15,6 +15,9 @@ namespace OnlineMart_Trivial
     {
         public static Order thisOrder;
 
+        List<Barang_Order> listBarangOrder = thisOrder.ListBarangOrder;
+        Barang_Order barang_order;
+
         public FormKeranjang()
         {
             InitializeComponent();
@@ -31,12 +34,25 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Add("nama", "Nama Barang");
             dataGridView.Columns.Add("harga", "Harga Barang");
             dataGridView.Columns.Add("kategori_id", "Kategori");
+            dataGridView.Columns.Add("jumlah", "Jumlah");
+            dataGridView.Columns.Add("subtotal", "SubTotal");
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
             dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["jumlah"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["subtotal"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            //agar angka rata kanan
+            dataGridView.Columns["harga"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView.Columns["jumlah"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView.Columns["subtotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            //agar angka ditampilkan dengan format pemisah ribuan (100 delimiter)
+            dataGridView.Columns["harga"].DefaultCellStyle.Format = "#,###";
+            dataGridView.Columns["subtotal"].DefaultCellStyle.Format = "#,###";
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
             dataGridView.AllowUserToAddRows = false;
@@ -48,11 +64,54 @@ namespace OnlineMart_Trivial
             //Kosongi isi datagridview
             dataGridView.Rows.Clear();
 
+            // dimasukkin ke barang_order supaya bisa hitung subtotal sama jumlah barang
+            #region Keranjang to Barang_Order
+            // kalau keranjang ada isinya/barangnya
             if (FormUtama.keranjang.Count > 0)
             {
-                foreach (Barang b in FormUtama.keranjang)
+                // untuk setiap barang
+                foreach(Barang b in FormUtama.keranjang)
                 {
-                    dataGridView.Rows.Add(b.Id, b.Nama, b.Harga, b.Kategori.Nama);
+                    // kalau list barang order tidak kosong
+                    if(listBarangOrder.Count != 0)
+                    {
+                        // untuk setiap barang order
+                        foreach (Barang_Order bo in listBarangOrder)
+                        {
+                            // kalau id barang di keranjang dan list barang order sama
+                            if (b.Id == bo.Barang.Id)
+                            {
+                                // tambah jumlah dan harga
+                                bo.Jumlah += 1;
+                                bo.Harga += b.Harga;
+                            }
+                        }
+                        // kalau tidak ada id yang sama, maka masukkan langsung ke barang order dengan jumlah default 1 dan harga sesuai harga barang
+                        /*else
+                        {
+                            barang_order = new Barang_Order(b, thisOrder, 1, b.Harga);
+                            listBarangOrder.Add(barang_order);
+                        }*/
+
+                    }
+                    else // kalau list barang order kosong
+                    {
+                        barang_order = new Barang_Order(b, thisOrder, 1, b.Harga);
+                        listBarangOrder.Add(barang_order);
+                    }
+                    
+                }
+            }
+            #endregion
+
+            // kalau barang order ada isinya
+            if (listBarangOrder.Count > 0)
+            {
+                // untuk setiap barang di list barang order
+                foreach (Barang_Order bo in listBarangOrder)
+                {
+                    // tunjukkan di datagrid dengan tipe Barang_Order
+                    dataGridView.Rows.Add(bo.Barang.Id, bo.Barang.Nama, bo.Barang.Harga, bo.Barang.Kategori.Nama, bo.Jumlah, bo.Harga /*subtotal*/);
                 }
             }
             else
@@ -85,7 +144,8 @@ namespace OnlineMart_Trivial
             try
             {
                 //generate id order yyyyMMddxxxx (yyyy-MM-dd-xxxx) detail ada di class order
-                thisOrder.Id = int.Parse(Order.GenerateIdOrder());
+                if(thisOrder.Id == 0)
+                    thisOrder.Id = long.Parse(Order.GenerateIdOrder());
 
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
@@ -143,5 +203,14 @@ namespace OnlineMart_Trivial
 		}
 
         #endregion
+
+        private void buttonCheckout_Click(object sender, EventArgs e)
+        {
+            FormCheckout checkout = new FormCheckout();
+            checkout.Owner = this;
+            checkout.Show();
+
+            this.Close();
+        }
     }
 }
