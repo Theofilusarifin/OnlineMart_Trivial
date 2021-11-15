@@ -78,15 +78,6 @@ namespace OnlineMart_Trivial
                 bcolHapus.Name = "btnHapusGrid";
                 bcolHapus.UseColumnTextForButtonValue = true;
                 dataGridView.Columns.Add(bcolHapus);
-
-                //Button tambah ke keranjang
-                DataGridViewButtonColumn bcolTambahKeranjang = new DataGridViewButtonColumn();
-
-                bcolTambahKeranjang.HeaderText = "Aksi";
-                bcolTambahKeranjang.Text = "Tambahkan ke keranjang";
-                bcolTambahKeranjang.Name = "btnTambahKeranjang";
-                bcolTambahKeranjang.UseColumnTextForButtonValue = true;
-                dataGridView.Columns.Add(bcolTambahKeranjang);
             }
         }
         #endregion
