@@ -172,9 +172,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                FormHistoryTransaksi formHistoryTransaksi = new FormHistoryTransaksi();
-                formHistoryTransaksi.Owner = this;
-                formHistoryTransaksi.ShowDialog();
+                openChildForm(new FormHistoryTransaksi());
             }
             catch (Exception ex)
             {
@@ -185,7 +183,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
-
+                openChildForm(new FormCekPesanan());
             }
             catch (Exception ex)
             {
@@ -196,7 +194,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                FormCetakNota formCetakNota = new FormCetakNota();formCetakNota.Owner = this; formCetakNota.ShowDialog();
+                openChildForm(new FormCetakNota());
             }
             catch (Exception ex)
             {

@@ -61,6 +61,12 @@
     <Compile Include="FormAuth.Designer.cs">
       <DependentUpon>FormAuth.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCekPesanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCekPesanan.Designer.cs">
+      <DependentUpon>FormCekPesanan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCetakNota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,12 +84,6 @@
     </Compile>
     <Compile Include="FormDaftarBarang.Designer.cs">
       <DependentUpon>FormDaftarBarang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDaftarBarangInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDaftarBarangInfo.Designer.cs">
-      <DependentUpon>FormDaftarBarangInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDaftarBarangPelanggan.cs">
       <SubType>Form</SubType>
@@ -282,6 +282,9 @@
     <EmbeddedResource Include="FormAuth.resx">
       <DependentUpon>FormAuth.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCekPesanan.resx">
+      <DependentUpon>FormCekPesanan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCetakNota.resx">
       <DependentUpon>FormCetakNota.cs</DependentUpon>
     </EmbeddedResource>
@@ -290,9 +293,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarBarang.resx">
       <DependentUpon>FormDaftarBarang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDaftarBarangInfo.resx">
-      <DependentUpon>FormDaftarBarangInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarBarangPelanggan.resx">
       <DependentUpon>FormDaftarBarangPelanggan.cs</DependentUpon>

@@ -50,6 +50,7 @@
     <Compile Include="Barang_Order.cs" />
     <Compile Include="Cabang.cs" />
     <Compile Include="Cetak.cs" />
+    <Compile Include="Chat.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Gift.cs" />
     <Compile Include="Gift_Redeem.cs" />
