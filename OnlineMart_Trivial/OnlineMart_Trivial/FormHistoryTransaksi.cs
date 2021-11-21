@@ -11,15 +11,16 @@ using OnlineMart_LIB;
 
 namespace OnlineMart_Trivial
 {
-    public partial class FormDaftarOrder : Form
-    {
-        public List<Order> listOrder = new List<Order>();
-        public FormDaftarOrder()
-        {
-            InitializeComponent();
-        }
+	public partial class FormHistoryTransaksi : Form
+	{
+        public static int orderID; //Agar dapat dipanggil di form cek pesanan
+		public FormHistoryTransaksi()
+		{
+			InitializeComponent();
+		}
+		public static List<Order> listOrder = new List<Order>(); //deklarasi list order
 
-        #region Methods
+        #region Method
         private void FormatDataGrid()
         {
             //Kosongi semua kolom di datagridview
@@ -71,99 +72,34 @@ namespace OnlineMart_Trivial
             {
                 dataGridView.DataSource = null;
             }
+            //Tampilkan button dan Hapus
+            if (!dataGridView.Columns.Contains("btnCekPesanan"))
+            {
+                DataGridViewButtonColumn bcolCekPesanan = new DataGridViewButtonColumn();
+
+                bcolCekPesanan.HeaderText = "Aksi";
+                bcolCekPesanan.Text = "Cek Pesanan";
+                bcolCekPesanan.Name = "btnCekPesanan";
+                bcolCekPesanan.UseColumnTextForButtonValue = true;
+
+                dataGridView.Columns.Add(bcolCekPesanan);
+            }
         }
         #endregion
-
-        #region FormLoad
-        private void FormDaftarOrder_Load(object sender, EventArgs e)
+        private void FormHistoryTransaksi_Load(object sender, EventArgs e)
 		{
-            try
-            {
+			try
+			{
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listOrder = Order.BacaData("", "");
+                listOrder = Order.BacaData("pelanggan_id", FormUtama.konsumen.Id.ToString());
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
-
-                comboBoxKriteria.Text = "Id";
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
-            }
-		}
-        #endregion
-
-        #region Textbox
-        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
-        {
-            string kriteria = "";
-            switch (comboBoxKriteria.Text)
-            {
-                case "Id":
-                    kriteria = "id";
-                    break;
-
-                case "Tanggal":
-                    kriteria = "tanggal_waktu";
-                    break;
-
-                case "Alamat":
-                    kriteria = "alamat_tujuan";
-                    break;
-
-                case "Ongkos Kirim":
-                    kriteria = "ongkos_kirim";
-                    break;
-
-                case "Total Bayar":
-                    kriteria = "total_bayar";
-                    break;
-
-                case "Cara Bayar":
-                    kriteria = "cara_bayar";
-                    break;
-
-                case "Status":
-                    kriteria = "status";
-                    break;
-            }
-
-            listOrder = Order.BacaData(kriteria, textBoxKriteria.Text);
-            FormatDataGrid();
-            TampilDataGrid();
-        }
-        #endregion
-
-        #region Desain Button
-        private void buttonClose_MouseEnter(object sender, EventArgs e)
-        {
-            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-        private void buttonClose_MouseLeave(object sender, EventArgs e)
-        {
-            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-        #endregion
-
-        #region Button
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-		#endregion
-
-		private void buttonCetak_Click(object sender, EventArgs e)
-		{
-			try
-			{
-                Order.CetakDaftarOrder("", "", "daftarnota.txt");
-                MessageBox.Show("Nota berhasil di cetak");
-			}
-            catch (Exception ex)
+			catch (Exception ex)
 			{
                 MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
@@ -171,12 +107,18 @@ namespace OnlineMart_Trivial
 
 		private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-
-		}
-
-		private void comboBoxKriteria_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-	}
+			try
+			{
+                int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString()); //Untuk mengambil ID dari button yang di klik
+                if (e.ColumnIndex == dataGridView.Columns["btnCekPesanan"].Index && e.RowIndex >= 0) //Untuk mengecek apakah yang ditekan adalah button cek pesanan
+                {
+                    //Hubungkan form cek pesanan di sini
+                }
+            }
+            catch (Exception ex)
+			{
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+    }
 }

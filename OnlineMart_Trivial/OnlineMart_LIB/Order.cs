@@ -5,6 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 using MySql.Data.MySqlClient;
+//Agar objek filestream aman
+using System.IO;
+
+//Agar objek bertipe font dapat digunakan
+using System.Drawing;
+
+//Agar dapat menggunakan print avrgs
+using System.Drawing.Printing;
 
 namespace OnlineMart_LIB
 {
@@ -377,6 +385,62 @@ namespace OnlineMart_LIB
                 o = new Order(DateTime.Parse(hasil.GetString(0)));
             }
             return o;
+        }
+
+        //Cetak semua order
+        public static void CetakDaftarOrder(string kriteria, string nilai, string namaFile)
+        {
+            List<Order> listData = Order.BacaData(kriteria, nilai);
+            StreamWriter file = new StreamWriter(namaFile);
+            char pemisah = '-';
+            file.WriteLine(""); //Cetak 1 baris kosong
+            file.WriteLine("Nama toko anda disini");
+            foreach (Order o in listData)
+            {
+                file.WriteLine("No nota = " + o.Id);
+                file.WriteLine("Tanggal = " + o.Tanggal_waktu);
+                file.WriteLine("Pembeli = " + o.Pelanggan.Nama + "-" + o.Pelanggan.Id);
+                file.WriteLine("Alamat = " + o.Alamat_tujuan);
+                file.WriteLine("Driver = " + o.Driver.Nama);
+                file.WriteLine("Metode Pembayaran = " + o.Cara_bayar);
+                file.WriteLine("Promo = " + o.Promo);
+                file.WriteLine("Ongkos Kirim = " + o.Ongkos_kirim);
+                file.WriteLine("Total Bayar = " + o.Total_bayar.ToString("#,###"));
+
+                file.WriteLine("-".PadRight(50, pemisah));
+                file.WriteLine("Terima kasih!");
+                file.WriteLine("=".PadRight(50, '='));
+            }
+            file.Close();
+
+            Cetak c = new Cetak(namaFile, 10, 9, 9, 9);
+            c.CetakKePrinter();
+        }
+
+        //Cetak 1 Order
+        public void CetakOrder(string namaFile)
+        {
+            StreamWriter file = new StreamWriter(namaFile);
+            char pemisah = '-';
+            file.WriteLine(""); //Cetak 1 baris kosong
+            file.WriteLine("Nama toko anda disini");
+            file.WriteLine("No nota = " + Id);
+            file.WriteLine("Tanggal = " + Tanggal_waktu);
+            file.WriteLine("Pembeli = " + Pelanggan.Nama + "-" + Pelanggan.Id);
+            file.WriteLine("Alamat = " + Alamat_tujuan);
+            file.WriteLine("Driver = " + Driver.Nama);
+            file.WriteLine("Metode Pembayaran = " + Cara_bayar);
+            file.WriteLine("Promo = " + Promo);
+            file.WriteLine("Ongkos Kirim = " + Ongkos_kirim);
+            file.WriteLine("Total Bayar = " + Total_bayar.ToString("#,###"));
+
+            file.WriteLine("-".PadRight(50, pemisah));
+            file.WriteLine("Terima kasih!");
+            file.WriteLine("=".PadRight(50, '='));
+            file.Close();
+
+            Cetak c = new Cetak(namaFile, 10, 9, 9, 9);
+            c.CetakKePrinter();
         }
         #endregion
     }

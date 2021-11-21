@@ -61,6 +61,12 @@
     <Compile Include="FormAuth.Designer.cs">
       <DependentUpon>FormAuth.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCetakNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCetakNota.Designer.cs">
+      <DependentUpon>FormCetakNota.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCheckout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     </Compile>
     <Compile Include="FormDaftarPromo.Designer.cs">
       <DependentUpon>FormDaftarPromo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHistoryTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistoryTransaksi.Designer.cs">
+      <DependentUpon>FormHistoryTransaksi.cs</DependentUpon>
     </Compile>
     <Compile Include="FormIsiSaldo.cs">
       <SubType>Form</SubType>
@@ -270,6 +282,9 @@
     <EmbeddedResource Include="FormAuth.resx">
       <DependentUpon>FormAuth.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCetakNota.resx">
+      <DependentUpon>FormCetakNota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCheckout.resx">
       <DependentUpon>FormCheckout.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarPromo.resx">
       <DependentUpon>FormDaftarPromo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHistoryTransaksi.resx">
+      <DependentUpon>FormHistoryTransaksi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormIsiSaldo.resx">
       <DependentUpon>FormIsiSaldo.cs</DependentUpon>

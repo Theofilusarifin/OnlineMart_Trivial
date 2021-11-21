@@ -1,0 +1,15 @@
+
+Nama toko anda disini
+Alamat toko anda di sini
+No nota = 4294967295
+Tanggal = 15/11/2021 19:52:56
+Pembeli = arifin-4
+Alamat = Test
+Driver = driver
+Metode Pembayaran = Transfer
+Promo = OnlineMart_LIB.Promo
+Ongkos Kirim = 10000
+Total Bayar = 15.000
+--------------------------------------------------
+Terima kasih!
+==================================================

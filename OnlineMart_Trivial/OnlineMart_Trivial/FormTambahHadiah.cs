@@ -32,7 +32,6 @@ namespace OnlineMart_Trivial
                 FormDaftarHadiah frm = (FormDaftarHadiah)this.Owner;
                 frm.FormDaftarGift_Load(sender, e);
                 this.Close();
-
             }
             catch (Exception ex)
             {
