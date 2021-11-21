@@ -104,6 +104,20 @@ namespace OnlineMart_LIB
 
             return r;
         }
+        public static Riwayat_isi_saldo AmbilData(int id, Koneksi koneksi)
+        {
+            string sql = "select id, waktu, isi_saldo, pelanggan_id from riwayat_isi_saldos where id = " + id;
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+
+            hasil.Read();
+
+            Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(3));
+
+            Riwayat_isi_saldo r = new Riwayat_isi_saldo(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetInt32(2), p);
+
+            return r;
+        }
         public static Boolean UbahData(Riwayat_isi_saldo r)
         {
             // Querry Insert
