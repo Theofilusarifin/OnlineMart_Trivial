@@ -227,6 +227,19 @@ namespace OnlineMart_LIB
 			return p;
 		}
 
+		public static Pelanggan AmbilData(int id, Koneksi koneksi)
+		{
+			string sql = "select id, nama, username, email, password, telepon, saldo, poin from pelanggans where id = " + id;
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+
+			hasil.Read();
+
+			Pelanggan p = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
+
+			return p;
+		}
+
 		public static Boolean UbahData(Pelanggan p)
 		{
 			// Querry Insert

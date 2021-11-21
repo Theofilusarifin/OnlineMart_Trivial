@@ -199,6 +199,19 @@ namespace OnlineMart_LIB
 			return d;
 		}
 
+		public static Driver AmbilData(int id, Koneksi koneksi)
+		{
+			string sql = "select id, nama, username, email, password, telepon from drivers where id = " + id;
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+
+			hasil.Read();
+
+			Driver d = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
+
+			return d;
+		}
+
 		public static Boolean UbahData(Driver d)
 		{
 			// Querry

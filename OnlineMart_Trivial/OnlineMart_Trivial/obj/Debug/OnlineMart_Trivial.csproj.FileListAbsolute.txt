@@ -287,3 +287,5 @@ C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_
 C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarBarangPelanggan.resources
 D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarBarangPelanggan.resources
 D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.csproj.AssemblyReference.cache
+D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormRekapPendapatan.resources
+D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.csproj.CopyComplete

@@ -127,6 +127,22 @@ namespace OnlineMart_LIB
 			return gr;
 		}
 
+		public static Gift_Redeem AmbilData(int id, Koneksi koneksi)
+		{
+			string sql = "select id, waktu, poin_redeem, gift_id from gift_redeems where id = " + id;
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+
+			Gift_Redeem gr = null;
+
+			while (hasil.Read())
+			{
+				Gift g = Gift.AmbilData(hasil.GetInt32(3));
+				gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), g);
+			}
+			return gr;
+		}
+
 		public static Boolean UbahData(Gift_Redeem gr)
 		{
 			// Querry Insert

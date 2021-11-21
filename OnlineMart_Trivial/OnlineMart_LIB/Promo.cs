@@ -163,7 +163,22 @@ namespace OnlineMart_LIB
 			return p;
         }
 
-        public static Boolean UbahData(Promo p)
+		public static Promo AmbilData(int id, Koneksi koneksi)
+		{
+			string sql = "select id, tipe, nama, diskon, diskon_max, minimal_belanja from promos where id = " + id;
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+
+			Promo p = null;
+
+			while (hasil.Read())
+			{
+				p = new Promo(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetInt32(3), hasil.GetInt32(4), hasil.GetFloat(5));
+			}
+			return p;
+		}
+
+		public static Boolean UbahData(Promo p)
         {
             // Querry Insert
             string sql = "update promos set tipe = '" + p.Tipe + "', nama = '" + p.Nama + "', diskon = " + p.Diskon + ", diskon_max = " + p.Diskon_max + ", minimal_belanja = " + p.Minimal_belanja + " where id = " + p.Id;

@@ -53,7 +53,6 @@ namespace OnlineMart_Trivial
                     #endregion
 
                     #region combobox
-
                     //memunculkan promo yang ada di combobox
                     promo = Promo.BacaData("", "", FormUtama.koneksi);
                     comboBoxPromo.DataSource = promo;
@@ -79,6 +78,7 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Error");
             }
         }
+
         private void comboBoxPromo_SelectedIndexChanged(object sender, EventArgs e)
         {
             try

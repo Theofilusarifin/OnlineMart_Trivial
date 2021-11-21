@@ -175,6 +175,18 @@
     <Compile Include="FormRegisterRider.Designer.cs">
       <DependentUpon>FormRegisterRider.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRekapPendapatan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRekapPendapatan.Designer.cs">
+      <DependentUpon>FormRekapPendapatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRekapPenjualanBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRekapPenjualanBarang.Designer.cs">
+      <DependentUpon>FormRekapPenjualanBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTambahBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegisterRider.resx">
       <DependentUpon>FormRegisterRider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRekapPendapatan.resx">
+      <DependentUpon>FormRekapPendapatan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahBarang.resx">
       <DependentUpon>FormTambahBarang.cs</DependentUpon>

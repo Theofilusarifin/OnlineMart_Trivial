@@ -17,6 +17,7 @@ namespace OnlineMart_LIB
         private Kategori kategori;
         List<Barang_Cabang> listBarangCabang; // Composition
         List<Barang_Order> listBarangOrder; // Composition
+
         #region Constructors
         public Barang(int id, string nama, int harga, Kategori kategori)
         {
@@ -170,6 +171,22 @@ namespace OnlineMart_LIB
 
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             Kategori k = Kategori.AmbilData(hasil.GetInt32(3)); 
+
+            Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
+
+            return b;
+        }
+
+        public static Barang AmbilData(int id, Koneksi koneksi)
+        {
+            string sql = "select id, nama, harga, kategori_id from barangs where id = " + id;
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+
+            hasil.Read();
+
+            //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
+            Kategori k = Kategori.AmbilData(hasil.GetInt32(3));
 
             Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
 

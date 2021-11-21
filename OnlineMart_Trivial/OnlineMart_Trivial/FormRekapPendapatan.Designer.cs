@@ -1,0 +1,123 @@
+﻿
+namespace OnlineMart_Trivial
+{
+    partial class FormRekapPendapatan
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.comboBoxbulan = new System.Windows.Forms.ComboBox();
+            this.comboBoxTahun = new System.Windows.Forms.ComboBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // comboBoxbulan
+            // 
+            this.comboBoxbulan.FormattingEnabled = true;
+            this.comboBoxbulan.Items.AddRange(new object[] {
+            "Januari",
+            "Februari",
+            "Maret",
+            "April",
+            "Mei",
+            "Juni",
+            "Juli",
+            "Agustus",
+            "September",
+            "Oktober",
+            "November",
+            "Desember"});
+            this.comboBoxbulan.Location = new System.Drawing.Point(105, 61);
+            this.comboBoxbulan.Name = "comboBoxbulan";
+            this.comboBoxbulan.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxbulan.TabIndex = 0;
+            this.comboBoxbulan.SelectedIndexChanged += new System.EventHandler(this.comboBoxbulan_SelectedIndexChanged);
+            // 
+            // comboBoxTahun
+            // 
+            this.comboBoxTahun.FormattingEnabled = true;
+            this.comboBoxTahun.Location = new System.Drawing.Point(499, 61);
+            this.comboBoxTahun.Name = "comboBoxTahun";
+            this.comboBoxTahun.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTahun.TabIndex = 1;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(105, 115);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(515, 150);
+            this.dataGridView.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(151, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "bulan";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(519, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "tahun";
+            // 
+            // FormRekapPendapatan
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.comboBoxTahun);
+            this.Controls.Add(this.comboBoxbulan);
+            this.Name = "FormRekapPendapatan";
+            this.Text = "FormRekapPendapatan";
+            this.Load += new System.EventHandler(this.FormRekapPendapatan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ComboBox comboBoxbulan;
+        private System.Windows.Forms.ComboBox comboBoxTahun;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+    }
+}

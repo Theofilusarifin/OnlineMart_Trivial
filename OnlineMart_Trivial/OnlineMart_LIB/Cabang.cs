@@ -179,6 +179,21 @@ namespace OnlineMart_LIB
             return c;
         }
 
+        public static Cabang AmbilData(int id, Koneksi koneksi)
+        {
+            string sql = "select id, nama, alamat, pegawai_id from cabangs where id = " + id;
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+
+            hasil.Read();
+
+            Pegawai p = Pegawai.AmbilData(hasil.GetInt32(3));
+
+            Cabang c = new Cabang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), p);
+
+            return c;
+        }
+
         public static Boolean UbahData(Cabang c)
         {
             // Querry Insert

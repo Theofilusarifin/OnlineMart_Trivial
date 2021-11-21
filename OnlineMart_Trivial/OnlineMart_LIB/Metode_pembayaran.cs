@@ -125,6 +125,24 @@ namespace OnlineMart_LIB
 			
 			return m;
 		}
+
+		public static Metode_pembayaran AmbilData(int id, Koneksi koneksi)
+		{
+			string sql = "select id, nama from metode_pembayarans where id = " + id;
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+
+			Metode_pembayaran m = null;
+
+			while (hasil.Read())
+			{
+				//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
+				m = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
+			}
+
+			return m;
+		}
+
 		public static Boolean UbahData(Metode_pembayaran m)
 		{
 			// Querry Insert
