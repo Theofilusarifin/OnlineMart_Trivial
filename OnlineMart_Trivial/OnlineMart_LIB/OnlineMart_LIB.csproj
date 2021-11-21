@@ -36,7 +36,6 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,7 +48,7 @@
     <Compile Include="Barang_Cabang.cs" />
     <Compile Include="Barang_Order.cs" />
     <Compile Include="Cabang.cs" />
-    <Compile Include="Cetak.cs" />
+    <Compile Include="Chat.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Gift.cs" />
     <Compile Include="Gift_Redeem.cs" />
