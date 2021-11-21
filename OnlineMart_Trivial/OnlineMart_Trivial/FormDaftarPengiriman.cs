@@ -24,39 +24,34 @@ namespace OnlineMart_Trivial
         #region Methods
         private void FormatDataGrid()
         {
-            //Kosongi semua kolom di datagridview
+            // Kosongi semua kolom di datagridview
             dataGridView.Columns.Clear();
 
-            //Menambah kolom di datagridview
-            dataGridView.Columns.Add("id", "Id");
-            dataGridView.Columns.Add("tanggal_waktu", "Tanggal");
+            // Menambah kolom di datagridview
+            dataGridView.Columns.Add("pelanggan_id", "Nama Pelanggan");
             dataGridView.Columns.Add("alamat_tujuan", "Alamat");
             dataGridView.Columns.Add("ongkos_kirim", "Ongkos Kirim");
-            dataGridView.Columns.Add("total_bayar", "Total Bayar");
-            dataGridView.Columns.Add("cara_bayar", "Cara Bayar");
-            dataGridView.Columns.Add("status", "Status");
-            dataGridView.Columns.Add("cabang_id", "Nama Cabang");
-            dataGridView.Columns.Add("driver_id", "Nama Driver");
-            dataGridView.Columns.Add("promo_id", "Id Promo");
-            dataGridView.Columns.Add("gift_redeem_id", "Id Hadiah");
+            dataGridView.Columns.Add("komisi", "Komisi");
 
-            //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["tanggal_waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            // Agar lebar kolom dapat menyesuaikan panjang / isi data
+            dataGridView.Columns["pelanggan_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["alamat_tujuan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["ongkos_kirim"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["total_bayar"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["cara_bayar"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["status"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["cabang_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["driver_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["promo_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["gift_redeem_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["komisi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            //agar angka rata kanan
+            dataGridView.Columns["ongkos_kirim"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView.Columns["komisi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            //agar angka ditampilkan dengan format pemisah ribuan (100 delimiter)
+            dataGridView.Columns["ongkos_kirim"].DefaultCellStyle.Format = "#,###";
+            dataGridView.Columns["komisi"].DefaultCellStyle.Format = "#,###";
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
             dataGridView.AllowUserToAddRows = false;
             dataGridView.ReadOnly = true;
         }
+
         private void TampilDataGrid()
         {
             //Kosongi isi datagridview
@@ -66,7 +61,7 @@ namespace OnlineMart_Trivial
             {
                 foreach (Order o in listOrder)
                 {
-                    dataGridView.Rows.Add(o.Id, o.Tanggal_waktu, o.Alamat_tujuan, o.Ongkos_kirim, o.Total_bayar, o.Cara_bayar, o.Status, o.Cabang.Nama, o.Driver.Nama, o.Promo.Id, o.Gift_redeem.Id);
+                    dataGridView.Rows.Add(o.Pelanggan.Nama, o.Alamat_tujuan, o.Ongkos_kirim, o.Ongkos_kirim * 0.8);
                 }
             }
             else
@@ -83,15 +78,11 @@ namespace OnlineMart_Trivial
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
 
-                // ORDER DI WHERE DULU SESUAI PEGAWAI ID!
-
                 //Tampilkan semua data
-                listOrder = Order.BacaData("", "");
+                listOrder = Order.BacaData("driver_id", FormUtama.rider.Id.ToString());
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
-
-                comboBoxKriteria.Text = "Id";
             }
             catch (Exception ex)
             {

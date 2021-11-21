@@ -40,6 +40,11 @@ namespace OnlineMart_LIB
             ListBarangOrder = new List<Barang_Order>();
         }
 
+        public Order(DateTime tanggal_waktu)
+        {
+            Tanggal_waktu = tanggal_waktu;
+        }
+
         public Order(long id, DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Cabang cabang, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem)
         {
             Id = id;
@@ -289,35 +294,24 @@ namespace OnlineMart_LIB
             return o;
         }
 
-        public static List<Order> BacaTanggal(string bulan, string tahun, Koneksi koneksi)
+        public static List<Order> BacaTanggal(int driver_id, string bulan, string tahun, Koneksi koneksi)
         {
             string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
-                         "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders ";
+                         "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders" +
+                         " where driver_id = " + driver_id;
 
             #region if else bulan dan tahun
             // kalau bulan dan tahun ada isinya, maka search database dengan bulan dan tahun yang sama
             if (bulan != "" && tahun != "")
-            {
-                sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
-                      "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders" +
-                      " where MONTH(tanggal_waktu) = " + bulan + "AND YEAR(tanggal_waktu) = " + tahun;
-            }
+                sql += " AND MONTH(tanggal_waktu) = '" + bulan + "' AND YEAR(tanggal_waktu) = '" + tahun + "'";
             // kalau hanya bulan yang ada isinya, maka search database dengan bulan yang sama
             else if (bulan != "")
-            {
-                sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
-                      "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders" +
-                      " where MONTH(tanggal_waktu) = " + bulan;
-            }
+                sql += " AND MONTH(tanggal_waktu) = '" + bulan + "'";
             // kalau hanya tahun yang ada isinya, maka search database dengan tahun yang sama
             else if (tahun != "")
-            {
-                sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
-                      "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders" +
-                      " where YEAR(tanggal_waktu) = " + tahun;
-            }
+                sql += " AND YEAR(tanggal_waktu) = '" + tahun + "'";
             #endregion
-
+            
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
 
             List<Order> listOrder = new List<Order>();
@@ -368,6 +362,21 @@ namespace OnlineMart_LIB
 
             return listOrder;
 
+        }
+
+        public static Order AmbilTahun(Koneksi koneksi)
+        {
+            string sql = "select YEAR(tanggal_waktu) from orders";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+
+            Order o = null;
+
+            while (hasil.Read())
+            {
+                o = new Order(DateTime.Parse(hasil.GetString(0)));
+            }
+            return o;
         }
         #endregion
     }

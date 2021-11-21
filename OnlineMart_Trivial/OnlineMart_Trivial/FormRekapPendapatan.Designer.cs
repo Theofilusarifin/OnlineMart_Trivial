@@ -29,18 +29,20 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxbulan = new System.Windows.Forms.ComboBox();
+            this.comboBoxBulan = new System.Windows.Forms.ComboBox();
             this.comboBoxTahun = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelTotalPendapatan = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBoxbulan
+            // comboBoxBulan
             // 
-            this.comboBoxbulan.FormattingEnabled = true;
-            this.comboBoxbulan.Items.AddRange(new object[] {
+            this.comboBoxBulan.FormattingEnabled = true;
+            this.comboBoxBulan.Items.AddRange(new object[] {
             "Januari",
             "Februari",
             "Maret",
@@ -53,11 +55,11 @@ namespace OnlineMart_Trivial
             "Oktober",
             "November",
             "Desember"});
-            this.comboBoxbulan.Location = new System.Drawing.Point(105, 61);
-            this.comboBoxbulan.Name = "comboBoxbulan";
-            this.comboBoxbulan.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxbulan.TabIndex = 0;
-            this.comboBoxbulan.SelectedIndexChanged += new System.EventHandler(this.comboBoxbulan_SelectedIndexChanged);
+            this.comboBoxBulan.Location = new System.Drawing.Point(105, 61);
+            this.comboBoxBulan.Name = "comboBoxBulan";
+            this.comboBoxBulan.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxBulan.TabIndex = 0;
+            this.comboBoxBulan.SelectedIndexChanged += new System.EventHandler(this.comboBoxbulan_SelectedIndexChanged);
             // 
             // comboBoxTahun
             // 
@@ -66,11 +68,12 @@ namespace OnlineMart_Trivial
             this.comboBoxTahun.Name = "comboBoxTahun";
             this.comboBoxTahun.Size = new System.Drawing.Size(121, 21);
             this.comboBoxTahun.TabIndex = 1;
+            this.comboBoxTahun.SelectedIndexChanged += new System.EventHandler(this.comboBoxTahun_SelectedIndexChanged);
             // 
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(105, 115);
+            this.dataGridView.Location = new System.Drawing.Point(117, 117);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(515, 150);
             this.dataGridView.TabIndex = 2;
@@ -93,16 +96,36 @@ namespace OnlineMart_Trivial
             this.label2.TabIndex = 4;
             this.label2.Text = "tahun";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(266, 325);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Total Pendapatan :";
+            // 
+            // labelTotalPendapatan
+            // 
+            this.labelTotalPendapatan.AutoSize = true;
+            this.labelTotalPendapatan.Location = new System.Drawing.Point(370, 325);
+            this.labelTotalPendapatan.Name = "labelTotalPendapatan";
+            this.labelTotalPendapatan.Size = new System.Drawing.Size(27, 13);
+            this.labelTotalPendapatan.TabIndex = 6;
+            this.labelTotalPendapatan.Text = "total";
+            // 
             // FormRekapPendapatan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelTotalPendapatan);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.comboBoxTahun);
-            this.Controls.Add(this.comboBoxbulan);
+            this.Controls.Add(this.comboBoxBulan);
             this.Name = "FormRekapPendapatan";
             this.Text = "FormRekapPendapatan";
             this.Load += new System.EventHandler(this.FormRekapPendapatan_Load);
@@ -114,10 +137,12 @@ namespace OnlineMart_Trivial
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBoxbulan;
+        private System.Windows.Forms.ComboBox comboBoxBulan;
         private System.Windows.Forms.ComboBox comboBoxTahun;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelTotalPendapatan;
     }
 }

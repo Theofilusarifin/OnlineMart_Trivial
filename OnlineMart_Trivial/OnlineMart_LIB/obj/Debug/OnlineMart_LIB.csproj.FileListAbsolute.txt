@@ -95,3 +95,4 @@ D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_LIB\obj\Debug\
 D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_LIB\obj\Debug\OnlineMart_LIB.csproj.CoreCompileInputs.cache
 D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_LIB\obj\Debug\OnlineMart_LIB.dll
 D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_LIB\obj\Debug\OnlineMart_LIB.pdb
+D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_LIB\obj\Debug\OnlineMart_LIB.csproj.CopyComplete

@@ -29,9 +29,6 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxKriteria = new System.Windows.Forms.ComboBox();
-            this.textBoxKriteria = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonTambah = new System.Windows.Forms.Button();
@@ -39,40 +36,6 @@ namespace OnlineMart_Trivial
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.label1.Location = new System.Drawing.Point(305, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 22);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Cari Berdasarkan :";
-            // 
-            // comboBoxKriteria
-            // 
-            this.comboBoxKriteria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKriteria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxKriteria.FormattingEnabled = true;
-            this.comboBoxKriteria.Items.AddRange(new object[] {
-            "Id",
-            "Nama Cabang",
-            "Alamat",
-            "Pegawai"});
-            this.comboBoxKriteria.Location = new System.Drawing.Point(308, 52);
-            this.comboBoxKriteria.Name = "comboBoxKriteria";
-            this.comboBoxKriteria.Size = new System.Drawing.Size(248, 28);
-            this.comboBoxKriteria.TabIndex = 32;
-            // 
-            // textBoxKriteria
-            // 
-            this.textBoxKriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxKriteria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxKriteria.Location = new System.Drawing.Point(602, 54);
-            this.textBoxKriteria.Name = "textBoxKriteria";
-            this.textBoxKriteria.Size = new System.Drawing.Size(446, 26);
-            this.textBoxKriteria.TabIndex = 27;
             // 
             // dataGridView
             // 
@@ -140,12 +103,9 @@ namespace OnlineMart_Trivial
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1099, 407);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonTambah);
-            this.Controls.Add(this.comboBoxKriteria);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.textBoxKriteria);
             this.Controls.Add(this.dataGridView);
             this.Name = "FormDaftarPengiriman";
             this.Text = "FormDaftarPengiriman";
@@ -158,13 +118,9 @@ namespace OnlineMart_Trivial
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonTambah;
-        private System.Windows.Forms.ComboBox comboBoxKriteria;
         private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.TextBox textBoxKriteria;
         private System.Windows.Forms.DataGridView dataGridView;
     }
 }
