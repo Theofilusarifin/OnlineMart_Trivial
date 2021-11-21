@@ -96,7 +96,7 @@ namespace OnlineMart_LIB
         }
 
         //Method untuk membaca data Cabang
-        public static List<Chat> BacaData(string kriteria, long idOrder)
+        public static List<Cabang> BacaData(string kriteria, long idOrder)
         {
             string sql = "select id, isi, waktu, role_pengirim, order_id, driver_id, pelanggan_id from chats ";
             if (kriteria != "") //kalau tidak kosong tambahkan ini
@@ -110,13 +110,9 @@ namespace OnlineMart_LIB
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while (hasil.Read() == true)
             {
-                Order o = Order.AmbilData(hasil.GetInt32(4));
+                Order o = Pegawai.AmbilData(hasil.GetInt32(3));
 
-                Driver d = Driver.AmbilData(hasil.GetInt32(5));
-
-                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(6));
-
-                Chat c = new Chat(hasil.GetInt32(0), hasil.GetString(1), DateTime.Parse(hasil.GetString(2)), hasil.GetString(3), o, d, p);
+                Cabang c = new Cabang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), o);
 
                 listChat.Add(c);
             }
