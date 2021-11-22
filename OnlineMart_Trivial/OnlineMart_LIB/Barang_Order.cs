@@ -61,6 +61,43 @@ namespace OnlineMart_LIB
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
+
+		public static List<Barang_Order> BacaPenjualanBarang(string cabang_id, string bulan, string tahun, Koneksi koneksi)
+		{
+			string sql = "SELECT order_id, barang_id, jumlah, harga FROM orders AS o INNER JOIN barang_order AS bo ON o.id = bo.order_id";
+
+			// kalau cabang ada isinya
+			if (cabang_id != "") sql += " where o.cabang_id = '" + cabang_id + "'";
+			// kalau bulan ada isinya
+			else if (bulan != "") sql += " where MONTH(o.tanggal_waktu) = '" + bulan + "'";
+			// kalau tahun ada isinya
+			else if (tahun != "") sql += " where YEAR(o.tanggal_waktu) = '" + tahun + "'";
+			// kalau cabang dan bulan ada isinya
+			else if (cabang_id != "" && bulan != "") sql += " where o.cabang_id = '" + cabang_id + "' and MONTH(o.tanggal_waktu) = '" + bulan + "'";
+			// kalau cabang dan tahun ada isinya
+			else if (cabang_id != "" && tahun != "") sql += " where o.cabang_id = '" + cabang_id + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
+			// kalau bulan dan tahun ada isinya
+			else if (bulan != "" && tahun != "") sql += " where MONTH(o.tanggal_waktu) = '" + bulan + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
+			// kalau semua ada isinya
+			else if (cabang_id != "" && bulan != "" && tahun != "") sql += " where o.cabang_id = '" + cabang_id + "' and MONTH(o.tanggal_waktu) = '" + bulan + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+
+			List<Barang_Order> listPenjualanBarang = new List<Barang_Order>();
+
+			while(hasil.Read())
+            {
+				Order order = Order.AmbilData(long.Parse(hasil.GetInt32(0).ToString()));
+
+				Barang barang = Barang.AmbilData(hasil.GetInt32(1));
+
+				Barang_Order bo = new Barang_Order(barang, order, hasil.GetInt32(2), hasil.GetFloat(3));
+
+				listPenjualanBarang.Add(bo);
+            }
+
+			return listPenjualanBarang;
+		}
 		#endregion
 	}
 }

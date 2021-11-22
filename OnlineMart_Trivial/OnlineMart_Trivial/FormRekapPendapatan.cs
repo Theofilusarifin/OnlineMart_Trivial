@@ -14,7 +14,7 @@ namespace OnlineMart_Trivial
 {
     public partial class FormRekapPendapatan : Form
     {
-        Order tahunOrder;
+        List<Order> tahunOrder = new List<Order>();
         List<Order> listOrder = new List<Order>();
 
         string bulan = "";
@@ -67,10 +67,13 @@ namespace OnlineMart_Trivial
                     // untuk setiap barang di list barang order
                     foreach (Order o in listOrder)
                     {
-                        // tunjukkan di datagrid dengan tipe Barang_Order
-                        dataGridView.Rows.Add(o.Tanggal_waktu, o.Ongkos_kirim * 0.8);
+                        if (o.Status == "Pesanan Diproses")
+                        {
+                            // tunjukkan di datagrid dengan tipe Barang_Order
+                            dataGridView.Rows.Add(o.Tanggal_waktu, o.Ongkos_kirim * 0.8);
 
-                        total += o.Ongkos_kirim * 0.8;
+                            total += o.Ongkos_kirim * 0.8;
+                        }
                     }
                 }
                 else

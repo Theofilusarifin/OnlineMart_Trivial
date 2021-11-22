@@ -348,6 +348,9 @@
     <EmbeddedResource Include="FormRekapPendapatan.resx">
       <DependentUpon>FormRekapPendapatan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRekapPenjualanBarang.resx">
+      <DependentUpon>FormRekapPenjualanBarang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTambahBarang.resx">
       <DependentUpon>FormTambahBarang.cs</DependentUpon>
     </EmbeddedResource>

@@ -224,6 +224,53 @@ namespace OnlineMart_LIB
             return listOrder;
         }
 
+        public static List<Order> BacaData(string kriteria, string nilaiKriteria, Koneksi koneksi)
+        {
+            string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
+                         "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders ";
+            if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+
+            List<Order> listOrder = new List<Order>();
+
+            while (hasil.Read())
+            {
+                Cabang c = Cabang.AmbilData(hasil.GetInt32(7), koneksi);
+
+                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(8), koneksi);
+
+                Driver d = Driver.AmbilData(hasil.GetInt32(9), koneksi);
+
+                Metode_pembayaran mp = Metode_pembayaran.AmbilData(hasil.GetInt32(10), koneksi);
+
+                Promo pr = Promo.AmbilData(hasil.GetInt32(11), koneksi);
+
+                Gift_Redeem gr = Gift_Redeem.AmbilData(hasil.GetInt32(12), koneksi);
+
+                Order o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
+
+                //Ambil Barang_Order
+                string barang_order = "select bo.barang_id, bo.jumlah, bo.harga from barang_order as bo " +
+                                      "inner join orders as o on bo.order_id = o.id where o.id = " + o.Id;
+
+                MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_order);
+
+                while (hasil_join.Read())
+                {
+                    Barang b_join = Barang.AmbilData(hasil_join.GetInt32(0), koneksi);
+
+                    Barang_Order bo = new Barang_Order(b_join, o, hasil_join.GetInt32(1), hasil_join.GetFloat(2));
+
+                    //Tambahkan hasil join ke composition relationship
+                    o.ListBarangOrder.Add(bo);
+                }
+
+                listOrder.Add(o);
+            }
+            return listOrder;
+        }
+
         public static Boolean UbahData(Order o)
         {
             // Querry Insert
@@ -308,17 +355,12 @@ namespace OnlineMart_LIB
                          "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders" +
                          " where driver_id = " + driver_id;
 
-            #region if else bulan dan tahun
-            // kalau bulan dan tahun ada isinya, maka search database dengan bulan dan tahun yang sama
-            if (bulan != "" && tahun != "")
-                sql += " AND MONTH(tanggal_waktu) = '" + bulan + "' AND YEAR(tanggal_waktu) = '" + tahun + "'";
-            // kalau hanya bulan yang ada isinya, maka search database dengan bulan yang sama
-            else if (bulan != "")
-                sql += " AND MONTH(tanggal_waktu) = '" + bulan + "'";
-            // kalau hanya tahun yang ada isinya, maka search database dengan tahun yang sama
-            else if (tahun != "")
-                sql += " AND YEAR(tanggal_waktu) = '" + tahun + "'";
-            #endregion
+            // kalau bulan dan tahun ada isinya
+            if (bulan != "" && tahun != "") sql += " AND MONTH(tanggal_waktu) = '" + bulan + "' AND YEAR(tanggal_waktu) = '" + tahun + "'";
+            // kalau bulan ada isinya
+            else if (bulan != "") sql += " AND MONTH(tanggal_waktu) = '" + bulan + "'";
+            // kalau tahun ada isinya
+            else if (tahun != "") sql += " AND YEAR(tanggal_waktu) = '" + tahun + "'";
             
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
 
@@ -372,19 +414,22 @@ namespace OnlineMart_LIB
 
         }
 
-        public static Order AmbilTahun(Koneksi koneksi)
+        public static List<Order> AmbilTahun(Koneksi koneksi)
         {
-            string sql = "select YEAR(tanggal_waktu) from orders";
+            string sql = "select distinct YEAR(tanggal_waktu) from orders";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
 
-            Order o = null;
+            List<Order> listTahun = new List<Order>();
 
             while (hasil.Read())
             {
-                o = new Order(DateTime.Parse(hasil.GetString(0)));
+                Order o = new Order(DateTime.Parse(hasil.GetString(0)));
+
+                listTahun.Add(o);
             }
-            return o;
+
+            return listTahun;
         }
 
         //Cetak semua order
