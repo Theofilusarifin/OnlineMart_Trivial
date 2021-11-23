@@ -66,12 +66,12 @@ namespace OnlineMart_LIB
             else return true;
         }
 
-        public static List<Kategori> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Kategori> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "select id, nama from kategoris ";
             if(kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Kategori> listKategori = new List<Kategori>();
 

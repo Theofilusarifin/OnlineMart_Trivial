@@ -28,7 +28,7 @@ namespace OnlineMart_Trivial
             listBoxPesan.Items.Clear();
 
             // Define isi chat
-            listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text, FormUtama.koneksi);
+            listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text);
             
             // Tampilkan pesan
             foreach (Chat c in listChat)
@@ -46,7 +46,7 @@ namespace OnlineMart_Trivial
 
         private void FormCekPesanan_Load(object sender, EventArgs e)
         {
-            listOrder = Order.BacaData("pelanggan_id", FormUtama.konsumen.Id.ToString(), FormUtama.koneksi);
+            listOrder = Order.BacaData("pelanggan_id", FormUtama.konsumen.Id.ToString());
 
             comboBoxNomorNota.DataSource = listOrder;
             comboBoxNomorNota.DisplayMember = "Id";
@@ -65,7 +65,7 @@ namespace OnlineMart_Trivial
         private void buttonKirim_Click(object sender, EventArgs e)
         {
             // Ambil id order yang sedang dipilih
-            Order o = Order.AmbilData(long.Parse(comboBoxNomorNota.Text), FormUtama.koneksi);
+            Order o = (Order)comboBoxNomorNota.SelectedItem;
 
             // Buat Chat baru
             Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "Konsumen", o, o.Driver, o.Pelanggan);

@@ -168,12 +168,12 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static List<Pelanggan> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+		public static List<Pelanggan> BacaData(string kriteria, string nilaiKriteria)
 		{
-			string sql = "select nama, username, email, password, telepon, saldo, poin from pelanggans ";
+			string sql = "select username, nama, email, password, telepon, saldo, poin from pelanggans ";
 			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			//Buat list untuk menampung data
 			List<Pelanggan> listPelanggan = new List<Pelanggan>();
@@ -210,29 +210,29 @@ namespace OnlineMart_LIB
 
 				listPelanggan.Add(p);
 			}
-
 			return listPelanggan;
 		}
-		public static Pelanggan AmbilData(int id, Koneksi koneksi)
-		{
-			string sql = "select id, nama, username, email, password, telepon, saldo, poin from pelanggans where id = " + id;
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+        public static Pelanggan AmbilData(int id, Koneksi koneksi)
+        {
+            string sql = "select id, nama, username, email, password, telepon, saldo, poin from pelanggans where id = " + id;
 
-			Pelanggan p = null;
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
 
-			while (hasil.Read())
-			{
-				p = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
-			}
+            Pelanggan p = null;
 
-			hasil.Close();
-			hasil.Dispose();
+            while (hasil.Read())
+            {
+                p = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
+            }
 
-			return p;
-		}
+            hasil.Close();
+            hasil.Dispose();
 
-		public static Boolean UbahData(Pelanggan p)
+            return p;
+        }
+
+        public static Boolean UbahData(Pelanggan p)
 		{
 			// Querry Insert
 			string sql = "update pelanggans set nama = '" + p.Nama + "', username = '" + p.Username + "', email = '" + p.Email + "', password = SHA2('" + p.Password + "', 512), telepon = '" + p.Telepon + "' where id = " + p.Id;

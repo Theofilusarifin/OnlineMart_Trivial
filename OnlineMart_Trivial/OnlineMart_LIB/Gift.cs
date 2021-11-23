@@ -67,12 +67,12 @@ namespace OnlineMart_LIB
             else return true;
         }
 
-        public static List<Gift> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Gift> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select id, nama, jumlah_poin from gifts ";
+            string sql = "select * from gifts ";
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             //Buat list untuk menampung data
             List<Gift> listGift = new List<Gift>();
@@ -96,10 +96,6 @@ namespace OnlineMart_LIB
 
                 listGift.Add(g);
             }
-
-            hasil.Close();
-            hasil.Dispose();
-
             return listGift;
         }
 

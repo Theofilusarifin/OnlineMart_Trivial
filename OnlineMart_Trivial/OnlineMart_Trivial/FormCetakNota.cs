@@ -23,7 +23,7 @@ namespace OnlineMart_Trivial
 		{
 			try
 			{
-				listOrder = Order.BacaData("pelanggan_id", FormUtama.konsumen.Id.ToString(), FormUtama.koneksi);
+				listOrder = Order.BacaData("pelanggan_id", FormUtama.konsumen.Id.ToString());
 				listBoxData.Enabled = false;
 				//foreach(Order o in listOrder)
 				//{

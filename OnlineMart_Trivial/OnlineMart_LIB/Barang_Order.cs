@@ -54,17 +54,27 @@ namespace OnlineMart_LIB
 		public static Boolean TambahData(Barang_Order bo)
 		{
 			// Querry Insert
-			string sql = "insert into barang_order (jumlah, harga, order_id, barang_id) " +
-				"values (" + bo.Jumlah + ", " + bo.Harga + ", " + bo.Order.Id + ", " + bo.Barang.Id + ")";
+			string sql = "insert into barang_order values (" + bo.Jumlah + ", " + bo.Harga + ", " + bo.Order.Id + ", " + bo.Barang.Id + ")";
 
 			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
-		public static List<Barang_Order> BacaPenjualanBarang(string cabang_id, string bulan, string tahun, Koneksi kParram)
+		public static List<Barang_Order> BacaPenjualanBarang(string cabang_id, string bulan, string tahun)
 		{
-			string sql = "SELECT order_id, barang_id, jumlah, harga FROM orders AS o INNER JOIN barang_order AS bo ON o.id = bo.order_id";
+			string sql = "select * from barang_order bo " +
+				"inner join orders o on bo.order_id = o.id " +
+				"inner join cabangs as c on o.cabang_id = c.id " +
+				"inner join pegawais as pe on c.pegawai_id = pe.id " +
+				"inner join pelanggans p on o.pelanggan_id = p.id " +
+				"inner join drivers d on o.driver_id = d.id " +
+				"inner join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
+				"inner join promos pr on o.promo_id = pr.id " +
+				"inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
+				"inner join gifts g on gr.gift_id = g.id " +
+				"inner join barangs b on bo.barang_id = b.id " +
+				"inner join kategoris k on b.kategori_id = k.id ";
 
 			// kalau cabang ada isinya
 			if (cabang_id != "") sql += " where o.cabang_id = '" + cabang_id + "'";
@@ -81,23 +91,38 @@ namespace OnlineMart_LIB
 			// kalau semua ada isinya
 			else if (cabang_id != "" && bulan != "" && tahun != "") sql += " where o.cabang_id = '" + cabang_id + "' and MONTH(o.tanggal_waktu) = '" + bulan + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			List<Barang_Order> listPenjualanBarang = new List<Barang_Order>();
 
 			while(hasil.Read())
             {
-				Order order = Order.AmbilData(long.Parse(hasil.GetInt32(0).ToString()), kParram);
+				Pegawai pe = new Pegawai(hasil.GetInt32(21), hasil.GetString(22), hasil.GetString(23), hasil.GetString(24), hasil.GetString(25), hasil.GetString(26));
 
-				Barang barang = Barang.AmbilData(hasil.GetInt32(1), kParram);
+				Cabang c = new Cabang(hasil.GetInt32(17), hasil.GetString(18), hasil.GetString(19), pe);
 
-				Barang_Order bo = new Barang_Order(barang, order, hasil.GetInt32(2), hasil.GetFloat(3));
+				Pelanggan p = new Pelanggan(hasil.GetInt32(27), hasil.GetString(28), hasil.GetString(29), hasil.GetString(30), hasil.GetString(31), hasil.GetString(32), hasil.GetDouble(33), hasil.GetDouble(34));
 
-				listPenjualanBarang.Add(bo);
+				Driver d = new Driver(hasil.GetInt32(35), hasil.GetString(36), hasil.GetString(37), hasil.GetString(38), hasil.GetString(39), hasil.GetString(40));
+
+				Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(41), hasil.GetString(42));
+
+				Promo pr = new Promo(hasil.GetInt32(43), hasil.GetString(44), hasil.GetString(45), hasil.GetInt32(46), hasil.GetInt32(47), hasil.GetFloat(48));
+
+				Gift g = new Gift(hasil.GetInt32(53), hasil.GetString(54), hasil.GetInt32(55));
+
+				Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(49), DateTime.Parse(hasil.GetString(50)), hasil.GetString(51), g);
+
+				Order o = new Order(long.Parse(hasil.GetString(4)), DateTime.Parse(hasil.GetString(5)), hasil.GetString(6), hasil.GetFloat(7), hasil.GetFloat(8), hasil.GetString(9), hasil.GetString(10), c, p, d, mp, pr, gr);
+
+				Kategori k = new Kategori(hasil.GetInt32(60), hasil.GetString(61));
+
+				Barang b = new Barang(hasil.GetInt32(56), hasil.GetString(57), hasil.GetInt32(58), k);
+
+				Barang_Order bo = new Barang_Order(b, o, hasil.GetInt32(0), hasil.GetFloat(1));
+
+                listPenjualanBarang.Add(bo);
             }
-
-			hasil.Close();
-			hasil.Dispose();
 
 			return listPenjualanBarang;
 		}

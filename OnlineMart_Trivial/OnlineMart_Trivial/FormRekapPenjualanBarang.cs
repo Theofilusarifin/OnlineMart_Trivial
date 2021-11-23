@@ -92,7 +92,7 @@ namespace OnlineMart_Trivial
             try
             {
                 #region combobox
-                idCabang = Cabang.BacaData("", "", FormUtama.koneksi);
+                idCabang = Cabang.BacaData("", "");
                 comboBoxCabang.DataSource = idCabang;
                 comboBoxCabang.DisplayMember = "Id";
                 comboBoxCabang.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -105,7 +105,7 @@ namespace OnlineMart_Trivial
 
                 FormatDataGrid();
 
-                listPenjualanBarang = Barang_Order.BacaPenjualanBarang(cabang_id, bulan, tahun, FormUtama.koneksi);
+                listPenjualanBarang = Barang_Order.BacaPenjualanBarang(cabang_id, bulan, tahun);
 
                 TampilDataGrid();
             }

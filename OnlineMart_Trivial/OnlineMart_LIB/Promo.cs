@@ -92,12 +92,12 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static List<Promo> BacaData(string kriteria, string nilaiKriteria, Koneksi kParam)
+		public static List<Promo> BacaData(string kriteria, string nilaiKriteria)
 		{
 			string sql = "select id, tipe, nama, diskon, diskon_max, minimal_belanja from promos ";
 			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParam);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			//Buat list untuk menampung data
 			List<Promo> listpromo = new List<Promo>();
@@ -108,32 +108,28 @@ namespace OnlineMart_LIB
 
 				listpromo.Add(p);
 			}
-
-			hasil.Close();
-			hasil.Dispose();
-
 			return listpromo;
 		}
 
-		public static Promo AmbilData(int id, Koneksi kParram)
+        public static Promo AmbilData(int id, Koneksi kParram)
         {
             string sql = "select id, tipe, nama, diskon, diskon_max, minimal_belanja from promos where id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
-			Promo p = null;
+            Promo p = null;
 
-			while (hasil.Read())
+            while (hasil.Read())
             {
-				p = new Promo(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetInt32(3), hasil.GetInt32(4), hasil.GetFloat(5));
+                p = new Promo(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetInt32(3), hasil.GetInt32(4), hasil.GetFloat(5));
             }
 
-			hasil.Close();
-			hasil.Dispose();
+            hasil.Close();
+            hasil.Dispose();
 
-			return p;
+            return p;
         }
-		public static Boolean UbahData(Promo p)
+        public static Boolean UbahData(Promo p)
         {
             // Querry Insert
             string sql = "update promos set tipe = '" + p.Tipe + "', nama = '" + p.Nama + "', diskon = " + p.Diskon + ", diskon_max = " + p.Diskon_max + ", minimal_belanja = " + p.Minimal_belanja + " where id = " + p.Id;

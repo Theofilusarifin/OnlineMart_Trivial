@@ -93,7 +93,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 // Tampilkan semua data
-                listPromo = Promo.BacaData("", "", FormUtama.koneksi);
+                listPromo = Promo.BacaData("", "");
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -134,7 +134,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listPromo = Promo.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
+            listPromo = Promo.BacaData(kriteria, textBoxKriteria.Text);
             FormatDataGrid();
             TampilDataGrid();
         }

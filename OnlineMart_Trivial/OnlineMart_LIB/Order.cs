@@ -87,6 +87,12 @@ namespace OnlineMart_LIB
             Gift_redeem = gift_redeem;
             ListBarangOrder = new List<Barang_Order>();
         }
+
+        public Order(long id, Pelanggan pelanggan, Driver driver)
+        {
+            Pelanggan = pelanggan;
+            Driver = driver;
+        }
         #endregion
 
         #region Properties
@@ -177,55 +183,60 @@ namespace OnlineMart_LIB
             else return true;
         }
 
-        public static List<Order> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Order> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
-                         "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id from orders ";
+            string sql = "select * from orders o " +
+                "inner join pelanggans p on o.pelanggan_id = p.id " +
+                "inner join drivers d on o.driver_id = d.id " +
+                "inner join cabangs c on o.cabang_id = c.id " +
+                "inner join pegawais pe on c.pegawai_id = pe.id " +
+                "inner join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
+                "inner join promos pr on o.promo_id = pr.id " +
+                "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
+                "inner join gifts g on gr.gift_id = g.id ";
+
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Order> listOrder = new List<Order>();
 
             while (hasil.Read())
             {
-                Cabang c = Cabang.AmbilData(hasil.GetInt32(7), kParram);
+                Pelanggan p = new Pelanggan(hasil.GetInt32(13), hasil.GetString(14), hasil.GetString(15), hasil.GetString(16), hasil.GetString(17), hasil.GetString(18), hasil.GetDouble(19), hasil.GetDouble(20));
 
-                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(8), kParram);
+                Driver d = new Driver(hasil.GetInt32(21), hasil.GetString(22), hasil.GetString(23), hasil.GetString(24), hasil.GetString(25), hasil.GetString(26));
 
-                Driver d = Driver.AmbilData(hasil.GetInt32(9), kParram);
+                Pegawai pe = new Pegawai(hasil.GetInt32(31), hasil.GetString(32), hasil.GetString(33), hasil.GetString(34), hasil.GetString(35), hasil.GetString(36));
 
-                Metode_pembayaran mp = Metode_pembayaran.AmbilData(hasil.GetInt32(10), kParram);
+                Cabang c = new Cabang(hasil.GetInt32(27), hasil.GetString(28), hasil.GetString(29), pe);
 
-                Promo pr = Promo.AmbilData(hasil.GetInt32(11), kParram);
+                Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(37), hasil.GetString(38));
 
-                Gift_Redeem gr = Gift_Redeem.AmbilData(hasil.GetInt32(12), kParram);
+                Promo pr = new Promo(hasil.GetInt32(39), hasil.GetString(40), hasil.GetString(41), hasil.GetInt32(42), hasil.GetInt32(43), hasil.GetFloat(44));
+
+                Gift g = new Gift(hasil.GetInt32(49), hasil.GetString(50), hasil.GetInt32(51));
+
+                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(45), DateTime.Parse(hasil.GetString(46)), hasil.GetString(47), g);
 
                 Order o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
 
                 //Ambil Barang_Order
-                string barang_order = "select bo.barang_id, bo.jumlah, bo.harga from barang_order as bo " +
-                                      "inner join orders as o on bo.order_id = o.id where o.id = " + o.Id;
+                //string barang_order = "select bo.barang_id, bo.jumlah, bo.harga from barang_order as bo " +
+                //                      "inner join orders as o on bo.order_id = o.id where o.id = " + o.Id;
 
-                MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_order, kParram);
+                //MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_order);
 
-                while (hasil_join.Read())
-                {
-                    Barang b_join = Barang.AmbilData(hasil_join.GetInt32(0), kParram);
+                //while (hasil_join.Read())
+                //{
+                //    Barang b_join = Barang.AmbilData(hasil_join.GetInt32(0));
 
-                    Barang_Order bo = new Barang_Order(b_join, o, hasil_join.GetInt32(1), hasil_join.GetFloat(2));
+                //    Barang_Order bo = new Barang_Order(b_join, o, hasil_join.GetInt32(1), hasil_join.GetFloat(2));
 
-                    //Tambahkan hasil join ke composition relationship
-                    o.ListBarangOrder.Add(bo);
-                }
-                hasil_join.Close();
-                hasil_join.Dispose();
-
-                listOrder.Add(o);
+                //    //Tambahkan hasil join ke composition relationship
+                //    o.ListBarangOrder.Add(bo);
+                //}
             }
-
-            hasil.Close();
-            hasil.Dispose();
 
             return listOrder;
         }
@@ -283,38 +294,38 @@ namespace OnlineMart_LIB
             return hasilNoNota;
         }
 
-        public static Order AmbilData(long id, Koneksi kParram)
-        {
-            string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, " +
-                         "status, cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id" +
-                         " from orders where id = " + id;
+        //public static Order AmbilData(long id, Koneksi kParram)
+        //{
+        //    string sql = "select id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, " +
+        //                 "status, cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id" +
+        //                 " from orders where id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+        //    MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
-            Order o = null;
+        //    Order o = null;
 
-            while (hasil.Read())
-            {
-                Cabang c = Cabang.AmbilData(hasil.GetInt32(7), kParram);
+        //    while (hasil.Read())
+        //    {
+        //        Cabang c = Cabang.AmbilData(hasil.GetInt32(7), kParram);
 
-                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(8), kParram);
+        //        Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(8), kParram);
 
-                Driver d = Driver.AmbilData(hasil.GetInt32(9), kParram);
+        //        Driver d = Driver.AmbilData(hasil.GetInt32(9), kParram);
 
-                Metode_pembayaran mp = Metode_pembayaran.AmbilData(hasil.GetInt32(10), kParram);
+        //        Metode_pembayaran mp = Metode_pembayaran.AmbilData(hasil.GetInt32(10), kParram);
 
-                Promo pr = Promo.AmbilData(hasil.GetInt32(11), kParram);
+        //        Promo pr = Promo.AmbilData(hasil.GetInt32(11), kParram);
 
-                Gift_Redeem gr = Gift_Redeem.AmbilData(hasil.GetInt32(12), kParram);
+        //        Gift_Redeem gr = Gift_Redeem.AmbilData(hasil.GetInt32(12), kParram);
 
-                o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
-            }
+        //        o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
+        //    }
 
-            hasil.Close();
-            hasil.Dispose();
+        //    hasil.Close();
+        //    hasil.Dispose();
 
-            return o;
-        }
+        //    return o;
+        //}
 
         public static List<Order> BacaTanggal(int driver_id, string bulan, string tahun, Koneksi koneksi)
         {
@@ -402,7 +413,7 @@ namespace OnlineMart_LIB
         //Cetak semua order
         public static void CetakDaftarOrder(string kriteria, string nilai, string namaFile, Koneksi kParram)
         {
-            List<Order> listData = Order.BacaData(kriteria, nilai, kParram);
+            List<Order> listData = Order.BacaData(kriteria, nilai);
             StreamWriter file = new StreamWriter(namaFile);
             char pemisah = '-';
             file.WriteLine(""); //Cetak 1 baris kosong

@@ -17,11 +17,14 @@ namespace OnlineMart_LIB
 {
 	public class Cetak
 	{
-		private Font jenisFont;
+        #region Fields
+        private Font jenisFont;
 		private StreamReader fileCetak;
 		private float marginKiri, marginKanan, marginAtas, marginBawah;
+        #endregion
 
-		public Cetak(Font jenisFont, string fileCetak, float marginKiri, float marginKanan, float marginAtas, float marginBawah)
+        #region Constructors
+        public Cetak(Font jenisFont, string fileCetak, float marginKiri, float marginKanan, float marginAtas, float marginBawah)
 		{
 			JenisFont = new Font("Courier New", 10);
 			this.FileCetak = new StreamReader(fileCetak);
@@ -39,14 +42,43 @@ namespace OnlineMart_LIB
 			this.MarginAtas = marginAtas;
 			this.MarginBawah = marginBawah;
 		}
-		public Font JenisFont { get => jenisFont; set => jenisFont = value; }
-		public StreamReader FileCetak { get => fileCetak; set => fileCetak = value; }
-		public float MarginKiri { get => marginKiri; set => marginKiri = value; }
-		public float MarginKanan { get => marginKanan; set => marginKanan = value; }
-		public float MarginAtas { get => marginAtas; set => marginAtas = value; }
-		public float MarginBawah { get => marginBawah; set => marginBawah = value; }
+        #endregion
 
-		private void CetakTulisan(object sender, PrintPageEventArgs e)
+        #region Properties
+        public Font JenisFont 
+		{ 
+			get => jenisFont; 
+			set => jenisFont = value; 
+		}
+		public StreamReader FileCetak 
+		{ 
+			get => fileCetak; 
+			set => fileCetak = value; 
+		}
+		public float MarginKiri 
+		{ 
+			get => marginKiri; 
+			set => marginKiri = value; 
+		}
+		public float MarginKanan 
+		{ 
+			get => marginKanan; 
+			set => marginKanan = value; 
+		}
+		public float MarginAtas 
+		{ 
+			get => marginAtas; 
+			set => marginAtas = value; 
+		}
+		public float MarginBawah 
+		{ 
+			get => marginBawah; 
+			set => marginBawah = value; 
+		}
+        #endregion
+
+        #region Methods
+        private void CetakTulisan(object sender, PrintPageEventArgs e)
 		{
 			int jumlahBarisPerHalaman = (int)((e.MarginBounds.Height - marginBawah - marginAtas) / JenisFont.GetHeight(e.Graphics));
 			float y = MarginAtas;
@@ -75,5 +107,6 @@ namespace OnlineMart_LIB
 			p.Print();
 			FileCetak.Close();
 		}
-	}
+        #endregion
+    }
 }

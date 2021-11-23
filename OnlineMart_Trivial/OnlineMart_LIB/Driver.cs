@@ -143,12 +143,12 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static List<Driver> BacaData(string kriteria, string nilaiKriteria, Koneksi kParam)
+		public static List<Driver> BacaData(string kriteria, string nilaiKriteria)
 		{
-			string sql = "select id, nama, username, email, password, telepon from drivers ";
+			string sql = "select * from drivers ";
 			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParam);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			//Buat list untuk menampung data
 			List<Driver> listDriver = new List<Driver>();
@@ -160,28 +160,29 @@ namespace OnlineMart_LIB
 				listDriver.Add(d);
 			}
 
-			hasil.Close();
-			hasil.Dispose();
-
 			return listDriver;
 		}
 
-		public static Driver AmbilData(int id, Koneksi koneksi)
-		{
-			string sql = "select id, nama, username, email, password, telepon from drivers where id = " + id;
+        public static Driver AmbilData(int id, Koneksi kParram)
+        {
+            string sql = "select id, username, nama, email, password, telepon from drivers where id = " + id;
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
-			Driver d = null;
+            Driver d = null;
 
-			while (hasil.Read())
-			{
-				d = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
-			}
-			return d;
-		}
+            while (hasil.Read())
+            {
+                d = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
+            }
 
-		public static Boolean UbahData(Driver d)
+            hasil.Close();
+            hasil.Dispose();
+
+            return d;
+        }
+
+        public static Boolean UbahData(Driver d)
 		{
 			// Querry
 			string sql = "update drivers set nama = '" + d.Nama + "', username = '" + d.Username + "', email = '" + d.Email + "', password = SHA2('" + d.Password + "', 512), telepon = '" + d.Telepon + "' where id = " + d.Id;
@@ -215,7 +216,11 @@ namespace OnlineMart_LIB
 
 				return driver;
             }
-            return null;
+
+			hasil.Close();
+			hasil.Dispose();
+
+			return null;
         }
         #endregion
     }

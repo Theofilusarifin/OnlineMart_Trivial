@@ -94,33 +94,32 @@ namespace OnlineMart_LIB
         }
 
         //Method untuk membaca data
-        public static List<Chat> BacaData(string kriteria, string idOrder, Koneksi kParam)
+        public static List<Chat> BacaData(string kriteria, string idOrder)
         {
-            string sql = "select id, isi, waktu, role_pengirim, order_id, driver_id, pelanggan_id from chats ";
-            if (kriteria != "") //kalau tidak kosong tambahkan ini
-            {
-                sql += " where " + kriteria + " like '%" + idOrder + "%'" + " order by waktu";
-            }
+            string sql = "select * from chats c " +
+                "inner join orders o on c.order_id = o.id " +
+                "inner join pelanggans p on o.pelanggan_id = p.id " +
+                "inner join drivers d on o.driver_id = d.id ";
+            
+            //kalau tidak kosong tambahkan ini
+            if (kriteria != "") sql += " where " + kriteria + " like '%" + idOrder + "%'" + " order by c.waktu";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParam);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Chat> listChat = new List<Chat>();
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while (hasil.Read() == true)
             {
-                Order o = Order.AmbilData(long.Parse(hasil.GetString(4)), kParam);
+				Driver d = new Driver(hasil.GetInt32(28), hasil.GetString(29), hasil.GetString(30), hasil.GetString(31), hasil.GetString(32), hasil.GetString(33));
 
-                Driver d = Driver.AmbilData(hasil.GetInt32(5), kParam);
+                Pelanggan p = new Pelanggan(hasil.GetInt32(20), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23), hasil.GetString(24), hasil.GetString(25), hasil.GetDouble(26), hasil.GetDouble(27));
 
-                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(6), kParam);
+                Order o = new Order(long.Parse(hasil.GetString(4)), p, d);
 
                 Chat c = new Chat(hasil.GetInt32(0), hasil.GetString(1), DateTime.Parse(hasil.GetString(2)), hasil.GetString(3), o, d, p);
 
                 listChat.Add(c);
             }
-
-            hasil.Close();
-            hasil.Dispose();
 
             return listChat;
         }

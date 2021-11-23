@@ -83,7 +83,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listBarang = Barang.BacaData("", "", FormUtama.koneksi);
+                listBarang = Barang.BacaData("", "");
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -115,7 +115,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listBarang = Barang.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
+            listBarang = Barang.BacaData(kriteria, textBoxKriteria.Text);
             FormatDataGrid();
             TampilDataGrid();
         }
@@ -131,8 +131,8 @@ namespace OnlineMart_Trivial
                 //Kalau button Tambah ke keranjang diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnTambahKeranjang"].Index && e.RowIndex >= 0)
                 {
-                    Barang b = Barang.AmbilData(id, FormUtama.koneksi);
-                    FormUtama.keranjang.Add(b); //Untuk menambahkan barang ke dalam keranjang
+                    //Barang b = Barang.AmbilData(id, FormUtama.koneksi);
+                    //FormUtama.keranjang.Add(b); //Untuk menambahkan barang ke dalam keranjang
                     MessageBox.Show("Barang berhasil di tambahkan ke dalam keranjang");
                 }
             }

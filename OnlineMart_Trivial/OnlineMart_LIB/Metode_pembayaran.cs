@@ -56,12 +56,12 @@ namespace OnlineMart_LIB
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
-		public static List<Metode_pembayaran> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+		public static List<Metode_pembayaran> BacaData(string kriteria, string nilaiKriteria)
 		{
 			string sql = "select id, nama from metode_pembayarans ";
 			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			List<Metode_pembayaran> listMetodePembayaran = new List<Metode_pembayaran>();
 
@@ -91,27 +91,27 @@ namespace OnlineMart_LIB
 			return listMetodePembayaran;
 		}
 
-		public static Metode_pembayaran AmbilData(int id, Koneksi koneksi)
-		{
-			string sql = "select id, nama from metode_pembayarans where id = " + id;
+        public static Metode_pembayaran AmbilData(int id, Koneksi koneksi)
+        {
+            string sql = "select id, nama from metode_pembayarans where id = " + id;
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
 
-			Metode_pembayaran m = null;
+            Metode_pembayaran m = null;
 
-			while (hasil.Read())
-			{
-				//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
-				m = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
-			}
+            while (hasil.Read())
+            {
+                //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
+                m = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
+            }
 
-			hasil.Close();
-			hasil.Dispose();
+            hasil.Close();
+            hasil.Dispose();
 
-			return m;
-		}
+            return m;
+        }
 
-		public static Boolean UbahData(Metode_pembayaran m)
+        public static Boolean UbahData(Metode_pembayaran m)
 		{
 			// Querry Insert
 			string sql = "update metode_pembayarans set nama = '" + m.Nama + "' where id = " + m.Id;

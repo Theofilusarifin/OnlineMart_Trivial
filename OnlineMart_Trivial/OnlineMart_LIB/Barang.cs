@@ -106,62 +106,25 @@ namespace OnlineMart_LIB
         }
 
         //Method untuk membaca data Barang
-        public static List<Barang> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Barang> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select id, nama, harga, kategori_id from barangs ";
-            if (kriteria != "") //apabila kriteria tidak kosong
-            {
-                sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
-            }
+            string sql = "select * from barangs b inner join kategoris k on b.kategori_id = k.id ";
+            //apabila kriteria tidak kosong
+            if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Barang> listBarang = new List<Barang>();
+
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
-                Kategori k = Kategori.AmbilData(hasil.GetInt32(3), kParram);
+                Kategori k = new Kategori (hasil.GetInt32(4), hasil.GetString(5));
 
                 Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
-                
-                ////Ambil Barang_Cabang
-                //string barang_cabang = "select bc.cabang_id, bc.stok from barang_cabang as bc " +
-                //"inner join barangs as b on bc.barang_id = b.id where b.id = " + b.id;
-
-                //MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_cabang);
-
-                //while (hasil_join.Read())
-                //{
-                //    Cabang c_join = Cabang.AmbilData(hasil_join.GetInt32(0));
-
-                //    Barang_Cabang bc = new Barang_Cabang(c_join, b, hasil_join.GetInt32(1));
-
-                //    //Tambahkan hasil join ke composition relationship
-                //    b.ListBarangCabang.Add(bc);
-                //}
-
-                ////Ambil Barang_Order
-                //string barang_order = "select bo.order_id, bo.jumlah, bo.harga from barang_order as bo " +
-                //"inner join barangs as b on bo.barang_id = b.id where b.id = " + b.id;
-
-                //MySqlDataReader hasil_join2 = Koneksi.JalankanPerintahQuery(barang_order);
-
-                //while (hasil_join2.Read())
-                //{
-                //    Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
-
-                //    Barang_Order bo = new Barang_Order(b, o_join, hasil_join.GetInt32(1), hasil_join.GetFloat(2));
-
-                //    //Tambahkan hasil join ke composition relationship
-                //    b.ListBarangOrder.Add(bo);
-                //}
 
                 listBarang.Add(b);
             }
-
-            hasil.Close();
-            hasil.Dispose();
-
             return listBarang;
         }
 

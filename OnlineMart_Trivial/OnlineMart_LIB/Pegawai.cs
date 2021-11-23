@@ -92,12 +92,12 @@ namespace OnlineMart_LIB
             else return true;
         }
 
-        public static List<Pegawai> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Pegawai> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "select id, nama, username, email, password, telepon from pegawais ";
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             //Buat list untuk menampung data
             List<Pegawai> listPegawai = new List<Pegawai>();
@@ -121,7 +121,6 @@ namespace OnlineMart_LIB
 
                 listPegawai.Add(p);
             }
-
             return listPegawai;
         }
 

@@ -17,7 +17,8 @@ namespace OnlineMart_LIB
         #region Constructors
         public Koneksi(string pServer, string pDatabase, string pUsername, string pPassword)
         {
-            string strCon = "server=" + pServer + ";database=" + pDatabase + ";uid=" + pUsername + ";password=" + pPassword + ";SSL Mode=None"; // Tambahkan SSL Mode supaya tidak error SSL
+            string strCon = "server=" + pServer + ";database=" + pDatabase + ";uid=" + pUsername + ";password=" + pPassword + ";SSL Mode=None" + // Tambahkan SSL Mode supaya tidak error SSL
+                ";MultipleActiveResultSets=true"; 
 
             KoneksiDB = new MySqlConnection();
             KoneksiDB.ConnectionString = strCon;
@@ -72,15 +73,15 @@ namespace OnlineMart_LIB
             KoneksiDB.Open();
         }
 
-        //public static MySqlDataReader JalankanPerintahQuery(string sql)
-        //{
-        //    Koneksi koneksi = new Koneksi();
-        //    MySqlCommand sqlCommand = new MySqlCommand(sql, koneksi.KoneksiDB);
+        public static MySqlDataReader JalankanPerintahQuery(string sql)
+        {
+            Koneksi koneksi = new Koneksi();
+            MySqlCommand sqlCommand = new MySqlCommand(sql, koneksi.KoneksiDB);
 
-        //    MySqlDataReader hasil = sqlCommand.ExecuteReader();
+            MySqlDataReader hasil = sqlCommand.ExecuteReader();
 
-        //    return hasil;
-        //}
+            return hasil;
+        }
 
         public static MySqlDataReader JalankanPerintahQuery(string sql, Koneksi kParam)
         {

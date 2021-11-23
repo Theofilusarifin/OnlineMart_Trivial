@@ -54,19 +54,19 @@ namespace OnlineMart_Trivial
 
                     #region combobox
                     //memunculkan promo yang ada di combobox
-                    promo = Promo.BacaData("", "", FormUtama.koneksi);
+                    promo = Promo.BacaData("", "");
                     comboBoxPromo.DataSource = promo;
                     comboBoxPromo.DisplayMember = "Nama";
                     comboBoxPromo.DropDownStyle = ComboBoxStyle.DropDownList;
 
                     //memunculkan metode pembayaran yang ada di combobox
-                    metode = Metode_pembayaran.BacaData("", "", FormUtama.koneksi);
+                    metode = Metode_pembayaran.BacaData("", "");
                     comboBoxMetodeBayar.DataSource = metode;
                     comboBoxMetodeBayar.DisplayMember = "Nama";
                     comboBoxMetodeBayar.DropDownStyle = ComboBoxStyle.DropDownList;
 
                     //memunculkan kurir yang ada di combobox
-                    kurir = Driver.BacaData("", "", FormUtama.koneksi);
+                    kurir = Driver.BacaData("", "");
                     comboBoxKurir.DataSource = kurir;
                     comboBoxKurir.DisplayMember = "Nama";
                     comboBoxKurir.DropDownStyle = ComboBoxStyle.DropDownList;

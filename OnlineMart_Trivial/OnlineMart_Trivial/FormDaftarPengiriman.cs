@@ -79,7 +79,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listOrder = Order.BacaData("driver_id", FormUtama.rider.Id.ToString(), FormUtama.koneksi);
+                listOrder = Order.BacaData("driver_id", FormUtama.rider.Id.ToString());
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();

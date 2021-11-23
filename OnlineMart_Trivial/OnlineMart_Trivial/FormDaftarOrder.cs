@@ -83,7 +83,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listOrder = Order.BacaData("", "", FormUtama.koneksi);
+                listOrder = Order.BacaData("", "");
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -132,7 +132,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listOrder = Order.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
+            listOrder = Order.BacaData(kriteria, textBoxKriteria.Text);
             FormatDataGrid();
             TampilDataGrid();
         }

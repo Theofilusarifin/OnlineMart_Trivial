@@ -84,7 +84,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listMetode = Metode_pembayaran.BacaData("", "", FormUtama.koneksi);
+                listMetode = Metode_pembayaran.BacaData("", "");
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -113,7 +113,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listMetode = Metode_pembayaran.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
+            listMetode = Metode_pembayaran.BacaData(kriteria, textBoxKriteria.Text);
             FormatDataGrid();
             TampilDataGrid();
         }
