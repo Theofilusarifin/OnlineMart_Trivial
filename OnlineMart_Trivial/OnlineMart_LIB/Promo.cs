@@ -92,39 +92,6 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static List<Promo> BacaData(string kriteria, string nilaiKriteria)
-		{
-			string sql = "select id, tipe, nama, diskon, diskon_max, minimal_belanja from promos ";
-			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
-
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-
-			//Buat list untuk menampung data
-			List<Promo> listpromo = new List<Promo>();
-
-			while (hasil.Read())
-			{
-				Promo p = new Promo(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetInt32(3), hasil.GetInt32(4), hasil.GetFloat(5));
-
-				////Ambil Order
-				//string order_join = "select o.id from orders as o inner join promos as p on o.gift_redeem_id = p.id where p.id = " + p.id;
-
-				//MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(order_join);
-
-				//while (hasil_join.Read())
-				//{
-				//	Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
-
-				//	//Tambahkan hasil join ke aggregation relationship
-				//	p.ListOrder.Add(o_join);
-				//}
-
-				listpromo.Add(p);
-			}
-
-			return listpromo;
-		}
-
 		public static List<Promo> BacaData(string kriteria, string nilaiKriteria, Koneksi kParam)
 		{
 			string sql = "select id, tipe, nama, diskon, diskon_max, minimal_belanja from promos ";
@@ -148,11 +115,11 @@ namespace OnlineMart_LIB
 			return listpromo;
 		}
 
-		public static Promo AmbilData(int id)
+		public static Promo AmbilData(int id, Koneksi kParram)
         {
             string sql = "select id, tipe, nama, diskon, diskon_max, minimal_belanja from promos where id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			Promo p = null;
 
@@ -160,24 +127,12 @@ namespace OnlineMart_LIB
             {
 				p = new Promo(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetInt32(3), hasil.GetInt32(4), hasil.GetFloat(5));
             }
+
+			hasil.Close();
+			hasil.Dispose();
+
 			return p;
         }
-
-		public static Promo AmbilData(int id, Koneksi koneksi)
-		{
-			string sql = "select id, tipe, nama, diskon, diskon_max, minimal_belanja from promos where id = " + id;
-
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
-
-			Promo p = null;
-
-			while (hasil.Read())
-			{
-				p = new Promo(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetInt32(3), hasil.GetInt32(4), hasil.GetFloat(5));
-			}
-			return p;
-		}
-
 		public static Boolean UbahData(Promo p)
         {
             // Querry Insert

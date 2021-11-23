@@ -168,12 +168,12 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static List<Pelanggan> BacaData(string kriteria, string nilaiKriteria)
+		public static List<Pelanggan> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
 		{
 			string sql = "select nama, username, email, password, telepon, saldo, poin from pelanggans ";
 			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			//Buat list untuk menampung data
 			List<Pelanggan> listPelanggan = new List<Pelanggan>();
@@ -213,29 +213,21 @@ namespace OnlineMart_LIB
 
 			return listPelanggan;
 		}
-		
-		public static Pelanggan AmbilData(int id)
-		{
-			string sql = "select id, nama, username, email, password, telepon, saldo, poin from pelanggans where id = " + id;
-
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-
-			hasil.Read();
-
-			Pelanggan p = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
-
-			return p;
-		}
-
 		public static Pelanggan AmbilData(int id, Koneksi koneksi)
 		{
 			string sql = "select id, nama, username, email, password, telepon, saldo, poin from pelanggans where id = " + id;
 
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
 
-			hasil.Read();
+			Pelanggan p = null;
 
-			Pelanggan p = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
+			while (hasil.Read())
+			{
+				p = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
+			}
+
+			hasil.Close();
+			hasil.Dispose();
 
 			return p;
 		}
@@ -266,10 +258,10 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static Pelanggan CekLogin(string username, string password)
+		public static Pelanggan CekLogin(string username, string password, Koneksi kParram)
 		{
 			string sql = "select id, nama, username, email, password, telepon, saldo, poin from pelanggans where username = '" + username + "' and password = SHA2('" + password + "', 512)";
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			while (hasil.Read())
 			{
@@ -277,6 +269,10 @@ namespace OnlineMart_LIB
 
 				return pelanggan;
 			}
+
+			hasil.Close();
+			hasil.Dispose();
+			
 			return null;
 		}
 		#endregion

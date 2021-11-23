@@ -154,7 +154,7 @@ namespace OnlineMart_Trivial
                 //generate id order yyyyMMddxxxx (yyyy-MM-dd-xxxx) detail ada di class order
                 if (thisOrder.Id == 0 && !IdGenerated)
                 {
-                    thisOrder.Id = long.Parse(Order.GenerateIdOrder());
+                    thisOrder.Id = long.Parse(Order.GenerateIdOrder(FormUtama.koneksi));
 
                     // Set IdGenerated ke true agar tidak generate id baru
                     IdGenerated = true;
@@ -221,7 +221,7 @@ namespace OnlineMart_Trivial
         {
             thisOrder.Total_bayar = 0;
 
-            thisOrder.Gift_redeem = Gift_Redeem.AmbilData(1);
+            thisOrder.Gift_redeem = Gift_Redeem.AmbilData(1, FormUtama.koneksi);
 
             foreach (Barang_Order bo in listBarangOrder)
             {

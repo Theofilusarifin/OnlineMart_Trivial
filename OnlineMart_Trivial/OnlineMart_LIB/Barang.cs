@@ -106,7 +106,7 @@ namespace OnlineMart_LIB
         }
 
         //Method untuk membaca data Barang
-        public static List<Barang> BacaData(string kriteria, string nilaiKriteria)
+        public static List<Barang> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
         {
             string sql = "select id, nama, harga, kategori_id from barangs ";
             if (kriteria != "") //apabila kriteria tidak kosong
@@ -114,13 +114,13 @@ namespace OnlineMart_LIB
                 sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
             List<Barang> listBarang = new List<Barang>();
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
-                Kategori k = Kategori.AmbilData(hasil.GetInt32(3));
+                Kategori k = Kategori.AmbilData(hasil.GetInt32(3), kParram);
 
                 Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
                 
@@ -158,37 +158,31 @@ namespace OnlineMart_LIB
 
                 listBarang.Add(b);
             }
+
+            hasil.Close();
+            hasil.Dispose();
+
             return listBarang;
         }
 
-        public static Barang AmbilData(int id)
+        public static Barang AmbilData(int id, Koneksi kParram)
         {
             string sql = "select id, nama, harga, kategori_id from barangs where id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
-            hasil.Read();
+            Barang b = null;
 
-            //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
-            Kategori k = Kategori.AmbilData(hasil.GetInt32(3)); 
+            while (hasil.Read())
+            {
+                //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
+                Kategori k = Kategori.AmbilData(hasil.GetInt32(3), kParram);
 
-            Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
+                b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
+            }
 
-            return b;
-        }
-
-        public static Barang AmbilData(int id, Koneksi koneksi)
-        {
-            string sql = "select id, nama, harga, kategori_id from barangs where id = " + id;
-
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
-
-            hasil.Read();
-
-            //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
-            Kategori k = Kategori.AmbilData(hasil.GetInt32(3));
-
-            Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
+            hasil.Close();
+            hasil.Dispose();
 
             return b;
         }

@@ -88,7 +88,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 // Tampilkan semua data
-                listKategori = Kategori.BacaData("", "");
+                listKategori = Kategori.BacaData("", "", FormUtama.koneksi);
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -117,7 +117,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listKategori = Kategori.BacaData(kriteria, textBoxKriteria.Text);
+            listKategori = Kategori.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
             FormatDataGrid();
             TampilDataGrid();
         }

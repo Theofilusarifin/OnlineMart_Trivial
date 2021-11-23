@@ -23,7 +23,7 @@ namespace OnlineMart_Trivial
 		{
             try
             {
-                Gift g = Gift.AmbilData(IdDipilih);
+                Gift g = Gift.AmbilData(IdDipilih, FormUtama.koneksi);
 
                 //Ubah menjadi data baru
                 g.Nama = textBoxNama.Text;
@@ -47,7 +47,7 @@ namespace OnlineMart_Trivial
 		private void FormUbahHadiah_Load(object sender, EventArgs e)
 		{
             //Ambil data yang sesuai id
-            Gift g = Gift.AmbilData(IdDipilih);
+            Gift g = Gift.AmbilData(IdDipilih, FormUtama.koneksi);
 
             //Tampilkan data di text box
             textBoxNama.Text = g.Nama;

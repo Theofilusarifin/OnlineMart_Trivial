@@ -22,7 +22,7 @@ namespace OnlineMart_Trivial
         private void FormUbahBarang_Load(object sender, EventArgs e)
         {
             // Masukkan kategori ke textbox
-            List<Kategori> listKategori = Kategori.BacaData("", "");
+            List<Kategori> listKategori = Kategori.BacaData("", "", FormUtama.koneksi);
 
             comboBoxKategori.DataSource = listKategori;
             comboBoxKategori.DisplayMember = "Nama";
@@ -30,7 +30,7 @@ namespace OnlineMart_Trivial
             comboBoxKategori.DropDownStyle = ComboBoxStyle.DropDownList;
 
             //Ambil data yang sesuai id
-            Barang b = Barang.AmbilData(IdDipilih);
+            Barang b = Barang.AmbilData(IdDipilih, FormUtama.koneksi);
 
             //Tampilkan data di text box
             textBoxNama.Text = b.Nama;
@@ -43,7 +43,7 @@ namespace OnlineMart_Trivial
             try
             {
                 Kategori kDipilih = (Kategori)comboBoxKategori.SelectedItem;
-                Barang blama = Barang.AmbilData(IdDipilih);
+                Barang blama = Barang.AmbilData(IdDipilih, FormUtama.koneksi);
                 
                 //Ubah menjadi data baru
                 blama.Nama = textBoxNama.Text;

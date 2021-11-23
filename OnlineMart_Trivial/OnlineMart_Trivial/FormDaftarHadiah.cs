@@ -88,7 +88,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 // Tampilkan semua data
-                listGift = Gift.BacaData("", "");
+                listGift = Gift.BacaData("", "", FormUtama.koneksi);
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -168,7 +168,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listGift = Gift.BacaData(kriteria, textBoxKriteria.Text);
+            listGift = Gift.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
             FormatDataGrid();
             TampilDataGrid();
         }

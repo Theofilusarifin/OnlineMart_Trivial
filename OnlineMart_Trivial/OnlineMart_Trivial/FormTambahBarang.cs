@@ -22,7 +22,7 @@ namespace OnlineMart_Trivial
 
         private void FormTambahBarang_Load(object sender, EventArgs e)
         {
-            listKategori = Kategori.BacaData("", "");
+            listKategori = Kategori.BacaData("", "", FormUtama.koneksi);
 
             comboBoxKategori.DataSource = listKategori;
             comboBoxKategori.DisplayMember = "Nama";

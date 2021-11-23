@@ -85,7 +85,7 @@ namespace OnlineMart_LIB
         public static Boolean TambahData(Chat c)
         {
             //string yang menampung sql query insert into
-            string sql = "insert into chats (isi, waktu, role_pengirim, ordder_id, driver_id, pelanggan_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " + c.Role_pengirim + ", " + c.Order.Id + ", " + c.Driver.Id + ", " + c.Pelanggan.Id + ")";
+            string sql = "insert into chats (isi, waktu, role_pengirim, order_id, driver_id, pelanggan_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', " + c.Order.Id + ", " + c.Driver.Id + ", " + c.Pelanggan.Id + ")";
 
             //menjalankan perintah sql
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
@@ -94,7 +94,7 @@ namespace OnlineMart_LIB
         }
 
         //Method untuk membaca data
-        public static List<Chat> BacaData(string kriteria, long idOrder, Koneksi kParam)
+        public static List<Chat> BacaData(string kriteria, string idOrder, Koneksi kParam)
         {
             string sql = "select id, isi, waktu, role_pengirim, order_id, driver_id, pelanggan_id from chats ";
             if (kriteria != "") //kalau tidak kosong tambahkan ini
@@ -102,17 +102,17 @@ namespace OnlineMart_LIB
                 sql += " where " + kriteria + " like '%" + idOrder + "%'" + " order by waktu";
             }
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParam);
 
             List<Chat> listChat = new List<Chat>();
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while (hasil.Read() == true)
             {
-                Order o = Order.AmbilData(hasil.GetInt32(4));
+                Order o = Order.AmbilData(long.Parse(hasil.GetString(4)), kParam);
 
-                Driver d = Driver.AmbilData(hasil.GetInt32(5));
+                Driver d = Driver.AmbilData(hasil.GetInt32(5), kParam);
 
-                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(6));
+                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(6), kParam);
 
                 Chat c = new Chat(hasil.GetInt32(0), hasil.GetString(1), DateTime.Parse(hasil.GetString(2)), hasil.GetString(3), o, d, p);
 

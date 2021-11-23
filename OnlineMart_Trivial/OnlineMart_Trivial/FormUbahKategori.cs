@@ -24,7 +24,7 @@ namespace OnlineMart_Trivial
         private void FormUbahKategori_Load(object sender, EventArgs e)
         {
             //Ambil data yang sesuai id
-            Kategori k = Kategori.AmbilData(IdDipilih);
+            Kategori k = Kategori.AmbilData(IdDipilih, FormUtama.koneksi);
 
             //Tampilkan data di text box
             textBoxNama.Text = k.Nama;
@@ -34,7 +34,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                Kategori klama = Kategori.AmbilData(IdDipilih);
+                Kategori klama = Kategori.AmbilData(IdDipilih, FormUtama.koneksi);
 
                 //Ubah menjadi data baru
                 klama.Nama = textBoxNama.Text;

@@ -56,12 +56,12 @@ namespace OnlineMart_LIB
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
-		public static List<Metode_pembayaran> BacaData(string kriteria, string nilaiKriteria)
+		public static List<Metode_pembayaran> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
 		{
 			string sql = "select id, nama from metode_pembayarans ";
 			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			List<Metode_pembayaran> listMetodePembayaran = new List<Metode_pembayaran>();
 
@@ -84,46 +84,11 @@ namespace OnlineMart_LIB
 
 				listMetodePembayaran.Add(mp);
 			}
-			return listMetodePembayaran;
-		}
-
-		public static List<Metode_pembayaran> BacaData(string kriteria, string nilaiKriteria, Koneksi kParam)
-		{
-			string sql = "select id, nama from metode_pembayarans ";
-			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
-
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParam);
-
-			List<Metode_pembayaran> listMetodePembayaran = new List<Metode_pembayaran>();
-
-			while (hasil.Read() == true)
-			{
-				Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
-
-				listMetodePembayaran.Add(mp);
-			}
 
 			hasil.Close();
 			hasil.Dispose();
 
 			return listMetodePembayaran;
-		}
-
-		public static Metode_pembayaran AmbilData(int id)
-		{
-			string sql = "select id, nama from metode_pembayarans where id = " + id;
-
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-
-			Metode_pembayaran m = null;
-
-			while (hasil.Read())
-			{
-				//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
-				m = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
-			}
-			
-			return m;
 		}
 
 		public static Metode_pembayaran AmbilData(int id, Koneksi koneksi)
@@ -139,6 +104,9 @@ namespace OnlineMart_LIB
 				//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
 				m = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
 			}
+
+			hasil.Close();
+			hasil.Dispose();
 
 			return m;
 		}

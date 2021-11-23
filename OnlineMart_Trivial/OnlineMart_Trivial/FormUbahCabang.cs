@@ -25,7 +25,7 @@ namespace OnlineMart_Trivial
 
         private void FormUbahCabang_Load(object sender, EventArgs e)
         {
-            listPegawai = Pegawai.BacaData("", "");
+            listPegawai = Pegawai.BacaData("", "", FormUtama.koneksi);
 
             comboBoxPegawai.DataSource = listPegawai;
             comboBoxPegawai.DisplayMember = "Nama";
@@ -33,7 +33,7 @@ namespace OnlineMart_Trivial
             comboBoxPegawai.DropDownStyle = ComboBoxStyle.DropDownList;
 
             //Ambil data yang sesuai id
-            Cabang c = Cabang.AmbilData(IdDipilih);
+            Cabang c = Cabang.AmbilData(IdDipilih, FormUtama.koneksi);
 
             //Tampilkan data di text box
             textBoxNama.Text = c.Nama;
@@ -47,7 +47,7 @@ namespace OnlineMart_Trivial
             try
             {
                 Pegawai pDipilih = (Pegawai)comboBoxPegawai.SelectedItem;
-                Cabang clama = Cabang.AmbilData(IdDipilih);
+                Cabang clama = Cabang.AmbilData(IdDipilih, FormUtama.koneksi);
 
                 //Ubah menjadi data baru
                 clama.Nama = textBoxNama.Text;

@@ -75,19 +75,19 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static List<Gift_Redeem> BacaData(string kriteria, string nilaiKriteria)
+		public static List<Gift_Redeem> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
 		{
 			string sql = "select id, waktu, poin_redeem, gift_id from gift_redeems ";
 			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			//Buat list untuk menampung data
 			List<Gift_Redeem> listGiftRedeem = new List<Gift_Redeem>();
 
 			while (hasil.Read())
 			{
-				Gift g = Gift.AmbilData(hasil.GetInt32(3));
+				Gift g = Gift.AmbilData(hasil.GetInt32(3), kParram);
 
 				Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), g);
 
@@ -107,39 +107,30 @@ namespace OnlineMart_LIB
 				listGiftRedeem.Add(gr);
 			}
 
+			hasil.Close();
+			hasil.Dispose();
+
 			return listGiftRedeem;
 		}
 
-		public static Gift_Redeem AmbilData(int id)
+		public static Gift_Redeem AmbilData(int id, Koneksi kParram)
 		{
 			string sql = "select id, waktu, poin_redeem, gift_id from gift_redeems where id = " + id;
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			Gift g = null;
 			Gift_Redeem gr = null;
 
 			while (hasil.Read())
             {
-				g = Gift.AmbilData(hasil.GetInt32(3));
+				g = Gift.AmbilData(hasil.GetInt32(3), kParram);
 				gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), g);
 			}
-			return gr;
-		}
 
-		public static Gift_Redeem AmbilData(int id, Koneksi koneksi)
-		{
-			string sql = "select id, waktu, poin_redeem, gift_id from gift_redeems where id = " + id;
+			hasil.Close();
+			hasil.Dispose();
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
-
-			Gift_Redeem gr = null;
-
-			while (hasil.Read())
-			{
-				Gift g = Gift.AmbilData(hasil.GetInt32(3));
-				gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), g);
-			}
 			return gr;
 		}
 

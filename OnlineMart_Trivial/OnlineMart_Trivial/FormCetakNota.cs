@@ -23,7 +23,7 @@ namespace OnlineMart_Trivial
 		{
 			try
 			{
-				listOrder = Order.BacaData("pelanggan_id", FormUtama.konsumen.Id.ToString());
+				listOrder = Order.BacaData("pelanggan_id", FormUtama.konsumen.Id.ToString(), FormUtama.koneksi);
 				listBoxData.Enabled = false;
 				//foreach(Order o in listOrder)
 				//{
@@ -77,7 +77,7 @@ namespace OnlineMart_Trivial
 		{
 			try
 			{
-				Order.CetakDaftarOrder("pelanggan_id", FormUtama.konsumen.Id.ToString(), "daftarnota.txt");
+				Order.CetakDaftarOrder("pelanggan_id", FormUtama.konsumen.Id.ToString(), "daftarnota.txt", FormUtama.koneksi);
 				MessageBox.Show("Seluruh Order berhasil dicetak!");
 			}
 			catch (Exception ex)

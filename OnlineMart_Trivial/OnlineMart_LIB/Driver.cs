@@ -143,26 +143,6 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-        public static List<Driver> BacaData(string kriteria, string nilaiKriteria)
-        {
-            string sql = "select id, nama, username, email, password, telepon from drivers ";
-            if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
-
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-
-            //Buat list untuk menampung data
-            List<Driver> listDriver = new List<Driver>();
-
-            while (hasil.Read())
-            {
-				Driver d = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
-
-                listDriver.Add(d);
-            }
-
-            return listDriver;
-        }
-
 		public static List<Driver> BacaData(string kriteria, string nilaiKriteria, Koneksi kParam)
 		{
 			string sql = "select id, nama, username, email, password, telepon from drivers ";
@@ -186,29 +166,18 @@ namespace OnlineMart_LIB
 			return listDriver;
 		}
 
-		public static Driver AmbilData(int id)
-		{
-			string sql = "select id, nama, username, email, password, telepon from drivers where id = " + id;
-
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-
-			hasil.Read();
-
-			Driver d = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
-
-			return d;
-		}
-
 		public static Driver AmbilData(int id, Koneksi koneksi)
 		{
 			string sql = "select id, nama, username, email, password, telepon from drivers where id = " + id;
 
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
 
-			hasil.Read();
+			Driver d = null;
 
-			Driver d = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
-
+			while (hasil.Read())
+			{
+				d = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
+			}
 			return d;
 		}
 
@@ -232,14 +201,17 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static Driver CekLogin(string username, string password)
+		public static Driver CekLogin(string username, string password, Koneksi kParram)
         {
 			string sql = "select id, nama, username, email, password, telepon from drivers where username = '" + username + "' and password = SHA2('" + password + "', 512)";
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
             while (hasil.Read())
             {
 				Driver driver = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
+
+				hasil.Close();
+				hasil.Dispose();
 
 				return driver;
             }

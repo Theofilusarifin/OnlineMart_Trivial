@@ -66,7 +66,7 @@ namespace OnlineMart_LIB
             if (jumlahDitambah == 0) return false;
             else return true;
         }
-        public static List<Riwayat_isi_saldo> BacaData(string kriteria, string nilaiKriteria)
+        public static List<Riwayat_isi_saldo> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
         {
             string sql = "select id, waktu, isi_saldo, pelanggan_id from riwayat_isi_saldos ";
             if (kriteria != "") //apabila kriteria tidak kosong
@@ -74,14 +74,14 @@ namespace OnlineMart_LIB
                 sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             }
             
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
             List<Riwayat_isi_saldo> listRiwayat = new List<Riwayat_isi_saldo>();
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while (hasil.Read() == true)
             {
 
-                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(3));
+                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(3), kParram);
 
                 Riwayat_isi_saldo r = new Riwayat_isi_saldo(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetInt32(2), p);               
               
@@ -90,31 +90,23 @@ namespace OnlineMart_LIB
 
             return listRiwayat;
         }
-        public static Riwayat_isi_saldo AmbilData(int id)
+        public static Riwayat_isi_saldo AmbilData(int id, Koneksi kParram)
         {
             string sql = "select id, waktu, isi_saldo, pelanggan_id from riwayat_isi_saldos where id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
-            hasil.Read();
+            Riwayat_isi_saldo r = null;
 
-            Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(3));
+            while (hasil.Read())
+            {
+                Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(3), kParram);
 
-            Riwayat_isi_saldo r = new Riwayat_isi_saldo(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetInt32(2), p);
+                r = new Riwayat_isi_saldo(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetInt32(2), p);
+            }
 
-            return r;
-        }
-        public static Riwayat_isi_saldo AmbilData(int id, Koneksi koneksi)
-        {
-            string sql = "select id, waktu, isi_saldo, pelanggan_id from riwayat_isi_saldos where id = " + id;
-
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
-
-            hasil.Read();
-
-            Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(3));
-
-            Riwayat_isi_saldo r = new Riwayat_isi_saldo(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetInt32(2), p);
+            hasil.Close();
+            hasil.Dispose();
 
             return r;
         }

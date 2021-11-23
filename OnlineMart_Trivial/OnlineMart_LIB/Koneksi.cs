@@ -72,15 +72,15 @@ namespace OnlineMart_LIB
             KoneksiDB.Open();
         }
 
-        public static MySqlDataReader JalankanPerintahQuery(string sql)
-        {
-            Koneksi koneksi = new Koneksi();
-            MySqlCommand sqlCommand = new MySqlCommand(sql, koneksi.KoneksiDB);
+        //public static MySqlDataReader JalankanPerintahQuery(string sql)
+        //{
+        //    Koneksi koneksi = new Koneksi();
+        //    MySqlCommand sqlCommand = new MySqlCommand(sql, koneksi.KoneksiDB);
 
-            MySqlDataReader hasil = sqlCommand.ExecuteReader();
+        //    MySqlDataReader hasil = sqlCommand.ExecuteReader();
 
-            return hasil;
-        }
+        //    return hasil;
+        //}
 
         public static MySqlDataReader JalankanPerintahQuery(string sql, Koneksi kParam)
         {

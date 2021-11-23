@@ -130,7 +130,8 @@ namespace OnlineMart_Trivial
             // 
             // textBoxPesan
             // 
-            this.textBoxPesan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxPesan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPesan.BackColor = System.Drawing.Color.White;
             this.textBoxPesan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPesan.Font = new System.Drawing.Font("Montserrat", 12F);

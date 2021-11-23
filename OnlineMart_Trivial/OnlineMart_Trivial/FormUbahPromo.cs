@@ -24,7 +24,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                Promo p = Promo.AmbilData(IdDipilih);
+                Promo p = Promo.AmbilData(IdDipilih, FormUtama.koneksi);
 
                 //Ubah menjadi data baru
                 p.Tipe = textBoxTipe.Text;
@@ -51,7 +51,7 @@ namespace OnlineMart_Trivial
         private void FormUbahPromo_Load(object sender, EventArgs e)
         {
             //Ambil data yang sesuai id
-            Promo p = Promo.AmbilData(IdDipilih);
+            Promo p = Promo.AmbilData(IdDipilih, FormUtama.koneksi);
 
             //Tampilkan data di text box
             textBoxTipe.Text = p.Tipe;

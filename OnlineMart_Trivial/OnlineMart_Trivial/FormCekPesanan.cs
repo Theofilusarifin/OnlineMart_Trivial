@@ -28,16 +28,16 @@ namespace OnlineMart_Trivial
             listBoxPesan.Items.Clear();
 
             // Define isi chat
-            listChat = Chat.BacaData("id", long.Parse(comboBoxNomorNota.Text), FormUtama.koneksi);
+            listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text, FormUtama.koneksi);
             
             // Tampilkan pesan
             foreach (Chat c in listChat)
             {
-                if (c.Role_pengirim == "Pelanggan") 
+                if (c.Role_pengirim == "konsumen") 
                 {
                     listBoxPesan.Items.Add("Me : " + c.Isi);
                 }
-                else if (c.Role_pengirim == "Driver")
+                else
                 {
                     listBoxPesan.Items.Add("Driver : " + c.Isi);
                 }
@@ -46,12 +46,14 @@ namespace OnlineMart_Trivial
 
         private void FormCekPesanan_Load(object sender, EventArgs e)
         {
-            listOrder = Order.BacaData("", "");
+            listOrder = Order.BacaData("pelanggan_id", FormUtama.konsumen.Id.ToString(), FormUtama.koneksi);
 
             comboBoxNomorNota.DataSource = listOrder;
             comboBoxNomorNota.DisplayMember = "Id";
 
             comboBoxNomorNota.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            TampilkanPesan();
         }
 
         private void comboBoxKriteria_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,13 +65,16 @@ namespace OnlineMart_Trivial
         private void buttonKirim_Click(object sender, EventArgs e)
         {
             // Ambil id order yang sedang dipilih
-            Order o = Order.AmbilData(long.Parse(comboBoxNomorNota.Text));
+            Order o = Order.AmbilData(long.Parse(comboBoxNomorNota.Text), FormUtama.koneksi);
 
             // Buat Chat baru
-            Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "Pelanggan", o, o.Driver, o.Pelanggan);
+            Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "Konsumen", o, o.Driver, o.Pelanggan);
 
-            // Refresh ListBox
-            TampilkanPesan();
+            // Tambahkan Chat Baru
+            Chat.TambahData(chat);
+
+            // Tampilkan pesan sementara ke ListBox
+            listBoxPesan.Items.Add("Me : " + chat.Isi);
 
             // Bersihkan Text Box
             textBoxPesan.Clear();
