@@ -20,6 +20,19 @@ namespace OnlineMart_Trivial
 		}
 		public static List<Order> listOrder = new List<Order>(); //deklarasi list order
 
+        #region No Tick Constrols
+        //Optimized Controls(No Tick)
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+        #endregion
+
         #region Method
         private void FormatDataGrid()
         {
@@ -86,6 +99,7 @@ namespace OnlineMart_Trivial
             }
         }
         #endregion
+
         private void FormHistoryTransaksi_Load(object sender, EventArgs e)
 		{
 			try

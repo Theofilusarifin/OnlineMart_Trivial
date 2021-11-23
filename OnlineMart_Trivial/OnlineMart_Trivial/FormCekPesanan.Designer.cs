@@ -104,7 +104,7 @@ namespace OnlineMart_Trivial
             this.listBoxPesan.ItemHeight = 22;
             this.listBoxPesan.Location = new System.Drawing.Point(308, 113);
             this.listBoxPesan.Name = "listBoxPesan";
-            this.listBoxPesan.Size = new System.Drawing.Size(738, 158);
+            this.listBoxPesan.Size = new System.Drawing.Size(919, 158);
             this.listBoxPesan.TabIndex = 37;
             // 
             // buttonKirim
@@ -119,7 +119,7 @@ namespace OnlineMart_Trivial
             this.buttonKirim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKirim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonKirim.ForeColor = System.Drawing.Color.White;
-            this.buttonKirim.Location = new System.Drawing.Point(946, 324);
+            this.buttonKirim.Location = new System.Drawing.Point(1127, 324);
             this.buttonKirim.Name = "buttonKirim";
             this.buttonKirim.Size = new System.Drawing.Size(100, 27);
             this.buttonKirim.TabIndex = 38;
@@ -136,7 +136,7 @@ namespace OnlineMart_Trivial
             this.textBoxPesan.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxPesan.Location = new System.Drawing.Point(308, 324);
             this.textBoxPesan.Name = "textBoxPesan";
-            this.textBoxPesan.Size = new System.Drawing.Size(599, 27);
+            this.textBoxPesan.Size = new System.Drawing.Size(780, 27);
             this.textBoxPesan.TabIndex = 28;
             // 
             // FormCekPesanan
@@ -144,7 +144,7 @@ namespace OnlineMart_Trivial
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1099, 407);
+            this.ClientSize = new System.Drawing.Size(1280, 407);
             this.Controls.Add(this.buttonKirim);
             this.Controls.Add(this.listBoxPesan);
             this.Controls.Add(this.labelStatusPesanan);

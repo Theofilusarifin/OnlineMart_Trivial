@@ -20,6 +20,19 @@ namespace OnlineMart_Trivial
 
         public List<Cabang> listCabang = new List<Cabang>();
 
+        #region No Tick Constrols
+        //Optimized Controls(No Tick)
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+        #endregion
+
         #region Methods
         private void FormatDataGrid()
         {
@@ -105,28 +118,39 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
-        #region Textbox
-        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
+        #region SearchButton
+        private void buttonSearch_Click(object sender, EventArgs e)
         {
-            string kriteria = "";
-            switch (comboBoxKriteria.Text)
+            try
             {
-                case "Id":
-                    kriteria = "id";
-                    break;
+                string kriteria = "";
+                switch (comboBoxKriteria.Text)
+                {
+                    case "Id":
+                        kriteria = "c.id";
+                        break;
 
-                case "Nama Cabang":
-                    kriteria = "nama";
-                    break;
+                    case "Nama Cabang":
+                        kriteria = "c.nama";
+                        break;
 
-                case "Alamat":
-                    kriteria = "alamat";
-                    break;
+                    case "Alamat":
+                        kriteria = "c.alamat";
+                        break;
+
+                    case "Nama Pegawai":
+                        kriteria = "p.nama";
+                        break;
+                }
+
+                listCabang = Cabang.BacaData(kriteria, textBoxKriteria.Text);
+                FormatDataGrid();
+                TampilDataGrid();
             }
-
-            listCabang = Cabang.BacaData(kriteria, textBoxKriteria.Text);
-            FormatDataGrid();
-            TampilDataGrid();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         #endregion
 
@@ -201,6 +225,14 @@ namespace OnlineMart_Trivial
         private void buttonClose_MouseLeave(object sender, EventArgs e)
         {
             buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonSearch_MouseEnter(object sender, EventArgs e)
+        {
+            buttonSearch.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonSearch_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSearch.BackgroundImage = Properties.Resources.Button_Leave;
         }
         #endregion
 

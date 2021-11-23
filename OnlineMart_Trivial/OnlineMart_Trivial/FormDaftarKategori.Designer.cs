@@ -36,6 +36,7 @@ namespace OnlineMart_Trivial
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonTambah = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,6 @@ namespace OnlineMart_Trivial
             this.textBoxKriteria.Name = "textBoxKriteria";
             this.textBoxKriteria.Size = new System.Drawing.Size(446, 27);
             this.textBoxKriteria.TabIndex = 1;
-            this.textBoxKriteria.TextChanged += new System.EventHandler(this.textBoxKriteria_TextChanged);
             // 
             // dataGridView
             // 
@@ -73,7 +73,7 @@ namespace OnlineMart_Trivial
             this.dataGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView.Location = new System.Drawing.Point(308, 113);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(740, 201);
+            this.dataGridView.Size = new System.Drawing.Size(921, 201);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -130,7 +130,7 @@ namespace OnlineMart_Trivial
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonClose.ForeColor = System.Drawing.Color.White;
-            this.buttonClose.Location = new System.Drawing.Point(920, 336);
+            this.buttonClose.Location = new System.Drawing.Point(1101, 336);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(128, 39);
             this.buttonClose.TabIndex = 4;
@@ -140,12 +140,35 @@ namespace OnlineMart_Trivial
             this.buttonClose.MouseEnter += new System.EventHandler(this.buttonClose_MouseEnter);
             this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
             // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearch.AutoSize = true;
+            this.buttonSearch.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSearch.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearch.FlatAppearance.BorderSize = 0;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Location = new System.Drawing.Point(1101, 51);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(128, 30);
+            this.buttonSearch.TabIndex = 35;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.buttonSearch.MouseEnter += new System.EventHandler(this.buttonSearch_MouseEnter);
+            this.buttonSearch.MouseLeave += new System.EventHandler(this.buttonSearch_MouseLeave);
+            // 
             // FormDaftarKategori
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1099, 407);
+            this.ClientSize = new System.Drawing.Size(1280, 407);
+            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonTambah);
@@ -172,5 +195,6 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.TextBox textBoxKriteria;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonSearch;
     }
 }

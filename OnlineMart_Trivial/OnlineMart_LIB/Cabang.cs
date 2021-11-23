@@ -128,39 +128,25 @@ namespace OnlineMart_LIB
                 Cabang c = new Cabang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), p);
 
                 //Ambil Barang_Cabang
-                string barang_cabang = "select * from barang_cabang bc " +
-                    "inner join cabangs c on bc.cabang_id = c.id " +
-                    "inner join barangs b on bc.barang_id = b.id " +
-                    "inner join kategoris k on b.kategori_id = k.id " +
-                    "where c.id = " + c.Id;
+                //string barang_cabang = "select * from barang_cabang bc " +
+                //    "inner join cabangs c on bc.cabang_id = c.id " +
+                //    "inner join barangs b on bc.barang_id = b.id " +
+                //    "inner join kategoris k on b.kategori_id = k.id " +
+                //    "where c.id = " + c.Id;
 
-                MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_cabang);
+                //MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(barang_cabang);
 
-                while (hasil_join.Read())
-                {
-                    Kategori k = new Kategori(hasil_join.GetInt32(11), hasil_join.GetString(12));
-
-                    Barang b = new Barang(hasil_join.GetInt32(7), hasil_join.GetString(8), hasil_join.GetInt32(9), k);
-
-                    Barang_Cabang bc = new Barang_Cabang(c, b, hasil_join.GetInt32(2));
-
-                    //Tambahkan hasil join ke composition relationship
-                    c.ListBarangCabang.Add(bc);
-                }
-
-                ////Ambil Order
-                //string order_join = "select o.id from orders as o inner join cabangs as c on o.cabang_id = c.id where c.id = " + c.Id;
-
-                //MySqlDataReader hasil_join2 = Koneksi.JalankanPerintahQuery(order_join);
-
-                //while (hasil_join2.Read())
+                //while (hasil_join.Read())
                 //{
-                //    Order o_join = Order.AmbilData(hasil_join2.GetInt32(0));
+                //    Kategori k = new Kategori(hasil_join.GetInt32(11), hasil_join.GetString(12));
 
-                //    //Tambahkan hasil join ke aggregation relationship
-                //    c.ListOrder.Add(o_join);
+                //    Barang b = new Barang(hasil_join.GetInt32(7), hasil_join.GetString(8), hasil_join.GetInt32(9), k);
+
+                //    Barang_Cabang bc = new Barang_Cabang(c, b, hasil_join.GetInt32(2));
+
+                //    //Tambahkan hasil join ke composition relationship
+                //    c.ListBarangCabang.Add(bc);
                 //}
-
                 listCabang.Add(c);
             }
             return listCabang;

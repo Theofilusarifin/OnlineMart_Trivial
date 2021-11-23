@@ -86,7 +86,7 @@ namespace OnlineMart_Trivial
             this.dataGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView.Location = new System.Drawing.Point(308, 113);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(740, 201);
+            this.dataGridView.Size = new System.Drawing.Size(921, 201);
             this.dataGridView.TabIndex = 35;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -133,7 +133,7 @@ namespace OnlineMart_Trivial
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonClose.ForeColor = System.Drawing.Color.White;
-            this.buttonClose.Location = new System.Drawing.Point(920, 337);
+            this.buttonClose.Location = new System.Drawing.Point(1101, 337);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(128, 39);
             this.buttonClose.TabIndex = 37;
@@ -148,7 +148,7 @@ namespace OnlineMart_Trivial
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1099, 407);
+            this.ClientSize = new System.Drawing.Size(1280, 407);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonTambah);

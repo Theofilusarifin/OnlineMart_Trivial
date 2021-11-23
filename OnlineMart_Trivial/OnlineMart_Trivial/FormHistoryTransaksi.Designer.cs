@@ -48,7 +48,7 @@ namespace OnlineMart_Trivial
             this.dataGridView.Location = new System.Drawing.Point(333, 113);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
-            this.dataGridView.Size = new System.Drawing.Size(740, 201);
+            this.dataGridView.Size = new System.Drawing.Size(921, 201);
             this.dataGridView.TabIndex = 34;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -92,7 +92,7 @@ namespace OnlineMart_Trivial
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonClose.ForeColor = System.Drawing.Color.White;
-            this.buttonClose.Location = new System.Drawing.Point(945, 337);
+            this.buttonClose.Location = new System.Drawing.Point(1126, 337);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(128, 39);
             this.buttonClose.TabIndex = 36;
@@ -104,12 +104,12 @@ namespace OnlineMart_Trivial
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1099, 407);
+            this.ClientSize = new System.Drawing.Size(1280, 407);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.dataGridView);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormHistoryTransaksi";
             this.Text = "FormHistoryTransaksi";
             this.Load += new System.EventHandler(this.FormHistoryTransaksi_Load);

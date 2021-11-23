@@ -78,7 +78,7 @@ namespace OnlineMart_Trivial
             this.listBoxData.Location = new System.Drawing.Point(308, 113);
             this.listBoxData.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxData.Name = "listBoxData";
-            this.listBoxData.Size = new System.Drawing.Size(740, 158);
+            this.listBoxData.Size = new System.Drawing.Size(921, 158);
             this.listBoxData.TabIndex = 71;
             // 
             // buttonCetak
@@ -93,7 +93,7 @@ namespace OnlineMart_Trivial
             this.buttonCetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonCetak.ForeColor = System.Drawing.Color.White;
-            this.buttonCetak.Location = new System.Drawing.Point(308, 336);
+            this.buttonCetak.Location = new System.Drawing.Point(489, 336);
             this.buttonCetak.Name = "buttonCetak";
             this.buttonCetak.Size = new System.Drawing.Size(128, 39);
             this.buttonCetak.TabIndex = 70;
@@ -122,7 +122,7 @@ namespace OnlineMart_Trivial
             this.buttonCetakSemua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCetakSemua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonCetakSemua.ForeColor = System.Drawing.Color.White;
-            this.buttonCetakSemua.Location = new System.Drawing.Point(919, 336);
+            this.buttonCetakSemua.Location = new System.Drawing.Point(1100, 336);
             this.buttonCetakSemua.Name = "buttonCetakSemua";
             this.buttonCetakSemua.Size = new System.Drawing.Size(128, 39);
             this.buttonCetakSemua.TabIndex = 66;
@@ -135,7 +135,7 @@ namespace OnlineMart_Trivial
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1099, 407);
+            this.ClientSize = new System.Drawing.Size(1280, 407);
             this.Controls.Add(this.listBoxData);
             this.Controls.Add(this.buttonCetak);
             this.Controls.Add(this.pictureBox1);
