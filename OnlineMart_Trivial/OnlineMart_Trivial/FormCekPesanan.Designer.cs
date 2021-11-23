@@ -91,9 +91,8 @@ namespace OnlineMart_Trivial
             this.labelStatusPesanan.Font = new System.Drawing.Font("Montserrat", 12F);
             this.labelStatusPesanan.Location = new System.Drawing.Point(796, 55);
             this.labelStatusPesanan.Name = "labelStatusPesanan";
-            this.labelStatusPesanan.Size = new System.Drawing.Size(146, 22);
+            this.labelStatusPesanan.Size = new System.Drawing.Size(0, 22);
             this.labelStatusPesanan.TabIndex = 36;
-            this.labelStatusPesanan.Text = "Sedang Diproses";
             // 
             // listBoxPesan
             // 

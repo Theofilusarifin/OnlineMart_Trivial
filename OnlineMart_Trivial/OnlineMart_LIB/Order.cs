@@ -221,6 +221,8 @@ namespace OnlineMart_LIB
 
                 Order o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
 
+                listOrder.Add(o);
+
                 //Ambil Barang_Order
                 //string barang_order = "select bo.barang_id, bo.jumlah, bo.harga from barang_order as bo " +
                 //                      "inner join orders as o on bo.order_id = o.id where o.id = " + o.Id;
