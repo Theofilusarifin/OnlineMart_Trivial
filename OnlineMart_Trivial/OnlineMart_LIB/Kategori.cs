@@ -78,14 +78,16 @@ namespace OnlineMart_LIB
             while(hasil.Read() == true)
             {
                 Kategori k = new Kategori( hasil.GetInt32(0), hasil.GetString(1));
+                listKategori.Add(k);
             }
+
             return listKategori;
         }
-        public static Kategori AmbilData(int id, Koneksi kParram)
+        public static Kategori AmbilData(int id)
         {
             string sql = "select id, nama from kategoris where id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             Kategori k = null;
 
@@ -93,9 +95,6 @@ namespace OnlineMart_LIB
             {
                 k = new Kategori(hasil.GetInt32(0), hasil.GetString(1));
             }
-
-            hasil.Close();
-            hasil.Dispose();
 
             return k;
         }

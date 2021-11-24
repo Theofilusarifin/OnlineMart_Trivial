@@ -235,7 +235,7 @@ namespace OnlineMart_Trivial
         {
             thisOrder.Total_bayar = 0;
 
-            thisOrder.Gift_redeem = Gift_Redeem.AmbilData(1, FormUtama.koneksi);
+            thisOrder.Gift_redeem = Gift_Redeem.AmbilData(1);
 
             foreach (Barang_Order bo in listBarangOrder)
             {

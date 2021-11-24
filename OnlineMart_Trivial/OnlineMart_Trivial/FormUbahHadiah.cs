@@ -19,12 +19,12 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
-		private void buttonUbah_Click(object sender, EventArgs e)
+        Gift g = null;
+
+        private void buttonUbah_Click(object sender, EventArgs e)
 		{
             try
             {
-                Gift g = Gift.AmbilData(IdDipilih, FormUtama.koneksi);
-
                 //Ubah menjadi data baru
                 g.Nama = textBoxNama.Text;
                 g.JumlahPoin = int.Parse(textBoxHarga.Text);
@@ -47,7 +47,7 @@ namespace OnlineMart_Trivial
 		private void FormUbahHadiah_Load(object sender, EventArgs e)
 		{
             //Ambil data yang sesuai id
-            Gift g = Gift.AmbilData(IdDipilih, FormUtama.koneksi);
+            g = Gift.AmbilData(IdDipilih);
 
             //Tampilkan data di text box
             textBoxNama.Text = g.Nama;

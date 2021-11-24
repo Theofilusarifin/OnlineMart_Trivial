@@ -350,17 +350,17 @@ namespace OnlineMart_LIB
             #region AmbilData
             while (hasil.Read())
             {
-                Cabang c = Cabang.AmbilData(hasil.GetInt32(7), koneksi);
+                Cabang c = Cabang.AmbilData(hasil.GetInt32(7));
 
                 Pelanggan p = Pelanggan.AmbilData(hasil.GetInt32(8),koneksi);
 
                 Driver d = Driver.AmbilData(hasil.GetInt32(9), koneksi);
 
-                Metode_pembayaran mp = Metode_pembayaran.AmbilData(hasil.GetInt32(10), koneksi);
+                Metode_pembayaran mp = Metode_pembayaran.AmbilData(hasil.GetInt32(10));
 
-                Promo pr = Promo.AmbilData(hasil.GetInt32(11), koneksi);
+                Promo pr = Promo.AmbilData(hasil.GetInt32(11));
 
-                Gift_Redeem gr = Gift_Redeem.AmbilData(hasil.GetInt32(12), koneksi);
+                Gift_Redeem gr = Gift_Redeem.AmbilData(hasil.GetInt32(12));
 
                 Order o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
 
@@ -372,7 +372,7 @@ namespace OnlineMart_LIB
 
                 while (hasil_join.Read())
                 {
-                    Barang b_join = Barang.AmbilData(hasil_join.GetInt32(0), koneksi);
+                    Barang b_join = Barang.AmbilData(hasil_join.GetInt32(0));
 
                     Barang_Order bo = new Barang_Order(b_join, o, hasil_join.GetInt32(1), hasil_join.GetFloat(2));
 

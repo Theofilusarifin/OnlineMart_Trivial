@@ -21,10 +21,12 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
+        Kategori k = null;
+
         private void FormUbahKategori_Load(object sender, EventArgs e)
         {
             //Ambil data yang sesuai id
-            Kategori k = Kategori.AmbilData(IdDipilih, FormUtama.koneksi);
+            k = Kategori.AmbilData(IdDipilih);
 
             //Tampilkan data di text box
             textBoxNama.Text = k.Nama;
@@ -34,11 +36,9 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                Kategori klama = Kategori.AmbilData(IdDipilih, FormUtama.koneksi);
-
                 //Ubah menjadi data baru
-                klama.Nama = textBoxNama.Text;
-                Kategori.UbahData(klama);
+                k.Nama = textBoxNama.Text;
+                Kategori.UbahData(k);
 
                 MessageBox.Show("Perubahan berhasil tersimpan!", "Info");
 

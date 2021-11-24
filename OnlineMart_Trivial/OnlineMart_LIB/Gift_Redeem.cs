@@ -110,24 +110,21 @@ namespace OnlineMart_LIB
 			return listGiftRedeem;
 		}
 
-        public static Gift_Redeem AmbilData(int id, Koneksi kParram)
+        public static Gift_Redeem AmbilData(int id)
         {
-            string sql = "select id, waktu, poin_redeem, gift_id from gift_redeems where id = " + id;
+            string sql = "select * from gift_redeems gr inner join gifts g on gr.gift_id = g.id where id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             Gift g = null;
             Gift_Redeem gr = null;
 
             while (hasil.Read())
             {
-                g = Gift.AmbilData(hasil.GetInt32(3), kParram);
-                gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), g);
-            }
+				g = new Gift(hasil.GetInt32(4), hasil.GetString(5), hasil.GetInt32(6));
 
-            hasil.Close();
-            hasil.Dispose();
-
+				gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), g);
+			}
             return gr;
         }
 

@@ -111,11 +111,11 @@ namespace OnlineMart_LIB
 			return listpromo;
 		}
 
-        public static Promo AmbilData(int id, Koneksi kParram)
+        public static Promo AmbilData(int id)
         {
             string sql = "select id, tipe, nama, diskon, diskon_max, minimal_belanja from promos where id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             Promo p = null;
 
@@ -123,9 +123,6 @@ namespace OnlineMart_LIB
             {
                 p = new Promo(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetInt32(3), hasil.GetInt32(4), hasil.GetFloat(5));
             }
-
-            hasil.Close();
-            hasil.Dispose();
 
             return p;
         }

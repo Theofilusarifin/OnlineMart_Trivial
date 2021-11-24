@@ -59,6 +59,7 @@ namespace OnlineMart_Trivial
             this.comboBoxKriteria.Items.AddRange(new object[] {
             "Id",
             "Tipe",
+            "Nama",
             "Diskon",
             "Diskon Maksimal",
             "Minimal Belanja"});

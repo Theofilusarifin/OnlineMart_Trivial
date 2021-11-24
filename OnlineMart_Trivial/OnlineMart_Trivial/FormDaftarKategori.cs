@@ -114,7 +114,7 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
-        #region TextBox
+        #region ButtonSeaarch
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             try

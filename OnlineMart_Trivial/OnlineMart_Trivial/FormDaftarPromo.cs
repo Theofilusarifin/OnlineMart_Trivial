@@ -41,6 +41,7 @@ namespace OnlineMart_Trivial
             //Menambah kolom di datagridview
             dataGridView.Columns.Add("id", "Id");
             dataGridView.Columns.Add("tipe", "Tipe");
+            dataGridView.Columns.Add("nama", "Nama");
             dataGridView.Columns.Add("diskon", "Diskon");
             dataGridView.Columns.Add("diskon_max", "Diskon Maksimal");
             dataGridView.Columns.Add("minimal_belanja", "Minimal Belanja");
@@ -49,6 +50,7 @@ namespace OnlineMart_Trivial
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
             dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["tipe"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["diskon"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["diskon_max"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["minimal_belanja"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -132,6 +134,10 @@ namespace OnlineMart_Trivial
 
                 case "Tipe":
                     kriteria = "tipe";
+                    break;
+                
+                case "Nama":
+                    kriteria = "nama";
                     break;
 
                 case "Diskon":

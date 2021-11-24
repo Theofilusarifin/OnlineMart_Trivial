@@ -81,29 +81,16 @@ namespace OnlineMart_LIB
             {
                 Gift g = new Gift(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2));
 
-                ////Ambil Gift_Redeems
-                //string gift_redeems = "select gr.id from gift_redeems as gr inner join gifts as g on gr.gift_id = g.id where g.id = " + g.id;
-
-                //MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(gift_redeems);
-
-                //while (hasil_join.Read())
-                //{
-                //    Gift_Redeem gr_join = Gift_Redeem.AmbilData(hasil_join.GetInt32(0));
-
-                //    //Tambahkan hasil join ke aggregation relationship
-                //    g.ListGiftRedeem.Add(gr_join);
-                //}
-
                 listGift.Add(g);
             }
             return listGift;
         }
 
-        public static Gift AmbilData(int id, Koneksi kParram)
+        public static Gift AmbilData(int id)
         {
             string sql = "select id, nama, jumlah_poin from gifts where id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             Gift g = null;
 
@@ -112,9 +99,6 @@ namespace OnlineMart_LIB
                 //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
                 g = new Gift(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2));
             }
-
-            hasil.Close();
-            hasil.Dispose();
 
             return g;
         }

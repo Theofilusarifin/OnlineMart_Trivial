@@ -19,13 +19,11 @@ namespace OnlineMart_Trivial
         {
             InitializeComponent();
         }
-
+        Promo p = null;
         private void buttonUbah_Click(object sender, EventArgs e)
         {
             try
             {
-                Promo p = Promo.AmbilData(IdDipilih, FormUtama.koneksi);
-
                 //Ubah menjadi data baru
                 p.Tipe = textBoxTipe.Text;
                 p.Nama = textBoxNama.Text;
@@ -51,7 +49,7 @@ namespace OnlineMart_Trivial
         private void FormUbahPromo_Load(object sender, EventArgs e)
         {
             //Ambil data yang sesuai id
-            Promo p = Promo.AmbilData(IdDipilih, FormUtama.koneksi);
+            p = Promo.AmbilData(IdDipilih);
 
             //Tampilkan data di text box
             textBoxTipe.Text = p.Tipe;

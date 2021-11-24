@@ -71,18 +71,14 @@ namespace OnlineMart_LIB
 
 				listMetodePembayaran.Add(mp);
 			}
-
-			hasil.Close();
-			hasil.Dispose();
-
 			return listMetodePembayaran;
 		}
 
-        public static Metode_pembayaran AmbilData(int id, Koneksi koneksi)
+        public static Metode_pembayaran AmbilData(int id)
         {
             string sql = "select id, nama from metode_pembayarans where id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, koneksi);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             Metode_pembayaran m = null;
 
@@ -91,10 +87,6 @@ namespace OnlineMart_LIB
                 //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
                 m = new Metode_pembayaran(hasil.GetInt32(0), hasil.GetString(1));
             }
-
-            hasil.Close();
-            hasil.Dispose();
-
             return m;
         }
 

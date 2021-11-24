@@ -18,13 +18,12 @@ namespace OnlineMart_Trivial
         {
             InitializeComponent();
         }
+        Metode_pembayaran m = null;
 
-		private void buttonUbah_Click(object sender, EventArgs e)
+        private void buttonUbah_Click(object sender, EventArgs e)
 		{
             try
             {
-                Metode_pembayaran m = Metode_pembayaran.AmbilData(IdDipilih, FormUtama.koneksi);
-
                 //Ubah menjadi data baru
                 m.Nama = textBoxNama.Text;
                 Metode_pembayaran.UbahData(m);
@@ -46,7 +45,7 @@ namespace OnlineMart_Trivial
 		private void FormUbahMetodePembayaran_Load(object sender, EventArgs e)
 		{
             //Ambil data yang sesuai id
-            Metode_pembayaran m = Metode_pembayaran.AmbilData(IdDipilih, FormUtama.koneksi);
+            m = Metode_pembayaran.AmbilData(IdDipilih);
 
             //Tampilkan data di text box
             textBoxNama.Text = m.Nama;

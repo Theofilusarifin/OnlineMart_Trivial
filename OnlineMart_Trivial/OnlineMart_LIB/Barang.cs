@@ -128,25 +128,21 @@ namespace OnlineMart_LIB
             return listBarang;
         }
 
-        public static Barang AmbilData(int id, Koneksi kParram)
+        public static Barang AmbilData(int id)
         {
-            string sql = "select id, nama, harga, kategori_id from barangs where id = " + id;
+            string sql = "select * from barangs b inner join kategoris k on b.kategori_id = k.id where b.id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             Barang b = null;
 
             while (hasil.Read())
             {
                 //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
-                Kategori k = Kategori.AmbilData(hasil.GetInt32(3), kParram);
+                Kategori k = new Kategori(hasil.GetInt32(4), hasil.GetString(5));
 
                 b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
             }
-
-            hasil.Close();
-            hasil.Dispose();
-
             return b;
         }
 
