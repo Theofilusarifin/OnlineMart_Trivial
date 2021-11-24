@@ -14,7 +14,7 @@ namespace OnlineMart_Trivial
 {
     public partial class FormRekapPendapatan : Form
     {
-        List<Int32> tahunOrder = new List<Int32>();
+        List<Int32> listTahun = new List<Int32>();
         List<Order> listOrder = new List<Order>();
 
         string bulan = "";
@@ -109,8 +109,8 @@ namespace OnlineMart_Trivial
                 if (comboBoxTahun.DataSource == null)
                 {
                     // memasukkan tahun yang ada di orders ke combobox
-                    tahunOrder = Order.AmbilTahun();
-                    comboBoxTahun.DataSource = tahunOrder;
+                    listTahun = Order.AmbilTahun();
+                    comboBoxTahun.DataSource = listTahun;
                     comboBoxTahun.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
 

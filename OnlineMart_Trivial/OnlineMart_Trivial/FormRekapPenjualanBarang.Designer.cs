@@ -29,34 +29,88 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.comboBoxCabang = new System.Windows.Forms.ComboBox();
-            this.comboBoxBulan = new System.Windows.Forms.ComboBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.comboBoxTahun = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxBulan = new System.Windows.Forms.ComboBox();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxCabang = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView
+            // buttonSearch
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(76, 141);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(551, 150);
-            this.dataGridView.TabIndex = 0;
+            this.buttonSearch.AutoSize = true;
+            this.buttonSearch.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSearch.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearch.FlatAppearance.BorderSize = 0;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Location = new System.Drawing.Point(1184, 51);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(128, 30);
+            this.buttonSearch.TabIndex = 50;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.buttonSearch.MouseEnter += new System.EventHandler(this.buttonSearch_MouseEnter);
+            this.buttonSearch.MouseLeave += new System.EventHandler(this.buttonSearch_MouseLeave);
             // 
-            // comboBoxCabang
+            // label2
             // 
-            this.comboBoxCabang.FormattingEnabled = true;
-            this.comboBoxCabang.Location = new System.Drawing.Point(76, 50);
-            this.comboBoxCabang.Name = "comboBoxCabang";
-            this.comboBoxCabang.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCabang.TabIndex = 1;
-            this.comboBoxCabang.SelectedIndexChanged += new System.EventHandler(this.comboBoxCabang_SelectedIndexChanged);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label2.Location = new System.Drawing.Point(876, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 22);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Tahun :";
+            // 
+            // comboBoxTahun
+            // 
+            this.comboBoxTahun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTahun.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTahun.FormattingEnabled = true;
+            this.comboBoxTahun.Location = new System.Drawing.Point(880, 51);
+            this.comboBoxTahun.Name = "comboBoxTahun";
+            this.comboBoxTahun.Size = new System.Drawing.Size(248, 30);
+            this.comboBoxTahun.TabIndex = 47;
+            this.comboBoxTahun.SelectedIndexChanged += new System.EventHandler(this.comboBoxTahun_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(278, 407);
+            this.pictureBox1.TabIndex = 45;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label1.Location = new System.Drawing.Point(588, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 22);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Bulan :";
             // 
             // comboBoxBulan
             // 
+            this.comboBoxBulan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBulan.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxBulan.FormattingEnabled = true;
             this.comboBoxBulan.Items.AddRange(new object[] {
+            "",
             "Januari",
             "Februari",
             "Maret",
@@ -69,43 +123,120 @@ namespace OnlineMart_Trivial
             "Oktober",
             "November",
             "Desember"});
-            this.comboBoxBulan.Location = new System.Drawing.Point(298, 50);
+            this.comboBoxBulan.Location = new System.Drawing.Point(592, 52);
             this.comboBoxBulan.Name = "comboBoxBulan";
-            this.comboBoxBulan.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxBulan.TabIndex = 2;
+            this.comboBoxBulan.Size = new System.Drawing.Size(248, 30);
+            this.comboBoxBulan.TabIndex = 44;
             this.comboBoxBulan.SelectedIndexChanged += new System.EventHandler(this.comboBoxBulan_SelectedIndexChanged);
             // 
-            // comboBoxTahun
+            // buttonClose
             // 
-            this.comboBoxTahun.FormattingEnabled = true;
-            this.comboBoxTahun.Location = new System.Drawing.Point(525, 50);
-            this.comboBoxTahun.Name = "comboBoxTahun";
-            this.comboBoxTahun.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxTahun.TabIndex = 3;
-            this.comboBoxTahun.SelectedIndexChanged += new System.EventHandler(this.comboBoxTahun_SelectedIndexChanged);
+            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonClose.AutoSize = true;
+            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClose.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonClose.ForeColor = System.Drawing.Color.White;
+            this.buttonClose.Location = new System.Drawing.Point(1279, 336);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(128, 39);
+            this.buttonClose.TabIndex = 42;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.MouseEnter += new System.EventHandler(this.buttonClose_MouseEnter);
+            this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView.Location = new System.Drawing.Point(308, 113);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.Size = new System.Drawing.Size(1099, 201);
+            this.dataGridView.TabIndex = 41;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label3.Location = new System.Drawing.Point(304, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 22);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "Cabang :";
+            // 
+            // comboBoxCabang
+            // 
+            this.comboBoxCabang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCabang.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCabang.FormattingEnabled = true;
+            this.comboBoxCabang.Items.AddRange(new object[] {
+            "",
+            "Januari",
+            "Februari",
+            "Maret",
+            "April",
+            "Mei",
+            "Juni",
+            "Juli",
+            "Agustus",
+            "September",
+            "Oktober",
+            "November",
+            "Desember"});
+            this.comboBoxCabang.Location = new System.Drawing.Point(308, 52);
+            this.comboBoxCabang.Name = "comboBoxCabang";
+            this.comboBoxCabang.Size = new System.Drawing.Size(248, 30);
+            this.comboBoxCabang.TabIndex = 52;
+            this.comboBoxCabang.SelectedIndexChanged += new System.EventHandler(this.comboBoxCabang_SelectedIndexChanged);
             // 
             // FormRekapPenjualanBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBoxTahun);
-            this.Controls.Add(this.comboBoxBulan);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1458, 407);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxCabang);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBoxTahun);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBoxBulan);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.dataGridView);
             this.Name = "FormRekapPenjualanBarang";
             this.Text = "FormRekapPenjualanBarang";
             this.Load += new System.EventHandler(this.FormRekapPenjualanBarang_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.ComboBox comboBoxCabang;
-        private System.Windows.Forms.ComboBox comboBoxBulan;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxTahun;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxBulan;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBoxCabang;
     }
 }

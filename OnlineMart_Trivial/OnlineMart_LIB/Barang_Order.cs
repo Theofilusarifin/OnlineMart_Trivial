@@ -61,7 +61,7 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static List<Barang_Order> BacaPenjualanBarang(string cabang_id, string bulan, string tahun)
+		public static List<Barang_Order> BacaPenjualanBarang(Cabang cabang, string bulan, string tahun)
 		{
 			string sql = "select * from barang_order bo " +
 				"inner join orders o on bo.order_id = o.id " +
@@ -76,21 +76,23 @@ namespace OnlineMart_LIB
 				"inner join barangs b on bo.barang_id = b.id " +
 				"inner join kategoris k on b.kategori_id = k.id ";
 
+			// kalau semua ada isinya
+			if (cabang != null && bulan != "" && tahun != "") sql += " where o.cabang_id = " + cabang.Id + " and MONTH(o.tanggal_waktu) = '" + bulan + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
+
+			// kalau cabang dan bulan ada isinya
+			else if (cabang != null && bulan != "") sql += " where o.cabang_id = " + cabang.Id + " and MONTH(o.tanggal_waktu) = '" + bulan + "'";
+			// kalau cabang dan tahun ada isinya
+			else if (cabang != null && tahun != "") sql += " where o.cabang_id = " + cabang.Id + " and YEAR(o.tanggal_waktu) = '" + tahun + "'";
+			// kalau bulan dan tahun ada isinya
+			else if (bulan != "" && tahun != "") sql += " where MONTH(o.tanggal_waktu) = '" + bulan + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
+
 			// kalau cabang ada isinya
-			if (cabang_id != "") sql += " where o.cabang_id = '" + cabang_id + "'";
+			else if (cabang != null) sql += " where o.cabang_id = " + cabang.Id;
 			// kalau bulan ada isinya
 			else if (bulan != "") sql += " where MONTH(o.tanggal_waktu) = '" + bulan + "'";
 			// kalau tahun ada isinya
 			else if (tahun != "") sql += " where YEAR(o.tanggal_waktu) = '" + tahun + "'";
-			// kalau cabang dan bulan ada isinya
-			else if (cabang_id != "" && bulan != "") sql += " where o.cabang_id = '" + cabang_id + "' and MONTH(o.tanggal_waktu) = '" + bulan + "'";
-			// kalau cabang dan tahun ada isinya
-			else if (cabang_id != "" && tahun != "") sql += " where o.cabang_id = '" + cabang_id + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
-			// kalau bulan dan tahun ada isinya
-			else if (bulan != "" && tahun != "") sql += " where MONTH(o.tanggal_waktu) = '" + bulan + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
-			// kalau semua ada isinya
-			else if (cabang_id != "" && bulan != "" && tahun != "") sql += " where o.cabang_id = '" + cabang_id + "' and MONTH(o.tanggal_waktu) = '" + bulan + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
-
+			
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			List<Barang_Order> listPenjualanBarang = new List<Barang_Order>();
