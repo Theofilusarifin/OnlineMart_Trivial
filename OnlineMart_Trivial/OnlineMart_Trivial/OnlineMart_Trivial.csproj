@@ -205,6 +205,12 @@
     <Compile Include="FormRekapPenjualanBarang.Designer.cs">
       <DependentUpon>FormRekapPenjualanBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRekapPenjualanOmaSaldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRekapPenjualanOmaSaldo.Designer.cs">
+      <DependentUpon>FormRekapPenjualanOmaSaldo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTambahBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRekapPenjualanBarang.resx">
       <DependentUpon>FormRekapPenjualanBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRekapPenjualanOmaSaldo.resx">
+      <DependentUpon>FormRekapPenjualanOmaSaldo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahBarang.resx">
       <DependentUpon>FormTambahBarang.cs</DependentUpon>

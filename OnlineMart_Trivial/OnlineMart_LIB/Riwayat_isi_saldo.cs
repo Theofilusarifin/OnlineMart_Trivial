@@ -128,6 +128,50 @@ namespace OnlineMart_LIB
             if (jumlahDataDihapus == 0) return false;
             else return true;
         }
+
+        public static List<Riwayat_isi_saldo> BacaTanggal(string bulan, string tahun)
+        {
+            string sql = "select * from riwayat_isi_saldos rws inner join pelanggans p on rws.pelanggan_id = p.id ";
+
+            // kalau bulan dan tahun ada isinya
+            if (bulan != "" && tahun != "") sql += " where MONTH(rws.waktu) = " + bulan + " and YEAR(rws.waktu) = " + tahun;
+            // kalau bulan ada isinya
+            else if (bulan != "") sql += " where MONTH(rws.waktu) = " + bulan;
+            // kalau tahun ada isinya
+            else if (tahun != "") sql += " where YEAR(rws.waktu) = " + tahun;
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<Riwayat_isi_saldo> listRiwayatIsiSaldo = new List<Riwayat_isi_saldo>();
+
+            // masukkan data yang ingin ditampilkan/dibaca ke class
+            while (hasil.Read())
+            {
+                Pelanggan p = new Pelanggan(hasil.GetInt32(4), hasil.GetString(5), hasil.GetString(6), hasil.GetString(7), hasil.GetString(8), hasil.GetString(9), hasil.GetDouble(10), hasil.GetDouble(11));
+
+                Riwayat_isi_saldo r = new Riwayat_isi_saldo(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetInt32(2), p);
+
+                listRiwayatIsiSaldo.Add(r);
+            }
+            return listRiwayatIsiSaldo;
+        }
+
+        public static List<Int32> AmbilTahun()
+        {
+            string sql = "select distinct YEAR(waktu) from riwayat_isi_saldos";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<Int32> listTahun = new List<Int32>();
+
+            while (hasil.Read())
+            {
+                listTahun.Add(hasil.GetInt32(0));
+            }
+
+            return listTahun;
+        }
+
         #endregion
     }
 }

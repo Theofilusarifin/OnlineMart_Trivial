@@ -379,6 +379,7 @@ namespace OnlineMart_Trivial
             try
             {
                 HideSubMenu();
+                openChildForm(new FormRekapPenjualanBarang());
             }
             catch (Exception ex)
             {
@@ -390,6 +391,7 @@ namespace OnlineMart_Trivial
             try
             {
                 HideSubMenu();
+                openChildForm(new FormRekapPenjualanOmaSaldo());
             }
             catch (Exception ex)
             {
@@ -412,6 +414,7 @@ namespace OnlineMart_Trivial
                     pegawai = null;
                     rider = null;
                     konsumen = null;
+                    activeForm.Close();
                     panelKonsumen.Hide();
                     panelPegawai.Hide();
                     panelRider.Hide();

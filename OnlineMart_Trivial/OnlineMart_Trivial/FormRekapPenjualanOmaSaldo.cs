@@ -7,25 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using OnlineMart_LIB;
 
 namespace OnlineMart_Trivial
 {
-    public partial class FormRekapPendapatan : Form
+    public partial class FormRekapPenjualanOmaSaldo : Form
     {
-        List<Int32> tahunOrder = new List<Int32>();
-        List<Order> listOrder = new List<Order>();
+        List<Int32> tahunRiwayatIsiSaldo = new List<Int32>();
+        List<Riwayat_isi_saldo> listRiwayatIsiSaldo = new List<Riwayat_isi_saldo>();
+
+        public FormRekapPenjualanOmaSaldo()
+        {
+            InitializeComponent();
+        }
 
         string bulan = "";
         string tahun = "";
 
         double total = 0;
-
-        public FormRekapPendapatan()
-        {
-            InitializeComponent();
-        }
 
         #region No Tick Constrols
         //Optimized Controls(No Tick)
@@ -48,17 +47,17 @@ namespace OnlineMart_Trivial
 
             //Menambah kolom di datagridview
             dataGridView.Columns.Add("tanggal_waktu", "Tanggal Waktu");
-            dataGridView.Columns.Add("komisi", "Komisi");
+            dataGridView.Columns.Add("pemasukan", "Pemasukkan");
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
             dataGridView.Columns["tanggal_waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["komisi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["pemasukan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             //agar angka rata kanan
-            dataGridView.Columns["komisi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView.Columns["pemasukan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             //agar angka ditampilkan dengan format pemisah ribuan (100 delimiter)
-            dataGridView.Columns["komisi"].DefaultCellStyle.Format = "#,###";
+            dataGridView.Columns["pemasukan"].DefaultCellStyle.Format = "#,###";
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
             dataGridView.AllowUserToAddRows = false;
@@ -75,18 +74,15 @@ namespace OnlineMart_Trivial
                 total = 0;
 
                 // kalau barang order ada isinya
-                if (listOrder.Count > 0)
+                if (listRiwayatIsiSaldo.Count > 0)
                 {
                     // untuk setiap barang di list barang order
-                    foreach (Order o in listOrder)
+                    foreach (Riwayat_isi_saldo ris in listRiwayatIsiSaldo)
                     {
-                        if (o.Status == "Pesanan Diproses")
-                        {
-                            // tunjukkan di datagrid dengan tipe Barang_Order
-                            dataGridView.Rows.Add(o.Tanggal_waktu, o.Ongkos_kirim * 0.8);
+                        // tunjukkan di datagrid dengan tipe Barang_Order
+                        dataGridView.Rows.Add(ris.Waktu, ris.IsiSaldo);
 
-                            total += o.Ongkos_kirim * 0.8;
-                        }
+                        total += ris.IsiSaldo;
                     }
                 }
                 else
@@ -102,25 +98,25 @@ namespace OnlineMart_Trivial
         #endregion
 
         #region FormLoad
-        private void FormRekapPendapatan_Load(object sender, EventArgs e)
+        private void FormRekapPenjualanOmaSaldo_Load(object sender, EventArgs e)
         {
             try
             {
                 if (comboBoxTahun.DataSource == null)
                 {
                     // memasukkan tahun yang ada di orders ke combobox
-                    tahunOrder = Order.AmbilTahun();
-                    comboBoxTahun.DataSource = tahunOrder;
+                    tahunRiwayatIsiSaldo = Riwayat_isi_saldo.AmbilTahun();
+                    comboBoxTahun.DataSource = tahunRiwayatIsiSaldo;
                     comboBoxTahun.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
 
                 FormatDataGrid();
 
-                listOrder = Order.BacaTanggal(FormUtama.rider, bulan, tahun);
+                listRiwayatIsiSaldo = Riwayat_isi_saldo.BacaTanggal(bulan, tahun);
 
                 TampilDataGrid();
 
-                labelTotalPendapatan.Text = "Rp" + total.ToString();
+                labelTotalPemasukan.Text = "Rp" + total.ToString();
             }
             catch (Exception ex)
             {
@@ -132,7 +128,7 @@ namespace OnlineMart_Trivial
         #region Buttons
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            FormRekapPendapatan_Load(sender, e);
+            FormRekapPenjualanOmaSaldo_Load(sender, e);
 
         }
         private void buttonClose_Click(object sender, EventArgs e)
