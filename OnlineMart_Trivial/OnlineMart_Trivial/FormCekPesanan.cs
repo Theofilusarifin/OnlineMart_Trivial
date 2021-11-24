@@ -22,45 +22,73 @@ namespace OnlineMart_Trivial
         List<Order> listOrder = new List<Order>();
         List<Chat> listChat = new List<Chat>();
 
+        #region No Tick Constrols
+        //Optimized Controls(No Tick)
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+        #endregion
+
         #region Methodss
         private void TampilkanPesan()
         {
-            // Bersihkan list box sebelum menambah data baru
-            listBoxPesan.Items.Clear();
-
-            // Define isi chat
-            listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text);
-
-            // Ambil id order yang sedang dipilih
-            Order o = (Order)comboBoxNomorNota.SelectedItem;
-            labelStatusPesanan.Text = o.Status.ToString();
-
-            // Tampilkan pesan
-            foreach (Chat c in listChat)
+            try
             {
-                if (c.Role_pengirim == "konsumen") 
+                // Bersihkan list box sebelum menambah data baru
+                listBoxPesan.Items.Clear();
+
+                // Define isi chat
+                listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text);
+
+                // Ambil id order yang sedang dipilih
+                Order o = (Order)comboBoxNomorNota.SelectedItem;
+                labelStatusPesanan.Text = o.Status.ToString();
+
+                // Tampilkan pesan
+                foreach (Chat c in listChat)
                 {
-                    listBoxPesan.Items.Add("Me : " + c.Isi);
-                }
-                else
-                {
-                    listBoxPesan.Items.Add("Driver : " + c.Isi);
+                    if (c.Role_pengirim == "konsumen") 
+                    {
+                        listBoxPesan.Items.Add("Me : " + c.Isi);
+                    }
+                    else
+                    {
+                        listBoxPesan.Items.Add("Driver : " + c.Isi);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+
         }
         #endregion
 
         #region FormLoad
         private void FormCekPesanan_Load(object sender, EventArgs e)
         {
-            listOrder = Order.BacaData("o.pelanggan_id", FormUtama.konsumen.Id.ToString());
+            try
+            {
+                listOrder = Order.BacaData("o.pelanggan_id", FormUtama.konsumen.Id.ToString());
 
-            comboBoxNomorNota.DataSource = listOrder;
-            comboBoxNomorNota.DisplayMember = "Id";
+                comboBoxNomorNota.DataSource = listOrder;
+                comboBoxNomorNota.DisplayMember = "Id";
 
-            comboBoxNomorNota.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBoxNomorNota.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            TampilkanPesan();
+                TampilkanPesan();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         #endregion
 
@@ -75,20 +103,27 @@ namespace OnlineMart_Trivial
         #region Button
         private void buttonKirim_Click(object sender, EventArgs e)
         {
-            // Ambil id order yang sedang dipilih
-            Order o = (Order)comboBoxNomorNota.SelectedItem;
+            try
+            {
+                // Ambil id order yang sedang dipilih
+                Order o = (Order)comboBoxNomorNota.SelectedItem;
 
-            // Buat Chat baru
-            Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "Konsumen", o, o.Driver, o.Pelanggan);
+                // Buat Chat baru
+                Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "Konsumen", o, o.Driver, o.Pelanggan);
 
-            // Tambahkan Chat Baru
-            Chat.TambahData(chat);
+                // Tambahkan Chat Baru
+                Chat.TambahData(chat);
 
-            // Tampilkan pesan sementara ke ListBox
-            listBoxPesan.Items.Add("Me : " + chat.Isi);
+                // Tampilkan pesan sementara ke ListBox
+                listBoxPesan.Items.Add("Me : " + chat.Isi);
 
-            // Bersihkan Text Box
-            textBoxPesan.Clear();
+                // Bersihkan Text Box
+                textBoxPesan.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal Mengirim Pesan. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         #endregion
 

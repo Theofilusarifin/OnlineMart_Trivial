@@ -45,7 +45,7 @@ namespace OnlineMart_Trivial
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxPassword.Location = new System.Drawing.Point(52, 604);
+            this.textBoxPassword.Location = new System.Drawing.Point(51, 618);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⚉';
             this.textBoxPassword.Size = new System.Drawing.Size(338, 19);
@@ -62,7 +62,7 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelRegistrasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.labelRegistrasi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(65)))), ((int)(((byte)(36)))));
-            this.labelRegistrasi.Location = new System.Drawing.Point(232, 792);
+            this.labelRegistrasi.Location = new System.Drawing.Point(232, 810);
             this.labelRegistrasi.Name = "labelRegistrasi";
             this.labelRegistrasi.Size = new System.Drawing.Size(153, 16);
             this.labelRegistrasi.TabIndex = 7;
@@ -73,7 +73,7 @@ namespace OnlineMart_Trivial
             this.textBoxNama.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxNama.Location = new System.Drawing.Point(51, 309);
+            this.textBoxNama.Location = new System.Drawing.Point(46, 316);
             this.textBoxNama.Name = "textBoxNama";
             this.textBoxNama.Size = new System.Drawing.Size(339, 20);
             this.textBoxNama.TabIndex = 0;
@@ -89,7 +89,7 @@ namespace OnlineMart_Trivial
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonRegister.ForeColor = System.Drawing.Color.White;
-            this.buttonRegister.Location = new System.Drawing.Point(36, 735);
+            this.buttonRegister.Location = new System.Drawing.Point(33, 751);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(373, 41);
             this.buttonRegister.TabIndex = 6;
@@ -104,7 +104,7 @@ namespace OnlineMart_Trivial
             this.textBoxKonfirmasiPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxKonfirmasiPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxKonfirmasiPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxKonfirmasiPassword.Location = new System.Drawing.Point(51, 676);
+            this.textBoxKonfirmasiPassword.Location = new System.Drawing.Point(52, 694);
             this.textBoxKonfirmasiPassword.Name = "textBoxKonfirmasiPassword";
             this.textBoxKonfirmasiPassword.PasswordChar = '⚉';
             this.textBoxKonfirmasiPassword.Size = new System.Drawing.Size(338, 19);
@@ -115,7 +115,7 @@ namespace OnlineMart_Trivial
             this.textBoxNomorTelepon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxNomorTelepon.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxNomorTelepon.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxNomorTelepon.Location = new System.Drawing.Point(52, 456);
+            this.textBoxNomorTelepon.Location = new System.Drawing.Point(51, 466);
             this.textBoxNomorTelepon.Name = "textBoxNomorTelepon";
             this.textBoxNomorTelepon.Size = new System.Drawing.Size(338, 20);
             this.textBoxNomorTelepon.TabIndex = 2;
@@ -125,7 +125,7 @@ namespace OnlineMart_Trivial
             this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxEmail.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxEmail.Location = new System.Drawing.Point(51, 531);
+            this.textBoxEmail.Location = new System.Drawing.Point(52, 542);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(338, 20);
             this.textBoxEmail.TabIndex = 3;
@@ -135,7 +135,7 @@ namespace OnlineMart_Trivial
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUsername.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxUsername.Location = new System.Drawing.Point(51, 381);
+            this.textBoxUsername.Location = new System.Drawing.Point(51, 390);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(339, 20);
             this.textBoxUsername.TabIndex = 1;
@@ -146,7 +146,7 @@ namespace OnlineMart_Trivial
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(434, 845);
+            this.ClientSize = new System.Drawing.Size(434, 865);
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxNomorTelepon);

@@ -118,8 +118,8 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
-
-		private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        #region Datagrid
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			try
 			{
@@ -134,6 +134,49 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+        #endregion
+
+        #region ButtonSearch
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string kriteria = "";
+            switch (comboBoxKriteria.Text)
+            {
+                case "Id":
+                    kriteria = "o.id";
+                    break;
+
+                case "Tanggal":
+                    kriteria = "o.tanggal_waktu";
+                    break;
+
+                case "Alamat":
+                    kriteria = "o.alamat_tujuan";
+                    break;
+
+                case "Ongkos Kirim":
+                    kriteria = "o.ongkos_kirim";
+                    break;
+
+                case "Total Bayar":
+                    kriteria = "o.total_bayar";
+                    break;
+
+                case "Cara Bayar":
+                    kriteria = "o.cara_bayar";
+                    break;
+
+                case "Status":
+                    kriteria = "o.status";
+                    break;
+            }
+
+            listOrder = Order.BacaData(kriteria, textBoxKriteria.Text);
+            FormatDataGrid();
+            TampilDataGrid();
+        }
+        #endregion
+
         #region DesainButton
         private void buttonClose_MouseEnter(object sender, EventArgs e)
         {

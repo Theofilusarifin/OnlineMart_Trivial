@@ -35,6 +35,7 @@ namespace OnlineMart_Trivial
             this.buttonCetak = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonCetakSemua = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +84,7 @@ namespace OnlineMart_Trivial
             // 
             // buttonCetak
             // 
-            this.buttonCetak.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCetak.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonCetak.AutoSize = true;
             this.buttonCetak.BackColor = System.Drawing.Color.Transparent;
             this.buttonCetak.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
@@ -114,7 +115,7 @@ namespace OnlineMart_Trivial
             // 
             // buttonCetakSemua
             // 
-            this.buttonCetakSemua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCetakSemua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonCetakSemua.AutoSize = true;
             this.buttonCetakSemua.BackColor = System.Drawing.Color.Transparent;
             this.buttonCetakSemua.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
@@ -124,7 +125,7 @@ namespace OnlineMart_Trivial
             this.buttonCetakSemua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCetakSemua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonCetakSemua.ForeColor = System.Drawing.Color.White;
-            this.buttonCetakSemua.Location = new System.Drawing.Point(1100, 336);
+            this.buttonCetakSemua.Location = new System.Drawing.Point(466, 336);
             this.buttonCetakSemua.Name = "buttonCetakSemua";
             this.buttonCetakSemua.Size = new System.Drawing.Size(128, 39);
             this.buttonCetakSemua.TabIndex = 66;
@@ -134,12 +135,35 @@ namespace OnlineMart_Trivial
             this.buttonCetakSemua.MouseEnter += new System.EventHandler(this.buttonCetakSemua_MouseEnter);
             this.buttonCetakSemua.MouseLeave += new System.EventHandler(this.buttonCetakSemua_MouseLeave);
             // 
+            // buttonClose
+            // 
+            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonClose.AutoSize = true;
+            this.buttonClose.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClose.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonClose.ForeColor = System.Drawing.Color.White;
+            this.buttonClose.Location = new System.Drawing.Point(1101, 336);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(128, 39);
+            this.buttonClose.TabIndex = 72;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.MouseEnter += new System.EventHandler(this.buttonClose_MouseEnter);
+            this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
+            // 
             // FormCetakNota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 407);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.listBoxData);
             this.Controls.Add(this.buttonCetak);
             this.Controls.Add(this.pictureBox1);
@@ -164,5 +188,6 @@ namespace OnlineMart_Trivial
 		private System.Windows.Forms.ComboBox comboBoxKriteria;
 		private System.Windows.Forms.Button buttonCetakSemua;
 		private System.Windows.Forms.ListBox listBoxData;
-	}
+        private System.Windows.Forms.Button buttonClose;
+    }
 }

@@ -78,5 +78,25 @@ namespace OnlineMart_Trivial
             textBoxPassword.Text = "password";
             textBoxKonfirmasiPassword.Text = "password";
         }
+
+        private void textBoxNomorTelepon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNama_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

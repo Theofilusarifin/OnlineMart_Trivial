@@ -54,7 +54,7 @@ namespace OnlineMart_Trivial
             // comboBoxKriteria
             // 
             this.comboBoxKriteria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKriteria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxKriteria.Font = new System.Drawing.Font("Montserrat", 12F);
             this.comboBoxKriteria.FormattingEnabled = true;
             this.comboBoxKriteria.Items.AddRange(new object[] {
             "Id",
@@ -65,16 +65,16 @@ namespace OnlineMart_Trivial
             "Minimal Belanja"});
             this.comboBoxKriteria.Location = new System.Drawing.Point(308, 52);
             this.comboBoxKriteria.Name = "comboBoxKriteria";
-            this.comboBoxKriteria.Size = new System.Drawing.Size(248, 28);
+            this.comboBoxKriteria.Size = new System.Drawing.Size(248, 30);
             this.comboBoxKriteria.TabIndex = 39;
             // 
             // textBoxKriteria
             // 
             this.textBoxKriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxKriteria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKriteria.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxKriteria.Location = new System.Drawing.Point(602, 54);
             this.textBoxKriteria.Name = "textBoxKriteria";
-            this.textBoxKriteria.Size = new System.Drawing.Size(446, 26);
+            this.textBoxKriteria.Size = new System.Drawing.Size(446, 27);
             this.textBoxKriteria.TabIndex = 34;
             // 
             // dataGridView

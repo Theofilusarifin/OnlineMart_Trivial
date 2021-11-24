@@ -175,6 +175,12 @@
     <Compile Include="FormLoginRider.Designer.cs">
       <DependentUpon>FormLoginRider.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRegisterKonsumen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoginRider.resx">
       <DependentUpon>FormLoginRider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegisterKonsumen.resx">
       <DependentUpon>FormRegisterKonsumen.cs</DependentUpon>
@@ -560,6 +569,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Checkout Belanja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit Profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

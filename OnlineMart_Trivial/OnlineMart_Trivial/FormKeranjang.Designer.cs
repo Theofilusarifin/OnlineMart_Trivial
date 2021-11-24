@@ -45,9 +45,9 @@ namespace OnlineMart_Trivial
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView.Location = new System.Drawing.Point(308, 113);
+            this.dataGridView.Location = new System.Drawing.Point(308, 59);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(921, 201);
+            this.dataGridView.Size = new System.Drawing.Size(921, 255);
             this.dataGridView.TabIndex = 42;
             // 
             // buttonCheckout

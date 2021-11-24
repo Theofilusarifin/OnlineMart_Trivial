@@ -48,6 +48,7 @@ namespace OnlineMart_Trivial
 		{
 			try
 			{
+				listBoxData.Items.Clear();
 				Order o = (Order)comboBoxKriteria.SelectedItem;
 				listBoxData.Items.Add("Id: " + o.Id);
 				listBoxData.Items.Add("Tanggal: " + o.Tanggal_waktu);
@@ -90,6 +91,10 @@ namespace OnlineMart_Trivial
 				MessageBox.Show("Pesan kesalahan : " + ex.Message, "Kesalahan");
 			}
 		}
+		private void buttonClose_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 		#endregion
 
 		#region DesainButton
@@ -109,6 +114,14 @@ namespace OnlineMart_Trivial
         {
 			buttonCetakSemua.BackgroundImage = Properties.Resources.Button_Leave;
 		}
+        private void buttonClose_MouseEnter(object sender, EventArgs e)
+        {
+			buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+		}
+		private void buttonClose_MouseLeave(object sender, EventArgs e)
+        {
+			buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+		}
 		#endregion
-	}
+    }
 }

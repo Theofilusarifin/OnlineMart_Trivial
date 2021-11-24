@@ -235,7 +235,7 @@ namespace OnlineMart_LIB
         public static Boolean UbahData(Pelanggan p)
 		{
 			// Querry Insert
-			string sql = "update pelanggans set nama = '" + p.Nama + "', username = '" + p.Username + "', email = '" + p.Email + "', password = SHA2('" + p.Password + "', 512), telepon = '" + p.Telepon + "' where id = " + p.Id;
+			string sql = "update pelanggans set nama = '" + p.Nama + "', username = '" + p.Username + "', email = '" + p.Email + "', telepon = '" + p.Telepon + "' where id = " + p.Id;
 			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;

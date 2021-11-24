@@ -159,9 +159,20 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                FormCheckout checkout = new FormCheckout();
-                checkout.Owner = this;
-                checkout.Show();
+                //Buka Form
+                Form form = Application.OpenForms["FormCheckout"];
+
+                if (form == null) //Jika Form ini belum di-create sebelumnya
+                {
+                    FormCheckout frm = new FormCheckout(); //Create Object
+                    frm.MdiParent = this; //Set form utama menjadi parent dari objek form yang dibuat
+                    frm.Show(); //Tampilkan form
+                }
+                else
+                {
+                    form.Show();
+                    form.BringToFront(); //Agar form tampil di depan
+                }
             }
             catch (Exception ex)
             {
@@ -205,9 +216,21 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                FormIsiSaldo frm = new FormIsiSaldo();
-                frm.Owner = this;
-                frm.Show();
+                //Buka Form
+                Form form = Application.OpenForms["FormIsiSaldo"];
+
+                if (form == null) //Jika Form ini belum di-create sebelumnya
+                {
+                    FormIsiSaldo frm = new FormIsiSaldo(); //Create Object
+                    frm.Owner = this;
+                    frm.Show();
+                    frm.BringToFront(); //Agar form tampil di depan
+                }
+                else
+                {
+                    form.Show();
+                    form.BringToFront(); //Agar form tampil di depan
+                }
             }
             catch (Exception ex)
             {
@@ -218,7 +241,21 @@ namespace OnlineMart_Trivial
         {
             try
             {
+                //Buka Form
+                Form form = Application.OpenForms["FormProfile"];
 
+                if (form == null) //Jika Form ini belum di-create sebelumnya
+                {
+                    FormProfile frm = new FormProfile(); //Create Object
+                    frm.Owner = this;
+                    frm.Show();
+                    frm.BringToFront(); //Agar form tampil di depan
+                }
+                else
+                {
+                    form.Show();
+                    form.BringToFront(); //Agar form tampil di depan
+                }
             }
             catch (Exception ex)
             {
