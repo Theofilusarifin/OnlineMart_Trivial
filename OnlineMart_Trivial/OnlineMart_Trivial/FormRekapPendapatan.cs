@@ -14,7 +14,7 @@ namespace OnlineMart_Trivial
 {
     public partial class FormRekapPendapatan : Form
     {
-        List<Order> tahunOrder = new List<Order>();
+        List<Int32> tahunOrder = new List<Int32>();
         List<Order> listOrder = new List<Order>();
 
         string bulan = "";
@@ -26,6 +26,19 @@ namespace OnlineMart_Trivial
         {
             InitializeComponent();
         }
+
+        #region No Tick Constrols
+        //Optimized Controls(No Tick)
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+        #endregion
 
         #region Methods
         private void FormatDataGrid()
@@ -80,19 +93,6 @@ namespace OnlineMart_Trivial
                 {
                     dataGridView.DataSource = null;
                 }
-
-                //Tampilkan button dan Hapus
-                if (!dataGridView.Columns.Contains("btnHapusGrid"))
-                {
-                    DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
-
-                    bcolHapus.HeaderText = "Aksi";
-                    bcolHapus.Text = "Hapus";
-                    bcolHapus.Name = "btnHapusGrid";
-                    bcolHapus.UseColumnTextForButtonValue = true;
-
-                    dataGridView.Columns.Add(bcolHapus);
-                }
             }
             catch (Exception ex)
             {
@@ -108,19 +108,18 @@ namespace OnlineMart_Trivial
                 if (comboBoxTahun.DataSource == null)
                 {
                     // memasukkan tahun yang ada di orders ke combobox
-                    tahunOrder = Order.AmbilTahun(FormUtama.koneksi);
+                    tahunOrder = Order.AmbilTahun();
                     comboBoxTahun.DataSource = tahunOrder;
-                    comboBoxTahun.DisplayMember = "Tanggal_waktu";
                     comboBoxTahun.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
 
                 FormatDataGrid();
 
-                listOrder = Order.BacaTanggal(FormUtama.rider.Id, bulan, tahun, FormUtama.koneksi);
+                listOrder = Order.BacaTanggal(FormUtama.rider, bulan, tahun);
 
                 TampilDataGrid();
 
-                labelTotalPendapatan.Text = total.ToString();
+                labelTotalPendapatan.Text = "Rp" + total.ToString();
             }
             catch (Exception ex)
             {
@@ -128,14 +127,23 @@ namespace OnlineMart_Trivial
             }
         }
 
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            FormRekapPendapatan_Load(sender, e);
+
+        }
+
+        #region ComboBox
         private void comboBoxbulan_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                #region switch case
                 // mengubah bulan yang dipilih menjadi angka, tapi tipe tetap string
-                switch (comboBoxBulan.SelectedItem)
+                switch (comboBoxbulan.SelectedItem)
                 {
+                    case "":
+                        bulan = "";
+                        break;
                     case "Januari":
                         bulan = "1";
                         break;
@@ -173,28 +181,43 @@ namespace OnlineMart_Trivial
                         bulan = "12";
                         break;
                 }
-                #endregion
-
-                FormRekapPendapatan_Load(sender, e);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Error");
             }
         }
-
         private void comboBoxTahun_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
                 tahun = comboBoxTahun.SelectedItem.ToString();
-
-                FormRekapPendapatan_Load(sender, e);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Error");
             }
         }
+        #endregion
+
+        #region DesainButton
+        private void buttonClose_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+
+        }
+        private void buttonClose_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonSearch_MouseEnter(object sender, EventArgs e)
+        {
+            buttonSearch.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonSearch_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSearch.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
     }
 }

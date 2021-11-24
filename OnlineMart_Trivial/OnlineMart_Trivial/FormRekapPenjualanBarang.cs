@@ -18,7 +18,7 @@ namespace OnlineMart_Trivial
 
         List<Cabang> idCabang = new List<Cabang>();
         List<Order> bulanOrder = new List<Order>();
-        List<Order> tahunOrder = new List<Order>();
+        List<Int32> tahunOrder = new List<Int32>();
 
         string cabang_id = "";
         string bulan = "";
@@ -97,7 +97,7 @@ namespace OnlineMart_Trivial
                 comboBoxCabang.DisplayMember = "Id";
                 comboBoxCabang.DropDownStyle = ComboBoxStyle.DropDownList;
 
-                tahunOrder = Order.AmbilTahun(FormUtama.koneksi);
+                tahunOrder = Order.AmbilTahun();
                 comboBoxTahun.DataSource = idCabang;
                 comboBoxTahun.DisplayMember = "Tanggal_waktu";
                 comboBoxTahun.DropDownStyle = ComboBoxStyle.DropDownList;

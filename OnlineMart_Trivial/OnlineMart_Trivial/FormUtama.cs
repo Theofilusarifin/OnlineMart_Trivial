@@ -281,7 +281,8 @@ namespace OnlineMart_Trivial
         {
             try
             {
-
+                HideSubMenu();
+                openChildForm(new FormRekapPendapatan());
             }
             catch (Exception ex)
             {
