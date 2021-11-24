@@ -230,6 +230,7 @@ namespace OnlineMart_Trivial
 
         #endregion
 
+        #region Button
         private void buttonCheckout_Click(object sender, EventArgs e)
         {
             thisOrder.Total_bayar = 0;
@@ -243,5 +244,25 @@ namespace OnlineMart_Trivial
 
             MessageBox.Show("Checkout Berhasil! silahkan buka Form Checkout untuk melakukan pembayaran");
         }
+        #endregion
+
+        #region DesainButton
+        private void buttonCheckout_MouseEnter(object sender, EventArgs e)
+        {
+            buttonCheckout.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonCheckout_MouseLeave(object sender, EventArgs e)
+        {
+            buttonCheckout.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonClose_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonClose_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
     }
 }

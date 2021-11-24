@@ -19,7 +19,8 @@ namespace OnlineMart_Trivial
 			InitializeComponent();
 		}
 
-		private void FormCetakNota_Load(object sender, EventArgs e)
+        #region FormLoad
+        private void FormCetakNota_Load(object sender, EventArgs e)
 		{
 			try
 			{
@@ -40,8 +41,10 @@ namespace OnlineMart_Trivial
 				MessageBox.Show("Pesan kesalahan : " + ex.Message, "Kesalahan");
 			}
 		}
+        #endregion
 
-		private void comboBoxKriteria_SelectedIndexChanged(object sender, EventArgs e)
+        #region ComboBox
+        private void comboBoxKriteria_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			try
 			{
@@ -58,8 +61,10 @@ namespace OnlineMart_Trivial
 				MessageBox.Show("Pesan kesalahan : " + ex.Message, "Kesalahan");
 			}
 		}
+        #endregion
 
-		private void buttonCetak_Click(object sender, EventArgs e)
+        #region Button
+        private void buttonCetak_Click(object sender, EventArgs e)
 		{
 			try
 			{
@@ -85,5 +90,25 @@ namespace OnlineMart_Trivial
 				MessageBox.Show("Pesan kesalahan : " + ex.Message, "Kesalahan");
 			}
 		}
+		#endregion
+
+		#region DesainButton
+		private void buttonCetak_MouseEnter(object sender, EventArgs e)
+        {
+			buttonCetak.BackgroundImage = Properties.Resources.Button_Hover;
+		}
+		private void buttonCetak_MouseLeave(object sender, EventArgs e)
+        {
+			buttonCetak.BackgroundImage = Properties.Resources.Button_Leave;
+		}
+		private void buttonCetakSemua_MouseEnter(object sender, EventArgs e)
+        {
+			buttonCetakSemua.BackgroundImage = Properties.Resources.Button_Hover;
+		}
+		private void buttonCetakSemua_MouseLeave(object sender, EventArgs e)
+        {
+			buttonCetakSemua.BackgroundImage = Properties.Resources.Button_Leave;
+		}
+		#endregion
 	}
 }

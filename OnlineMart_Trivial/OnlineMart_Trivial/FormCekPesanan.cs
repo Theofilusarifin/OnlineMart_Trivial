@@ -22,6 +22,7 @@ namespace OnlineMart_Trivial
         List<Order> listOrder = new List<Order>();
         List<Chat> listChat = new List<Chat>();
 
+        #region Methodss
         private void TampilkanPesan()
         {
             // Bersihkan list box sebelum menambah data baru
@@ -47,7 +48,9 @@ namespace OnlineMart_Trivial
                 }
             }
         }
+        #endregion
 
+        #region FormLoad
         private void FormCekPesanan_Load(object sender, EventArgs e)
         {
             listOrder = Order.BacaData("o.pelanggan_id", FormUtama.konsumen.Id.ToString());
@@ -59,13 +62,17 @@ namespace OnlineMart_Trivial
 
             TampilkanPesan();
         }
+        #endregion
 
+        #region ComboBox
         private void comboBoxKriteria_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Tampilkan Pesan berdasarkan order id yang dipilih
             TampilkanPesan();
         }
+        #endregion
 
+        #region Button
         private void buttonKirim_Click(object sender, EventArgs e)
         {
             // Ambil id order yang sedang dipilih
@@ -83,5 +90,17 @@ namespace OnlineMart_Trivial
             // Bersihkan Text Box
             textBoxPesan.Clear();
         }
+        #endregion
+
+        #region DesainButton
+        private void buttonKirim_MouseEnter(object sender, EventArgs e)
+        {
+            buttonKirim.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonKirim_MouseLeave(object sender, EventArgs e)
+        {
+            buttonKirim.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
     }
 }

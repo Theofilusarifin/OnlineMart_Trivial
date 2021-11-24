@@ -104,7 +104,7 @@ namespace OnlineMart_Trivial
             this.listBoxPesan.ItemHeight = 22;
             this.listBoxPesan.Location = new System.Drawing.Point(308, 113);
             this.listBoxPesan.Name = "listBoxPesan";
-            this.listBoxPesan.Size = new System.Drawing.Size(919, 158);
+            this.listBoxPesan.Size = new System.Drawing.Size(921, 180);
             this.listBoxPesan.TabIndex = 37;
             // 
             // buttonKirim
@@ -126,6 +126,8 @@ namespace OnlineMart_Trivial
             this.buttonKirim.Text = "Kirim";
             this.buttonKirim.UseVisualStyleBackColor = false;
             this.buttonKirim.Click += new System.EventHandler(this.buttonKirim_Click);
+            this.buttonKirim.MouseEnter += new System.EventHandler(this.buttonKirim_MouseEnter);
+            this.buttonKirim.MouseLeave += new System.EventHandler(this.buttonKirim_MouseLeave);
             // 
             // textBoxPesan
             // 

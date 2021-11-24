@@ -222,6 +222,14 @@ namespace OnlineMart_Trivial
         {
             buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
         }
+        private void buttonSearch_MouseEnter(object sender, EventArgs e)
+        {
+            buttonSearch.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonSearch_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSearch.BackgroundImage = Properties.Resources.Button_Leave;
+        }
         #endregion
 
         #region Button

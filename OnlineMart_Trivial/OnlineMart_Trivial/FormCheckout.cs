@@ -32,6 +32,7 @@ namespace OnlineMart_Trivial
             else buttonBayar.Enabled = false;
         }
 
+        #region FormLoad
         private void FormCheckout_Load(object sender, EventArgs e)
         {
             try
@@ -78,7 +79,9 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Error");
             }
         }
+        #endregion
 
+        #region ComboBox
         private void comboBoxPromo_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -96,7 +99,6 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Error");
             }
         }
-
         private void comboBoxMetodeBayar_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -114,7 +116,6 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Error");
             }
         }
-
         private void comboBoxKurir_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -132,7 +133,9 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Error");
             }
         }
+        #endregion
 
+        #region Button
         private void buttonBayar_Click(object sender, EventArgs e)
         {
             try
@@ -162,5 +165,17 @@ namespace OnlineMart_Trivial
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
+
+        #region DesainButton
+        private void buttonBayar_MouseEnter(object sender, EventArgs e)
+        {
+            buttonBayar.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonBayar_MouseLeave(object sender, EventArgs e)
+        {
+            buttonBayar.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
     }
 }

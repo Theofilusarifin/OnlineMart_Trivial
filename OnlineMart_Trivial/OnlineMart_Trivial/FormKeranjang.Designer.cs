@@ -69,6 +69,8 @@ namespace OnlineMart_Trivial
             this.buttonCheckout.Text = "Checkout";
             this.buttonCheckout.UseVisualStyleBackColor = false;
             this.buttonCheckout.Click += new System.EventHandler(this.buttonCheckout_Click);
+            this.buttonCheckout.MouseEnter += new System.EventHandler(this.buttonCheckout_MouseEnter);
+            this.buttonCheckout.MouseLeave += new System.EventHandler(this.buttonCheckout_MouseLeave);
             // 
             // buttonClose
             // 
@@ -88,6 +90,8 @@ namespace OnlineMart_Trivial
             this.buttonClose.TabIndex = 43;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.MouseEnter += new System.EventHandler(this.buttonClose_MouseEnter);
+            this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
             // 
             // pictureBox1
             // 

@@ -53,5 +53,16 @@ namespace OnlineMart_Trivial
             textBoxNama.Text = g.Nama;
             textBoxHarga.Text = g.JumlahPoin.ToString();
         }
-	}
+
+        #region DesignButton
+        private void buttonUbah_MouseEnter(object sender, EventArgs e)
+        {
+            buttonUbah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonUbah_MouseLeave(object sender, EventArgs e)
+        {
+            buttonUbah.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
+    }
 }

@@ -65,6 +65,8 @@ namespace OnlineMart_Trivial
             this.buttonTambah.Text = "Tambah";
             this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
+            this.buttonTambah.MouseEnter += new System.EventHandler(this.buttonTambah_MouseEnter);
+            this.buttonTambah.MouseLeave += new System.EventHandler(this.buttonTambah_MouseLeave);
             // 
             // textBoxTipe
             // 

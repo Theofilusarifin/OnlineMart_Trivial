@@ -140,6 +140,8 @@ namespace OnlineMart_Trivial
             this.buttonBayar.Text = "Bayar";
             this.buttonBayar.UseVisualStyleBackColor = false;
             this.buttonBayar.Click += new System.EventHandler(this.buttonBayar_Click);
+            this.buttonBayar.MouseEnter += new System.EventHandler(this.buttonBayar_MouseEnter);
+            this.buttonBayar.MouseLeave += new System.EventHandler(this.buttonBayar_MouseLeave);
             // 
             // FormCheckout
             // 

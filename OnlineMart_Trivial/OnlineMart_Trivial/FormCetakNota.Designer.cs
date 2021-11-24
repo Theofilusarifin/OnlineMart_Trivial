@@ -78,7 +78,7 @@ namespace OnlineMart_Trivial
             this.listBoxData.Location = new System.Drawing.Point(308, 113);
             this.listBoxData.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxData.Name = "listBoxData";
-            this.listBoxData.Size = new System.Drawing.Size(921, 158);
+            this.listBoxData.Size = new System.Drawing.Size(921, 180);
             this.listBoxData.TabIndex = 71;
             // 
             // buttonCetak
@@ -93,13 +93,15 @@ namespace OnlineMart_Trivial
             this.buttonCetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonCetak.ForeColor = System.Drawing.Color.White;
-            this.buttonCetak.Location = new System.Drawing.Point(489, 336);
+            this.buttonCetak.Location = new System.Drawing.Point(308, 336);
             this.buttonCetak.Name = "buttonCetak";
             this.buttonCetak.Size = new System.Drawing.Size(128, 39);
             this.buttonCetak.TabIndex = 70;
             this.buttonCetak.Text = "Cetak";
             this.buttonCetak.UseVisualStyleBackColor = false;
             this.buttonCetak.Click += new System.EventHandler(this.buttonCetak_Click);
+            this.buttonCetak.MouseEnter += new System.EventHandler(this.buttonCetak_MouseEnter);
+            this.buttonCetak.MouseLeave += new System.EventHandler(this.buttonCetak_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -129,6 +131,8 @@ namespace OnlineMart_Trivial
             this.buttonCetakSemua.Text = "Cetak Semua";
             this.buttonCetakSemua.UseVisualStyleBackColor = false;
             this.buttonCetakSemua.Click += new System.EventHandler(this.buttonCetakSemua_Click);
+            this.buttonCetakSemua.MouseEnter += new System.EventHandler(this.buttonCetakSemua_MouseEnter);
+            this.buttonCetakSemua.MouseLeave += new System.EventHandler(this.buttonCetakSemua_MouseLeave);
             // 
             // FormCetakNota
             // 

@@ -60,5 +60,16 @@ namespace OnlineMart_Trivial
             textBoxDiskonMaksimal.Text = p.Diskon_max.ToString();
             textBoxPembelanjaanMinimum.Text = p.Minimal_belanja.ToString();
         }
+
+        #region DesignButton
+        private void buttonUbah_MouseEnter(object sender, EventArgs e)
+        {
+            buttonUbah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonUbah_MouseLeave(object sender, EventArgs e)
+        {
+            buttonUbah.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
     }
 }

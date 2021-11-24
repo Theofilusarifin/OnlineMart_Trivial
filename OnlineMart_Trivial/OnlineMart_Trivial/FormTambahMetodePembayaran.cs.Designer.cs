@@ -29,57 +29,56 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-			this.textBoxNama = new System.Windows.Forms.TextBox();
-			this.buttonTambah = new System.Windows.Forms.Button();
-			this.SuspendLayout();
-			// 
-			// textBoxNama
-			// 
-			this.textBoxNama.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBoxNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
-			this.textBoxNama.Location = new System.Drawing.Point(65, 347);
-			this.textBoxNama.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.textBoxNama.Name = "textBoxNama";
-			this.textBoxNama.Size = new System.Drawing.Size(493, 23);
-			this.textBoxNama.TabIndex = 2;
-			// 
-			// buttonTambah
-			// 
-			this.buttonTambah.AutoSize = true;
-			this.buttonTambah.BackColor = System.Drawing.Color.Transparent;
-			this.buttonTambah.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-			this.buttonTambah.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.buttonTambah.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.buttonTambah.FlatAppearance.BorderSize = 0;
-			this.buttonTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
-			this.buttonTambah.ForeColor = System.Drawing.Color.White;
-			this.buttonTambah.Location = new System.Drawing.Point(51, 457);
-			this.buttonTambah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.buttonTambah.Name = "buttonTambah";
-			this.buttonTambah.Size = new System.Drawing.Size(524, 55);
-			this.buttonTambah.TabIndex = 3;
-			this.buttonTambah.Text = "Tambah";
-			this.buttonTambah.UseVisualStyleBackColor = false;
-			this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
-			// 
-			// FormTambahMetodePembayaran
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Tambah_Metode_Pembayaran;
-			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(623, 581);
-			this.Controls.Add(this.textBoxNama);
-			this.Controls.Add(this.buttonTambah);
-			this.DoubleBuffered = true;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.Name = "FormTambahMetodePembayaran";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Tambah Metode Pembayaran";
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.textBoxNama = new System.Windows.Forms.TextBox();
+            this.buttonTambah = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // textBoxNama
+            // 
+            this.textBoxNama.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
+            this.textBoxNama.Location = new System.Drawing.Point(49, 282);
+            this.textBoxNama.Name = "textBoxNama";
+            this.textBoxNama.Size = new System.Drawing.Size(370, 19);
+            this.textBoxNama.TabIndex = 2;
+            // 
+            // buttonTambah
+            // 
+            this.buttonTambah.AutoSize = true;
+            this.buttonTambah.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTambah.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
+            this.buttonTambah.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonTambah.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTambah.FlatAppearance.BorderSize = 0;
+            this.buttonTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
+            this.buttonTambah.ForeColor = System.Drawing.Color.White;
+            this.buttonTambah.Location = new System.Drawing.Point(38, 371);
+            this.buttonTambah.Name = "buttonTambah";
+            this.buttonTambah.Size = new System.Drawing.Size(393, 45);
+            this.buttonTambah.TabIndex = 3;
+            this.buttonTambah.Text = "Tambah";
+            this.buttonTambah.UseVisualStyleBackColor = false;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
+            this.buttonTambah.MouseEnter += new System.EventHandler(this.buttonTambah_MouseEnter);
+            this.buttonTambah.MouseLeave += new System.EventHandler(this.buttonTambah_MouseLeave);
+            // 
+            // FormTambahMetodePembayaran
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Tambah_Metode_Pembayaran;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(467, 472);
+            this.Controls.Add(this.textBoxNama);
+            this.Controls.Add(this.buttonTambah);
+            this.DoubleBuffered = true;
+            this.Name = "FormTambahMetodePembayaran";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Tambah Metode Pembayaran";
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

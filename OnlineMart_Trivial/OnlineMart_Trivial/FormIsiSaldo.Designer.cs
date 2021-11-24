@@ -72,6 +72,8 @@ namespace OnlineMart_Trivial
             this.buttonBeli.Text = "Beli";
             this.buttonBeli.UseVisualStyleBackColor = false;
             this.buttonBeli.Click += new System.EventHandler(this.buttonBeli_Click);
+            this.buttonBeli.MouseEnter += new System.EventHandler(this.buttonBeli_MouseEnter);
+            this.buttonBeli.MouseLeave += new System.EventHandler(this.buttonBeli_MouseLeave);
             // 
             // FormIsiSaldo
             // 

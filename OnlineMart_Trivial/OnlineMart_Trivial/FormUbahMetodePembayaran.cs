@@ -51,5 +51,16 @@ namespace OnlineMart_Trivial
             //Tampilkan data di text box
             textBoxNama.Text = m.Nama;
         }
-	}
+
+        #region DesignButton
+        private void buttonUbah_MouseEnter_1(object sender, EventArgs e)
+        {
+            buttonUbah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonUbah_MouseLeave_1(object sender, EventArgs e)
+        {
+            buttonUbah.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
+    }
 }

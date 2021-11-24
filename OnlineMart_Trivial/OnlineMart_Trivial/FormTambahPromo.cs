@@ -41,5 +41,17 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Data Promo gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+
+
+        #region DesainButton
+        private void buttonTambah_MouseEnter(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonTambah_MouseLeave(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        #endregion
     }
 }

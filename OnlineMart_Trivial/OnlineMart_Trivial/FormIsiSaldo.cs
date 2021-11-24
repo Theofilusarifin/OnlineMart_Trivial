@@ -43,10 +43,21 @@ namespace OnlineMart_Trivial
 
                 this.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Terjadi error dalam melakukan isi saldo. Pesan kesalahan: " + ex.Message);
             }
         }
+
+        #region DesainButton
+        private void buttonBeli_MouseEnter(object sender, EventArgs e)
+        {
+            buttonBeli.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonBeli_MouseLeave(object sender, EventArgs e)
+        {
+            buttonBeli.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
     }
 }
