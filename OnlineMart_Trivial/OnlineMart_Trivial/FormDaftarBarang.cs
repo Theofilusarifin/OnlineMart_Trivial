@@ -118,22 +118,22 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
-        #region TextBox
-        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
+        #region ButtonSearch
+        private void buttonSearch_Click(object sender, EventArgs e)
         {
             string kriteria = "";
             switch (comboBoxKriteria.Text)
             {
                 case "Id":
-                    kriteria = "id";
+                    kriteria = "b.id";
                     break;
 
                 case "Nama Barang":
-                    kriteria = "nama";
+                    kriteria = "b.nama";
                     break;
 
                 case "Harga Barang":
-                    kriteria = "harga";
+                    kriteria = "b.harga";
                     break;
             }
 

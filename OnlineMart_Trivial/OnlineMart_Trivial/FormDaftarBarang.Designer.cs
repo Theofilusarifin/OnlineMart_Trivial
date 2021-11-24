@@ -65,7 +65,6 @@ namespace OnlineMart_Trivial
             this.textBoxKriteria.Name = "textBoxKriteria";
             this.textBoxKriteria.Size = new System.Drawing.Size(446, 27);
             this.textBoxKriteria.TabIndex = 0;
-            this.textBoxKriteria.TextChanged += new System.EventHandler(this.textBoxKriteria_TextChanged);
             // 
             // comboBoxKriteria
             // 
@@ -163,6 +162,7 @@ namespace OnlineMart_Trivial
             this.buttonSearch.TabIndex = 28;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             this.buttonSearch.MouseEnter += new System.EventHandler(this.buttonSearch_MouseEnter);
             this.buttonSearch.MouseLeave += new System.EventHandler(this.buttonSearch_MouseLeave);
             // 

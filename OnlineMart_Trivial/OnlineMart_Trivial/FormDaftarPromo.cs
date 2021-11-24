@@ -120,8 +120,8 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
-        #region TextBox
-        private void textBoxKriteria_TextChanged(object sender, EventArgs e)
+        #region ButtonSearch
+        private void buttonSearch_Click(object sender, EventArgs e)
         {
             string kriteria = "";
             switch (comboBoxKriteria.Text)

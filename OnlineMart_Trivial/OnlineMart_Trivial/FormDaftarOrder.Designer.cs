@@ -78,7 +78,6 @@ namespace OnlineMart_Trivial
             this.textBoxKriteria.Name = "textBoxKriteria";
             this.textBoxKriteria.Size = new System.Drawing.Size(446, 26);
             this.textBoxKriteria.TabIndex = 56;
-            this.textBoxKriteria.TextChanged += new System.EventHandler(this.textBoxKriteria_TextChanged);
             // 
             // dataGridView
             // 
@@ -144,6 +143,7 @@ namespace OnlineMart_Trivial
             this.buttonSearch.TabIndex = 63;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             this.buttonSearch.MouseEnter += new System.EventHandler(this.buttonSearch_MouseEnter);
             this.buttonSearch.MouseLeave += new System.EventHandler(this.buttonSearch_MouseLeave);
             // 
