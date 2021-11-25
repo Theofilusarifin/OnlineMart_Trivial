@@ -1,0 +1,14 @@
+
+Nama toko anda disini
+No nota = 202111250001
+Tanggal = 11/25/2021 6:26:14 PM
+Pembeli = arifin-4
+Alamat = Test
+Driver = arifin
+Metode Pembayaran = Transfer
+Promo = OnlineMart_LIB.Promo
+Ongkos Kirim = 10000
+Total Bayar = 7,500
+--------------------------------------------------
+Terima kasih!
+==================================================

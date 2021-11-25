@@ -112,6 +112,8 @@ namespace OnlineMart_Trivial
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
+
+                comboBoxKriteria.Text = "Id";
             }
 			catch (Exception ex)
 			{

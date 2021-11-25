@@ -124,11 +124,11 @@ namespace OnlineMart_LIB
             return listPegawai;
         }
 
-        public static Pegawai AmbilData(int id, Koneksi kParram)
+        public static Pegawai AmbilData(int id)
         {
             string sql = "select id, nama, username, email, password, telepon from pegawais where id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             Pegawai p = null;
 
@@ -136,10 +136,6 @@ namespace OnlineMart_LIB
             {
                 p = new Pegawai(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
             }
-
-            hasil.Close();
-            hasil.Dispose();
-
             return p;
         }
 
@@ -164,7 +160,7 @@ namespace OnlineMart_LIB
         public static Pegawai CekLogin(string username, string password, Koneksi kParram)
         {
             string sql = "select id, nama, username, email, password, telepon from pegawais where username = '" + username + "' and password = SHA2('" + password + "', 512)";
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             while (hasil.Read())
             {
@@ -172,10 +168,6 @@ namespace OnlineMart_LIB
 
                 return pegawai;
             }
-
-            hasil.Close();
-            hasil.Dispose();
-
             return null;
         }
         #endregion

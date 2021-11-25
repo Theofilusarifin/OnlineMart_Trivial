@@ -91,19 +91,6 @@ namespace OnlineMart_LIB
 
 				Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), g);
 
-				////Ambil Order
-				//string order_join = "select o.id from orders as o inner join gift_redeems as gr on o.gift_redeem_id = gr.id where gr.id = " + gr.id;
-
-				//MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(order_join);
-
-				//while (hasil_join.Read())
-				//{
-				//	Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
-
-				//	//Tambahkan hasil join ke aggregation relationship
-				//	gr.ListOrder.Add(o_join);
-				//}
-
 				listGiftRedeem.Add(gr);
 			}
 
@@ -112,7 +99,7 @@ namespace OnlineMart_LIB
 
         public static Gift_Redeem AmbilData(int id)
         {
-            string sql = "select * from gift_redeems gr inner join gifts g on gr.gift_id = g.id where id = " + id;
+            string sql = "select * from gift_redeems gr inner join gifts g on gr.gift_id = g.id where gr.id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 

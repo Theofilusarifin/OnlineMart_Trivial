@@ -48,7 +48,7 @@ namespace OnlineMart_Trivial
                 //create object baru
                 Koneksi koneksi = new Koneksi();
                 //create username dan password
-                Driver rider = Driver.CekLogin(textBoxUsername.Text, textBoxPassword.Text, FormUtama.koneksi);
+                Driver rider = Driver.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
 
                 //kalau username dan pass nya benar
                 if (!(rider is null))

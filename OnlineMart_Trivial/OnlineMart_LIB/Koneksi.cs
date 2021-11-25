@@ -83,14 +83,14 @@ namespace OnlineMart_LIB
             return hasil;
         }
 
-        public static MySqlDataReader JalankanPerintahQuery(string sql, Koneksi kParam)
-        {
-            MySqlCommand sqlCommand = new MySqlCommand(sql, kParam.KoneksiDB);
+        //public static MySqlDataReader JalankanPerintahQuery(string sql, Koneksi kParam)
+        //{
+        //    MySqlCommand sqlCommand = new MySqlCommand(sql, kParam.KoneksiDB);
 
-            MySqlDataReader hasil = sqlCommand.ExecuteReader();
+        //    MySqlDataReader hasil = sqlCommand.ExecuteReader();
 
-            return hasil;
-        }
+        //    return hasil;
+        //}
 
         public static int JalankanPerintahDML(string sql)
         {

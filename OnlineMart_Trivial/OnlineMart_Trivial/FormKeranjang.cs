@@ -72,7 +72,6 @@ namespace OnlineMart_Trivial
             dataGridView.AllowUserToAddRows = false;
             dataGridView.ReadOnly = true;
         }
-
         private void TampilDataGrid()
         {
             try
@@ -80,7 +79,7 @@ namespace OnlineMart_Trivial
                 //Kosongi isi datagridview
                 dataGridView.Rows.Clear();
 
-                bool helper = false;
+                int itteration = 0;
 
                 // dimasukkin ke barang_order supaya bisa hitung subtotal sama jumlah barang
                 #region Keranjang to Barang_Order
@@ -96,30 +95,32 @@ namespace OnlineMart_Trivial
                             // untuk setiap barang order
                             foreach (Barang_Order bo in listBarangOrder)
                             {
+                                itteration += 1;
                                 // kalau id barang di keranjang dan list barang order sama
                                 if (b.Id == bo.Barang.Id)
                                 {
-                                    helper = true;
-
                                     // tambah jumlah dan harga
                                     bo.Jumlah += 1;
                                     bo.Harga += b.Harga;
+
+                                    // Barang telah ditemukan dan lanjut ke barang selanjutnya
+                                    itteration = 0;
+                                    break;
+                                }
+                                // kalau tidak ada id yang sama, maka masukkan langsung ke barang order dengan jumlah default 1 dan harga sesuai harga barang
+                                if (itteration == listBarangOrder.Count())
+                                {
+                                    barang_order = new Barang_Order(b, thisOrder, 1, b.Harga);
+                                    listBarangOrder.Add(barang_order);
+                                    itteration = 0;
                                 }
                             }
-                            // kalau tidak ada id yang sama, maka masukkan langsung ke barang order dengan jumlah default 1 dan harga sesuai harga barang
-                            if (helper == false)
-                            {
-                                barang_order = new Barang_Order(b, thisOrder, 1, b.Harga);
-                                listBarangOrder.Add(barang_order);
-                            }
-
                         }
                         else // kalau list barang order kosong
                         {
                             barang_order = new Barang_Order(b, thisOrder, 1, b.Harga);
                             listBarangOrder.Add(barang_order);
                         }
-
                     }
                 }
                 #endregion
@@ -185,6 +186,11 @@ namespace OnlineMart_Trivial
             }
         }
         #endregion
+
+        private void FormKeranjang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            listBarangOrder.Clear();
+        }
 
         #region Datagrid
         private void dataGridViewKeranjang_CellContentClick(object sender, DataGridViewCellEventArgs e)

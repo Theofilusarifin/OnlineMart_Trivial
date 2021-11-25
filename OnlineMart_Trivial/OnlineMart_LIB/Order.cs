@@ -263,7 +263,7 @@ namespace OnlineMart_LIB
                          " where Date(tanggal_waktu) = Date(CURRENT_DATE)" +
                          " order by tanggal_waktu DESC limit 1";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             string hasilNoNota = "";
             if (hasil.Read()) // jika ditemukan nota jual di tanggal hari ini
@@ -285,10 +285,6 @@ namespace OnlineMart_LIB
                                   DateTime.Now.Day.ToString().PadLeft(2, '0') +
                                   "0001";
             }
-
-            hasil.Close();
-            hasil.Dispose();
-
             return hasilNoNota;
         }
 

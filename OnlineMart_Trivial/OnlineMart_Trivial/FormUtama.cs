@@ -143,7 +143,7 @@ namespace OnlineMart_Trivial
             {
                 if (keranjang.Count() == 0)
                 {
-                    MessageBox.Show("Lakukan Checkout Keranjang Terlebih Dahulu!");
+                    MessageBox.Show("Masukkan barang ke dalam keranjang terlebih dahulu!", "Informasi");
                 }
                 else
                 {
@@ -159,19 +159,27 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                //Buka Form
-                Form form = Application.OpenForms["FormCheckout"];
+                if (FormKeranjang.thisOrder.Total_bayar != 0)
+                { 
+                    //Buka Form
+                    Form form = Application.OpenForms["FormCheckout"];
 
-                if (form == null) //Jika Form ini belum di-create sebelumnya
-                {
-                    FormCheckout frm = new FormCheckout(); //Create Object
-                    frm.MdiParent = this; //Set form utama menjadi parent dari objek form yang dibuat
-                    frm.Show(); //Tampilkan form
+                    if (form == null) //Jika Form ini belum di-create sebelumnya
+                    {
+                        FormCheckout frm = new FormCheckout(); //Create Object
+                        frm.Owner = this;
+                        frm.Show();
+                        frm.BringToFront(); //Tampilkan form
+                    }
+                    else
+                    {
+                        form.Show();
+                        form.BringToFront(); //Agar form tampil di depan
+                    }
                 }
                 else
                 {
-                    form.Show();
-                    form.BringToFront(); //Agar form tampil di depan
+                    MessageBox.Show("Lakukan Checkout pada halaman keranjang terlebih dahulu", "Informasi");
                 }
             }
             catch (Exception ex)
@@ -414,7 +422,7 @@ namespace OnlineMart_Trivial
                     pegawai = null;
                     rider = null;
                     konsumen = null;
-                    activeForm.Close();
+                    if (activeForm != null) activeForm.Close();
                     panelKonsumen.Hide();
                     panelPegawai.Hide();
                     panelRider.Hide();

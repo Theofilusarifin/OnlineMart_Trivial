@@ -163,11 +163,11 @@ namespace OnlineMart_LIB
 			return listDriver;
 		}
 
-        public static Driver AmbilData(int id, Koneksi kParram)
+        public static Driver AmbilData(int id)
         {
             string sql = "select id, username, nama, email, password, telepon from drivers where id = " + id;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             Driver d = null;
 
@@ -175,10 +175,6 @@ namespace OnlineMart_LIB
             {
                 d = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
             }
-
-            hasil.Close();
-            hasil.Dispose();
-
             return d;
         }
 
@@ -202,10 +198,10 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static Driver CekLogin(string username, string password, Koneksi kParram)
+		public static Driver CekLogin(string username, string password)
         {
 			string sql = "select id, nama, username, email, password, telepon from drivers where username = '" + username + "' and password = SHA2('" + password + "', 512)";
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             while (hasil.Read())
             {

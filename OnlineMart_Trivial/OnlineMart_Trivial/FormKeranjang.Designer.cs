@@ -115,6 +115,7 @@ namespace OnlineMart_Trivial
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormKeranjang";
             this.Text = "FormKeranjang";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormKeranjang_FormClosing);
             this.Load += new System.EventHandler(this.FormKeranjang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
