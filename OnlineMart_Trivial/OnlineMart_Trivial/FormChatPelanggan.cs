@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineMart_LIB;
 
-
 namespace OnlineMart_Trivial
 {
-    public partial class FormCekPesanan : Form
+    public partial class FormChatPelanggan : Form
     {
-        public FormCekPesanan()
+        public FormChatPelanggan()
         {
             InitializeComponent();
         }
@@ -53,13 +52,13 @@ namespace OnlineMart_Trivial
                 // Tampilkan pesan
                 foreach (Chat c in listChat)
                 {
-                    if (c.Role_pengirim == "konsumen") 
+                    if (c.Role_pengirim == "driver")
                     {
                         listBoxPesan.Items.Add("Me : " + c.Isi);
                     }
                     else
                     {
-                        listBoxPesan.Items.Add("Driver : " + c.Isi);
+                        listBoxPesan.Items.Add("Konsumen : " + c.Isi);
                     }
                 }
             }
@@ -72,11 +71,11 @@ namespace OnlineMart_Trivial
         #endregion
 
         #region FormLoad
-        private void FormCekPesanan_Load(object sender, EventArgs e)
+        private void FormChatPelanggan_Load(object sender, EventArgs e)
         {
             try
             {
-                listOrder = Order.BacaData("o.pelanggan_id", FormUtama.konsumen.Id.ToString());
+                listOrder = Order.BacaData("o.driver_id", FormUtama.rider.Id.ToString());
 
                 comboBoxNomorNota.DataSource = listOrder;
                 comboBoxNomorNota.DisplayMember = "Id";
@@ -93,7 +92,7 @@ namespace OnlineMart_Trivial
         #endregion
 
         #region ComboBox
-        private void comboBoxKriteria_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxNomorNota_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Tampilkan Pesan berdasarkan order id yang dipilih
             TampilkanPesan();
@@ -109,7 +108,7 @@ namespace OnlineMart_Trivial
                 Order o = (Order)comboBoxNomorNota.SelectedItem;
 
                 // Buat Chat baru
-                Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "konsumen", o, o.Driver, o.Pelanggan);
+                Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "driver", o, o.Driver, o.Pelanggan);
 
                 // Tambahkan Chat Baru
                 Chat.TambahData(chat);
@@ -137,5 +136,6 @@ namespace OnlineMart_Trivial
             buttonKirim.BackgroundImage = Properties.Resources.Button_Leave;
         }
         #endregion
+        
     }
 }

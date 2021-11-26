@@ -297,6 +297,18 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormChatPelanggan());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
         #endregion
 
         #region ButtonPegawai
