@@ -133,7 +133,7 @@ namespace OnlineMart_Trivial
                 {
                     Barang b = Barang.AmbilData(id);
                     FormUtama.keranjang.Add(b); //Untuk menambahkan barang ke dalam keranjang
-                    //MessageBox.Show("Barang berhasil di tambahkan ke dalam keranjang");
+                    MessageBox.Show("Barang berhasil di tambahkan ke dalam keranjang");
                 }
             }
             catch (Exception ex)
