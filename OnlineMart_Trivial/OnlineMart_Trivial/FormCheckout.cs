@@ -47,7 +47,7 @@ namespace OnlineMart_Trivial
                     #region Default value data order
                     textBoxId.Text = FormKeranjang.thisOrder.Id.ToString();
                     textBoxTotalBayar.Text = FormKeranjang.thisOrder.Total_bayar.ToString();
-                    textBoxOngkosKirim.Text = 10000.ToString();
+                    textBoxOngkosKirim.Text = FormKeranjang.thisOrder.Ongkos_kirim.ToString();
 
                     FormKeranjang.thisOrder.Cabang = Cabang.AmbilData(1);
                     FormKeranjang.thisOrder.Pelanggan = FormUtama.konsumen;
@@ -151,8 +151,12 @@ namespace OnlineMart_Trivial
                     Barang_Order.TambahData(bo);
                 }
 
-                FormKeranjang.thisOrder = null;
+                // thisOrder dikosongkan sekaligus dibuat baru
+                FormKeranjang.thisOrder = new Order();
+                // keranjang di clear
                 FormUtama.keranjang.Clear();
+                // list barang order di clear
+                FormKeranjang.listBarangOrder.Clear();
 
                 MessageBox.Show("Pembayaran berhasil. Pesanan sedang diproses", "Info");
 

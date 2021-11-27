@@ -434,6 +434,8 @@ namespace OnlineMart_Trivial
                     pegawai = null;
                     rider = null;
                     konsumen = null;
+                    keranjang.Clear();
+                    FormKeranjang.listBarangOrder.Clear();
                     if (activeForm != null) activeForm.Close();
                     panelKonsumen.Hide();
                     panelPegawai.Hide();

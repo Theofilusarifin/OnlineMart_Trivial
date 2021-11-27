@@ -49,6 +49,7 @@ namespace OnlineMart_Trivial
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(921, 255);
             this.dataGridView.TabIndex = 42;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKeranjang_CellContentClick);
             // 
             // buttonCheckout
             // 
@@ -90,6 +91,7 @@ namespace OnlineMart_Trivial
             this.buttonClose.TabIndex = 43;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             this.buttonClose.MouseEnter += new System.EventHandler(this.buttonClose_MouseEnter);
             this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
             // 

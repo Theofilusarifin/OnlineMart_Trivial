@@ -72,6 +72,7 @@ namespace OnlineMart_Trivial
             dataGridView.AllowUserToAddRows = false;
             dataGridView.ReadOnly = true;
         }
+
         private void TampilDataGrid()
         {
             try
@@ -79,44 +80,49 @@ namespace OnlineMart_Trivial
                 //Kosongi isi datagridview
                 dataGridView.Rows.Clear();
 
-                int itteration = 0;
-
+                listBarangOrder.Clear();
                 // dimasukkin ke barang_order supaya bisa hitung subtotal sama jumlah barang
                 #region Keranjang to Barang_Order
-                // kalau keranjang ada isinya/barangnya
+                bool helper;
+
+                // kalau keranjang ada isinya
                 if (FormUtama.keranjang.Count > 0)
                 {
-                    // untuk setiap barang
+                    // untuk setiap barang di keranjang
                     foreach (Barang b in FormUtama.keranjang)
                     {
-                        // kalau list barang order tidak kosong
-                        if (listBarangOrder.Count != 0)
+                        // anggap barang dengan id yang sama tidak akan ketemu dahulu
+                        helper = false;
+
+                        // kalau list barang order ada isinya
+                        if (listBarangOrder.Count > 0)
                         {
-                            // untuk setiap barang order
+                            // untuk setiap barang order di list barang order
                             foreach (Barang_Order bo in listBarangOrder)
                             {
-                                itteration += 1;
-                                // kalau id barang di keranjang dan list barang order sama
+                                // kalau id barang di keranjang sama dengan id barang order di list barang order
                                 if (b.Id == bo.Barang.Id)
                                 {
-                                    // tambah jumlah dan harga
+                                    // ketemu barang dengan id yang sama 
+                                    helper = true;
+
+                                    // jumlah dan harga ditambah
                                     bo.Jumlah += 1;
                                     bo.Harga += b.Harga;
 
-                                    // Barang telah ditemukan dan lanjut ke barang selanjutnya
-                                    itteration = 0;
+                                    // kalau ketemu langsung lanjut ke barang selanjutnya
                                     break;
                                 }
-                                // kalau tidak ada id yang sama, maka masukkan langsung ke barang order dengan jumlah default 1 dan harga sesuai harga barang
-                                if (itteration == listBarangOrder.Count())
-                                {
-                                    barang_order = new Barang_Order(b, thisOrder, 1, b.Harga);
-                                    listBarangOrder.Add(barang_order);
-                                    itteration = 0;
-                                }
+                            }
+                            // kalau tidak ada id yang sama
+                            if (helper == false)
+                            {
+                                barang_order = new Barang_Order(b, thisOrder, 1, b.Harga);
+                                listBarangOrder.Add(barang_order);
                             }
                         }
-                        else // kalau list barang order kosong
+                        // kalau list barang order kosong
+                        else
                         {
                             barang_order = new Barang_Order(b, thisOrder, 1, b.Harga);
                             listBarangOrder.Add(barang_order);
@@ -187,10 +193,12 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
+        #region FormClosing
         private void FormKeranjang_FormClosing(object sender, FormClosingEventArgs e)
         {
             listBarangOrder.Clear();
         }
+        #endregion
 
         #region Datagrid
         private void dataGridViewKeranjang_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -198,28 +206,24 @@ namespace OnlineMart_Trivial
 			try
 			{
                 //Menghapus data bila button hapus diklik
-                int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString());
+                int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
+
                 //Kalau button hapus diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
                 {
-                    string idHapus = dataGridView.CurrentRow.Cells["Id"].Value.ToString();
-                    string namaHapus = dataGridView.CurrentRow.Cells["Nama"].Value.ToString();
+                    string idHapus = dataGridView.CurrentRow.Cells["id"].Value.ToString();
+                    string namaHapus = dataGridView.CurrentRow.Cells["nama"].Value.ToString();
 
                     //User ditanya sesuai dibawah
-                    DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",
+                    DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + " dari keranjang?",
                                                          "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     //Kalau User klik yes barang akan dihapus
                     if (hasil == DialogResult.Yes)
                     {
-                        for (int i = 0; i < FormUtama.keranjang.Count; i++)
-						{
-                            Barang b = FormUtama.keranjang.ElementAt(i);
-                            if (b.Id == id)
-							{
-                                FormUtama.keranjang.RemoveAt(i);
-                            }
-                        }
+                        FormUtama.keranjang.RemoveAll(barang => barang.Id == id);
+
                         MessageBox.Show("Barang berhasil di hapus");
+                        // refresh halaman
                         FormKeranjang_Load(sender, e);
                     }
 					else
@@ -233,14 +237,11 @@ namespace OnlineMart_Trivial
                 MessageBox.Show(ex.Message);
 			}
 		}
-
         #endregion
 
         #region Button
         private void buttonCheckout_Click(object sender, EventArgs e)
         {
-            thisOrder.Total_bayar = 0;
-
             thisOrder.Gift_redeem = Gift_Redeem.AmbilData(1);
 
             foreach (Barang_Order bo in listBarangOrder)
@@ -248,7 +249,18 @@ namespace OnlineMart_Trivial
                 thisOrder.Total_bayar += bo.Harga;
             }
 
-            MessageBox.Show("Checkout Berhasil! silahkan buka Form Checkout untuk melakukan pembayaran");
+            foreach (Barang_Order bo in listBarangOrder)
+            {
+                bo.Order.Total_bayar = thisOrder.Total_bayar;
+                bo.Order.Gift_redeem = thisOrder.Gift_redeem;
+            }
+
+            MessageBox.Show("Checkout Berhasil! Silakan buka Form Checkout untuk melakukan pembayaran");
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         #endregion
 

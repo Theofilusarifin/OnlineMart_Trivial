@@ -75,6 +75,7 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
+        #region FormLoad
         private void FormDaftarBarangPelanggan_Load(object sender, EventArgs e)
         {
             try
@@ -95,6 +96,7 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+        #endregion
 
         #region ButtonSearch
         private void buttonSearch_Click(object sender, EventArgs e)

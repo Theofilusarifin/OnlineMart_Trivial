@@ -151,7 +151,6 @@ namespace OnlineMart_Trivial
                 //Menghapus data bila button hapus diklik
                 int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
 
-
                 //Kalau button hapus diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
                 {
