@@ -242,7 +242,7 @@ namespace OnlineMart_LIB
         public static Boolean UbahData(Order o)
         {
             // Querry Insert
-            string sql = "update orders set tanggal_waktu = '" + o.Tanggal_waktu + "', alamat_tujuan = '" + o.Alamat_tujuan + "', " +
+            string sql = "update barangs set tanggal_waktu = '" + o.Tanggal_waktu + "', alamat_tujuan = '" + o.Alamat_tujuan + "', " +
                          "ongkos_kirim = '" + o.Ongkos_kirim + "', total_bayar = '" + o.Total_bayar + "', cara_bayar = '" + o.Cara_bayar + "', " +
                          "status = '" + o.Status + "', cabang_id = '" + o.Cabang.Id + "', pelanggan_id = '" + o.Pelanggan.Id + "', " +
                          "driver_id = '" + o.Driver.Id + "', metode_pembayaran_id = '" + o.Metode_pembayaran.Id + "', " +
@@ -252,7 +252,6 @@ namespace OnlineMart_LIB
             if (jumlahDitambah == 0) return false;
             else return true;
         }
-
         public static bool UpdateStok(Barang_Order bo)
 		{
             string sql = "update barang_cabang set stok = stok - " + bo.Jumlah + " where barang_id = " + bo.Barang.Id;
@@ -425,8 +424,6 @@ namespace OnlineMart_LIB
             Cetak c = new Cetak(namaFile, 10, 9, 9, 9);
             c.CetakKePrinter();
         }
-
-        public void 
         #endregion
     }
 }

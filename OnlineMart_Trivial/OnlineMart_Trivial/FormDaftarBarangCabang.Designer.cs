@@ -57,7 +57,9 @@ namespace OnlineMart_Trivial
             this.comboBoxKriteria.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKriteria.FormattingEnabled = true;
             this.comboBoxKriteria.Items.AddRange(new object[] {
+            "Id Cabang",
             "Nama Cabang",
+            "Id Barang",
             "Nama Barang",
             "Stok"});
             this.comboBoxKriteria.Location = new System.Drawing.Point(307, 50);

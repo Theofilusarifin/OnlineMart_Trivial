@@ -20,6 +20,8 @@ namespace OnlineMart_Trivial
 
         public static List<Barang> listBarang = new List<Barang>();
         public static List<Cabang> listCabang = new List<Cabang>();
+        public static List<Barang_Cabang> listBarangCabang = new List<Barang_Cabang>();
+        private Cabang cDipilih = Cabang.AmbilPertama();
 
         #region Methods
         private void FormatDataGrid()
@@ -31,12 +33,14 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Add("id", "Id");
             dataGridView.Columns.Add("nama", "Nama Barang");
             dataGridView.Columns.Add("harga", "Harga Barang");
+            dataGridView.Columns.Add("stok", "Stok Barang");
             dataGridView.Columns.Add("kategori_id", "Kategori");
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
             dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["stok"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
@@ -49,10 +53,11 @@ namespace OnlineMart_Trivial
             //Kosongi isi datagridview
             dataGridView.Rows.Clear();
 
-            if (listBarang.Count > 0)
+            if (listBarangCabang.Count > 0)
             {
-                foreach (Barang b in listBarang)
+                foreach (Barang_Cabang bc in listBarangCabang)
                 {
+                    Barang b = Barang.AmbilData(bc.Barang.Id);
                     dataGridView.Rows.Add(b.Id, b.Nama, b.Harga, b.Kategori.Nama);
                 }
             }
@@ -81,6 +86,8 @@ namespace OnlineMart_Trivial
         {
             try
             {
+                listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "");
+
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
 
@@ -174,8 +181,8 @@ namespace OnlineMart_Trivial
 
         private void comboBoxCabang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cabang c = (Cabang)comboBoxCabang.SelectedItem;
-            listBarang = Barang.BacaData("", );
+            cDipilih = (Cabang)comboBoxCabang.SelectedItem;
+            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "");
         }
     }
 }

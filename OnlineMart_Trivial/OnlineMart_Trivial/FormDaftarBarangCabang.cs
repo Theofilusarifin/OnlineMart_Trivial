@@ -54,7 +54,7 @@ namespace OnlineMart_Trivial
             {
                 foreach (Barang_Cabang bc in listBarangCabang)
                 {
-                    dataGridView.Rows.Add(bc.Cabang.Id,bc.Cabang.Nama, bc.Barang.Id, bc.Barang.Nama, bc.Stok);
+                    dataGridView.Rows.Add(bc.Cabang.Id, bc.Cabang.Nama, bc.Barang.Id, bc.Barang.Nama, bc.Stok);
                 }
             }
             else
@@ -72,14 +72,6 @@ namespace OnlineMart_Trivial
                 bcolUbah.Name = "btnUbahGrid";
                 bcolUbah.UseColumnTextForButtonValue = true;
                 dataGridView.Columns.Add(bcolUbah);
-
-                DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
-
-                bcolHapus.HeaderText = "Aksi";
-                bcolHapus.Text = "Hapus";
-                bcolHapus.Name = "btnHapusGrid";
-                bcolHapus.UseColumnTextForButtonValue = true;
-                dataGridView.Columns.Add(bcolHapus);
             }
         }
 
@@ -99,7 +91,7 @@ namespace OnlineMart_Trivial
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
 
-                comboBoxKriteria.Text = "Nama Barang";
+                comboBoxKriteria.Text = "Id Cabang";
             }
             catch (Exception ex)
             {
@@ -113,13 +105,15 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
+                int cabang_id = int.Parse(dataGridView.CurrentRow.Cells["cabang_id"].Value.ToString());
+                int barang_id = int.Parse(dataGridView.CurrentRow.Cells["barang_id"].Value.ToString());
+
 
                 //Kalau button ubah diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnUbahGrid"].Index && e.RowIndex >= 0)
                 {
-                    FormUbahBarangCabang.IdBarangDipilih = id;
-                    FormUbahBarangCabang.IdCabangDipilih= id;
+                    FormUbahBarangCabang.IdCabangDipilih= cabang_id;
+                    FormUbahBarangCabang.IdBarangDipilih = barang_id;
                     FormUbahBarangCabang frm = new FormUbahBarangCabang();
                     frm.Owner = this;
                     frm.Show();
@@ -138,8 +132,16 @@ namespace OnlineMart_Trivial
             string kriteria = "";
             switch (comboBoxKriteria.Text)
             {
+                case "Id Cabang":
+                    kriteria = "bc.cabang_id";
+                    break;
+
                 case "Nama Cabang":
                     kriteria = "c.nama";
+                    break;
+
+                case "Id Barang":
+                    kriteria = "bc.barang_id";
                     break;
 
                 case "Nama Barang":

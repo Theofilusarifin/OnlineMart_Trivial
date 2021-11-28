@@ -150,6 +150,24 @@ namespace OnlineMart_LIB
             return c;
         }
 
+        public static Cabang AmbilPertama()
+        {
+            string sql = "select * from cabangs c inner join pegawais p on c.pegawai_id = p.id limit 1";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            Cabang c = null;
+
+            while (hasil.Read())
+            {
+                Pegawai p = new Pegawai(hasil.GetInt32(4), hasil.GetString(5), hasil.GetString(6), hasil.GetString(7), hasil.GetString(8), hasil.GetString(9));
+
+                c = new Cabang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), p);
+            }
+
+            return c;
+        }
+
         public static Boolean UbahData(Cabang c)
         {
             // Querry Insert
