@@ -42,5 +42,17 @@ namespace OnlineMart_LIB
             set => stok = value; 
         }
         #endregion
+
+        #region Methods
+        public static Boolean TambahData(Barang_Cabang bc)
+        {
+            // Querry Insert
+            string sql = "insert into barang_cabang values (" + bc.Cabang.Id + ", " + bc.Barang.Id + ", " + bc.Stok + ")";
+
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
+        #endregion
     }
 }
