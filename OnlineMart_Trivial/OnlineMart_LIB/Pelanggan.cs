@@ -167,7 +167,13 @@ namespace OnlineMart_LIB
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
-
+		public static Boolean UpdateSaldo(Order o)
+		{
+			string sql = "update pelanggans set saldo = saldo - " + o.Total_bayar + " where id = " + o.Pelanggan.Id;
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
+		}
 		public static List<Pelanggan> BacaData(string kriteria, string nilaiKriteria)
 		{
 			string sql = "select username, nama, email, password, telepon, saldo, poin from pelanggans ";

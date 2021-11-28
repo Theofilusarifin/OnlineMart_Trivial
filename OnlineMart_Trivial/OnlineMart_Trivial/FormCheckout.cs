@@ -151,7 +151,8 @@ namespace OnlineMart_Trivial
                     Barang_Order.TambahData(bo);
                     Order.UpdateStok(bo, FormKeranjang.thisOrder.Cabang);
                 }
-
+                
+                Pelanggan.UpdateSaldo(FormKeranjang.thisOrder);
                 // thisOrder dikosongkan sekaligus dibuat baru
                 FormKeranjang.thisOrder = new Order();
                 // keranjang di clear
