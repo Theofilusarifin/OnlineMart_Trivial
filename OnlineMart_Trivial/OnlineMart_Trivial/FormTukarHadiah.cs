@@ -38,6 +38,8 @@ namespace OnlineMart_Trivial
                 Gift_Redeem gr = new Gift_Redeem(DateTime.Now, gDipilih.JumlahPoin, gDipilih);
                 Gift_Redeem.TambahData(gr);
                 MessageBox.Show("Selamat! Hadiah berhasil ditukarkan!", "Informasi");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {

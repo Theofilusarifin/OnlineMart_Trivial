@@ -166,7 +166,26 @@ namespace OnlineMart_Trivial
 
                     FormKeranjang.IdGenerated = false;
 
-                    this.Close();
+                    DialogResult dialogResult = MessageBox.Show("Apakah anda ingin menukarkan hadiah?", "Penawaran Tukar Hadiah", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        //tampilkan form login
+                        FormTukarHadiah frm = new FormTukarHadiah();
+                        frm.Owner = this;
+
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.Close();
+                        }
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        this.Close();
+                    }
                 }
 				else
 				{
