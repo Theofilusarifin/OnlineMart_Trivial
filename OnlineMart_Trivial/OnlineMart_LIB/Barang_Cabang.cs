@@ -136,7 +136,7 @@ namespace OnlineMart_LIB
                          "inner join cabangs c on bc.cabang_id = c.id " +
                          "inner join pegawais p on c.pegawai_id = p.id " +
                          "inner join barangs b on bc.barang_id = b.id " +
-                         "inner join kategoris k on b.kategori_id = k.id" +
+                         "inner join kategoris k on b.kategori_id = k.id " +
                          "where bc.cabang_id = " + cabang_id + " and bc.barang_id = " + barang_id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);

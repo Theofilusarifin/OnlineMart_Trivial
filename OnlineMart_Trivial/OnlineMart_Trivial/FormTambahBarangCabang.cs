@@ -56,6 +56,12 @@ namespace OnlineMart_Trivial
                 Barang_Cabang.TambahData(bc);
 
                 MessageBox.Show("Data Barang Cabang berhasil ditambahkan", "Informasi");
+
+                // Update Data Di Form Daftar
+                FormDaftarBarangCabang frm = (FormDaftarBarangCabang)this.Owner;
+                frm.FormDaftarBarangCabang_Load(sender, e);
+
+                this.Close();
             }
             catch (Exception ex)
             {
