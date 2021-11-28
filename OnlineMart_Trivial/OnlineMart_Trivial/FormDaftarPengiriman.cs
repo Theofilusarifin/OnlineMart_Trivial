@@ -21,6 +21,8 @@ namespace OnlineMart_Trivial
 
         List<Order> listOrder = new List<Order>();
 
+        Order o = null;
+
         #region No Tick Constrols
         //Optimized Controls(No Tick)
         protected override CreateParams CreateParams
@@ -76,6 +78,19 @@ namespace OnlineMart_Trivial
             {
                 dataGridView.DataSource = null;
             }
+
+            //Tampilkan button Selesai dikirim
+            if (!dataGridView.Columns.Contains("btnSelesaiDikirim"))
+            {
+                DataGridViewButtonColumn bcolSelesaiDikirim = new DataGridViewButtonColumn();
+
+                bcolSelesaiDikirim.HeaderText = "Aksi";
+                bcolSelesaiDikirim.Text = "Selesai Dikirim";
+                bcolSelesaiDikirim.Name = "btnSelesaiDikirim";
+                bcolSelesaiDikirim.UseColumnTextForButtonValue = true;
+
+                dataGridView.Columns.Add(bcolSelesaiDikirim);
+            }
         }
         #endregion
 
@@ -100,6 +115,46 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
 
+        }
+        #endregion
+
+        #region DataGrid
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //Menghapus data bila button hapus diklik
+                long id = long.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
+
+                //Kalau button hapus diklik
+                if (e.ColumnIndex == dataGridView.Columns["btnSelesaiDikirim"].Index && e.RowIndex >= 0)
+                {
+                    o = Order.AmbilData(id);
+
+                    o.Status = "Order Selesai";
+
+                    Order.UbahData(o);
+
+                    MessageBox.Show("");
+                    //Kalau User klik yes barang akan dihapus
+                    //if (hasil == DialogResult.Yes)
+                    //{
+                    //    FormUtama.keranjang.RemoveAll(barang => barang.Id == id);
+
+                    //    MessageBox.Show("Barang berhasil di hapus");
+                    //    // refresh halaman
+                    //    FormKeranjang_Load(sender, e);
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Penghapusan gagal");
+                    //}
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         #endregion
 
