@@ -229,7 +229,7 @@ namespace OnlineMart_LIB
 
                 Gift g = new Gift(hasil.GetInt32(49), hasil.GetString(50), hasil.GetInt32(51));
 
-                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(45), DateTime.Parse(hasil.GetString(46)), hasil.GetString(47), g);
+                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(45), DateTime.Parse(hasil.GetString(46)), hasil.GetInt32(47), g);
 
                 Order o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
 
@@ -273,7 +273,7 @@ namespace OnlineMart_LIB
 
                 Gift g = new Gift(hasil.GetInt32(49), hasil.GetString(50), hasil.GetInt32(51));
 
-                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(45), DateTime.Parse(hasil.GetString(46)), hasil.GetString(47), g);
+                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(45), DateTime.Parse(hasil.GetString(46)), hasil.GetInt32(47), g);
 
                 Order o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
 
@@ -406,7 +406,7 @@ namespace OnlineMart_LIB
 
                 Gift g = new Gift(hasil.GetInt32(49), hasil.GetString(50), hasil.GetInt32(51));
 
-                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(45), DateTime.Parse(hasil.GetString(46)), hasil.GetString(47), g);
+                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(45), DateTime.Parse(hasil.GetString(46)), hasil.GetInt32(47), g);
 
                 o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
             }

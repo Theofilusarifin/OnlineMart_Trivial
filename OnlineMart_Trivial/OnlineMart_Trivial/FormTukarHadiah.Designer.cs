@@ -31,7 +31,7 @@ namespace OnlineMart_Trivial
         {
             this.buttonTukar = new System.Windows.Forms.Button();
             this.textBoxBiayaPoin = new System.Windows.Forms.TextBox();
-            this.comboBoxPegawai = new System.Windows.Forms.ComboBox();
+            this.comboBoxHadiah = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonTukar
@@ -65,16 +65,16 @@ namespace OnlineMart_Trivial
             this.textBoxBiayaPoin.Size = new System.Drawing.Size(370, 20);
             this.textBoxBiayaPoin.TabIndex = 9;
             // 
-            // comboBoxPegawai
+            // comboBoxHadiah
             // 
-            this.comboBoxPegawai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPegawai.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxPegawai.FormattingEnabled = true;
-            this.comboBoxPegawai.Location = new System.Drawing.Point(38, 274);
-            this.comboBoxPegawai.Name = "comboBoxPegawai";
-            this.comboBoxPegawai.Size = new System.Drawing.Size(393, 34);
-            this.comboBoxPegawai.TabIndex = 11;
-            this.comboBoxPegawai.SelectedIndexChanged += new System.EventHandler(this.comboBoxPegawai_SelectedIndexChanged);
+            this.comboBoxHadiah.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxHadiah.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxHadiah.FormattingEnabled = true;
+            this.comboBoxHadiah.Location = new System.Drawing.Point(38, 274);
+            this.comboBoxHadiah.Name = "comboBoxHadiah";
+            this.comboBoxHadiah.Size = new System.Drawing.Size(393, 34);
+            this.comboBoxHadiah.TabIndex = 11;
+            this.comboBoxHadiah.SelectedIndexChanged += new System.EventHandler(this.comboBoxPegawai_SelectedIndexChanged);
             // 
             // FormTukarHadiah
             // 
@@ -83,7 +83,7 @@ namespace OnlineMart_Trivial
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Form_Tukar_Hadiah;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(467, 548);
-            this.Controls.Add(this.comboBoxPegawai);
+            this.Controls.Add(this.comboBoxHadiah);
             this.Controls.Add(this.buttonTukar);
             this.Controls.Add(this.textBoxBiayaPoin);
             this.DoubleBuffered = true;
@@ -100,6 +100,6 @@ namespace OnlineMart_Trivial
 
         private System.Windows.Forms.Button buttonTukar;
         private System.Windows.Forms.TextBox textBoxBiayaPoin;
-        private System.Windows.Forms.ComboBox comboBoxPegawai;
+        private System.Windows.Forms.ComboBox comboBoxHadiah;
     }
 }

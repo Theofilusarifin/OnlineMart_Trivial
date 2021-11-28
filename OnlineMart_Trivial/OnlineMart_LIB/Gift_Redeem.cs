@@ -12,13 +12,13 @@ namespace OnlineMart_LIB
 		#region Field
 		private int id;
 		private DateTime waktu;
-		private string poin_redeem;
+		private int poin_redeem;
 		private Gift gift; //Aggregation
 		List<Order> listOrder; //Aggregation
 		#endregion
 
 		#region Constructor
-		public Gift_Redeem(int id, DateTime waktu, string poin_redeem, Gift gift)
+		public Gift_Redeem(int id, DateTime waktu, int poin_redeem, Gift gift)
         {
             Id = id;
             Waktu = waktu;
@@ -26,7 +26,7 @@ namespace OnlineMart_LIB
             Gift = gift;
 			ListOrder = new List<Order>();
 		}
-		public Gift_Redeem(DateTime waktu, string poin_redeem, Gift gift)
+		public Gift_Redeem(DateTime waktu, int poin_redeem, Gift gift)
 		{
 			Waktu = waktu;
 			Poin_redeem = poin_redeem;
@@ -46,7 +46,7 @@ namespace OnlineMart_LIB
 			get => waktu; 
 			set => waktu = value; 
 		}
-		public string Poin_redeem 
+		public int Poin_redeem 
 		{ 
 			get => poin_redeem; 
 			set => poin_redeem = value; 
@@ -89,7 +89,7 @@ namespace OnlineMart_LIB
 			{
 				Gift g = new Gift(hasil.GetInt32(4), hasil.GetString(5), hasil.GetInt32(6));
 
-				Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), g);
+				Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetInt32(2), g);
 
 				listGiftRedeem.Add(gr);
 			}
@@ -110,7 +110,7 @@ namespace OnlineMart_LIB
             {
 				g = new Gift(hasil.GetInt32(4), hasil.GetString(5), hasil.GetInt32(6));
 
-				gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), g);
+				gr = new Gift_Redeem(hasil.GetInt32(0), DateTime.Parse(hasil.GetString(1)), hasil.GetInt32(2), g);
 			}
             return gr;
         }

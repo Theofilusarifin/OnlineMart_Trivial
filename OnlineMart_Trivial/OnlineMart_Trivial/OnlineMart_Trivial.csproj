@@ -426,6 +426,9 @@
     <EmbeddedResource Include="FormTambahPromo.resx">
       <DependentUpon>FormTambahPromo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTukarHadiah.resx">
+      <DependentUpon>FormTukarHadiah.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUbahBarang.resx">
       <DependentUpon>FormUbahBarang.cs</DependentUpon>
     </EmbeddedResource>
@@ -632,6 +635,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ubah Barang Cabang1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tukar Hadiah.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form Tukar Hadiah.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -111,7 +111,7 @@ namespace OnlineMart_LIB
 
 				Gift g = new Gift(hasil.GetInt32(53), hasil.GetString(54), hasil.GetInt32(55));
 
-				Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(49), DateTime.Parse(hasil.GetString(50)), hasil.GetString(51), g);
+				Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(49), DateTime.Parse(hasil.GetString(50)), hasil.GetInt32(51), g);
 
 				Order o = new Order(long.Parse(hasil.GetString(4)), DateTime.Parse(hasil.GetString(5)), hasil.GetString(6), hasil.GetFloat(7), hasil.GetFloat(8), hasil.GetString(9), hasil.GetString(10), c, p, d, mp, pr, gr);
 

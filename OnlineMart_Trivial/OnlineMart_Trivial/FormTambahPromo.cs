@@ -50,7 +50,7 @@ namespace OnlineMart_Trivial
         }
         private void buttonTambah_MouseLeave(object sender, EventArgs e)
         {
-            buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
         }
         #endregion
     }

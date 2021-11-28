@@ -18,27 +18,37 @@ namespace OnlineMart_Trivial
         }
 
         List<Gift> listGift = new List<Gift>();
+        Gift gDipilih = null;
 
         private void FormTukarHadiah_Load(object sender, EventArgs e)
         {
-            listGift = Pegawai.BacaData("", "");
+            listGift = Gift.BacaData("", "");
 
-            comboBoxPegawai.DataSource = listGift;
-            comboBoxPegawai.DisplayMember = "nama";
-
-            comboBoxPegawai.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            textBoxNama.Focus();
+            comboBoxHadiah.DataSource = listGift;
+            comboBoxHadiah.DisplayMember = "nama";
+            comboBoxHadiah.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void buttonTukar_Click(object sender, EventArgs e)
         {
-
+            // Check apakah poin cukup atau tidak
+            if(FormUtama.konsumen.Poin >= gDipilih.JumlahPoin)
+            {
+                //Masukan data gift redeem
+                Gift_Redeem gr = new Gift_Redeem(DateTime.Now, gDipilih.JumlahPoin, gDipilih);
+                Gift_Redeem.TambahData(gr);
+                MessageBox.Show("Selamat! Hadiah berhasil ditukarkan!", "Informasi");
+            }
+            else
+            {
+                MessageBox.Show("Poin anda tidak cukup untuk menukarkan hadiah ini");
+            }
         }
 
         private void comboBoxPegawai_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            gDipilih = (Gift)comboBoxHadiah.SelectedItem;
+            textBoxBiayaPoin.Text = gDipilih.JumlahPoin.ToString();
         }
 
         #region DesainButton
