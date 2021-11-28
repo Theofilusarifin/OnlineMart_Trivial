@@ -27,16 +27,14 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Clear();
 
             //Menambah kolom di datagridview
-            dataGridView.Columns.Add("id", "Id");
-            dataGridView.Columns.Add("nama", "Nama Barang");
-            dataGridView.Columns.Add("harga", "Harga Barang");
-            dataGridView.Columns.Add("kategori_id", "Kategori");
+            dataGridView.Columns.Add("cabang_id", "Nama Cabang");
+            dataGridView.Columns.Add("barang_id", "Nama Barang");
+            dataGridView.Columns.Add("stok", "Stok");
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["cabang_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["barang_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["stok"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
             dataGridView.AllowUserToAddRows = false;
@@ -50,9 +48,9 @@ namespace OnlineMart_Trivial
 
             if (listBarangCabang.Count > 0)
             {
-                foreach (Barang_Cabang b in listBarangCabang)
+                foreach (Barang_Cabang bc in listBarangCabang)
                 {
-                    //dataGridView.Rows.Add(b.Id, b.Nama, b.Harga, b.Kategori.Nama);
+                    dataGridView.Rows.Add(bc.Cabang.Nama, bc.Barang.Nama, bc.Stok);
                 }
             }
             else
@@ -61,16 +59,23 @@ namespace OnlineMart_Trivial
             }
 
             //Tampilkan button Ubah dan Hapus
-            if (!dataGridView.Columns.Contains("btnTambahKeranjang"))
+            if (!dataGridView.Columns.Contains("btnUbahGrid"))
             {
-                //Button tambah ke keranjang
-                DataGridViewButtonColumn bcolTambahKeranjang = new DataGridViewButtonColumn();
+                DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
 
-                bcolTambahKeranjang.HeaderText = "Masukkan Ke Keranjang";
-                bcolTambahKeranjang.Text = "Masukkan";
-                bcolTambahKeranjang.Name = "btnTambahKeranjang";
-                bcolTambahKeranjang.UseColumnTextForButtonValue = true;
-                dataGridView.Columns.Add(bcolTambahKeranjang);
+                bcolUbah.HeaderText = "Aksi";
+                bcolUbah.Text = "Ubah";
+                bcolUbah.Name = "btnUbahGrid";
+                bcolUbah.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolUbah);
+
+                DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
+
+                bcolHapus.HeaderText = "Aksi";
+                bcolHapus.Text = "Hapus";
+                bcolHapus.Name = "btnHapusGrid";
+                bcolHapus.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolHapus);
             }
         }
 

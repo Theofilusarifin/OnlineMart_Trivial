@@ -36,6 +36,8 @@ namespace OnlineMart_Trivial
             this.buttonSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxCabang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +46,7 @@ namespace OnlineMart_Trivial
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.label1.Location = new System.Drawing.Point(313, 21);
+            this.label1.Location = new System.Drawing.Point(594, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 22);
             this.label1.TabIndex = 33;
@@ -60,7 +62,7 @@ namespace OnlineMart_Trivial
             "Nama Barang",
             "Harga Barang",
             "Kategori"});
-            this.comboBoxKriteria.Location = new System.Drawing.Point(308, 51);
+            this.comboBoxKriteria.Location = new System.Drawing.Point(598, 54);
             this.comboBoxKriteria.Name = "comboBoxKriteria";
             this.comboBoxKriteria.Size = new System.Drawing.Size(248, 30);
             this.comboBoxKriteria.TabIndex = 34;
@@ -70,7 +72,7 @@ namespace OnlineMart_Trivial
             this.textBoxKriteria.BackColor = System.Drawing.Color.White;
             this.textBoxKriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxKriteria.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.textBoxKriteria.Location = new System.Drawing.Point(602, 52);
+            this.textBoxKriteria.Location = new System.Drawing.Point(897, 55);
             this.textBoxKriteria.Name = "textBoxKriteria";
             this.textBoxKriteria.Size = new System.Drawing.Size(446, 27);
             this.textBoxKriteria.TabIndex = 29;
@@ -86,7 +88,7 @@ namespace OnlineMart_Trivial
             this.dataGridView.Location = new System.Drawing.Point(308, 113);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
-            this.dataGridView.Size = new System.Drawing.Size(921, 201);
+            this.dataGridView.Size = new System.Drawing.Size(1250, 201);
             this.dataGridView.TabIndex = 30;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -102,7 +104,7 @@ namespace OnlineMart_Trivial
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Location = new System.Drawing.Point(1101, 51);
+            this.buttonSearch.Location = new System.Drawing.Point(1430, 51);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(128, 30);
             this.buttonSearch.TabIndex = 36;
@@ -133,7 +135,7 @@ namespace OnlineMart_Trivial
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonClose.ForeColor = System.Drawing.Color.White;
-            this.buttonClose.Location = new System.Drawing.Point(1101, 336);
+            this.buttonClose.Location = new System.Drawing.Point(1430, 336);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(128, 39);
             this.buttonClose.TabIndex = 32;
@@ -143,12 +145,40 @@ namespace OnlineMart_Trivial
             this.buttonClose.MouseEnter += new System.EventHandler(this.buttonClose_MouseEnter);
             this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label2.Location = new System.Drawing.Point(304, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 22);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Pilih Cabang :";
+            // 
+            // comboBoxCabang
+            // 
+            this.comboBoxCabang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCabang.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCabang.FormattingEnabled = true;
+            this.comboBoxCabang.Items.AddRange(new object[] {
+            "Id",
+            "Nama Barang",
+            "Harga Barang",
+            "Kategori"});
+            this.comboBoxCabang.Location = new System.Drawing.Point(308, 54);
+            this.comboBoxCabang.Name = "comboBoxCabang";
+            this.comboBoxCabang.Size = new System.Drawing.Size(248, 30);
+            this.comboBoxCabang.TabIndex = 38;
+            this.comboBoxCabang.SelectedIndexChanged += new System.EventHandler(this.comboBoxCabang_SelectedIndexChanged);
+            // 
             // FormDaftarBarangPelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1280, 407);
+            this.ClientSize = new System.Drawing.Size(1609, 407);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBoxCabang);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -174,5 +204,7 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.TextBox textBoxKriteria;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxCabang;
     }
 }

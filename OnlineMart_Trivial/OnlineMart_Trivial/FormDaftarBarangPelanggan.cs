@@ -19,6 +19,7 @@ namespace OnlineMart_Trivial
         }
 
         public static List<Barang> listBarang = new List<Barang>();
+        public static List<Cabang> listCabang = new List<Cabang>();
 
         #region Methods
         private void FormatDataGrid()
@@ -83,8 +84,8 @@ namespace OnlineMart_Trivial
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
 
-                //Tampilkan semua data
-                listBarang = Barang.BacaData("", "");
+                //Tampilkan semua data Cabang
+                listCabang = Cabang.BacaData("", "");
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -170,5 +171,11 @@ namespace OnlineMart_Trivial
             this.Close();
         }
         #endregion
+
+        private void comboBoxCabang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cabang c = (Cabang)comboBoxCabang.SelectedItem;
+            listBarang = Barang.BacaData("", );
+        }
     }
 }
