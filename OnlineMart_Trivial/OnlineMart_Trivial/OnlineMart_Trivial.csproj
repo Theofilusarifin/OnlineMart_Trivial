@@ -423,6 +423,9 @@
     <EmbeddedResource Include="FormUbahBarang.resx">
       <DependentUpon>FormUbahBarang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahBarangCabang.resx">
+      <DependentUpon>FormUbahBarangCabang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUbahCabang.resx">
       <DependentUpon>FormUbahCabang.cs</DependentUpon>
     </EmbeddedResource>
@@ -617,6 +620,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tambah Barang Cabang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ubah Barang Cabang.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

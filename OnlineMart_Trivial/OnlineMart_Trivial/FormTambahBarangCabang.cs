@@ -23,29 +23,55 @@ namespace OnlineMart_Trivial
 
         private void FormTambahBarangCabang_Load(object sender, EventArgs e)
         {
-            listBarang = Barang.BacaData("", "");
-            comboBoxBarang.DataSource = listBarang;
-            comboBoxBarang.DisplayMember = "Nama";
-            comboBoxBarang.DropDownStyle = ComboBoxStyle.DropDownList;
+            try
+            {
+                listBarang = Barang.BacaData("", "");
+                comboBoxBarang.DataSource = listBarang;
+                comboBoxBarang.DisplayMember = "Nama";
+                comboBoxBarang.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            listCabang = Cabang.BacaData("", "");
-            comboBoxCabang.DataSource = listBarang;
-            comboBoxCabang.DisplayMember = "Nama";
-            comboBoxCabang.DropDownStyle = ComboBoxStyle.DropDownList;
+                listCabang = Cabang.BacaData("", "");
+                comboBoxCabang.DataSource = listCabang;
+                comboBoxCabang.DisplayMember = "Nama";
+                comboBoxCabang.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            textBoxStok.Focus();
+                textBoxStok.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka form. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+
         }
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-            Barang barang = (Barang)comboBoxBarang.SelectedItem;
+            try
+            {
+                Barang barang = (Barang)comboBoxBarang.SelectedItem;
 
-            Cabang cabang = (Cabang)comboBoxCabang.SelectedItem;
+                Cabang cabang = (Cabang)comboBoxCabang.SelectedItem;
 
-            Barang_Cabang bc = new Barang_Cabang(cabang, barang, int.Parse(textBoxStok.Text));
+                Barang_Cabang bc = new Barang_Cabang(cabang, barang, int.Parse(textBoxStok.Text));
 
-            Barang_Cabang.TambahData(bc);
+                Barang_Cabang.TambahData(bc);
 
-            MessageBox.Show("Data Barang Cabang berhasil ditambahkan", "Informasi");
+                MessageBox.Show("Data Barang Cabang berhasil ditambahkan", "Informasi");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data Barang Cabang gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
+
+        #region DesainButton
+        private void buttonTambah_MouseEnter(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonTambah_MouseLeave(object sender, EventArgs e)
+        {
+            buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
     }
 }

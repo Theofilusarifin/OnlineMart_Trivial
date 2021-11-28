@@ -27,13 +27,17 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Clear();
 
             //Menambah kolom di datagridview
-            dataGridView.Columns.Add("cabang_id", "Nama Cabang");
-            dataGridView.Columns.Add("barang_id", "Nama Barang");
+            dataGridView.Columns.Add("cabang_id", "Id Cabang");
+            dataGridView.Columns.Add("cabang_nama", "Nama Cabang");
+            dataGridView.Columns.Add("barang_id", "Id Barang");
+            dataGridView.Columns.Add("barang_nama", "Nama Barang");
             dataGridView.Columns.Add("stok", "Stok");
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
             dataGridView.Columns["cabang_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["cabang_nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["barang_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["barang_nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["stok"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
@@ -50,7 +54,7 @@ namespace OnlineMart_Trivial
             {
                 foreach (Barang_Cabang bc in listBarangCabang)
                 {
-                    dataGridView.Rows.Add(bc.Cabang.Nama, bc.Barang.Nama, bc.Stok);
+                    dataGridView.Rows.Add(bc.Cabang.Id,bc.Cabang.Nama, bc.Barang.Id, bc.Barang.Nama, bc.Stok);
                 }
             }
             else
@@ -81,7 +85,8 @@ namespace OnlineMart_Trivial
 
         #endregion
 
-        private void FormDaftarBarangCabang_Load(object sender, EventArgs e)
+        #region FormLoad
+        public void FormDaftarBarangCabang_Load(object sender, EventArgs e)
         {
             try
             {
@@ -101,44 +106,20 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+        #endregion
 
+        #region Datagridview
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                //Menghapus data bila button hapus diklik
                 int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
 
-                //Kalau button hapus diklik
-                if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
-                {
-                    string idHapus = dataGridView.CurrentRow.Cells["id"].Value.ToString();
-                    string namaHapus = dataGridView.CurrentRow.Cells["nama"].Value.ToString();
-
-                    //User ditanya sesuai dibawah
-                    DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + idHapus + " - " + namaHapus + "?",
-                                                         "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    //Kalau User klik yes barang akan dihapus
-                    if (hasil == DialogResult.Yes)
-                    {
-                        Boolean hapus = Barang.HapusData(id);
-
-                        if (hapus == true)
-                        {
-                            MessageBox.Show("Penghapusan data berhasil");
-                            // Refresh Halaman
-                            FormDaftarBarangCabang_Load(sender, e);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Penghapusan data gagal");
-                        }
-                    }
-                }
                 //Kalau button ubah diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnUbahGrid"].Index && e.RowIndex >= 0)
                 {
-                    FormUbahBarangCabang.IdDipilih = id;
+                    FormUbahBarangCabang.IdBarangDipilih = id;
+                    FormUbahBarangCabang.IdCabangDipilih= id;
                     FormUbahBarangCabang frm = new FormUbahBarangCabang();
                     frm.Owner = this;
                     frm.Show();
@@ -149,6 +130,7 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+        #endregion
 
         #region ButtonSearch
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -156,20 +138,20 @@ namespace OnlineMart_Trivial
             string kriteria = "";
             switch (comboBoxKriteria.Text)
             {
+                case "Nama Cabang":
+                    kriteria = "c.nama";
+                    break;
+
                 case "Nama Barang":
                     kriteria = "b.nama";
                     break;
 
-                case "Nama Cabang":
-                    kriteria = "b.harga";
-                    break;
-
                 case "Stok":
-                    kriteria = "b.harga";
+                    kriteria = "bc.stok";
                     break;
             }
 
-            //listBarangCabang = Barang_Cabang.BacaData(kriteria, textBoxKriteria.Text);
+            listBarangCabang = Barang_Cabang.BacaData(kriteria, textBoxKriteria.Text);
             FormatDataGrid();
             TampilDataGrid();
         }
