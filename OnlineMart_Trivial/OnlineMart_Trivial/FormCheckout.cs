@@ -140,31 +140,38 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                FormKeranjang.thisOrder.Alamat_tujuan = textBoxAlamat.Text;
+                if (FormUtama.konsumen.Saldo >= FormKeranjang.thisOrder.Total_bayar) //Kalau saldo mencukupi
+				{
+                    FormKeranjang.thisOrder.Alamat_tujuan = textBoxAlamat.Text;
 
-                FormKeranjang.thisOrder.Status = "Pesanan Diproses";
+                    FormKeranjang.thisOrder.Status = "Pesanan Diproses";
 
-                Order.TambahData(FormKeranjang.thisOrder);
+                    Order.TambahData(FormKeranjang.thisOrder);
 
-                foreach (Barang_Order bo in FormKeranjang.listBarangOrder)
-                {
-                    Barang_Order.TambahData(bo);
-                    Order.UpdateStok(bo, FormKeranjang.thisOrder.Cabang);
+                    foreach (Barang_Order bo in FormKeranjang.listBarangOrder)
+                    {
+                        Barang_Order.TambahData(bo);    
+                        Order.UpdateStok(bo, FormKeranjang.thisOrder.Cabang);
+                    }
+
+                    Pelanggan.UpdateSaldo(FormKeranjang.thisOrder);
+                    // thisOrder dikosongkan sekaligus dibuat baru
+                    FormKeranjang.thisOrder = new Order();
+                    // keranjang di clear
+                    FormUtama.keranjang.Clear();
+                    // list barang order di clear
+                    FormKeranjang.listBarangOrder.Clear();
+
+                    MessageBox.Show("Pembayaran berhasil. Pesanan sedang diproses", "Info");
+
+                    FormKeranjang.IdGenerated = false;
+
+                    this.Close();
                 }
-                
-                Pelanggan.UpdateSaldo(FormKeranjang.thisOrder);
-                // thisOrder dikosongkan sekaligus dibuat baru
-                FormKeranjang.thisOrder = new Order();
-                // keranjang di clear
-                FormUtama.keranjang.Clear();
-                // list barang order di clear
-                FormKeranjang.listBarangOrder.Clear();
-
-                MessageBox.Show("Pembayaran berhasil. Pesanan sedang diproses", "Info");
-
-                FormKeranjang.IdGenerated = false;
-
-                this.Close();
+				else
+				{
+                    MessageBox.Show("Saldo tidak mencukupi! Harap mengisi saldo atau mengurangi barang belanjaan anda!", "Informasi");
+				}
             }
             catch (Exception ex)
             {
