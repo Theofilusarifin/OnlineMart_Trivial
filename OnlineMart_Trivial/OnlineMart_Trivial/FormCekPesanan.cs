@@ -76,7 +76,8 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                listOrder = Order.BacaData("o.pelanggan_id", FormUtama.konsumen.Id.ToString());
+                // Ambil semua order dengan status = "Sedang Diproses"
+                listOrder = Order.BacaOrderDiproses("o.pelanggan_id", FormUtama.konsumen.Id.ToString());
 
                 comboBoxNomorNota.DataSource = listOrder;
                 comboBoxNomorNota.DisplayMember = "Id";
