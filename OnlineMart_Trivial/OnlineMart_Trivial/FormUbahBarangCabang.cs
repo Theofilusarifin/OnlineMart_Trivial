@@ -27,7 +27,12 @@ namespace OnlineMart_Trivial
             bc = Barang_Cabang.AmbilData(IdCabangDipilih, IdBarangDipilih);
 
             //Tampilkan data di text box
-            textBoxStok.Text = bc.Stok.ToString(); ;
+            textBoxBarang.Text = bc.Barang.Nama;
+            textBoxCabang.Text = bc.Cabang.Nama;
+            textBoxStok.Text = bc.Stok.ToString();
+
+            textBoxBarang.ReadOnly = true;
+            textBoxCabang.ReadOnly = true;
         }
         private void buttonUbah_Click(object sender, EventArgs e)
         {

@@ -31,8 +31,8 @@ namespace OnlineMart_Trivial
         {
             this.textBoxStok = new System.Windows.Forms.TextBox();
             this.buttonUbah = new System.Windows.Forms.Button();
-            this.comboBoxCabang = new System.Windows.Forms.ComboBox();
-            this.comboBoxBarang = new System.Windows.Forms.ComboBox();
+            this.textBoxBarang = new System.Windows.Forms.TextBox();
+            this.textBoxCabang = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBoxStok
@@ -66,39 +66,43 @@ namespace OnlineMart_Trivial
             this.buttonUbah.MouseEnter += new System.EventHandler(this.buttonUbah_MouseEnter);
             this.buttonUbah.MouseLeave += new System.EventHandler(this.buttonUbah_MouseLeave);
             // 
-            // comboBoxCabang
+            // textBoxBarang
             // 
-            this.comboBoxCabang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCabang.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCabang.FormattingEnabled = true;
-            this.comboBoxCabang.Location = new System.Drawing.Point(40, 364);
-            this.comboBoxCabang.Name = "comboBoxCabang";
-            this.comboBoxCabang.Size = new System.Drawing.Size(393, 34);
-            this.comboBoxCabang.TabIndex = 8;
+            this.textBoxBarang.BackColor = System.Drawing.Color.White;
+            this.textBoxBarang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxBarang.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.textBoxBarang.ForeColor = System.Drawing.Color.Black;
+            this.textBoxBarang.Location = new System.Drawing.Point(50, 280);
+            this.textBoxBarang.Name = "textBoxBarang";
+            this.textBoxBarang.Size = new System.Drawing.Size(370, 20);
+            this.textBoxBarang.TabIndex = 11;
             // 
-            // comboBoxBarang
+            // textBoxCabang
             // 
-            this.comboBoxBarang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBarang.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxBarang.FormattingEnabled = true;
-            this.comboBoxBarang.Location = new System.Drawing.Point(40, 276);
-            this.comboBoxBarang.Name = "comboBoxBarang";
-            this.comboBoxBarang.Size = new System.Drawing.Size(393, 34);
-            this.comboBoxBarang.TabIndex = 7;
+            this.textBoxCabang.BackColor = System.Drawing.Color.White;
+            this.textBoxCabang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCabang.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.textBoxCabang.ForeColor = System.Drawing.Color.Black;
+            this.textBoxCabang.Location = new System.Drawing.Point(50, 364);
+            this.textBoxCabang.Name = "textBoxCabang";
+            this.textBoxCabang.Size = new System.Drawing.Size(370, 20);
+            this.textBoxCabang.TabIndex = 12;
             // 
             // FormUbahBarangCabang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Ubah_Barang_Cabang;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Ubah_Barang_Cabang1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(467, 634);
+            this.Controls.Add(this.textBoxCabang);
+            this.Controls.Add(this.textBoxBarang);
             this.Controls.Add(this.textBoxStok);
             this.Controls.Add(this.buttonUbah);
-            this.Controls.Add(this.comboBoxCabang);
-            this.Controls.Add(this.comboBoxBarang);
             this.DoubleBuffered = true;
             this.Name = "FormUbahBarangCabang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormUbahBarangCabang";
             this.Load += new System.EventHandler(this.FormUbahBarangCabang_Load);
             this.ResumeLayout(false);
@@ -110,7 +114,7 @@ namespace OnlineMart_Trivial
 
         private System.Windows.Forms.TextBox textBoxStok;
         private System.Windows.Forms.Button buttonUbah;
-        private System.Windows.Forms.ComboBox comboBoxCabang;
-        private System.Windows.Forms.ComboBox comboBoxBarang;
+        private System.Windows.Forms.TextBox textBoxBarang;
+        private System.Windows.Forms.TextBox textBoxCabang;
     }
 }
