@@ -149,6 +149,7 @@ namespace OnlineMart_Trivial
                 foreach (Barang_Order bo in FormKeranjang.listBarangOrder)
                 {
                     Barang_Order.TambahData(bo);
+                    Order.UpdateStok(bo, FormKeranjang.thisOrder.Cabang);
                 }
 
                 // thisOrder dikosongkan sekaligus dibuat baru
