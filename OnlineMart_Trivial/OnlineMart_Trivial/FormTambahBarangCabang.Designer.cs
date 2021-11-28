@@ -71,6 +71,7 @@ namespace OnlineMart_Trivial
             this.buttonTambah.TabIndex = 5;
             this.buttonTambah.Text = "Tambah";
             this.buttonTambah.UseVisualStyleBackColor = false;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
             // FormTambahBarangCabang
             // 
@@ -86,6 +87,7 @@ namespace OnlineMart_Trivial
             this.Name = "FormTambahBarangCabang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTambahBarangCabang";
+            this.Load += new System.EventHandler(this.FormTambahBarangCabang_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
