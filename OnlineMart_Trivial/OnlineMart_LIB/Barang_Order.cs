@@ -64,28 +64,26 @@ namespace OnlineMart_LIB
 		public static List<Barang_Order> BacaPenjualanBarang(Cabang cabang, string bulan, string tahun)
 		{
 			string sql = "select * from barang_order bo " +
-				"inner join orders o on bo.order_id = o.id " +
-				"inner join cabangs as c on o.cabang_id = c.id " +
-				"inner join pegawais as pe on c.pegawai_id = pe.id " +
-				"inner join pelanggans p on o.pelanggan_id = p.id " +
-				"inner join drivers d on o.driver_id = d.id " +
-				"inner join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
-				"inner join promos pr on o.promo_id = pr.id " +
-				"inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
-				"inner join gifts g on gr.gift_id = g.id " +
-				"inner join barangs b on bo.barang_id = b.id " +
-				"inner join kategoris k on b.kategori_id = k.id ";
+				         "inner join orders o on bo.order_id = o.id " +
+				         "inner join cabangs as c on o.cabang_id = c.id " +
+				         "inner join pegawais as pe on c.pegawai_id = pe.id " +
+				         "inner join pelanggans p on o.pelanggan_id = p.id " +
+				         "inner join drivers d on o.driver_id = d.id " +
+				         "inner join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
+				         "inner join promos pr on o.promo_id = pr.id " +
+				         "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
+				         "inner join gifts g on gr.gift_id = g.id " +
+				         "inner join barangs b on bo.barang_id = b.id " +
+				         "inner join kategoris k on b.kategori_id = k.id ";
 
 			// kalau semua ada isinya
 			if (cabang != null && bulan != "" && tahun != "") sql += " where o.cabang_id = " + cabang.Id + " and MONTH(o.tanggal_waktu) = '" + bulan + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
-
 			// kalau cabang dan bulan ada isinya
 			else if (cabang != null && bulan != "") sql += " where o.cabang_id = " + cabang.Id + " and MONTH(o.tanggal_waktu) = '" + bulan + "'";
 			// kalau cabang dan tahun ada isinya
 			else if (cabang != null && tahun != "") sql += " where o.cabang_id = " + cabang.Id + " and YEAR(o.tanggal_waktu) = '" + tahun + "'";
 			// kalau bulan dan tahun ada isinya
 			else if (bulan != "" && tahun != "") sql += " where MONTH(o.tanggal_waktu) = '" + bulan + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
-
 			// kalau cabang ada isinya
 			else if (cabang != null) sql += " where o.cabang_id = " + cabang.Id;
 			// kalau bulan ada isinya

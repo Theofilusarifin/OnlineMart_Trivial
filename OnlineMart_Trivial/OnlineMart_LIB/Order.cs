@@ -252,6 +252,7 @@ namespace OnlineMart_LIB
             if (jumlahDitambah == 0) return false;
             else return true;
         }
+
         public static bool UpdateStok(Barang_Order bo)
 		{
             string sql = "update barang_cabang set stok = stok - " + bo.Jumlah + " where barang_id = " + bo.Barang.Id;
@@ -424,6 +425,8 @@ namespace OnlineMart_LIB
             Cetak c = new Cetak(namaFile, 10, 9, 9, 9);
             c.CetakKePrinter();
         }
+
+        public void 
         #endregion
     }
 }
