@@ -223,6 +223,12 @@
     <Compile Include="FormTambahBarang.Designer.cs">
       <DependentUpon>FormTambahBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTambahBarangCabang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahBarangCabang.Designer.cs">
+      <DependentUpon>FormTambahBarangCabang.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTambahCabang.cs">
       <SubType>Form</SubType>
     </Compile>
