@@ -163,6 +163,7 @@ namespace OnlineMart_Trivial
             this.Name = "FormCheckout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCheckout";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCheckout_FormClosing);
             this.Load += new System.EventHandler(this.FormCheckout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

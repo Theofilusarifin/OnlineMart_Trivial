@@ -63,7 +63,7 @@ namespace OnlineMart_Trivial
         #endregion
 
         #region OpenChildForm
-        private Form activeForm = null;
+        public Form activeForm = null;
         private void openChildForm(Form childForm)
         {
             if (activeForm != null) activeForm.Close();

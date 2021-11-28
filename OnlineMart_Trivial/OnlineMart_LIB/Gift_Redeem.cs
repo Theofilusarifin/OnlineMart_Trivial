@@ -18,6 +18,10 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Constructor
+		public Gift_Redeem(int id)
+		{
+			Id = id;
+		}
 		public Gift_Redeem(int id, DateTime waktu, int poin_redeem, Gift gift)
         {
             Id = id;
@@ -96,8 +100,7 @@ namespace OnlineMart_LIB
 
 			return listGiftRedeem;
 		}
-
-        public static Gift_Redeem AmbilData(int id)
+		public static Gift_Redeem AmbilData(int id)
         {
             string sql = "select * from gift_redeems gr inner join gifts g on gr.gift_id = g.id where gr.id = " + id;
 

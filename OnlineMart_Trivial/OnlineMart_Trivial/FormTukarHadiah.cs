@@ -36,6 +36,7 @@ namespace OnlineMart_Trivial
             {
                 //Masukan data gift redeem
                 Gift_Redeem gr = new Gift_Redeem(DateTime.Now, gDipilih.JumlahPoin, gDipilih);
+                Pelanggan.UpdatePoin(gDipilih, FormUtama.konsumen);
                 Gift_Redeem.TambahData(gr);
                 MessageBox.Show("Selamat! Hadiah berhasil ditukarkan!", "Informasi");
                 this.DialogResult = DialogResult.OK;

@@ -209,5 +209,10 @@ namespace OnlineMart_Trivial
             buttonBayar.BackgroundImage = Properties.Resources.Button_Leave;
         }
         #endregion
+
+        private void FormCheckout_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (FormUtama.frmUtama.activeForm != null) FormUtama.frmUtama.activeForm.Close();
+        }
     }
 }

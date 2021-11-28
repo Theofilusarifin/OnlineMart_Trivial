@@ -242,7 +242,8 @@ namespace OnlineMart_Trivial
         #region Button
         private void buttonCheckout_Click(object sender, EventArgs e)
         {
-            thisOrder.Gift_redeem = Gift_Redeem.AmbilData(1);
+            // Set Default Gift Redeem Id 1
+            thisOrder.Gift_redeem = new Gift_Redeem(1);
 
             foreach (Barang_Order bo in listBarangOrder)
             {

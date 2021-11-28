@@ -174,49 +174,13 @@ namespace OnlineMart_LIB
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
-		public static List<Pelanggan> BacaData(string kriteria, string nilaiKriteria)
+
+		public static Boolean UpdatePoin(Gift g, Pelanggan p)
 		{
-			string sql = "select username, nama, email, password, telepon, saldo, poin from pelanggans ";
-			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
-
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-
-			//Buat list untuk menampung data
-			List<Pelanggan> listPelanggan = new List<Pelanggan>();
-
-			while (hasil.Read())
-			{
-				Pelanggan p = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
-
-				////Ambil Order
-				//string order_join = "select o.id from orders as o inner join pelanggans as p on o.pelanggan_id = p.id where p.id = " + p.id;
-
-				//MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(order_join);
-
-				//while (hasil_join.Read())
-				//{
-				//	Order o_join = Order.AmbilData(hasil_join.GetInt32(0));
-
-				//	//Tambahkan hasil join ke aggregation relationship
-				//	p.ListOrder.Add(o_join);
-				//}
-
-				////Ambil Riwayat Isi Saldo
-				//string riwayat_join = "select rwi.id from riwayat_isi_saldos as rwi inner join pelanggans as p on rwi.pelanggan_id = p.id where p.id = " + p.id;
-
-				//MySqlDataReader hasil_join2 = Koneksi.JalankanPerintahQuery(riwayat_join);
-
-				//while (hasil_join2.Read())
-				//{
-				//	Riwayat_isi_saldo rwi_join = Riwayat_isi_saldo.AmbilData(hasil_join2.GetInt32(0));
-
-				//	//Tambahkan hasil join ke aggregation relationship
-				//	p.ListRiwayatIsiSaldo.Add(rwi_join);
-				//}
-
-				listPelanggan.Add(p);
-			}
-			return listPelanggan;
+			string sql = "update pelanggans set poin = poin - " + g.JumlahPoin + " where id = " + p.Id;
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
 		}
 
         public static Pelanggan AmbilData(int id)

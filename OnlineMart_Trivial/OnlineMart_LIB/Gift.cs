@@ -69,8 +69,8 @@ namespace OnlineMart_LIB
 
         public static List<Gift> BacaData(string kriteria, string nilaiKriteria)
         {
-            string sql = "select * from gifts ";
-            if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+            string sql = "select * from gifts where id > 1 ";
+            if (kriteria != "") sql += " and " + kriteria + " like '%" + nilaiKriteria + "%'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
