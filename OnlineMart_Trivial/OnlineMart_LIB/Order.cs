@@ -252,7 +252,13 @@ namespace OnlineMart_LIB
             if (jumlahDitambah == 0) return false;
             else return true;
         }
-
+        public static bool UpdateStok(Barang_Order bo)
+		{
+            string sql = "update barang_cabang set stok = stok - " + bo.Jumlah + " where barang_id = " + bo.Barang.Id;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
         // membuat id order dengan format yyyyMMddxxxx (yyyy-MM-dd-xxxx)
         // yyyy = tahun ini, MM = bulan ini, dd = hari ini, xxxx = transaksi ke x hari ini
         public static string GenerateIdOrder(Koneksi kParram)
