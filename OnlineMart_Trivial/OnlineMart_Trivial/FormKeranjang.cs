@@ -271,7 +271,7 @@ namespace OnlineMart_Trivial
         }
         private void buttonCheckout_MouseLeave(object sender, EventArgs e)
         {
-            buttonCheckout.BackgroundImage = Properties.Resources.Button_Hover;
+            buttonCheckout.BackgroundImage = Properties.Resources.Button_Leave;
         }
         private void buttonClose_MouseEnter(object sender, EventArgs e)
         {

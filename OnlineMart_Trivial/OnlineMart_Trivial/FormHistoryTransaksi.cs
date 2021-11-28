@@ -120,12 +120,13 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+
         #region Datagrid
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			try
 			{
-                int id = int.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString()); //Untuk mengambil ID dari button yang di klik
+                long id = long.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString()); //Untuk mengambil ID dari button yang di klik
                 if (e.ColumnIndex == dataGridView.Columns["btnCekPesanan"].Index && e.RowIndex >= 0) //Untuk mengecek apakah yang ditekan adalah button cek pesanan
                 {
                     //Hubungkan form cek pesanan di sini

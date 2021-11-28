@@ -370,7 +370,7 @@ namespace OnlineMart_LIB
             StreamWriter file = new StreamWriter(namaFile);
             char pemisah = '-';
             file.WriteLine(""); //Cetak 1 baris kosong
-            file.WriteLine("Nama toko anda disini");
+            file.WriteLine("Online Mart - Trivial");
             foreach (Order o in listData)
             {
                 file.WriteLine("No nota = " + o.Id);
@@ -379,7 +379,7 @@ namespace OnlineMart_LIB
                 file.WriteLine("Alamat = " + o.Alamat_tujuan);
                 file.WriteLine("Driver = " + o.Driver.Nama);
                 file.WriteLine("Metode Pembayaran = " + o.Cara_bayar);
-                file.WriteLine("Promo = " + o.Promo);
+                file.WriteLine("Promo = " + o.Promo.Nama);
                 file.WriteLine("Ongkos Kirim = " + o.Ongkos_kirim);
                 file.WriteLine("Total Bayar = " + o.Total_bayar.ToString("#,###"));
 

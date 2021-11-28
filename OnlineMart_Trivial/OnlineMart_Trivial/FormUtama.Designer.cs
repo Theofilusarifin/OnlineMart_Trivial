@@ -47,7 +47,7 @@ namespace OnlineMart_Trivial
             this.buttonPengaturanCabang = new System.Windows.Forms.Button();
             this.buttonPengaturan = new System.Windows.Forms.Button();
             this.panelRider = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonChatKonsumen = new System.Windows.Forms.Button();
             this.buttonRekapPendapatan = new System.Windows.Forms.Button();
             this.buttonDaftarPengiriman = new System.Windows.Forms.Button();
             this.panelKonsumen = new System.Windows.Forms.Panel();
@@ -109,7 +109,7 @@ namespace OnlineMart_Trivial
             this.panelPegawai.Controls.Add(this.panelPengaturan);
             this.panelPegawai.Controls.Add(this.buttonPengaturan);
             this.panelPegawai.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPegawai.Location = new System.Drawing.Point(0, 733);
+            this.panelPegawai.Location = new System.Drawing.Point(0, 754);
             this.panelPegawai.Name = "panelPegawai";
             this.panelPegawai.Size = new System.Drawing.Size(233, 560);
             this.panelPegawai.TabIndex = 3;
@@ -305,31 +305,31 @@ namespace OnlineMart_Trivial
             // 
             // panelRider
             // 
-            this.panelRider.Controls.Add(this.button1);
+            this.panelRider.Controls.Add(this.buttonChatKonsumen);
             this.panelRider.Controls.Add(this.buttonRekapPendapatan);
             this.panelRider.Controls.Add(this.buttonDaftarPengiriman);
             this.panelRider.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelRider.Location = new System.Drawing.Point(0, 585);
             this.panelRider.Name = "panelRider";
-            this.panelRider.Size = new System.Drawing.Size(233, 148);
+            this.panelRider.Size = new System.Drawing.Size(233, 169);
             this.panelRider.TabIndex = 1;
             this.panelRider.Visible = false;
             // 
-            // button1
+            // buttonChatKonsumen
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 90);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(233, 45);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "CHAT PELANGGAN";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonChatKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonChatKonsumen.FlatAppearance.BorderSize = 0;
+            this.buttonChatKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonChatKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChatKonsumen.Location = new System.Drawing.Point(0, 90);
+            this.buttonChatKonsumen.Name = "buttonChatKonsumen";
+            this.buttonChatKonsumen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonChatKonsumen.Size = new System.Drawing.Size(233, 45);
+            this.buttonChatKonsumen.TabIndex = 2;
+            this.buttonChatKonsumen.Text = "CHAT KONSUMEN";
+            this.buttonChatKonsumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonChatKonsumen.UseVisualStyleBackColor = true;
+            this.buttonChatKonsumen.Click += new System.EventHandler(this.buttonChatKonsumen_Click);
             // 
             // buttonRekapPendapatan
             // 
@@ -514,7 +514,7 @@ namespace OnlineMart_Trivial
             this.buttonLogout.FlatAppearance.BorderSize = 0;
             this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogout.Location = new System.Drawing.Point(0, 1293);
+            this.buttonLogout.Location = new System.Drawing.Point(0, 1314);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonLogout.Size = new System.Drawing.Size(233, 45);
@@ -672,7 +672,7 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label labelwelcome;
         public System.Windows.Forms.Label labelNama;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonChatKonsumen;
     }
 }
 
