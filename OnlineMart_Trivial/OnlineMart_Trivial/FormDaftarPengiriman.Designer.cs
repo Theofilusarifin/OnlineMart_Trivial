@@ -84,7 +84,7 @@ namespace OnlineMart_Trivial
             // comboBoxKriteria
             // 
             this.comboBoxKriteria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKriteria.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.comboBoxKriteria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBoxKriteria.FormattingEnabled = true;
             this.comboBoxKriteria.Items.AddRange(new object[] {
             "Id",
@@ -93,7 +93,7 @@ namespace OnlineMart_Trivial
             "Ongkos Kirim"});
             this.comboBoxKriteria.Location = new System.Drawing.Point(308, 50);
             this.comboBoxKriteria.Name = "comboBoxKriteria";
-            this.comboBoxKriteria.Size = new System.Drawing.Size(248, 30);
+            this.comboBoxKriteria.Size = new System.Drawing.Size(248, 28);
             this.comboBoxKriteria.TabIndex = 68;
             // 
             // buttonClose
@@ -122,10 +122,10 @@ namespace OnlineMart_Trivial
             // 
             this.textBoxKriteria.BackColor = System.Drawing.Color.White;
             this.textBoxKriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxKriteria.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.textBoxKriteria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxKriteria.Location = new System.Drawing.Point(606, 51);
             this.textBoxKriteria.Name = "textBoxKriteria";
-            this.textBoxKriteria.Size = new System.Drawing.Size(446, 27);
+            this.textBoxKriteria.Size = new System.Drawing.Size(446, 26);
             this.textBoxKriteria.TabIndex = 64;
             // 
             // dataGridView
@@ -141,6 +141,7 @@ namespace OnlineMart_Trivial
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.Size = new System.Drawing.Size(921, 201);
             this.dataGridView.TabIndex = 65;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // FormDaftarPengiriman
             // 
