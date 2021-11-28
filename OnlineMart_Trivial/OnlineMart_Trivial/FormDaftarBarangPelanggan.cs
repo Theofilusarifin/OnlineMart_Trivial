@@ -57,8 +57,7 @@ namespace OnlineMart_Trivial
             {
                 foreach (Barang_Cabang bc in listBarangCabang)
                 {
-                    Barang b = Barang.AmbilData(bc.Barang.Id);
-                    dataGridView.Rows.Add(b.Id, b.Nama, b.Harga, b.Kategori.Nama);
+                    dataGridView.Rows.Add(bc.Barang.Id, bc.Barang.Nama, bc.Barang.Harga, bc.Stok, bc.Barang.Kategori.Nama);
                 }
             }
             else
@@ -86,6 +85,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
+                //Default list semua barang di cabang yang pertama
                 listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "");
 
                 //Panggil Method untuk menambah kolom pada datagridview
@@ -103,6 +103,16 @@ namespace OnlineMart_Trivial
             {
                 MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
+        }
+        #endregion
+
+        #region ComboBoxCabang
+        private void comboBoxCabang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cDipilih = (Cabang)comboBoxCabang.SelectedItem;
+            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "");
+            FormatDataGrid();
+            TampilDataGrid();
         }
         #endregion
 
@@ -125,7 +135,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listBarang = Barang.BacaData(kriteria, textBoxKriteria.Text);
+            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), kriteria, textBoxKriteria.Text);
             FormatDataGrid();
             TampilDataGrid();
         }
@@ -178,11 +188,5 @@ namespace OnlineMart_Trivial
             this.Close();
         }
         #endregion
-
-        private void comboBoxCabang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cDipilih = (Cabang)comboBoxCabang.SelectedItem;
-            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "");
-        }
     }
 }
