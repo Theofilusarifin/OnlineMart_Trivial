@@ -103,7 +103,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listOrder = Order.BacaData("o.driver_id", FormUtama.rider.Id.ToString());
+                listOrder = Order.BacaData("Pesanan Diproses", "o.driver_id", FormUtama.rider.Id.ToString());
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -135,20 +135,7 @@ namespace OnlineMart_Trivial
 
                     Order.UbahData(o);
 
-                    MessageBox.Show("");
-                    //Kalau User klik yes barang akan dihapus
-                    //if (hasil == DialogResult.Yes)
-                    //{
-                    //    FormUtama.keranjang.RemoveAll(barang => barang.Id == id);
-
-                    //    MessageBox.Show("Barang berhasil di hapus");
-                    //    // refresh halaman
-                    //    FormKeranjang_Load(sender, e);
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Penghapusan gagal");
-                    //}
+                    MessageBox.Show("Order selesai diubah");
                 }
             }
             catch (Exception ex)

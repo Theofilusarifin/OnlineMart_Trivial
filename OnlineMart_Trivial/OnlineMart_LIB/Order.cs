@@ -239,6 +239,49 @@ namespace OnlineMart_LIB
             return listOrder;
         }
 
+        public static List<Order> BacaData(string status, string kriteria, string nilaiKriteria)
+        {
+            string sql = "select * from orders o " +
+                         "inner join pelanggans p on o.pelanggan_id = p.id " +
+                         "inner join drivers d on o.driver_id = d.id " +
+                         "inner join cabangs c on o.cabang_id = c.id " +
+                         "inner join pegawais pe on c.pegawai_id = pe.id " +
+                         "inner join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
+                         "inner join promos pr on o.promo_id = pr.id " +
+                         "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
+                         "inner join gifts g on gr.gift_id = g.id " +
+                         "where o.status = " + status + " and " + kriteria + " like '%" + nilaiKriteria + "%'";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<Order> listOrder = new List<Order>();
+
+            while (hasil.Read())
+            {
+                Pelanggan p = new Pelanggan(hasil.GetInt32(13), hasil.GetString(14), hasil.GetString(15), hasil.GetString(16), hasil.GetString(17), hasil.GetString(18), hasil.GetDouble(19), hasil.GetDouble(20));
+
+                Driver d = new Driver(hasil.GetInt32(21), hasil.GetString(22), hasil.GetString(23), hasil.GetString(24), hasil.GetString(25), hasil.GetString(26));
+
+                Pegawai pe = new Pegawai(hasil.GetInt32(31), hasil.GetString(32), hasil.GetString(33), hasil.GetString(34), hasil.GetString(35), hasil.GetString(36));
+
+                Cabang c = new Cabang(hasil.GetInt32(27), hasil.GetString(28), hasil.GetString(29), pe);
+
+                Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(37), hasil.GetString(38));
+
+                Promo pr = new Promo(hasil.GetInt32(39), hasil.GetString(40), hasil.GetString(41), hasil.GetInt32(42), hasil.GetInt32(43), hasil.GetFloat(44));
+
+                Gift g = new Gift(hasil.GetInt32(49), hasil.GetString(50), hasil.GetInt32(51));
+
+                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(45), DateTime.Parse(hasil.GetString(46)), hasil.GetInt32(47), g);
+
+                Order o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, p, d, mp, pr, gr);
+
+                listOrder.Add(o);
+            }
+
+            return listOrder;
+        }
+
         public static List<Order> BacaOrderDiproses(string kriteria, string nilaiKriteria)
         {
             string sql = "select * from orders o " +
@@ -286,11 +329,12 @@ namespace OnlineMart_LIB
         public static Boolean UbahData(Order o)
         {
             // Querry Insert
-            string sql = "update barangs set tanggal_waktu = '" + o.Tanggal_waktu + "', alamat_tujuan = '" + o.Alamat_tujuan + "', " +
+            string sql = "update orders set tanggal_waktu = '" + o.Tanggal_waktu + "', alamat_tujuan = '" + o.Alamat_tujuan + "', " +
                          "ongkos_kirim = '" + o.Ongkos_kirim + "', total_bayar = '" + o.Total_bayar + "', cara_bayar = '" + o.Cara_bayar + "', " +
-                         "status = '" + o.Status + "', cabang_id = '" + o.Cabang.Id + "', pelanggan_id = '" + o.Pelanggan.Id + "', " +
-                         "driver_id = '" + o.Driver.Id + "', metode_pembayaran_id = '" + o.Metode_pembayaran.Id + "', " +
-                         "promo_id = '" + o.Promo.Id + "', gift_redeem_id = '" + o.Gift_redeem.Id + "'";
+                         "status = '" + o.Status + "', driver_id = '" + o.Driver.Id + "', cabang_id = '" + o.Cabang.Id + "', " +
+                         "metode_pembayaran_id = '" + o.Metode_pembayaran.Id + "', promo_id = '" + o.Promo.Id + "', " +
+                         "gift_redeem_id = '" + o.Gift_redeem.Id + "', pelanggan_id = '" + o.Pelanggan.Id + "' " +
+                         "where id = '" + o.Id + "'";
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
