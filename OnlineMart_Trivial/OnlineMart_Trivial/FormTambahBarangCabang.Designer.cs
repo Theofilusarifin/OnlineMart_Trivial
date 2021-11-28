@@ -32,6 +32,7 @@ namespace OnlineMart_Trivial
             this.comboBoxBarang = new System.Windows.Forms.ComboBox();
             this.comboBoxCabang = new System.Windows.Forms.ComboBox();
             this.buttonTambah = new System.Windows.Forms.Button();
+            this.textBoxStok = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // comboBoxBarang
@@ -73,6 +74,16 @@ namespace OnlineMart_Trivial
             this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
+            // textBoxStok
+            // 
+            this.textBoxStok.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxStok.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.textBoxStok.ForeColor = System.Drawing.Color.DimGray;
+            this.textBoxStok.Location = new System.Drawing.Point(50, 449);
+            this.textBoxStok.Name = "textBoxStok";
+            this.textBoxStok.Size = new System.Drawing.Size(370, 20);
+            this.textBoxStok.TabIndex = 6;
+            // 
             // FormTambahBarangCabang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -80,6 +91,7 @@ namespace OnlineMart_Trivial
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Tambah_Barang_Cabang;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(467, 634);
+            this.Controls.Add(this.textBoxStok);
             this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.comboBoxCabang);
             this.Controls.Add(this.comboBoxBarang);
@@ -98,5 +110,6 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.ComboBox comboBoxBarang;
         private System.Windows.Forms.ComboBox comboBoxCabang;
         private System.Windows.Forms.Button buttonTambah;
+        private System.Windows.Forms.TextBox textBoxStok;
     }
 }

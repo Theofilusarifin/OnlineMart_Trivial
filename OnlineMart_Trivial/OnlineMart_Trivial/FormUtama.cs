@@ -352,7 +352,19 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
-        private void buttonPengaturanMetode_Click(object sender, EventArgs e)
+        private void buttonPengaturanStok_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormDaftarBarangCabang());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        private void buttonPengaturanMetodePembayaran_Click(object sender, EventArgs e)
         {
             try
             {
