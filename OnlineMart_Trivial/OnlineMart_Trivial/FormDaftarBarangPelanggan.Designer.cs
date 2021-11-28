@@ -33,11 +33,11 @@ namespace OnlineMart_Trivial
             this.comboBoxKriteria = new System.Windows.Forms.ComboBox();
             this.textBoxKriteria = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxCabang = new System.Windows.Forms.ComboBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxCabang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +92,27 @@ namespace OnlineMart_Trivial
             this.dataGridView.TabIndex = 30;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label2.Location = new System.Drawing.Point(304, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 22);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Pilih Cabang :";
+            // 
+            // comboBoxCabang
+            // 
+            this.comboBoxCabang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCabang.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCabang.FormattingEnabled = true;
+            this.comboBoxCabang.Location = new System.Drawing.Point(308, 54);
+            this.comboBoxCabang.Name = "comboBoxCabang";
+            this.comboBoxCabang.Size = new System.Drawing.Size(248, 30);
+            this.comboBoxCabang.TabIndex = 38;
+            this.comboBoxCabang.SelectedIndexChanged += new System.EventHandler(this.comboBoxCabang_SelectedIndexChanged);
+            // 
             // buttonSearch
             // 
             this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -144,32 +165,6 @@ namespace OnlineMart_Trivial
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             this.buttonClose.MouseEnter += new System.EventHandler(this.buttonClose_MouseEnter);
             this.buttonClose.MouseLeave += new System.EventHandler(this.buttonClose_MouseLeave);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.label2.Location = new System.Drawing.Point(304, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 22);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Pilih Cabang :";
-            // 
-            // comboBoxCabang
-            // 
-            this.comboBoxCabang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCabang.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCabang.FormattingEnabled = true;
-            this.comboBoxCabang.Items.AddRange(new object[] {
-            "Id",
-            "Nama Barang",
-            "Harga Barang",
-            "Kategori"});
-            this.comboBoxCabang.Location = new System.Drawing.Point(308, 54);
-            this.comboBoxCabang.Name = "comboBoxCabang";
-            this.comboBoxCabang.Size = new System.Drawing.Size(248, 30);
-            this.comboBoxCabang.TabIndex = 38;
-            this.comboBoxCabang.SelectedIndexChanged += new System.EventHandler(this.comboBoxCabang_SelectedIndexChanged);
             // 
             // FormDaftarBarangPelanggan
             // 

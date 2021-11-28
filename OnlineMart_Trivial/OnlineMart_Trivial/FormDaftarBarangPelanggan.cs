@@ -23,6 +23,19 @@ namespace OnlineMart_Trivial
         public static List<Barang_Cabang> listBarangCabang = new List<Barang_Cabang>();
         private Cabang cDipilih = Cabang.AmbilPertama();
 
+        #region No Tick Constrols
+        //Optimized Controls(No Tick)
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+        #endregion
+
         #region Methods
         private void FormatDataGrid()
         {
@@ -93,6 +106,10 @@ namespace OnlineMart_Trivial
 
                 //Tampilkan semua data Cabang
                 listCabang = Cabang.BacaData("", "");
+                comboBoxCabang.DataSource = listCabang;
+                comboBoxCabang.DisplayMember = "nama";
+
+                comboBoxCabang.DropDownStyle = ComboBoxStyle.DropDownList;
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();

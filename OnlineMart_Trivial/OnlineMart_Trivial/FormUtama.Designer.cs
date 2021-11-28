@@ -39,9 +39,6 @@ namespace OnlineMart_Trivial
             this.btnRekapBarang = new System.Windows.Forms.Button();
             this.buttonRekapPenjualan = new System.Windows.Forms.Button();
             this.panelPengaturan = new System.Windows.Forms.Panel();
-            this.buttonPengaturanHadiah = new System.Windows.Forms.Button();
-            this.buttonPengaturanPromo = new System.Windows.Forms.Button();
-            this.buttonPengaturanMetodePembayaran = new System.Windows.Forms.Button();
             this.buttonPengaturanBarang = new System.Windows.Forms.Button();
             this.buttonPengaturanKategori = new System.Windows.Forms.Button();
             this.buttonPengaturanCabang = new System.Windows.Forms.Button();
@@ -67,6 +64,10 @@ namespace OnlineMart_Trivial
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelNama = new System.Windows.Forms.Label();
             this.labelwelcome = new System.Windows.Forms.Label();
+            this.buttonPengaturanStok = new System.Windows.Forms.Button();
+            this.buttonPengaturanMetodePembayaran = new System.Windows.Forms.Button();
+            this.buttonPengaturanPromo = new System.Windows.Forms.Button();
+            this.buttonPengaturanHadiah = new System.Windows.Forms.Button();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPegawai.SuspendLayout();
             this.panelRekapPenjualan.SuspendLayout();
@@ -121,7 +122,7 @@ namespace OnlineMart_Trivial
             this.panelRekapPenjualan.Controls.Add(this.btnRekapOmaSaldo);
             this.panelRekapPenjualan.Controls.Add(this.btnRekapBarang);
             this.panelRekapPenjualan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRekapPenjualan.Location = new System.Drawing.Point(0, 360);
+            this.panelRekapPenjualan.Location = new System.Drawing.Point(0, 408);
             this.panelRekapPenjualan.Name = "panelRekapPenjualan";
             this.panelRekapPenjualan.Size = new System.Drawing.Size(233, 89);
             this.panelRekapPenjualan.TabIndex = 15;
@@ -164,7 +165,7 @@ namespace OnlineMart_Trivial
             this.buttonRekapPenjualan.FlatAppearance.BorderSize = 0;
             this.buttonRekapPenjualan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRekapPenjualan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRekapPenjualan.Location = new System.Drawing.Point(0, 315);
+            this.buttonRekapPenjualan.Location = new System.Drawing.Point(0, 363);
             this.buttonRekapPenjualan.Name = "buttonRekapPenjualan";
             this.buttonRekapPenjualan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonRekapPenjualan.Size = new System.Drawing.Size(233, 45);
@@ -180,62 +181,15 @@ namespace OnlineMart_Trivial
             this.panelPengaturan.Controls.Add(this.buttonPengaturanHadiah);
             this.panelPengaturan.Controls.Add(this.buttonPengaturanPromo);
             this.panelPengaturan.Controls.Add(this.buttonPengaturanMetodePembayaran);
+            this.panelPengaturan.Controls.Add(this.buttonPengaturanStok);
             this.panelPengaturan.Controls.Add(this.buttonPengaturanBarang);
             this.panelPengaturan.Controls.Add(this.buttonPengaturanKategori);
             this.panelPengaturan.Controls.Add(this.buttonPengaturanCabang);
             this.panelPengaturan.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPengaturan.Location = new System.Drawing.Point(0, 45);
             this.panelPengaturan.Name = "panelPengaturan";
-            this.panelPengaturan.Size = new System.Drawing.Size(233, 270);
+            this.panelPengaturan.Size = new System.Drawing.Size(233, 318);
             this.panelPengaturan.TabIndex = 1;
-            // 
-            // buttonPengaturanHadiah
-            // 
-            this.buttonPengaturanHadiah.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonPengaturanHadiah.FlatAppearance.BorderSize = 0;
-            this.buttonPengaturanHadiah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPengaturanHadiah.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPengaturanHadiah.Location = new System.Drawing.Point(0, 225);
-            this.buttonPengaturanHadiah.Name = "buttonPengaturanHadiah";
-            this.buttonPengaturanHadiah.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.buttonPengaturanHadiah.Size = new System.Drawing.Size(233, 45);
-            this.buttonPengaturanHadiah.TabIndex = 5;
-            this.buttonPengaturanHadiah.Text = "HADIAH";
-            this.buttonPengaturanHadiah.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPengaturanHadiah.UseVisualStyleBackColor = true;
-            this.buttonPengaturanHadiah.Click += new System.EventHandler(this.buttonPengaturanHadiah_Click);
-            // 
-            // buttonPengaturanPromo
-            // 
-            this.buttonPengaturanPromo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonPengaturanPromo.FlatAppearance.BorderSize = 0;
-            this.buttonPengaturanPromo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPengaturanPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPengaturanPromo.Location = new System.Drawing.Point(0, 180);
-            this.buttonPengaturanPromo.Name = "buttonPengaturanPromo";
-            this.buttonPengaturanPromo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.buttonPengaturanPromo.Size = new System.Drawing.Size(233, 45);
-            this.buttonPengaturanPromo.TabIndex = 4;
-            this.buttonPengaturanPromo.Text = "PROMO";
-            this.buttonPengaturanPromo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPengaturanPromo.UseVisualStyleBackColor = true;
-            this.buttonPengaturanPromo.Click += new System.EventHandler(this.buttonPengaturanPromo_Click);
-            // 
-            // buttonPengaturanMetodePembayaran
-            // 
-            this.buttonPengaturanMetodePembayaran.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonPengaturanMetodePembayaran.FlatAppearance.BorderSize = 0;
-            this.buttonPengaturanMetodePembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPengaturanMetodePembayaran.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPengaturanMetodePembayaran.Location = new System.Drawing.Point(0, 135);
-            this.buttonPengaturanMetodePembayaran.Name = "buttonPengaturanMetodePembayaran";
-            this.buttonPengaturanMetodePembayaran.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.buttonPengaturanMetodePembayaran.Size = new System.Drawing.Size(233, 45);
-            this.buttonPengaturanMetodePembayaran.TabIndex = 3;
-            this.buttonPengaturanMetodePembayaran.Text = "METODE PEMBAYARAN";
-            this.buttonPengaturanMetodePembayaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPengaturanMetodePembayaran.UseVisualStyleBackColor = true;
-            this.buttonPengaturanMetodePembayaran.Click += new System.EventHandler(this.buttonPengaturanMetodePembayaran_Click);
             // 
             // buttonPengaturanBarang
             // 
@@ -604,6 +558,70 @@ namespace OnlineMart_Trivial
             this.labelwelcome.TabIndex = 0;
             this.labelwelcome.Text = "Welcome Back,";
             // 
+            // buttonPengaturanStok
+            // 
+            this.buttonPengaturanStok.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonPengaturanStok.FlatAppearance.BorderSize = 0;
+            this.buttonPengaturanStok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPengaturanStok.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPengaturanStok.Location = new System.Drawing.Point(0, 135);
+            this.buttonPengaturanStok.Name = "buttonPengaturanStok";
+            this.buttonPengaturanStok.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonPengaturanStok.Size = new System.Drawing.Size(233, 45);
+            this.buttonPengaturanStok.TabIndex = 3;
+            this.buttonPengaturanStok.Text = "STOK";
+            this.buttonPengaturanStok.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPengaturanStok.UseVisualStyleBackColor = true;
+            this.buttonPengaturanStok.Click += new System.EventHandler(this.buttonPengaturanStok_Click);
+            // 
+            // buttonPengaturanMetodePembayaran
+            // 
+            this.buttonPengaturanMetodePembayaran.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonPengaturanMetodePembayaran.FlatAppearance.BorderSize = 0;
+            this.buttonPengaturanMetodePembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPengaturanMetodePembayaran.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPengaturanMetodePembayaran.Location = new System.Drawing.Point(0, 180);
+            this.buttonPengaturanMetodePembayaran.Name = "buttonPengaturanMetodePembayaran";
+            this.buttonPengaturanMetodePembayaran.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonPengaturanMetodePembayaran.Size = new System.Drawing.Size(233, 45);
+            this.buttonPengaturanMetodePembayaran.TabIndex = 4;
+            this.buttonPengaturanMetodePembayaran.Text = "METODE PEMBAYARAN";
+            this.buttonPengaturanMetodePembayaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPengaturanMetodePembayaran.UseVisualStyleBackColor = true;
+            this.buttonPengaturanMetodePembayaran.Click += new System.EventHandler(this.buttonPengaturanMetodePembayaran_Click);
+            // 
+            // buttonPengaturanPromo
+            // 
+            this.buttonPengaturanPromo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonPengaturanPromo.FlatAppearance.BorderSize = 0;
+            this.buttonPengaturanPromo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPengaturanPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPengaturanPromo.Location = new System.Drawing.Point(0, 225);
+            this.buttonPengaturanPromo.Name = "buttonPengaturanPromo";
+            this.buttonPengaturanPromo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonPengaturanPromo.Size = new System.Drawing.Size(233, 45);
+            this.buttonPengaturanPromo.TabIndex = 5;
+            this.buttonPengaturanPromo.Text = "PROMO";
+            this.buttonPengaturanPromo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPengaturanPromo.UseVisualStyleBackColor = true;
+            this.buttonPengaturanPromo.Click += new System.EventHandler(this.buttonPengaturanPromo_Click);
+            // 
+            // buttonPengaturanHadiah
+            // 
+            this.buttonPengaturanHadiah.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonPengaturanHadiah.FlatAppearance.BorderSize = 0;
+            this.buttonPengaturanHadiah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPengaturanHadiah.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPengaturanHadiah.Location = new System.Drawing.Point(0, 270);
+            this.buttonPengaturanHadiah.Name = "buttonPengaturanHadiah";
+            this.buttonPengaturanHadiah.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.buttonPengaturanHadiah.Size = new System.Drawing.Size(233, 45);
+            this.buttonPengaturanHadiah.TabIndex = 6;
+            this.buttonPengaturanHadiah.Text = "HADIAH";
+            this.buttonPengaturanHadiah.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPengaturanHadiah.UseVisualStyleBackColor = true;
+            this.buttonPengaturanHadiah.Click += new System.EventHandler(this.buttonPengaturanHadiah_Click);
+            // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -656,10 +674,7 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.Button buttonPengaturan;
         private System.Windows.Forms.Panel panelRekapPenjualan;
         private System.Windows.Forms.Panel panelPengaturan;
-        private System.Windows.Forms.Button buttonPengaturanPromo;
-        private System.Windows.Forms.Button buttonPengaturanHadiah;
         private System.Windows.Forms.Button buttonPengaturanBarang;
-        private System.Windows.Forms.Button buttonPengaturanMetodePembayaran;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel panelLeftNavbar;
         public System.Windows.Forms.Panel panelPegawai;
@@ -673,6 +688,10 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.Label labelwelcome;
         public System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.Button buttonChatKonsumen;
+        private System.Windows.Forms.Button buttonPengaturanHadiah;
+        private System.Windows.Forms.Button buttonPengaturanPromo;
+        private System.Windows.Forms.Button buttonPengaturanMetodePembayaran;
+        private System.Windows.Forms.Button buttonPengaturanStok;
     }
 }
 
