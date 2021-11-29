@@ -335,7 +335,7 @@ namespace OnlineMart_LIB
         public static Boolean UbahData(Order o)
         {
             // Querry Insert
-            string sql = "update orders set tanggal_waktu = '" + o.Tanggal_waktu + "', alamat_tujuan = '" + o.Alamat_tujuan + "', " +
+            string sql = "update orders set tanggal_waktu = '" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', alamat_tujuan = '" + o.Alamat_tujuan + "', " +
                          "ongkos_kirim = '" + o.Ongkos_kirim + "', total_bayar = '" + o.Total_bayar + "', cara_bayar = '" + o.Cara_bayar + "', " +
                          "status = '" + o.Status + "', driver_id = '" + o.Driver.Id + "', cabang_id = '" + o.Cabang.Id + "', " +
                          "metode_pembayaran_id = '" + o.Metode_pembayaran.Id + "', promo_id = '" + o.Promo.Id + "', " +
