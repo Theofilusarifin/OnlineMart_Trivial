@@ -207,7 +207,9 @@ namespace OnlineMart_LIB
                          "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
                          "inner join gifts g on gr.gift_id = g.id ";
 
-            if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+            if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%' ";
+
+            sql += " order by o.tanggal_waktu ";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
@@ -250,7 +252,9 @@ namespace OnlineMart_LIB
                          "inner join promos pr on o.promo_id = pr.id " +
                          "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
                          "inner join gifts g on gr.gift_id = g.id " +
-                         "where o.status = " + status + " and " + kriteria + " like '%" + nilaiKriteria + "%'";
+                         "where o.status = '" + status + "' and " + kriteria + " like '%" + nilaiKriteria + "%' ";
+
+            sql += " order by o.tanggal_waktu ";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
@@ -294,7 +298,9 @@ namespace OnlineMart_LIB
                 "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
                 "inner join gifts g on gr.gift_id = g.id where status = 'Pesanan Diproses' ";
 
-            if (kriteria != "") sql += " and " + kriteria + " like '%" + nilaiKriteria + "%'";
+            if (kriteria != "") sql += " and " + kriteria + " like '%" + nilaiKriteria + "%' ";
+
+            sql += " order by o.tanggal_waktu ";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 

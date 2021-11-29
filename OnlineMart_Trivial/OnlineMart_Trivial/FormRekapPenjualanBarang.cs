@@ -122,7 +122,7 @@ namespace OnlineMart_Trivial
 
                 FormatDataGrid();
 
-                listPenjualanBarang = Barang_Order.BacaPenjualanBarang(cabang, bulan, tahun);
+                listPenjualanBarang = Barang_Order.BacaSemuaData();
 
                 TampilDataGrid();
             }
@@ -214,7 +214,11 @@ namespace OnlineMart_Trivial
         #region Buttons
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            FormRekapPenjualanBarang_Load(sender, e);
+            FormatDataGrid();
+
+            listPenjualanBarang = Barang_Order.BacaPenjualanBarang(cabang, bulan, tahun);
+
+            TampilDataGrid();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)

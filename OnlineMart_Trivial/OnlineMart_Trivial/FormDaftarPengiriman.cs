@@ -134,8 +134,9 @@ namespace OnlineMart_Trivial
                     o.Status = "Order Selesai";
 
                     Order.UbahData(o);
+                    FormDaftarPengiriman_Load(sender, e);
 
-                    MessageBox.Show("Order selesai diubah");
+                    MessageBox.Show("Terima kasih telah mengirim order. Data telah diubah.");
                 }
             }
             catch (Exception ex)

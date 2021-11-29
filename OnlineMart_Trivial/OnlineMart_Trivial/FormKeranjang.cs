@@ -15,6 +15,7 @@ namespace OnlineMart_Trivial
     {
         public static Order thisOrder = new Order();
         public static bool IdGenerated = false;
+        public static Cabang cDipilih;
 
         public static List<Barang_Order> listBarangOrder = thisOrder.ListBarangOrder;
         Barang_Order barang_order;
@@ -179,6 +180,8 @@ namespace OnlineMart_Trivial
                     // Set IdGenerated ke true agar tidak generate id baru
                     IdGenerated = true;
                 }
+
+                labelNamaCabang.Text = cDipilih.Nama;
 
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();

@@ -85,18 +85,6 @@ namespace OnlineMart_Trivial
             {
                 dataGridView.DataSource = null;
             }
-            //Tampilkan button dan Hapus
-            if (!dataGridView.Columns.Contains("btnCekPesanan"))
-            {
-                DataGridViewButtonColumn bcolCekPesanan = new DataGridViewButtonColumn();
-
-                bcolCekPesanan.HeaderText = "Aksi";
-                bcolCekPesanan.Text = "Cek Pesanan";
-                bcolCekPesanan.Name = "btnCekPesanan";
-                bcolCekPesanan.UseColumnTextForButtonValue = true;
-
-                dataGridView.Columns.Add(bcolCekPesanan);
-            }
         }
         #endregion
 
@@ -126,11 +114,7 @@ namespace OnlineMart_Trivial
 		{
 			try
 			{
-                long id = long.Parse(dataGridView.CurrentRow.Cells["Id"].Value.ToString()); //Untuk mengambil ID dari button yang di klik
-                if (e.ColumnIndex == dataGridView.Columns["btnCekPesanan"].Index && e.RowIndex >= 0) //Untuk mengecek apakah yang ditekan adalah button cek pesanan
-                {
-                    //Hubungkan form cek pesanan di sini
-                }
+
             }
             catch (Exception ex)
 			{
@@ -188,6 +172,14 @@ namespace OnlineMart_Trivial
         private void buttonClose_MouseLeave(object sender, EventArgs e)
         {
             buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonSearch_MouseEnter(object sender, EventArgs e)
+        {
+            buttonSearch.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonSearch_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSearch.BackgroundImage = Properties.Resources.Button_Leave;
         }
         #endregion
     }
