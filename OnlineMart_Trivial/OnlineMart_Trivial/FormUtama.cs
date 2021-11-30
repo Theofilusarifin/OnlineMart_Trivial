@@ -249,21 +249,7 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                //Buka Form
-                Form form = Application.OpenForms["FormProfile"];
-
-                if (form == null) //Jika Form ini belum di-create sebelumnya
-                {
-                    FormProfile frm = new FormProfile(); //Create Object
-                    frm.Owner = this;
-                    frm.Show();
-                    frm.BringToFront(); //Agar form tampil di depan
-                }
-                else
-                {
-                    form.Show();
-                    form.BringToFront(); //Agar form tampil di depan
-                }
+                openChildForm(new FormProfile());
             }
             catch (Exception ex)
             {

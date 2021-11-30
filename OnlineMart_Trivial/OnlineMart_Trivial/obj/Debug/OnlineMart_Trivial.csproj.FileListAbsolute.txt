@@ -317,3 +317,4 @@ C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMar
 C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormTambahBarangCabang.resources
 C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormUbahBarangCabang.resources
 C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormTukarHadiah.resources
+C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormUbahPassword.resources

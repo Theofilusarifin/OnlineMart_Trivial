@@ -38,23 +38,18 @@ namespace OnlineMart_Trivial
             textBoxUsername.Text = FormUtama.konsumen.Username;
             textBoxEmail.Text = FormUtama.konsumen.Email;
             textBoxNomorTelepon.Text = FormUtama.konsumen.Telepon;
+            textBoxSaldo.Text = FormUtama.konsumen.Saldo.ToString();
+            textBoxPoin.Text = FormUtama.konsumen.Poin.ToString();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             try
             {
-                //Ubah menjadi data baru
-                FormUtama.konsumen.Nama = textBoxNama.Text;
-                FormUtama.konsumen.Username = textBoxUsername.Text;
-                FormUtama.konsumen.Email = textBoxEmail.Text;
-                FormUtama.konsumen.Telepon = textBoxNomorTelepon.Text;
-                FormUtama.frmUtama.labelNama.Text = FormUtama.konsumen.Nama;
-
-                Pelanggan.UbahData(FormUtama.konsumen);
-
-                MessageBox.Show("Perubahan berhasil tersimpan!", "Informasi");
-                this.Close();
+                FormUbahPassword frm = new FormUbahPassword(); //Create Object
+                frm.Owner = this;
+                frm.Show();
+                frm.BringToFront(); //Agar form tampil di depan
             }
             catch (Exception ex)
             {
@@ -65,12 +60,25 @@ namespace OnlineMart_Trivial
         #region DesainButton
         private void buttonEdit_MouseEnter(object sender, EventArgs e)
         {
-            buttonEdit.BackgroundImage = Properties.Resources.Button_Hover;
+            buttonUbahPassword.BackgroundImage = Properties.Resources.Button_Hover;
         }
         private void buttonEdit_MouseLeave(object sender, EventArgs e)
         {
-            buttonEdit.BackgroundImage = Properties.Resources.Button_Leave;
+            buttonUbahPassword.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonClose_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonClose_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
         }
         #endregion
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -307,6 +307,12 @@
     <Compile Include="FormUbahMetodePembayaran.Designer.cs">
       <DependentUpon>FormUbahMetodePembayaran.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUbahPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahPassword.Designer.cs">
+      <DependentUpon>FormUbahPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUbahPromo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -446,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUbahMetodePembayaran.resx">
       <DependentUpon>FormUbahMetodePembayaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahPassword.resx">
+      <DependentUpon>FormUbahPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUbahPromo.resx">
       <DependentUpon>FormUbahPromo.cs</DependentUpon>
@@ -641,6 +650,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Form Tukar Hadiah.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile-417-1163876.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ubah Password.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

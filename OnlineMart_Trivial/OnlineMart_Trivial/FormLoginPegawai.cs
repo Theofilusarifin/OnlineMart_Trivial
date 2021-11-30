@@ -64,6 +64,15 @@ namespace OnlineMart_Trivial
                 }
                 else
                 {
+                    var original = this.Location;
+                    var rnd = new Random(1337);
+                    const int shake_amplitude = 10;
+                    for (int i = 0; i < 10; i++)
+                    {
+                        this.Location = new Point(original.X + rnd.Next(-shake_amplitude, shake_amplitude), original.Y + rnd.Next(-shake_amplitude, shake_amplitude));
+                        System.Threading.Thread.Sleep(20);
+                    }
+                    this.Location = original;
                     MessageBox.Show(this, "Username tidak ditemukan atau password salah");
                 }
             }
