@@ -38,11 +38,21 @@ namespace OnlineMart_Trivial
             {
                 if (textBoxPassword.Text == textBoxKonfirmasiPassword.Text)
                 {
-                    //Ciptakan objek yang akan ditambahkan
-                    Driver driver = new Driver(textBoxNama.Text, textBoxUsername.Text, textBoxEmail.Text, textBoxPassword.Text, textBoxNomorTelepon.Text);
-                    Driver.TambahData(driver);
-                    MessageBox.Show("Registrasi Telah Berhasil! Harap lakukan login dengan akun anda.", "Info");
-                    this.Close();
+                    List<Driver> listDriver = Driver.BacaData("username", textBoxUsername.Text);
+
+                    // Check apakah username telah digunakan atau belum
+                    if (listDriver.Count == 0)
+                    {
+                        //Ciptakan objek yang akan ditambahkan
+                        Driver driver = new Driver(textBoxNama.Text, textBoxUsername.Text, textBoxEmail.Text, textBoxPassword.Text, textBoxNomorTelepon.Text);
+                        Driver.TambahData(driver);
+                        MessageBox.Show("Registrasi Telah Berhasil! Harap lakukan login dengan akun anda.", "Info");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username telah digunakan. Mohon coba memasukkan username lain.", "Info");
+                    }
                 }
                 else MessageBox.Show("Password Tidak Sama", "Kesalahan");
             }

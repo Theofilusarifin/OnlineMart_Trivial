@@ -167,6 +167,27 @@ namespace OnlineMart_LIB
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
+
+		public static List<Pelanggan> BacaData(string kriteria, string nilaiKriteria)
+		{
+			string sql = "select id, nama, username, email, password, telepon, saldo, poin from pelanggans ";
+
+			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+			//Buat list untuk menampung data
+			List<Pelanggan> listPelanggan = new List<Pelanggan>();
+
+			while (hasil.Read())
+			{
+				Pelanggan p = new Pelanggan(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetDouble(6), hasil.GetDouble(7));
+
+				listPelanggan.Add(p);
+			}
+			return listPelanggan;
+		}
+
 		public static Boolean UpdateSaldo(Order o)
 		{
 			string sql = "update pelanggans set saldo = saldo - " + o.Total_bayar + " where id = " + o.Pelanggan.Id;

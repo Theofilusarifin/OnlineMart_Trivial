@@ -106,19 +106,6 @@ namespace OnlineMart_LIB
             {
                 Pegawai p = new Pegawai(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
 
-                ////Ambil Cabang
-                //string cabang = "select c.id from cabangs as c inner join pegawais as p on c.pegawai_id = p.id where p.id = " + p.Id;
-
-                //MySqlDataReader hasil_join = Koneksi.JalankanPerintahQuery(cabang);
-
-                //while (hasil_join.Read())
-                //{
-                //    Cabang c_join = Cabang.AmbilData(hasil_join.GetInt32(0));
-
-                //    //Tambahkan hasil join ke aggregation relationship
-                //    p.ListCabang.Add(c_join);
-                //}
-
                 listPegawai.Add(p);
             }
             return listPegawai;
