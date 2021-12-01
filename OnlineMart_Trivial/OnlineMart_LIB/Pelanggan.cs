@@ -229,9 +229,18 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-        public static Boolean TambahSaldo(Pelanggan p, int penambahanSaldo)
+		public static Boolean UpdatePoin(Pelanggan p)
+		{
+			// Querry Insert
+			string sql = "update pelanggans set poin = " + p.Poin + " where id = " + p.Id;
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
+		}
+
+		public static Boolean TambahSaldo(Pelanggan p)
         {
-            string sql = "update pelanggans set saldo = saldo + " + penambahanSaldo + " where id = " + p.Id;
+            string sql = "update pelanggans set saldo = " + p.Saldo + " where id = " + p.Id;
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;

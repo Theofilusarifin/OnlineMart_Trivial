@@ -37,7 +37,8 @@ namespace OnlineMart_Trivial
                 Riwayat_isi_saldo.TambahData(r);
 
                 //update saldo
-                Pelanggan.TambahSaldo(FormUtama.konsumen, int.Parse(textBoxSaldo.Text));
+                FormUtama.konsumen.Saldo = FormUtama.konsumen.Saldo + int.Parse(textBoxSaldo.Text);
+                Pelanggan.TambahSaldo(FormUtama.konsumen);
 
                 MessageBox.Show("Isi saldo telah berhasil", "Informasi");
 

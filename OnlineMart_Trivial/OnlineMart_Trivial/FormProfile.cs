@@ -33,13 +33,14 @@ namespace OnlineMart_Trivial
 
         private void FormProfile_Load(object sender, EventArgs e)
         {
+            Pelanggan p = Pelanggan.AmbilData(FormUtama.konsumen.Id);
             //Tampilkan data di text box
-            textBoxNama.Text = FormUtama.konsumen.Nama;
-            textBoxUsername.Text = FormUtama.konsumen.Username;
-            textBoxEmail.Text = FormUtama.konsumen.Email;
-            textBoxNomorTelepon.Text = FormUtama.konsumen.Telepon;
-            textBoxSaldo.Text = FormUtama.konsumen.Saldo.ToString();
-            textBoxPoin.Text = FormUtama.konsumen.Poin.ToString();
+            textBoxNama.Text = p.Nama;
+            textBoxUsername.Text = p.Username;
+            textBoxEmail.Text = p.Email;
+            textBoxNomorTelepon.Text = p.Telepon;
+            textBoxSaldo.Text = p.Saldo.ToString();
+            textBoxPoin.Text = p.Poin.ToString();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)

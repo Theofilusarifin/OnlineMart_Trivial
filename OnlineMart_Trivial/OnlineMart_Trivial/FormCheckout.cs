@@ -154,7 +154,13 @@ namespace OnlineMart_Trivial
                         Order.UpdateStok(bo, FormKeranjang.thisOrder.Cabang);
                     }
 
+                    // Tambahkan poin berdasarkan 1% total bayar
+                    FormUtama.konsumen.Poin = FormUtama.konsumen.Poin + Math.Round(FormKeranjang.thisOrder.Total_bayar * 0.01);
+                    Pelanggan.UpdatePoin(FormUtama.konsumen);
+
+                    // Kurangi saldo
                     Pelanggan.UpdateSaldo(FormKeranjang.thisOrder);
+
                     // thisOrder dikosongkan sekaligus dibuat baru
                     FormKeranjang.thisOrder = new Order();
                     // keranjang di clear
