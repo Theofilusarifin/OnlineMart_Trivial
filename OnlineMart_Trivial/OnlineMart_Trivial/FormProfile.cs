@@ -72,7 +72,7 @@ namespace OnlineMart_Trivial
         }
         private void buttonClose_MouseLeave(object sender, EventArgs e)
         {
-            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
         }
         #endregion
 

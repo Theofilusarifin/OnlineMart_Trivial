@@ -49,7 +49,7 @@ namespace OnlineMart_Trivial
                     textBoxTotalBayar.Text = FormKeranjang.thisOrder.Total_bayar.ToString();
                     textBoxOngkosKirim.Text = FormKeranjang.thisOrder.Ongkos_kirim.ToString();
 
-                    FormKeranjang.thisOrder.Cabang = FormDaftarBarangPelanggan.cDiambil;
+                    FormKeranjang.thisOrder.Cabang = FormUtama.cDipilih;
                     FormKeranjang.thisOrder.Pelanggan = FormUtama.konsumen;
                     #endregion
 

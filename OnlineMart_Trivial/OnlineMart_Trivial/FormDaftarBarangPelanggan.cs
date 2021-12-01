@@ -22,8 +22,6 @@ namespace OnlineMart_Trivial
         public static List<Cabang> listCabang = new List<Cabang>();
         public static List<Barang_Cabang> listBarangCabang = new List<Barang_Cabang>();
         public static Cabang cDipilih = Cabang.AmbilPertama();
-        public static Cabang cDiambil;
-        private bool tambahBarang = false;
 
         #region No Tick Constrols
         //Optimized Controls(No Tick)
@@ -170,18 +168,11 @@ namespace OnlineMart_Trivial
                 //Kalau button Tambah ke keranjang diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnTambahKeranjang"].Index && e.RowIndex >= 0)
                 {
-                    if (FormUtama.keranjang.Count > 0)
+                    if (FormUtama.keranjang.Count == 0)
                     {
-                        cDiambil = FormKeranjang.cDipilih;
+                        FormUtama.cDipilih = cDipilih;
                     }
-                    else if (!tambahBarang) 
-                    {
-                        cDiambil = cDipilih;
-                        FormKeranjang.cDipilih = cDiambil;
-                        tambahBarang = true;
-                    }
-
-                    if (cDipilih == cDiambil)
+                    if (cDipilih.Nama == FormUtama.cDipilih.Nama)
                     {
                         Barang b = Barang.AmbilData(id);
                         FormUtama.keranjang.Add(b); //Untuk menambahkan barang ke dalam keranjang

@@ -22,6 +22,8 @@ namespace OnlineMart_Trivial
         public static Pelanggan konsumen;
         public static List<Barang> keranjang = new List<Barang>();
         public static Koneksi koneksi;
+        public static Cabang cDipilih;
+
 
         public FormUtama()
         {
