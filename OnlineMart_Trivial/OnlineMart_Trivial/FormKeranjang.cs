@@ -66,11 +66,18 @@ namespace OnlineMart_Trivial
 
             //agar angka ditampilkan dengan format pemisah ribuan (100 delimiter)
             dataGridView.Columns["harga"].DefaultCellStyle.Format = "#,###";
+            dataGridView.Columns["jumlah"].DefaultCellStyle.Format = "#,###";
             dataGridView.Columns["subtotal"].DefaultCellStyle.Format = "#,###";
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
             dataGridView.AllowUserToAddRows = false;
-            dataGridView.ReadOnly = true;
+
+            // membuat user dapat mengedit datagrid dengan nama kolom yang sesuai
+            foreach (DataGridViewColumn dc in dataGridView.Columns)
+            {
+                if (dc.Name == "jumlah") dc.ReadOnly = false;
+                else dc.ReadOnly = true;
+            }
         }
 
         private void TampilDataGrid()
@@ -147,16 +154,44 @@ namespace OnlineMart_Trivial
                 }
 
                 //Tampilkan button dan Hapus
-                if (!dataGridView.Columns.Contains("btnHapusGrid"))
+                if (!dataGridView.Columns.Contains("btnHapus"))
                 {
                     DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
 
                     bcolHapus.HeaderText = "Aksi";
                     bcolHapus.Text = "Hapus";
-                    bcolHapus.Name = "btnHapusGrid";
+                    bcolHapus.Name = "btnHapus";
                     bcolHapus.UseColumnTextForButtonValue = true;
 
                     dataGridView.Columns.Add(bcolHapus);
+                }
+
+                if (!dataGridView.Columns.Contains("btn+"))
+                {
+                    DataGridViewButtonColumn bcolTambah = new DataGridViewButtonColumn();
+
+                    bcolTambah.HeaderText = "";
+                    bcolTambah.Text = "+";
+                    bcolTambah.Name = "btn+";
+                    bcolTambah.UseColumnTextForButtonValue = true;
+
+                    int colJumlah = dataGridView.Columns.IndexOf(dataGridView.Columns["jumlah"]);
+
+                    dataGridView.Columns.Insert(colJumlah + 1, bcolTambah);
+                }
+
+                if (!dataGridView.Columns.Contains("btn-"))
+                {
+                    DataGridViewButtonColumn bcolKurang = new DataGridViewButtonColumn();
+
+                    bcolKurang.HeaderText = "";
+                    bcolKurang.Text = "-";
+                    bcolKurang.Name = "btn-";
+                    bcolKurang.UseColumnTextForButtonValue = true;
+
+                    int colJumlah = dataGridView.Columns.IndexOf(dataGridView.Columns["jumlah"]);
+
+                    dataGridView.Columns.Insert(colJumlah, bcolKurang);
                 }
             }
             catch (Exception ex)
@@ -207,11 +242,11 @@ namespace OnlineMart_Trivial
 		{
 			try
 			{
-                //Menghapus data bila button hapus diklik
                 int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
 
+                #region buttonHapus
                 //Kalau button hapus diklik
-                if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
+                if (e.ColumnIndex == dataGridView.Columns["btnHapus"].Index && e.RowIndex >= 0)
                 {
                     string idHapus = dataGridView.CurrentRow.Cells["id"].Value.ToString();
                     string namaHapus = dataGridView.CurrentRow.Cells["nama"].Value.ToString();
@@ -233,8 +268,30 @@ namespace OnlineMart_Trivial
                         MessageBox.Show("Penghapusan gagal");
 					}
                 }
+                #endregion
+
+                #region button +
+                //Kalau button + diklik
+                if (e.ColumnIndex == dataGridView.Columns["btn+"].Index && e.RowIndex >= 0)
+                {
+                    Barang b = Barang.AmbilData(id);
+                    FormUtama.keranjang.Add(b); //Untuk menambahkan barang ke dalam keranjang
+                    FormKeranjang_Load(sender, e);
+                }
+                #endregion
+
+                #region button -
+                //Kalau button - diklik
+                if (e.ColumnIndex == dataGridView.Columns["btn-"].Index && e.RowIndex >= 0)
+                {
+                    Barang b = Barang.AmbilData(id);
+                    FormUtama.keranjang.Remove(b); //Untuk menghapus barang di dalam keranjang
+                    MessageBox.Show(FormUtama.keranjang.Remove(b).ToString());
+                    FormKeranjang_Load(sender, e);
+                }
+                #endregion
             }
-			catch (Exception ex)
+            catch (Exception ex)
 			{
                 MessageBox.Show(ex.Message);
 			}
