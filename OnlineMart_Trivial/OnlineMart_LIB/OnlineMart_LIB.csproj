@@ -48,6 +48,7 @@
     <Compile Include="Barang.cs" />
     <Compile Include="Barang_Cabang.cs" />
     <Compile Include="Barang_Order.cs" />
+    <Compile Include="Blacklist.cs" />
     <Compile Include="Cabang.cs" />
     <Compile Include="Cetak.cs" />
     <Compile Include="Chat.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Order.cs" />
     <Compile Include="Pegawai.cs" />
     <Compile Include="Pelanggan.cs" />
+    <Compile Include="Penjual.cs" />
     <Compile Include="Promo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Riwayat_isi_saldo.cs" />
