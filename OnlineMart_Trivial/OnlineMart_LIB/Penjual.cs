@@ -95,5 +95,12 @@ namespace OnlineMart_LIB
 			if (jumlahDihapus == 0) return false;
 			else return true;
 		}
+		public static bool TambahStok(Barang_Penjual b)
+		{
+			string sql = "update barang_penjual set stok = stok + " + b.Stok + " where barang_id = " + b.Barang.Id + " and penjual_id = " + b.Penjual.Id;
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
+		}
 	}
 }
