@@ -98,5 +98,14 @@ namespace OnlineMart_Trivial
         {
             textBoxUsername.Focus();
         }
+
+        private void labelRegistrasi_Click(object sender, EventArgs e)
+        {
+            FormRegisterKonsumen frm = new FormRegisterKonsumen(); //Create Object
+            frm.Owner = this.Owner;
+            frm.Show();
+            this.Owner.Hide();
+            this.Hide();
+        }
     }
 }

@@ -46,14 +46,16 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Add("diskon_max", "Diskon Maksimal");
             dataGridView.Columns.Add("minimal_belanja", "Minimal Belanja");
 
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(248, 142, 123);
+            dataGridView.EnableHeadersVisualStyles = false;
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["tipe"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["diskon"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["diskon_max"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["minimal_belanja"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["tipe"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["diskon"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["diskon_max"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["minimal_belanja"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
             dataGridView.AllowUserToAddRows = false;

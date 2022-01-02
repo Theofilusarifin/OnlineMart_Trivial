@@ -49,12 +49,15 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Add("stok", "Stok Barang");
             dataGridView.Columns.Add("kategori_id", "Kategori");
 
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(248, 142, 123);
+            dataGridView.EnableHeadersVisualStyles = false;
+
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["stok"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["stok"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
             dataGridView.AllowUserToAddRows = false;
@@ -84,7 +87,7 @@ namespace OnlineMart_Trivial
                 //Button tambah ke keranjang
                 DataGridViewButtonColumn bcolTambahKeranjang = new DataGridViewButtonColumn();
 
-                bcolTambahKeranjang.HeaderText = "Masukkan Ke Keranjang";
+                bcolTambahKeranjang.HeaderText = "Add to cart";
                 bcolTambahKeranjang.Text = "Masukkan";
                 bcolTambahKeranjang.Name = "btnTambahKeranjang";
                 bcolTambahKeranjang.UseColumnTextForButtonValue = true;

@@ -30,85 +30,36 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
-        #region Design Button
-        private void buttonLoginKonsumen_MouseEnter(object sender, EventArgs e)
-        {
-            buttonLoginKonsumen.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-        private void buttonLoginKonsumen_MouseLeave(object sender, EventArgs e)
-        {
-            buttonLoginKonsumen.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-        private void buttonRegisterKonsumen_MouseEnter(object sender, EventArgs e)
-        {
-            buttonRegisterKonsumen.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-        private void buttonRegisterKonsumen_MouseLeave(object sender, EventArgs e)
-        {
-            buttonRegisterKonsumen.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-        private void buttonLoginRider_MouseEnter(object sender, EventArgs e)
-        {
-            buttonLoginRider.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-        private void buttonLoginRider_MouseLeave(object sender, EventArgs e)
-        {
-            buttonLoginRider.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-        private void buttonRegisterRider_MouseEnter(object sender, EventArgs e)
-        {
-            buttonRegisterRider.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-        private void buttonRegisterRider_MouseLeave(object sender, EventArgs e)
-        {
-            buttonRegisterRider.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-        private void buttonLoginPegawai_MouseEnter(object sender, EventArgs e)
-        {
-            buttonLoginPegawai.BackgroundImage = Properties.Resources.Button_Hover;
-        }
-        private void buttonLoginPegawai_MouseLeave(object sender, EventArgs e)
-        {
-            buttonLoginPegawai.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-        #endregion
-
-        #region Button Action
-        private void buttonLoginKonsumen_Click(object sender, EventArgs e)
+        private void pictureBoxKonsumen_Click(object sender, EventArgs e)
         {
             FormLoginKonsumen frm = new FormLoginKonsumen(); //Create Object
             frm.Owner = this;
             frm.Show();
             this.Hide();
         }
-        private void buttonRegisterKonsumen_Click(object sender, EventArgs e)
-        {
-            FormRegisterKonsumen frm = new FormRegisterKonsumen(); //Create Object
-            frm.Owner = this;
-            frm.Show();
-            this.Hide();
-        }
-        private void buttonLoginRider_Click(object sender, EventArgs e)
+
+        private void pictureBoxRider_Click(object sender, EventArgs e)
         {
             FormLoginRider frm = new FormLoginRider(); //Create Object
             frm.Owner = this;
             frm.Show();
             this.Hide();
         }
-        private void buttonRegisterRider_Click(object sender, EventArgs e)
-        {
-            FormRegisterRider frm = new FormRegisterRider(); //Create Object
-            frm.Owner = this;
-            frm.Show();
-            this.Hide();
-        }
-        private void buttonLoginPegawai_Click(object sender, EventArgs e)
+
+        private void pictureBoxPegawai_Click(object sender, EventArgs e)
         {
             FormLoginPegawai frm = new FormLoginPegawai(); //Create Object
             frm.Owner = this;
             frm.Show();
             this.Hide();
         }
-        #endregion
+
+        private void pictureBoxPenjual_Click(object sender, EventArgs e)
+        {
+            FormLoginPenjual frm = new FormLoginPenjual(); //Create Object
+            frm.Owner = this;
+            frm.Show();
+            this.Hide();
+        }
     }
 }

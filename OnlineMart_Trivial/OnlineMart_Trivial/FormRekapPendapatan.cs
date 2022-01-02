@@ -50,12 +50,15 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Add("tanggal_waktu", "Tanggal Waktu");
             dataGridView.Columns.Add("komisi", "Komisi");
 
-            //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["tanggal_waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["komisi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(248, 142, 123);
+            dataGridView.EnableHeadersVisualStyles = false;
 
-            //agar angka rata kanan
-            dataGridView.Columns["komisi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //Agar lebar kolom dapat menyesuaikan panjang / isi data
+            dataGridView.Columns["tanggal_waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["komisi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            //agar angka rata tengah
+            dataGridView.Columns["komisi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //agar angka ditampilkan dengan format pemisah ribuan (100 delimiter)
             dataGridView.Columns["komisi"].DefaultCellStyle.Format = "#,###";

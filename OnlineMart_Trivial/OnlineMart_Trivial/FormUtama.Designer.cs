@@ -69,6 +69,9 @@ namespace OnlineMart_Trivial
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelNama = new System.Windows.Forms.Label();
             this.labelwelcome = new System.Windows.Forms.Label();
+            this.panelPenjual = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPegawai.SuspendLayout();
             this.panelRekapPenjualan.SuspendLayout();
@@ -80,6 +83,7 @@ namespace OnlineMart_Trivial
             this.panelLeft.SuspendLayout();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelPenjual.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerLoading
@@ -92,6 +96,7 @@ namespace OnlineMart_Trivial
             // 
             this.panelLeftNavbar.AutoScroll = true;
             this.panelLeftNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(62)))), ((int)(((byte)(34)))));
+            this.panelLeftNavbar.Controls.Add(this.panelPenjual);
             this.panelLeftNavbar.Controls.Add(this.panelPegawai);
             this.panelLeftNavbar.Controls.Add(this.panelRider);
             this.panelLeftNavbar.Controls.Add(this.panelKonsumen);
@@ -112,7 +117,7 @@ namespace OnlineMart_Trivial
             this.panelPegawai.Controls.Add(this.panelPengaturan);
             this.panelPegawai.Controls.Add(this.buttonPengaturan);
             this.panelPegawai.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPegawai.Location = new System.Drawing.Point(0, 754);
+            this.panelPegawai.Location = new System.Drawing.Point(0, 794);
             this.panelPegawai.Name = "panelPegawai";
             this.panelPegawai.Size = new System.Drawing.Size(233, 560);
             this.panelPegawai.TabIndex = 3;
@@ -329,7 +334,7 @@ namespace OnlineMart_Trivial
             this.panelRider.Controls.Add(this.buttonRekapPendapatan);
             this.panelRider.Controls.Add(this.buttonDaftarPengiriman);
             this.panelRider.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRider.Location = new System.Drawing.Point(0, 585);
+            this.panelRider.Location = new System.Drawing.Point(0, 625);
             this.panelRider.Name = "panelRider";
             this.panelRider.Size = new System.Drawing.Size(233, 169);
             this.panelRider.TabIndex = 1;
@@ -385,6 +390,7 @@ namespace OnlineMart_Trivial
             // 
             // panelKonsumen
             // 
+            this.panelKonsumen.Controls.Add(this.button2);
             this.panelKonsumen.Controls.Add(this.buttonIsiSaldo);
             this.panelKonsumen.Controls.Add(this.buttonProfile);
             this.panelKonsumen.Controls.Add(this.buttonCetakNota);
@@ -396,7 +402,7 @@ namespace OnlineMart_Trivial
             this.panelKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelKonsumen.Location = new System.Drawing.Point(0, 184);
             this.panelKonsumen.Name = "panelKonsumen";
-            this.panelKonsumen.Size = new System.Drawing.Size(233, 401);
+            this.panelKonsumen.Size = new System.Drawing.Size(233, 441);
             this.panelKonsumen.TabIndex = 2;
             this.panelKonsumen.Visible = false;
             // 
@@ -534,7 +540,7 @@ namespace OnlineMart_Trivial
             this.buttonLogout.FlatAppearance.BorderSize = 0;
             this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogout.Location = new System.Drawing.Point(0, 1314);
+            this.buttonLogout.Location = new System.Drawing.Point(0, 1454);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonLogout.Size = new System.Drawing.Size(233, 45);
@@ -636,6 +642,45 @@ namespace OnlineMart_Trivial
             this.labelwelcome.TabIndex = 0;
             this.labelwelcome.Text = "Welcome Back,";
             // 
+            // panelPenjual
+            // 
+            this.panelPenjual.Controls.Add(this.button1);
+            this.panelPenjual.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelPenjual.Location = new System.Drawing.Point(0, 1354);
+            this.panelPenjual.Name = "panelPenjual";
+            this.panelPenjual.Size = new System.Drawing.Size(233, 100);
+            this.panelPenjual.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(233, 45);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "FITUR PENJUAL";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(0, 360);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(233, 45);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "MINI GAMES";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -665,6 +710,7 @@ namespace OnlineMart_Trivial
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelPenjual.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -708,6 +754,9 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.Button buttonPengaturanMetodePembayaran;
         private System.Windows.Forms.Button buttonPengaturanStok;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panelPenjual;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

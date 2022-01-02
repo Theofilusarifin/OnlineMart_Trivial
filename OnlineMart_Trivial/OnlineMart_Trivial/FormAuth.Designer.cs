@@ -29,159 +29,104 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
+            this.pictureBoxRider = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPegawai = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPenjual = new System.Windows.Forms.PictureBox();
+            this.pictureBoxKonsumen = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonLoginPegawai = new System.Windows.Forms.Button();
-            this.buttonRegisterKonsumen = new System.Windows.Forms.Button();
-            this.buttonLoginKonsumen = new System.Windows.Forms.Button();
-            this.buttonLoginRider = new System.Windows.Forms.Button();
-            this.buttonRegisterRider = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPegawai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPenjual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKonsumen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBoxRider
+            // 
+            this.pictureBoxRider.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxRider.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxRider.Location = new System.Drawing.Point(483, 400);
+            this.pictureBoxRider.Name = "pictureBoxRider";
+            this.pictureBoxRider.Size = new System.Drawing.Size(247, 377);
+            this.pictureBoxRider.TabIndex = 19;
+            this.pictureBoxRider.TabStop = false;
+            this.pictureBoxRider.Click += new System.EventHandler(this.pictureBoxRider_Click);
+            // 
+            // pictureBoxPegawai
+            // 
+            this.pictureBoxPegawai.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPegawai.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxPegawai.Location = new System.Drawing.Point(847, 400);
+            this.pictureBoxPegawai.Name = "pictureBoxPegawai";
+            this.pictureBoxPegawai.Size = new System.Drawing.Size(247, 377);
+            this.pictureBoxPegawai.TabIndex = 20;
+            this.pictureBoxPegawai.TabStop = false;
+            this.pictureBoxPegawai.Click += new System.EventHandler(this.pictureBoxPegawai_Click);
+            // 
+            // pictureBoxPenjual
+            // 
+            this.pictureBoxPenjual.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPenjual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxPenjual.Location = new System.Drawing.Point(1215, 400);
+            this.pictureBoxPenjual.Name = "pictureBoxPenjual";
+            this.pictureBoxPenjual.Size = new System.Drawing.Size(247, 377);
+            this.pictureBoxPenjual.TabIndex = 21;
+            this.pictureBoxPenjual.TabStop = false;
+            this.pictureBoxPenjual.Click += new System.EventHandler(this.pictureBoxPenjual_Click);
+            // 
+            // pictureBoxKonsumen
+            // 
+            this.pictureBoxKonsumen.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxKonsumen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxKonsumen.Location = new System.Drawing.Point(96, 400);
+            this.pictureBoxKonsumen.Name = "pictureBoxKonsumen";
+            this.pictureBoxKonsumen.Size = new System.Drawing.Size(247, 377);
+            this.pictureBoxKonsumen.TabIndex = 22;
+            this.pictureBoxKonsumen.TabStop = false;
+            this.pictureBoxKonsumen.Click += new System.EventHandler(this.pictureBoxKonsumen_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::OnlineMart_Trivial.Properties.Resources.Background_Auth;
+            this.pictureBox1.Image = global::OnlineMart_Trivial.Properties.Resources.Background_Auth3;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1556, 884);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
-            // 
-            // buttonLoginPegawai
-            // 
-            this.buttonLoginPegawai.AutoSize = true;
-            this.buttonLoginPegawai.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLoginPegawai.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonLoginPegawai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLoginPegawai.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLoginPegawai.FlatAppearance.BorderSize = 0;
-            this.buttonLoginPegawai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLoginPegawai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
-            this.buttonLoginPegawai.ForeColor = System.Drawing.Color.White;
-            this.buttonLoginPegawai.Location = new System.Drawing.Point(1144, 630);
-            this.buttonLoginPegawai.Name = "buttonLoginPegawai";
-            this.buttonLoginPegawai.Size = new System.Drawing.Size(287, 43);
-            this.buttonLoginPegawai.TabIndex = 4;
-            this.buttonLoginPegawai.Text = "Login";
-            this.buttonLoginPegawai.UseVisualStyleBackColor = false;
-            this.buttonLoginPegawai.Click += new System.EventHandler(this.buttonLoginPegawai_Click);
-            this.buttonLoginPegawai.MouseEnter += new System.EventHandler(this.buttonLoginPegawai_MouseEnter);
-            this.buttonLoginPegawai.MouseLeave += new System.EventHandler(this.buttonLoginPegawai_MouseLeave);
-            // 
-            // buttonRegisterKonsumen
-            // 
-            this.buttonRegisterKonsumen.AutoSize = true;
-            this.buttonRegisterKonsumen.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRegisterKonsumen.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonRegisterKonsumen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonRegisterKonsumen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRegisterKonsumen.FlatAppearance.BorderSize = 0;
-            this.buttonRegisterKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegisterKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
-            this.buttonRegisterKonsumen.ForeColor = System.Drawing.Color.White;
-            this.buttonRegisterKonsumen.Location = new System.Drawing.Point(137, 690);
-            this.buttonRegisterKonsumen.Name = "buttonRegisterKonsumen";
-            this.buttonRegisterKonsumen.Size = new System.Drawing.Size(287, 43);
-            this.buttonRegisterKonsumen.TabIndex = 1;
-            this.buttonRegisterKonsumen.Text = "Register";
-            this.buttonRegisterKonsumen.UseVisualStyleBackColor = false;
-            this.buttonRegisterKonsumen.Click += new System.EventHandler(this.buttonRegisterKonsumen_Click);
-            this.buttonRegisterKonsumen.MouseEnter += new System.EventHandler(this.buttonRegisterKonsumen_MouseEnter);
-            this.buttonRegisterKonsumen.MouseLeave += new System.EventHandler(this.buttonRegisterKonsumen_MouseLeave);
-            // 
-            // buttonLoginKonsumen
-            // 
-            this.buttonLoginKonsumen.AutoSize = true;
-            this.buttonLoginKonsumen.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLoginKonsumen.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonLoginKonsumen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLoginKonsumen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLoginKonsumen.FlatAppearance.BorderSize = 0;
-            this.buttonLoginKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLoginKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
-            this.buttonLoginKonsumen.ForeColor = System.Drawing.Color.White;
-            this.buttonLoginKonsumen.Location = new System.Drawing.Point(137, 630);
-            this.buttonLoginKonsumen.Name = "buttonLoginKonsumen";
-            this.buttonLoginKonsumen.Size = new System.Drawing.Size(287, 43);
-            this.buttonLoginKonsumen.TabIndex = 0;
-            this.buttonLoginKonsumen.Text = "Login";
-            this.buttonLoginKonsumen.UseVisualStyleBackColor = false;
-            this.buttonLoginKonsumen.Click += new System.EventHandler(this.buttonLoginKonsumen_Click);
-            this.buttonLoginKonsumen.MouseEnter += new System.EventHandler(this.buttonLoginKonsumen_MouseEnter);
-            this.buttonLoginKonsumen.MouseLeave += new System.EventHandler(this.buttonLoginKonsumen_MouseLeave);
-            // 
-            // buttonLoginRider
-            // 
-            this.buttonLoginRider.AutoSize = true;
-            this.buttonLoginRider.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLoginRider.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonLoginRider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLoginRider.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLoginRider.FlatAppearance.BorderSize = 0;
-            this.buttonLoginRider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLoginRider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
-            this.buttonLoginRider.ForeColor = System.Drawing.Color.White;
-            this.buttonLoginRider.Location = new System.Drawing.Point(654, 630);
-            this.buttonLoginRider.Name = "buttonLoginRider";
-            this.buttonLoginRider.Size = new System.Drawing.Size(287, 43);
-            this.buttonLoginRider.TabIndex = 2;
-            this.buttonLoginRider.Text = "Login";
-            this.buttonLoginRider.UseVisualStyleBackColor = false;
-            this.buttonLoginRider.Click += new System.EventHandler(this.buttonLoginRider_Click);
-            this.buttonLoginRider.MouseEnter += new System.EventHandler(this.buttonLoginRider_MouseEnter);
-            this.buttonLoginRider.MouseLeave += new System.EventHandler(this.buttonLoginRider_MouseLeave);
-            // 
-            // buttonRegisterRider
-            // 
-            this.buttonRegisterRider.AutoSize = true;
-            this.buttonRegisterRider.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRegisterRider.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Button_Leave;
-            this.buttonRegisterRider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonRegisterRider.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRegisterRider.FlatAppearance.BorderSize = 0;
-            this.buttonRegisterRider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegisterRider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
-            this.buttonRegisterRider.ForeColor = System.Drawing.Color.White;
-            this.buttonRegisterRider.Location = new System.Drawing.Point(654, 690);
-            this.buttonRegisterRider.Name = "buttonRegisterRider";
-            this.buttonRegisterRider.Size = new System.Drawing.Size(287, 43);
-            this.buttonRegisterRider.TabIndex = 3;
-            this.buttonRegisterRider.Text = "Register";
-            this.buttonRegisterRider.UseVisualStyleBackColor = false;
-            this.buttonRegisterRider.Click += new System.EventHandler(this.buttonRegisterRider_Click);
-            this.buttonRegisterRider.MouseEnter += new System.EventHandler(this.buttonRegisterRider_MouseEnter);
-            this.buttonRegisterRider.MouseLeave += new System.EventHandler(this.buttonRegisterRider_MouseLeave);
             // 
             // FormAuth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Auth3;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1556, 884);
-            this.Controls.Add(this.buttonLoginPegawai);
-            this.Controls.Add(this.buttonRegisterKonsumen);
-            this.Controls.Add(this.buttonLoginKonsumen);
-            this.Controls.Add(this.buttonLoginRider);
-            this.Controls.Add(this.buttonRegisterRider);
+            this.Controls.Add(this.pictureBoxKonsumen);
+            this.Controls.Add(this.pictureBoxPenjual);
+            this.Controls.Add(this.pictureBoxPegawai);
+            this.Controls.Add(this.pictureBoxRider);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAuth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAuth";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPegawai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPenjual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKonsumen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.Button buttonLoginPegawai;
-        public System.Windows.Forms.Button buttonRegisterKonsumen;
-        public System.Windows.Forms.Button buttonLoginKonsumen;
-        public System.Windows.Forms.Button buttonLoginRider;
-        public System.Windows.Forms.Button buttonRegisterRider;
+        private System.Windows.Forms.PictureBox pictureBoxRider;
+        private System.Windows.Forms.PictureBox pictureBoxPegawai;
+        private System.Windows.Forms.PictureBox pictureBoxPenjual;
+        private System.Windows.Forms.PictureBox pictureBoxKonsumen;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

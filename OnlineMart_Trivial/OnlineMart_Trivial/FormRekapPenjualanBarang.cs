@@ -56,18 +56,21 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Add("jumlah", "Jumlah"); // dari barang_order
             dataGridView.Columns.Add("subtotal", "SubTotal"); // dari barang_order
 
-            //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["cabang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["tanggal_waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["barang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["jumlah"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["subtotal"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(248, 142, 123);
+            dataGridView.EnableHeadersVisualStyles = false;
 
-            //agar angka rata kanan
-            dataGridView.Columns["harga"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView.Columns["jumlah"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView.Columns["subtotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //Agar lebar kolom dapat menyesuaikan panjang / isi data
+            dataGridView.Columns["cabang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["tanggal_waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["barang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["jumlah"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["subtotal"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            //agar angka rata tengah
+            dataGridView.Columns["harga"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns["jumlah"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns["subtotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //agar angka ditampilkan dengan format pemisah ribuan (100 delimiter)
             dataGridView.Columns["harga"].DefaultCellStyle.Format = "#,###";

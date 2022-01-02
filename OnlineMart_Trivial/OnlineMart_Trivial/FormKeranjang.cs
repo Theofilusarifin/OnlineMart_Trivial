@@ -51,13 +51,16 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Add("jumlah", "Jumlah");
             dataGridView.Columns.Add("subtotal", "SubTotal");
 
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(248, 142, 123);
+            dataGridView.EnableHeadersVisualStyles = false;
+
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["jumlah"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["subtotal"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["jumlah"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["subtotal"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             //agar angka rata kanan
             dataGridView.Columns["harga"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

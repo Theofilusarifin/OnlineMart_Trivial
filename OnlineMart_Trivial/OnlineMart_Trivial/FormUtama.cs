@@ -18,6 +18,7 @@ namespace OnlineMart_Trivial
         public static FormUtama frmUtama = null;
         public static string role;
         public static Pegawai pegawai;
+        public static Penjual penjual;
         public static Driver rider;
         public static Pelanggan konsumen;
         public static List<Barang> keranjang = new List<Barang>();

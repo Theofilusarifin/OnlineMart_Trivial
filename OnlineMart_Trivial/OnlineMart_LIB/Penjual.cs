@@ -18,7 +18,7 @@ namespace OnlineMart_LIB
 		private string telpon;
 		private Blacklist blacklist_id;
 
-		public Penjual(int id, string username, string nama, string email, string password, string status, string telpon, Blacklist blacklist_id)
+		public Penjual(int id, string username, string nama, string email, string password, string status, string telpon)
 		{
 			this.Id = id;
 			this.Username = username;
@@ -27,9 +27,9 @@ namespace OnlineMart_LIB
 			this.Password = password;
 			this.Status = status;
 			this.Telpon = telpon;
-			this.Blacklist_id = blacklist_id;
+			this.Blacklist_id = null;
 		}
-		public Penjual(string username, string nama, string email, string password, string status, string telpon, Blacklist blacklist_id)
+		public Penjual(string username, string nama, string email, string password, string status, string telpon)
 		{
 			this.Username = username;
 			this.Nama = nama;
@@ -37,7 +37,7 @@ namespace OnlineMart_LIB
 			this.Password = password;
 			this.Status = status;
 			this.Telpon = telpon;
-			this.Blacklist_id = blacklist_id;
+			this.Blacklist_id = null;
 		}
 
 		public int Id { get => id; set => id = value; }
@@ -73,7 +73,7 @@ namespace OnlineMart_LIB
 			while (hasil.Read() == true)
 			{
 				Blacklist b = Blacklist.AmbilData(hasil.GetInt32(7));
-				Penjual p = new Penjual(hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6), b);
+				Penjual p = new Penjual(hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6));
 				listPenjual.Add(p);
 			}
 			return listPenjual;
@@ -101,6 +101,20 @@ namespace OnlineMart_LIB
 			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
+		}
+
+		public static Penjual CekLogin(string username, string password)
+		{
+			string sql = "select id, username, nama, email, password, status, telepon from penjuals where username = '" + username + "' and password = SHA2('" + password + "', 512)";
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+			while (hasil.Read())
+			{
+				Penjual penjual = new Penjual(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6));
+
+				return penjual;
+			}
+			return null;
 		}
 	}
 }

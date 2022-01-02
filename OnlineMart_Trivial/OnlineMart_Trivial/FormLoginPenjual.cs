@@ -8,12 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineMart_LIB;
-
 namespace OnlineMart_Trivial
 {
-    public partial class FormLoginRider : Form
+    public partial class FormLoginPenjual : Form
     {
-        public FormLoginRider()
+        public FormLoginPenjual()
         {
             InitializeComponent();
         }
@@ -48,14 +47,14 @@ namespace OnlineMart_Trivial
                 //create object baru
                 Koneksi koneksi = new Koneksi();
                 //create username dan password
-                Driver rider = Driver.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
+                Penjual penjual = Penjual.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
 
                 //kalau username dan pass nya benar
-                if (!(rider is null))
+                if (!(penjual is null))
                 {
-                    FormUtama.role = "rider";
-                    FormUtama.rider = rider;
-                    FormUtama.frmUtama.labelNama.Text = rider.Nama;
+                    FormUtama.role = "pegawai";
+                    FormUtama.penjual = penjual;
+                    FormUtama.frmUtama.labelNama.Text = penjual.Nama;
 
                     FormLoading form = new FormLoading(); //Create Object
                     form.Owner = this;
@@ -83,24 +82,24 @@ namespace OnlineMart_Trivial
             }
         }
 
-        private void FormLoginRider_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            FormAuth frm = (FormAuth)this.Owner;
-            frm.Show();
-        }
-
-        private void FormLoginRider_Load(object sender, EventArgs e)
-        {
-            textBoxUsername.Focus();
-        }
-
         private void labelRegistrasi_Click(object sender, EventArgs e)
         {
-            FormRegisterRider frm = new FormRegisterRider(); //Create Object
+            FormRegisterPenjual frm = new FormRegisterPenjual(); //Create Object
             frm.Owner = this.Owner;
             frm.Show();
             this.Owner.Hide();
             this.Hide();
+        }
+
+        private void FormLoginPenjual_Load(object sender, EventArgs e)
+        {
+            textBoxUsername.Focus();
+        }
+
+        private void FormLoginPenjual_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormAuth frm = (FormAuth)this.Owner;
+            frm.Show();
         }
     }
 }

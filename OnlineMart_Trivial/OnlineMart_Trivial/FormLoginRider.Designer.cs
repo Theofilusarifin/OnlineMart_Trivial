@@ -60,6 +60,7 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.Size = new System.Drawing.Size(141, 16);
             this.labelRegistrasi.TabIndex = 3;
             this.labelRegistrasi.Text = "&Lakukan Registrasi";
+            this.labelRegistrasi.Click += new System.EventHandler(this.labelRegistrasi_Click);
             // 
             // textBoxUsername
             // 

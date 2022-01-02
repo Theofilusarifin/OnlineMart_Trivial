@@ -53,8 +53,8 @@ namespace OnlineMart_Trivial
             dataGridView.Columns["tanggal_waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns["pemasukan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            //agar angka rata kanan
-            dataGridView.Columns["pemasukan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //agar angka rata tengah
+            dataGridView.Columns["pemasukan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //agar angka ditampilkan dengan format pemisah ribuan (100 delimiter)
             dataGridView.Columns["pemasukan"].DefaultCellStyle.Format = "#,###";

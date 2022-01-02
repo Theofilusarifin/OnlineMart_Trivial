@@ -29,29 +29,38 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelNamaCabang = new System.Windows.Forms.Label();
             this.buttonCheckout = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelNamaCabang = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView
+            // label1
             // 
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView.Location = new System.Drawing.Point(308, 65);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(921, 267);
-            this.dataGridView.TabIndex = 42;
-            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKeranjang_CellContentClick);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label1.Location = new System.Drawing.Point(304, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 22);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Cabang Dipilih :";
+            // 
+            // labelNamaCabang
+            // 
+            this.labelNamaCabang.AutoSize = true;
+            this.labelNamaCabang.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.labelNamaCabang.Location = new System.Drawing.Point(445, 25);
+            this.labelNamaCabang.Name = "labelNamaCabang";
+            this.labelNamaCabang.Size = new System.Drawing.Size(0, 22);
+            this.labelNamaCabang.TabIndex = 46;
             // 
             // buttonCheckout
             // 
@@ -106,24 +115,46 @@ namespace OnlineMart_Trivial
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // dataGridView
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.label1.Location = new System.Drawing.Point(304, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 22);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "Cabang Dipilih :";
-            // 
-            // labelNamaCabang
-            // 
-            this.labelNamaCabang.AutoSize = true;
-            this.labelNamaCabang.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.labelNamaCabang.Location = new System.Drawing.Point(445, 25);
-            this.labelNamaCabang.Name = "labelNamaCabang";
-            this.labelNamaCabang.Size = new System.Drawing.Size(0, 22);
-            this.labelNamaCabang.TabIndex = 46;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView.GridColor = System.Drawing.Color.Coral;
+            this.dataGridView.Location = new System.Drawing.Point(308, 65);
+            this.dataGridView.Name = "dataGridView";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 8F);
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView.Size = new System.Drawing.Size(921, 267);
+            this.dataGridView.TabIndex = 47;
             // 
             // FormKeranjang
             // 
@@ -131,19 +162,19 @@ namespace OnlineMart_Trivial
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 419);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.labelNamaCabang);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCheckout);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormKeranjang";
             this.Text = "FormKeranjang";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormKeranjang_FormClosing);
             this.Load += new System.EventHandler(this.FormKeranjang_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,9 +183,9 @@ namespace OnlineMart_Trivial
 		#endregion
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonClose;
-        public System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonCheckout;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelNamaCabang;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }

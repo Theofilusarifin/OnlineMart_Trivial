@@ -83,6 +83,36 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Background_Auth1 {
+            get {
+                object obj = ResourceManager.GetObject("Background_Auth1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Background_Auth2 {
+            get {
+                object obj = ResourceManager.GetObject("Background_Auth2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Background_Auth3 {
+            get {
+                object obj = ResourceManager.GetObject("Background_Auth3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Background_Login_Register {
             get {
                 object obj = ResourceManager.GetObject("Background_Login_Register", resourceCulture);
@@ -223,6 +253,16 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Form_Regis_Penjual {
+            get {
+                object obj = ResourceManager.GetObject("Form Regis Penjual", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Form_Regis_Rider {
             get {
                 object obj = ResourceManager.GetObject("Form Regis Rider", resourceCulture);
@@ -296,6 +336,16 @@ namespace OnlineMart_Trivial.Properties {
         internal static System.Drawing.Bitmap Login_Pegawai {
             get {
                 object obj = ResourceManager.GetObject("Login Pegawai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Login_Penjual {
+            get {
+                object obj = ResourceManager.GetObject("Login Penjual", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

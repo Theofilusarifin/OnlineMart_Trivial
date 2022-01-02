@@ -181,11 +181,23 @@
     <Compile Include="FormLoginKonsumen.Designer.cs">
       <DependentUpon>FormLoginKonsumen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLoginPenjual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginPenjual.Designer.cs">
+      <DependentUpon>FormLoginPenjual.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLoginRider.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLoginRider.Designer.cs">
       <DependentUpon>FormLoginRider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMiniGames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMiniGames.Designer.cs">
+      <DependentUpon>FormMiniGames.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProfile.cs">
       <SubType>Form</SubType>
@@ -198,6 +210,12 @@
     </Compile>
     <Compile Include="FormRegisterKonsumen.Designer.cs">
       <DependentUpon>FormRegisterKonsumen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterPenjual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterPenjual.Designer.cs">
+      <DependentUpon>FormRegisterPenjual.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRegisterRider.cs">
       <SubType>Form</SubType>
@@ -390,14 +408,23 @@
     <EmbeddedResource Include="FormLoginKonsumen.resx">
       <DependentUpon>FormLoginKonsumen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginPenjual.resx">
+      <DependentUpon>FormLoginPenjual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLoginRider.resx">
       <DependentUpon>FormLoginRider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMiniGames.resx">
+      <DependentUpon>FormMiniGames.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegisterKonsumen.resx">
       <DependentUpon>FormRegisterKonsumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterPenjual.resx">
+      <DependentUpon>FormRegisterPenjual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegisterRider.resx">
       <DependentUpon>FormRegisterRider.cs</DependentUpon>
@@ -656,6 +683,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ubah Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background_Auth1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background_Auth2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background_Auth3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Penjual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form Regis Penjual.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
