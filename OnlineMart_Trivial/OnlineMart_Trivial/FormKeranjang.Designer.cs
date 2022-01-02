@@ -39,6 +39,8 @@ namespace OnlineMart_Trivial
             this.buttonClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.labelTotalHarga = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -155,6 +157,29 @@ namespace OnlineMart_Trivial
             this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.Size = new System.Drawing.Size(921, 267);
             this.dataGridView.TabIndex = 47;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKeranjang_CellContentClick);
+            this.dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEndEdit);
+            this.dataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellValueChanged);
+            // 
+            // labelTotalHarga
+            // 
+            this.labelTotalHarga.AutoSize = true;
+            this.labelTotalHarga.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.labelTotalHarga.Location = new System.Drawing.Point(968, 25);
+            this.labelTotalHarga.Name = "labelTotalHarga";
+            this.labelTotalHarga.Size = new System.Drawing.Size(0, 22);
+            this.labelTotalHarga.TabIndex = 50;
+            this.labelTotalHarga.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.label4.Location = new System.Drawing.Point(854, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(135, 22);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Total Harga :";
             // 
             // FormKeranjang
             // 
@@ -162,6 +187,8 @@ namespace OnlineMart_Trivial
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 419);
+            this.Controls.Add(this.labelTotalHarga);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.labelNamaCabang);
             this.Controls.Add(this.label1);
@@ -187,5 +214,7 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelNamaCabang;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Label labelTotalHarga;
+        private System.Windows.Forms.Label label4;
     }
 }

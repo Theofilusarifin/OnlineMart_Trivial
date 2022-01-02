@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using OnlineMart_LIB;
+// untuk membuat currency symbol
+using System.Globalization;
 
 namespace OnlineMart_Trivial
 {
@@ -18,6 +21,8 @@ namespace OnlineMart_Trivial
 
         public static List<Barang_Order> listBarangOrder = thisOrder.ListBarangOrder;
         Barang_Order barang_order;
+
+        public static float totalHarga;
 
         public FormKeranjang()
         {
@@ -225,6 +230,17 @@ namespace OnlineMart_Trivial
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
+
+                #region TotalHarga
+                totalHarga = 0;
+
+                foreach (Barang_Order bo in listBarangOrder)
+                {
+                    totalHarga += bo.Harga;
+                }
+
+                labelTotalHarga.Text = totalHarga.ToString("C", CultureInfo.CreateSpecificCulture("id"));
+                #endregion
             }
             catch (Exception ex)
             {
@@ -288,8 +304,14 @@ namespace OnlineMart_Trivial
                 if (e.ColumnIndex == dataGridView.Columns["btn-"].Index && e.RowIndex >= 0)
                 {
                     Barang b = Barang.AmbilData(id);
-                    FormUtama.keranjang.Remove(b); //Untuk menghapus barang di dalam keranjang
-                    MessageBox.Show(FormUtama.keranjang.Remove(b).ToString());
+                    for (int i = 0; i < FormUtama.keranjang.Count; i++)
+                    {
+                        if (FormUtama.keranjang[i].Id == b.Id && FormUtama.keranjang[i].Nama == b.Nama)
+                        {
+                            FormUtama.keranjang.RemoveAt(i);
+                            break;
+                        }
+                    }
                     FormKeranjang_Load(sender, e);
                 }
                 #endregion
@@ -299,6 +321,81 @@ namespace OnlineMart_Trivial
                 MessageBox.Show(ex.Message);
 			}
 		}
+
+        private void dataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //#region get jumlah
+                //// list untuk menampung jumlah awal barang
+                //List<int> jumlahAwal = new List<int>();
+                //// untuk setiap barang order di list
+                //foreach (Barang_Order bo in listBarangOrder)
+                //{
+                //    // masukkan jumlah awal
+                //    jumlahAwal.Add(bo.Jumlah);
+                //    MessageBox.Show(bo.Jumlah.ToString());
+                //}
+
+                //// list untuk menampung jumlah akhir (jumlah setelah diubah)
+                //List<int> jumlahAkhir = new List<int>();
+                //// untuk setiap baris di datagridview
+                //foreach (DataGridViewRow row in dataGridView.Rows)
+                //{
+                //    // ambil jumlah dari data grid
+                //    int jumlah = int.Parse(dataGridView.CurrentRow.Cells["jumlah"].Value.ToString());
+                //    // masukkan jumlah akhir
+                //    jumlahAkhir.Add(jumlah);
+                //    MessageBox.Show(jumlah.ToString());
+                //}
+                //#endregion
+
+                //#region count changes
+                //List<int> perubahan = new List<int>();
+                //for (int i = 0; i < dataGridView.Rows.Count; i++)
+                //{
+                //    // hitung perubahan
+                //    perubahan.Add(jumlahAkhir[i] - jumlahAwal[i]);
+                //    MessageBox.Show((jumlahAkhir[i] - jumlahAwal[i]).ToString());
+                //}
+                //#endregion
+
+                //#region input / apply changes to keranjang
+                //foreach (int changes in perubahan)
+                //{
+                //    // kalau negatif
+                //    if(changes < 0)
+                //    {
+                        
+                //    }
+                //    // kalau positif
+                //    else if (changes > 0)
+                //    {
+                //        for (int i = 0; i < changes; i++)
+                //        {
+
+                //        }
+                //    }
+                //}
+                //#endregion
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //MessageBox.Show("berhasil CellEndEdit");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         #endregion
 
         #region Button
@@ -307,10 +404,12 @@ namespace OnlineMart_Trivial
             // Set Default Gift Redeem Id 1
             thisOrder.Gift_redeem = new Gift_Redeem(1);
 
-            foreach (Barang_Order bo in listBarangOrder)
-            {
-                thisOrder.Total_bayar += bo.Harga;
-            }
+            //foreach (Barang_Order bo in listBarangOrder)
+            //{
+            //    thisOrder.Total_bayar += bo.Harga;
+            //}
+
+            thisOrder.Total_bayar = totalHarga;
 
             foreach (Barang_Order bo in listBarangOrder)
             {
@@ -345,5 +444,7 @@ namespace OnlineMart_Trivial
             buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
         }
         #endregion
+
+        
     }
 }
