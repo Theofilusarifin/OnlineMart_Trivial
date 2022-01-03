@@ -158,7 +158,6 @@ namespace OnlineMart_Trivial
             this.dataGridView.Size = new System.Drawing.Size(921, 267);
             this.dataGridView.TabIndex = 47;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKeranjang_CellContentClick);
-            this.dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEndEdit);
             this.dataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellValueChanged);
             // 
             // labelTotalHarga
