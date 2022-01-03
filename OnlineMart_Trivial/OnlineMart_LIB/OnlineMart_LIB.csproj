@@ -62,6 +62,7 @@
     <Compile Include="Order.cs" />
     <Compile Include="Pegawai.cs" />
     <Compile Include="Pelanggan.cs" />
+    <Compile Include="Penilaian.cs" />
     <Compile Include="Penjual.cs" />
     <Compile Include="Promo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
