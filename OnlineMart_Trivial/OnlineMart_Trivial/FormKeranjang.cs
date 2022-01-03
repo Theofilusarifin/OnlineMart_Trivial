@@ -326,70 +326,57 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                //#region get jumlah
-                //// list untuk menampung jumlah awal barang
-                //List<int> jumlahAwal = new List<int>();
-                //// untuk setiap barang order di list
-                //foreach (Barang_Order bo in listBarangOrder)
-                //{
-                //    // masukkan jumlah awal
-                //    jumlahAwal.Add(bo.Jumlah);
-                //    MessageBox.Show(bo.Jumlah.ToString());
-                //}
+                int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
 
-                //// list untuk menampung jumlah akhir (jumlah setelah diubah)
-                //List<int> jumlahAkhir = new List<int>();
-                //// untuk setiap baris di datagridview
-                //foreach (DataGridViewRow row in dataGridView.Rows)
-                //{
-                //    // ambil jumlah dari data grid
-                //    int jumlah = int.Parse(dataGridView.CurrentRow.Cells["jumlah"].Value.ToString());
-                //    // masukkan jumlah akhir
-                //    jumlahAkhir.Add(jumlah);
-                //    MessageBox.Show(jumlah.ToString());
-                //}
-                //#endregion
+                int jumlahAwal = 0;
+                // untuk setiap barang order di list
+                foreach (Barang_Order bo in listBarangOrder)
+                {
+                    if (bo.Barang.Id == id)
+                    {
+                        // masukkan jumlah awal
+                        jumlahAwal = bo.Jumlah;
+                        //MessageBox.Show("jumlah awal: " + bo.Jumlah.ToString());
+                    }
+                }
 
-                //#region count changes
-                //List<int> perubahan = new List<int>();
-                //for (int i = 0; i < dataGridView.Rows.Count; i++)
-                //{
-                //    // hitung perubahan
-                //    perubahan.Add(jumlahAkhir[i] - jumlahAwal[i]);
-                //    MessageBox.Show((jumlahAkhir[i] - jumlahAwal[i]).ToString());
-                //}
-                //#endregion
+                // ambil jumlah dari data grid
+                int jumlah = int.Parse(dataGridView.CurrentRow.Cells["jumlah"].Value.ToString());
+                // masukkan jumlah akhir
+                int jumlahAkhir = jumlah;
+                //MessageBox.Show("jumlah akhir: " + jumlah.ToString());
 
-                //#region input / apply changes to keranjang
-                //foreach (int changes in perubahan)
-                //{
-                //    // kalau negatif
-                //    if(changes < 0)
-                //    {
-                        
-                //    }
-                //    // kalau positif
-                //    else if (changes > 0)
-                //    {
-                //        for (int i = 0; i < changes; i++)
-                //        {
+                // hitung perubahan
+                int perubahan = jumlahAkhir - jumlahAwal;
+                //MessageBox.Show("perubahan: " + perubahan.ToString());
 
-                //        }
-                //    }
-                //}
-                //#endregion
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+                // kalau negatif
+                if (perubahan < 0)
+                {
+                    for (int i = 0; i < Math.Abs(perubahan); i++)
+                    {
+                        Barang b = Barang.AmbilData(id);
+                        for (int j = 0; j < FormUtama.keranjang.Count; j++)
+                        {
+                            if (FormUtama.keranjang[j].Id == b.Id && FormUtama.keranjang[j].Nama == b.Nama)
+                            {
+                                FormUtama.keranjang.RemoveAt(j);
+                                break;
+                            }
+                        }
+                    }
+                }
+                // kalau positif
+                else if (perubahan > 0)
+                {
+                    for (int i = 0; i < perubahan; i++)
+                    {
+                        Barang b = Barang.AmbilData(id);
+                        FormUtama.keranjang.Add(b);
+                    }
+                }
 
-        private void dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                //MessageBox.Show("berhasil CellEndEdit");
+                FormKeranjang_Load(sender, e);
             }
             catch (Exception ex)
             {
@@ -445,6 +432,5 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
-        
     }
 }
