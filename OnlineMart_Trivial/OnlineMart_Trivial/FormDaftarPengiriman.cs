@@ -65,6 +65,7 @@ namespace OnlineMart_Trivial
             dataGridView.AllowUserToAddRows = false;
             dataGridView.ReadOnly = true;
         }
+
         private void TampilDataGrid()
         {
             //Kosongi isi datagridview
@@ -115,7 +116,7 @@ namespace OnlineMart_Trivial
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Error");
             }
 
         }
