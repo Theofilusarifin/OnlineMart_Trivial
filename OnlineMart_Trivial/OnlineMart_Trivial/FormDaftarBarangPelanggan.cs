@@ -93,6 +93,17 @@ namespace OnlineMart_Trivial
                 bcolTambahKeranjang.UseColumnTextForButtonValue = true;
                 dataGridView.Columns.Add(bcolTambahKeranjang);
             }
+            if (!dataGridView.Columns.Contains("btnLihatDetailBarang"))
+            {
+                //Button tambah ke keranjang
+                DataGridViewButtonColumn bcolLihatDetail = new DataGridViewButtonColumn();
+
+                bcolLihatDetail.HeaderText = "Detail barang";
+                bcolLihatDetail.Text = "Lihat detail!";
+                bcolLihatDetail.Name = "btnLihatDetailBarang";
+                bcolLihatDetail.UseColumnTextForButtonValue = true;
+                dataGridView.Columns.Add(bcolLihatDetail);
+            }
         }
         #endregion
 
@@ -167,7 +178,7 @@ namespace OnlineMart_Trivial
             try
             {
                 int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
-
+                Barang b = Barang.AmbilData(id);
                 //Kalau button Tambah ke keranjang diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnTambahKeranjang"].Index && e.RowIndex >= 0)
                 {
@@ -177,7 +188,6 @@ namespace OnlineMart_Trivial
                     }
                     if (cDipilih.Nama == FormUtama.cDipilih.Nama)
                     {
-                        Barang b = Barang.AmbilData(id);
                         FormUtama.keranjang.Add(b); //Untuk menambahkan barang ke dalam keranjang
                         MessageBox.Show("Barang berhasil di tambahkan ke dalam keranjang");
                     }
@@ -186,6 +196,15 @@ namespace OnlineMart_Trivial
                         MessageBox.Show("Hanya bisa menambahkan barang dari satu cabang sama yang telah dipilih.");
                     }
                 }
+                if (e.ColumnIndex == dataGridView.Columns["btnLihatDetailBarang"].Index && e.RowIndex >= 0)
+				{
+                    FormDetailBarang.barang = b;
+                    FormDetailBarang formDetailBarang = new FormDetailBarang();
+                    formDetailBarang.Owner = this;
+                    formDetailBarang.ShowDialog();
+                    this.Hide();
+				}
+
             }
             catch (Exception ex)
             {

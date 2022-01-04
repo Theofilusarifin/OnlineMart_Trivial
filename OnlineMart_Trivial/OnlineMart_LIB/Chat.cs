@@ -17,6 +17,7 @@ namespace OnlineMart_LIB
         Order order;
         Driver driver;
         Pelanggan pelanggan;
+        Penjual penjual;
         #endregion
 
         #region Constructors
@@ -28,6 +29,7 @@ namespace OnlineMart_LIB
             this.Order = order;
             this.Driver = driver;
             this.Pelanggan = pelanggan;
+            this.Penjual = null;
         }
         public Chat(int id, string isi, DateTime waktu, string role_pengirim, Order order, Driver driver, Pelanggan pelanggan)
         {
@@ -38,6 +40,18 @@ namespace OnlineMart_LIB
             this.Order = order;
             this.Driver = driver;
             this.Pelanggan = pelanggan;
+            this.Penjual = null;
+        }
+        public Chat(string isi, DateTime waktu, string role_pengirim, Order order, Driver driver, Pelanggan pelanggan, Penjual penjual)
+        {
+            this.Isi = isi;
+            this.Waktu = waktu;
+            this.Role_pengirim = role_pengirim;
+            this.Order = order;
+            this.Driver = driver;
+            this.Pelanggan = pelanggan;
+            this.Penjual = penjual;
+
         }
         #endregion
 
@@ -77,16 +91,28 @@ namespace OnlineMart_LIB
             get => pelanggan;
             set => pelanggan = value;
         }
-        #endregion
+		public Penjual Penjual 
+        {
+            get => penjual;
+            set => penjual = value;
+        }
+		#endregion
 
-        #region Methods
+		#region Methods
 
-        //Method untuk menambah data
-        public static Boolean TambahData(Chat c)
+		//Method untuk menambah data
+		public static Boolean TambahData(Chat c)
         {
             //string yang menampung sql query insert into
-            string sql = "insert into chats (isi, waktu, role_pengirim, order_id, driver_id, pelanggan_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', " + c.Order.Id + ", " + c.Driver.Id + ", " + c.Pelanggan.Id + ")";
-
+            string sql = "";
+            if (c.Penjual == null)
+            {
+                sql += "insert into chats (isi, waktu, role_pengirim, order_id, driver_id, pelanggan_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', " + c.Order.Id + ", " + c.Driver.Id + ", " + c.Pelanggan.Id + ")";
+            }
+			else
+			{
+                sql += "insert into chats (isi, waktu, role_pengirim, order_id, driver_id, pelanggan_id, penjual_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', " + c.Order.Id + ", " + c.Driver.Id + ", " + c.Pelanggan.Id + ", " + c.Penjual.Id + ")";
+            }
             //menjalankan perintah sql
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
@@ -99,7 +125,8 @@ namespace OnlineMart_LIB
             string sql = "select * from chats c " +
                 "inner join orders o on c.order_id = o.id " +
                 "inner join pelanggans p on o.pelanggan_id = p.id " +
-                "inner join drivers d on o.driver_id = d.id ";
+                "inner join drivers d on o.driver_id = d.id " + 
+                "inner join penjuals pj on o.penjual_id = pj.id";
             
             //kalau tidak kosong tambahkan ini
             if (kriteria != "") sql += " where " + kriteria + " like '%" + idOrder + "%'" + " order by c.waktu";

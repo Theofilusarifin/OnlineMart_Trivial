@@ -503,6 +503,16 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rating_Star {
+            get {
+                object obj = ResourceManager.GetObject("Rating Star", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Registrasi_Konsumen {
             get {
                 object obj = ResourceManager.GetObject("Registrasi Konsumen", resourceCulture);
