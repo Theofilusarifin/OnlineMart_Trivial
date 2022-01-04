@@ -711,5 +711,26 @@
   <ItemGroup>
     <None Include="Resources\Bintang.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coin.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart flipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background Games.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background Games1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background Games %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background Game FIx.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
