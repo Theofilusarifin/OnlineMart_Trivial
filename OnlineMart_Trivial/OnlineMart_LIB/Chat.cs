@@ -99,7 +99,6 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Methods
-
 		//Method untuk menambah data
 		public static Boolean TambahData(Chat c)
         {

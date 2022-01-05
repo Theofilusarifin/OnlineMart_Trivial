@@ -83,6 +83,19 @@ namespace OnlineMart_Trivial
                 dataGridView.DataSource = null;
             }
 
+            //Tampilkan button Tolak
+            if (!dataGridView.Columns.Contains("btnTolak"))
+            {
+                DataGridViewButtonColumn bcolTolak = new DataGridViewButtonColumn();
+
+                bcolTolak.HeaderText = "Aksi";
+                bcolTolak.Text = "Tolak";
+                bcolTolak.Name = "btnTolak";
+                bcolTolak.UseColumnTextForButtonValue = true;
+
+                dataGridView.Columns.Add(bcolTolak);
+            }
+
             //Tampilkan button Selesai dikirim
             if (!dataGridView.Columns.Contains("btnSelesaiDikirim"))
             {
@@ -95,6 +108,17 @@ namespace OnlineMart_Trivial
 
                 dataGridView.Columns.Add(bcolSelesaiDikirim);
             }
+        }
+
+        private string ToSentenceCase(string word)
+        {
+            string str;
+
+            if (word.Length == 0) str = "";
+            else if (word.Length == 1) str = char.ToUpper(word[0]).ToString();
+            else str = (char.ToUpper(word[0]) + word.Substring(1)).ToString();
+
+            return str;
         }
         #endregion
 
@@ -129,23 +153,47 @@ namespace OnlineMart_Trivial
             {
                 //Menghapus data bila button hapus diklik
                 long id = long.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
+                string nama = dataGridView.CurrentRow.Cells["nama_pelanggan"].Value.ToString();
 
-                //Kalau button hapus diklik
+                //Kalau button tolak diklik
+                if (e.ColumnIndex == dataGridView.Columns["btnTolak"].Index && e.RowIndex >= 0)
+                {
+                    DialogResult hasil = MessageBox.Show(this, "Apakah anda yakin akan menolak pesanan ini?",
+                                                         "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    //Kalau User klik yes
+                    if (hasil == DialogResult.Yes)
+                    {
+                        o = Order.AmbilData(id);
+
+                        o.Status = "Cancelled";
+
+                        Order.UbahData(o);
+                        FormDaftarPengiriman_Load(sender, e);
+                    }
+                }
+
+                //Kalau button selesai dikirim diklik
                 if (e.ColumnIndex == dataGridView.Columns["btnSelesaiDikirim"].Index && e.RowIndex >= 0)
                 {
-                    o = Order.AmbilData(id);
+                    DialogResult hasil = MessageBox.Show(this, "Apakah pesanan dengan ID (" + id + ") atas nama " + ToSentenceCase(nama) + " sudah selesai anda kirim?",
+                                                         "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    //Kalau User klik yes
+                    if (hasil == DialogResult.Yes)
+                    {
+                        o = Order.AmbilData(id);
 
-                    o.Status = "Order Selesai";
+                        o.Status = "Order Selesai";
 
-                    Order.UbahData(o);
-                    FormDaftarPengiriman_Load(sender, e);
+                        Order.UbahData(o);
+                        FormDaftarPengiriman_Load(sender, e);
 
-                    MessageBox.Show("Terima kasih telah mengirim order. Data telah diubah.");
+                        MessageBox.Show("Terima kasih telah mengirim order ini. Selamat melakukan aktifitas kembali");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Order gagal di update, Pesan kesalahan: " + ex.Message, "Error");
             }
         }
         #endregion

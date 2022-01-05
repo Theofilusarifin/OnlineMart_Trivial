@@ -21,6 +21,8 @@ namespace OnlineMart_Trivial
         List<Order> listOrder = new List<Order>();
         List<Chat> listChat = new List<Chat>();
 
+        List<string> listStatus = new List<string>();
+
         #region No Tick Constrols
         //Optimized Controls(No Tick)
         protected override CreateParams CreateParams
@@ -75,6 +77,14 @@ namespace OnlineMart_Trivial
         {
             try
             {
+                //listStatus = Order.AmbilStatus();
+                //listStatus.Insert(0, "");
+
+                //comboBoxStatus.DataSource = listStatus;
+                //comboBoxStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                //listOrder = Order.BacaData(comboBoxStatus.SelectedItem.ToString(), "o.driver_id", FormUtama.rider.Id.ToString());
+
                 listOrder = Order.BacaData("o.driver_id", FormUtama.rider.Id.ToString());
 
                 comboBoxNomorNota.DataSource = listOrder;

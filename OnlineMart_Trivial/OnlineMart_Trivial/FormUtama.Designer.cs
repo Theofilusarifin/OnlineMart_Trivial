@@ -34,7 +34,10 @@ namespace OnlineMart_Trivial
             this.timerLoading = new System.Windows.Forms.Timer(this.components);
             this.panelLeftNavbar = new System.Windows.Forms.Panel();
             this.panelPenjual = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonTambahStok = new System.Windows.Forms.Button();
+            this.buttonChat = new System.Windows.Forms.Button();
+            this.buttonReview = new System.Windows.Forms.Button();
+            this.buttonTambahBarang = new System.Windows.Forms.Button();
             this.panelPegawai = new System.Windows.Forms.Panel();
             this.panelRekapPenjualan = new System.Windows.Forms.Panel();
             this.btnRekapOmaSaldo = new System.Windows.Forms.Button();
@@ -67,21 +70,18 @@ namespace OnlineMart_Trivial
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.labelSaldo = new System.Windows.Forms.Label();
+            this.labelSaldoHeader = new System.Windows.Forms.Label();
+            this.labelPoin = new System.Windows.Forms.Label();
+            this.labelPoinHeader = new System.Windows.Forms.Label();
             this.pictureBoxSaldo = new System.Windows.Forms.PictureBox();
             this.pictureBoxPoin = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BelNotifikasi = new System.Windows.Forms.PictureBox();
+            this.ProfilePicture = new System.Windows.Forms.PictureBox();
             this.labelNama = new System.Windows.Forms.Label();
             this.labelwelcome = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelActiveForm = new System.Windows.Forms.Panel();
-            this.labelPoinHeader = new System.Windows.Forms.Label();
-            this.labelPoin = new System.Windows.Forms.Label();
-            this.labelSaldo = new System.Windows.Forms.Label();
-            this.labelSaldoHeader = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPenjual.SuspendLayout();
             this.panelPegawai.SuspendLayout();
@@ -94,8 +94,8 @@ namespace OnlineMart_Trivial
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSaldo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BelNotifikasi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             this.panelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,10 +125,10 @@ namespace OnlineMart_Trivial
             // 
             // panelPenjual
             // 
-            this.panelPenjual.Controls.Add(this.button9);
-            this.panelPenjual.Controls.Add(this.button8);
-            this.panelPenjual.Controls.Add(this.button7);
-            this.panelPenjual.Controls.Add(this.button1);
+            this.panelPenjual.Controls.Add(this.buttonTambahStok);
+            this.panelPenjual.Controls.Add(this.buttonChat);
+            this.panelPenjual.Controls.Add(this.buttonReview);
+            this.panelPenjual.Controls.Add(this.buttonTambahBarang);
             this.panelPenjual.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPenjual.Location = new System.Drawing.Point(0, 1354);
             this.panelPenjual.Name = "panelPenjual";
@@ -136,20 +136,65 @@ namespace OnlineMart_Trivial
             this.panelPenjual.TabIndex = 0;
             this.panelPenjual.Visible = false;
             // 
-            // button1
+            // buttonTambahStok
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(233, 45);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "TAMBAH BARANG";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonTambahStok.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTambahStok.FlatAppearance.BorderSize = 0;
+            this.buttonTambahStok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTambahStok.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTambahStok.Location = new System.Drawing.Point(0, 135);
+            this.buttonTambahStok.Name = "buttonTambahStok";
+            this.buttonTambahStok.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonTambahStok.Size = new System.Drawing.Size(233, 45);
+            this.buttonTambahStok.TabIndex = 9;
+            this.buttonTambahStok.Text = "TAMBAH STOK";
+            this.buttonTambahStok.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTambahStok.UseVisualStyleBackColor = true;
+            // 
+            // buttonChat
+            // 
+            this.buttonChat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonChat.FlatAppearance.BorderSize = 0;
+            this.buttonChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChat.Location = new System.Drawing.Point(0, 90);
+            this.buttonChat.Name = "buttonChat";
+            this.buttonChat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonChat.Size = new System.Drawing.Size(233, 45);
+            this.buttonChat.TabIndex = 8;
+            this.buttonChat.Text = "CHAT";
+            this.buttonChat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonChat.UseVisualStyleBackColor = true;
+            // 
+            // buttonReview
+            // 
+            this.buttonReview.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonReview.FlatAppearance.BorderSize = 0;
+            this.buttonReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReview.Location = new System.Drawing.Point(0, 45);
+            this.buttonReview.Name = "buttonReview";
+            this.buttonReview.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonReview.Size = new System.Drawing.Size(233, 45);
+            this.buttonReview.TabIndex = 7;
+            this.buttonReview.Text = "REVIEW";
+            this.buttonReview.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonReview.UseVisualStyleBackColor = true;
+            // 
+            // buttonTambahBarang
+            // 
+            this.buttonTambahBarang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTambahBarang.FlatAppearance.BorderSize = 0;
+            this.buttonTambahBarang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTambahBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTambahBarang.Location = new System.Drawing.Point(0, 0);
+            this.buttonTambahBarang.Name = "buttonTambahBarang";
+            this.buttonTambahBarang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonTambahBarang.Size = new System.Drawing.Size(233, 45);
+            this.buttonTambahBarang.TabIndex = 2;
+            this.buttonTambahBarang.Text = "TAMBAH BARANG";
+            this.buttonTambahBarang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTambahBarang.UseVisualStyleBackColor = true;
             // 
             // panelPegawai
             // 
@@ -636,8 +681,8 @@ namespace OnlineMart_Trivial
             this.panelHeader.Controls.Add(this.labelPoinHeader);
             this.panelHeader.Controls.Add(this.pictureBoxSaldo);
             this.panelHeader.Controls.Add(this.pictureBoxPoin);
-            this.panelHeader.Controls.Add(this.pictureBox4);
-            this.panelHeader.Controls.Add(this.pictureBox2);
+            this.panelHeader.Controls.Add(this.BelNotifikasi);
+            this.panelHeader.Controls.Add(this.ProfilePicture);
             this.panelHeader.Controls.Add(this.labelNama);
             this.panelHeader.Controls.Add(this.labelwelcome);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -647,6 +692,64 @@ namespace OnlineMart_Trivial
             this.panelHeader.Size = new System.Drawing.Size(1534, 87);
             this.panelHeader.TabIndex = 0;
             this.panelHeader.Visible = false;
+            // 
+            // labelSaldo
+            // 
+            this.labelSaldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSaldo.AutoSize = true;
+            this.labelSaldo.BackColor = System.Drawing.Color.White;
+            this.labelSaldo.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaldo.ForeColor = System.Drawing.Color.Black;
+            this.labelSaldo.Location = new System.Drawing.Point(375, 41);
+            this.labelSaldo.Name = "labelSaldo";
+            this.labelSaldo.Size = new System.Drawing.Size(56, 22);
+            this.labelSaldo.TabIndex = 7;
+            this.labelSaldo.Text = "Saldo";
+            this.labelSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelSaldo.Visible = false;
+            // 
+            // labelSaldoHeader
+            // 
+            this.labelSaldoHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSaldoHeader.AutoSize = true;
+            this.labelSaldoHeader.BackColor = System.Drawing.Color.White;
+            this.labelSaldoHeader.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaldoHeader.ForeColor = System.Drawing.Color.Gray;
+            this.labelSaldoHeader.Location = new System.Drawing.Point(374, 18);
+            this.labelSaldoHeader.Name = "labelSaldoHeader";
+            this.labelSaldoHeader.Size = new System.Drawing.Size(54, 21);
+            this.labelSaldoHeader.TabIndex = 6;
+            this.labelSaldoHeader.Text = "Saldo";
+            this.labelSaldoHeader.Visible = false;
+            // 
+            // labelPoin
+            // 
+            this.labelPoin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPoin.AutoSize = true;
+            this.labelPoin.BackColor = System.Drawing.Color.White;
+            this.labelPoin.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPoin.ForeColor = System.Drawing.Color.Black;
+            this.labelPoin.Location = new System.Drawing.Point(84, 40);
+            this.labelPoin.Name = "labelPoin";
+            this.labelPoin.Size = new System.Drawing.Size(48, 22);
+            this.labelPoin.TabIndex = 5;
+            this.labelPoin.Text = "Poin";
+            this.labelPoin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelPoin.Visible = false;
+            // 
+            // labelPoinHeader
+            // 
+            this.labelPoinHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPoinHeader.AutoSize = true;
+            this.labelPoinHeader.BackColor = System.Drawing.Color.White;
+            this.labelPoinHeader.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPoinHeader.ForeColor = System.Drawing.Color.Gray;
+            this.labelPoinHeader.Location = new System.Drawing.Point(84, 17);
+            this.labelPoinHeader.Name = "labelPoinHeader";
+            this.labelPoinHeader.Size = new System.Drawing.Size(46, 21);
+            this.labelPoinHeader.TabIndex = 4;
+            this.labelPoinHeader.Text = "Poin";
+            this.labelPoinHeader.Visible = false;
             // 
             // pictureBoxSaldo
             // 
@@ -670,26 +773,27 @@ namespace OnlineMart_Trivial
             this.pictureBoxPoin.TabStop = false;
             this.pictureBoxPoin.Visible = false;
             // 
-            // pictureBox4
+            // BelNotifikasi
             // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::OnlineMart_Trivial.Properties.Resources.notification_panel;
-            this.pictureBox4.Location = new System.Drawing.Point(1419, 17);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(57, 60);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
+            this.BelNotifikasi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BelNotifikasi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BelNotifikasi.Image = global::OnlineMart_Trivial.Properties.Resources.notification_panel;
+            this.BelNotifikasi.Location = new System.Drawing.Point(1419, 17);
+            this.BelNotifikasi.Name = "BelNotifikasi";
+            this.BelNotifikasi.Size = new System.Drawing.Size(57, 60);
+            this.BelNotifikasi.TabIndex = 2;
+            this.BelNotifikasi.TabStop = false;
+            this.BelNotifikasi.Click += new System.EventHandler(this.BelNotifikasi_Click);
             // 
-            // pictureBox2
+            // ProfilePicture
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::OnlineMart_Trivial.Properties.Resources.User;
-            this.pictureBox2.Location = new System.Drawing.Point(53, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(57, 60);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.ProfilePicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProfilePicture.Image = global::OnlineMart_Trivial.Properties.Resources.User;
+            this.ProfilePicture.Location = new System.Drawing.Point(-361, 18);
+            this.ProfilePicture.Name = "ProfilePicture";
+            this.ProfilePicture.Size = new System.Drawing.Size(57, 60);
+            this.ProfilePicture.TabIndex = 2;
+            this.ProfilePicture.TabStop = false;
             // 
             // labelNama
             // 
@@ -738,109 +842,6 @@ namespace OnlineMart_Trivial
             this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
             // 
-            // labelPoinHeader
-            // 
-            this.labelPoinHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelPoinHeader.AutoSize = true;
-            this.labelPoinHeader.BackColor = System.Drawing.Color.White;
-            this.labelPoinHeader.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPoinHeader.ForeColor = System.Drawing.Color.Gray;
-            this.labelPoinHeader.Location = new System.Drawing.Point(912, 17);
-            this.labelPoinHeader.Name = "labelPoinHeader";
-            this.labelPoinHeader.Size = new System.Drawing.Size(48, 21);
-            this.labelPoinHeader.TabIndex = 4;
-            this.labelPoinHeader.Text = "Poin";
-            this.labelPoinHeader.Visible = false;
-            // 
-            // labelPoin
-            // 
-            this.labelPoin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelPoin.AutoSize = true;
-            this.labelPoin.BackColor = System.Drawing.Color.White;
-            this.labelPoin.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPoin.ForeColor = System.Drawing.Color.Black;
-            this.labelPoin.Location = new System.Drawing.Point(912, 40);
-            this.labelPoin.Name = "labelPoin";
-            this.labelPoin.Size = new System.Drawing.Size(50, 22);
-            this.labelPoin.TabIndex = 5;
-            this.labelPoin.Text = "Poin";
-            this.labelPoin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelPoin.Visible = false;
-            // 
-            // labelSaldo
-            // 
-            this.labelSaldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelSaldo.AutoSize = true;
-            this.labelSaldo.BackColor = System.Drawing.Color.White;
-            this.labelSaldo.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSaldo.ForeColor = System.Drawing.Color.Black;
-            this.labelSaldo.Location = new System.Drawing.Point(1203, 41);
-            this.labelSaldo.Name = "labelSaldo";
-            this.labelSaldo.Size = new System.Drawing.Size(59, 22);
-            this.labelSaldo.TabIndex = 7;
-            this.labelSaldo.Text = "Saldo";
-            this.labelSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelSaldo.Visible = false;
-            // 
-            // labelSaldoHeader
-            // 
-            this.labelSaldoHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelSaldoHeader.AutoSize = true;
-            this.labelSaldoHeader.BackColor = System.Drawing.Color.White;
-            this.labelSaldoHeader.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSaldoHeader.ForeColor = System.Drawing.Color.Gray;
-            this.labelSaldoHeader.Location = new System.Drawing.Point(1202, 18);
-            this.labelSaldoHeader.Name = "labelSaldoHeader";
-            this.labelSaldoHeader.Size = new System.Drawing.Size(56, 21);
-            this.labelSaldoHeader.TabIndex = 6;
-            this.labelSaldoHeader.Text = "Saldo";
-            this.labelSaldoHeader.Visible = false;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(0, 45);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(233, 45);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "REVIEW";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(0, 90);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(233, 45);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "CHAT";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(0, 135);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(233, 45);
-            this.button9.TabIndex = 9;
-            this.button9.Text = "TAMBAH STOK";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -871,8 +872,8 @@ namespace OnlineMart_Trivial
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSaldo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BelNotifikasi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).EndInit();
             this.panelLeft.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -897,7 +898,7 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Panel panelLogo;
         public System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button buttonChatKonsumen;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonTambahBarang;
         private System.Windows.Forms.Button button2;
 		public System.Windows.Forms.Panel panelPegawai;
 		private System.Windows.Forms.Panel panelRekapPenjualan;
@@ -918,11 +919,11 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.Label labelwelcome;
         public System.Windows.Forms.Panel panelLeft;
         public System.Windows.Forms.Panel panelActiveForm;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.PictureBox ProfilePicture;
+        private System.Windows.Forms.PictureBox BelNotifikasi;
+        private System.Windows.Forms.Button buttonChat;
+        private System.Windows.Forms.Button buttonReview;
+        private System.Windows.Forms.Button buttonTambahStok;
         public System.Windows.Forms.Panel panelPenjual;
         public System.Windows.Forms.PictureBox pictureBoxPoin;
         public System.Windows.Forms.PictureBox pictureBoxSaldo;

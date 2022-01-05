@@ -467,11 +467,11 @@ namespace OnlineMart_LIB
 
         public static List<Order> BacaTanggal(Driver driver, string bulan, string tahun)
         {
-            string sql = "select * from orders o " +
-                " where driver_id = " + driver.Id;
+            string sql = "select * from orders " +
+                         "where driver_id = " + driver.Id;
 
             // kalau bulan dan tahun ada isinya
-            if (bulan != "" && tahun != "") sql += " AND MONTH(tanggal_waktu) = " + bulan + " AND YEAR(tanggal_waktu) = " + tahun;
+            if (bulan != "" && tahun != "") sql += " AND MONTH(tanggal_waktu) = '" + bulan + "' AND YEAR(tanggal_waktu) = '" + tahun + "'";
             // kalau bulan ada isinya
             else if (bulan != "") sql += " AND MONTH(tanggal_waktu) = '" + bulan + "'";
             // kalau tahun ada isinya
@@ -484,7 +484,7 @@ namespace OnlineMart_LIB
             // masukkan data yang ingin ditampilkan/dibaca ke class
             while (hasil.Read())
             {
-                Order o = new Order(long.Parse(hasil.GetString(0)), DateTime.Parse(hasil.GetString(1)), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6));
+                Order o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6));
 
                 listOrder.Add(o);
             }
@@ -505,6 +505,22 @@ namespace OnlineMart_LIB
             }
 
             return listTahun;
+        }
+
+        public static List<string> AmbilStatus()
+        {
+            string sql = "select distinct(status) from orders";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<string> listStatus = new List<string>();
+
+            while (hasil.Read())
+            {
+                listStatus.Add(hasil.GetString(0));
+            }
+
+            return listStatus;
         }
 
         //Cetak semua order

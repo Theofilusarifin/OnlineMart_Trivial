@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using OnlineMart_LIB;
+using System.Globalization;
 
 namespace OnlineMart_Trivial
 {
@@ -77,15 +78,15 @@ namespace OnlineMart_Trivial
 
                 total = 0;
 
-                // kalau barang order ada isinya
+                // kalau list order ada isinya
                 if (listOrder.Count > 0)
                 {
-                    // untuk setiap barang di list barang order
+                    // untuk setiap order di list
                     foreach (Order o in listOrder)
                     {
-                        if (o.Status == "Pesanan Diproses")
+                        if (o.Status == "Order Selesai")
                         {
-                            // tunjukkan di datagrid dengan tipe Barang_Order
+                            // tunjukkan di datagrid
                             dataGridView.Rows.Add(o.Tanggal_waktu, o.Ongkos_kirim * 0.8);
 
                             total += o.Ongkos_kirim * 0.8;
@@ -113,7 +114,7 @@ namespace OnlineMart_Trivial
                 {
                     // memasukkan tahun yang ada di orders ke combobox
                     listTahun = Order.AmbilTahun();
-                    comboBoxTahun.DataSource = listTahun;
+                    comboBoxTahun.DataSource = listTahun;               
                     comboBoxTahun.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
 
@@ -123,7 +124,9 @@ namespace OnlineMart_Trivial
 
                 TampilDataGrid();
 
-                labelTotalPendapatan.Text = "Rp" + total.ToString();
+                labelTotalPendapatan.Text = total.ToString("C", CultureInfo.CreateSpecificCulture("id"));
+
+                //MessageBox.Show("bulan = " + bulan + ", tahun = " + tahun);
             }
             catch (Exception ex)
             {
@@ -136,7 +139,6 @@ namespace OnlineMart_Trivial
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             FormRekapPendapatan_Load(sender, e);
-
         }
         private void buttonClose_Click(object sender, EventArgs e)
         {
@@ -198,6 +200,7 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Terjadi error. Pesan kesalahan : " + ex.Message, "Error");
             }
         }
+
         private void comboBoxTahun_SelectedIndexChanged(object sender, EventArgs e)
         {
             try

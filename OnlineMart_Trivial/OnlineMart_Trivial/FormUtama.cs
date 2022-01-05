@@ -128,6 +128,20 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
+        #region Notifikasi
+        private void BelNotifikasi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openChildForm(new FormNotifikasi());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        #endregion
+
         #region ButtonKonsumen
         private void buttonBarangDeals_Click(object sender, EventArgs e)
         {
@@ -467,5 +481,6 @@ namespace OnlineMart_Trivial
             }
         }
         #endregion
+
     }
 }

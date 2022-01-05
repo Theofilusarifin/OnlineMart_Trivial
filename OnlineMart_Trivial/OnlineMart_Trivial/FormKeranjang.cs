@@ -282,10 +282,6 @@ namespace OnlineMart_Trivial
                         // refresh halaman
                         FormKeranjang_Load(sender, e);
                     }
-					else
-					{
-                        MessageBox.Show("Penghapusan gagal");
-					}
                 }
                 #endregion
 

@@ -87,11 +87,6 @@ namespace OnlineMart_Trivial
             this.comboBoxNomorNota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNomorNota.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxNomorNota.FormattingEnabled = true;
-            this.comboBoxNomorNota.Items.AddRange(new object[] {
-            "Id",
-            "Nama Barang",
-            "Harga Barang",
-            "Kategori"});
             this.comboBoxNomorNota.Location = new System.Drawing.Point(308, 52);
             this.comboBoxNomorNota.Name = "comboBoxNomorNota";
             this.comboBoxNomorNota.Size = new System.Drawing.Size(248, 30);

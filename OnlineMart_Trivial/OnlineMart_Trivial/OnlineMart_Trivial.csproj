@@ -205,6 +205,12 @@
     <Compile Include="FormMiniGames.Designer.cs">
       <DependentUpon>FormMiniGames.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNotifikasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNotifikasi.Designer.cs">
+      <DependentUpon>FormNotifikasi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMiniGames.resx">
       <DependentUpon>FormMiniGames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNotifikasi.resx">
+      <DependentUpon>FormNotifikasi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>

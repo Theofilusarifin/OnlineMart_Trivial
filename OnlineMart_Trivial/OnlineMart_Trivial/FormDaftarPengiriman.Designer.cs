@@ -172,6 +172,7 @@ namespace OnlineMart_Trivial
             this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.Size = new System.Drawing.Size(921, 201);
             this.dataGridView.TabIndex = 71;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // FormDaftarPengiriman
             // 
