@@ -57,6 +57,17 @@ namespace OnlineMart_Trivial
                     // tampilkan nama yang sedang login ke label yang ada di FormUtama
                     FormUtama.konsumen = pelanggan;
                     FormUtama.frmUtama.labelNama.Text = pelanggan.Nama;
+                    FormUtama.frmUtama.labelPoin.Text = pelanggan.Poin.ToString();
+                    FormUtama.frmUtama.labelSaldo.Text = pelanggan.Saldo.ToString();
+
+
+                    FormUtama.frmUtama.pictureBoxPoin.Show();
+                    FormUtama.frmUtama.pictureBoxSaldo.Show();
+                    FormUtama.frmUtama.labelPoinHeader.Show();
+                    FormUtama.frmUtama.labelPoin.Show();
+                    FormUtama.frmUtama.labelSaldoHeader.Show();
+                    FormUtama.frmUtama.labelSaldo.Show();
+
 
                     FormLoading form = new FormLoading(); //Create Object
                     form.Owner = this;

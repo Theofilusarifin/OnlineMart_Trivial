@@ -732,5 +732,38 @@
   <ItemGroup>
     <None Include="Resources\Background Game FIx.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Navbar atas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Navbar atas1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Navbar atas2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coin panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saldo panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Navbar atas3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FormProfile1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

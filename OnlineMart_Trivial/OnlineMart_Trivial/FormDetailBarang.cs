@@ -52,7 +52,7 @@ namespace OnlineMart_Trivial
             {
                 foreach (Penilaian p in listPenilaian)
                 {
-                    dataGridView.Rows.Add(p.Id, p.Rating, p.Review, p.Barang.Id);
+                    //dataGridView.Rows.Add(p.Id, p.Rating, p.Review, p.Barang.Id);
                 }
             }
             else
@@ -65,12 +65,12 @@ namespace OnlineMart_Trivial
             try
             {
                 //Default list semua barang di cabang yang pertama
-                listPenilaian = Penilaian.BacaData("", "");
+                //listPenilaian = Penilaian.BacaData("", "");
 
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
 
-                listPenilaian = Penilaian.BacaData("", "");
+                //listPenilaian = Penilaian.BacaData("", "");
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();

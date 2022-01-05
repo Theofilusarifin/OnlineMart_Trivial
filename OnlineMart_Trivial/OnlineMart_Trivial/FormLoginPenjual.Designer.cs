@@ -40,7 +40,7 @@ namespace OnlineMart_Trivial
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxPassword.Location = new System.Drawing.Point(52, 352);
+            this.textBoxPassword.Location = new System.Drawing.Point(52, 391);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⚉';
             this.textBoxPassword.Size = new System.Drawing.Size(338, 19);
@@ -51,7 +51,7 @@ namespace OnlineMart_Trivial
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUsername.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxUsername.Location = new System.Drawing.Point(51, 277);
+            this.textBoxUsername.Location = new System.Drawing.Point(51, 308);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(339, 20);
             this.textBoxUsername.TabIndex = 3;
@@ -67,7 +67,7 @@ namespace OnlineMart_Trivial
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(36, 416);
+            this.buttonLogin.Location = new System.Drawing.Point(39, 462);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(366, 41);
             this.buttonLogin.TabIndex = 5;
@@ -85,7 +85,7 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelRegistrasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.labelRegistrasi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(65)))), ((int)(((byte)(36)))));
-            this.labelRegistrasi.Location = new System.Drawing.Point(235, 475);
+            this.labelRegistrasi.Location = new System.Drawing.Point(235, 527);
             this.labelRegistrasi.Name = "labelRegistrasi";
             this.labelRegistrasi.Size = new System.Drawing.Size(141, 16);
             this.labelRegistrasi.TabIndex = 6;
@@ -98,7 +98,7 @@ namespace OnlineMart_Trivial
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Login_Penjual;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(434, 541);
+            this.ClientSize = new System.Drawing.Size(434, 599);
             this.Controls.Add(this.labelRegistrasi);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);

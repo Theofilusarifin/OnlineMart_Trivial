@@ -60,6 +60,10 @@ namespace OnlineMart_Trivial
             {
                 FormUtama.frmUtama.panelPegawai.Show();
             }
+            else if (FormUtama.role == "penjual")
+            {
+                FormUtama.frmUtama.panelPenjual.Show();
+            }
             else MessageBox.Show("Terjadi error, role tidak terdefinisi");
         }
     }

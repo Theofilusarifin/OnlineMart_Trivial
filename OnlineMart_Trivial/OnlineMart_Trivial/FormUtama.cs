@@ -441,6 +441,15 @@ namespace OnlineMart_Trivial
                     panelKonsumen.Hide();
                     panelPegawai.Hide();
                     panelRider.Hide();
+                    panelPenjual.Hide();
+
+                    labelPoin.Text = "";
+                    labelSaldo.Text = "";
+                    labelPoinHeader.Hide();
+                    labelPoin.Hide();
+                    labelSaldoHeader.Hide();
+                    labelSaldo.Hide();
+
                     labelNama.Text = "";
                     panelLeftNavbar.Hide();
                     panelLeft.Hide();

@@ -100,7 +100,6 @@ namespace OnlineMart_Trivial
 			// 
 			// pictureBox2
 			// 
-			this.pictureBox2.Image = global::OnlineMart_Trivial.Properties.Resources.Rating_Star;
 			this.pictureBox2.Location = new System.Drawing.Point(729, 13);
 			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
 			this.pictureBox2.Name = "pictureBox2";

@@ -39,8 +39,6 @@ namespace OnlineMart_Trivial
             textBoxUsername.Text = p.Username;
             textBoxEmail.Text = p.Email;
             textBoxNomorTelepon.Text = p.Telepon;
-            textBoxSaldo.Text = p.Saldo.ToString();
-            textBoxPoin.Text = p.Poin.ToString();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)

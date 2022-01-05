@@ -121,6 +121,12 @@
   <data name="Bookmark1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bookmark1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="notification panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notification panel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Navbar atas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Navbar atas2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Background Games" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background Games.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,6 +175,12 @@
   <data name="Ubah Barang Cabang1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ubah Barang Cabang1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="coin panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coin panel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Background Game FIx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background Game FIx.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Form Regis Penjual" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Form Regis Penjual.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -177,6 +189,9 @@
   </data>
   <data name="Navbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Navbar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Form Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Form Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Button_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,6 +220,9 @@
   <data name="Scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Scroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Navbar atas3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Navbar atas3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Basket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Basket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,6 +232,9 @@
   <data name="Checkout Belanja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Checkout Belanja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="saldo panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\saldo panel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Book" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -222,6 +243,9 @@
   </data>
   <data name="Logo_OnlineMart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_OnlineMart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Navbar atas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Navbar atas1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Loading Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Loading Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -237,6 +261,9 @@
   </data>
   <data name="Tambah barang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah barang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Navbar atas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Navbar atas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Box" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -292,6 +319,9 @@
   <data name="Ubah barang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ubah barang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="White Logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\White Logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -306,6 +336,9 @@
   </data>
   <data name="Button_Leave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_Leave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,7 +355,7 @@
   <data name="Tambah Cabang1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah Cabang1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Background Game FIx" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Background Game FIx.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FormProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FormProfile1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
