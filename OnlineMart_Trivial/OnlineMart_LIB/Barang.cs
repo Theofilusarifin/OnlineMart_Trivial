@@ -14,6 +14,8 @@ namespace OnlineMart_LIB
         private int id;
         private string nama;
         private int harga;
+        private string deskripsi;
+        private string path_gambar;
         private Kategori kategori;
         List<Barang_Cabang> listBarangCabang; // Composition
         List<Barang_Order> listBarangOrder; // Composition
@@ -33,6 +35,17 @@ namespace OnlineMart_LIB
             Nama = nama;
             Harga = harga;
             Kategori = kategori;
+            ListBarangCabang = new List<Barang_Cabang>();
+            ListBarangOrder = new List<Barang_Order>();
+        }
+
+        public Barang(string nama, int harga, string deskripsi, string path_gambar, Kategori kategori)
+        {
+            Nama = nama;
+            Harga = harga;
+            Kategori = kategori;
+            Deskripsi = deskripsi;
+            Path_gambar = path_gambar;
             ListBarangCabang = new List<Barang_Cabang>();
             ListBarangOrder = new List<Barang_Order>();
         }
@@ -74,6 +87,19 @@ namespace OnlineMart_LIB
                 }
             }
         }
+
+        public string Deskripsi
+        {
+            get => deskripsi;
+            set => deskripsi = value;
+        }
+
+        public string Path_gambar
+        {
+            get => path_gambar;
+            set => path_gambar = value;
+        }
+
         public Kategori Kategori 
         { 
             get => kategori; 
@@ -96,7 +122,7 @@ namespace OnlineMart_LIB
         public static Boolean TambahData(Barang b)
         {
             //string yang menampung sql query insert into
-            string sql = "insert into barangs (nama, harga, kategori_id) values ('" + b.Nama + "', " + b.Harga + ", " + b.Kategori.Id + ")";
+            string sql = "insert into barangs (nama, harga, deskripsi, path_gambar, kategori_id) values ('" + b.Nama + "', " + b.Harga + ", " + b.Kategori.Id + ", '" + b.Deskripsi + "', '" + b.Path_gambar + "')";
 
             //menjalankan perintah sql
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);

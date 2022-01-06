@@ -25,6 +25,9 @@ namespace OnlineMart_Trivial
         public static Koneksi koneksi;
         public static Cabang cDipilih;
 
+        // Ubah path sesuai dengan Path Resource masing-masing
+        public static string location = @"C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+
 
         public FormUtama()
         {
@@ -432,6 +435,26 @@ namespace OnlineMart_Trivial
             {
                 MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
+        }
+        #endregion
+
+        #region ButtonPenjual
+
+        private void btnDaftarBarangPenjual_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnTambahStokPenjual_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnChatPenjual_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnReviewPenjual_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
 

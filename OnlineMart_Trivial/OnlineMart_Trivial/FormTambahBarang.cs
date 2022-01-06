@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineMart_LIB;
+using System.IO;
+
 
 namespace OnlineMart_Trivial
 {
@@ -17,6 +19,7 @@ namespace OnlineMart_Trivial
         {
             InitializeComponent();
         }
+        string path = "";
 
         List<Kategori> listKategori = new List<Kategori>();
 
@@ -36,9 +39,28 @@ namespace OnlineMart_Trivial
         {
             try
             {
+                var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                var stringChars = new char[8];
+                var random = new Random();
+
+                for (int i = 0; i < stringChars.Length; i++)
+                {
+                    stringChars[i] = chars[random.Next(chars.Length)];
+                }
+
+                var finalString = new String(stringChars);
+
+                string fileName = textBoxNama.Text + "_" + finalString + ".png";
+                path = Path.Combine(FormUtama.location, fileName);
+
+                Image gambar_barang = pictureBoxBarang.Image;
+                gambar_barang.Save(path);
+                //MessageBox.Show(path);
+
                 Kategori kategori = (Kategori)comboBoxKategori.SelectedItem;
 
-                Barang barang = new Barang(textBoxNama.Text, int.Parse(textBoxHarga.Text), kategori);
+                Barang barang = new Barang(textBoxNama.Text, int.Parse(textBoxHarga.Text), textBoxDeskripsi.Text, fileName, kategori);
+
 
                 Barang.TambahData(barang);
 
@@ -66,5 +88,16 @@ namespace OnlineMart_Trivial
             buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
         }
         #endregion
+
+        private void pictureBoxBarang_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Choose Image(*.png)|*.png";
+
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxBarang.Image = Image.FromFile(opf.FileName);
+            }
+        }
     }
 }

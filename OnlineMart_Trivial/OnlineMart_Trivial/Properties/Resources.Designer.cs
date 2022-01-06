@@ -393,6 +393,46 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Form_Tambah_Barang {
+            get {
+                object obj = ResourceManager.GetObject("Form Tambah Barang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Form_Tambah_Barang1 {
+            get {
+                object obj = ResourceManager.GetObject("Form Tambah Barang1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Form_Tambah_Barang2 {
+            get {
+                object obj = ResourceManager.GetObject("Form Tambah Barang2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Form_Tambah_Stok {
+            get {
+                object obj = ResourceManager.GetObject("Form Tambah Stok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Form_Tambah_Stok_Penjual {
             get {
                 object obj = ResourceManager.GetObject("Form Tambah Stok Penjual", resourceCulture);
@@ -416,6 +456,16 @@ namespace OnlineMart_Trivial.Properties {
         internal static System.Drawing.Bitmap FormProfile {
             get {
                 object obj = ResourceManager.GetObject("FormProfile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Image_Placeholder {
+            get {
+                object obj = ResourceManager.GetObject("Image Placeholder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -693,6 +743,16 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Tambah_barang1 {
+            get {
+                object obj = ResourceManager.GetObject("Tambah barang1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Tambah_Cabang {
             get {
                 object obj = ResourceManager.GetObject("Tambah Cabang", resourceCulture);
@@ -746,6 +806,16 @@ namespace OnlineMart_Trivial.Properties {
         internal static System.Drawing.Bitmap Tambah_Promo {
             get {
                 object obj = ResourceManager.GetObject("Tambah Promo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tambah_Stok {
+            get {
+                object obj = ResourceManager.GetObject("Tambah Stok", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

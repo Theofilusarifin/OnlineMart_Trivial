@@ -52,7 +52,7 @@ namespace OnlineMart_Trivial
                 //kalau username dan pass nya benar
                 if (!(penjual is null))
                 {
-                    FormUtama.role = "pegawai";
+                    FormUtama.role = "penjual";
                     FormUtama.penjual = penjual;
                     FormUtama.frmUtama.labelNama.Text = penjual.Nama;
 

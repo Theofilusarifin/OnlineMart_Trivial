@@ -17,11 +17,12 @@ namespace OnlineMart_Trivial
 		{
 			InitializeComponent();
 		}
+
 		#region Form Load
 		private void FormTambahStok_Load(object sender, EventArgs e)
 		{
-			textBoxNama.Text = FormDaftarBarangPenjual.barang.Nama;
-			textBoxNama.ReadOnly = true;
+			//textBoxNama.Text = FormDaftarBarangPenjual.barang.Nama;
+			//textBoxNama.ReadOnly = true;
 		}
 		#endregion
 
