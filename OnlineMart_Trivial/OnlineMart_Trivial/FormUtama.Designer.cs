@@ -76,7 +76,7 @@ namespace OnlineMart_Trivial
             this.labelPoinHeader = new System.Windows.Forms.Label();
             this.pictureBoxSaldo = new System.Windows.Forms.PictureBox();
             this.pictureBoxPoin = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.BelNotifikasi = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelNama = new System.Windows.Forms.Label();
             this.labelwelcome = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@ namespace OnlineMart_Trivial
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSaldo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BelNotifikasi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelLeft.SuspendLayout();
             this.SuspendLayout();
@@ -685,7 +685,7 @@ namespace OnlineMart_Trivial
             this.panelHeader.Controls.Add(this.labelPoinHeader);
             this.panelHeader.Controls.Add(this.pictureBoxSaldo);
             this.panelHeader.Controls.Add(this.pictureBoxPoin);
-            this.panelHeader.Controls.Add(this.pictureBox4);
+            this.panelHeader.Controls.Add(this.BelNotifikasi);
             this.panelHeader.Controls.Add(this.pictureBox2);
             this.panelHeader.Controls.Add(this.labelNama);
             this.panelHeader.Controls.Add(this.labelwelcome);
@@ -777,16 +777,17 @@ namespace OnlineMart_Trivial
             this.pictureBoxPoin.TabStop = false;
             this.pictureBoxPoin.Visible = false;
             // 
-            // pictureBox4
+            // BelNotifikasi
             // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::OnlineMart_Trivial.Properties.Resources.notification_panel;
-            this.pictureBox4.Location = new System.Drawing.Point(1419, 17);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(57, 60);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
+            this.BelNotifikasi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BelNotifikasi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BelNotifikasi.Image = global::OnlineMart_Trivial.Properties.Resources.notification_panel;
+            this.BelNotifikasi.Location = new System.Drawing.Point(1419, 17);
+            this.BelNotifikasi.Name = "BelNotifikasi";
+            this.BelNotifikasi.Size = new System.Drawing.Size(57, 60);
+            this.BelNotifikasi.TabIndex = 2;
+            this.BelNotifikasi.TabStop = false;
+            this.BelNotifikasi.Click += new System.EventHandler(this.BelNotifikasi_Click);
             // 
             // pictureBox2
             // 
@@ -875,7 +876,7 @@ namespace OnlineMart_Trivial
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSaldo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BelNotifikasi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelLeft.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -923,7 +924,7 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Panel panelLeft;
         public System.Windows.Forms.Panel panelActiveForm;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox BelNotifikasi;
         private System.Windows.Forms.Button btnChatPenjual;
         private System.Windows.Forms.Button btnTambahStokPenjual;
         private System.Windows.Forms.Button btnReviewPenjual;

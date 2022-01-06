@@ -59,6 +59,7 @@
     <Compile Include="Kategori.cs" />
     <Compile Include="Koneksi.cs" />
     <Compile Include="Metode_Pembayaran.cs" />
+    <Compile Include="Notifikasi.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Pegawai.cs" />
     <Compile Include="Pelanggan.cs" />

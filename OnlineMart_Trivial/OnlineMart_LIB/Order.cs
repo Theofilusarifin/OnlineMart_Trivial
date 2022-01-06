@@ -346,8 +346,8 @@ namespace OnlineMart_LIB
                          "gift_redeem_id = '" + o.Gift_redeem.Id + "', pelanggan_id = '" + o.Pelanggan.Id + "' " +
                          "where id = '" + o.Id + "'";
 
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
-            if (jumlahDitambah == 0) return false;
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDiubah == 0) return false;
             else return true;
         }
 

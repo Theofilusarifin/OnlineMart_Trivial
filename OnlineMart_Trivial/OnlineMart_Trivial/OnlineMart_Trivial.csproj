@@ -181,6 +181,12 @@
     <Compile Include="FormDetailBarang.Designer.cs">
       <DependentUpon>FormDetailBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDetailNotifikasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailNotifikasi.Designer.cs">
+      <DependentUpon>FormDetailNotifikasi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHistoryTransaksi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -461,6 +467,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetailBarang.resx">
       <DependentUpon>FormDetailBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailNotifikasi.resx">
+      <DependentUpon>FormDetailNotifikasi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHistoryTransaksi.resx">
       <DependentUpon>FormHistoryTransaksi.cs</DependentUpon>
