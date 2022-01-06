@@ -13,13 +13,18 @@ namespace OnlineMart_Trivial
 {
 	public partial class FormDetailBarang : Form
 	{
+		#region Field
 		public static Barang barang;
 		public static List<Penilaian> listPenilaian = new List<Penilaian>();
-		public FormDetailBarang()
+        #endregion
+
+        public FormDetailBarang()
 		{
 			InitializeComponent();
 		}
-        private void FormatDataGrid()
+
+		#region Method
+		private void FormatDataGrid()
         {
             //Kosongi semua kolom di datagridview
             dataGridView.Columns.Clear();
@@ -60,27 +65,62 @@ namespace OnlineMart_Trivial
                 dataGridView.DataSource = null;
             }
         }
-        private void FormDetailBarang_Load(object sender, EventArgs e)
+		#endregion
+
+		#region Form Load
+		private void FormDetailBarang_Load(object sender, EventArgs e)
 		{
             try
             {
                 //Default list semua barang di cabang yang pertama
-                //listPenilaian = Penilaian.BacaData("", "");
+                listPenilaian = Penilaian.BacaData("", "");
 
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
 
-                //listPenilaian = Penilaian.BacaData("", "");
-
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
-
+                double rating = 0;
+                for (int i = 0; i <= listPenilaian.Count; i++)
+				{
+                    Penilaian p = listPenilaian[i];
+                    rating += p.Rating;
+                    if (i == listPenilaian.Count)
+					{
+                        rating /= i;
+					}
+				}
+                labelRating.Text = rating.ToString();
                 comboBoxKriteria.Text = "Id";
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
-	}
+		#endregion
+
+		#region Button Search
+		private void buttonSearch_Click(object sender, EventArgs e)
+		{
+            string kriteria = "";
+            switch (comboBoxKriteria.Text)
+            {
+                case "id":
+                    kriteria = "id";
+                    break;
+                case "rating":
+                    kriteria = "rating";
+                    break;
+                case "review":
+                    kriteria = "review";
+                    break;
+            }
+            listPenilaian = Penilaian.BacaData(kriteria, textBoxKriteria.Text);
+            FormatDataGrid();
+            TampilDataGrid();
+        }
+        #endregion
+    }
 }

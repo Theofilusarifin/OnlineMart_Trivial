@@ -53,6 +53,16 @@ namespace OnlineMart_LIB
             this.Penjual = penjual;
 
         }
+        public Chat(string isi, DateTime waktu, string role_pengirim, Order order, Pelanggan pelanggan, Penjual penjual)
+        {
+            this.Isi = isi;
+            this.Waktu = waktu;
+            this.Role_pengirim = role_pengirim;
+            this.Order = order;
+            this.Pelanggan = pelanggan;
+            this.Penjual = penjual;
+
+        }
         #endregion
 
         #region Properties
@@ -108,7 +118,11 @@ namespace OnlineMart_LIB
             {
                 sql += "insert into chats (isi, waktu, role_pengirim, order_id, driver_id, pelanggan_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', " + c.Order.Id + ", " + c.Driver.Id + ", " + c.Pelanggan.Id + ")";
             }
-			else
+            else if (c.Driver == null)
+            {
+                sql += "insert into chats (isi, waktu, role_pengirim, order_id, penjual_id, pelanggan_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', " + c.Order.Id + ", " + c.Penjual.Id + ", " + c.Pelanggan.Id + ")";
+            }
+            else
 			{
                 sql += "insert into chats (isi, waktu, role_pengirim, order_id, driver_id, pelanggan_id, penjual_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', " + c.Order.Id + ", " + c.Driver.Id + ", " + c.Pelanggan.Id + ", " + c.Penjual.Id + ")";
             }

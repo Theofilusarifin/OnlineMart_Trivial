@@ -33,6 +33,7 @@ namespace OnlineMart_LIB
         Promo promo; //Aggregation
         Gift_Redeem gift_redeem; //Aggregation
         List<Barang_Order> listBarangOrder; // Composition
+        Penjual penjual;
         #endregion
 
         #region Constructors
@@ -178,10 +179,11 @@ namespace OnlineMart_LIB
             get => listBarangOrder; 
             private set => listBarangOrder = value; 
         }
-        #endregion
+		public Penjual Penjual { get => penjual; set => penjual = value; }
+		#endregion
 
-        #region Method
-        public static Boolean TambahData(Order o)
+		#region Method
+		public static Boolean TambahData(Order o)
 		{
 			string sql = "insert into orders (id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
                          "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id) " +
@@ -205,7 +207,8 @@ namespace OnlineMart_LIB
                          "inner join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
                          "inner join promos pr on o.promo_id = pr.id " +
                          "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
-                         "inner join gifts g on gr.gift_id = g.id";
+                         "inner join gifts g on gr.gift_id = g.id" + 
+                         "inner join penjuals pej on o.penjual_id = pej.id";
 
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%' ";
 
@@ -252,6 +255,7 @@ namespace OnlineMart_LIB
                          "inner join promos pr on o.promo_id = pr.id " +
                          "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
                          "inner join gifts g on gr.gift_id = g.id " +
+                         "innner join penjuals pej on o.penjual_id = pej.id" + 
                          "where status = '" + status + "' and " + kriteria + " like '%" + nilaiKriteria + "%' " +
                          "order by o.tanggal_waktu asc";
 

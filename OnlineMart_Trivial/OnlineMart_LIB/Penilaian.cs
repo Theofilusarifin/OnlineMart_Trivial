@@ -9,11 +9,14 @@ namespace OnlineMart_LIB
 {
 	public class Penilaian
 	{
+		#region Field
 		private int id;
 		private double rating;
 		private string review;
 		private Barang barang;
+		#endregion
 
+		#region Constructor
 		public Penilaian(int id, double rating, string review, Barang barang)
 		{
 			this.Id = id;
@@ -27,11 +30,16 @@ namespace OnlineMart_LIB
 			this.Review = review;
 			this.Barang = barang;
 		}
+		#endregion
+
+		#region Properties
 		public int Id { get => id; set => id = value; }
 		public double Rating { get => rating; set => rating = value; }
 		public string Review { get => review; set => review = value; }
 		public Barang Barang { get => barang; set => barang = value; }
+		#endregion
 
+		#region Method
 		public static Boolean TambahData(Penilaian p)
 		{
 			string sql = "insert into penilaians (id, rating review) values (" + p.Id + ", " + p.Rating + ", '" + p.Review + "')";
@@ -56,20 +64,24 @@ namespace OnlineMart_LIB
 		}
 		public static List<Penilaian> BacaData(string kriteria, string nilaiKriteria)
 		{
-			string sql = "select * from penilaians";
-			if (kriteria != "review")
+			string sql;
+			if (kriteria != "")
 			{
-				sql += " where " + kriteria + " = " + nilaiKriteria;
-			}
-			else if (kriteria == "")
-			{
-				sql = "select * from penilaians";
+				if (kriteria != "review")
+				{
+					sql = "select * from penilaians where " + kriteria + " = " + nilaiKriteria;
+				}
+				else
+				{
+					sql = "select * from penilaians where " + kriteria + " like '%" + nilaiKriteria + "%'";
+				}
 			}
 			else
 			{
-				sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+				sql = "select * from penilaians";
 			}
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 			List<Penilaian> penilaians = new List<Penilaian>();
 			while (hasil.Read())
 			{
@@ -79,6 +91,6 @@ namespace OnlineMart_LIB
 			}
 			return penilaians;
 		}
-		
+		#endregion
 	}
 }

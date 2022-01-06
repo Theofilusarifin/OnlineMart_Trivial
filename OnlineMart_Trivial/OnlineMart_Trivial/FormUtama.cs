@@ -480,7 +480,37 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
-        #endregion
 
+		#endregion
+
+		#region Button Chat konsumen ke Penjual
+		private void buttonChat_Click(object sender, EventArgs e)
+		{
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormChatPenjual());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+		#endregion
+
+		#region Button Chat Penjual ke konsumen
+		private void buttonChatPenjual_Click(object sender, EventArgs e)
+		{
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormChatPenjual());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        #endregion
     }
 }

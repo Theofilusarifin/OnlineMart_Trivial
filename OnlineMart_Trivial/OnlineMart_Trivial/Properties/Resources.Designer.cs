@@ -333,6 +333,16 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Form_Blacklist {
+            get {
+                object obj = ResourceManager.GetObject("Form Blacklist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Form_Isi_Saldo {
             get {
                 object obj = ResourceManager.GetObject("Form Isi Saldo", resourceCulture);
@@ -376,6 +386,16 @@ namespace OnlineMart_Trivial.Properties {
         internal static System.Drawing.Bitmap Form_Regis_Rider1 {
             get {
                 object obj = ResourceManager.GetObject("Form Regis Rider1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Form_Tambah_Stok_Penjual {
+            get {
+                object obj = ResourceManager.GetObject("Form Tambah Stok Penjual", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -586,6 +606,16 @@ namespace OnlineMart_Trivial.Properties {
         internal static System.Drawing.Bitmap profile_417_1163876 {
             get {
                 object obj = ResourceManager.GetObject("profile-417-1163876", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rating_Star {
+            get {
+                object obj = ResourceManager.GetObject("Rating Star", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

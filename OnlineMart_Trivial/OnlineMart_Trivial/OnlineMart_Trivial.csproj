@@ -61,6 +61,12 @@
     <Compile Include="FormAuth.Designer.cs">
       <DependentUpon>FormAuth.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBlacklist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBlacklist.Designer.cs">
+      <DependentUpon>FormBlacklist.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCekPesanan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="FormChatPelanggan.Designer.cs">
       <DependentUpon>FormChatPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChatPenjual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChatPenjual.Designer.cs">
+      <DependentUpon>FormChatPenjual.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCheckout.cs">
       <SubType>Form</SubType>
@@ -102,6 +114,12 @@
     </Compile>
     <Compile Include="FormDaftarBarangPelanggan.Designer.cs">
       <DependentUpon>FormDaftarBarangPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarBarangPenjual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarBarangPenjual.Designer.cs">
+      <DependentUpon>FormDaftarBarangPenjual.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDaftarCabang.cs">
       <SubType>Form</SubType>
@@ -138,6 +156,12 @@
     </Compile>
     <Compile Include="FormDaftarPengiriman.Designer.cs">
       <DependentUpon>FormDaftarPengiriman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDaftarPenjual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarPenjual.Designer.cs">
+      <DependentUpon>FormDaftarPenjual.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDaftarPromo.cs">
       <SubType>Form</SubType>
@@ -265,6 +289,12 @@
     <Compile Include="FormTambahBarangCabang.Designer.cs">
       <DependentUpon>FormTambahBarangCabang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTambahBarangPenjual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahBarangPenjual.Designer.cs">
+      <DependentUpon>FormTambahBarangPenjual.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTambahCabang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +324,12 @@
     </Compile>
     <Compile Include="FormTambahPromo.Designer.cs">
       <DependentUpon>FormTambahPromo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahStok.Designer.cs">
+      <DependentUpon>FormTambahStok.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTukarHadiah.cs">
       <SubType>Form</SubType>
@@ -360,6 +396,9 @@
     <EmbeddedResource Include="FormAuth.resx">
       <DependentUpon>FormAuth.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBlacklist.resx">
+      <DependentUpon>FormBlacklist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCekPesanan.resx">
       <DependentUpon>FormCekPesanan.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormChatPelanggan.resx">
       <DependentUpon>FormChatPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChatPenjual.resx">
+      <DependentUpon>FormChatPenjual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCheckout.resx">
       <DependentUpon>FormCheckout.cs</DependentUpon>
@@ -380,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarBarangPelanggan.resx">
       <DependentUpon>FormDaftarBarangPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarBarangPenjual.resx">
+      <DependentUpon>FormDaftarBarangPenjual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarCabang.resx">
       <DependentUpon>FormDaftarCabang.cs</DependentUpon>
@@ -398,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarPengiriman.resx">
       <DependentUpon>FormDaftarPengiriman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDaftarPenjual.resx">
+      <DependentUpon>FormDaftarPenjual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarPromo.resx">
       <DependentUpon>FormDaftarPromo.cs</DependentUpon>
@@ -462,6 +510,9 @@
     <EmbeddedResource Include="FormTambahBarangCabang.resx">
       <DependentUpon>FormTambahBarangCabang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahBarangPenjual.resx">
+      <DependentUpon>FormTambahBarangPenjual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTambahCabang.resx">
       <DependentUpon>FormTambahCabang.cs</DependentUpon>
     </EmbeddedResource>
@@ -476,6 +527,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahPromo.resx">
       <DependentUpon>FormTambahPromo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahStok.resx">
+      <DependentUpon>FormTambahStok.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTukarHadiah.resx">
       <DependentUpon>FormTukarHadiah.cs</DependentUpon>
@@ -773,6 +827,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FormProfile1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rating Star1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form Blacklist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form Tambah Stok Penjual.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

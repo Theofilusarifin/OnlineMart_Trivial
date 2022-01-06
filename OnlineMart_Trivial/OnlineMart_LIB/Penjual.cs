@@ -9,6 +9,7 @@ namespace OnlineMart_LIB
 {
 	public class Penjual
 	{
+		#region Field
 		private int id;
 		private string username;
 		private string nama;
@@ -17,7 +18,9 @@ namespace OnlineMart_LIB
 		private string status;
 		private string telpon;
 		private Blacklist blacklist_id;
+		#endregion
 
+		#region Constructor
 		public Penjual(int id, string username, string nama, string email, string password, string status, string telpon)
 		{
 			this.Id = id;
@@ -39,7 +42,9 @@ namespace OnlineMart_LIB
 			this.Telpon = telpon;
 			this.Blacklist_id = null;
 		}
+		#endregion
 
+		#region Properties
 		public int Id { get => id; set => id = value; }
 		public string Username { get => username; set => username = value; }
 		public string Nama { get => nama; set => nama = value; }
@@ -48,7 +53,9 @@ namespace OnlineMart_LIB
 		public string Status { get => status; set => status = value; }
 		public string Telpon { get => telpon; set => telpon = value; }
 		public Blacklist Blacklist_id { get => blacklist_id; set => blacklist_id = value; }
+		#endregion
 
+		#region Method
 		public static Boolean TambahData(Penjual p)
 		{
 			//string yang menampung sql query insert into
@@ -78,10 +85,10 @@ namespace OnlineMart_LIB
 			}
 			return listPenjual;
 		}
-		public static Boolean UbahData(Penjual p)
+		public static Boolean UbahData(Penjual p, Blacklist b)
 		{
 			// Querry Insert
-			string sql = "update penjuals set username = '" + p.Username + "', nama = '" + p.Nama + "', email = '" + p.Email + "', password = SHA2('" + p.Password + "', 512), status = '" + p.Status + "', telpon = '" + p.Telpon + "', blacklist_id = " + p.blacklist_id.Id + " where id = " + p.Id;
+			string sql = "update penjuals set username = '" + p.Username + "', nama = '" + p.Nama + "', email = '" + p.Email + "', password = SHA2('" + p.Password + "', 512), status = '" + p.Status + "', telpon = '" + p.Telpon + "', blacklist_id = " + b.Id + " where id = " + p.Id;
 			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
@@ -105,7 +112,7 @@ namespace OnlineMart_LIB
 
 		public static Penjual CekLogin(string username, string password)
 		{
-			string sql = "select id, username, nama, email, password, status, telepon from penjuals where username = '" + username + "' and password = SHA2('" + password + "', 512)";
+			string sql = "select id, username, nama, email, password, status, telepon from penjuals where username = '" + username + "' and password = SHA2('" + password + "', 512) and blacklist_id is null";
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			while (hasil.Read())
@@ -116,5 +123,19 @@ namespace OnlineMart_LIB
 			}
 			return null;
 		}
+		public static Penjual AmbilData(int id)
+		{
+			string sql = "select id, username, nama, email, password, status, telepon from penjuals where id = " + id;
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+			while (hasil.Read())
+			{
+				Penjual penjual = new Penjual(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6));
+
+				return penjual;
+			}
+			return null;
+		}
+		#endregion
 	}
 }

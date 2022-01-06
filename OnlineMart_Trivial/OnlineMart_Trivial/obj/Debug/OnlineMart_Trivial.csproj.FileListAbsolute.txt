@@ -66,7 +66,6 @@ C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMar
 C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\OnlineMart_LIB.pdb
-C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\MySql.Data.xml
 C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.csproj.AssemblyReference.cache
 C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarBarang.resources
 C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarCabang.resources
@@ -333,3 +332,12 @@ C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_
 C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.cart.resources
 D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.cart.resources
 D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormNotifikasi.resources
+C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDetailBarang.resources
+C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormLoginPenjual.resources
+C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.cart.resources
+C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormNotifikasi.resources
+C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormRegisterPenjual.resources
+C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\bin\Debug\MySql.Data.xml
+C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormChatPenjual.resources
+C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormDaftarBarangPenjual.resources
+C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\obj\Debug\OnlineMart_Trivial.FormTambahBarangPenjual.resources

@@ -13,15 +13,18 @@ namespace OnlineMart_Trivial
 {
     public partial class FormUbahBarang : Form
     {
-        public static int IdDipilih;
-        public FormUbahBarang()
+		#region Field
+		public static int IdDipilih;
+        Barang b = null;
+		#endregion
+
+		public FormUbahBarang()
         {
             InitializeComponent();
         }
 
-        Barang b = null;
-
-        private void FormUbahBarang_Load(object sender, EventArgs e)
+		#region Form Load
+		private void FormUbahBarang_Load(object sender, EventArgs e)
         {
             // Masukkan kategori ke textbox
             List<Kategori> listKategori = Kategori.BacaData("", "");
@@ -39,8 +42,10 @@ namespace OnlineMart_Trivial
             textBoxHarga.Text = b.Harga.ToString();
             comboBoxKategori.Text = b.Kategori.Nama;
         }
+		#endregion
 
-        private void buttonUbah_Click(object sender, EventArgs e)
+		#region Button Ubah
+		private void buttonUbah_Click(object sender, EventArgs e)
         {
             try
             {
@@ -65,6 +70,7 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Penyimpanan gagal. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+        #endregion
 
         #region DesignButton
         private void buttonUbah_MouseEnter(object sender, EventArgs e)
