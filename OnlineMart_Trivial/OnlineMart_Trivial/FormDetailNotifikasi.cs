@@ -19,11 +19,35 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
-        List<Notifikasi> listNotifikasi = new List<Notifikasi>();
+        Notifikasi notif = null;
+
+        #region Methods
+        private void TampilListBox()
+        {
+            //Kosongi isi listbox
+            listBox.Items.Clear();
+
+            if (notif != null)
+            {
+                //listBox.Items.Add(notif.Judul);
+                listBox.Items.Add(notif.Waktu.ToShortDateString());
+                listBox.Items.Add(notif.Isi);
+            }
+        }
+        #endregion
 
         private void FormDetailNotifikasi_Load(object sender, EventArgs e)
         {
-            listNotifikasi = Notifikasi.BacaData("n.id", "");
+            try
+            {
+                notif = Notifikasi.AmbilData(FormNotifikasi.idNotif);
+
+                TampilListBox();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Error");
+            }
         }
 
         private void FormDetailNotifikasi_FormClosing(object sender, FormClosingEventArgs e)

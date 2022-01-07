@@ -29,23 +29,23 @@ namespace OnlineMart_Trivial
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // listBox1
+            // listBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(137, 70);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(487, 303);
-            this.listBox1.TabIndex = 0;
+            this.listBox.FormattingEnabled = true;
+            this.listBox.Location = new System.Drawing.Point(137, 70);
+            this.listBox.Name = "listBox";
+            this.listBox.Size = new System.Drawing.Size(487, 303);
+            this.listBox.TabIndex = 0;
             // 
             // FormDetailNotifikasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBox);
             this.Name = "FormDetailNotifikasi";
             this.Text = "FormDetailNotifikasi";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDetailNotifikasi_FormClosing);
@@ -56,6 +56,6 @@ namespace OnlineMart_Trivial
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox;
     }
 }

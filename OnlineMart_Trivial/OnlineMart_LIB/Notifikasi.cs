@@ -27,6 +27,14 @@ namespace OnlineMart_LIB
             this.Waktu = waktu;
             this.Pelanggan = pelanggan;
         }
+
+        public Notifikasi(string isi, string tipe, DateTime waktu, Pelanggan pelanggan)
+        {
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Waktu = waktu;
+            this.Pelanggan = pelanggan;
+        }
         #endregion
 
         #region Properties
@@ -60,8 +68,8 @@ namespace OnlineMart_LIB
         #region Methods
         public static Boolean TambahData(Notifikasi n)
         {
-            string sql = "insert into notifikasis (id, isi, tipe, waktu, pelanggan_id) " +
-                         "values (" + n.Id + ", '" + n.Isi + "', '" + n.Tipe + "', " +
+            string sql = "insert into notifikasis (isi, tipe, waktu, pelanggan_id) " +
+                         "values ('" + n.Isi + "', '" + n.Tipe + "', " +
                          n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " + n.Pelanggan.Id + ")";
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
@@ -104,6 +112,26 @@ namespace OnlineMart_LIB
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDiubah == 0) return false;
             else return true;
+        }
+
+        public static Notifikasi AmbilData(int id)
+        {
+            string sql = "select * from notifikasis n " +
+                         "inner join pelanggans p on n.pelanggan_id = p.id " +
+                         "where n.id = " + id;
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            Notifikasi n = null;
+
+            while (hasil.Read())
+            {
+                Pelanggan p = new Pelanggan(hasil.GetInt32(5), hasil.GetString(7), hasil.GetString(6), hasil.GetString(8), hasil.GetString(9), hasil.GetString(10), hasil.GetDouble(11), hasil.GetDouble(12));
+
+                n = new Notifikasi(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetDateTime(3), p);
+            }
+
+            return n;
         }
         #endregion
     }

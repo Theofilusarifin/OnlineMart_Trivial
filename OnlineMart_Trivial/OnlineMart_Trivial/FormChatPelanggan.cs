@@ -126,6 +126,10 @@ namespace OnlineMart_Trivial
                 // Tampilkan pesan sementara ke ListBox
                 listBoxPesan.Items.Add("Me : " + chat.Isi);
 
+                // buat notifikasi
+                Notifikasi notifikasi = new Notifikasi(chat.Isi, "Chat Driver", DateTime.Now, o.Pelanggan);
+                Notifikasi.TambahData(notifikasi);
+
                 // Bersihkan Text Box
                 textBoxPesan.Clear();
             }

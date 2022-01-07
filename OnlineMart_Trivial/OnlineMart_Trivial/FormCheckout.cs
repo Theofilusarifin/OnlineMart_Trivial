@@ -161,6 +161,10 @@ namespace OnlineMart_Trivial
                     // Kurangi saldo
                     Pelanggan.UpdateSaldo(FormKeranjang.thisOrder);
 
+                    // buat notifikasi
+                    Notifikasi notifikasi = new Notifikasi("Order Masuk", "Order Masuk", DateTime.Now, FormKeranjang.thisOrder.Pelanggan);
+                    Notifikasi.TambahData(notifikasi);
+
                     // thisOrder dikosongkan sekaligus dibuat baru
                     FormKeranjang.thisOrder = new Order();
                     // keranjang di clear

@@ -81,6 +81,7 @@ namespace OnlineMart_Trivial
                 dataGridView.Columns.Add(bcolDetail);
             }
         }
+
         private string ToSentenceCase(string word)
         {
             string str;
@@ -146,8 +147,12 @@ namespace OnlineMart_Trivial
             {
                 if (e.ColumnIndex == dataGridView.Columns["btnDetail"].Index && e.RowIndex >= 0)
                 {
-                    //idNotif = int.Parse(dataGridView.CurrentRow.DataBoundItem.)
-                    //MessageBox.Show("idNotif = " + idNotif);
+                    int index = dataGridView.CurrentRow.Index;
+                    //MessageBox.Show("index : " + index);
+
+                    Notifikasi notifikasi = listNotifikasi[index];
+                    idNotif = notifikasi.Id;
+                    //MessageBox.Show("idNotif : " + idNotif);
 
                     // Open FormDetailNotifikasi
                     FormDetailNotifikasi frm = new FormDetailNotifikasi();
