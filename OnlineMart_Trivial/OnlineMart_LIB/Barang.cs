@@ -21,24 +21,35 @@ namespace OnlineMart_LIB
         List<Barang_Order> listBarangOrder; // Composition
 
         #region Constructors
-        public Barang(int id, string nama, int harga, Kategori kategori)
+        //public Barang(int id, string nama, int harga, Kategori kategori)
+        //{
+        //    Id = id;
+        //    Nama = nama;
+        //    Harga = harga;
+        //    Kategori = kategori;
+        //    ListBarangCabang = new List<Barang_Cabang>();
+        //    ListBarangOrder = new List<Barang_Order>();
+        //}
+        //public Barang(string nama, int harga, Kategori kategori)
+        //{
+        //    Nama = nama;
+        //    Harga = harga;
+        //    Kategori = kategori;
+        //    ListBarangCabang = new List<Barang_Cabang>();
+        //    ListBarangOrder = new List<Barang_Order>();
+        //}
+
+        public Barang(int id, string nama, int harga, string deskripsi, string path_gambar, Kategori kategori)
         {
             Id = id;
             Nama = nama;
             Harga = harga;
             Kategori = kategori;
+            Deskripsi = deskripsi;
+            Path_gambar = path_gambar;
             ListBarangCabang = new List<Barang_Cabang>();
             ListBarangOrder = new List<Barang_Order>();
         }
-        public Barang(string nama, int harga, Kategori kategori)
-        {
-            Nama = nama;
-            Harga = harga;
-            Kategori = kategori;
-            ListBarangCabang = new List<Barang_Cabang>();
-            ListBarangOrder = new List<Barang_Order>();
-        }
-
         public Barang(string nama, int harga, string deskripsi, string path_gambar, Kategori kategori)
         {
             Nama = nama;
@@ -145,9 +156,9 @@ namespace OnlineMart_LIB
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
             while(hasil.Read() == true)
             {
-                Kategori k = new Kategori (hasil.GetInt32(4), hasil.GetString(5));
+                Kategori k = new Kategori (hasil.GetInt32(6), hasil.GetString(7));
 
-                Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
+                Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), hasil.GetString(3), hasil.GetString(4), k);
 
                 listBarang.Add(b);
             }
@@ -165,9 +176,10 @@ namespace OnlineMart_LIB
             while (hasil.Read())
             {
                 //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
-                Kategori k = new Kategori(hasil.GetInt32(4), hasil.GetString(5));
+                Kategori k = new Kategori(hasil.GetInt32(6), hasil.GetString(7));
 
-                b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
+                b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), hasil.GetString(3), hasil.GetString(4), k);
+
             }
             return b;
         }

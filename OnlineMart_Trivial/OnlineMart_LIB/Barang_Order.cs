@@ -100,9 +100,9 @@ namespace OnlineMart_LIB
 
 				Order o = new Order(long.Parse(hasil.GetString(4)), DateTime.Parse(hasil.GetString(5)), hasil.GetString(6), hasil.GetFloat(7), hasil.GetFloat(8), hasil.GetString(9), hasil.GetString(10), c, p, d, mp, pr, gr);
 
-				Kategori k = new Kategori(hasil.GetInt32(60), hasil.GetString(61));
+				Kategori k = new Kategori(hasil.GetInt32(62), hasil.GetString(63));
 
-				Barang b = new Barang(hasil.GetInt32(56), hasil.GetString(57), hasil.GetInt32(58), k);
+				Barang b = new Barang(hasil.GetInt32(56), hasil.GetString(57), hasil.GetInt32(58), hasil.GetString(59), hasil.GetString(60), k);
 
 				Barang_Order bo = new Barang_Order(b, o, hasil.GetInt32(0), hasil.GetFloat(1));
 
@@ -166,9 +166,9 @@ namespace OnlineMart_LIB
 
 				Order o = new Order(long.Parse(hasil.GetString(4)), DateTime.Parse(hasil.GetString(5)), hasil.GetString(6), hasil.GetFloat(7), hasil.GetFloat(8), hasil.GetString(9), hasil.GetString(10), c, p, d, mp, pr, gr);
 
-				Kategori k = new Kategori(hasil.GetInt32(60), hasil.GetString(61));
+				Kategori k = new Kategori(hasil.GetInt32(62), hasil.GetString(63));
 
-				Barang b = new Barang(hasil.GetInt32(56), hasil.GetString(57), hasil.GetInt32(58), k);
+				Barang b = new Barang(hasil.GetInt32(56), hasil.GetString(57), hasil.GetInt32(58), hasil.GetString(59), hasil.GetString(60), k);
 
 				Barang_Order bo = new Barang_Order(b, o, hasil.GetInt32(0), hasil.GetFloat(1));
 

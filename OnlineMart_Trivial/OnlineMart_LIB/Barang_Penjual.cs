@@ -56,9 +56,9 @@ namespace OnlineMart_LIB
 			//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
 			while (hasil.Read() == true)
 			{
-				Kategori k = new Kategori(hasil.GetInt32(4), hasil.GetString(5));
+				Kategori k = new Kategori(hasil.GetInt32(6), hasil.GetString(7));
 
-				Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), k);
+				Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), hasil.GetString(3), hasil.GetString(4), k);
 
 				listBarang.Add(b);
 			}

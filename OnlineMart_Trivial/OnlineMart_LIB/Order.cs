@@ -207,7 +207,7 @@ namespace OnlineMart_LIB
                          "inner join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
                          "inner join promos pr on o.promo_id = pr.id " +
                          "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
-                         "inner join gifts g on gr.gift_id = g.id" + 
+                         "inner join gifts g on gr.gift_id = g.id " + 
                          "inner join penjuals pej on o.penjual_id = pej.id";
 
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%' ";

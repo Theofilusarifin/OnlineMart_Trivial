@@ -49,9 +49,12 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Add("tanggal_waktu", "Tanggal Waktu");
             dataGridView.Columns.Add("pemasukan", "Pemasukkan");
 
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(248, 142, 123);
+            dataGridView.EnableHeadersVisualStyles = false;
+
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["tanggal_waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns["pemasukan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns["tanggal_waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["pemasukan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             //agar angka rata tengah
             dataGridView.Columns["pemasukan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

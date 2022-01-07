@@ -1,7 +1,7 @@
 ﻿
 namespace OnlineMart_Trivial
 {
-    partial class cart
+    partial class FormMiniGames
     {
         /// <summary>
         /// Required designer variable.
@@ -119,7 +119,7 @@ namespace OnlineMart_Trivial
             this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
-            // cart
+            // FormMiniGames
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,7 +135,7 @@ namespace OnlineMart_Trivial
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "cart";
+            this.Name = "FormMiniGames";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mini Games";
             this.Load += new System.EventHandler(this.FormMiniGames_Load);

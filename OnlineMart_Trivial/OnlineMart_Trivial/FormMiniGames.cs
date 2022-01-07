@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace OnlineMart_Trivial
 {
-    public partial class cart : Form
+    public partial class FormMiniGames : Form
     {
-        public cart()
+        public FormMiniGames()
         {
             InitializeComponent();
             RestartGame();

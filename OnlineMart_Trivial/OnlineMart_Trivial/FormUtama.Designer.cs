@@ -57,7 +57,7 @@ namespace OnlineMart_Trivial
             this.buttonRekapPendapatan = new System.Windows.Forms.Button();
             this.buttonDaftarPengiriman = new System.Windows.Forms.Button();
             this.panelKonsumen = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonMiniGamesKonsumen = new System.Windows.Forms.Button();
             this.buttonIsiSaldo = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonCetakNota = new System.Windows.Forms.Button();
@@ -480,7 +480,7 @@ namespace OnlineMart_Trivial
             // 
             // panelKonsumen
             // 
-            this.panelKonsumen.Controls.Add(this.button2);
+            this.panelKonsumen.Controls.Add(this.buttonMiniGamesKonsumen);
             this.panelKonsumen.Controls.Add(this.buttonIsiSaldo);
             this.panelKonsumen.Controls.Add(this.buttonProfile);
             this.panelKonsumen.Controls.Add(this.buttonCetakNota);
@@ -496,20 +496,21 @@ namespace OnlineMart_Trivial
             this.panelKonsumen.TabIndex = 2;
             this.panelKonsumen.Visible = false;
             // 
-            // button2
+            // buttonMiniGamesKonsumen
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 360);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(233, 45);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "MINI GAMES";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonMiniGamesKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMiniGamesKonsumen.FlatAppearance.BorderSize = 0;
+            this.buttonMiniGamesKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMiniGamesKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMiniGamesKonsumen.Location = new System.Drawing.Point(0, 360);
+            this.buttonMiniGamesKonsumen.Name = "buttonMiniGamesKonsumen";
+            this.buttonMiniGamesKonsumen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonMiniGamesKonsumen.Size = new System.Drawing.Size(233, 45);
+            this.buttonMiniGamesKonsumen.TabIndex = 8;
+            this.buttonMiniGamesKonsumen.Text = "MINI GAMES";
+            this.buttonMiniGamesKonsumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMiniGamesKonsumen.UseVisualStyleBackColor = true;
+            this.buttonMiniGamesKonsumen.Click += new System.EventHandler(this.buttonMiniGamesKonsumen_Click);
             // 
             // buttonIsiSaldo
             // 
@@ -903,7 +904,7 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button buttonChatKonsumen;
         private System.Windows.Forms.Button btnDaftarBarangPenjual;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonMiniGamesKonsumen;
         public System.Windows.Forms.Panel panelPegawai;
         private System.Windows.Forms.Panel panelRekapPenjualan;
         private System.Windows.Forms.Button btnRekapOmaSaldo;

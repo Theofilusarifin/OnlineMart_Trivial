@@ -74,9 +74,9 @@ namespace OnlineMart_LIB
 
                 Cabang cabang = new Cabang(hasil.GetInt32(3), hasil.GetString(4), hasil.GetString(5), pegawai);
 
-                Kategori kategori = new Kategori(hasil.GetInt32(17), hasil.GetString(18));
+                Kategori kategori = new Kategori(hasil.GetInt32(19), hasil.GetString(20));
 
-                Barang barang = new Barang(hasil.GetInt32(13), hasil.GetString(14), hasil.GetInt32(15), kategori);
+                Barang barang = new Barang(hasil.GetInt32(13), hasil.GetString(14), hasil.GetInt32(15), hasil.GetString(16), hasil.GetString(17), kategori);
 
                 Barang_Cabang barang_cabang = new Barang_Cabang(cabang, barang, hasil.GetInt32(2));
 
@@ -107,9 +107,9 @@ namespace OnlineMart_LIB
 
                 Cabang cabang = new Cabang(hasil.GetInt32(3), hasil.GetString(4), hasil.GetString(5), pegawai);
 
-                Kategori kategori = new Kategori(hasil.GetInt32(17), hasil.GetString(18));
+                Kategori kategori = new Kategori(hasil.GetInt32(19), hasil.GetString(20));
 
-                Barang barang = new Barang(hasil.GetInt32(13), hasil.GetString(14), hasil.GetInt32(15), kategori);
+                Barang barang = new Barang(hasil.GetInt32(13), hasil.GetString(14), hasil.GetInt32(15), hasil.GetString(16), hasil.GetString(17), kategori);
 
                 Barang_Cabang barang_cabang = new Barang_Cabang(cabang, barang, hasil.GetInt32(2));
 
@@ -149,9 +149,9 @@ namespace OnlineMart_LIB
 
                 Cabang cabang = new Cabang(hasil.GetInt32(3), hasil.GetString(4), hasil.GetString(5), pegawai);
 
-                Kategori kategori = new Kategori(hasil.GetInt32(17), hasil.GetString(18));
+                Kategori kategori = new Kategori(hasil.GetInt32(19), hasil.GetString(20));
 
-                Barang barang = new Barang(hasil.GetInt32(13), hasil.GetString(14), hasil.GetInt32(15), kategori);
+                Barang barang = new Barang(hasil.GetInt32(13), hasil.GetString(14), hasil.GetInt32(15), hasil.GetString(16), hasil.GetString(17), kategori);
 
                 bc = new Barang_Cabang(cabang, barang, hasil.GetInt32(2));
 
