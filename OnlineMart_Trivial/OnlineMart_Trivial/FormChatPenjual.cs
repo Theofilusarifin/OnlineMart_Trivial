@@ -116,7 +116,7 @@ namespace OnlineMart_Trivial
                 Order o = (Order)comboBoxNomorNota.SelectedItem;
 
                 // Buat Chat baru
-                Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "penjual", o, o.Pelanggan, o.Penjual);
+                Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "penjual", "konsumen", o, o.Penjual, o.Pelanggan);
 
                 // Tambahkan Chat Baru
                 Chat.TambahData(chat);

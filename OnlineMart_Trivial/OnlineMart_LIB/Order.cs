@@ -48,12 +48,84 @@ namespace OnlineMart_LIB
             Status = "Menunggu Pembayaran";
             ListBarangOrder = new List<Barang_Order>();
         }
-
         public Order(DateTime tanggal_waktu)
         {
             Tanggal_waktu = tanggal_waktu;
         }
 
+        //// Untuk Order keseluruhan
+        //public Order(long id, DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Cabang cabang, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem, Penjual penjual)
+        //{
+        //    Id = id;
+        //    Tanggal_waktu = tanggal_waktu;
+        //    Alamat_tujuan = alamat_tujuan;
+        //    Ongkos_kirim = ongkos_kirim;
+        //    Total_bayar = total_bayar;
+        //    Cara_bayar = cara_bayar;
+        //    Status = status;
+        //    Cabang = cabang;
+        //    Pelanggan = pelanggan;
+        //    Driver = driver;
+        //    Metode_pembayaran = metode_pembayaran;
+        //    Promo = promo;
+        //    Gift_redeem = gift_redeem;
+        //    Penjual = penjual;
+        //    ListBarangOrder = new List<Barang_Order>();
+        //}
+        //public Order(DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Cabang cabang, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem, Penjual penjual)
+        //{
+        //    Tanggal_waktu = tanggal_waktu;
+        //    Alamat_tujuan = alamat_tujuan;
+        //    Ongkos_kirim = ongkos_kirim;
+        //    Total_bayar = total_bayar;
+        //    Cara_bayar = cara_bayar;
+        //    Status = status;
+        //    Cabang = cabang;
+        //    Pelanggan = pelanggan;
+        //    Driver = driver;
+        //    Metode_pembayaran = metode_pembayaran;
+        //    Promo = promo;
+        //    Gift_redeem = gift_redeem;
+        //    Penjual = penjual;
+        //    ListBarangOrder = new List<Barang_Order>();
+        //}
+
+        // Untuk Order ke penjual
+        public Order(long id, DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem, Penjual penjual)
+        {
+            Id = id;
+            Tanggal_waktu = tanggal_waktu;
+            Alamat_tujuan = alamat_tujuan;
+            Ongkos_kirim = ongkos_kirim;
+            Total_bayar = total_bayar;
+            Cara_bayar = cara_bayar;
+            Status = status;
+            Pelanggan = pelanggan;
+            Driver = driver;
+            Metode_pembayaran = metode_pembayaran;
+            Promo = promo;
+            Gift_redeem = gift_redeem;
+            Penjual = penjual;
+            ListBarangOrder = new List<Barang_Order>();
+        }
+        public Order(DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem)
+        {
+            Tanggal_waktu = tanggal_waktu;
+            Alamat_tujuan = alamat_tujuan;
+            Ongkos_kirim = ongkos_kirim;
+            Total_bayar = total_bayar;
+            Cara_bayar = cara_bayar;
+            Status = status;
+            Pelanggan = pelanggan;
+            Driver = driver;
+            Metode_pembayaran = metode_pembayaran;
+            Promo = promo;
+            Gift_redeem = gift_redeem;
+            Penjual = penjual;
+            ListBarangOrder = new List<Barang_Order>();
+        }
+
+        // Untuk Order ke cabang
         public Order(long id, DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Cabang cabang, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem)
         {
             Id = id;
@@ -71,7 +143,6 @@ namespace OnlineMart_LIB
             Gift_redeem = gift_redeem;
             ListBarangOrder = new List<Barang_Order>();
         }
-
         public Order(DateTime tanggal_waktu, string alamat_tujuan, float ongkos_kirim, float total_bayar, string cara_bayar, string status, Cabang cabang, Pelanggan pelanggan, Driver driver, Metode_pembayaran metode_pembayaran, Promo promo, Gift_Redeem gift_redeem)
         {
             Tanggal_waktu = tanggal_waktu;
@@ -103,8 +174,15 @@ namespace OnlineMart_LIB
 
         public Order(long id, Pelanggan pelanggan, Driver driver)
         {
+            Id = id;
             Pelanggan = pelanggan;
             Driver = driver;
+        }
+        public Order(long id, Pelanggan pelanggan, Penjual penjual)
+        {
+            Id = id;
+            Pelanggan = pelanggan;
+            Penjual = penjual;
         }
         #endregion
 
@@ -159,6 +237,11 @@ namespace OnlineMart_LIB
             get => driver; 
             set => driver = value; 
         }
+        public Penjual Penjual 
+        { 
+            get => penjual; 
+            set => penjual = value; 
+        }
         public Metode_pembayaran Metode_pembayaran 
         { 
             get => metode_pembayaran; 
@@ -179,17 +262,30 @@ namespace OnlineMart_LIB
             get => listBarangOrder; 
             private set => listBarangOrder = value; 
         }
-		public Penjual Penjual { get => penjual; set => penjual = value; }
 		#endregion
 
 		#region Method
-		public static Boolean TambahData(Order o)
+		public static Boolean TambahDataOrderCabang(Order o)
 		{
 			string sql = "insert into orders (id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
                          "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id) " +
 				         "values (" + o.Id + ", '" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + o.Alamat_tujuan + "', " + 
                          o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "','" + o.Status + "', " + o.Cabang.Id + ", " + 
                          o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " + + o.Promo.Id + ", " + 
+                         o.Gift_redeem.Id + ")";
+
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
+
+        public static Boolean TambahDataOrderPenjual(Order o)
+        {
+            string sql = "insert into orders (id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
+                         "penjual_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id) " +
+                         "values (" + o.Id + ", '" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + o.Alamat_tujuan + "', " +
+                         o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "','" + o.Status + "', " + o.Penjual.Id + ", " +
+                         o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " + +o.Promo.Id + ", " +
                          o.Gift_redeem.Id + ")";
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
@@ -208,7 +304,7 @@ namespace OnlineMart_LIB
                          "inner join promos pr on o.promo_id = pr.id " +
                          "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
                          "inner join gifts g on gr.gift_id = g.id " + 
-                         "inner join penjuals pej on o.penjual_id = pej.id";
+                         "inner join penjuals pen on o.penjual_id = pen.id ";
 
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%' ";
 
@@ -220,23 +316,33 @@ namespace OnlineMart_LIB
 
             while (hasil.Read())
             {
-                Gift g = new Gift(hasil.GetInt32(51), hasil.GetString(52), hasil.GetInt32(53));
+                Gift g = new Gift(hasil.GetInt32(50), hasil.GetString(51), hasil.GetInt32(52));
 
-                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(47), hasil.GetDateTime(48), hasil.GetInt32(49), g);
+                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(46), hasil.GetDateTime(47), hasil.GetInt32(48), g);
 
-                Promo pr = new Promo(hasil.GetInt32(41), hasil.GetString(42), hasil.GetString(43), hasil.GetInt32(44), hasil.GetInt32(45), hasil.GetFloat(46));
+                Promo pr = new Promo(hasil.GetInt32(40), hasil.GetString(41), hasil.GetString(42), hasil.GetInt32(43), hasil.GetInt32(44), hasil.GetFloat(45));
 
-                Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(39), hasil.GetString(40));
+                Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(38), hasil.GetString(39));
 
-                Driver d = new Driver(hasil.GetInt32(33), hasil.GetString(35), hasil.GetString(34), hasil.GetString(36), hasil.GetString(37), hasil.GetString(38));
+                Driver d = new Driver(hasil.GetInt32(32), hasil.GetString(34), hasil.GetString(33), hasil.GetString(35), hasil.GetString(36), hasil.GetString(37));
 
-                Pelanggan pel = new Pelanggan(hasil.GetInt32(25), hasil.GetString(27), hasil.GetString(26), hasil.GetString(28), hasil.GetString(29), hasil.GetString(30), hasil.GetDouble(31), hasil.GetDouble(32));
+                Pelanggan pel = new Pelanggan(hasil.GetInt32(24), hasil.GetString(26), hasil.GetString(25), hasil.GetString(27), hasil.GetString(28), hasil.GetString(29), hasil.GetDouble(30), hasil.GetDouble(31));
 
-                Pegawai peg = new Pegawai(hasil.GetInt32(19), hasil.GetString(21), hasil.GetString(20), hasil.GetString(22), hasil.GetString(23), hasil.GetString(24));
+                Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
 
-                Cabang c = new Cabang(hasil.GetInt32(15), hasil.GetString(16), hasil.GetString(17), peg);
+                Order o = null;
+                int cabang_id = hasil.GetInt32(14);
 
-                Order o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
+                if (cabang_id == 0)
+                {
+                    Penjual pen = new Penjual(hasil.GetInt32(53), hasil.GetString(54), hasil.GetString(55), hasil.GetString(56), hasil.GetString(57), hasil.GetString(58), hasil.GetString(59));
+                    o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), pel, d, mp, pr, gr, pen);
+                }
+                else
+                {
+                    Cabang c = new Cabang(cabang_id, hasil.GetString(15), hasil.GetString(16), peg);
+                    o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
+                }
 
                 listOrder.Add(o);
             }
@@ -255,8 +361,8 @@ namespace OnlineMart_LIB
                          "inner join promos pr on o.promo_id = pr.id " +
                          "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
                          "inner join gifts g on gr.gift_id = g.id " +
-                         "innner join penjuals pej on o.penjual_id = pej.id" + 
-                         "where status = '" + status + "' and " + kriteria + " like '%" + nilaiKriteria + "%' " +
+                         "inner join penjuals pen on o.penjual_id = pen.id " + 
+                         "where o.status = '" + status + "' and " + kriteria + " like '%" + nilaiKriteria + "%' " +
                          "order by o.tanggal_waktu asc";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -265,23 +371,33 @@ namespace OnlineMart_LIB
 
             while (hasil.Read())
             {
-                Gift g = new Gift(hasil.GetInt32(51), hasil.GetString(52), hasil.GetInt32(53));
+                Gift g = new Gift(hasil.GetInt32(50), hasil.GetString(51), hasil.GetInt32(52));
 
-                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(47), hasil.GetDateTime(48), hasil.GetInt32(49), g);
+                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(46), hasil.GetDateTime(47), hasil.GetInt32(48), g);
 
-                Promo pr = new Promo(hasil.GetInt32(41), hasil.GetString(42), hasil.GetString(43), hasil.GetInt32(44), hasil.GetInt32(45), hasil.GetFloat(46));
+                Promo pr = new Promo(hasil.GetInt32(40), hasil.GetString(41), hasil.GetString(42), hasil.GetInt32(43), hasil.GetInt32(44), hasil.GetFloat(45));
 
-                Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(39), hasil.GetString(40));
+                Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(38), hasil.GetString(39));
 
-                Driver d = new Driver(hasil.GetInt32(33), hasil.GetString(35), hasil.GetString(34), hasil.GetString(36), hasil.GetString(37), hasil.GetString(38));
+                Driver d = new Driver(hasil.GetInt32(32), hasil.GetString(34), hasil.GetString(33), hasil.GetString(35), hasil.GetString(36), hasil.GetString(37));
 
-                Pelanggan pel = new Pelanggan(hasil.GetInt32(25), hasil.GetString(27), hasil.GetString(26), hasil.GetString(28), hasil.GetString(29), hasil.GetString(30), hasil.GetDouble(31), hasil.GetDouble(32));
+                Pelanggan pel = new Pelanggan(hasil.GetInt32(24), hasil.GetString(26), hasil.GetString(25), hasil.GetString(27), hasil.GetString(28), hasil.GetString(29), hasil.GetDouble(30), hasil.GetDouble(31));
 
-                Pegawai peg = new Pegawai(hasil.GetInt32(19), hasil.GetString(21), hasil.GetString(20), hasil.GetString(22), hasil.GetString(23), hasil.GetString(24));
+                Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
 
-                Cabang c = new Cabang(hasil.GetInt32(15), hasil.GetString(16), hasil.GetString(17), peg);
+                Order o = null;
+                int cabang_id = hasil.GetInt32(14);
 
-                Order o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
+                if (cabang_id == 0)
+                {
+                    Penjual pen = new Penjual(hasil.GetInt32(53), hasil.GetString(54), hasil.GetString(55), hasil.GetString(56), hasil.GetString(57), hasil.GetString(58), hasil.GetString(59));
+                    o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), pel, d, mp, pr, gr, pen);
+                }
+                else
+                {
+                    Cabang c = new Cabang(cabang_id, hasil.GetString(15), hasil.GetString(16), peg);
+                    o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
+                }
 
                 listOrder.Add(o);
             }
@@ -300,9 +416,10 @@ namespace OnlineMart_LIB
                          "inner join promos pr on o.promo_id = pr.id " +
                          "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
                          "inner join gifts g on gr.gift_id = g.id " +
-                         "where status = 'Pesanan Diproses'";
+                         "inner join penjuals pen on o.penjual_id = pen.id " +
+                         "where o.status = 'Pesanan Diproses' ";
 
-            if (kriteria != "") sql += " and " + kriteria + " like '%" + nilaiKriteria + "%' ";
+            if (kriteria != "") sql += " and " + kriteria + " = " + nilaiKriteria + " ";
 
             sql += " order by o.tanggal_waktu ";
 
@@ -312,23 +429,33 @@ namespace OnlineMart_LIB
 
             while (hasil.Read())
             {
-                Gift g = new Gift(hasil.GetInt32(51), hasil.GetString(52), hasil.GetInt32(53));
+                Gift g = new Gift(hasil.GetInt32(50), hasil.GetString(51), hasil.GetInt32(52));
 
-                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(47), hasil.GetDateTime(48), hasil.GetInt32(49), g);
+                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(46), hasil.GetDateTime(47), hasil.GetInt32(48), g);
 
-                Promo pr = new Promo(hasil.GetInt32(41), hasil.GetString(42), hasil.GetString(43), hasil.GetInt32(44), hasil.GetInt32(45), hasil.GetFloat(46));
+                Promo pr = new Promo(hasil.GetInt32(40), hasil.GetString(41), hasil.GetString(42), hasil.GetInt32(43), hasil.GetInt32(44), hasil.GetFloat(45));
 
-                Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(39), hasil.GetString(40));
+                Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(38), hasil.GetString(39));
 
-                Driver d = new Driver(hasil.GetInt32(33), hasil.GetString(35), hasil.GetString(34), hasil.GetString(36), hasil.GetString(37), hasil.GetString(38));
+                Driver d = new Driver(hasil.GetInt32(32), hasil.GetString(34), hasil.GetString(33), hasil.GetString(35), hasil.GetString(36), hasil.GetString(37));
 
-                Pelanggan pel = new Pelanggan(hasil.GetInt32(25), hasil.GetString(27), hasil.GetString(26), hasil.GetString(28), hasil.GetString(29), hasil.GetString(30), hasil.GetDouble(31), hasil.GetDouble(32));
+                Pelanggan pel = new Pelanggan(hasil.GetInt32(24), hasil.GetString(26), hasil.GetString(25), hasil.GetString(27), hasil.GetString(28), hasil.GetString(29), hasil.GetDouble(30), hasil.GetDouble(31));
 
-                Pegawai peg = new Pegawai(hasil.GetInt32(19), hasil.GetString(21), hasil.GetString(20), hasil.GetString(22), hasil.GetString(23), hasil.GetString(24));
+                Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
 
-                Cabang c = new Cabang(hasil.GetInt32(15), hasil.GetString(16), hasil.GetString(17), peg);
+                Order o = null;
+                int cabang_id = hasil.GetInt32(14);
 
-                Order o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
+                if (cabang_id == 0)
+                {
+                    Penjual pen = new Penjual(hasil.GetInt32(53), hasil.GetString(54), hasil.GetString(55), hasil.GetString(56), hasil.GetString(57), hasil.GetString(58), hasil.GetString(59));
+                    o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), pel, d, mp, pr, gr, pen);
+                }
+                else
+                {
+                    Cabang c = new Cabang(cabang_id, hasil.GetString(15), hasil.GetString(16), peg);
+                    o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
+                }
 
                 listOrder.Add(o);
             }
@@ -438,6 +565,7 @@ namespace OnlineMart_LIB
                          "inner join promos pr on o.promo_id = pr.id " +
                          "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
                          "inner join gifts g on gr.gift_id = g.id " +
+                         "inner join penjuals pen on o.penjual_id = pen.id " +
                          "where o.id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -446,23 +574,32 @@ namespace OnlineMart_LIB
 
             while (hasil.Read())
             {
-                Gift g = new Gift(hasil.GetInt32(51), hasil.GetString(52), hasil.GetInt32(53));
+                Gift g = new Gift(hasil.GetInt32(50), hasil.GetString(51), hasil.GetInt32(52));
 
-                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(47), hasil.GetDateTime(48), hasil.GetInt32(49), g);
+                Gift_Redeem gr = new Gift_Redeem(hasil.GetInt32(46), hasil.GetDateTime(47), hasil.GetInt32(48), g);
 
-                Promo pr = new Promo(hasil.GetInt32(41), hasil.GetString(42), hasil.GetString(43), hasil.GetInt32(44), hasil.GetInt32(45), hasil.GetFloat(46));
+                Promo pr = new Promo(hasil.GetInt32(40), hasil.GetString(41), hasil.GetString(42), hasil.GetInt32(43), hasil.GetInt32(44), hasil.GetFloat(45));
 
-                Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(39), hasil.GetString(40));
+                Metode_pembayaran mp = new Metode_pembayaran(hasil.GetInt32(38), hasil.GetString(39));
 
-                Driver d = new Driver(hasil.GetInt32(33), hasil.GetString(35), hasil.GetString(34), hasil.GetString(36), hasil.GetString(37), hasil.GetString(38));
+                Driver d = new Driver(hasil.GetInt32(32), hasil.GetString(34), hasil.GetString(33), hasil.GetString(35), hasil.GetString(36), hasil.GetString(37));
 
-                Pelanggan pel = new Pelanggan(hasil.GetInt32(25), hasil.GetString(27), hasil.GetString(26), hasil.GetString(28), hasil.GetString(29), hasil.GetString(30), hasil.GetDouble(31), hasil.GetDouble(32));
+                Pelanggan pel = new Pelanggan(hasil.GetInt32(24), hasil.GetString(26), hasil.GetString(25), hasil.GetString(27), hasil.GetString(28), hasil.GetString(29), hasil.GetDouble(30), hasil.GetDouble(31));
 
-                Pegawai peg = new Pegawai(hasil.GetInt32(19), hasil.GetString(21), hasil.GetString(20), hasil.GetString(22), hasil.GetString(23), hasil.GetString(24));
+                Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
 
-                Cabang c = new Cabang(hasil.GetInt32(15), hasil.GetString(16), hasil.GetString(17), peg);
+                int cabang_id = hasil.GetInt32(14);
 
-                o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
+                if (cabang_id == 0)
+                {
+                    Penjual pen = new Penjual(hasil.GetInt32(53), hasil.GetString(54), hasil.GetString(55), hasil.GetString(56), hasil.GetString(57), hasil.GetString(58), hasil.GetString(59));
+                    o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), pel, d, mp, pr, gr, pen);
+                }
+                else
+                {
+                    Cabang c = new Cabang(cabang_id, hasil.GetString(15), hasil.GetString(16), peg);
+                    o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
+                }
 
             }
 

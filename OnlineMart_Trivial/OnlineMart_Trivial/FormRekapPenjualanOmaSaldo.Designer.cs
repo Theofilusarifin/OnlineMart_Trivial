@@ -214,7 +214,7 @@ namespace OnlineMart_Trivial
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 8F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 10F);
             this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.Size = new System.Drawing.Size(1099, 201);
             this.dataGridView.TabIndex = 51;

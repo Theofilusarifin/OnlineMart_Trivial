@@ -248,5 +248,10 @@ namespace OnlineMart_Trivial
             buttonSearch.BackgroundImage = Properties.Resources.Button_Leave;
         }
         #endregion
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

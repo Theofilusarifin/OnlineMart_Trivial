@@ -153,7 +153,7 @@ namespace OnlineMart_Trivial
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 8F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 10F);
             this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.Size = new System.Drawing.Size(921, 267);
             this.dataGridView.TabIndex = 47;
@@ -176,7 +176,7 @@ namespace OnlineMart_Trivial
             this.label4.Font = new System.Drawing.Font("Montserrat", 12F);
             this.label4.Location = new System.Drawing.Point(854, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 22);
+            this.label4.Size = new System.Drawing.Size(107, 22);
             this.label4.TabIndex = 49;
             this.label4.Text = "Total Harga :";
             // 

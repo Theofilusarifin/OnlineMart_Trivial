@@ -146,7 +146,7 @@ namespace OnlineMart_Trivial
 
                     FormKeranjang.thisOrder.Status = "Pesanan Diproses";
 
-                    Order.TambahData(FormKeranjang.thisOrder);
+                    Order.TambahDataOrderCabang(FormKeranjang.thisOrder);
 
                     foreach (Barang_Order bo in FormKeranjang.listBarangOrder)
                     {

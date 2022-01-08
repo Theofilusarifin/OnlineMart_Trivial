@@ -26,9 +26,21 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Properties
-		public Penjual Penjual { get => penjual; set => penjual = value; }
-		public Barang Barang { get => barang; set => barang = value; }
-		public int Stok { get => stok; set => stok = value; }
+		public Penjual Penjual 
+		{ 
+			get => penjual; 
+			set => penjual = value; 
+		}
+		public Barang Barang 
+		{ 
+			get => barang;
+			set => barang = value; 
+		}
+		public int Stok 
+		{ 
+			get => stok; 
+			set => stok = value; 
+		}
 		#endregion
 
 		#region Method
