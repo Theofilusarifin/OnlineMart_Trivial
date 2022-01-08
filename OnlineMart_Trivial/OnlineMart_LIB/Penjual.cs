@@ -9,7 +9,7 @@ namespace OnlineMart_LIB
 {
 	public class Penjual
 	{
-		#region Field
+		#region Fields
 		private int id;
 		private string username;
 		private string nama;
@@ -72,7 +72,9 @@ namespace OnlineMart_LIB
 		public static Boolean TambahData(Penjual p)
 		{
 			//string yang menampung sql query insert into
-			string sql = "insert into penjuals (username, nama, email, password, status, telpon, blacklist_id) values ('" + p.Username + "', '" + p.Nama + "', '" + p.Email + "', SHA2('" + p.Password +"', 512), '" + p.Status + "', '" + p.Telpon + "', " + p.Blacklist_id.Id + ")";
+			string sql = "insert into penjuals (username, nama, email, password, status, telpon, blacklist_id) " +
+				         "values ('" + p.Username + "', '" + p.Nama + "', '" + p.Email + "', SHA2('" + p.Password +"', 512), " +
+						 "'" + p.Status + "', '" + p.Telpon + "', " + p.Blacklist.Id + ")";
 
 			//menjalankan perintah sql
 			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);

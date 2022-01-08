@@ -162,7 +162,7 @@ namespace OnlineMart_Trivial
                     Pelanggan.UpdateSaldo(FormKeranjang.thisOrder);
 
                     // buat notifikasi
-                    Notifikasi notifikasi = new Notifikasi("Order Masuk", "Order Masuk", DateTime.Now, FormKeranjang.thisOrder.Pelanggan);
+                    Notifikasi notifikasi = new Notifikasi("Order Masuk", "order", "driver", DateTime.Now, FormKeranjang.thisOrder.Pelanggan, FormKeranjang.thisOrder.Driver, null, null);
                     Notifikasi.TambahData(notifikasi);
 
                     // thisOrder dikosongkan sekaligus dibuat baru

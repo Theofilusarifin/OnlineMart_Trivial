@@ -170,9 +170,7 @@ namespace OnlineMart_Trivial
                         Order.UbahData(o);
 
                         //buat notifikasi
-                        Pelanggan pelanggan = new Pelanggan(o.Pelanggan.Id, o.Pelanggan.Nama, o.Pelanggan.Username, o.Pelanggan.Email, o.Pelanggan.Password, o.Pelanggan.Telepon, o.Pelanggan.Saldo, o.Pelanggan.Poin);
-
-                        Notifikasi notifikasi = new Notifikasi("Order Cancelled by Driver", "Order Cancelled by Driver", DateTime.Now, pelanggan);
+                        Notifikasi notifikasi = new Notifikasi("Order Cancelled", "order", "konsumen", DateTime.Now, o.Pelanggan, o.Driver, null, null);
                         Notifikasi.TambahData(notifikasi);
 
                         FormDaftarPengiriman_Load(sender, e);

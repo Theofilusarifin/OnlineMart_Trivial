@@ -82,6 +82,8 @@ namespace OnlineMart_Trivial
             this.labelwelcome = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelActiveForm = new System.Windows.Forms.Panel();
+            this.labelNotifCount = new System.Windows.Forms.Label();
+            this.NotifRedCircle = new System.Windows.Forms.PictureBox();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPenjual.SuspendLayout();
             this.panelPegawai.SuspendLayout();
@@ -97,6 +99,7 @@ namespace OnlineMart_Trivial
             ((System.ComponentModel.ISupportInitialize)(this.BelNotifikasi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NotifRedCircle)).BeginInit();
             this.SuspendLayout();
             // 
             // timerLoading
@@ -680,6 +683,8 @@ namespace OnlineMart_Trivial
             this.panelHeader.BackColor = System.Drawing.Color.Transparent;
             this.panelHeader.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Navbar_atas3;
             this.panelHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelHeader.Controls.Add(this.labelNotifCount);
+            this.panelHeader.Controls.Add(this.NotifRedCircle);
             this.panelHeader.Controls.Add(this.labelSaldo);
             this.panelHeader.Controls.Add(this.labelSaldoHeader);
             this.panelHeader.Controls.Add(this.labelPoin);
@@ -847,6 +852,26 @@ namespace OnlineMart_Trivial
             this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
             // 
+            // labelNotifCount
+            // 
+            this.labelNotifCount.AutoSize = true;
+            this.labelNotifCount.BackColor = System.Drawing.Color.Tomato;
+            this.labelNotifCount.Location = new System.Drawing.Point(1047, 17);
+            this.labelNotifCount.Name = "labelNotifCount";
+            this.labelNotifCount.Size = new System.Drawing.Size(25, 13);
+            this.labelNotifCount.TabIndex = 0;
+            this.labelNotifCount.Text = "99+";
+            this.labelNotifCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // NotifRedCircle
+            // 
+            this.NotifRedCircle.BackColor = System.Drawing.Color.Tomato;
+            this.NotifRedCircle.Location = new System.Drawing.Point(1045, 12);
+            this.NotifRedCircle.Name = "NotifRedCircle";
+            this.NotifRedCircle.Size = new System.Drawing.Size(28, 22);
+            this.NotifRedCircle.TabIndex = 1;
+            this.NotifRedCircle.TabStop = false;
+            // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -880,6 +905,7 @@ namespace OnlineMart_Trivial
             ((System.ComponentModel.ISupportInitialize)(this.BelNotifikasi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.NotifRedCircle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -936,6 +962,8 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Label labelSaldoHeader;
         public System.Windows.Forms.Label labelPoin;
         public System.Windows.Forms.Label labelPoinHeader;
+        private System.Windows.Forms.Label labelNotifCount;
+        private System.Windows.Forms.PictureBox NotifRedCircle;
     }
 }
 

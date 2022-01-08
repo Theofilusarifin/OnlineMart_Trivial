@@ -25,6 +25,8 @@ namespace OnlineMart_Trivial
         public static Koneksi koneksi;
         public static Cabang cDipilih;
 
+
+
         // Ubah path sesuai dengan Path Resource masing-masing
         public static string location = @"C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
@@ -50,6 +52,13 @@ namespace OnlineMart_Trivial
             }
         }
         #endregion
+
+        //#region Methods
+        //public static void HitungNotifikasi()
+        //{
+
+        //}
+        //#endregion
 
         #region OpenFormAuth
         int opening = 0;
@@ -99,6 +108,32 @@ namespace OnlineMart_Trivial
                 //Ambil nilai di db setting
                 koneksi = new Koneksi();
                 //MessageBox.Show("Koneksi Berhasil");
+
+                #region Hitung Notif
+                // set role_user
+                string role_user = "";
+                if (role == "rider")
+                {
+                    role_user = "driver";
+                }
+                else
+                {
+                    role_user = role;
+                }
+
+                // set waktu jadi paling minimal (anggap null)
+                DateTime waktu = DateTime.MinValue;
+                // kalau waktu paling minimal (null)
+                if (waktu == DateTime.MinValue)
+                {
+                    // ambil waktu sekarang
+                    waktu = DateTime.Now;
+                }
+
+                int notifCount = Notifikasi.HitungNotifikasi(role_user, waktu);
+
+                labelNotifCount.Text = notifCount.ToString();
+                #endregion
             }
             catch (Exception ex)
             {

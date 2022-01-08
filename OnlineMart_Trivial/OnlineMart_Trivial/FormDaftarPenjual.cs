@@ -76,7 +76,7 @@ namespace OnlineMart_Trivial
                 foreach (Penjual p in listPenjual)
                 {
                     dataGridView.Rows.Add(p.Id, p.Username, p.Nama, p.Email, p.Status, p.Telpon);
-                    if (p.Blacklist_id != null)
+                    if (p.Blacklist != null)
 					{
                         DataGridViewButtonColumn bcolRemove = new DataGridViewButtonColumn();
 

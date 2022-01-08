@@ -23,23 +23,6 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Constructors
-        public Notifikasi(int id, string isi, string tipe, DateTime waktu, Pelanggan pelanggan)
-        {
-            this.Id = id;
-            this.Isi = isi;
-            this.Tipe = tipe;
-            this.Waktu = waktu;
-            this.Pelanggan = pelanggan;
-        }
-
-        public Notifikasi(string isi, string tipe, DateTime waktu, Pelanggan pelanggan)
-        {
-            this.Isi = isi;
-            this.Tipe = tipe;
-            this.Waktu = waktu;
-            this.Pelanggan = pelanggan;
-        }
-
         public Notifikasi(int id, string isi, string tipe, string role_user, DateTime waktu, Pelanggan pelanggan, Driver driver, Pegawai pegawai, Penjual penjual)
         {
             this.Id = id;
@@ -207,6 +190,24 @@ namespace OnlineMart_LIB
             }
 
             return n;
+        }
+
+        public static int HitungNotifikasi(string role_user, DateTime waktu)
+        {
+            string sql = "select count(*) from notifikasis " +
+                         "where role_user = '" + role_user + "' " +
+                         "and waktu >= " + waktu;
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            int NotifCount = 0;
+
+            while (hasil.Read())
+            {
+                NotifCount =  hasil.GetInt32(0);
+            }
+
+            return NotifCount;
         }
         #endregion
     }

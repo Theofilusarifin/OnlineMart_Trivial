@@ -127,7 +127,7 @@ namespace OnlineMart_Trivial
                 listBoxPesan.Items.Add("Me : " + chat.Isi);
 
                 // buat notifikasi
-                Notifikasi notifikasi = new Notifikasi(chat.Isi, "Chat Driver", DateTime.Now, o.Pelanggan);
+                Notifikasi notifikasi = new Notifikasi(chat.Isi, "chat", "konsumen", DateTime.Now, o.Pelanggan, o.Driver, null, null);
                 Notifikasi.TambahData(notifikasi);
 
                 // Bersihkan Text Box

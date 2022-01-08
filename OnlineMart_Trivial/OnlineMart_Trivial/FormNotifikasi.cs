@@ -20,7 +20,6 @@ namespace OnlineMart_Trivial
         }
 
         List<Notifikasi> listNotifikasi = new List<Notifikasi>();
-        List<string> listTipe = new List<string>();
 
         private string kriteria = "";
         private string nilaiKriteria = "";
@@ -60,7 +59,22 @@ namespace OnlineMart_Trivial
             {
                 foreach (Notifikasi n in listNotifikasi)
                 {
-                    dataGridView.Rows.Add("gambar sesuai n.Tipe", n.Isi, n.Waktu);
+                    if (n.Role_user == "konsumen" && FormUtama.role == "konsumen" && n.Pelanggan.Id == FormUtama.konsumen.Id)
+                    {
+                        dataGridView.Rows.Add("gambar sesuai n.Tipe", n.Isi, n.Waktu);
+                    }
+                    else if (n.Role_user == "driver" && FormUtama.role == "rider" && n.Driver.Id == FormUtama.rider.Id)
+                    {
+                        dataGridView.Rows.Add("gambar sesuai n.Tipe", n.Isi, n.Waktu);
+                    }
+                    else if (n.Role_user == "pegawai" && FormUtama.role == "pegawai" && n.Pegawai.Id == FormUtama.pegawai.Id)
+                    {
+                        dataGridView.Rows.Add("gambar sesuai n.Tipe", n.Isi, n.Waktu);
+                    }
+                    else if (n.Role_user == "penjual" && FormUtama.role == "penjual" && n.Penjual.Id == FormUtama.penjual.Id)
+                    {
+                        dataGridView.Rows.Add("gambar sesuai n.Tipe", n.Isi, n.Waktu);
+                    }
                 }
             }
             else
@@ -98,6 +112,8 @@ namespace OnlineMart_Trivial
         {
             try
             {
+                List<string> listTipe = new List<string>();
+
                 FormatDataGrid();
 
                 listNotifikasi = Notifikasi.BacaData(kriteria, nilaiKriteria);
