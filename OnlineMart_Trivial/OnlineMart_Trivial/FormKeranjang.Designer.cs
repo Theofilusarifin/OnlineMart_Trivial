@@ -51,9 +51,9 @@ namespace OnlineMart_Trivial
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F);
             this.label1.Location = new System.Drawing.Point(304, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 22);
+            this.label1.Size = new System.Drawing.Size(130, 22);
             this.label1.TabIndex = 45;
-            this.label1.Text = "Cabang Dipilih :";
+            this.label1.Text = "Vendor Dipilih :";
             // 
             // labelNamaCabang
             // 

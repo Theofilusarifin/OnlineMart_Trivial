@@ -130,7 +130,7 @@ namespace OnlineMart_Trivial
             this.panelPenjual.Controls.Add(this.btnTambahStokPenjual);
             this.panelPenjual.Controls.Add(this.btnDaftarBarangPenjual);
             this.panelPenjual.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPenjual.Location = new System.Drawing.Point(0, 1354);
+            this.panelPenjual.Location = new System.Drawing.Point(0, 1399);
             this.panelPenjual.Name = "panelPenjual";
             this.panelPenjual.Size = new System.Drawing.Size(233, 416);
             this.panelPenjual.TabIndex = 0;
@@ -207,7 +207,7 @@ namespace OnlineMart_Trivial
             this.panelPegawai.Controls.Add(this.panelPengaturan);
             this.panelPegawai.Controls.Add(this.buttonPengaturan);
             this.panelPegawai.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPegawai.Location = new System.Drawing.Point(0, 794);
+            this.panelPegawai.Location = new System.Drawing.Point(0, 839);
             this.panelPegawai.Name = "panelPegawai";
             this.panelPegawai.Size = new System.Drawing.Size(233, 560);
             this.panelPegawai.TabIndex = 3;
@@ -424,7 +424,7 @@ namespace OnlineMart_Trivial
             this.panelRider.Controls.Add(this.buttonRekapPendapatan);
             this.panelRider.Controls.Add(this.buttonDaftarPengiriman);
             this.panelRider.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRider.Location = new System.Drawing.Point(0, 625);
+            this.panelRider.Location = new System.Drawing.Point(0, 670);
             this.panelRider.Name = "panelRider";
             this.panelRider.Size = new System.Drawing.Size(233, 169);
             this.panelRider.TabIndex = 1;
@@ -492,7 +492,7 @@ namespace OnlineMart_Trivial
             this.panelKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelKonsumen.Location = new System.Drawing.Point(0, 184);
             this.panelKonsumen.Name = "panelKonsumen";
-            this.panelKonsumen.Size = new System.Drawing.Size(233, 441);
+            this.panelKonsumen.Size = new System.Drawing.Size(233, 486);
             this.panelKonsumen.TabIndex = 2;
             this.panelKonsumen.Visible = false;
             // 
@@ -646,7 +646,7 @@ namespace OnlineMart_Trivial
             this.buttonLogout.FlatAppearance.BorderSize = 0;
             this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogout.Location = new System.Drawing.Point(0, 1770);
+            this.buttonLogout.Location = new System.Drawing.Point(0, 1815);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonLogout.Size = new System.Drawing.Size(233, 45);
