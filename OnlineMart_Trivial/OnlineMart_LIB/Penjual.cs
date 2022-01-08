@@ -17,10 +17,22 @@ namespace OnlineMart_LIB
 		private string password;
 		private string status;
 		private string telpon;
-		private Blacklist blacklist_id;
+		private Blacklist blacklist;
 		#endregion
 
 		#region Constructor
+		public Penjual(int id, string username, string nama, string email, string password, string status, string telpon, Blacklist blacklist)
+		{
+			this.Id = id;
+			this.Username = username;
+			this.Nama = nama;
+			this.Email = email;
+			this.Password = password;
+			this.Status = status;
+			this.Telpon = telpon;
+			this.Blacklist = blacklist;
+		}
+
 		public Penjual(int id, string username, string nama, string email, string password, string status, string telpon)
 		{
 			this.Id = id;
@@ -30,8 +42,9 @@ namespace OnlineMart_LIB
 			this.Password = password;
 			this.Status = status;
 			this.Telpon = telpon;
-			this.Blacklist_id = null;
+			this.Blacklist = null;
 		}
+
 		public Penjual(string username, string nama, string email, string password, string status, string telpon)
 		{
 			this.Username = username;
@@ -40,7 +53,7 @@ namespace OnlineMart_LIB
 			this.Password = password;
 			this.Status = status;
 			this.Telpon = telpon;
-			this.Blacklist_id = null;
+			this.Blacklist = null;
 		}
 		#endregion
 
@@ -52,7 +65,7 @@ namespace OnlineMart_LIB
 		public string Password { get => password; set => password = value; }
 		public string Status { get => status; set => status = value; }
 		public string Telpon { get => telpon; set => telpon = value; }
-		public Blacklist Blacklist_id { get => blacklist_id; set => blacklist_id = value; }
+		public Blacklist Blacklist { get => blacklist; set => blacklist = value; }
 		#endregion
 
 		#region Method
