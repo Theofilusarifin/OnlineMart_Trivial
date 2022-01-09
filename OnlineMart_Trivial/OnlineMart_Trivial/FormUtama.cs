@@ -24,6 +24,7 @@ namespace OnlineMart_Trivial
         public static List<Barang> keranjang = new List<Barang>();
         public static Koneksi koneksi = null;
         public static Cabang cDipilih;
+        public static Penjual pDipilih;
 
         #region Waktu Notif
         public static DateTime waktuKonsumen = DateTime.MinValue;
@@ -577,6 +578,36 @@ namespace OnlineMart_Trivial
             {
                 HideSubMenu();
                 openChildForm(new FormChatPenjual());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+		#endregion
+
+		#region Button Barang penjual
+		private void buttonBarangPenjual_Click(object sender, EventArgs e)
+		{
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormBarangPenjual());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+		#endregion
+
+		#region Button Acc Penjual dari pegawai
+		private void buttonAccPenjual_Click(object sender, EventArgs e)
+		{
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormAccPenjual());
             }
             catch (Exception ex)
             {

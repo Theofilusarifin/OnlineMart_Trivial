@@ -100,10 +100,10 @@ namespace OnlineMart_LIB
 			}
 			return listPenjual;
 		}
-		public static Boolean UbahData(Penjual p, Blacklist b)
+		public static Boolean UbahData(Penjual p)
 		{
 			// Querry Insert
-			string sql = "update penjuals set username = '" + p.Username + "', nama = '" + p.Nama + "', email = '" + p.Email + "', password = SHA2('" + p.Password + "', 512), status = '" + p.Status + "', telpon = '" + p.Telpon + "', blacklist_id = " + b.Id + " where id = " + p.Id;
+			string sql = "update penjuals set username = '" + p.Username + "', nama = '" + p.Nama + "', email = '" + p.Email + "', password = SHA2('" + p.Password + "', 512), status = '" + p.Status + "', telpon = '" + p.Telpon + "', blacklist_id = " + p.Blacklist.Id + " where id = " + p.Id;
 			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;

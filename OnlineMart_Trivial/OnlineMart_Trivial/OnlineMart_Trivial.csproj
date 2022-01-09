@@ -55,11 +55,23 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>db.settings</DependentUpon>
     </Compile>
+    <Compile Include="FormAccPenjual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAccPenjual.Designer.cs">
+      <DependentUpon>FormAccPenjual.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAuth.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAuth.Designer.cs">
       <DependentUpon>FormAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBarangPenjual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBarangPenjual.Designer.cs">
+      <DependentUpon>FormBarangPenjual.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBlacklist.cs">
       <SubType>Form</SubType>
@@ -405,8 +417,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAccPenjual.resx">
+      <DependentUpon>FormAccPenjual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAuth.resx">
       <DependentUpon>FormAuth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBarangPenjual.resx">
+      <DependentUpon>FormBarangPenjual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBlacklist.resx">
       <DependentUpon>FormBlacklist.cs</DependentUpon>
