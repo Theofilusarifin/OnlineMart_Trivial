@@ -186,10 +186,10 @@ namespace OnlineMart_Trivial
             try
             {
                 int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
-                Penjual p = Penjual.AmbilData(id);
+                //Penjual p = Penjual.AmbilData(id);
                 if (e.ColumnIndex == dataGridView.Columns["btnBlacklist"].Index && e.RowIndex >= 0)
                 {
-                    penjual = p;
+                    //penjual = p;
                     FormBlacklist formBlacklist = new FormBlacklist();
                     formBlacklist.Owner = this;
                     formBlacklist.ShowDialog();
@@ -198,7 +198,7 @@ namespace OnlineMart_Trivial
                 if (e.ColumnIndex == dataGridView.Columns["btnRemoveBlacklist"].Index && e.RowIndex >= 0)
                 {
                     Blacklist b = null;
-                    Penjual.UbahData(p, b);
+                    //Penjual.UbahData(p, b);
                     this.Hide();
                 }
             }

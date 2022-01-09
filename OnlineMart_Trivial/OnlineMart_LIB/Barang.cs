@@ -133,7 +133,7 @@ namespace OnlineMart_LIB
         public static Boolean TambahData(Barang b)
         {
             //string yang menampung sql query insert into
-            string sql = "insert into barangs (nama, harga, deskripsi, path_gambar, kategori_id) values ('" + b.Nama + "', " + b.Harga + ", " + b.Kategori.Id + ", '" + b.Deskripsi + "', '" + b.Path_gambar + "')";
+            string sql = "insert into barangs (nama, harga, deskripsi, path_gambar, kategori_id) values ('" + b.Nama + "', " + b.Harga + ", '" + b.Deskripsi + "', '" + b.Path_gambar + "', "  + b.Kategori.Id + ")";
 
             //menjalankan perintah sql
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);

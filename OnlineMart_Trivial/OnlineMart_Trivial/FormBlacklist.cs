@@ -33,7 +33,7 @@ namespace OnlineMart_Trivial
 			try
 			{
 				Blacklist b = new Blacklist(textBoxJenis.Text, textBoxAlasan.Text);
-				if (Penjual.UbahData(FormDaftarPenjual.penjual, b))
+				if (Penjual.UbahData(FormDaftarPenjual.penjual))
 				{
 					MessageBox.Show("Data Penjual berhasil di blacklist", "Informasi");
 

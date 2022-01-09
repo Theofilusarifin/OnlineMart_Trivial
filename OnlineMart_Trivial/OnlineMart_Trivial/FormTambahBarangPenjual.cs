@@ -49,11 +49,7 @@ namespace OnlineMart_Trivial
 				var finalString = new String(stringChars);
 
 				string fileName = textBoxNama.Text + "_" + finalString + ".png";
-				path = Path.Combine(FormUtama.location, fileName);
-
-				Image gambar_barang = pictureBoxBarang.Image;
-				gambar_barang.Save(path);
-				//MessageBox.Show(path);
+				path = Path.Combine(FormUtama.location+"/barang/", fileName);
 
 				Kategori kategori = (Kategori)comboBoxKategori.SelectedItem;
 
@@ -63,6 +59,10 @@ namespace OnlineMart_Trivial
 				Barang.TambahData(barang);
 
 				MessageBox.Show("Data Barang berhasil ditambahkan", "Informasi");
+
+				Image gambar_barang = pictureBoxBarang.Image;
+				gambar_barang.Save(path);
+				//MessageBox.Show(path);
 
 				// Update Data Di Form Daftar
 				FormDaftarBarang frm = (FormDaftarBarang)this.Owner;
