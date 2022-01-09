@@ -56,8 +56,6 @@ namespace OnlineMart_Trivial
                 FormUtama.frmUtama.panelActiveForm.Show();
                 FormUtama.frmUtama.panelLeftNavbar.BringToFront();
 
-                FormUtama utama = new FormUtama();
-
                 if (FormUtama.role == "konsumen")
                 {
                     FormUtama.frmUtama.panelKonsumen.Show();
@@ -95,32 +93,32 @@ namespace OnlineMart_Trivial
                     notifCount = Notifikasi.HitungNotifikasi(role_user, waktu);
                     if (notifCount == 0)
                     {
-                        utama.NotifRedCircle.BackColor = Color.Transparent; // untuk sementara
-                        utama.labelNotifCount.Text = "";
+                        FormUtama.frmUtama.NotifRedCircle.BackColor = Color.Transparent; // untuk sementara
+                        FormUtama.frmUtama.labelNotifCount.Text = "";
                     }
                     else if (notifCount > 0 && notifCount < 10) // notif 1-9
                     {
-                        utama.NotifRedCircle.BackColor = Color.Tomato;
-                        utama.NotifRedCircle.Size = new Size(17, 17);
-                        utama.NotifRedCircle.Location = new Point(1045, 14);
+                        FormUtama.frmUtama.NotifRedCircle.BackColor = Color.Tomato;
+                        FormUtama.frmUtama.NotifRedCircle.Size = new Size(17, 17);
+                        FormUtama.frmUtama.NotifRedCircle.Location = new Point(1045, 14);
 
-                        utama.labelNotifCount.Text = notifCount.ToString();
+                        FormUtama.frmUtama.labelNotifCount.Text = notifCount.ToString();
                     }
                     else if (notifCount >= 10 && notifCount < 100) // notif 10-99
                     {
-                        utama.NotifRedCircle.BackColor = Color.Tomato;
-                        utama.NotifRedCircle.Size = new Size(23, 23);
-                        utama.NotifRedCircle.Location = new Point(1045, 11);
+                        FormUtama.frmUtama.NotifRedCircle.BackColor = Color.Tomato;
+                        FormUtama.frmUtama.NotifRedCircle.Size = new Size(23, 23);
+                        FormUtama.frmUtama.NotifRedCircle.Location = new Point(1045, 11);
 
-                        utama.labelNotifCount.Text = notifCount.ToString();
+                        FormUtama.frmUtama.labelNotifCount.Text = notifCount.ToString();
                     }
                     else if (notifCount >= 100) // notif > 99
                     {
-                        utama.NotifRedCircle.BackColor = Color.Tomato;
-                        utama.NotifRedCircle.Size = new Size(29, 29);
-                        utama.NotifRedCircle.Location = new Point(1045, 8);
+                        FormUtama.frmUtama.NotifRedCircle.BackColor = Color.Tomato;
+                        FormUtama.frmUtama.NotifRedCircle.Size = new Size(29, 29);
+                        FormUtama.frmUtama.NotifRedCircle.Location = new Point(1045, 8);
 
-                        utama.labelNotifCount.Text = "99+";
+                        FormUtama.frmUtama.labelNotifCount.Text = "99+";
                     }
                 }
                 #endregion
@@ -128,6 +126,8 @@ namespace OnlineMart_Trivial
             catch (Exception ex)
             {
                 MessageBox.Show("Terjadi Error, Pesan kesalahan : " + ex.Message, "Error");
+                MessageBox.Show("waktu = " + waktu.ToString("yyyy-MM-dd HH:mm:ss"));
+                MessageBox.Show("DateTime.Now = " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             }
         }
     }

@@ -196,7 +196,7 @@ namespace OnlineMart_LIB
         {
             string sql = "select count(*) from notifikasis " +
                          "where role_user = '" + role_user + "' " +
-                         "and waktu >= " + waktu;
+                         "and waktu >= " + waktu.ToString("yyyy-MM-dd HH:mm:ss");
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
