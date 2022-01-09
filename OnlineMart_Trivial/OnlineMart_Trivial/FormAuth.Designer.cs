@@ -113,6 +113,7 @@ namespace OnlineMart_Trivial
             this.Name = "FormAuth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAuth";
+            this.Load += new System.EventHandler(this.FormAuth_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPegawai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPenjual)).EndInit();

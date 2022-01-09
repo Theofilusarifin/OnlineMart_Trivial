@@ -25,7 +25,12 @@ namespace OnlineMart_Trivial
         public static Koneksi koneksi;
         public static Cabang cDipilih;
 
-
+        #region Waktu Notif
+        public static DateTime waktuKonsumen = DateTime.MinValue;
+        public static DateTime waktuDriver = DateTime.MinValue;
+        public static DateTime waktuPegawai = DateTime.MinValue;
+        public static DateTime waktuPenjual = DateTime.MinValue;
+        #endregion
 
         // Ubah path sesuai dengan Path Resource masing-masing
         public static string location = @"C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
@@ -52,13 +57,6 @@ namespace OnlineMart_Trivial
             }
         }
         #endregion
-
-        //#region Methods
-        //public static void HitungNotifikasi()
-        //{
-
-        //}
-        //#endregion
 
         #region OpenFormAuth
         int opening = 0;
@@ -108,32 +106,6 @@ namespace OnlineMart_Trivial
                 //Ambil nilai di db setting
                 koneksi = new Koneksi();
                 //MessageBox.Show("Koneksi Berhasil");
-
-                #region Hitung Notif
-                // set role_user
-                string role_user = "";
-                if (role == "rider")
-                {
-                    role_user = "driver";
-                }
-                else
-                {
-                    role_user = role;
-                }
-
-                // set waktu jadi paling minimal (anggap null)
-                DateTime waktu = DateTime.MinValue;
-                // kalau waktu paling minimal (null)
-                if (waktu == DateTime.MinValue)
-                {
-                    // ambil waktu sekarang
-                    waktu = DateTime.Now;
-                }
-
-                int notifCount = Notifikasi.HitungNotifikasi(role_user, waktu);
-
-                labelNotifCount.Text = notifCount.ToString();
-                #endregion
             }
             catch (Exception ex)
             {
@@ -523,6 +495,23 @@ namespace OnlineMart_Trivial
         {
             try
             {
+                // ambil waktu terakhir mereka login (buat notif)
+                switch (role)
+                {
+                    case "konsumen":
+                        waktuKonsumen = DateTime.Now;
+                        break;
+                    case "rider":
+                        waktuDriver = DateTime.Now;
+                        break;
+                    case "pegawai":
+                        waktuPegawai = DateTime.Now;
+                        break;
+                    case "penjual":
+                        waktuPenjual = DateTime.Now;
+                        break;
+                }
+
                 //User ditanya sesuai dibawah
                 DialogResult hasil = MessageBox.Show(this, "Anda yakin ingin logout?", "LOGOUT", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 //Kalau User klik yes barang akan dihapus

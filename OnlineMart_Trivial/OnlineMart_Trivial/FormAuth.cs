@@ -30,6 +30,11 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
+        private void FormAuth_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void pictureBoxKonsumen_Click(object sender, EventArgs e)
         {
             FormLoginKonsumen frm = new FormLoginKonsumen(); //Create Object
@@ -60,6 +65,6 @@ namespace OnlineMart_Trivial
             frm.Owner = this;
             frm.Show();
             this.Hide();
-        }
+        }        
     }
 }

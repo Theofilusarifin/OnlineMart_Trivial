@@ -70,6 +70,8 @@ namespace OnlineMart_Trivial
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.labelNotifCount = new System.Windows.Forms.Label();
+            this.NotifRedCircle = new System.Windows.Forms.PictureBox();
             this.labelSaldo = new System.Windows.Forms.Label();
             this.labelSaldoHeader = new System.Windows.Forms.Label();
             this.labelPoin = new System.Windows.Forms.Label();
@@ -82,8 +84,6 @@ namespace OnlineMart_Trivial
             this.labelwelcome = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelActiveForm = new System.Windows.Forms.Panel();
-            this.labelNotifCount = new System.Windows.Forms.Label();
-            this.NotifRedCircle = new System.Windows.Forms.PictureBox();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPenjual.SuspendLayout();
             this.panelPegawai.SuspendLayout();
@@ -94,12 +94,12 @@ namespace OnlineMart_Trivial
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NotifRedCircle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSaldo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BelNotifikasi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NotifRedCircle)).BeginInit();
             this.SuspendLayout();
             // 
             // timerLoading
@@ -703,6 +703,27 @@ namespace OnlineMart_Trivial
             this.panelHeader.TabIndex = 0;
             this.panelHeader.Visible = false;
             // 
+            // labelNotifCount
+            // 
+            this.labelNotifCount.AutoSize = true;
+            this.labelNotifCount.BackColor = System.Drawing.Color.Tomato;
+            this.labelNotifCount.Location = new System.Drawing.Point(1047, 16);
+            this.labelNotifCount.Name = "labelNotifCount";
+            this.labelNotifCount.Size = new System.Drawing.Size(25, 13);
+            this.labelNotifCount.TabIndex = 0;
+            this.labelNotifCount.Text = "99+";
+            this.labelNotifCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // NotifRedCircle
+            // 
+            this.NotifRedCircle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NotifRedCircle.BackColor = System.Drawing.Color.Tomato;
+            this.NotifRedCircle.Location = new System.Drawing.Point(1045, 8);
+            this.NotifRedCircle.Name = "NotifRedCircle";
+            this.NotifRedCircle.Size = new System.Drawing.Size(29, 29);
+            this.NotifRedCircle.TabIndex = 1;
+            this.NotifRedCircle.TabStop = false;
+            // 
             // labelSaldo
             // 
             this.labelSaldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -852,26 +873,6 @@ namespace OnlineMart_Trivial
             this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
             // 
-            // labelNotifCount
-            // 
-            this.labelNotifCount.AutoSize = true;
-            this.labelNotifCount.BackColor = System.Drawing.Color.Tomato;
-            this.labelNotifCount.Location = new System.Drawing.Point(1047, 17);
-            this.labelNotifCount.Name = "labelNotifCount";
-            this.labelNotifCount.Size = new System.Drawing.Size(25, 13);
-            this.labelNotifCount.TabIndex = 0;
-            this.labelNotifCount.Text = "99+";
-            this.labelNotifCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // NotifRedCircle
-            // 
-            this.NotifRedCircle.BackColor = System.Drawing.Color.Tomato;
-            this.NotifRedCircle.Location = new System.Drawing.Point(1045, 12);
-            this.NotifRedCircle.Name = "NotifRedCircle";
-            this.NotifRedCircle.Size = new System.Drawing.Size(28, 22);
-            this.NotifRedCircle.TabIndex = 1;
-            this.NotifRedCircle.TabStop = false;
-            // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -900,12 +901,12 @@ namespace OnlineMart_Trivial
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NotifRedCircle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSaldo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPoin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BelNotifikasi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.NotifRedCircle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -962,8 +963,8 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Label labelSaldoHeader;
         public System.Windows.Forms.Label labelPoin;
         public System.Windows.Forms.Label labelPoinHeader;
-        private System.Windows.Forms.Label labelNotifCount;
-        private System.Windows.Forms.PictureBox NotifRedCircle;
+        public System.Windows.Forms.Label labelNotifCount;
+        public System.Windows.Forms.PictureBox NotifRedCircle;
     }
 }
 
