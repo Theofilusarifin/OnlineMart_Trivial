@@ -40,7 +40,7 @@ namespace OnlineMart_Trivial
 
                 Cabang cabang = new Cabang(textBoxNama.Text, textBoxAlamat.Text, pegawai);
 
-                Cabang.TambahData(cabang);
+                Cabang.TambahData(cabang, FormUtama.koneksi);
 
                 MessageBox.Show("Data Cabang berhasil ditambahkan", "Informasi");
 

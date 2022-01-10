@@ -28,7 +28,7 @@ namespace OnlineMart_Trivial
                 //Ubah menjadi data baru
                 g.Nama = textBoxNama.Text;
                 g.JumlahPoin = int.Parse(textBoxHarga.Text);
-                Gift.UbahData(g);
+                Gift.UbahData(g, FormUtama.koneksi);
 
                 MessageBox.Show("Perubahan berhasil tersimpan!", "Info");
 

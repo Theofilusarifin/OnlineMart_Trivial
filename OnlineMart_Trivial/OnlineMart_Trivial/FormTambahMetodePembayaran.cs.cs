@@ -24,7 +24,7 @@ namespace OnlineMart_Trivial
             {
                 Metode_pembayaran m = new Metode_pembayaran(textBoxNama.Text);
 
-                Metode_pembayaran.TambahData(m);
+                Metode_pembayaran.TambahData(m, FormUtama.koneksi);
 
                 MessageBox.Show("Data Metode Pembayaran berhasil ditambahkan", "Informasi");
 

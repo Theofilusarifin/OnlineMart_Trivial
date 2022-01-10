@@ -52,7 +52,7 @@ namespace OnlineMart_Trivial
                 c.Nama = textBoxNama.Text;
                 c.Alamat = textBoxAlamat.Text;
                 c.Pegawai = pDipilih;
-                Cabang.UbahData(c);
+                Cabang.UbahData(c, FormUtama.koneksi);
 
                 MessageBox.Show("Perubahan berhasil tersimpan!", "Info");
 

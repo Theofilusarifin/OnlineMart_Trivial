@@ -61,13 +61,13 @@ namespace OnlineMart_Trivial
                     comboBoxPromo.DropDownStyle = ComboBoxStyle.DropDownList;
 
                     //memunculkan metode pembayaran yang ada di combobox
-                    metode = Metode_pembayaran.BacaData("", "");
+                    metode = Metode_pembayaran.BacaData("", "", FormUtama.koneksi);
                     comboBoxMetodeBayar.DataSource = metode;
                     comboBoxMetodeBayar.DisplayMember = "Nama";
                     comboBoxMetodeBayar.DropDownStyle = ComboBoxStyle.DropDownList;
 
                     //memunculkan kurir yang ada di combobox
-                    kurir = Driver.BacaData("", "");
+                    kurir = Driver.BacaData("", "", FormUtama.koneksi);
                     comboBoxKurir.DataSource = kurir;
                     comboBoxKurir.DisplayMember = "Nama";
                     comboBoxKurir.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -150,7 +150,7 @@ namespace OnlineMart_Trivial
 
                     foreach (Barang_Order bo in FormKeranjang.listBarangOrder)
                     {
-                        Barang_Order.TambahData(bo);    
+                        Barang_Order.TambahData(bo, FormUtama.koneksi);    
                         Order.UpdateStok(bo, FormKeranjang.thisOrder.Cabang);
                     }
 
@@ -163,7 +163,7 @@ namespace OnlineMart_Trivial
 
                     // buat notifikasi
                     Notifikasi notifikasi = new Notifikasi("Order Masuk", "order", "driver", DateTime.Now, FormKeranjang.thisOrder.Pelanggan, FormKeranjang.thisOrder.Driver, null, null);
-                    Notifikasi.TambahData(notifikasi);
+                    Notifikasi.TambahData(notifikasi, FormUtama.koneksi);
 
                     // thisOrder dikosongkan sekaligus dibuat baru
                     FormKeranjang.thisOrder = new Order();

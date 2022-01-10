@@ -73,6 +73,7 @@ namespace OnlineMart_LIB
             KoneksiDB.Open();
         }
 
+        #region no kParram
         public static MySqlDataReader JalankanPerintahQuery(string sql)
         {
             Koneksi koneksi = new Koneksi();
@@ -82,15 +83,6 @@ namespace OnlineMart_LIB
 
             return hasil;
         }
-
-        //public static MySqlDataReader JalankanPerintahQuery(string sql, Koneksi kParam)
-        //{
-        //    MySqlCommand sqlCommand = new MySqlCommand(sql, kParam.KoneksiDB);
-
-        //    MySqlDataReader hasil = sqlCommand.ExecuteReader();
-
-        //    return hasil;
-        //}
 
         public static int JalankanPerintahDML(string sql)
         {
@@ -103,6 +95,30 @@ namespace OnlineMart_LIB
 
             return hasil;
         }
-        #endregion
+        #endregion no kParram
+
+        #region with kParram
+        public static MySqlDataReader JalankanPerintahQuery(string sql, Koneksi kParam)
+        {
+            MySqlCommand sqlCommand = new MySqlCommand(sql, kParam.KoneksiDB);
+
+            MySqlDataReader hasil = sqlCommand.ExecuteReader();
+
+            return hasil;
+        }
+
+        public static int JalankanPerintahDML(string sql, Koneksi kParram)
+        {
+            MySqlCommand sqlCommand = new MySqlCommand(sql, kParram.KoneksiDB);
+
+            //Gunakan ExecuteNonQuerry untuk menjalankan perintah DML (Insert/Update/Delete)
+            int hasil = 0;
+            hasil = sqlCommand.ExecuteNonQuery();
+
+            return hasil;
+        }
+        #endregion with kParram
+
+        #endregion Methods
     }
 }

@@ -89,7 +89,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listBarangCabang = Barang_Cabang.BacaData("", "");
+                listBarangCabang = Barang_Cabang.BacaData("", "", FormUtama.koneksi);
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -156,7 +156,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listBarangCabang = Barang_Cabang.BacaData(kriteria, textBoxKriteria.Text);
+            listBarangCabang = Barang_Cabang.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
             FormatDataGrid();
             TampilDataGrid();
         }

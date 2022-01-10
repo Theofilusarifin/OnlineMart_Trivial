@@ -20,7 +20,7 @@ namespace OnlineMart_Trivial
         public List<Metode_pembayaran> listMetodePembayaran = new List<Metode_pembayaran>();
         private void FormIsiSaldo_Load(object sender, EventArgs e)
         {
-           listMetodePembayaran = Metode_pembayaran.BacaData("","");
+           listMetodePembayaran = Metode_pembayaran.BacaData("","", FormUtama.koneksi);
 
             comboBoxMetodePembayaran.DataSource = listMetodePembayaran;
             comboBoxMetodePembayaran.DisplayMember = "Nama";

@@ -45,7 +45,7 @@ namespace OnlineMart_Trivial
                 listBoxPesan.Items.Clear();
 
                 // Define isi chat
-                listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text);
+                listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text, FormUtama.koneksi);
 
                 // Ambil id order yang sedang dipilih
                 Order o = (Order)comboBoxNomorNota.SelectedItem;
@@ -121,14 +121,14 @@ namespace OnlineMart_Trivial
                 Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "driver", "konsumen", o, o.Driver, o.Pelanggan);
 
                 // Tambahkan Chat Baru
-                Chat.TambahData(chat);
+                Chat.TambahData(chat, FormUtama.koneksi);
 
                 // Tampilkan pesan sementara ke ListBox
                 listBoxPesan.Items.Add("Me : " + chat.Isi);
 
                 // buat notifikasi
                 Notifikasi notifikasi = new Notifikasi(chat.Isi, "chat", "konsumen", DateTime.Now, o.Pelanggan, o.Driver, null, null);
-                Notifikasi.TambahData(notifikasi);
+                Notifikasi.TambahData(notifikasi, FormUtama.koneksi);
 
                 // Bersihkan Text Box
                 textBoxPesan.Clear();

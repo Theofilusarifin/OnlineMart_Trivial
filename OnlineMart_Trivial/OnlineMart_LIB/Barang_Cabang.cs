@@ -44,17 +44,17 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Methods
-        public static Boolean TambahData(Barang_Cabang bc)
+        public static Boolean TambahData(Barang_Cabang bc, Koneksi kParram)
         {
             // Querry Insert
             string sql = "insert into barang_cabang values (" + bc.Cabang.Id + ", " + bc.Barang.Id + ", " + bc.Stok + ")";
 
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-        public static List<Barang_Cabang> BacaData(string kriteria, string nilaiKriteria)
+        public static List<Barang_Cabang> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
         {
             string sql = "select * from barang_cabang bc " +
                          "inner join cabangs c on bc.cabang_id = c.id " +
@@ -64,7 +64,7 @@ namespace OnlineMart_LIB
 
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
             List<Barang_Cabang> listBarangCabang = new List<Barang_Cabang>();
 
@@ -82,11 +82,13 @@ namespace OnlineMart_LIB
 
                 listBarangCabang.Add(barang_cabang);
             }
+            hasil.Dispose();
+            hasil.Close();
 
             return listBarangCabang;
         }
 
-        public static List<Barang_Cabang> BacaData(string cabang_id, string kriteria, string nilaiKriteria)
+        public static List<Barang_Cabang> BacaData(string cabang_id, string kriteria, string nilaiKriteria, Koneksi kParram)
         {
             string sql = "select * from barang_cabang bc " +
                          "inner join cabangs c on bc.cabang_id = c.id " +
@@ -97,7 +99,7 @@ namespace OnlineMart_LIB
 
             if (kriteria != "") sql += " and " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
             List<Barang_Cabang> listBarangCabang = new List<Barang_Cabang>();
 
@@ -116,16 +118,19 @@ namespace OnlineMart_LIB
                 listBarangCabang.Add(barang_cabang);
             }
 
+            hasil.Dispose();
+            hasil.Close();
+
             return listBarangCabang;
         }
 
-        public static Boolean UbahData(Barang_Cabang barang_cabang)
+        public static Boolean UbahData(Barang_Cabang barang_cabang, Koneksi kParram)
         {
             // Querry Insert
             string sql = "update barang_cabang set stok = '" + barang_cabang.Stok + "' " +
                          "where cabang_id = '" + barang_cabang.Cabang.Id + "' and barang_id = '" + barang_cabang.Barang.Id + "'";
 
-            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql, kParram);
             if (jumlahDiubah == 0) return false;
             else return true;
         }
