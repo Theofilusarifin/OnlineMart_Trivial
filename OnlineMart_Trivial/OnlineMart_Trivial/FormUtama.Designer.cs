@@ -717,7 +717,7 @@ namespace OnlineMart_Trivial
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.Transparent;
-            this.panelHeader.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Navbar_atas3;
+            this.panelHeader.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.notif1;
             this.panelHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelHeader.Controls.Add(this.labelNotifCount);
             this.panelHeader.Controls.Add(this.NotifRedCircle);
@@ -741,22 +741,27 @@ namespace OnlineMart_Trivial
             // 
             // labelNotifCount
             // 
+            this.labelNotifCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNotifCount.AutoSize = true;
-            this.labelNotifCount.BackColor = System.Drawing.Color.Tomato;
-            this.labelNotifCount.Location = new System.Drawing.Point(1047, 16);
+            this.labelNotifCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.labelNotifCount.Font = new System.Drawing.Font("Montserrat", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNotifCount.ForeColor = System.Drawing.Color.White;
+            this.labelNotifCount.Location = new System.Drawing.Point(1464, 16);
             this.labelNotifCount.Name = "labelNotifCount";
-            this.labelNotifCount.Size = new System.Drawing.Size(25, 13);
+            this.labelNotifCount.Size = new System.Drawing.Size(20, 11);
             this.labelNotifCount.TabIndex = 0;
             this.labelNotifCount.Text = "99+";
             this.labelNotifCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NotifRedCircle
             // 
-            this.NotifRedCircle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NotifRedCircle.BackColor = System.Drawing.Color.Tomato;
-            this.NotifRedCircle.Location = new System.Drawing.Point(1045, 8);
+            this.NotifRedCircle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NotifRedCircle.BackColor = System.Drawing.Color.Transparent;
+            this.NotifRedCircle.Image = global::OnlineMart_Trivial.Properties.Resources.notification;
+            this.NotifRedCircle.Location = new System.Drawing.Point(1460, 10);
             this.NotifRedCircle.Name = "NotifRedCircle";
-            this.NotifRedCircle.Size = new System.Drawing.Size(29, 29);
+            this.NotifRedCircle.Size = new System.Drawing.Size(25, 25);
+            this.NotifRedCircle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.NotifRedCircle.TabIndex = 1;
             this.NotifRedCircle.TabStop = false;
             // 
@@ -845,7 +850,7 @@ namespace OnlineMart_Trivial
             this.BelNotifikasi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BelNotifikasi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BelNotifikasi.Image = global::OnlineMart_Trivial.Properties.Resources.notification_panel;
-            this.BelNotifikasi.Location = new System.Drawing.Point(1419, 17);
+            this.BelNotifikasi.Location = new System.Drawing.Point(1422, 17);
             this.BelNotifikasi.Name = "BelNotifikasi";
             this.BelNotifikasi.Size = new System.Drawing.Size(57, 60);
             this.BelNotifikasi.TabIndex = 2;

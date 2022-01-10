@@ -894,5 +894,14 @@
   <ItemGroup>
     <None Include="Resources\Image Placeholder.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notif1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
