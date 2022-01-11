@@ -82,22 +82,22 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Methods
-        public static Boolean TambahData(Promo p)
+        public static Boolean TambahData(Promo p, Koneksi kParram)
 		{
 			string sql = "insert into promos (tipe, nama, diskon, diskon_max, minimal_belanja) "
 				+ " values('" + p.Tipe + "', '" + p.Nama + "', " + p.Diskon + ", " + p.Diskon_max + ", " + p.Minimal_belanja + ")";
 
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
-		public static List<Promo> BacaData(string kriteria, string nilaiKriteria)
+		public static List<Promo> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
 		{
 			string sql = "select id, tipe, nama, diskon, diskon_max, minimal_belanja from promos ";
 			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			//Buat list untuk menampung data
 			List<Promo> listpromo = new List<Promo>();
@@ -108,6 +108,10 @@ namespace OnlineMart_LIB
 
 				listpromo.Add(p);
 			}
+
+			hasil.Dispose();
+			hasil.Close();
+
 			return listpromo;
 		}
 
@@ -126,19 +130,20 @@ namespace OnlineMart_LIB
 
             return p;
         }
-        public static Boolean UbahData(Promo p)
+
+        public static Boolean UbahData(Promo p, Koneksi kParram)
         {
             // Querry Insert
             string sql = "update promos set tipe = '" + p.Tipe + "', nama = '" + p.Nama + "', diskon = " + p.Diskon + ", diskon_max = " + p.Diskon_max + ", minimal_belanja = " + p.Minimal_belanja + " where id = " + p.Id;
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-		public static Boolean HapusData(int id)
+		public static Boolean HapusData(int id, Koneksi kParram)
 		{
 			string sql = "delete from promos where id = " + id;
-			int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
 			//Dicek apakah ada data yang berubah atau tidak
 			if (jumlahDataDihapus == 0) return false;
 			else return true;

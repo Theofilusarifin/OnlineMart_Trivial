@@ -55,7 +55,7 @@ namespace OnlineMart_Trivial
 
                     #region combobox
                     //memunculkan promo yang ada di combobox
-                    promo = Promo.BacaData("", "");
+                    promo = Promo.BacaData("", "", FormUtama.koneksi);
                     comboBoxPromo.DataSource = promo;
                     comboBoxPromo.DisplayMember = "Nama";
                     comboBoxPromo.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -146,20 +146,20 @@ namespace OnlineMart_Trivial
 
                     FormKeranjang.thisOrder.Status = "Pesanan Diproses";
 
-                    Order.TambahDataOrderCabang(FormKeranjang.thisOrder);
+                    Order.TambahDataOrderCabang(FormKeranjang.thisOrder, FormUtama.koneksi);
 
                     foreach (Barang_Order bo in FormKeranjang.listBarangOrder)
                     {
                         Barang_Order.TambahData(bo, FormUtama.koneksi);    
-                        Order.UpdateStok(bo, FormKeranjang.thisOrder.Cabang);
+                        Order.UpdateStok(bo, FormKeranjang.thisOrder.Cabang, FormUtama.koneksi);
                     }
 
                     // Tambahkan poin berdasarkan 1% total bayar
                     FormUtama.konsumen.Poin = FormUtama.konsumen.Poin + Math.Round(FormKeranjang.thisOrder.Total_bayar * 0.01);
-                    Pelanggan.UpdatePoin(FormUtama.konsumen);
+                    Pelanggan.UpdatePoin(FormUtama.konsumen, FormUtama.koneksi);
 
                     // Kurangi saldo
-                    Pelanggan.UpdateSaldo(FormKeranjang.thisOrder);
+                    Pelanggan.UpdateSaldo(FormKeranjang.thisOrder, FormUtama.koneksi);
 
                     // buat notifikasi
                     Notifikasi notifikasi = new Notifikasi("Order Masuk", "order", "driver", DateTime.Now, FormKeranjang.thisOrder.Pelanggan, FormKeranjang.thisOrder.Driver, null, null);

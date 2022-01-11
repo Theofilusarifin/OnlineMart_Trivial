@@ -128,7 +128,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listPenjual = Penjual.BacaData("", "");
+                listPenjual = Penjual.BacaData("", "", FormUtama.koneksi);
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -174,7 +174,7 @@ namespace OnlineMart_Trivial
                     kriteria = "p.telpon";
                     break;
             }
-            listPenjual = Penjual.BacaData(kriteria, textBoxKriteria.Text);
+            listPenjual = Penjual.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
             FormatDataGrid();
             TampilDataGrid();
         }

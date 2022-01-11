@@ -141,7 +141,7 @@ namespace OnlineMart_Trivial
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
-                listPenjual = Penjual.BacaData("", "");
+                listPenjual = Penjual.BacaData("", "", FormUtama.koneksi);
                 comboBoxKriteria.Text = "Id";
                 comboBoxPenjual.DataSource = listPenjual;
                 comboBoxPenjual.DisplayMember = "nama";

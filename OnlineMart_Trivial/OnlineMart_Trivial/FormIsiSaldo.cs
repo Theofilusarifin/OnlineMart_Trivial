@@ -34,11 +34,11 @@ namespace OnlineMart_Trivial
             {
                 //menambahkan riwayat isi saldo
                 Riwayat_isi_saldo r = new Riwayat_isi_saldo(DateTime.Now, int.Parse(textBoxSaldo.Text), FormUtama.konsumen);
-                Riwayat_isi_saldo.TambahData(r);
+                Riwayat_isi_saldo.TambahData(r, FormUtama.koneksi);
 
                 //update saldo
                 FormUtama.konsumen.Saldo = FormUtama.konsumen.Saldo + int.Parse(textBoxSaldo.Text);
-                Pelanggan.TambahSaldo(FormUtama.konsumen);
+                Pelanggan.TambahSaldo(FormUtama.konsumen, FormUtama.koneksi);
 
                 MessageBox.Show("Isi saldo telah berhasil", "Informasi");
 

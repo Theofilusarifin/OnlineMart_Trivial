@@ -25,7 +25,7 @@ namespace OnlineMart_Trivial
         Cabang c = null;
         private void FormUbahCabang_Load(object sender, EventArgs e)
         {
-            listPegawai = Pegawai.BacaData("", "");
+            listPegawai = Pegawai.BacaData("", "", FormUtama.koneksi);
 
             comboBoxPegawai.DataSource = listPegawai;
             comboBoxPegawai.DisplayMember = "Nama";

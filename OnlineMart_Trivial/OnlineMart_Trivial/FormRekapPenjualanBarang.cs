@@ -118,7 +118,7 @@ namespace OnlineMart_Trivial
 
                 if (comboBoxTahun.DataSource == null)
                 {
-                    listTahun = Order.AmbilTahun();
+                    listTahun = Order.AmbilTahun(FormUtama.koneksi);
                     comboBoxTahun.DataSource = listTahun;
                     comboBoxTahun.DropDownStyle = ComboBoxStyle.DropDownList;
                 }

@@ -49,7 +49,7 @@ namespace OnlineMart_Trivial
                 //Create Objek Koneksi
                 Koneksi koneksi = new Koneksi();
                 // Username dan Password
-                Pelanggan pelanggan = Pelanggan.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
+                Pelanggan pelanggan = Pelanggan.CekLogin(textBoxUsername.Text, textBoxPassword.Text, FormUtama.koneksi);
 
                 if (!(pelanggan is null)) //Jika ditemukan pegawai dengan username dan password yang cocok
                 {

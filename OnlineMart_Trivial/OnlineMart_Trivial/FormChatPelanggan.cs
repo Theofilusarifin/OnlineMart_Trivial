@@ -85,7 +85,7 @@ namespace OnlineMart_Trivial
 
                 //listOrder = Order.BacaData(comboBoxStatus.SelectedItem.ToString(), "o.driver_id", FormUtama.rider.Id.ToString());
 
-                listOrder = Order.BacaData("o.driver_id", FormUtama.rider.Id.ToString());
+                listOrder = Order.BacaData("o.driver_id", FormUtama.rider.Id.ToString(), FormUtama.koneksi);
 
                 comboBoxNomorNota.DataSource = listOrder;
                 comboBoxNomorNota.DisplayMember = "Id";
