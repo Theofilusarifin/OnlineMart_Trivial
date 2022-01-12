@@ -130,7 +130,7 @@ namespace OnlineMart_LIB
 
         #region Methods
         //Method untuk menambah data Barang
-        public static Boolean TambahData(Barang b, Koneksi kParram)
+        public static Boolean TambahData(Barang b)
         {
             //string yang menampung sql query insert into
             string sql = "insert into barangs (nama, harga, deskripsi, path_gambar, kategori_id) " +
@@ -138,19 +138,19 @@ namespace OnlineMart_LIB
                          "'" + b.Path_gambar + "', "  + b.Kategori.Id + ")";
 
             //menjalankan perintah sql
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
         //Method untuk membaca data Barang
-        public static List<Barang> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Barang> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "select * from barangs b inner join kategoris k on b.kategori_id = k.id ";
             //apabila kriteria tidak kosong
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Barang> listBarang = new List<Barang>();
 
@@ -163,8 +163,8 @@ namespace OnlineMart_LIB
 
                 listBarang.Add(b);
             }
-            hasil.Dispose();
-            hasil.Close();
+            //hasil.Dispose();
+            //hasil.Close();
 
             return listBarang;
         }
@@ -188,22 +188,22 @@ namespace OnlineMart_LIB
             return b;
         }
 
-        public static Boolean UbahData(Barang b, Koneksi kParram)
+        public static Boolean UbahData(Barang b)
         {
             // Querry Insert
             string sql = "update barangs set nama = '" + b.Nama + "', harga = " + b.Harga + ", " +
                          "kategori_id = " + b.Kategori.Id + " where id = " + b.Id;
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
         //Method untuk menghapus data Barang
-        public static Boolean HapusData(int id, Koneksi kParram)
+        public static Boolean HapusData(int id)
         {
             string sql = "delete from barangs where id = " + id;
 
-            int jumlahDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
             //Dicek apakah ada data yang berubah atau tidak
             if (jumlahDihapus == 0) return false;
             else return true;

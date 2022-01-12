@@ -25,12 +25,12 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                listBarang = Barang.BacaData("", "", FormUtama.koneksi);
+                listBarang = Barang.BacaData("", "");
                 comboBoxBarang.DataSource = listBarang;
                 comboBoxBarang.DisplayMember = "Nama";
                 comboBoxBarang.DropDownStyle = ComboBoxStyle.DropDownList;
 
-                listCabang = Cabang.BacaData("", "", FormUtama.koneksi);
+                listCabang = Cabang.BacaData("", "");
                 comboBoxCabang.DataSource = listCabang;
                 comboBoxCabang.DisplayMember = "Nama";
                 comboBoxCabang.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -53,7 +53,7 @@ namespace OnlineMart_Trivial
 
                 Barang_Cabang bc = new Barang_Cabang(cabang, barang, int.Parse(textBoxStok.Text));
 
-                Barang_Cabang.TambahData(bc, FormUtama.koneksi);
+                Barang_Cabang.TambahData(bc);
 
                 MessageBox.Show("Data Barang Cabang berhasil ditambahkan", "Informasi");
 

@@ -40,7 +40,7 @@ namespace OnlineMart_Trivial
             {
                 //Ubah menjadi data baru
                 bc.Stok = int.Parse(textBoxStok.Text);
-                Barang_Cabang.UbahData(bc, FormUtama.koneksi);
+                Barang_Cabang.UbahData(bc);
 
                 MessageBox.Show("Perubahan berhasil tersimpan!", "Info");
 

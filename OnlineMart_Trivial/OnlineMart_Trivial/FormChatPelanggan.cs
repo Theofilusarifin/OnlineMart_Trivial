@@ -45,11 +45,14 @@ namespace OnlineMart_Trivial
                 listBoxPesan.Items.Clear();
 
                 // Define isi chat
-                listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text, FormUtama.koneksi);
+                listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text);
 
                 // Ambil id order yang sedang dipilih
                 Order o = (Order)comboBoxNomorNota.SelectedItem;
-                labelStatusPesanan.Text = o.Status.ToString();
+                if (o != null)
+                {
+                    labelStatusPesanan.Text = o.Status.ToString();
+                }
 
                 // Tampilkan pesan
                 foreach (Chat c in listChat)
@@ -85,7 +88,7 @@ namespace OnlineMart_Trivial
 
                 //listOrder = Order.BacaData(comboBoxStatus.SelectedItem.ToString(), "o.driver_id", FormUtama.rider.Id.ToString());
 
-                listOrder = Order.BacaData("o.driver_id", FormUtama.rider.Id.ToString(), FormUtama.koneksi);
+                listOrder = Order.BacaData("o.driver_id", FormUtama.rider.Id.ToString());
 
                 comboBoxNomorNota.DataSource = listOrder;
                 comboBoxNomorNota.DisplayMember = "Id";
@@ -121,14 +124,14 @@ namespace OnlineMart_Trivial
                 Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "driver", "konsumen", o, o.Driver, o.Pelanggan);
 
                 // Tambahkan Chat Baru
-                Chat.TambahData(chat, FormUtama.koneksi);
+                Chat.TambahData(chat);
 
                 // Tampilkan pesan sementara ke ListBox
                 listBoxPesan.Items.Add("Me : " + chat.Isi);
 
                 // buat notifikasi
                 Notifikasi notifikasi = new Notifikasi(chat.Isi, "chat", "konsumen", DateTime.Now, o.Pelanggan, o.Driver, null, null);
-                Notifikasi.TambahData(notifikasi, FormUtama.koneksi);
+                Notifikasi.TambahData(notifikasi);
 
                 // Bersihkan Text Box
                 textBoxPesan.Clear();

@@ -55,19 +55,19 @@ namespace OnlineMart_Trivial
 
                     #region combobox
                     //memunculkan promo yang ada di combobox
-                    promo = Promo.BacaData("", "", FormUtama.koneksi);
+                    promo = Promo.BacaData("", "");
                     comboBoxPromo.DataSource = promo;
                     comboBoxPromo.DisplayMember = "Nama";
                     comboBoxPromo.DropDownStyle = ComboBoxStyle.DropDownList;
 
                     //memunculkan metode pembayaran yang ada di combobox
-                    metode = Metode_pembayaran.BacaData("", "", FormUtama.koneksi);
+                    metode = Metode_pembayaran.BacaData("", "");
                     comboBoxMetodeBayar.DataSource = metode;
                     comboBoxMetodeBayar.DisplayMember = "Nama";
                     comboBoxMetodeBayar.DropDownStyle = ComboBoxStyle.DropDownList;
 
                     //memunculkan kurir yang ada di combobox
-                    kurir = Driver.BacaData("", "", FormUtama.koneksi);
+                    kurir = Driver.BacaData("", "");
                     comboBoxKurir.DataSource = kurir;
                     comboBoxKurir.DisplayMember = "Nama";
                     comboBoxKurir.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -146,24 +146,24 @@ namespace OnlineMart_Trivial
 
                     FormKeranjang.thisOrder.Status = "Pesanan Diproses";
 
-                    Order.TambahDataOrderCabang(FormKeranjang.thisOrder, FormUtama.koneksi);
+                    Order.TambahDataOrderCabang(FormKeranjang.thisOrder);
 
                     foreach (Barang_Order bo in FormKeranjang.listBarangOrder)
                     {
-                        Barang_Order.TambahData(bo, FormUtama.koneksi);    
-                        Order.UpdateStok(bo, FormKeranjang.thisOrder.Cabang, FormUtama.koneksi);
+                        Barang_Order.TambahData(bo);    
+                        Order.UpdateStok(bo, FormKeranjang.thisOrder.Cabang);
                     }
 
                     // Tambahkan poin berdasarkan 1% total bayar
                     FormUtama.konsumen.Poin = FormUtama.konsumen.Poin + Math.Round(FormKeranjang.thisOrder.Total_bayar * 0.01);
-                    Pelanggan.UpdatePoin(FormUtama.konsumen, FormUtama.koneksi);
+                    Pelanggan.UpdatePoin(FormUtama.konsumen);
 
                     // Kurangi saldo
-                    Pelanggan.UpdateSaldo(FormKeranjang.thisOrder, FormUtama.koneksi);
+                    Pelanggan.UpdateSaldo(FormKeranjang.thisOrder);
 
                     // buat notifikasi
                     Notifikasi notifikasi = new Notifikasi("Order Masuk", "order", "driver", DateTime.Now, FormKeranjang.thisOrder.Pelanggan, FormKeranjang.thisOrder.Driver, null, null);
-                    Notifikasi.TambahData(notifikasi, FormUtama.koneksi);
+                    Notifikasi.TambahData(notifikasi);
 
                     // thisOrder dikosongkan sekaligus dibuat baru
                     FormKeranjang.thisOrder = new Order();

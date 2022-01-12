@@ -120,7 +120,7 @@ namespace OnlineMart_LIB
 
 		#region Methods
 		//Method untuk menambah data
-		public static Boolean TambahData(Chat c, Koneksi kParram)
+		public static Boolean TambahData(Chat c)
         {
             //string yang menampung sql query insert into
             string sql = "";
@@ -151,13 +151,13 @@ namespace OnlineMart_LIB
                        "'" + c.Role_tujuan + "', " + c.Order.Id + ", " + c.Penjual.Id + ", " + c.Pelanggan.Id + ")";
             }
             //menjalankan perintah sql
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
         //Method untuk membaca data
-        public static List<Chat> BacaData(string kriteria, string idOrder, Koneksi kParram)
+        public static List<Chat> BacaData(string kriteria, string idOrder)
         {
             string sql = "select * from chats c " +
                          "inner join orders o on c.order_id = o.id " +
@@ -168,7 +168,7 @@ namespace OnlineMart_LIB
             //kalau tidak kosong tambahkan ini
             if (kriteria != "") sql += " where " + kriteria + " like '%" + idOrder + "%'" + " order by c.waktu";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Chat> listChat = new List<Chat>();
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors

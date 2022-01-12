@@ -51,17 +51,17 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Methods
-		public static Boolean TambahData(Barang_Order bo, Koneksi kParram)
+		public static Boolean TambahData(Barang_Order bo)
 		{
 			// Querry Insert
 			string sql = "insert into barang_order values (" + bo.Jumlah + ", " + bo.Harga + ", " + bo.Order.Id + ", " + bo.Barang.Id + ")";
 
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
-		public static List<Barang_Order> BacaSemuaData(Koneksi kParram)
+		public static List<Barang_Order> BacaSemuaData()
 		{
 			string sql = "select * from barang_order bo " +
 						 "inner join orders o on bo.order_id = o.id " +
@@ -74,10 +74,11 @@ namespace OnlineMart_LIB
 						 "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
 						 "inner join gifts g on gr.gift_id = g.id " +
 						 "inner join barangs b on bo.barang_id = b.id " +
-						 "inner join kategoris k on b.kategori_id = k.id order by o.tanggal_waktu "+
-						 "inner join penjuals as o.penjual_id = pen.id ";
+						 "inner join kategoris k on b.kategori_id = k.id "+
+						 "inner join penjuals pen on o.penjual_id = pen.id " +
+						 " order by o.tanggal_waktu ";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			List<Barang_Order> listPenjualanBarang = new List<Barang_Order>();
 
@@ -119,13 +120,13 @@ namespace OnlineMart_LIB
 				listPenjualanBarang.Add(bo);
 			}
 
-			hasil.Dispose();
-			hasil.Close();
+			//hasil.Dispose();
+			//hasil.Close();
 
 			return listPenjualanBarang;
 		}
 
-		public static List<Barang_Order> BacaPenjualanBarang(Cabang cabang, string bulan, string tahun, Koneksi kParram)
+		public static List<Barang_Order> BacaPenjualanBarang(Cabang cabang, string bulan, string tahun)
 		{
 			string sql = "select * from barang_order bo " +
 						 "inner join orders o on bo.order_id = o.id " +
@@ -138,8 +139,9 @@ namespace OnlineMart_LIB
 						 "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
 						 "inner join gifts g on gr.gift_id = g.id " +
 						 "inner join barangs b on bo.barang_id = b.id " +
-						 "inner join kategoris k on b.kategori_id = k.id order by o.tanggal_waktu " +
-						 "inner join penjuals as o.penjual_id = pen.id ";
+						 "inner join kategoris k on b.kategori_id = k.id " +
+						 "inner join penjuals pen on o.penjual_id = pen.id " +
+						 "order by o.tanggal_waktu ";
 
 			// kalau semua ada isinya
 			if (cabang != null && bulan != "" && tahun != "") sql += " where o.cabang_id = " + cabang.Id +
@@ -161,7 +163,7 @@ namespace OnlineMart_LIB
 			// kalau tahun ada isinya
 			else if (tahun != "") sql += " where YEAR(o.tanggal_waktu) = '" + tahun + "'";
 			
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			List<Barang_Order> listPenjualanBarang = new List<Barang_Order>();
 
@@ -203,8 +205,8 @@ namespace OnlineMart_LIB
 				listPenjualanBarang.Add(bo);
 			}
 
-			hasil.Dispose();
-			hasil.Close();
+			//hasil.Dispose();
+			//hasil.Close();
 
 			return listPenjualanBarang;
 		}

@@ -24,7 +24,7 @@ namespace OnlineMart_Trivial
             {
                 Gift g = new Gift(textBoxNama.Text, int.Parse(textBoxHarga.Text));
 
-                Gift.TambahData(g, FormUtama.koneksi);
+                Gift.TambahData(g);
 
                 MessageBox.Show("Data Gift berhasil ditambahkan", "Informasi");
 

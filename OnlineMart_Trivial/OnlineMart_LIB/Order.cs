@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -265,7 +266,7 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Method
-		public static Boolean TambahDataOrderCabang(Order o, Koneksi kParram)
+		public static Boolean TambahDataOrderCabang(Order o)
 		{
 			string sql = "insert into orders (id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
                          "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id) " +
@@ -274,12 +275,12 @@ namespace OnlineMart_LIB
                          o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " + + o.Promo.Id + ", " + 
                          o.Gift_redeem.Id + ")";
 
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-        public static Boolean TambahDataOrderPenjual(Order o, Koneksi kParram)
+        public static Boolean TambahDataOrderPenjual(Order o)
         {
             string sql = "insert into orders (id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
                          "penjual_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id) " +
@@ -288,12 +289,12 @@ namespace OnlineMart_LIB
                          o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " + +o.Promo.Id + ", " +
                          o.Gift_redeem.Id + ")";
 
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-        public static List<Order> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Order> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "select * from orders o " +
                          "inner join cabangs c on o.cabang_id = c.id " +
@@ -310,7 +311,7 @@ namespace OnlineMart_LIB
 
             sql += " order by o.tanggal_waktu ";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Order> listOrder = new List<Order>();
 
@@ -347,13 +348,10 @@ namespace OnlineMart_LIB
                 listOrder.Add(o);
             }
 
-            hasil.Dispose();
-            hasil.Close();
-
             return listOrder;
         }
 
-        public static List<Order> BacaData(string status, string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Order> BacaData(string status, string kriteria, string nilaiKriteria)
         {
             string sql = "select * from orders o " +
                          "inner join cabangs c on o.cabang_id = c.id " +
@@ -368,7 +366,7 @@ namespace OnlineMart_LIB
                          "where o.status = '" + status + "' and " + kriteria + " like '%" + nilaiKriteria + "%' " +
                          "order by o.tanggal_waktu asc";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Order> listOrder = new List<Order>();
 
@@ -405,13 +403,10 @@ namespace OnlineMart_LIB
                 listOrder.Add(o);
             }
 
-            hasil.Dispose();
-            hasil.Close();
-
             return listOrder;
         }
 
-        public static List<Order> BacaOrderDiproses(string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Order> BacaOrderDiproses(string kriteria, string nilaiKriteria)
         {
             string sql = "select * from orders o " +
                          "inner join cabangs c on o.cabang_id = c.id " +
@@ -429,7 +424,7 @@ namespace OnlineMart_LIB
 
             sql += " order by o.tanggal_waktu ";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Order> listOrder = new List<Order>();
 
@@ -466,13 +461,10 @@ namespace OnlineMart_LIB
                 listOrder.Add(o);
             }
 
-            hasil.Dispose();
-            hasil.Close();
-
             return listOrder;
         }
 
-        public static Boolean UbahData(Order o, Koneksi kParram)
+        public static Boolean UbahData(Order o)
         {
             // Querry Insert
             string sql = "update orders set tanggal_waktu = '" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', alamat_tujuan = '" + o.Alamat_tujuan + "', " +
@@ -487,17 +479,17 @@ namespace OnlineMart_LIB
             else return true;
         }
 
-        public static bool UpdateStok(Barang_Order bo, Cabang bc, Koneksi kParram)
+        public static bool UpdateStok(Barang_Order bo, Cabang bc)
 		{
             string sql = "update barang_cabang set stok = stok - " + bo.Jumlah + " where barang_id = " + bo.Barang.Id + " and cabang_id = " + bc.Id;
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
         // membuat id order dengan format yyyyMMddxxxx (yyyy-MM-dd-xxxx)
         // yyyy = tahun ini, MM = bulan ini, dd = hari ini, xxxx = transaksi ke x hari ini
-        public static string GenerateIdOrder(Koneksi kParram)
+        public static string GenerateIdOrder()
         {
             // ambil no urut transaksi hari ini (tanggal sistem)
             string sql = "select right(id, 4) as NoUrutTransaksi " +
@@ -505,7 +497,7 @@ namespace OnlineMart_LIB
                          "where Date(tanggal_waktu) = Date(CURRENT_DATE) " +
                          "order by tanggal_waktu DESC limit 1";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             string hasilNoNota = "";
             if (hasil.Read()) // jika ditemukan nota jual di tanggal hari ini
@@ -527,10 +519,6 @@ namespace OnlineMart_LIB
                               DateTime.Now.Day.ToString().PadLeft(2, '0') +
                               "0001";
             }
-
-            hasil.Dispose();
-            hasil.Close();
-
             return hasilNoNota;
         }
 
@@ -619,7 +607,7 @@ namespace OnlineMart_LIB
             return o;
         }
 
-        public static List<Order> BacaTanggal(Driver driver, string bulan, string tahun, Koneksi kParram)
+        public static List<Order> BacaTanggal(Driver driver, string bulan, string tahun)
         {
             string sql = "select * from orders " +
                          "where driver_id = " + driver.Id;
@@ -631,7 +619,7 @@ namespace OnlineMart_LIB
             // kalau tahun ada isinya
             else if (tahun != "") sql += " AND YEAR(tanggal_waktu) = '" + tahun + "'";
             
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Order> listOrder = new List<Order>();
 
@@ -643,17 +631,14 @@ namespace OnlineMart_LIB
                 listOrder.Add(o);
             }
 
-            hasil.Dispose();
-            hasil.Close();
-
             return listOrder;
         }
 
-        public static List<Int32> AmbilTahun(Koneksi kParram)
+        public static List<Int32> AmbilTahun()
         {
             string sql = "select distinct YEAR(tanggal_waktu) from orders";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Int32> listTahun = new List<Int32>();
 
@@ -662,17 +647,14 @@ namespace OnlineMart_LIB
                 listTahun.Add(hasil.GetInt32(0));
             }
 
-            hasil.Dispose();
-            hasil.Close();
-
             return listTahun;
         }
 
-        public static List<string> AmbilStatus(Koneksi kParram)
+        public static List<string> AmbilStatus()
         {
             string sql = "select distinct(status) from orders";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<string> listStatus = new List<string>();
 
@@ -681,16 +663,13 @@ namespace OnlineMart_LIB
                 listStatus.Add(hasil.GetString(0));
             }
 
-            hasil.Dispose();
-            hasil.Close();
-
             return listStatus;
         }
 
         //Cetak semua order
-        public static void CetakDaftarOrder(string kriteria, string nilai, string namaFile, Koneksi kParram)
+        public static void CetakDaftarOrder(string kriteria, string nilai, string namaFile)
         {
-            List<Order> listData = Order.BacaData(kriteria, nilai, kParram);
+            List<Order> listData = Order.BacaData(kriteria, nilai);
             StreamWriter file = new StreamWriter(namaFile);
             char pemisah = '-';
             file.WriteLine(""); //Cetak 1 baris kosong

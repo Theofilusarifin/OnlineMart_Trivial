@@ -132,23 +132,23 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Methods
-        public static Boolean TambahData(Driver driver, Koneksi kParram)
+        public static Boolean TambahData(Driver driver)
         {
             // Querry Insert
             string sql = "insert into drivers (nama, username, email, password, telepon) " +
                 "values ('" + driver.Nama + "', '" + driver.Username + "', '" + driver.Email + "', SHA2('" + driver.Password + "', 512), '" + driver.Telepon + "')";
 
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
-		public static List<Driver> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+		public static List<Driver> BacaData(string kriteria, string nilaiKriteria)
 		{
 			string sql = "select * from drivers ";
 			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			//Buat list untuk menampung data
 			List<Driver> listDriver = new List<Driver>();
@@ -159,9 +159,6 @@ namespace OnlineMart_LIB
 
 				listDriver.Add(d);
 			}
-
-			hasil.Dispose();
-			hasil.Close();
 
 			return listDriver;
 		}
@@ -181,43 +178,37 @@ namespace OnlineMart_LIB
             return d;
         }
 
-        public static Boolean UbahData(Driver d, Koneksi kParram)
+        public static Boolean UbahData(Driver d)
 		{
 			// Querry
 			string sql = "update drivers set nama = '" + d.Nama + "', username = '" + d.Username + "', email = '" + d.Email + "', password = SHA2('" + d.Password + "', 512), telepon = '" + d.Telepon + "' where id = " + d.Id;
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
 		//Method untuk menghapus data Cabang
-		public static Boolean HapusData(Driver d, Koneksi kParram)
+		public static Boolean HapusData(Driver d)
 		{
 			string sql = "delete from drivers where id = " + d.Id;
 
-			int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
+			int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
 			//Dicek apakah ada data yang berubah atau tidak
 			if (jumlahDataDihapus == 0) return false;
 			else return true;
 		}
 
-		public static Driver CekLogin(string username, string password, Koneksi kParram)
+		public static Driver CekLogin(string username, string password)
         {
 			string sql = "select id, nama, username, email, password, telepon from drivers where username = '" + username + "' and password = SHA2('" + password + "', 512)";
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             while (hasil.Read())
             {
 				Driver driver = new Driver(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5));
 
-				hasil.Close();
-				hasil.Dispose();
-
 				return driver;
             }
-
-			hasil.Close();
-			hasil.Dispose();
 
 			return null;
         }

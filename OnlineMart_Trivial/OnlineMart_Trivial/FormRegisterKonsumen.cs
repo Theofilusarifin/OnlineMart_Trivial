@@ -54,14 +54,14 @@ namespace OnlineMart_Trivial
             {
                 if (textBoxPassword.Text == textBoxKonfirmasiPassword.Text)
                 {
-                    List<Pelanggan> listPelanggan = Pelanggan.BacaData("username", textBoxUsername.Text, FormUtama.koneksi);
+                    List<Pelanggan> listPelanggan = Pelanggan.BacaData("username", textBoxUsername.Text);
 
                     // Check apakah username telah digunakan atau belum
                     if (listPelanggan.Count == 0)
                     {
                         //Ciptakan objek yang akan ditambahkan
                         Pelanggan pelanggan = new Pelanggan(textBoxNama.Text, textBoxUsername.Text, textBoxEmail.Text, textBoxPassword.Text, textBoxNomorTelepon.Text);
-                        Pelanggan.TambahData(pelanggan, FormUtama.koneksi);
+                        Pelanggan.TambahData(pelanggan);
                         MessageBox.Show("Registrasi Telah Berhasil! Harap lakukan login dengan akun anda.", "Info");
                         this.Close();
                     }

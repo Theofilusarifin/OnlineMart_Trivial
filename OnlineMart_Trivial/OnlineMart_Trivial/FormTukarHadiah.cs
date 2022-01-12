@@ -22,7 +22,7 @@ namespace OnlineMart_Trivial
 
         private void FormTukarHadiah_Load(object sender, EventArgs e)
         {
-            listGift = Gift.BacaData("", "", FormUtama.koneksi);
+            listGift = Gift.BacaData("", "");
 
             comboBoxHadiah.DataSource = listGift;
             comboBoxHadiah.DisplayMember = "nama";
@@ -36,8 +36,8 @@ namespace OnlineMart_Trivial
             {
                 //Masukan data gift redeem
                 Gift_Redeem gr = new Gift_Redeem(DateTime.Now, gDipilih.JumlahPoin, gDipilih);
-                Pelanggan.UpdatePoin(gDipilih, FormUtama.konsumen, FormUtama.koneksi);
-                Gift_Redeem.TambahData(gr, FormUtama.koneksi);
+                Pelanggan.UpdatePoin(gDipilih, FormUtama.konsumen);
+                Gift_Redeem.TambahData(gr);
                 MessageBox.Show("Selamat! Hadiah berhasil ditukarkan!", "Informasi");
                 this.DialogResult = DialogResult.OK;
                 this.Close();

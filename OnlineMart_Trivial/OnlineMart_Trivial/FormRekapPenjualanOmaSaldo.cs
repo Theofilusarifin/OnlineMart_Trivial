@@ -108,14 +108,14 @@ namespace OnlineMart_Trivial
                 if (comboBoxTahun.DataSource == null)
                 {
                     // memasukkan tahun yang ada di orders ke combobox
-                    tahunRiwayatIsiSaldo = Riwayat_isi_saldo.AmbilTahun(FormUtama.koneksi);
+                    tahunRiwayatIsiSaldo = Riwayat_isi_saldo.AmbilTahun();
                     comboBoxTahun.DataSource = tahunRiwayatIsiSaldo;
                     comboBoxTahun.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
 
                 FormatDataGrid();
 
-                listRiwayatIsiSaldo = Riwayat_isi_saldo.BacaTanggal(bulan, tahun, FormUtama.koneksi);
+                listRiwayatIsiSaldo = Riwayat_isi_saldo.BacaTanggal(bulan, tahun);
 
                 TampilDataGrid();
 

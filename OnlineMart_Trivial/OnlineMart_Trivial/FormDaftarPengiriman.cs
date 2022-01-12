@@ -131,7 +131,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listOrder = Order.BacaData("Pesanan Diproses", "o.driver_id", FormUtama.rider.Id.ToString(), FormUtama.koneksi);
+                listOrder = Order.BacaData("Pesanan Diproses", "o.driver_id", FormUtama.rider.Id.ToString());
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -167,11 +167,11 @@ namespace OnlineMart_Trivial
 
                         o.Status = "Cancelled";
 
-                        Order.UbahData(o, FormUtama.koneksi);
+                        Order.UbahData(o);
 
                         //buat notifikasi
                         Notifikasi notifikasi = new Notifikasi("Order Cancelled", "order", "konsumen", DateTime.Now, o.Pelanggan, o.Driver, null, null);
-                        Notifikasi.TambahData(notifikasi, FormUtama.koneksi);
+                        Notifikasi.TambahData(notifikasi);
 
                         FormDaftarPengiriman_Load(sender, e);
                     }
@@ -189,7 +189,7 @@ namespace OnlineMart_Trivial
 
                         o.Status = "Order Selesai";
 
-                        Order.UbahData(o, FormUtama.koneksi);
+                        Order.UbahData(o);
                         FormDaftarPengiriman_Load(sender, e);
 
                         MessageBox.Show("Terima kasih telah mengirim order ini. Selamat melakukan aktifitas kembali");
@@ -226,7 +226,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listOrder = Order.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
+            listOrder = Order.BacaData(kriteria, textBoxKriteria.Text);
             FormatDataGrid();
             TampilDataGrid();
         }

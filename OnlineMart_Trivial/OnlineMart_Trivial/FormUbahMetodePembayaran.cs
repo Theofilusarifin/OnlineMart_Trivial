@@ -26,7 +26,7 @@ namespace OnlineMart_Trivial
             {
                 //Ubah menjadi data baru
                 m.Nama = textBoxNama.Text;
-                Metode_pembayaran.UbahData(m, FormUtama.koneksi);
+                Metode_pembayaran.UbahData(m);
 
                 MessageBox.Show("Perubahan berhasil tersimpan!", "Info");
 

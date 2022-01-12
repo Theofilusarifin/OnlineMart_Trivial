@@ -24,7 +24,7 @@ namespace OnlineMart_Trivial
             {
                 Kategori kategori = new Kategori(textBoxNama.Text);
 
-                Kategori.TambahData(kategori, FormUtama.koneksi);
+                Kategori.TambahData(kategori);
 
                 MessageBox.Show("Data Kategori berhasil ditambahkan", "Informasi");
 

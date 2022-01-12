@@ -44,15 +44,15 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Method
-		public static Boolean TambahProdukPenjual(Barang_Penjual b, Koneksi kParram)
+		public static Boolean TambahProdukPenjual(Barang_Penjual b)
 		{
 			string sql = "insert into barang_penjual (penjual_id, barang_id, stok) values (" + b.Penjual.Id + ", " + b.Barang.Id + ", " + b.Stok + ")";
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
-		public static List<Barang> BacaData(string kriteria, string nilaiKriteria, int id, Koneksi kParram)
+		public static List<Barang> BacaData(string kriteria, string nilaiKriteria, int id)
 		{
 			string sql = "select b.*, k.* from barang b " +
 				"inner join barang_penjual bp on b.id = bp.barang_id " +
@@ -62,7 +62,7 @@ namespace OnlineMart_LIB
 			{
 				sql += " and " + kriteria + " like%'" + nilaiKriteria + "%'";
 			}
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			List<Barang> listBarang = new List<Barang>();
 
@@ -76,16 +76,16 @@ namespace OnlineMart_LIB
 				listBarang.Add(b);
 			}
 
-			hasil.Dispose();
-			hasil.Close();
+			//hasil.Dispose();
+			//hasil.Close();
 
 			return listBarang;
 		}
 
-		public static bool UpdateStok(Barang b, Penjual p, int stok, Koneksi kParram)
+		public static bool UpdateStok(Barang b, Penjual p, int stok)
 		{
 			string sql = "update barang_penjual set stok = stok + " + stok + " where barang_id = " + b.Id + " and penjual_id = " + p.Id;
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}

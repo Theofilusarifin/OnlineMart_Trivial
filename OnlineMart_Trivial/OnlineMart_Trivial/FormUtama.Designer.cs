@@ -905,8 +905,7 @@ namespace OnlineMart_Trivial
             // 
             // panelActiveForm
             // 
-            this.panelActiveForm.BackColor = System.Drawing.Color.Transparent;
-            this.panelActiveForm.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
+            this.panelActiveForm.BackColor = System.Drawing.Color.White;
             this.panelActiveForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelActiveForm.Location = new System.Drawing.Point(0, 87);
             this.panelActiveForm.Name = "panelActiveForm";

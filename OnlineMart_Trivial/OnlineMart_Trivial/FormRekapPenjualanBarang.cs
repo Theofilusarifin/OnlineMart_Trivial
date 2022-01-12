@@ -110,7 +110,7 @@ namespace OnlineMart_Trivial
             {
                 if (comboBoxCabang.DataSource == null)
                 {
-                    listCabang = Cabang.BacaData("", "", FormUtama.koneksi);
+                    listCabang = Cabang.BacaData("", "");
                     comboBoxCabang.DataSource = listCabang;
                     comboBoxCabang.DisplayMember = "Nama";
                     comboBoxCabang.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -118,14 +118,14 @@ namespace OnlineMart_Trivial
 
                 if (comboBoxTahun.DataSource == null)
                 {
-                    listTahun = Order.AmbilTahun(FormUtama.koneksi);
+                    listTahun = Order.AmbilTahun();
                     comboBoxTahun.DataSource = listTahun;
                     comboBoxTahun.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
 
                 FormatDataGrid();
 
-                listPenjualanBarang = Barang_Order.BacaSemuaData(FormUtama.koneksi);
+                listPenjualanBarang = Barang_Order.BacaSemuaData();
 
                 TampilDataGrid();
             }
@@ -219,7 +219,7 @@ namespace OnlineMart_Trivial
         {
             FormatDataGrid();
 
-            listPenjualanBarang = Barang_Order.BacaPenjualanBarang(cabang, bulan, tahun, FormUtama.koneksi);
+            listPenjualanBarang = Barang_Order.BacaPenjualanBarang(cabang, bulan, tahun);
 
             TampilDataGrid();
         }

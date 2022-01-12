@@ -47,7 +47,7 @@ namespace OnlineMart_Trivial
                 //create object baru
                 Koneksi koneksi = new Koneksi();
                 //create username dan password
-                Penjual penjual = Penjual.CekLogin(textBoxUsername.Text, textBoxPassword.Text, FormUtama.koneksi);
+                Penjual penjual = Penjual.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
 
                 //kalau username dan pass nya benar
                 if (!(penjual is null))

@@ -105,19 +105,19 @@ namespace OnlineMart_LIB
             string sql = "insert into cabangs (nama, alamat, pegawai_id) values ('" + c.Nama + "', '" + c.Alamat + "', " + c.Pegawai.Id + ")";
 
             //menjalankan perintah sql
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
         //Method untuk membaca data Cabang
-        public static List<Cabang> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Cabang> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "select * from cabangs c inner join pegawais p on c.pegawai_id = p.id ";
             //kalau tidak kosong tambahkan ini
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Cabang> listCabang = new List<Cabang>();
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
@@ -130,8 +130,8 @@ namespace OnlineMart_LIB
                 listCabang.Add(c);
             }
 
-            hasil.Dispose();
-            hasil.Close();
+            //hasil.Dispose();
+            //hasil.Close();
 
             return listCabang;
         }
@@ -172,21 +172,21 @@ namespace OnlineMart_LIB
             return c;
         }
 
-        public static Boolean UbahData(Cabang c, Koneksi kParram)
+        public static Boolean UbahData(Cabang c)
         {
             // Querry Insert
             string sql = "update cabangs set nama = '" + c.Nama + "', alamat = '" + c.Alamat + "', pegawai_id = " + c.Pegawai.Id + " where id = " + c.Id;
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
         //Method untuk menghapus data Cabang
-        public static Boolean HapusData(int id, Koneksi kParram)
+        public static Boolean HapusData(int id)
         {
             string sql = "delete from cabangs where id = " + id;
 
-            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
             //Dicek apakah ada data yang berubah atau tidak
             if (jumlahDataDihapus == 0) return false;
             else return true;

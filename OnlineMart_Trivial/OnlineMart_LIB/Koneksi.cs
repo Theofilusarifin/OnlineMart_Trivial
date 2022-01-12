@@ -98,25 +98,25 @@ namespace OnlineMart_LIB
         #endregion no kParram
 
         #region with kParram
-        public static MySqlDataReader JalankanPerintahQuery(string sql, Koneksi kParam)
-        {
-            MySqlCommand sqlCommand = new MySqlCommand(sql, kParam.KoneksiDB);
+        //public static MySqlDataReader JalankanPerintahQuery(string sql, Koneksi kParam)
+        //{
+        //    MySqlCommand sqlCommand = new MySqlCommand(sql, kParam.KoneksiDB);
 
-            MySqlDataReader hasil = sqlCommand.ExecuteReader();
+        //    MySqlDataReader hasil = sqlCommand.ExecuteReader();
 
-            return hasil;
-        }
+        //    return hasil;
+        //}
 
-        public static int JalankanPerintahDML(string sql, Koneksi kParram)
-        {
-            MySqlCommand sqlCommand = new MySqlCommand(sql, kParram.KoneksiDB);
+        //public static int JalankanPerintahDML(string sql, Koneksi kParram)
+        //{
+        //    MySqlCommand sqlCommand = new MySqlCommand(sql, kParram.KoneksiDB);
 
-            //Gunakan ExecuteNonQuerry untuk menjalankan perintah DML (Insert/Update/Delete)
-            int hasil = 0;
-            hasil = sqlCommand.ExecuteNonQuery();
+        //    //Gunakan ExecuteNonQuerry untuk menjalankan perintah DML (Insert/Update/Delete)
+        //    int hasil = 0;
+        //    hasil = sqlCommand.ExecuteNonQuery();
 
-            return hasil;
-        }
+        //    return hasil;
+        //}
         #endregion with kParram
 
         #endregion Methods

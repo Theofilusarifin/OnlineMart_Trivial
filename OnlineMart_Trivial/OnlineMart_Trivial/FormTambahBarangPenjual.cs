@@ -23,7 +23,7 @@ namespace OnlineMart_Trivial
 
 		private void FormTambahBarangPenjual_Load(object sender, EventArgs e)
 		{
-			listKategori = Kategori.BacaData("", "", FormUtama.koneksi);
+			listKategori = Kategori.BacaData("", "");
 
 			comboBoxKategori.DataSource = listKategori;
 			comboBoxKategori.DisplayMember = "Nama";
@@ -56,7 +56,7 @@ namespace OnlineMart_Trivial
 				Barang barang = new Barang(textBoxNama.Text, int.Parse(textBoxHarga.Text), textBoxDeskripsi.Text, fileName, kategori);
 
 
-				Barang.TambahData(barang, FormUtama.koneksi);
+				Barang.TambahData(barang);
 
 				MessageBox.Show("Data Barang berhasil ditambahkan", "Informasi");
 

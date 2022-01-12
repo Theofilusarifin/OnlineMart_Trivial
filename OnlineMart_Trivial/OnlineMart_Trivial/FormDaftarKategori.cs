@@ -103,7 +103,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 // Tampilkan semua data
-                listKategori = Kategori.BacaData("", "", FormUtama.koneksi);
+                listKategori = Kategori.BacaData("", "");
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -134,7 +134,7 @@ namespace OnlineMart_Trivial
                         break;
                 }
 
-                listKategori = Kategori.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
+                listKategori = Kategori.BacaData(kriteria, textBoxKriteria.Text);
                 FormatDataGrid();
                 TampilDataGrid();
             }
@@ -166,7 +166,7 @@ namespace OnlineMart_Trivial
                     //Kalau User klik yes barang akan dihapus
                     if (hasil == DialogResult.Yes)
                     {
-                        Boolean hapus = Kategori.HapusData(id, FormUtama.koneksi);
+                        Boolean hapus = Kategori.HapusData(id);
 
                         if (hapus == true)
                         {

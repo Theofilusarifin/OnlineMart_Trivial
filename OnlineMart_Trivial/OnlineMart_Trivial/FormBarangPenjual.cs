@@ -122,7 +122,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listBarang = Barang.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
+            listBarang = Barang.BacaData(kriteria, textBoxKriteria.Text);
             FormatDataGrid();
             TampilDataGrid();
         }
@@ -137,11 +137,11 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listBarang = Barang_Penjual.BacaData("", "", 1, FormUtama.koneksi);
+                listBarang = Barang_Penjual.BacaData("", "", 1);
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
-                listPenjual = Penjual.BacaData("", "", FormUtama.koneksi);
+                listPenjual = Penjual.BacaData("", "");
                 comboBoxKriteria.Text = "Id";
                 comboBoxPenjual.DataSource = listPenjual;
                 comboBoxPenjual.DisplayMember = "nama";
@@ -205,7 +205,7 @@ namespace OnlineMart_Trivial
 		{
             penjual = (Penjual)comboBoxPenjual.SelectedItem;
             FormUtama.pDipilih = penjual;
-            listBarang = Barang_Penjual.BacaData("", "", FormUtama.pDipilih.Id, FormUtama.koneksi);
+            listBarang = Barang_Penjual.BacaData("", "", FormUtama.pDipilih.Id);
             FormatDataGrid();
             TampilDataGrid();
         }

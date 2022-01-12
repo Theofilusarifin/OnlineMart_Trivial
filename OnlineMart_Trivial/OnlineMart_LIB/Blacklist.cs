@@ -49,43 +49,43 @@ namespace OnlineMart_LIB
 			return b;
 		}
 
-		public static Boolean UbahData(Blacklist b, Koneksi kParram)
+		public static Boolean UbahData(Blacklist b)
 		{
 			// Querry Insert
 			string sql = "update blacklists set jenis = '" + b.Jenis + "', alasan = '" + b.Alasan + "' where id = " + b.Id;
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
-		public static Boolean HapusData(int id, Koneksi kParram)
+		public static Boolean HapusData(int id)
 		{
 			string sql = "delete from blacklists where id = " + id;
 
-			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
+			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
 			//Dicek apakah ada data yang berubah atau tidak
 			if (jumlahDihapus == 0) return false;
 			else return true;
 		}
 
-		public static Boolean TambahData(Blacklist b, Koneksi kParram)
+		public static Boolean TambahData(Blacklist b)
 		{
 			//string yang menampung sql query insert into
 			string sql = "insert into blacklists (jenis, alasan) values ('" + b.Jenis + "', '" + b.Alasan + "')";
 
 			//menjalankan perintah sql
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
-		public static List<Blacklist> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+		public static List<Blacklist> BacaData(string kriteria, string nilaiKriteria)
 		{
 			string sql = "select * from blacklists";
 			//apabila kriteria tidak kosong
 			if (kriteria != "" && kriteria != "id") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 			if (kriteria == "id") sql += " where id = " + nilaiKriteria;
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
 			List<Blacklist> listBlacklist = new List<Blacklist>();
 			Blacklist b = null;
@@ -94,12 +94,9 @@ namespace OnlineMart_LIB
 			{
 				b = new Blacklist(hasil.GetString(1), hasil.GetString(2));
 				listBlacklist.Add(b);
-			}
+            }
 
-			hasil.Dispose();
-			hasil.Close();
-
-			return listBlacklist;
+            return listBlacklist;
 		}
         #endregion
     }

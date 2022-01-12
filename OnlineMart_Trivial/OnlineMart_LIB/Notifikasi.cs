@@ -98,18 +98,18 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Methods        
-        public static Boolean TambahData(Notifikasi n, Koneksi kParram)
+        public static Boolean TambahData(Notifikasi n)
         {
             string sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, drivers_id, pegawai_id, penjual_id) " +
                          "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
                          n.Pelanggan.Id + ", " + n.Driver.Id + ", " + n.Pegawai.Id + ", " + n.Penjual.Id + ")";
 
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-        public static List<Notifikasi> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Notifikasi> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "select * from notifikasis n " +
                          "inner join pelanggans pel on n.pelanggan_id = pel.id " +
@@ -122,7 +122,7 @@ namespace OnlineMart_LIB
 
             sql += "order by n.waktu";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Notifikasi> listNotifikasi = new List<Notifikasi>();
 
@@ -143,13 +143,10 @@ namespace OnlineMart_LIB
                 listNotifikasi.Add(n);
             }
 
-            hasil.Dispose();
-            hasil.Close();
-
             return listNotifikasi;
         }
 
-        public static Boolean UbahData(Notifikasi n, Koneksi kParram)
+        public static Boolean UbahData(Notifikasi n)
         {
             // Querry Insert
             string sql = "update notifikasis set isi = '" + n.Isi + "', tipe = '" + n.Tipe + "', role_user = '" + n.Role_user + "', " +
@@ -157,7 +154,7 @@ namespace OnlineMart_LIB
                          "driver_id = '" + n.Driver.Id + "', pegawai_id = '" + n.Pegawai.Id + "', penjual_id = '" + n.Penjual.Id + "' " +
                          "where id = '" + n.Id + "'";
 
-            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDiubah == 0) return false;
             else return true;
         }
@@ -195,7 +192,7 @@ namespace OnlineMart_LIB
             return n;
         }
 
-        public static int HitungNotifikasi(string role_user, Koneksi kParram)
+        public static int HitungNotifikasi(string role_user)
         {
             string sql = "select count(*) from notifikasis " +
                          "where role_user = '" + role_user + "' ";
@@ -208,9 +205,6 @@ namespace OnlineMart_LIB
             {
                 NotifCount =  hasil.GetInt32(0);
             }
-
-            hasil.Dispose();
-            hasil.Close();
 
             return NotifCount;
         }

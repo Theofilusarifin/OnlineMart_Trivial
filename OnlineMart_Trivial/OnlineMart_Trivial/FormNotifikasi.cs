@@ -116,7 +116,7 @@ namespace OnlineMart_Trivial
 
                 FormatDataGrid();
 
-                listNotifikasi = Notifikasi.BacaData(kriteria, nilaiKriteria, FormUtama.koneksi);
+                listNotifikasi = Notifikasi.BacaData(kriteria, nilaiKriteria);
 
                 TampilDataGrid();
 

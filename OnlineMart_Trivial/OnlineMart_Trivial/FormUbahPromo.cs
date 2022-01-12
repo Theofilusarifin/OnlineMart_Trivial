@@ -30,7 +30,7 @@ namespace OnlineMart_Trivial
                 p.Diskon = int.Parse(textBoxDiskon.Text);
                 p.Diskon_max = int.Parse(textBoxDiskonMaksimal.Text);
                 p.Minimal_belanja = float.Parse(textBoxPembelanjaanMinimum.Text);
-                Promo.UbahData(p, FormUtama.koneksi);
+                Promo.UbahData(p);
 
                 MessageBox.Show("Perubahan berhasil tersimpan!", "Info");
 

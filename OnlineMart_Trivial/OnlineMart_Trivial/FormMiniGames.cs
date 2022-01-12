@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using OnlineMart_LIB;
 
 namespace OnlineMart_Trivial
 {
@@ -104,8 +104,20 @@ namespace OnlineMart_Trivial
             if (missed > 5)
             {
                 gameTimer.Stop();
-                MessageBox.Show("Game Over!" + Environment.NewLine + "We've lost so many coins!");
-                RestartGame();
+                int poin_awal = int.Parse(FormUtama.frmUtama.labelPoin.Text);
+                FormUtama.frmUtama.labelPoin.Text = (poin_awal + coin).ToString();
+                Pelanggan.TambahPoin(FormUtama.konsumen, coin);
+                MessageBox.Show("Game Over!" + Environment.NewLine + "Poin telah ditambahkan ke akun anda");
+                DialogResult dialogResult = MessageBox.Show("Apakah anda ingin bermain kembali?", "Information", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    RestartGame();
+
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    this.Close();
+                }
             }
         }
 

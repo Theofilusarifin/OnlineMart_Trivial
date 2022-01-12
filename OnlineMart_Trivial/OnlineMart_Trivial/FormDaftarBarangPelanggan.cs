@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineMart_LIB;
+using System.IO;
+
 
 namespace OnlineMart_Trivial
 {
@@ -22,6 +24,7 @@ namespace OnlineMart_Trivial
         public static List<Cabang> listCabang = new List<Cabang>();
         public static List<Barang_Cabang> listBarangCabang = new List<Barang_Cabang>();
         public static Cabang cDipilih = Cabang.AmbilPertama();
+
 
         #region No Tick Constrols
         //Optimized Controls(No Tick)
@@ -45,9 +48,19 @@ namespace OnlineMart_Trivial
             //Menambah kolom di datagridview
             dataGridView.Columns.Add("id", "Id");
             dataGridView.Columns.Add("nama", "Nama Barang");
+            
+            DataGridViewImageColumn dgvimgcol = new DataGridViewImageColumn();
+            dgvimgcol.HeaderText = "Gambar Barang";
+            dgvimgcol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+            dataGridView.Columns.Add(dgvimgcol);
+            dataGridView.RowTemplate.Height = 110;
+
+            dataGridView.Columns.Add("gambar", "Gambar Barang");
             dataGridView.Columns.Add("harga", "Harga Barang");
             dataGridView.Columns.Add("stok", "Stok Barang");
             dataGridView.Columns.Add("kategori_id", "Kategori");
+
 
             dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(248, 142, 123);
             dataGridView.EnableHeadersVisualStyles = false;
@@ -55,6 +68,7 @@ namespace OnlineMart_Trivial
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
             dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["gambar"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["stok"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -65,7 +79,7 @@ namespace OnlineMart_Trivial
         }
 
         private void TampilDataGrid()
-        {
+        {   
             //Kosongi isi datagridview
             dataGridView.Rows.Clear();
 
@@ -73,7 +87,16 @@ namespace OnlineMart_Trivial
             {
                 foreach (Barang_Cabang bc in listBarangCabang)
                 {
-                    dataGridView.Rows.Add(bc.Barang.Id, bc.Barang.Nama, bc.Barang.Harga, bc.Stok, bc.Barang.Kategori.Nama);
+                    string path = Path.Combine(FormUtama.location + "\\barang\\", bc.Barang.Path_gambar+".png");
+                    //MessageBox.Show(path);
+                    PictureBox image = new PictureBox();
+                    image.Image =  Image.FromFile(path);
+
+                    MemoryStream mmst = new MemoryStream();
+                    image.Image.Save(mmst, image.Image.RawFormat);
+                    byte[] img = mmst.ToArray();
+
+                    dataGridView.Rows.Add(bc.Barang.Id, bc.Barang.Nama, img, bc.Barang.Harga, bc.Stok, bc.Barang.Kategori.Nama);
                 }
             }
             else
@@ -113,13 +136,13 @@ namespace OnlineMart_Trivial
             try
             {
                 //Default list semua barang di cabang yang pertama
-                listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "", FormUtama.koneksi);
+                listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "");
 
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
 
                 //Tampilkan semua data Cabang
-                listCabang = Cabang.BacaData("", "", FormUtama.koneksi);
+                listCabang = Cabang.BacaData("", "");
                 comboBoxCabang.DataSource = listCabang;
                 comboBoxCabang.DisplayMember = "nama";
 
@@ -141,7 +164,7 @@ namespace OnlineMart_Trivial
         private void comboBoxCabang_SelectedIndexChanged(object sender, EventArgs e)
         {
             cDipilih = (Cabang)comboBoxCabang.SelectedItem;
-            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "", FormUtama.koneksi);
+            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "");
             FormatDataGrid();
             TampilDataGrid();
         }
@@ -166,7 +189,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), kriteria, textBoxKriteria.Text, FormUtama.koneksi);
+            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), kriteria, textBoxKriteria.Text);
             FormatDataGrid();
             TampilDataGrid();
         }

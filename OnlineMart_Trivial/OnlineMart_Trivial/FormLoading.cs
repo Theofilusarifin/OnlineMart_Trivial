@@ -93,10 +93,10 @@ namespace OnlineMart_Trivial
                 if (firstLogin == true)
                 {
                     // hitung notifikasi awal setiap user
-                    notifCountKonsumen = Notifikasi.HitungNotifikasi("konsumen", FormUtama.koneksi);
-                    notifCountDriver = Notifikasi.HitungNotifikasi("driver", FormUtama.koneksi);
-                    notifCountPegawai = Notifikasi.HitungNotifikasi("pegawai", FormUtama.koneksi);
-                    notifCountPenjual = Notifikasi.HitungNotifikasi("penjual", FormUtama.koneksi);
+                    notifCountKonsumen = Notifikasi.HitungNotifikasi("konsumen");
+                    notifCountDriver = Notifikasi.HitungNotifikasi("driver");
+                    notifCountPegawai = Notifikasi.HitungNotifikasi("pegawai");
+                    notifCountPenjual = Notifikasi.HitungNotifikasi("penjual");
 
                     firstLogin = false;
                 }
@@ -104,7 +104,7 @@ namespace OnlineMart_Trivial
                 if (firstLogin == false)
                 {
                     // hitung notif akhir
-                    notifCountAkhir = Notifikasi.HitungNotifikasi(role_user, FormUtama.koneksi);
+                    notifCountAkhir = Notifikasi.HitungNotifikasi(role_user);
 
                     // hitung notif yang ditampilkan
                     switch (role_user)

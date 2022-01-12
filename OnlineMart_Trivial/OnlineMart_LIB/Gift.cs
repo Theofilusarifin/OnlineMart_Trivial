@@ -57,22 +57,21 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Methods
-        public static Boolean TambahData(Gift g, Koneksi kParram)
+        public static Boolean TambahData(Gift g)
         {
             string sql = "Insert into gifts (id, nama, jumlah_poin) values ('" + g.Id + "', '" + g.Nama + "', '" + g.JumlahPoin + "')";
 
             //menjalankan perintah SQL
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-        public static List<Gift> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
-        {
+        public static List<Gift> BacaData(string kriteria, string nilaiKriteria) { 
             string sql = "select * from gifts where id > 1 ";
             if (kriteria != "") sql += " and " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             //Buat list untuk menampung data
             List<Gift> listGift = new List<Gift>();
@@ -83,9 +82,6 @@ namespace OnlineMart_LIB
 
                 listGift.Add(g);
             }
-
-            hasil.Dispose();
-            hasil.Close();
 
             return listGift;
         }
@@ -107,22 +103,22 @@ namespace OnlineMart_LIB
             return g;
         }
 
-        public static Boolean HapusData(int id, Koneksi kParram)
+        public static Boolean HapusData(int id)
         {
             string sql = "delete from gifts where id = " + id;
-            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
 
             //Dicek apakah ada data yang berubah atau tidak
             if (jumlahDataDihapus == 0) return false;
             else return true;
         }
 
-        public static Boolean UbahData(Gift g, Koneksi kParram)
+        public static Boolean UbahData(Gift g)
         {
             // Querry Insert
             string sql = "update gifts set nama = '" + g.Nama + "', jumlah_poin = " + g.JumlahPoin + " where id = " + g.id;
 
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }

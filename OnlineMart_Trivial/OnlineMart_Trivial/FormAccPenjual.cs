@@ -87,7 +87,7 @@ namespace OnlineMart_Trivial
             try
             {
                 //Default list semua barang di cabang yang pertama
-                listPenjual = Penjual.BacaData("status", "Not Ready", FormUtama.koneksi);
+                listPenjual = Penjual.BacaData("status", "Not Ready");
 
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
@@ -118,7 +118,7 @@ namespace OnlineMart_Trivial
                 if (e.ColumnIndex == dataGridView.Columns["btnAcc"].Index && e.RowIndex >= 0)
                 {
                     p.Status = "OK";
-                    if (Penjual.UbahData(p, FormUtama.koneksi))
+                    if (Penjual.UbahData(p))
 					{
                         MessageBox.Show("Penjual berhasil di konfirmasi! Status telah diubah");
                         FormAccPenjual_Load(sender, e);

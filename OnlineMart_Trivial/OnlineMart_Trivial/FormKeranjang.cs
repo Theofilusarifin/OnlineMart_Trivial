@@ -217,7 +217,7 @@ namespace OnlineMart_Trivial
                 //generate id order yyyyMMddxxxx (yyyy-MM-dd-xxxx) detail ada di class order
                 if (thisOrder.Id == 0 && !IdGenerated)
                 {
-                    thisOrder.Id = long.Parse(Order.GenerateIdOrder(FormUtama.koneksi));
+                    thisOrder.Id = long.Parse(Order.GenerateIdOrder());
 
                     // Set IdGenerated ke true agar tidak generate id baru
                     IdGenerated = true;

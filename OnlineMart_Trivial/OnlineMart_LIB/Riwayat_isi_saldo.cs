@@ -56,25 +56,25 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Methods
-        public static Boolean TambahData(Riwayat_isi_saldo r, Koneksi kParram)
+        public static Boolean TambahData(Riwayat_isi_saldo r)
         {
             //menampung string
             string sql = "insert into riwayat_isi_saldos (waktu, isi_saldo, pelanggan_id) values ('" + r.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " + r.IsiSaldo + ", " + r.Pelanggan.Id + ")";
 
             //menjalankan perintah sql
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-        public static List<Riwayat_isi_saldo> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
+        public static List<Riwayat_isi_saldo> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "select * from riwayat_isi_saldos rws inner join pelanggans p on rws.pelanggan_id = p.id ";
             
             //apabila kriteria tidak kosong
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
             
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Riwayat_isi_saldo> listRiwayat = new List<Riwayat_isi_saldo>();
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
@@ -87,10 +87,6 @@ namespace OnlineMart_LIB
               
                 listRiwayat.Add(r);
             }
-
-            hasil.Dispose();
-            hasil.Close();
-
             return listRiwayat;
         }
 
@@ -115,27 +111,27 @@ namespace OnlineMart_LIB
         //    return r;
         //}
 
-        public static Boolean UbahData(Riwayat_isi_saldo r, Koneksi kParram)
+        public static Boolean UbahData(Riwayat_isi_saldo r)
         {
             // Querry Insert
             string sql = "update riwayat_isi_saldos set waktu = '" + r.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', isi_saldo = " + r.isiSaldo + ", pelanggan_id = " + r.Pelanggan.Id + " where id = " + r.Id;
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
         //hapus data
-        public static Boolean HapusData(int id, Koneksi kParram)
+        public static Boolean HapusData(int id)
         {
             string sql = "delete from riwayat_isi_saldos where id = " + id;
 
-            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
+            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
             //menegcek data berubah atau tidak
             if (jumlahDataDihapus == 0) return false;
             else return true;
         }
 
-        public static List<Riwayat_isi_saldo> BacaTanggal(string bulan, string tahun, Koneksi kParram)
+        public static List<Riwayat_isi_saldo> BacaTanggal(string bulan, string tahun)
         {
             string sql = "select * from riwayat_isi_saldos rws inner join pelanggans p on rws.pelanggan_id = p.id ";
 
@@ -146,7 +142,7 @@ namespace OnlineMart_LIB
             // kalau tahun ada isinya
             else if (tahun != "") sql += " where YEAR(rws.waktu) = " + tahun;
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             List<Riwayat_isi_saldo> listRiwayatIsiSaldo = new List<Riwayat_isi_saldo>();
 
@@ -159,14 +155,10 @@ namespace OnlineMart_LIB
 
                 listRiwayatIsiSaldo.Add(r);
             }
-
-            hasil.Dispose();
-            hasil.Close();
-
             return listRiwayatIsiSaldo;
         }
 
-        public static List<Int32> AmbilTahun(Koneksi kParram)
+        public static List<Int32> AmbilTahun()
         {
             string sql = "select distinct YEAR(waktu) from riwayat_isi_saldos";
 
