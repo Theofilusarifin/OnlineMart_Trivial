@@ -87,7 +87,7 @@ namespace OnlineMart_Trivial
             {
                 foreach (Barang_Cabang bc in listBarangCabang)
                 {
-                    string path = Path.Combine(FormUtama.location + "\\barang\\", bc.Barang.Path_gambar+".png");
+                    string path = Path.Combine(FormUtama.location + "\\barang\\", bc.Barang.Path_gambar);
                     //MessageBox.Show(path);
                     PictureBox image = new PictureBox();
                     image.Image =  Image.FromFile(path);
@@ -114,6 +114,7 @@ namespace OnlineMart_Trivial
                 bcolTambahKeranjang.Text = "Masukkan";
                 bcolTambahKeranjang.Name = "btnTambahKeranjang";
                 bcolTambahKeranjang.UseColumnTextForButtonValue = true;
+                bcolTambahKeranjang.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                 dataGridView.Columns.Add(bcolTambahKeranjang);
             }
             if (!dataGridView.Columns.Contains("btnLihatDetailBarang"))

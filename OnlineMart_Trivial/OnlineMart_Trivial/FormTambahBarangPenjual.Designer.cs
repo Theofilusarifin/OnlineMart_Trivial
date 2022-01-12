@@ -111,6 +111,8 @@ namespace OnlineMart_Trivial
             this.buttonTambah.Text = "Tambah";
             this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
+            this.buttonTambah.MouseEnter += new System.EventHandler(this.buttonTambah_MouseEnter);
+            this.buttonTambah.MouseLeave += new System.EventHandler(this.buttonTambah_MouseLeave);
             // 
             // FormTambahBarangPenjual
             // 
@@ -130,8 +132,6 @@ namespace OnlineMart_Trivial
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTambahBarangPenjual";
             this.Load += new System.EventHandler(this.FormTambahBarangPenjual_Load);
-            this.MouseEnter += new System.EventHandler(this.buttonTambah_MouseEnter);
-            this.MouseLeave += new System.EventHandler(this.buttonTambah_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -468,15 +468,39 @@ namespace OnlineMart_Trivial
 
         private void btnDaftarBarangPenjual_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormDaftarBarangPenjual());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         private void btnTambahStokPenjual_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormTambahStok());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         private void btnChatPenjual_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormChatPenjual());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         private void btnReviewPenjual_Click(object sender, EventArgs e)
         {

@@ -50,5 +50,16 @@ namespace OnlineMart_Trivial
 			}
 		}
 		#endregion
-	}
+
+		#region DesainButton
+		private void buttonTambah_MouseEnter(object sender, EventArgs e)
+		{
+			buttonTambah.BackgroundImage = Properties.Resources.Button_Hover;
+		}
+		private void buttonTambah_MouseLeave(object sender, EventArgs e)
+		{
+			buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
+		}
+		#endregion
+    }
 }

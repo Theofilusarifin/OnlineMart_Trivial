@@ -59,6 +59,8 @@ namespace OnlineMart_Trivial
             this.buttonKirim.Text = "Kirim";
             this.buttonKirim.UseVisualStyleBackColor = false;
             this.buttonKirim.Click += new System.EventHandler(this.buttonKirim_Click);
+            this.buttonKirim.MouseEnter += new System.EventHandler(this.buttonKirim_MouseEnter);
+            this.buttonKirim.MouseLeave += new System.EventHandler(this.buttonKirim_MouseLeave);
             // 
             // listBoxPesan
             // 
