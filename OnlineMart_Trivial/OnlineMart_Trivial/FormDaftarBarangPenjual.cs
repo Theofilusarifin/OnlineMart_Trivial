@@ -119,7 +119,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listBarang = Barang_Penjual.BacaData("", "", FormUtama.penjual.Id);
+                listBarang = Barang_Penjual.BacaData("", "", FormUtama.penjual.Id, FormUtama.koneksi);
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -152,7 +152,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listBarang = Barang.BacaData(kriteria, textBoxKriteria.Text);
+            listBarang = Barang.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
             FormatDataGrid();
             TampilDataGrid();
         }

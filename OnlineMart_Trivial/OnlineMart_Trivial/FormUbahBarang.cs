@@ -27,7 +27,7 @@ namespace OnlineMart_Trivial
 		private void FormUbahBarang_Load(object sender, EventArgs e)
         {
             // Masukkan kategori ke textbox
-            List<Kategori> listKategori = Kategori.BacaData("", "");
+            List<Kategori> listKategori = Kategori.BacaData("", "", FormUtama.koneksi);
 
             comboBoxKategori.DataSource = listKategori;
             comboBoxKategori.DisplayMember = "Nama";
@@ -55,7 +55,7 @@ namespace OnlineMart_Trivial
                 b.Nama = textBoxNama.Text;
                 b.Harga = int.Parse(textBoxHarga.Text);
                 b.Kategori = kDipilih;
-                Barang.UbahData(b);
+                Barang.UbahData(b, FormUtama.koneksi);
 
                 MessageBox.Show("Perubahan berhasil tersimpan!", "Info");
 

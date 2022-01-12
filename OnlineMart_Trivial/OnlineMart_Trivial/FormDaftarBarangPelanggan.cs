@@ -113,13 +113,13 @@ namespace OnlineMart_Trivial
             try
             {
                 //Default list semua barang di cabang yang pertama
-                listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "");
+                listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "", FormUtama.koneksi);
 
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
 
                 //Tampilkan semua data Cabang
-                listCabang = Cabang.BacaData("", "");
+                listCabang = Cabang.BacaData("", "", FormUtama.koneksi);
                 comboBoxCabang.DataSource = listCabang;
                 comboBoxCabang.DisplayMember = "nama";
 
@@ -141,7 +141,7 @@ namespace OnlineMart_Trivial
         private void comboBoxCabang_SelectedIndexChanged(object sender, EventArgs e)
         {
             cDipilih = (Cabang)comboBoxCabang.SelectedItem;
-            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "");
+            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "", FormUtama.koneksi);
             FormatDataGrid();
             TampilDataGrid();
         }
@@ -166,7 +166,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), kriteria, textBoxKriteria.Text);
+            listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), kriteria, textBoxKriteria.Text, FormUtama.koneksi);
             FormatDataGrid();
             TampilDataGrid();
         }

@@ -31,7 +31,7 @@ namespace OnlineMart_Trivial
 		{
 			try
 			{
-				if (Barang_Penjual.UpdateStok(FormDaftarBarangPenjual.barang, FormUtama.penjual, int.Parse(textBoxStok.Text)))
+				if (Barang_Penjual.UpdateStok(FormDaftarBarangPenjual.barang, FormUtama.penjual, int.Parse(textBoxStok.Text), FormUtama.koneksi))
 				{
 					MessageBox.Show("Stok berhasil di update");
 					FormDaftarBarangPenjual frm = (FormDaftarBarangPenjual)this.Owner;

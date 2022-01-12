@@ -51,17 +51,17 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Methods
-		public static Boolean TambahData(Barang_Order bo)
+		public static Boolean TambahData(Barang_Order bo, Koneksi kParram)
 		{
 			// Querry Insert
 			string sql = "insert into barang_order values (" + bo.Jumlah + ", " + bo.Harga + ", " + bo.Order.Id + ", " + bo.Barang.Id + ")";
 
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
-		public static List<Barang_Order> BacaSemuaData()
+		public static List<Barang_Order> BacaSemuaData(Koneksi kParram)
 		{
 			string sql = "select * from barang_order bo " +
 						 "inner join orders o on bo.order_id = o.id " +
@@ -77,7 +77,7 @@ namespace OnlineMart_LIB
 						 "inner join kategoris k on b.kategori_id = k.id order by o.tanggal_waktu "+
 						 "inner join penjuals as o.penjual_id = pen.id ";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			List<Barang_Order> listPenjualanBarang = new List<Barang_Order>();
 
@@ -119,10 +119,13 @@ namespace OnlineMart_LIB
 				listPenjualanBarang.Add(bo);
 			}
 
+			hasil.Dispose();
+			hasil.Close();
+
 			return listPenjualanBarang;
 		}
 
-		public static List<Barang_Order> BacaPenjualanBarang(Cabang cabang, string bulan, string tahun)
+		public static List<Barang_Order> BacaPenjualanBarang(Cabang cabang, string bulan, string tahun, Koneksi kParram)
 		{
 			string sql = "select * from barang_order bo " +
 						 "inner join orders o on bo.order_id = o.id " +
@@ -139,13 +142,18 @@ namespace OnlineMart_LIB
 						 "inner join penjuals as o.penjual_id = pen.id ";
 
 			// kalau semua ada isinya
-			if (cabang != null && bulan != "" && tahun != "") sql += " where o.cabang_id = " + cabang.Id + " and MONTH(o.tanggal_waktu) = '" + bulan + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
+			if (cabang != null && bulan != "" && tahun != "") sql += " where o.cabang_id = " + cabang.Id +
+																	 " and MONTH(o.tanggal_waktu) = '" + bulan + "'" +
+																	 " and YEAR(o.tanggal_waktu) = '" + tahun + "'";
 			// kalau cabang dan bulan ada isinya
-			else if (cabang != null && bulan != "") sql += " where o.cabang_id = " + cabang.Id + " and MONTH(o.tanggal_waktu) = '" + bulan + "'";
+			else if (cabang != null && bulan != "") sql += " where o.cabang_id = " + cabang.Id +
+														   " and MONTH(o.tanggal_waktu) = '" + bulan + "'";
 			// kalau cabang dan tahun ada isinya
-			else if (cabang != null && tahun != "") sql += " where o.cabang_id = " + cabang.Id + " and YEAR(o.tanggal_waktu) = '" + tahun + "'";
+			else if (cabang != null && tahun != "") sql += " where o.cabang_id = " + cabang.Id +
+														   " and YEAR(o.tanggal_waktu) = '" + tahun + "'";
 			// kalau bulan dan tahun ada isinya
-			else if (bulan != "" && tahun != "") sql += " where MONTH(o.tanggal_waktu) = '" + bulan + "' and YEAR(o.tanggal_waktu) = '" + tahun + "'";
+			else if (bulan != "" && tahun != "") sql += " where MONTH(o.tanggal_waktu) = '" + bulan + "'" +
+														" and YEAR(o.tanggal_waktu) = '" + tahun + "'";
 			// kalau cabang ada isinya
 			else if (cabang != null) sql += " where o.cabang_id = " + cabang.Id;
 			// kalau bulan ada isinya
@@ -153,7 +161,7 @@ namespace OnlineMart_LIB
 			// kalau tahun ada isinya
 			else if (tahun != "") sql += " where YEAR(o.tanggal_waktu) = '" + tahun + "'";
 			
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			List<Barang_Order> listPenjualanBarang = new List<Barang_Order>();
 
@@ -194,6 +202,9 @@ namespace OnlineMart_LIB
 
 				listPenjualanBarang.Add(bo);
 			}
+
+			hasil.Dispose();
+			hasil.Close();
 
 			return listPenjualanBarang;
 		}

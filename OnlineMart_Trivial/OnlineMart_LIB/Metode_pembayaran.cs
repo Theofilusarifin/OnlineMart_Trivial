@@ -48,20 +48,21 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Method
-        public static Boolean TambahData (Metode_pembayaran m)
+        public static Boolean TambahData (Metode_pembayaran m, Koneksi kParram)
 		{
 			string sql = "insert into metode_pembayarans (nama) values ('" + m.Nama + "')";
 
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
-		public static List<Metode_pembayaran> BacaData(string kriteria, string nilaiKriteria)
+
+		public static List<Metode_pembayaran> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
 		{
 			string sql = "select id, nama from metode_pembayarans ";
 			if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			List<Metode_pembayaran> listMetodePembayaran = new List<Metode_pembayaran>();
 
@@ -71,6 +72,10 @@ namespace OnlineMart_LIB
 
 				listMetodePembayaran.Add(mp);
 			}
+
+			hasil.Dispose();
+			hasil.Close();
+
 			return listMetodePembayaran;
 		}
 
@@ -90,20 +95,20 @@ namespace OnlineMart_LIB
             return m;
         }
 
-        public static Boolean UbahData(Metode_pembayaran m)
+        public static Boolean UbahData(Metode_pembayaran m, Koneksi kParram)
 		{
 			// Querry Insert
 			string sql = "update metode_pembayarans set nama = '" + m.Nama + "' where id = " + m.Id;
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
-		public static Boolean HapusData(int id)
+		public static Boolean HapusData(int id, Koneksi kParram)
 		{
 			string sql = "delete from metode_pembayarans where id = " + id;
 
-			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
 			//Dicek apakah ada data yang berubah atau tidak
 			if (jumlahDihapus == 0) return false;
 			else return true;

@@ -107,7 +107,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 // Tampilkan semua data
-                listCabang = Cabang.BacaData("", "");
+                listCabang = Cabang.BacaData("", "", FormUtama.koneksi);
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -146,7 +146,7 @@ namespace OnlineMart_Trivial
                         break;
                 }
 
-                listCabang = Cabang.BacaData(kriteria, textBoxKriteria.Text);
+                listCabang = Cabang.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
                 FormatDataGrid();
                 TampilDataGrid();
             }
@@ -178,7 +178,7 @@ namespace OnlineMart_Trivial
                     //Kalau User klik yes barang akan dihapus
                     if (hasil == DialogResult.Yes)
                     {
-                        Boolean hapus = Cabang.HapusData(id);
+                        Boolean hapus = Cabang.HapusData(id, FormUtama.koneksi);
 
                         if (hapus == true)
                         {

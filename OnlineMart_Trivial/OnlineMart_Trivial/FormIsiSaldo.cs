@@ -20,7 +20,7 @@ namespace OnlineMart_Trivial
         public List<Metode_pembayaran> listMetodePembayaran = new List<Metode_pembayaran>();
         private void FormIsiSaldo_Load(object sender, EventArgs e)
         {
-           listMetodePembayaran = Metode_pembayaran.BacaData("","");
+           listMetodePembayaran = Metode_pembayaran.BacaData("","", FormUtama.koneksi);
 
             comboBoxMetodePembayaran.DataSource = listMetodePembayaran;
             comboBoxMetodePembayaran.DisplayMember = "Nama";
@@ -34,11 +34,11 @@ namespace OnlineMart_Trivial
             {
                 //menambahkan riwayat isi saldo
                 Riwayat_isi_saldo r = new Riwayat_isi_saldo(DateTime.Now, int.Parse(textBoxSaldo.Text), FormUtama.konsumen);
-                Riwayat_isi_saldo.TambahData(r);
+                Riwayat_isi_saldo.TambahData(r, FormUtama.koneksi);
 
                 //update saldo
                 FormUtama.konsumen.Saldo = FormUtama.konsumen.Saldo + int.Parse(textBoxSaldo.Text);
-                Pelanggan.TambahSaldo(FormUtama.konsumen);
+                Pelanggan.TambahSaldo(FormUtama.konsumen, FormUtama.koneksi);
 
                 MessageBox.Show("Isi saldo telah berhasil", "Informasi");
 

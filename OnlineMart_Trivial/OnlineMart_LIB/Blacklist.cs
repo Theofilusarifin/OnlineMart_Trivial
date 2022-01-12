@@ -9,11 +9,14 @@ namespace OnlineMart_LIB
 {
 	public class Blacklist
 	{
-		private int id;
+        #region Fields
+        private int id;
 		private string jenis;
 		private string alasan;
+        #endregion
 
-		public Blacklist(int id, string jenis, string alasan)
+        #region Constructors
+        public Blacklist(int id, string jenis, string alasan)
 		{
 			this.Id = id;
 			this.Jenis = jenis;
@@ -25,11 +28,16 @@ namespace OnlineMart_LIB
 			this.Jenis = jenis;
 			this.Alasan = alasan;
 		}
-		public int Id { get => id; set => id = value; }
+        #endregion
+
+        #region Properties
+        public int Id { get => id; set => id = value; }
 		public string Jenis { get => jenis; set => jenis = value; }
 		public string Alasan { get => alasan; set => alasan = value; }
+        #endregion
 
-		public static Blacklist AmbilData(int id)
+        #region Methods
+        public static Blacklist AmbilData(int id)
 		{
 			string sql = "select * from blacklists where id = " + id;
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -40,40 +48,44 @@ namespace OnlineMart_LIB
 			}
 			return b;
 		}
-		public static Boolean UbahData(Blacklist b)
+
+		public static Boolean UbahData(Blacklist b, Koneksi kParram)
 		{
 			// Querry Insert
 			string sql = "update blacklists set jenis = '" + b.Jenis + "', alasan = '" + b.Alasan + "' where id = " + b.Id;
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
-		public static Boolean HapusData(int id)
+
+		public static Boolean HapusData(int id, Koneksi kParram)
 		{
 			string sql = "delete from blacklists where id = " + id;
 
-			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
 			//Dicek apakah ada data yang berubah atau tidak
 			if (jumlahDihapus == 0) return false;
 			else return true;
 		}
-		public static Boolean TambahData(Blacklist b)
+
+		public static Boolean TambahData(Blacklist b, Koneksi kParram)
 		{
 			//string yang menampung sql query insert into
 			string sql = "insert into blacklists (jenis, alasan) values ('" + b.Jenis + "', '" + b.Alasan + "')";
 
 			//menjalankan perintah sql
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
-		public static List<Blacklist> BacaData(string kriteria, string nilaiKriteria)
+
+		public static List<Blacklist> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
 		{
 			string sql = "select * from blacklists";
 			//apabila kriteria tidak kosong
 			if (kriteria != "" && kriteria != "id") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 			if (kriteria == "id") sql += " where id = " + nilaiKriteria;
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			List<Blacklist> listBlacklist = new List<Blacklist>();
 			Blacklist b = null;
@@ -83,7 +95,12 @@ namespace OnlineMart_LIB
 				b = new Blacklist(hasil.GetString(1), hasil.GetString(2));
 				listBlacklist.Add(b);
 			}
+
+			hasil.Dispose();
+			hasil.Close();
+
 			return listBlacklist;
 		}
-	}
+        #endregion
+    }
 }

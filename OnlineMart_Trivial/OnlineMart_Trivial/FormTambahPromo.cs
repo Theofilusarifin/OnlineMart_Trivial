@@ -25,7 +25,7 @@ namespace OnlineMart_Trivial
             {
                 Promo p = new Promo(textBoxTipe.Text, textBoxNama.Text, int.Parse(textBoxDiskon.Text), int.Parse(textBoxDiskonMaksimal.Text), float.Parse(textBoxPembelanjaanMinimum.Text));
 
-                Promo.TambahData(p);
+                Promo.TambahData(p, FormUtama.koneksi);
 
                 MessageBox.Show("Data Promo berhasil ditambahkan", "Informasi");
 

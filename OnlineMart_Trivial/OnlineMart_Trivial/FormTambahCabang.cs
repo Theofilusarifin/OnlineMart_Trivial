@@ -22,7 +22,7 @@ namespace OnlineMart_Trivial
 
         private void FormTambahCabang_Load(object sender, EventArgs e)
         {
-            listPegawai = Pegawai.BacaData("", "");
+            listPegawai = Pegawai.BacaData("", "", FormUtama.koneksi);
 
             comboBoxPegawai.DataSource = listPegawai;
             comboBoxPegawai.DisplayMember = "nama";
@@ -40,7 +40,7 @@ namespace OnlineMart_Trivial
 
                 Cabang cabang = new Cabang(textBoxNama.Text, textBoxAlamat.Text, pegawai);
 
-                Cabang.TambahData(cabang);
+                Cabang.TambahData(cabang, FormUtama.koneksi);
 
                 MessageBox.Show("Data Cabang berhasil ditambahkan", "Informasi");
 

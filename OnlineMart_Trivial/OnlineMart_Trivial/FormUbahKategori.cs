@@ -38,7 +38,7 @@ namespace OnlineMart_Trivial
             {
                 //Ubah menjadi data baru
                 k.Nama = textBoxNama.Text;
-                Kategori.UbahData(k);
+                Kategori.UbahData(k, FormUtama.koneksi);
 
                 MessageBox.Show("Perubahan berhasil tersimpan!", "Info");
 

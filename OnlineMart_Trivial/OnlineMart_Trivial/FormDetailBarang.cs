@@ -73,7 +73,7 @@ namespace OnlineMart_Trivial
             try
             {
                 //Default list semua barang di cabang yang pertama
-                listPenilaian = Penilaian.BacaData("", "");
+                listPenilaian = Penilaian.BacaData("", "", FormUtama.koneksi);
 
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
@@ -117,7 +117,7 @@ namespace OnlineMart_Trivial
                     kriteria = "review";
                     break;
             }
-            listPenilaian = Penilaian.BacaData(kriteria, textBoxKriteria.Text);
+            listPenilaian = Penilaian.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
             FormatDataGrid();
             TampilDataGrid();
         }

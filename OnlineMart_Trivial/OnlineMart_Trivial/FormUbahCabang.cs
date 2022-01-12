@@ -25,7 +25,7 @@ namespace OnlineMart_Trivial
         Cabang c = null;
         private void FormUbahCabang_Load(object sender, EventArgs e)
         {
-            listPegawai = Pegawai.BacaData("", "");
+            listPegawai = Pegawai.BacaData("", "", FormUtama.koneksi);
 
             comboBoxPegawai.DataSource = listPegawai;
             comboBoxPegawai.DisplayMember = "Nama";
@@ -52,7 +52,7 @@ namespace OnlineMart_Trivial
                 c.Nama = textBoxNama.Text;
                 c.Alamat = textBoxAlamat.Text;
                 c.Pegawai = pDipilih;
-                Cabang.UbahData(c);
+                Cabang.UbahData(c, FormUtama.koneksi);
 
                 MessageBox.Show("Perubahan berhasil tersimpan!", "Info");
 

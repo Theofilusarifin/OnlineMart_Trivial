@@ -993,7 +993,6 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.Panel panelLeft;
         public System.Windows.Forms.Panel panelActiveForm;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox BelNotifikasi;
         private System.Windows.Forms.Button btnChatPenjual;
         private System.Windows.Forms.Button btnTambahStokPenjual;
         private System.Windows.Forms.Button btnReviewPenjual;
@@ -1008,6 +1007,7 @@ namespace OnlineMart_Trivial
         public System.Windows.Forms.PictureBox NotifRedCircle;
 		private System.Windows.Forms.Button buttonBarangPenjual;
 		private System.Windows.Forms.Button buttonAccPenjual;
-	}
+        public System.Windows.Forms.PictureBox BelNotifikasi;
+    }
 }
 

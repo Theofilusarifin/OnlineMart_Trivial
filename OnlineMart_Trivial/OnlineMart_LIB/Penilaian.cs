@@ -40,29 +40,32 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Method
-		public static Boolean TambahData(Penilaian p)
+		public static Boolean TambahData(Penilaian p, Koneksi kParram)
 		{
 			string sql = "insert into penilaians (id, rating review) values (" + p.Id + ", " + p.Rating + ", '" + p.Review + "')";
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
-		public static Boolean UbahData(Penilaian p)
+
+		public static Boolean UbahData(Penilaian p, Koneksi kParram)
 		{
 			string sql = "update penilaians set rating = " + p.Rating + ", review = '" + p.Review + "' where id = " + p.Id;
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
-		public static Boolean HapusData(Penilaian p)
+
+		public static Boolean HapusData(Penilaian p, Koneksi kParram)
 		{
 			string sql = "delete from penilaians where id = " + p.Id;
-			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
 			//Dicek apakah ada data yang berubah atau tidak
 			if (jumlahDihapus == 0) return false;
 			else return true;
 		}
-		public static List<Penilaian> BacaData(string kriteria, string nilaiKriteria)
+
+		public static List<Penilaian> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
 		{
 			string sql;
 			if (kriteria != "")
@@ -81,7 +84,8 @@ namespace OnlineMart_LIB
 				sql = "select * from penilaians";
 			}
 			
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
+
 			List<Penilaian> penilaians = new List<Penilaian>();
 			while (hasil.Read())
 			{
@@ -89,6 +93,10 @@ namespace OnlineMart_LIB
 				Penilaian p = new Penilaian(hasil.GetInt32(0), hasil.GetDouble(1), hasil.GetString(2), b);
 				penilaians.Add(p);
 			}
+
+			hasil.Dispose();
+			hasil.Close();
+
 			return penilaians;
 		}
 		#endregion

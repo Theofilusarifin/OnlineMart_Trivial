@@ -69,7 +69,7 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Method
-		public static Boolean TambahData(Penjual p)
+		public static Boolean TambahData(Penjual p, Koneksi kParram)
 		{
 			//string yang menampung sql query insert into
 			string sql = "insert into penjuals (username, nama, email, password, status, telpon, blacklist_id) " +
@@ -77,17 +77,20 @@ namespace OnlineMart_LIB
 						 "'" + p.Status + "', '" + p.Telpon + "', " + p.Blacklist.Id + ")";
 
 			//menjalankan perintah sql
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
-		public static List<Penjual> BacaData(string kriteria, string nilaiKriteria)
+
+		public static List<Penjual> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
 		{
 			string sql = "select * from penjuals p inner join blacklists b on b.id = p.blacklist_id ";
+
 			//apabila kriteria tidak kosong
 			if (kriteria != "" && kriteria != "id") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 			if (kriteria == "id") sql += " where id = " + nilaiKriteria;
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			List<Penjual> listPenjual = new List<Penjual>();
 
@@ -98,37 +101,44 @@ namespace OnlineMart_LIB
 				Penjual p = new Penjual(hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6));
 				listPenjual.Add(p);
 			}
+
+			hasil.Dispose();
+			hasil.Close();
+
 			return listPenjual;
 		}
-		public static Boolean UbahData(Penjual p)
+
+		public static Boolean UbahData(Penjual p, Koneksi kParram)
 		{
 			// Querry Insert
 			string sql = "update penjuals set username = '" + p.Username + "', nama = '" + p.Nama + "', email = '" + p.Email + "', password = SHA2('" + p.Password + "', 512), status = '" + p.Status + "', telpon = '" + p.Telpon + "', blacklist_id = " + p.Blacklist.Id + " where id = " + p.Id;
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
-		public static Boolean HapusData(int id)
+
+		public static Boolean HapusData(int id, Koneksi kParram)
 		{
 			string sql = "delete from penjuals where id = " + id;
 
-			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
 			//Dicek apakah ada data yang berubah atau tidak
 			if (jumlahDihapus == 0) return false;
 			else return true;
 		}
-		public static bool TambahStok(Barang_Penjual b)
+
+		public static bool TambahStok(Barang_Penjual b, Koneksi kParram)
 		{
 			string sql = "update barang_penjual set stok = stok + " + b.Stok + " where barang_id = " + b.Barang.Id + " and penjual_id = " + b.Penjual.Id;
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
-		public static Penjual CekLogin(string username, string password)
+		public static Penjual CekLogin(string username, string password, Koneksi kParram)
 		{
 			string sql = "select id, username, nama, email, password, status, telepon from penjuals where username = '" + username + "' and password = SHA2('" + password + "', 512) and blacklist_id is null";
-			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
 			while (hasil.Read())
 			{
@@ -136,8 +146,13 @@ namespace OnlineMart_LIB
 
 				return penjual;
 			}
+
+			hasil.Dispose();
+			hasil.Close();
+
 			return null;
 		}
+
 		public static Penjual AmbilData(int id)
 		{
 			string sql = "select id, username, nama, email, password, status, telepon from penjuals where id = " + id;

@@ -104,7 +104,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 // Tampilkan semua data
-                listGift = Gift.BacaData("", "");
+                listGift = Gift.BacaData("", "", FormUtama.koneksi);
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -136,7 +136,7 @@ namespace OnlineMart_Trivial
                     //Kalau User klik yes barang akan dihapus
                     if (hasil == DialogResult.Yes)
                     {
-                        Boolean hapus = Gift.HapusData(id);
+                        Boolean hapus = Gift.HapusData(id, FormUtama.koneksi);
 
                         if (hapus == true)
                         {
@@ -184,7 +184,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listGift = Gift.BacaData(kriteria, textBoxKriteria.Text);
+            listGift = Gift.BacaData(kriteria, textBoxKriteria.Text, FormUtama.koneksi);
             FormatDataGrid();
             TampilDataGrid();
         }

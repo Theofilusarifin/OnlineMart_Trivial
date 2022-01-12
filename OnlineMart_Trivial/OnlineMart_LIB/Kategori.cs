@@ -57,21 +57,21 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Method    
-        public static Boolean TambahData(Kategori k)
+        public static Boolean TambahData(Kategori k, Koneksi kParram)
         {
             string sql = "insert into kategoris (nama) values ('" + k.Nama + "')";
 
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-        public static List<Kategori> BacaData(string kriteria, string nilaiKriteria)
+        public static List<Kategori> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
         {
             string sql = "select id, nama from kategoris ";
             if(kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
             List<Kategori> listKategori = new List<Kategori>();
 
@@ -80,6 +80,9 @@ namespace OnlineMart_LIB
                 Kategori k = new Kategori( hasil.GetInt32(0), hasil.GetString(1));
                 listKategori.Add(k);
             }
+
+            hasil.Dispose();
+            hasil.Close();
 
             return listKategori;
         }
@@ -99,19 +102,19 @@ namespace OnlineMart_LIB
             return k;
         }
 
-        public static Boolean UbahData(Kategori k)
+        public static Boolean UbahData(Kategori k, Koneksi kParram)
         {
             // Querry Insert
             string sql = "update kategoris set nama = '" + k.Nama + "' where id = " + k.Id;
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-        public static Boolean HapusData(int id)
+        public static Boolean HapusData(int id, Koneksi kParram)
         {
             string sql = "delete from kategoris where id = " + id;
-            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
+            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
             //Dicek apakah ada data yang berubah atau tidak
             if (jumlahDataDihapus == 0) return false;
             else return true;

@@ -26,7 +26,7 @@ namespace OnlineMart_Trivial
                 {
                     //Ciptakan objek yang akan ditambahkan
                     FormUtama.konsumen.Password = textBoxPassBaru.Text;
-                    Pelanggan.UbahData(FormUtama.konsumen);
+                    Pelanggan.UbahData(FormUtama.konsumen, FormUtama.koneksi);
                     MessageBox.Show("Perubahan Password Telah Berhasil!", "Info");
                     this.Close();
                 }

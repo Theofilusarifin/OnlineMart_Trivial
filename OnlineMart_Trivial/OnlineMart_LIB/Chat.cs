@@ -120,45 +120,55 @@ namespace OnlineMart_LIB
 
 		#region Methods
 		//Method untuk menambah data
-		public static Boolean TambahData(Chat c)
+		public static Boolean TambahData(Chat c, Koneksi kParram)
         {
             //string yang menampung sql query insert into
             string sql = "";
             if (c.Role_pengirim == "konsumen" && c.role_tujuan == "driver")
             {
-                sql += "insert into chats (isi, waktu, role_pengirim, role_tujuan, order_id, driver_id, pelanggan_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', '" + c.Role_tujuan + "', " + c.Order.Id + ", " + c.Driver.Id + ", " + c.Pelanggan.Id + ")";
+                sql += "insert into chats (isi, waktu, role_pengirim, role_tujuan, order_id, driver_id, pelanggan_id) " +
+                       "values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
+                       "'" + c.Role_pengirim + "', '" + c.Role_tujuan + "', " + c.Order.Id + ", " + c.Driver.Id + ", " +
+                       "" + c.Pelanggan.Id + ")";
             }
             else if (c.Role_pengirim == "konsumen" && c.role_tujuan == "penjual")
             {
-                sql += "insert into chats (isi, waktu, role_pengirim, role_tujuan, order_id, penjual_id, pelanggan_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', '" + c.Role_tujuan + "', " + c.Order.Id + ", " + c.Penjual.Id + ", " + c.Pelanggan.Id + ")";
+                sql += "insert into chats (isi, waktu, role_pengirim, role_tujuan, order_id, penjual_id, pelanggan_id) " +
+                       "values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
+                       "'" + c.Role_pengirim + "', '" + c.Role_tujuan + "', " + c.Order.Id + ", " + c.Penjual.Id + ", " +
+                       "" + c.Pelanggan.Id + ")";
             }
             else if (c.Role_pengirim == "driver" && c.role_tujuan == "konsumen")
 			{
-                sql += "insert into chats (isi, waktu, role_pengirim, role_tujuan, order_id, driver_id, pelanggan_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', '" + c.Role_tujuan + "', " + c.Order.Id + ", " + c.Driver.Id + ", " + c.Pelanggan.Id + ")";
+                sql += "insert into chats (isi, waktu, role_pengirim, role_tujuan, order_id, driver_id, pelanggan_id) " +
+                       "values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', " +
+                       "'" + c.Role_tujuan + "', " + c.Order.Id + ", " + c.Driver.Id + ", " + c.Pelanggan.Id + ")";
             }
             else if (c.Role_pengirim == "penjual" && c.role_tujuan == "konsumen")
             {
-                sql += "insert into chats (isi, waktu, role_pengirim, role_tujuan, order_id, penjual_id, pelanggan_id) values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', '" + c.Role_tujuan + "', " + c.Order.Id + ", " + c.Penjual.Id + ", " + c.Pelanggan.Id + ")";
+                sql += "insert into chats (isi, waktu, role_pengirim, role_tujuan, order_id, penjual_id, pelanggan_id) " +
+                       "values ('" + c.Isi + "', '" + c.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + c.Role_pengirim + "', " +
+                       "'" + c.Role_tujuan + "', " + c.Order.Id + ", " + c.Penjual.Id + ", " + c.Pelanggan.Id + ")";
             }
             //menjalankan perintah sql
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
         //Method untuk membaca data
-        public static List<Chat> BacaData(string kriteria, string idOrder)
+        public static List<Chat> BacaData(string kriteria, string idOrder, Koneksi kParram)
         {
             string sql = "select * from chats c " +
-                "inner join orders o on c.order_id = o.id " +
-                "inner join penjuals pj on o.penjual_id = pj.id " +
-                "inner join pelanggans p on o.pelanggan_id = p.id " +
-                "inner join drivers d on o.driver_id = d.id ";
+                         "inner join orders o on c.order_id = o.id " +
+                         "inner join penjuals pj on o.penjual_id = pj.id " +
+                         "inner join pelanggans p on o.pelanggan_id = p.id " +
+                         "inner join drivers d on o.driver_id = d.id ";
             
             //kalau tidak kosong tambahkan ini
             if (kriteria != "") sql += " where " + kriteria + " like '%" + idOrder + "%'" + " order by c.waktu";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
             List<Chat> listChat = new List<Chat>();
             //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
@@ -177,8 +187,6 @@ namespace OnlineMart_LIB
                     Order o = new Order(long.Parse(hasil.GetString(4)), p, d);
                     c = new Chat(hasil.GetInt32(0), hasil.GetString(1), DateTime.Parse(hasil.GetString(2)), role_pengirim, role_tujuan, o, d, p);
                 }
-
-
                 else if (role_pengirim == "penjual" || role_tujuan == "penjual")
                 {
                     Penjual pe = new Penjual(hasil.GetInt32(23), hasil.GetString(24), hasil.GetString(25), hasil.GetString(26), hasil.GetString(27), hasil.GetString(28), hasil.GetString(29));
@@ -188,6 +196,9 @@ namespace OnlineMart_LIB
 
                 listChat.Add(c);
             }
+
+            hasil.Dispose();
+            hasil.Close();
 
             return listChat;
         }

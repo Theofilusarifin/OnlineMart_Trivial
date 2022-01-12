@@ -44,7 +44,7 @@ namespace OnlineMart_Trivial
                 listBoxPesan.Items.Clear();
 
                 // Define isi chat
-                listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text);
+                listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text, FormUtama.koneksi);
 
                 // Ambil id order yang sedang dipilih
                 Order o = (Order)comboBoxNomorNota.SelectedItem;
@@ -77,7 +77,7 @@ namespace OnlineMart_Trivial
             try
             {
                 // Ambil semua order dengan status = "Pesanan Diproses"
-                listOrder = Order.BacaOrderDiproses("o.pelanggan_id", FormUtama.konsumen.Id.ToString());
+                listOrder = Order.BacaOrderDiproses("o.pelanggan_id", FormUtama.konsumen.Id.ToString(), FormUtama.koneksi);
 
                 comboBoxNomorNota.DataSource = listOrder;
                 comboBoxNomorNota.DisplayMember = "Id";
@@ -113,14 +113,14 @@ namespace OnlineMart_Trivial
                 Chat chat = new Chat(textBoxPesan.Text, DateTime.Now, "konsumen", "driver", o, o.Driver, o.Pelanggan);
 
                 // Tambahkan Chat Baru
-                Chat.TambahData(chat);
+                Chat.TambahData(chat, FormUtama.koneksi);
 
                 // Tampilkan pesan sementara ke ListBox
                 listBoxPesan.Items.Add("Me : " + chat.Isi);
 
                 // buat notifikasi
                 Notifikasi notifikasi = new Notifikasi(chat.Isi, "chat", "driver", DateTime.Now, o.Pelanggan, o.Driver, null, null);
-                Notifikasi.TambahData(notifikasi);
+                Notifikasi.TambahData(notifikasi, FormUtama.koneksi);
 
                 // Bersihkan Text Box
                 textBoxPesan.Clear();

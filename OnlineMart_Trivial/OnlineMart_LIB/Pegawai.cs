@@ -81,23 +81,23 @@ namespace OnlineMart_LIB
         #endregion
 
         #region Methods
-        public static Boolean TambahData(Pegawai p)
+        public static Boolean TambahData(Pegawai p, Koneksi kParram)
         {
             // Querry Insert
             string sql = "insert into pegawais (nama, username, email, password, telepon) " +
                 " values ('" + p.Nama + "', '" + p.Username + "', '" + p.Email + "', SHA2('" + p.Password + "', 512), '" + p.Telepon + "')";
 
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-        public static List<Pegawai> BacaData(string kriteria, string nilaiKriteria)
+        public static List<Pegawai> BacaData(string kriteria, string nilaiKriteria, Koneksi kParram)
         {
             string sql = "select id, nama, username, email, password, telepon from pegawais ";
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql,kParram);
 
             //Buat list untuk menampung data
             List<Pegawai> listPegawai = new List<Pegawai>();
@@ -108,6 +108,10 @@ namespace OnlineMart_LIB
 
                 listPegawai.Add(p);
             }
+
+            hasil.Dispose();
+            hasil.Close();
+
             return listPegawai;
         }
 
@@ -126,19 +130,19 @@ namespace OnlineMart_LIB
             return p;
         }
 
-        public static Boolean UbahData(Pegawai p)
+        public static Boolean UbahData(Pegawai p, Koneksi kParram)
         {
             // Querry Insert
             string sql = "update pegawais set nama = '" + p.Nama + "', username = '" + p.Username + "', email = '" + p.Email + "', password = SHA2('" + p.Password + "', 512), telepon = '" + p.Telepon + "' where id = " + p.Id;
-            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql, kParram);
             if (jumlahDitambah == 0) return false;
             else return true;
         }
 
-        public static Boolean HapusData(Pegawai p)
+        public static Boolean HapusData(Pegawai p, Koneksi kParram)
         {
             string sql = "delete from pegawais where id = " + p.Id;
-            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql);
+            int jumlahDataDihapus = Koneksi.JalankanPerintahDML(sql, kParram);
             //Dicek apakah ada data yang berubah atau tidak
             if (jumlahDataDihapus == 0) return false;
             else return true;
@@ -147,7 +151,7 @@ namespace OnlineMart_LIB
         public static Pegawai CekLogin(string username, string password, Koneksi kParram)
         {
             string sql = "select id, nama, username, email, password, telepon from pegawais where username = '" + username + "' and password = SHA2('" + password + "', 512)";
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql, kParram);
 
             while (hasil.Read())
             {
@@ -155,6 +159,10 @@ namespace OnlineMart_LIB
 
                 return pegawai;
             }
+
+            hasil.Dispose();
+            hasil.Close();
+
             return null;
         }
         #endregion
