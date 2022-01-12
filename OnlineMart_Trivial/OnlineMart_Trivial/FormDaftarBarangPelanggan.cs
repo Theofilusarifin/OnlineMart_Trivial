@@ -56,7 +56,6 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Add(dgvimgcol);
             dataGridView.RowTemplate.Height = 110;
 
-            dataGridView.Columns.Add("gambar", "Gambar Barang");
             dataGridView.Columns.Add("harga", "Harga Barang");
             dataGridView.Columns.Add("stok", "Stok Barang");
             dataGridView.Columns.Add("kategori_id", "Kategori");
@@ -68,7 +67,6 @@ namespace OnlineMart_Trivial
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
             dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns["gambar"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["stok"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -126,6 +124,8 @@ namespace OnlineMart_Trivial
                 bcolLihatDetail.Text = "Lihat detail!";
                 bcolLihatDetail.Name = "btnLihatDetailBarang";
                 bcolLihatDetail.UseColumnTextForButtonValue = true;
+                bcolLihatDetail.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
                 dataGridView.Columns.Add(bcolLihatDetail);
             }
         }

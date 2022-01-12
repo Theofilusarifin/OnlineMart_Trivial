@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineMart_LIB;
+using System.IO;
+
 
 namespace OnlineMart_Trivial
 {
@@ -42,6 +44,14 @@ namespace OnlineMart_Trivial
             //Menambah kolom di datagridview
             dataGridView.Columns.Add("id", "Id");
             dataGridView.Columns.Add("nama", "Nama Barang");
+
+            DataGridViewImageColumn dgvimgcol = new DataGridViewImageColumn();
+            dgvimgcol.HeaderText = "Gambar Barang";
+            dgvimgcol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+            dataGridView.Columns.Add(dgvimgcol);
+            dataGridView.RowTemplate.Height = 110;
+
             dataGridView.Columns.Add("harga", "Harga Barang");
             dataGridView.Columns.Add("kategori_id", "Kategori");
 
@@ -68,7 +78,16 @@ namespace OnlineMart_Trivial
             {
                 foreach (Barang b in listBarang)
                 {
-                    dataGridView.Rows.Add(b.Id, b.Nama, b.Harga, b.Kategori.Nama);
+                    string path = Path.Combine(FormUtama.location + "\\barang\\", b.Path_gambar);
+                    //MessageBox.Show(path);
+                    PictureBox image = new PictureBox();
+                    image.Image = Image.FromFile(path);
+
+                    MemoryStream mmst = new MemoryStream();
+                    image.Image.Save(mmst, image.Image.RawFormat);
+                    byte[] img = mmst.ToArray();
+
+                    dataGridView.Rows.Add(b.Id, b.Nama, img, b.Harga, b.Kategori.Nama);
                 }
             }
             else
@@ -85,6 +104,8 @@ namespace OnlineMart_Trivial
                 bcolUbah.Text = "Ubah";
                 bcolUbah.Name = "btnUbahGrid";
                 bcolUbah.UseColumnTextForButtonValue = true;
+                bcolUbah.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
                 dataGridView.Columns.Add(bcolUbah);
 
                 DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
@@ -93,6 +114,8 @@ namespace OnlineMart_Trivial
                 bcolHapus.Text = "Hapus";
                 bcolHapus.Name = "btnHapusGrid";
                 bcolHapus.UseColumnTextForButtonValue = true;
+                bcolHapus.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
                 dataGridView.Columns.Add(bcolHapus);
             }
         }
