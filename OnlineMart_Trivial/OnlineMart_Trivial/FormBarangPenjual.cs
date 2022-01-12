@@ -17,10 +17,12 @@ namespace OnlineMart_Trivial
 		{
 			InitializeComponent();
 		}
+
         public static List<Barang> listBarang = new List<Barang>();
         public static Barang barang;
         public static List<Penjual> listPenjual = new List<Penjual>();
         Penjual penjual;
+
         #region No Tick Constrols
         //Optimized Controls(No Tick)
         protected override CreateParams CreateParams
@@ -123,6 +125,7 @@ namespace OnlineMart_Trivial
             }
 
             listBarang = Barang.BacaData(kriteria, textBoxKriteria.Text);
+
             FormatDataGrid();
             TampilDataGrid();
         }
@@ -137,7 +140,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listBarang = Barang_Penjual.BacaData("", "", 1);
+                listBarang = Barang.BacaData("", "");
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -205,7 +208,7 @@ namespace OnlineMart_Trivial
 		{
             penjual = (Penjual)comboBoxPenjual.SelectedItem;
             FormUtama.pDipilih = penjual;
-            listBarang = Barang_Penjual.BacaData("", "", FormUtama.pDipilih.Id);
+            listBarang = Barang.BacaData("", "");
             FormatDataGrid();
             TampilDataGrid();
         }

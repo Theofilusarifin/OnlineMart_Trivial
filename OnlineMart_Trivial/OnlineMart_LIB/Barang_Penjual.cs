@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-// Tambahkan ini untuk dapat memanggil private data member
+﻿// Tambahkan ini untuk dapat memanggil private data member
 using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 
 namespace OnlineMart_LIB
 {
-	public class Barang_Penjual
+    public class Barang_Penjual
 	{
 		#region Field
 		private Penjual penjual;
@@ -52,34 +49,41 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static List<Barang> BacaData(string kriteria, string nilaiKriteria, int id)
+		public static List<Barang_Penjual> BacaData(string kriteria, string nilaiKriteria, int penjual_id)
 		{
-			string sql = "select b.*, k.* from barang b " +
-				"inner join barang_penjual bp on b.id = bp.barang_id " +
-				"inner join kategoris k on b.kategori_id = k.id " +
-				"where bp.penjual_id = " + id;
-			if (kriteria != "")
-			{
-				sql += " and " + kriteria + " like%'" + nilaiKriteria + "%'";
-			}
+			string sql = "select * from barang_penjual bp " +
+						 "inner join penjuals p on bp.penjual_id = p.id " +
+						 "inner join blacklists bl on p.blacklist_id = bl.id " +
+						 "inner join barangs ba on bp.barang_id = ba.id " +
+						 "inner join kategoris k on ba.kategori_id = k.id " +
+						 "where bp.penjual_id = " + penjual_id;
+
+			if (kriteria != "")	sql += " and " + kriteria + " like '%" + nilaiKriteria + "%'";
+
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-			List<Barang> listBarang = new List<Barang>();
+			List<Barang_Penjual> listBarangPenjual = new List<Barang_Penjual>();
 
 			//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
 			while (hasil.Read() == true)
 			{
-				Kategori k = new Kategori(hasil.GetInt32(6), hasil.GetString(7));
+				Kategori k = new Kategori(hasil.GetInt32(20), hasil.GetString(21));
 
-				Barang b = new Barang(hasil.GetInt32(0), hasil.GetString(1), hasil.GetInt32(2), hasil.GetString(3), hasil.GetString(4), k);
+				Barang ba = new Barang(hasil.GetInt32(14), hasil.GetString(15), hasil.GetInt32(16), hasil.GetString(17), hasil.GetString(18), k);
 
-				listBarang.Add(b);
+				Blacklist bl = new Blacklist(hasil.GetInt32(11), hasil.GetString(12), hasil.GetString(13));
+
+				Penjual p = new Penjual(hasil.GetInt32(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6), hasil.GetString(7), hasil.GetString(8), hasil.GetString(9));
+
+				Barang_Penjual bp = new Barang_Penjual(p, ba, int.Parse(hasil.GetString(2)));
+
+				listBarangPenjual.Add(bp);
 			}
 
 			//hasil.Dispose();
 			//hasil.Close();
 
-			return listBarang;
+			return listBarangPenjual;
 		}
 
 		public static bool UpdateStok(Barang b, Penjual p, int stok)

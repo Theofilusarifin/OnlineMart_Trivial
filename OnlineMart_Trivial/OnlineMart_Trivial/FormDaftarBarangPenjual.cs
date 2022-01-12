@@ -13,14 +13,15 @@ namespace OnlineMart_Trivial
 {
 	public partial class FormDaftarBarangPenjual : Form
 	{
-		#region Field
-		public static List<Barang> listBarang = new List<Barang>();
+
+		public static List<Barang> listBarangPenjual = new List<Barang>();
         public static Barang barang;
-		#endregion
+
 		public FormDaftarBarangPenjual()
         {
 			InitializeComponent();
 		}
+
         #region No Tick Constrols
         //Optimized Controls(No Tick)
         protected override CreateParams CreateParams
@@ -65,9 +66,9 @@ namespace OnlineMart_Trivial
             //Kosongi isi datagridview
             dataGridView.Rows.Clear();
 
-            if (listBarang.Count > 0)
+            if (listBarangPenjual.Count > 0)
             {
-                foreach (Barang b in listBarang)
+                foreach (Barang b in listBarangPenjual)
                 {
                     dataGridView.Rows.Add(b.Id, b.Nama, b.Harga, b.Kategori.Nama);
                 }
@@ -119,7 +120,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listBarang = Barang_Penjual.BacaData("", "", FormUtama.penjual.Id);
+                listBarangPenjual = Barang.BacaData("", "");
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -152,7 +153,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listBarang = Barang.BacaData(kriteria, textBoxKriteria.Text);
+            listBarangPenjual = Barang.BacaData(kriteria, textBoxKriteria.Text);
             FormatDataGrid();
             TampilDataGrid();
         }

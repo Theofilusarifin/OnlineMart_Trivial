@@ -23,6 +23,7 @@ namespace OnlineMart_Trivial
         public static List<Barang> listBarang = new List<Barang>();
         public static List<Cabang> listCabang = new List<Cabang>();
         public static List<Barang_Cabang> listBarangCabang = new List<Barang_Cabang>();
+        public static List<Barang_Penjual> listBarangPenjual = new List<Barang_Penjual>();
         public static Cabang cDipilih = Cabang.AmbilPertama();
 
 
@@ -94,6 +95,25 @@ namespace OnlineMart_Trivial
                     image.Image.Save(mmst, image.Image.RawFormat);
                     byte[] img = mmst.ToArray();
 
+                    //if (imgFile.exists())
+                    //{
+                    //    Glide.with(context)
+                    //            .load(imgFile.getAbsolutePath())
+                    //            .placeholder(R.drawable.img_not_found)
+                    //            .crossFade()
+                    //            .into(holder.cardImage);
+
+                    //    holder.cardDate.setText(temp.date);
+                    //    holder.cardActivity.setText(temp.activityName);
+
+                    //}
+                    //else
+                    //{
+                    //    holder.cardImage.setImageResource(R.drawable.img_not_found);
+                    //    holder.cardDate.setText("");
+                    //    holder.cardActivity.setText("");
+                    //}
+
                     dataGridView.Rows.Add(bc.Barang.Id, bc.Barang.Nama, img, bc.Barang.Harga, bc.Stok, bc.Barang.Kategori.Nama);
                 }
             }
@@ -144,10 +164,10 @@ namespace OnlineMart_Trivial
 
                 //Tampilkan semua data Cabang
                 listCabang = Cabang.BacaData("", "");
-                comboBoxCabang.DataSource = listCabang;
-                comboBoxCabang.DisplayMember = "nama";
+                comboBoxVendor.DataSource = listCabang;
+                comboBoxVendor.DisplayMember = "nama";
 
-                comboBoxCabang.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBoxVendor.DropDownStyle = ComboBoxStyle.DropDownList;
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -164,8 +184,9 @@ namespace OnlineMart_Trivial
         #region ComboBoxCabang
         private void comboBoxCabang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cDipilih = (Cabang)comboBoxCabang.SelectedItem;
+            cDipilih = (Cabang)comboBoxVendor.SelectedItem;
             listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "");
+
             FormatDataGrid();
             TampilDataGrid();
         }

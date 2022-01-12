@@ -59,6 +59,10 @@ namespace OnlineMart_Trivial
             {
                 foreach (Notifikasi n in listNotifikasi)
                 {
+                    MessageBox.Show("Role user : " + n.Role_user + ", role : " + FormUtama.role + ", n.Pelanggan.Id : " + n.Pelanggan.Id + ", " +
+                                    "FormUtama.konsumen.Id : " + FormUtama.konsumen.Id + ", FormUtama.rider.Id : " + FormUtama.rider.Id + ", " +
+                                    "FormUtama.pegawai.Id : " + FormUtama.pegawai.Id + "FormUtama.penjual.Id : " + FormUtama.penjual.Id);
+
                     if (n.Role_user == "konsumen" && FormUtama.role == "konsumen" && n.Pelanggan.Id == FormUtama.konsumen.Id)
                     {
                         dataGridView.Rows.Add("gambar sesuai n.Tipe", n.Isi, n.Waktu);

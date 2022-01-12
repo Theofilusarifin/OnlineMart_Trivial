@@ -116,7 +116,7 @@ namespace OnlineMart_LIB
                          "inner join drivers d on n.drivers_id = d.id " +
                          "inner join pegawais peg on n.pegawai_id = peg.id " +
                          "inner join penjuals pen on n.penjual_id = pen.id " +
-                         "inner join blacklists b on pen.blacklist_id = b.id";
+                         "inner join blacklists b on pen.blacklist_id = b.id ";
 
             if (kriteria != "") sql += "where " + kriteria + " like '%" + nilaiKriteria + "%' ";
 
@@ -195,7 +195,7 @@ namespace OnlineMart_LIB
         public static int HitungNotifikasi(string role_user)
         {
             string sql = "select count(*) from notifikasis " +
-                         "where role_user = '" + role_user + "' ";
+                         "where role_user = '" + role_user + "'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
