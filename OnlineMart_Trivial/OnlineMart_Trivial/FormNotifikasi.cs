@@ -182,5 +182,21 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Ups terjadi kesalahan, Pesan kesalahan : " + ex.Message, "Error");
             }
         }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #region Desain Button
+        private void buttonClose_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonClose_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
     }
 }
