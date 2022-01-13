@@ -8,22 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineMart_LIB;
+using System.IO;
 
 namespace OnlineMart_Trivial
 {
 	public partial class FormDetailBarang : Form
 	{
-		#region Field
-		public static Barang barang;
-		public static List<Penilaian> listPenilaian = new List<Penilaian>();
-        #endregion
 
         public FormDetailBarang()
 		{
 			InitializeComponent();
 		}
 
-		#region Method
+		public static Barang barangDipilih;
+		public static List<Penilaian> listPenilaian = new List<Penilaian>();
+		
+        #region Method
 		private void FormatDataGrid()
         {
             //Kosongi semua kolom di datagridview
@@ -72,26 +72,32 @@ namespace OnlineMart_Trivial
 		{
             try
             {
-                //Default list semua barang di cabang yang pertama
-                listPenilaian = Penilaian.BacaData("", "");
+                //            //Default list semua barang di cabang yang pertama
+                //            listPenilaian = Penilaian.BacaData("", "");
 
-                //Panggil Method untuk menambah kolom pada datagridview
-                FormatDataGrid();
+                //            //Panggil Method untuk menambah kolom pada datagridview
+                //            FormatDataGrid();
 
-                //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
-                TampilDataGrid();
-                double rating = 0;
-                for (int i = 0; i <= listPenilaian.Count; i++)
-				{
-                    Penilaian p = listPenilaian[i];
-                    rating += p.Rating;
-                    if (i == listPenilaian.Count)
-					{
-                        rating /= i;
-					}
-				}
-                labelRating.Text = rating.ToString();
-                comboBoxKriteria.Text = "Id";
+                //            //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+                //            TampilDataGrid();
+                //            double rating = 0;
+                //            for (int i = 0; i <= listPenilaian.Count; i++)
+                //{
+                //                Penilaian p = listPenilaian[i];
+                //                rating += p.Rating;
+                //                if (i == listPenilaian.Count)
+                //	{
+                //                    rating /= i;
+                //	}
+                //}
+                //            labelRating.Text = rating.ToString();
+                //            comboBoxKriteria.Text = "Id";
+
+                string path = Path.Combine(FormUtama.location + "\\barang\\", barangDipilih.Path_gambar);
+                pictureBoxBarang.Image = Image.FromFile(path);
+
+                textBoxDeskripsiBarang.ReadOnly = true;
+                textBoxDeskripsiBarang.Text = barangDipilih.Deskripsi;
 
             }
             catch (Exception ex)
@@ -107,13 +113,13 @@ namespace OnlineMart_Trivial
             string kriteria = "";
             switch (comboBoxKriteria.Text)
             {
-                case "id":
+                case "Id":
                     kriteria = "id";
                     break;
-                case "rating":
+                case "Rating":
                     kriteria = "rating";
                     break;
-                case "review":
+                case "Review":
                     kriteria = "review";
                     break;
             }
@@ -121,6 +127,36 @@ namespace OnlineMart_Trivial
             FormatDataGrid();
             TampilDataGrid();
         }
+
         #endregion
+
+
+        #region Button
+        private void buttonCloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void buttonCloseForm_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonCloseForm_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        private void buttonSearch_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+        private void buttonSearch_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClose.BackgroundImage = Properties.Resources.Button_Leave;
+        }
+        #endregion
+
+        private void FormDetailBarang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            barangDipilih = null;
+        }
     }
 }

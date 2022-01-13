@@ -174,7 +174,7 @@ namespace OnlineMart_Trivial
                 Barang b = Barang.AmbilData(id);
                 if (e.ColumnIndex == dataGridView.Columns["btnLihatDetailBarang"].Index && e.RowIndex >= 0)
                 {
-                    FormDetailBarang.barang = b;
+                    FormDetailBarang.barangDipilih = b;
                     FormDetailBarang formDetailBarang = new FormDetailBarang();
                     formDetailBarang.Owner = this;
                     formDetailBarang.ShowDialog();

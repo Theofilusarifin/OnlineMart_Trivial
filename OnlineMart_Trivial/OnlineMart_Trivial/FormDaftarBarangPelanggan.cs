@@ -120,6 +120,7 @@ namespace OnlineMart_Trivial
                     bcolTambahKeranjang.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                     dataGridView.Columns.Add(bcolTambahKeranjang);
                 }
+
                 if (!dataGridView.Columns.Contains("btnLihatDetailBarang"))
                 {
                     //Button tambah ke keranjang
@@ -232,13 +233,13 @@ namespace OnlineMart_Trivial
                         MessageBox.Show("Hanya bisa menambahkan barang dari satu cabang sama yang telah dipilih.");
                     }
                 }
+
                 if (e.ColumnIndex == dataGridView.Columns["btnLihatDetailBarang"].Index && e.RowIndex >= 0)
 				{
-                    FormDetailBarang.barang = b;
+                    FormDetailBarang.barangDipilih = b;
                     FormDetailBarang formDetailBarang = new FormDetailBarang();
                     formDetailBarang.Owner = this;
                     formDetailBarang.ShowDialog();
-                    this.Hide();
 				}
 
             }

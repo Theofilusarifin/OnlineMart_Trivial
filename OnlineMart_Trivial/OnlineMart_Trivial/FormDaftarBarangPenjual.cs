@@ -127,7 +127,7 @@ namespace OnlineMart_Trivial
                     DataGridViewButtonColumn bcolLihatDetail = new DataGridViewButtonColumn();
 
                     bcolLihatDetail.HeaderText = "Detail barang";
-                    bcolLihatDetail.Text = "Lihat detail!";
+                    bcolLihatDetail.Text = "Lihat detail";
                     bcolLihatDetail.Name = "btnLihatDetailBarang";
                     bcolLihatDetail.UseColumnTextForButtonValue = true;
                     bcolLihatDetail.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -217,7 +217,7 @@ namespace OnlineMart_Trivial
                 Barang b = Barang.AmbilData(id);
                 if (e.ColumnIndex == dataGridView.Columns["btnLihatDetailBarang"].Index && e.RowIndex >= 0)
                 {
-                    FormDetailBarang.barang = b;
+                    FormDetailBarang.barangDipilih = b;
                     FormDetailBarang formDetailBarang = new FormDetailBarang();
                     formDetailBarang.Owner = this;
                     formDetailBarang.ShowDialog();

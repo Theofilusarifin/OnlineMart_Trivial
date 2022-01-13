@@ -41,12 +41,12 @@ namespace OnlineMart_Trivial
             // textBoxPassword
             // 
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPassword.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.textBoxPassword.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Bold);
             this.textBoxPassword.ForeColor = System.Drawing.Color.DimGray;
             this.textBoxPassword.Location = new System.Drawing.Point(49, 395);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⚉';
-            this.textBoxPassword.Size = new System.Drawing.Size(290, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(290, 17);
             this.textBoxPassword.TabIndex = 1;
             // 
             // labelRegistrasi
