@@ -100,9 +100,44 @@ namespace OnlineMart_LIB
         #region Methods        
         public static Boolean TambahData(Notifikasi n)
         {
-            string sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, drivers_id, pegawai_id, penjual_id) " +
-                         "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
-                         n.Pelanggan.Id + ", " + n.Driver.Id + ", " + n.Pegawai.Id + ", " + n.Penjual.Id + ")";
+            string sql = "";
+
+            if (n.Pelanggan == null && n.Driver == null)
+            {
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
+                      n.Pelanggan + ", " + n.Driver + ", " + n.Pegawai.Id + ", " + n.Penjual.Id + ")";
+            }
+            else if (n.Pelanggan == null && n.Pegawai == null)
+            {
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
+                      n.Pelanggan + ", " + n.Driver.Id + ", " + n.Pegawai + ", " + n.Penjual.Id + ")";
+            }
+            else if (n.Pelanggan == null && n.Penjual == null)
+            {
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
+                      n.Pelanggan + ", " + n.Driver.Id + ", " + n.Pegawai.Id + ", " + n.Penjual + ")";
+            }
+            else if (n.Driver == null && n.Pegawai == null)
+            {
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
+                      n.Pelanggan.Id + ", " + n.Driver + ", " + n.Pegawai + ", " + n.Penjual.Id + ")";
+            }
+            else if (n.Driver == null && n.Penjual == null)
+            {
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
+                      n.Pelanggan.Id + ", " + n.Driver + ", " + n.Pegawai.Id + ", " + n.Penjual + ")";
+            }
+            else if (n.Pegawai == null && n.Penjual == null)
+            {
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
+                      n.Pelanggan.Id + ", " + n.Driver.Id + ", " + n.Pegawai + ", " + n.Penjual + ")";
+            }
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;

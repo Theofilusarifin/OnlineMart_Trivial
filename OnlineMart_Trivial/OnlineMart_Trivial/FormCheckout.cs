@@ -204,7 +204,7 @@ namespace OnlineMart_Trivial
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Checkout gagal, Pesan kesalahan : " + ex.Message, "Error");
             }
         }
         #endregion
