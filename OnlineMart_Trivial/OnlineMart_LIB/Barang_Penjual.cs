@@ -93,6 +93,15 @@ namespace OnlineMart_LIB
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
+		public static Boolean HapusData(Penjual p, Barang b)
+		{
+			string sql = "delete from barang_penjual " + 
+                         "where penjual_id = " + p.Id + " and barang_id = " + b.Id;
+			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
+			//Dicek apakah ada data yang berubah atau tidak
+			if (jumlahDihapus == 0) return false;
+			else return true;
+		}
 		#endregion
 	}
 }

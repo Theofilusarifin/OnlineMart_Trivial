@@ -15,7 +15,7 @@ namespace OnlineMart_Trivial
 	public partial class FormDaftarBarangPenjual : Form
 	{
 
-		public static List<Barang> listBarangPenjual = new List<Barang>();
+		public static List<Barang_Penjual> listBarangPenjual = new List<Barang_Penjual>();
         public static Barang barang;
 
 		public FormDaftarBarangPenjual()
@@ -79,9 +79,9 @@ namespace OnlineMart_Trivial
 
                 if (listBarangPenjual.Count > 0)
                 {
-                    foreach (Barang b in listBarangPenjual)
+                    foreach (Barang_Penjual b in listBarangPenjual)
                     {
-                        string path = Path.Combine(FormUtama.location + "\\barang\\", b.Path_gambar);
+                        string path = Path.Combine(FormUtama.location + "\\barang\\", b.Barang.Path_gambar);
                         //MessageBox.Show(path);
                         PictureBox image = new PictureBox();
                         image.Image = Image.FromFile(path);
@@ -90,7 +90,7 @@ namespace OnlineMart_Trivial
                         image.Image.Save(mmst, image.Image.RawFormat);
                         byte[] img = mmst.ToArray();
 
-                        dataGridView.Rows.Add(b.Id, b.Nama, img, b.Harga, b.Kategori.Nama);
+                        dataGridView.Rows.Add(b.Barang.Id, b.Barang.Nama, img, b.Barang.Harga, b.Barang.Kategori.Nama);
                     }
                 }
                 else
@@ -104,7 +104,7 @@ namespace OnlineMart_Trivial
                     DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
 
                     bcolUbah.HeaderText = "Aksi";
-                    bcolUbah.Text = "Ubah";
+                    bcolUbah.Text = "Tambah Stok";
                     bcolUbah.Name = "btnUbahGrid";
                     bcolUbah.UseColumnTextForButtonValue = true;
                     bcolUbah.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -153,7 +153,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listBarangPenjual = Barang.BacaData("", "");
+                listBarangPenjual = Barang_Penjual.BacaData("", "", FormUtama.penjual.Id);
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -186,7 +186,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listBarangPenjual = Barang.BacaData(kriteria, textBoxKriteria.Text);
+            listBarangPenjual = Barang_Penjual.BacaData(kriteria, textBoxKriteria.Text, FormUtama.penjual.Id);
             FormatDataGrid();
             TampilDataGrid();
         }
@@ -230,6 +230,30 @@ namespace OnlineMart_Trivial
                     formTambahStok.Owner = this;
                     formTambahStok.ShowDialog();
                     this.Hide();
+                }
+                if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
+                {
+                    string namaHapus = dataGridView.CurrentRow.Cells["nama"].Value.ToString();
+
+                    //User ditanya sesuai dibawah
+                    DialogResult hasil = MessageBox.Show(this, "Anda yakin akan menghapus Id " + id + " - " + namaHapus + "?",
+                                                         "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    //Kalau User klik yes barang akan dihapus
+                    if (hasil == DialogResult.Yes)
+                    {
+                        Boolean hapus = Barang_Penjual.HapusData(FormUtama.penjual, b);
+
+                        if (hapus == true)
+                        {
+                            MessageBox.Show("Penghapusan data berhasil");
+                            // Refresh Halaman
+                            FormDaftarBarangPenjual_Load(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Penghapusan data gagal");
+                        }
+                    }
                 }
             }
             catch (Exception ex)

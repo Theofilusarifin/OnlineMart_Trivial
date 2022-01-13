@@ -21,8 +21,8 @@ namespace OnlineMart_Trivial
 		#region Form Load
 		private void FormTambahStok_Load(object sender, EventArgs e)
 		{
-			//textBoxNama.Text = FormDaftarBarangPenjual.barang.Nama;
-			//textBoxNama.ReadOnly = true;
+			textBoxNama.Text = FormDaftarBarangPenjual.barang.Nama;
+			textBoxNama.ReadOnly = true;
 		}
 		#endregion
 
@@ -31,7 +31,8 @@ namespace OnlineMart_Trivial
 		{
 			try
 			{
-				if (Barang_Penjual.UpdateStok(FormDaftarBarangPenjual.barang, FormUtama.penjual, int.Parse(textBoxStok.Text)))
+				Boolean hasil = Barang_Penjual.UpdateStok(FormDaftarBarangPenjual.barang, FormUtama.penjual, int.Parse(textBoxStok.Text));
+				if (hasil)
 				{
 					MessageBox.Show("Stok berhasil di update");
 					FormDaftarBarangPenjual frm = (FormDaftarBarangPenjual)this.Owner;
@@ -61,5 +62,5 @@ namespace OnlineMart_Trivial
 			buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
 		}
 		#endregion
-    }
+	}
 }
