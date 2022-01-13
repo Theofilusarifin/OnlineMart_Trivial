@@ -223,6 +223,16 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bubble_chat {
+            get {
+                object obj = ResourceManager.GetObject("bubble_chat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_Hover {
             get {
                 object obj = ResourceManager.GetObject("Button_Hover", resourceCulture);
@@ -696,6 +706,16 @@ namespace OnlineMart_Trivial.Properties {
         internal static System.Drawing.Bitmap Rating_Star {
             get {
                 object obj = ResourceManager.GetObject("Rating Star", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap receipt {
+            get {
+                object obj = ResourceManager.GetObject("receipt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
