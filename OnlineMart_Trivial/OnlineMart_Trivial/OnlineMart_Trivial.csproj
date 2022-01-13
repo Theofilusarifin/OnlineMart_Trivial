@@ -109,12 +109,6 @@
     <Compile Include="FormCheckout.Designer.cs">
       <DependentUpon>FormCheckout.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCoba.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCoba.Designer.cs">
-      <DependentUpon>FormCoba.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormDaftarBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -443,9 +437,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCheckout.resx">
       <DependentUpon>FormCheckout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCoba.resx">
-      <DependentUpon>FormCoba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarBarang.resx">
       <DependentUpon>FormDaftarBarang.cs</DependentUpon>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineMart_LIB;
+using System.IO;
 
 namespace OnlineMart_Trivial
 {
@@ -44,6 +45,14 @@ namespace OnlineMart_Trivial
             //Menambah kolom di datagridview
             dataGridView.Columns.Add("id", "Id");
             dataGridView.Columns.Add("nama", "Nama Barang");
+
+            DataGridViewImageColumn dgvimgcol = new DataGridViewImageColumn();
+            dgvimgcol.HeaderText = "Gambar Barang";
+            dgvimgcol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+            dataGridView.Columns.Add(dgvimgcol);
+            dataGridView.RowTemplate.Height = 110;
+
             dataGridView.Columns.Add("harga", "Harga Barang");
             dataGridView.Columns.Add("kategori_id", "Kategori");
 
@@ -63,50 +72,74 @@ namespace OnlineMart_Trivial
 
         private void TampilDataGrid()
         {
-            //Kosongi isi datagridview
-            dataGridView.Rows.Clear();
-
-            if (listBarangPenjual.Count > 0)
+            try
             {
-                foreach (Barang b in listBarangPenjual)
+                //Kosongi isi datagridview
+                dataGridView.Rows.Clear();
+
+                if (listBarangPenjual.Count > 0)
                 {
-                    dataGridView.Rows.Add(b.Id, b.Nama, b.Harga, b.Kategori.Nama);
+                    foreach (Barang b in listBarangPenjual)
+                    {
+                        string path = Path.Combine(FormUtama.location + "\\barang\\", b.Path_gambar);
+                        //MessageBox.Show(path);
+                        PictureBox image = new PictureBox();
+                        image.Image = Image.FromFile(path);
+
+                        MemoryStream mmst = new MemoryStream();
+                        image.Image.Save(mmst, image.Image.RawFormat);
+                        byte[] img = mmst.ToArray();
+
+                        dataGridView.Rows.Add(b.Id, b.Nama, img, b.Harga, b.Kategori.Nama);
+                    }
                 }
+                else
+                {
+                    dataGridView.DataSource = null;
+                }
+
+                //Tampilkan button Ubah dan Hapus
+                if (!dataGridView.Columns.Contains("btnUbahGrid"))
+                {
+                    DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
+
+                    bcolUbah.HeaderText = "Aksi";
+                    bcolUbah.Text = "Ubah";
+                    bcolUbah.Name = "btnUbahGrid";
+                    bcolUbah.UseColumnTextForButtonValue = true;
+                    bcolUbah.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                    dataGridView.Columns.Add(bcolUbah);
+
+                    DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
+
+                    bcolHapus.HeaderText = "Aksi";
+                    bcolHapus.Text = "Hapus";
+                    bcolHapus.Name = "btnHapusGrid";
+                    bcolHapus.UseColumnTextForButtonValue = true;
+                    bcolHapus.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                    dataGridView.Columns.Add(bcolHapus);
+                }
+                if (!dataGridView.Columns.Contains("btnLihatDetailBarang"))
+                {
+                    //Button tambah ke keranjang
+                    DataGridViewButtonColumn bcolLihatDetail = new DataGridViewButtonColumn();
+
+                    bcolLihatDetail.HeaderText = "Detail barang";
+                    bcolLihatDetail.Text = "Lihat detail!";
+                    bcolLihatDetail.Name = "btnLihatDetailBarang";
+                    bcolLihatDetail.UseColumnTextForButtonValue = true;
+                    bcolLihatDetail.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                    dataGridView.Columns.Add(bcolLihatDetail);
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                dataGridView.DataSource = null;
-            }
-
-            //Tampilkan button Ubah dan Hapus
-            if (!dataGridView.Columns.Contains("btnUbahGrid"))
-            {
-                DataGridViewButtonColumn bcolUbah = new DataGridViewButtonColumn();
-
-                bcolUbah.HeaderText = "Aksi";
-                bcolUbah.Text = "Ubah";
-                bcolUbah.Name = "btnUbahGrid";
-                bcolUbah.UseColumnTextForButtonValue = true;
-                dataGridView.Columns.Add(bcolUbah);
-
-                DataGridViewButtonColumn bcolHapus = new DataGridViewButtonColumn();
-
-                bcolHapus.HeaderText = "Aksi";
-                bcolHapus.Text = "Hapus";
-                bcolHapus.Name = "btnHapusGrid";
-                bcolHapus.UseColumnTextForButtonValue = true;
-                dataGridView.Columns.Add(bcolHapus);
-            }
-            if (!dataGridView.Columns.Contains("btnLihatDetailBarang"))
-            {
-                //Button tambah ke keranjang
-                DataGridViewButtonColumn bcolLihatDetail = new DataGridViewButtonColumn();
-
-                bcolLihatDetail.HeaderText = "Detail barang";
-                bcolLihatDetail.Text = "Lihat detail!";
-                bcolLihatDetail.Name = "btnLihatDetailBarang";
-                bcolLihatDetail.UseColumnTextForButtonValue = true;
-                dataGridView.Columns.Add(bcolLihatDetail);
+                string error = ex.Message;
+                MessageBox.Show("Harap Ubah Varibel Path pada Form Utama menjadi Path Resource Online Mart pada komputer lokal anda", "Informasi");
             }
         }
 		#endregion

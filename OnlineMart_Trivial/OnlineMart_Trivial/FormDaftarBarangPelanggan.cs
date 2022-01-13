@@ -78,75 +78,65 @@ namespace OnlineMart_Trivial
         }
 
         private void TampilDataGrid()
-        {   
-            //Kosongi isi datagridview
-            dataGridView.Rows.Clear();
-
-            if (listBarangCabang.Count > 0)
+        {
+            try
             {
-                foreach (Barang_Cabang bc in listBarangCabang)
+
+                //Kosongi isi datagridview
+                dataGridView.Rows.Clear();
+
+                if (listBarangCabang.Count > 0)
                 {
-                    string path = Path.Combine(FormUtama.location + "\\barang\\", bc.Barang.Path_gambar);
-                    //MessageBox.Show(path);
-                    PictureBox image = new PictureBox();
-                    image.Image =  Image.FromFile(path);
+                    foreach (Barang_Cabang bc in listBarangCabang)
+                    {
+                        string path = Path.Combine(FormUtama.location + "\\barang\\", bc.Barang.Path_gambar);
+                        //MessageBox.Show(path);
+                        PictureBox image = new PictureBox();
+                        image.Image = Image.FromFile(path);
 
-                    MemoryStream mmst = new MemoryStream();
-                    image.Image.Save(mmst, image.Image.RawFormat);
-                    byte[] img = mmst.ToArray();
+                        MemoryStream mmst = new MemoryStream();
+                        image.Image.Save(mmst, image.Image.RawFormat);
+                        byte[] img = mmst.ToArray();
 
-                    //if (imgFile.exists())
-                    //{
-                    //    Glide.with(context)
-                    //            .load(imgFile.getAbsolutePath())
-                    //            .placeholder(R.drawable.img_not_found)
-                    //            .crossFade()
-                    //            .into(holder.cardImage);
+                        dataGridView.Rows.Add(bc.Barang.Id, bc.Barang.Nama, img, bc.Barang.Harga, bc.Stok, bc.Barang.Kategori.Nama);
+                    }
+                }
+                else
+                {
+                    dataGridView.DataSource = null;
+                }
 
-                    //    holder.cardDate.setText(temp.date);
-                    //    holder.cardActivity.setText(temp.activityName);
+                //Tampilkan button Ubah dan Hapus
+                if (!dataGridView.Columns.Contains("btnTambahKeranjang"))
+                {
+                    //Button tambah ke keranjang
+                    DataGridViewButtonColumn bcolTambahKeranjang = new DataGridViewButtonColumn();
 
-                    //}
-                    //else
-                    //{
-                    //    holder.cardImage.setImageResource(R.drawable.img_not_found);
-                    //    holder.cardDate.setText("");
-                    //    holder.cardActivity.setText("");
-                    //}
+                    bcolTambahKeranjang.HeaderText = "Add to cart";
+                    bcolTambahKeranjang.Text = "Masukkan";
+                    bcolTambahKeranjang.Name = "btnTambahKeranjang";
+                    bcolTambahKeranjang.UseColumnTextForButtonValue = true;
+                    bcolTambahKeranjang.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                    dataGridView.Columns.Add(bcolTambahKeranjang);
+                }
+                if (!dataGridView.Columns.Contains("btnLihatDetailBarang"))
+                {
+                    //Button tambah ke keranjang
+                    DataGridViewButtonColumn bcolLihatDetail = new DataGridViewButtonColumn();
 
-                    dataGridView.Rows.Add(bc.Barang.Id, bc.Barang.Nama, img, bc.Barang.Harga, bc.Stok, bc.Barang.Kategori.Nama);
+                    bcolLihatDetail.HeaderText = "Detail barang";
+                    bcolLihatDetail.Text = "Lihat detail!";
+                    bcolLihatDetail.Name = "btnLihatDetailBarang";
+                    bcolLihatDetail.UseColumnTextForButtonValue = true;
+                    bcolLihatDetail.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                    dataGridView.Columns.Add(bcolLihatDetail);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                dataGridView.DataSource = null;
-            }
-
-            //Tampilkan button Ubah dan Hapus
-            if (!dataGridView.Columns.Contains("btnTambahKeranjang"))
-            {
-                //Button tambah ke keranjang
-                DataGridViewButtonColumn bcolTambahKeranjang = new DataGridViewButtonColumn();
-
-                bcolTambahKeranjang.HeaderText = "Add to cart";
-                bcolTambahKeranjang.Text = "Masukkan";
-                bcolTambahKeranjang.Name = "btnTambahKeranjang";
-                bcolTambahKeranjang.UseColumnTextForButtonValue = true;
-                bcolTambahKeranjang.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                dataGridView.Columns.Add(bcolTambahKeranjang);
-            }
-            if (!dataGridView.Columns.Contains("btnLihatDetailBarang"))
-            {
-                //Button tambah ke keranjang
-                DataGridViewButtonColumn bcolLihatDetail = new DataGridViewButtonColumn();
-
-                bcolLihatDetail.HeaderText = "Detail barang";
-                bcolLihatDetail.Text = "Lihat detail!";
-                bcolLihatDetail.Name = "btnLihatDetailBarang";
-                bcolLihatDetail.UseColumnTextForButtonValue = true;
-                bcolLihatDetail.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-
-                dataGridView.Columns.Add(bcolLihatDetail);
+                string error = ex.Message;
+                MessageBox.Show("Harap Ubah Varibel Path pada Form Utama menjadi Path Resource Online Mart pada komputer lokal anda", "Informasi");
             }
         }
         #endregion

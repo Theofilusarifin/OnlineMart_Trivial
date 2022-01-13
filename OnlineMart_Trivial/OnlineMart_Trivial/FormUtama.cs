@@ -27,10 +27,13 @@ namespace OnlineMart_Trivial
         public static Penjual pDipilih;
 
         // Ubah path sesuai dengan Path Resource masing-masing
-        public static string location = @"D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
-        
-        // path Arifin = 
-        // path Henri = @"D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources"
+
+        // Path Arifin
+        public static string location = @"C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+       
+        // Path Henri
+        //public static string location = @"D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+
         // path Yaska = 
 
         public FormUtama()

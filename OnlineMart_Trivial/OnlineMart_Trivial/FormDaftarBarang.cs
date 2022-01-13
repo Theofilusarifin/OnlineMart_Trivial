@@ -71,28 +71,36 @@ namespace OnlineMart_Trivial
 
         private void TampilDataGrid()
         {
-            //Kosongi isi datagridview
-            dataGridView.Rows.Clear();
+            try
+            { 
+                //Kosongi isi datagridview
+                dataGridView.Rows.Clear();
 
-            if (listBarang.Count > 0)
-            {
-                foreach (Barang b in listBarang)
+                if (listBarang.Count > 0)
                 {
-                    string path = Path.Combine(FormUtama.location + "\\barang\\", b.Path_gambar);
-                    //MessageBox.Show(path);
-                    PictureBox image = new PictureBox();
-                    image.Image = Image.FromFile(path);
+                    foreach (Barang b in listBarang)
+                    {
+                        string path = Path.Combine(FormUtama.location + "\\barang\\", b.Path_gambar);
+                        //MessageBox.Show(path);
+                        PictureBox image = new PictureBox();
+                        image.Image = Image.FromFile(path);
 
-                    MemoryStream mmst = new MemoryStream();
-                    image.Image.Save(mmst, image.Image.RawFormat);
-                    byte[] img = mmst.ToArray();
+                        MemoryStream mmst = new MemoryStream();
+                        image.Image.Save(mmst, image.Image.RawFormat);
+                        byte[] img = mmst.ToArray();
 
-                    dataGridView.Rows.Add(b.Id, b.Nama, img, b.Harga, b.Kategori.Nama);
+                        dataGridView.Rows.Add(b.Id, b.Nama, img, b.Harga, b.Kategori.Nama);
+                    }
+                }
+                else
+                {
+                    dataGridView.DataSource = null;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                dataGridView.DataSource = null;
+                string error = ex.Message;
+                MessageBox.Show("Harap Ubah Varibel Path pada Form Utama menjadi Path Resource Online Mart pada komputer lokal anda", "Informasi");
             }
 
             //Tampilkan button Ubah dan Hapus
