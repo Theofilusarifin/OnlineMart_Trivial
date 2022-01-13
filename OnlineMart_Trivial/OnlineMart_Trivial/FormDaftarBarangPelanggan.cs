@@ -24,7 +24,6 @@ namespace OnlineMart_Trivial
         public static List<Barang> listBarang = new List<Barang>();
         public static List<Cabang> listCabang = new List<Cabang>();
         public static List<Barang_Cabang> listBarangCabang = new List<Barang_Cabang>();
-        public static List<Barang_Penjual> listBarangPenjual = new List<Barang_Penjual>();
         public static Cabang cDipilih = Cabang.AmbilPertama();
 
 

@@ -259,39 +259,39 @@ namespace OnlineMart_LIB
 
             if (n.Pelanggan == null && n.Driver == null)
             {
-                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pegawai_id, penjual_id) " +
                       "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
-                      "null, null, " + n.Pegawai.Id + ", " + n.Penjual.Id + ")";
+                      n.Pegawai.Id + ", " + n.Penjual.Id + ")";
             }
             else if (n.Pelanggan == null && n.Pegawai == null)
             {
-                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, driver_id, penjual_id) " +
                       "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
-                      "null, " + n.Driver.Id + ", null, " + n.Penjual.Id + ")";
+                      n.Driver.Id + ", " + n.Penjual.Id + ")";
             }
             else if (n.Pelanggan == null && n.Penjual == null)
             {
-                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, driver_id, pegawai_id) " +
                       "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
-                      "null, " + n.Driver.Id + ", " + n.Pegawai.Id + ", null)";
+                      n.Driver.Id + ", " + n.Pegawai.Id + ")";
             }
             else if (n.Driver == null && n.Pegawai == null)
             {
-                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, penjual_id) " +
                       "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
-                      n.Pelanggan.Id + ", null, null, " + n.Penjual.Id + ")";
+                      n.Pelanggan.Id + ", " + n.Penjual.Id + ")";
             }
             else if (n.Driver == null && n.Penjual == null)
             {
-                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, pegawai_id) " +
                       "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
-                      n.Pelanggan.Id + ", null, " + n.Pegawai.Id + ", null)";
+                      n.Pelanggan.Id + ", " + n.Pegawai.Id + ")";
             }
             else if (n.Pegawai == null && n.Penjual == null)
             {
-                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id) " +
                       "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
-                      n.Pelanggan.Id + ", " + n.Driver.Id + ", null, null)";
+                      n.Pelanggan.Id + ", " + n.Driver.Id + ")";
             }
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);

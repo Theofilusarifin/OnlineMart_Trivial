@@ -20,6 +20,7 @@ namespace OnlineMart_Trivial
 
         public static List<Barang> listBarang = new List<Barang>();
         public static List<Penjual> listPenjual = new List<Penjual>();
+        public static List<Barang_Penjual> listBarangPenjual = new List<Barang_Penjual>();
 
         public static Barang barang;
         Penjual penjual;
