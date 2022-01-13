@@ -54,6 +54,7 @@ namespace OnlineMart_Trivial
             dataGridView.RowTemplate.Height = 110;
 
             dataGridView.Columns.Add("harga", "Harga Barang");
+            dataGridView.Columns.Add("stok", "Stok Barang");
             dataGridView.Columns.Add("kategori_id", "Kategori");
 
             dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(248, 142, 123);
@@ -63,6 +64,7 @@ namespace OnlineMart_Trivial
             dataGridView.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["stok"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["kategori_id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             // Agar user tidak bisa menambah baris maupun mengetik langsung di datagridview
@@ -90,7 +92,7 @@ namespace OnlineMart_Trivial
                         image.Image.Save(mmst, image.Image.RawFormat);
                         byte[] img = mmst.ToArray();
 
-                        dataGridView.Rows.Add(b.Barang.Id, b.Barang.Nama, img, b.Barang.Harga, b.Barang.Kategori.Nama);
+                        dataGridView.Rows.Add(b.Barang.Id, b.Barang.Nama, img, b.Barang.Harga, b.Stok, b.Barang.Kategori.Nama);
                     }
                 }
                 else
@@ -153,7 +155,7 @@ namespace OnlineMart_Trivial
                 FormatDataGrid();
 
                 //Tampilkan semua data
-                listBarangPenjual = Barang_Penjual.BacaData("", "", FormUtama.penjual.Id);
+                listBarangPenjual = Barang_Penjual.BacaData("", "", FormUtama.penjual);
 
                 //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
                 TampilDataGrid();
@@ -186,7 +188,7 @@ namespace OnlineMart_Trivial
                     break;
             }
 
-            listBarangPenjual = Barang_Penjual.BacaData(kriteria, textBoxKriteria.Text, FormUtama.penjual.Id);
+            listBarangPenjual = Barang_Penjual.BacaData(kriteria, textBoxKriteria.Text, FormUtama.penjual);
             FormatDataGrid();
             TampilDataGrid();
         }
@@ -221,7 +223,6 @@ namespace OnlineMart_Trivial
                     FormDetailBarang formDetailBarang = new FormDetailBarang();
                     formDetailBarang.Owner = this;
                     formDetailBarang.ShowDialog();
-                    this.Hide();
                 }
                 if (e.ColumnIndex == dataGridView.Columns["btnUbahGrid"].Index && e.RowIndex >= 0)
                 {
@@ -229,7 +230,6 @@ namespace OnlineMart_Trivial
                     FormTambahStok formTambahStok = new FormTambahStok();
                     formTambahStok.Owner = this;
                     formTambahStok.ShowDialog();
-                    this.Hide();
                 }
                 if (e.ColumnIndex == dataGridView.Columns["btnHapusGrid"].Index && e.RowIndex >= 0)
                 {
@@ -262,11 +262,6 @@ namespace OnlineMart_Trivial
             }
         }
         #endregion
-
-        private void comboBoxKriteria_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
 
         #region Desain Button
         private void buttonClose_MouseEnter(object sender, EventArgs e)

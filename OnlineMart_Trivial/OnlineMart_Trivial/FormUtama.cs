@@ -30,13 +30,13 @@ namespace OnlineMart_Trivial
         // Ubah path sesuai dengan Path Resource masing-masing
 
         // Path Arifin
-        // public static string location = @"C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+        public static string location = @"C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
         // Path Henri
         //public static string location = @"D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
         // Path Yaska
-        public static string location = @"C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+        //public static string location = @"C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
         public FormUtama()
         {
@@ -471,6 +471,22 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+        private void buttonAccPenjual_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormAccPenjual());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        private void buttonBlacklistPenjualPegawai_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region ButtonPenjual
@@ -481,6 +497,18 @@ namespace OnlineMart_Trivial
             {
                 HideSubMenu();
                 openChildForm(new FormDaftarBarangPenjual());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
+        private void buttonBarangPenjual_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormBarangPenjual());
             }
             catch (Exception ex)
             {
@@ -604,34 +632,5 @@ namespace OnlineMart_Trivial
         }
 		#endregion
 
-		#region Button Barang penjual
-		private void buttonBarangPenjual_Click(object sender, EventArgs e)
-		{
-            try
-            {
-                HideSubMenu();
-                openChildForm(new FormBarangPenjual());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
-            }
-        }
-		#endregion
-
-		#region Button Acc Penjual dari pegawai
-		private void buttonAccPenjual_Click(object sender, EventArgs e)
-		{
-            try
-            {
-                HideSubMenu();
-                openChildForm(new FormAccPenjual());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
-            }
-        }
-        #endregion
     }
 }

@@ -21,7 +21,7 @@ namespace OnlineMart_Trivial
 		List<Kategori> listKategori = new List<Kategori>();
 		string path = "";
 
-		private void FormTambahBarangPenjual_Load(object sender, EventArgs e)
+		public void FormTambahBarangPenjual_Load(object sender, EventArgs e)
 		{
 			listKategori = Kategori.BacaData("", "");
 
@@ -55,8 +55,9 @@ namespace OnlineMart_Trivial
 
 				Barang barang = new Barang(textBoxNama.Text, int.Parse(textBoxHarga.Text), textBoxDeskripsi.Text, fileName, kategori);
 
-
 				Barang.TambahData(barang);
+
+				Barang_Penjual.TambahProdukPenjual(FormUtama.penjual);
 
 				MessageBox.Show("Data Barang berhasil ditambahkan", "Informasi");
 
@@ -65,8 +66,8 @@ namespace OnlineMart_Trivial
 				//MessageBox.Show(path);
 
 				// Update Data Di Form Daftar
-				FormDaftarBarang frm = (FormDaftarBarang)this.Owner;
-				frm.FormDaftarBarang_Load(sender, e);
+				FormDaftarBarangPenjual frm = (FormDaftarBarangPenjual)this.Owner;
+				FormTambahBarangPenjual_Load(sender, e);
 
 				this.Close();
 			}
@@ -75,6 +76,7 @@ namespace OnlineMart_Trivial
 				MessageBox.Show("Data Barang gagal ditambahkan. Pesan kesalahan : " + ex.Message, "Kesalahan");
 			}
 		}
+
 		#region DesainButton
 		private void buttonTambah_MouseEnter(object sender, EventArgs e)
 		{

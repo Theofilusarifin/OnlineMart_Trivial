@@ -37,11 +37,13 @@ namespace OnlineMart_Trivial
             // 
             // textBoxNama
             // 
+            this.textBoxNama.BackColor = System.Drawing.Color.White;
             this.textBoxNama.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxNama.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxNama.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxNama.Location = new System.Drawing.Point(47, 286);
+            this.textBoxNama.Location = new System.Drawing.Point(48, 287);
             this.textBoxNama.Name = "textBoxNama";
+            this.textBoxNama.ReadOnly = true;
             this.textBoxNama.Size = new System.Drawing.Size(370, 20);
             this.textBoxNama.TabIndex = 1;
             // 
@@ -90,7 +92,7 @@ namespace OnlineMart_Trivial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Form_Blacklist;
+            this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Form_Blacklist_Penjual;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(467, 624);
             this.Controls.Add(this.buttonTambah);
@@ -99,6 +101,7 @@ namespace OnlineMart_Trivial
             this.Controls.Add(this.textBoxNama);
             this.DoubleBuffered = true;
             this.Name = "FormBlacklist";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBlacklist";
             this.Load += new System.EventHandler(this.FormBlacklist_Load);
             this.ResumeLayout(false);
@@ -107,10 +110,9 @@ namespace OnlineMart_Trivial
 		}
 
 		#endregion
-
-		private System.Windows.Forms.TextBox textBoxNama;
 		private System.Windows.Forms.TextBox textBoxJenis;
 		private System.Windows.Forms.TextBox textBoxAlasan;
 		private System.Windows.Forms.Button buttonTambah;
-	}
+        public System.Windows.Forms.TextBox textBoxNama;
+    }
 }

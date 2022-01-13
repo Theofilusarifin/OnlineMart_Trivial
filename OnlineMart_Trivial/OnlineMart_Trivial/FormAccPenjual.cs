@@ -87,7 +87,7 @@ namespace OnlineMart_Trivial
             try
             {
                 //Default list semua barang di cabang yang pertama
-                listPenjual = Penjual.BacaData("status", "Not Ready");
+                listPenjual = Penjual.BacaData("status", "Pending");
 
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();

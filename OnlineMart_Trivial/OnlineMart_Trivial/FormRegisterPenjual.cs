@@ -76,11 +76,6 @@ namespace OnlineMart_Trivial
             textBoxNama.Focus();
         }
 
-        private void labelRegistrasi_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormRegisterPenjual_FormClosing(object sender, FormClosingEventArgs e)
         {
             FormAuth frm = (FormAuth)this.Owner;

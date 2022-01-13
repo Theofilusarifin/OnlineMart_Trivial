@@ -111,7 +111,6 @@ namespace OnlineMart_Trivial
             this.comboBoxKriteria.Name = "comboBoxKriteria";
             this.comboBoxKriteria.Size = new System.Drawing.Size(248, 30);
             this.comboBoxKriteria.TabIndex = 43;
-            this.comboBoxKriteria.SelectedIndexChanged += new System.EventHandler(this.comboBoxKriteria_SelectedIndexChanged);
             // 
             // textBoxKriteria
             // 

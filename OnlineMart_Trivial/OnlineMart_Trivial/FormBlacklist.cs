@@ -18,10 +18,12 @@ namespace OnlineMart_Trivial
 			InitializeComponent();
 		}
 
+		public static Penjual penjual;
+
 		#region Form Load
 		private void FormBlacklist_Load(object sender, EventArgs e)
 		{
-			textBoxNama.Text = FormDaftarPenjual.penjual.Nama;
+			textBoxNama.Text = penjual.Nama;
 			textBoxNama.ReadOnly = true;
 
 		}
@@ -33,7 +35,8 @@ namespace OnlineMart_Trivial
 			try
 			{
 				Blacklist b = new Blacklist(textBoxJenis.Text, textBoxAlasan.Text);
-				if (Penjual.UbahData(FormDaftarPenjual.penjual))
+				Blacklist.TambahData(b);
+				if (Penjual.UpdateBlacklist(penjual))
 				{
 					MessageBox.Show("Data Penjual berhasil di blacklist", "Informasi");
 

@@ -18,14 +18,6 @@ namespace OnlineMart_Trivial
 			InitializeComponent();
 		}
 
-		#region Form Load
-		private void FormTambahStok_Load(object sender, EventArgs e)
-		{
-			textBoxNama.Text = FormDaftarBarangPenjual.barang.Nama;
-			textBoxNama.ReadOnly = true;
-		}
-		#endregion
-
 		#region Button Tambah
 		private void buttonTambah_Click(object sender, EventArgs e)
 		{
@@ -61,6 +53,19 @@ namespace OnlineMart_Trivial
 		{
 			buttonTambah.BackgroundImage = Properties.Resources.Button_Leave;
 		}
-		#endregion
-	}
+        #endregion
+
+        private void FormTambahStok_Load(object sender, EventArgs e)
+        {
+			try
+			{
+				textBoxBarang.Text = FormDaftarBarangPenjual.barang.Nama;
+				textBoxStok.Focus();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+    }
 }

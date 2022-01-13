@@ -49,26 +49,26 @@ namespace OnlineMart_LIB
 			return b;
 		}
 
-		public static Boolean UbahData(Blacklist b)
-		{
-			// Querry Insert
-			string sql = "update blacklists set jenis = '" + b.Jenis + "', alasan = '" + b.Alasan + "' where id = " + b.Id;
-			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
-			if (jumlahDitambah == 0) return false;
-			else return true;
-		}
+        public static Boolean UbahData(Blacklist b)
+        {
+            // Querry Insert
+            string sql = "update blacklists set jenis = '" + b.Jenis + "', alasan = '" + b.Alasan + "' where id = " + b.Id;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
 
-		public static Boolean HapusData(int id)
-		{
-			string sql = "delete from blacklists where id = " + id;
+        public static Boolean HapusData(int id)
+        {
+            string sql = "delete from blacklists where id = " + id;
 
-			int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
-			//Dicek apakah ada data yang berubah atau tidak
-			if (jumlahDihapus == 0) return false;
-			else return true;
-		}
+            int jumlahDihapus = Koneksi.JalankanPerintahDML(sql);
+            //Dicek apakah ada data yang berubah atau tidak
+            if (jumlahDihapus == 0) return false;
+            else return true;
+        }
 
-		public static Boolean TambahData(Blacklist b)
+        public static Boolean TambahData(Blacklist b)
 		{
 			//string yang menampung sql query insert into
 			string sql = "insert into blacklists (jenis, alasan) values ('" + b.Jenis + "', '" + b.Alasan + "')";
@@ -79,25 +79,37 @@ namespace OnlineMart_LIB
 			else return true;
 		}
 
-		public static List<Blacklist> BacaData(string kriteria, string nilaiKriteria)
-		{
-			string sql = "select * from blacklists";
-			//apabila kriteria tidak kosong
-			if (kriteria != "" && kriteria != "id") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
-			if (kriteria == "id") sql += " where id = " + nilaiKriteria;
+		public static int AmbilIdTerakhir()
+        {
+			string sql = "SELECT id FROM blacklists ORDER BY id DESC LIMIT 1";
 			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-
-			List<Blacklist> listBlacklist = new List<Blacklist>();
-			Blacklist b = null;
-			//kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
+			int id = 1;
 			while (hasil.Read() == true)
 			{
-				b = new Blacklist(hasil.GetString(1), hasil.GetString(2));
-				listBlacklist.Add(b);
+				id = hasil.GetInt32(0);
+			}
+			return id;
+		}
+
+        public static List<Blacklist> BacaData(string kriteria, string nilaiKriteria)
+        {
+            string sql = "select * from blacklists";
+            //apabila kriteria tidak kosong
+            if (kriteria != "" && kriteria != "id") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+            if (kriteria == "id") sql += " where id = " + nilaiKriteria;
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<Blacklist> listBlacklist = new List<Blacklist>();
+            Blacklist b = null;
+            //kalau bisa/berhasil dibaca maka dimasukkin ke list pake constructors
+            while (hasil.Read() == true)
+            {
+                b = new Blacklist(hasil.GetString(1), hasil.GetString(2));
+                listBlacklist.Add(b);
             }
 
             return listBlacklist;
-		}
+        }
         #endregion
     }
 }

@@ -74,7 +74,7 @@ namespace OnlineMart_Trivial
                         System.Threading.Thread.Sleep(20);
                     }
                     this.Location = original;
-                    MessageBox.Show(this, "Username tidak ditemukan atau password salah");
+                    MessageBox.Show(this, "Akun anda tidak valid!");
                 }
             }
             catch (Exception ex)

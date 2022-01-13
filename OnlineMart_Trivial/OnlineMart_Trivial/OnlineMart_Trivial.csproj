@@ -891,5 +891,11 @@
   <ItemGroup>
     <None Include="Resources\Open Eye1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form Blacklist Penjual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form Tambah Stok1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

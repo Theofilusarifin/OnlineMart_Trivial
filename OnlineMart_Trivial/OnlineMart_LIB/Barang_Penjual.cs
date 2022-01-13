@@ -41,22 +41,23 @@ namespace OnlineMart_LIB
 		#endregion
 
 		#region Method
-		public static Boolean TambahProdukPenjual(Barang_Penjual b)
+		public static Boolean TambahProdukPenjual(Penjual p)
 		{
-			string sql = "insert into barang_penjual (penjual_id, barang_id, stok) values (" + b.Penjual.Id + ", " + b.Barang.Id + ", " + b.Stok + ")";
+			int id_barang = Barang.AmbilIdTerakhir();
+			string sql = "insert into barang_penjual (penjual_id, barang_id, stok) values (" + p.Id + ", " + id_barang + ", " + 0 + ")";
 			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
 			if (jumlahDitambah == 0) return false;
 			else return true;
 		}
 
-		public static List<Barang_Penjual> BacaData(string kriteria, string nilaiKriteria, int penjual_id)
+		public static List<Barang_Penjual> BacaData(string kriteria, string nilaiKriteria, Penjual penjual)
 		{
 			string sql = "select * from barang_penjual bp " +
 						 "inner join penjuals p on bp.penjual_id = p.id " +
-						 "inner join blacklists bl on p.blacklist_id = bl.id " +
+						 "left join blacklists bl on p.blacklist_id = bl.id " +
 						 "inner join barangs ba on bp.barang_id = ba.id " +
 						 "inner join kategoris k on ba.kategori_id = k.id " +
-						 "where bp.penjual_id = " + penjual_id;
+						 "where bp.penjual_id = " + penjual.Id;
 
 			if (kriteria != "")	sql += " and " + kriteria + " like '%" + nilaiKriteria + "%'";
 
@@ -71,7 +72,10 @@ namespace OnlineMart_LIB
 
 				Barang ba = new Barang(hasil.GetInt32(14), hasil.GetString(15), hasil.GetInt32(16), hasil.GetString(17), hasil.GetString(18), k);
 
-				Blacklist bl = new Blacklist(hasil.GetInt32(11), hasil.GetString(12), hasil.GetString(13));
+				if (!hasil.IsDBNull(10))
+                {
+					Blacklist bl = new Blacklist(hasil.GetInt32(11), hasil.GetString(12), hasil.GetString(13));
+                }
 
 				Penjual p = new Penjual(hasil.GetInt32(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6), hasil.GetString(7), hasil.GetString(8), hasil.GetString(9));
 
@@ -79,9 +83,6 @@ namespace OnlineMart_LIB
 
 				listBarangPenjual.Add(bp);
 			}
-
-			//hasil.Dispose();
-			//hasil.Close();
 
 			return listBarangPenjual;
 		}

@@ -208,6 +208,18 @@ namespace OnlineMart_LIB
             if (jumlahDihapus == 0) return false;
             else return true;
         }
+
+        public static int AmbilIdTerakhir()
+        {
+            string sql = "SELECT id FROM barangs ORDER BY id DESC LIMIT 1";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            int id = 1;
+            while (hasil.Read() == true)
+            {
+                id = hasil.GetInt32(0);
+            }
+            return id;
+        }
         #endregion
     }
 }
