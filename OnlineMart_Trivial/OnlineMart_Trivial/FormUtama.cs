@@ -27,16 +27,18 @@ namespace OnlineMart_Trivial
         public static Penjual pDipilih = null;
         public static bool firstLogin = true;
 
+        public static string pilihVendor = "";
+
         // Ubah path sesuai dengan Path Resource masing-masing
 
         // Path Arifin
         //public static string location = @"C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
         // Path Henri
-        //public static string location = @"D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+        public static string location = @"D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
         // Path Yaska
-        public static string location = @"C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+        //public static string location = @"C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
         public FormUtama()
         {
@@ -159,24 +161,40 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                openChildForm(new FormDaftarBarangPelanggan());
+                if (pilihVendor == "penjual")
+                {
+                    MessageBox.Show("Anda tidak bisa memilih vendor yang berbeda!", "Informasi");
+                }
+                else
+                {
+                    openChildForm(new FormDaftarBarangPelanggan());
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+
         private void buttonBarangPenjual_Click(object sender, EventArgs e)
         {
             try
             {
-                openChildForm(new FormBarangPenjual());
+                if (pilihVendor == "cabang")
+                {
+                    MessageBox.Show("Anda tidak bisa memilih vendor yang berbeda!", "Informasi");
+                }
+                else
+                {
+                    openChildForm(new FormBarangPenjual());
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+
         private void buttonKeranjang_Click(object sender, EventArgs e)
         {
             try
@@ -545,6 +563,7 @@ namespace OnlineMart_Trivial
                     keranjang.Clear();
                     FormKeranjang.listBarangOrder.Clear();
                     if (activeForm != null) activeForm.Close();
+
                     panelKonsumen.Hide();
                     panelPegawai.Hide();
                     panelRider.Hide();
@@ -566,6 +585,8 @@ namespace OnlineMart_Trivial
                     frm.MdiParent = this; //Set form utama menjadi parent dari objek form yang dibuat
                     frm.Show(); //Tampilkan form
                                 // Method ShowDialog() tidak bisa digunakan jika menerapkan MdiParent, bisanya Method Show();
+
+                    pilihVendor = "";
                 }
             }
             catch (Exception ex)

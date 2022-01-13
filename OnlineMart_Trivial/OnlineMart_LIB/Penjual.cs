@@ -170,6 +170,23 @@ namespace OnlineMart_LIB
 			}
 			return null;
 		}
+
+		public static Penjual AmbilPertama()
+		{
+			string sql = "select * from penjuals p left join blacklists b on p.blacklist_id = b.id limit 1";
+
+			MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+			Penjual p = null;
+
+			while (hasil.Read())
+			{
+				p = new Penjual(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(3), hasil.GetString(4), hasil.GetString(5), hasil.GetString(6));
+			}
+
+			return p;
+		}
+
 		public static Boolean RemoveBlacklist(Penjual p)
 		{
 			// Querry Insert

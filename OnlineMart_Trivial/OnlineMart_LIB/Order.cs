@@ -482,9 +482,17 @@ namespace OnlineMart_LIB
             else return true;
         }
 
-        public static bool UpdateStok(Barang_Order bo, Cabang bc)
+        public static bool UpdateStokBarangCabang(Barang_Order bo, Cabang bc)
 		{
             string sql = "update barang_cabang set stok = stok - " + bo.Jumlah + " where barang_id = " + bo.Barang.Id + " and cabang_id = " + bc.Id;
+            int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDitambah == 0) return false;
+            else return true;
+        }
+
+        public static bool UpdateStokBarangPenjual(Barang_Order bo, Penjual bp)
+        {
+            string sql = "update barang_penjual set stok = stok - " + bo.Jumlah + " where barang_id = " + bo.Barang.Id + " and penjual_id = " + bp.Id;
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
             else return true;

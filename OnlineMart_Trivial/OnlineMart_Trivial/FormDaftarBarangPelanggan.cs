@@ -147,27 +147,19 @@ namespace OnlineMart_Trivial
         {
             try
             {
-                //Default list semua barang di cabang yang pertama
                 listBarangCabang = Barang_Cabang.BacaData(cDipilih.Id.ToString(), "", "");
 
-                //Panggil Method untuk menambah kolom pada datagridview
-                FormatDataGrid();
-
-                //Tampilkan semua data Cabang
                 listCabang = Cabang.BacaData("", "");
+                comboBoxKriteria.Text = "Id";
                 comboBoxVendor.DataSource = listCabang;
                 comboBoxVendor.DisplayMember = "nama";
 
-                comboBoxVendor.DropDownStyle = ComboBoxStyle.DropDownList;
-
-                //Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+                FormatDataGrid();
                 TampilDataGrid();
-
-                comboBoxKriteria.Text = "Id";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Kesalahan");
+                MessageBox.Show("Terjadi Error. Pesan kesalahan : " + ex.Message, "Error");
             }
         }
         #endregion
@@ -222,10 +214,15 @@ namespace OnlineMart_Trivial
                     {
                         FormUtama.cDipilih = cDipilih;
                     }
-                    if (cDipilih.Nama == FormUtama.cDipilih.Nama)
+                    if (cDipilih.Id == FormUtama.cDipilih.Id)
                     {
                         FormUtama.keranjang.Add(b); //Untuk menambahkan barang ke dalam keranjang
                         MessageBox.Show("Barang berhasil di tambahkan ke dalam keranjang");
+
+                        if (FormUtama.pilihVendor == "")
+                        {
+                            FormUtama.pilihVendor = "cabang";
+                        }
                     }
                     else
                     {
@@ -274,5 +271,6 @@ namespace OnlineMart_Trivial
             this.Close();
         }
         #endregion
+
     }
 }

@@ -34,7 +34,7 @@ namespace OnlineMart_Trivial
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelNamaCabang = new System.Windows.Forms.Label();
+            this.labelNamaVendor = new System.Windows.Forms.Label();
             this.buttonCheckout = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -55,14 +55,14 @@ namespace OnlineMart_Trivial
             this.label1.TabIndex = 45;
             this.label1.Text = "Vendor Dipilih :";
             // 
-            // labelNamaCabang
+            // labelNamaVendor
             // 
-            this.labelNamaCabang.AutoSize = true;
-            this.labelNamaCabang.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.labelNamaCabang.Location = new System.Drawing.Point(445, 25);
-            this.labelNamaCabang.Name = "labelNamaCabang";
-            this.labelNamaCabang.Size = new System.Drawing.Size(0, 22);
-            this.labelNamaCabang.TabIndex = 46;
+            this.labelNamaVendor.AutoSize = true;
+            this.labelNamaVendor.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.labelNamaVendor.Location = new System.Drawing.Point(445, 25);
+            this.labelNamaVendor.Name = "labelNamaVendor";
+            this.labelNamaVendor.Size = new System.Drawing.Size(0, 22);
+            this.labelNamaVendor.TabIndex = 46;
             // 
             // buttonCheckout
             // 
@@ -189,7 +189,7 @@ namespace OnlineMart_Trivial
             this.Controls.Add(this.labelTotalHarga);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.labelNamaCabang);
+            this.Controls.Add(this.labelNamaVendor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCheckout);
             this.Controls.Add(this.buttonClose);
@@ -211,7 +211,7 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonCheckout;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelNamaCabang;
+        private System.Windows.Forms.Label labelNamaVendor;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label labelTotalHarga;
         private System.Windows.Forms.Label label4;

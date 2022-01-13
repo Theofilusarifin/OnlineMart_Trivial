@@ -223,7 +223,8 @@ namespace OnlineMart_Trivial
                     IdGenerated = true;
                 }
 
-                labelNamaCabang.Text = FormUtama.cDipilih.Nama;
+                if (FormUtama.pilihVendor == "cabang") labelNamaVendor.Text = FormUtama.cDipilih.Nama;
+                else if (FormUtama.pilihVendor == "penjual") labelNamaVendor.Text = FormUtama.pDipilih.Nama;
 
                 //Panggil Method untuk menambah kolom pada datagridview
                 FormatDataGrid();
@@ -305,6 +306,14 @@ namespace OnlineMart_Trivial
                         if (FormUtama.keranjang[i].Id == b.Id && FormUtama.keranjang[i].Nama == b.Nama)
                         {
                             FormUtama.keranjang.RemoveAt(i);
+
+                            if (FormUtama.keranjang.Count == 0)
+                            {
+                                FormUtama.pilihVendor = "";
+                                FormUtama.cDipilih = null;
+                                FormUtama.pDipilih = null;
+                            }
+
                             break;
                         }
                     }

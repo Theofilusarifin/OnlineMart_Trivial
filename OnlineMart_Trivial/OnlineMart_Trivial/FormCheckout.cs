@@ -147,12 +147,26 @@ namespace OnlineMart_Trivial
 
                     FormKeranjang.thisOrder.Status = "Pesanan Diproses";
 
-                    Order.TambahDataOrderCabang(FormKeranjang.thisOrder);
+                    if (FormUtama.pilihVendor == "cabang")
+                    {
+                        Order.TambahDataOrderCabang(FormKeranjang.thisOrder);
+                    }
+                    else if (FormUtama.pilihVendor == "penjual")
+                    {
+                        Order.TambahDataOrderPenjual(FormKeranjang.thisOrder);
+                    }
 
                     foreach (Barang_Order bo in FormKeranjang.listBarangOrder)
                     {
-                        Barang_Order.TambahData(bo);    
-                        Order.UpdateStok(bo, FormKeranjang.thisOrder.Cabang);
+                        Barang_Order.TambahData(bo);
+                        if(FormUtama.pilihVendor == "cabang")
+                        {
+                            Order.UpdateStokBarangCabang(bo, FormKeranjang.thisOrder.Cabang);
+                        }
+                        else if (FormUtama.pilihVendor == "penjual")
+                        {
+                            Order.UpdateStokBarangPenjual(bo, FormKeranjang.thisOrder.Penjual);
+                        }
                     }
 
                     // Tambahkan poin berdasarkan 1% total bayar
@@ -181,6 +195,9 @@ namespace OnlineMart_Trivial
 
                     MessageBox.Show("Pembayaran berhasil. Pesanan sedang diproses", "Info");
 
+                    FormUtama.pilihVendor = "";
+                    FormUtama.cDipilih = null;
+                    FormUtama.pDipilih = null;
                     FormKeranjang.IdGenerated = false;
 
                     DialogResult dialogResult = MessageBox.Show("Apakah anda ingin menukarkan hadiah?", "Penawaran Tukar Hadiah", MessageBoxButtons.YesNo);
