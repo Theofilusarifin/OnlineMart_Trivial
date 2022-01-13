@@ -166,6 +166,17 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+        private void buttonBarangPenjual_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openChildForm(new FormBarangPenjual());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
+        }
         private void buttonKeranjang_Click(object sender, EventArgs e)
         {
             try
@@ -497,43 +508,6 @@ namespace OnlineMart_Trivial
             {
                 HideSubMenu();
                 openChildForm(new FormDaftarBarangPenjual());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
-            }
-        }
-        private void buttonBarangPenjual_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                HideSubMenu();
-                openChildForm(new FormBarangPenjual());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
-            }
-        }
-        private void btnTambahStokPenjual_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //Buka Form
-                Form form = Application.OpenForms["FormTambahStok"];
-
-                if (form == null) //Jika Form ini belum di-create sebelumnya
-                {
-                    FormTambahStok frm = new FormTambahStok(); //Create Object
-                    frm.Owner = this;
-                    frm.Show();
-                    frm.BringToFront(); //Agar form tampil di depan
-                }
-                else
-                {
-                    form.Show();
-                    form.BringToFront(); //Agar form tampil di depan
-                }
             }
             catch (Exception ex)
             {
