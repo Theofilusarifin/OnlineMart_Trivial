@@ -34,7 +34,6 @@ namespace OnlineMart_Trivial
             this.timerLoading = new System.Windows.Forms.Timer(this.components);
             this.panelLeftNavbar = new System.Windows.Forms.Panel();
             this.panelPenjual = new System.Windows.Forms.Panel();
-            this.btnReviewPenjual = new System.Windows.Forms.Button();
             this.btnChatPenjual = new System.Windows.Forms.Button();
             this.btnTambahStokPenjual = new System.Windows.Forms.Button();
             this.btnDaftarBarangPenjual = new System.Windows.Forms.Button();
@@ -130,7 +129,6 @@ namespace OnlineMart_Trivial
             // 
             // panelPenjual
             // 
-            this.panelPenjual.Controls.Add(this.btnReviewPenjual);
             this.panelPenjual.Controls.Add(this.btnChatPenjual);
             this.panelPenjual.Controls.Add(this.btnTambahStokPenjual);
             this.panelPenjual.Controls.Add(this.btnDaftarBarangPenjual);
@@ -140,22 +138,6 @@ namespace OnlineMart_Trivial
             this.panelPenjual.Size = new System.Drawing.Size(233, 416);
             this.panelPenjual.TabIndex = 0;
             this.panelPenjual.Visible = false;
-            // 
-            // btnReviewPenjual
-            // 
-            this.btnReviewPenjual.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReviewPenjual.FlatAppearance.BorderSize = 0;
-            this.btnReviewPenjual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReviewPenjual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReviewPenjual.Location = new System.Drawing.Point(0, 135);
-            this.btnReviewPenjual.Name = "btnReviewPenjual";
-            this.btnReviewPenjual.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnReviewPenjual.Size = new System.Drawing.Size(233, 45);
-            this.btnReviewPenjual.TabIndex = 9;
-            this.btnReviewPenjual.Text = "REVIEW";
-            this.btnReviewPenjual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReviewPenjual.UseVisualStyleBackColor = true;
-            this.btnReviewPenjual.Click += new System.EventHandler(this.btnReviewPenjual_Click);
             // 
             // btnChatPenjual
             // 
@@ -994,7 +976,6 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnChatPenjual;
         private System.Windows.Forms.Button btnTambahStokPenjual;
-        private System.Windows.Forms.Button btnReviewPenjual;
         public System.Windows.Forms.Panel panelPenjual;
         public System.Windows.Forms.PictureBox pictureBoxPoin;
         public System.Windows.Forms.PictureBox pictureBoxSaldo;

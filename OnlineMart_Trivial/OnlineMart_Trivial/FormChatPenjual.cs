@@ -49,7 +49,10 @@ namespace OnlineMart_Trivial
 
                 // Ambil id order yang sedang dipilih
                 Order o = (Order)comboBoxNomorNota.SelectedItem;
-                labelStatusPesanan.Text = o.Status.ToString();
+                if (o != null)
+                {
+                    labelStatusPesanan.Text = o.Status.ToString();
+                }
 
                 // Tampilkan pesan
                 foreach (Chat c in listChat)
