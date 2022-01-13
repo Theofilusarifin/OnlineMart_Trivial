@@ -34,7 +34,14 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Clear();
 
             //Menambah kolom di datagridview
-            dataGridView.Columns.Add("iconType", "Gambar"); // nanti ada gambar per tipe notif
+
+            DataGridViewImageColumn dgvimgcol = new DataGridViewImageColumn();
+            dgvimgcol.HeaderText = "Icon Notif";
+            dgvimgcol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+            dataGridView.Columns.Add(dgvimgcol);
+            dataGridView.RowTemplate.Height = 80;
+
             dataGridView.Columns.Add("isi", "");
             dataGridView.Columns.Add("waktu", "Waktu");
 
@@ -42,7 +49,6 @@ namespace OnlineMart_Trivial
             dataGridView.EnableHeadersVisualStyles = false;
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["iconType"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["isi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 

@@ -357,15 +357,15 @@ namespace OnlineMart_LIB
         public static List<Order> BacaData(string status, string kriteria, string nilaiKriteria)
         {
             string sql = "select * from orders o " +
-                         "inner join cabangs c on o.cabang_id = c.id " +
-                         "inner join pegawais peg on c.pegawai_id = peg.id " +
-                         "inner join pelanggans pel on o.pelanggan_id = pel.id " +
-                         "inner join drivers d on o.driver_id = d.id " +
-                         "inner join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
-                         "inner join promos pr on o.promo_id = pr.id " +
-                         "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
-                         "inner join gifts g on gr.gift_id = g.id " +
-                         "inner join penjuals pen on o.penjual_id = pen.id " + 
+                         "left join cabangs c on o.cabang_id = c.id " +
+                         "left join pegawais peg on c.pegawai_id = peg.id " +
+                         "left join pelanggans pel on o.pelanggan_id = pel.id " +
+                         "left join drivers d on o.driver_id = d.id " +
+                         "left join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
+                         "left join promos pro on o.promo_id = pro.id " +
+                         "left join gift_redeems gr on o.gift_redeem_id = gr.id " +
+                         "left join gifts g on gr.gift_id = g.id " +
+                         "left join penjuals pen on o.penjual_id = pen.id " +
                          "where o.status = '" + status + "' and " + kriteria + " like '%" + nilaiKriteria + "%' " +
                          "order by o.tanggal_waktu asc";
 

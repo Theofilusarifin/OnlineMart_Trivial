@@ -144,7 +144,7 @@ namespace OnlineMart_Trivial
                         FormUtama.frmUtama.NotifRedCircle.Image = Properties.Resources.notification;
                         FormUtama.frmUtama.BelNotifikasi.Image = Properties.Resources.notification_panel;
                         FormUtama.frmUtama.NotifRedCircle.Size = new Size(17, 17);
-                        FormUtama.frmUtama.NotifRedCircle.Location = new Point(1045, 14);
+                        FormUtama.frmUtama.NotifRedCircle.Location = new Point(1709, 14);
 
                         FormUtama.frmUtama.labelNotifCount.Text = notifCount.ToString();
                     }
@@ -153,7 +153,7 @@ namespace OnlineMart_Trivial
                         FormUtama.frmUtama.NotifRedCircle.Image = Properties.Resources.notification;
                         FormUtama.frmUtama.BelNotifikasi.Image = Properties.Resources.notification_panel;
                         FormUtama.frmUtama.NotifRedCircle.Size = new Size(23, 23);
-                        FormUtama.frmUtama.NotifRedCircle.Location = new Point(1045, 11);
+                        FormUtama.frmUtama.NotifRedCircle.Location = new Point(1709, 11);
 
                         FormUtama.frmUtama.labelNotifCount.Text = notifCount.ToString();
                     }
@@ -162,7 +162,7 @@ namespace OnlineMart_Trivial
                         FormUtama.frmUtama.NotifRedCircle.Image = Properties.Resources.notification;
                         FormUtama.frmUtama.BelNotifikasi.Image = Properties.Resources.notification_panel;
                         FormUtama.frmUtama.NotifRedCircle.Size = new Size(29, 29);
-                        FormUtama.frmUtama.NotifRedCircle.Location = new Point(1045, 8);
+                        FormUtama.frmUtama.NotifRedCircle.Location = new Point(1709, 8);
 
                         FormUtama.frmUtama.labelNotifCount.Text = "99+";
                     }
