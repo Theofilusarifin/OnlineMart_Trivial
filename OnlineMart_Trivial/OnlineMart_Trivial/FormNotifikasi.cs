@@ -63,41 +63,37 @@ namespace OnlineMart_Trivial
                     //MessageBox.Show("Role user : " + n.Role_user + ", role : " + FormUtama.role + ", n.Pelanggan.Id : " + n.Pelanggan.Id + ", " +
                     //                "FormUtama.konsumen.Id : " + FormUtama.konsumen.Id + ", FormUtama.rider.Id : " + FormUtama.rider.Id + ", " +
                     //                "FormUtama.pegawai.Id : " + FormUtama.pegawai.Id + "FormUtama.penjual.Id : " + FormUtama.penjual.Id);
-                    
-                    string path = "";
+
+                    PictureBox image = new PictureBox();
                     switch (n.Tipe)
                     {
                         case "order":
-                            //path = Path.Combine(FormUtama.location + "\\barang\\", bc.Barang.Path_gambar);
+                            image.Image = Properties.Resources.receipt;
                             break;
                         case "chat":
-                            //path = Path.Combine(FormUtama.location + "\\barang\\", bc.Barang.Path_gambar);
+                            image.Image = Properties.Resources.bubble_chat;
                             break;
                     }
 
-                    ////MessageBox.Show(path);
-                    //PictureBox image = new PictureBox();
-                    //image.Image = Image.FromFile(path);
-
-                    //MemoryStream mmst = new MemoryStream();
-                    //image.Image.Save(mmst, image.Image.RawFormat);
-                    //byte[] img = mmst.ToArray();
+                    MemoryStream mmst = new MemoryStream();
+                    image.Image.Save(mmst, image.Image.RawFormat);
+                    byte[] img = mmst.ToArray();
 
                     if (n.Role_user == "konsumen" && FormUtama.role == "konsumen" && n.Pelanggan.Id == FormUtama.konsumen.Id)
                     {
-                        dataGridView.Rows.Add("gambar sesuai n.Tipe", n.Isi, n.Waktu);
+                        dataGridView.Rows.Add(img, n.Isi, n.Waktu);
                     }
                     else if (n.Role_user == "driver" && FormUtama.role == "rider" && n.Driver.Id == FormUtama.rider.Id)
                     {
-                        dataGridView.Rows.Add("gambar sesuai n.Tipe", n.Isi, n.Waktu);
+                        dataGridView.Rows.Add(img, n.Isi, n.Waktu);
                     }
                     else if (n.Role_user == "pegawai" && FormUtama.role == "pegawai" && n.Pegawai.Id == FormUtama.pegawai.Id)
                     {
-                        dataGridView.Rows.Add("gambar sesuai n.Tipe", n.Isi, n.Waktu);
+                        dataGridView.Rows.Add(img, n.Isi, n.Waktu);
                     }
                     else if (n.Role_user == "penjual" && FormUtama.role == "penjual" && n.Penjual.Id == FormUtama.penjual.Id)
                     {
-                        dataGridView.Rows.Add("gambar sesuai n.Tipe", n.Isi, n.Waktu);
+                        dataGridView.Rows.Add(img, n.Isi, n.Waktu);
                     }
                 }
             }
