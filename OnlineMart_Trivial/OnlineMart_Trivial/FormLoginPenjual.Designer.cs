@@ -40,12 +40,12 @@ namespace OnlineMart_Trivial
             // textBoxPassword
             // 
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Font = new System.Drawing.Font("Montserrat", 12F);
             this.textBoxPassword.ForeColor = System.Drawing.Color.DimGray;
             this.textBoxPassword.Location = new System.Drawing.Point(51, 393);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⚉';
-            this.textBoxPassword.Size = new System.Drawing.Size(290, 19);
+            this.textBoxPassword.Size = new System.Drawing.Size(290, 20);
             this.textBoxPassword.TabIndex = 4;
             // 
             // textBoxUsername
@@ -96,11 +96,14 @@ namespace OnlineMart_Trivial
             // 
             // pictureBoxMata
             // 
+            this.pictureBoxMata.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMata.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxMata.Location = new System.Drawing.Point(348, 389);
+            this.pictureBoxMata.Image = global::OnlineMart_Trivial.Properties.Resources.Closed_Eye;
+            this.pictureBoxMata.Location = new System.Drawing.Point(351, 390);
             this.pictureBoxMata.Name = "pictureBoxMata";
-            this.pictureBoxMata.Size = new System.Drawing.Size(49, 29);
-            this.pictureBoxMata.TabIndex = 7;
+            this.pictureBoxMata.Size = new System.Drawing.Size(35, 27);
+            this.pictureBoxMata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMata.TabIndex = 8;
             this.pictureBoxMata.TabStop = false;
             this.pictureBoxMata.Click += new System.EventHandler(this.pictureBoxMata_Click);
             // 

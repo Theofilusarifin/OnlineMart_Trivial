@@ -885,5 +885,11 @@
   <ItemGroup>
     <None Include="Resources\notif1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Closed Eye1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open Eye1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

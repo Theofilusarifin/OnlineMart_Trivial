@@ -109,11 +109,13 @@ namespace OnlineMart_Trivial
         {
             if (!passwordSeen)
             {
+                pictureBoxMata.Image = Properties.Resources.Open_Eye;
                 textBoxPassword.PasswordChar = '\0';
                 passwordSeen = true;
             }
             else if (passwordSeen)
             {
+                pictureBoxMata.Image = Properties.Resources.Closed_Eye;
                 textBoxPassword.PasswordChar = '⚉';
                 passwordSeen = false;
             }
