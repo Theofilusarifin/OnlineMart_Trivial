@@ -51,6 +51,7 @@ namespace OnlineMart_Trivial
 
                     FormKeranjang.thisOrder.Cabang = FormUtama.cDipilih;
                     FormKeranjang.thisOrder.Pelanggan = FormUtama.konsumen;
+                    FormKeranjang.thisOrder.Penjual = FormUtama.pDipilih;
                     #endregion
 
                     #region combobox
@@ -162,7 +163,13 @@ namespace OnlineMart_Trivial
                     Pelanggan.UpdateSaldo(FormKeranjang.thisOrder);
 
                     // buat notifikasi
-                    Notifikasi notifikasi = new Notifikasi("Order Masuk", "order", "driver", DateTime.Now, FormKeranjang.thisOrder.Pelanggan, FormKeranjang.thisOrder.Driver, null, null);
+                    Notifikasi notifikasi = new Notifikasi("Order Masuk", "order", "driver", DateTime.Now, FormKeranjang.thisOrder.Pelanggan, FormKeranjang.thisOrder.Driver);
+
+                    //MessageBox.Show("insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
+                    //  "values ('" + notifikasi.Isi + "', '" + notifikasi.Tipe + "', '" + notifikasi.Role_user + "', " +
+                    //  "'" + notifikasi.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " + notifikasi.Pelanggan.Id + ", " + notifikasi.Driver.Id + ", " +
+                    //  "null, null)");
+
                     Notifikasi.TambahData(notifikasi);
 
                     // thisOrder dikosongkan sekaligus dibuat baru

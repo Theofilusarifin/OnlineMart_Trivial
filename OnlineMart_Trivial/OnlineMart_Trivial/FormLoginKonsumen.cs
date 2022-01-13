@@ -19,6 +19,8 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
+        bool passwordSeen = false;
+
         #region No Tick Constrols
         //Optimized Controls(No Tick)
         protected override CreateParams CreateParams
@@ -32,14 +34,14 @@ namespace OnlineMart_Trivial
         }
         #endregion
 
-        private void buttonLogin_MouseLeave(object sender, EventArgs e)
-        {
-            buttonLogin.BackgroundImage = Properties.Resources.Button_Leave;
-        }
-
         private void buttonLogin_MouseEnter(object sender, EventArgs e)
         {
             buttonLogin.BackgroundImage = Properties.Resources.Button_Hover;
+        }
+
+        private void buttonLogin_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLogin.BackgroundImage = Properties.Resources.Button_Leave;
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -118,5 +120,20 @@ namespace OnlineMart_Trivial
             this.Owner.Hide();
             this.Hide();
         }
+
+        private void pictureBoxMata_Click(object sender, EventArgs e)
+        {
+            if (!passwordSeen)
+            {
+                textBoxPassword.PasswordChar = '\0';
+                passwordSeen = true;
+            }
+            else if (passwordSeen)
+            {
+                textBoxPassword.PasswordChar = '⚉';
+                passwordSeen = false;
+            }
+        }
+
     }
 }

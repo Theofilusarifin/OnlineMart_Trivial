@@ -272,9 +272,9 @@ namespace OnlineMart_LIB
             string sql = "insert into orders (id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
                          "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id, penjual_id) " +
                          "values (" + o.Id + ", '" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + o.Alamat_tujuan + "', " +
-                         o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "','" + o.Status + "', " + o.Cabang.Id + ", " +
-                         o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " + +o.Promo.Id + ", " +
-                         o.Gift_redeem.Id + ", " + o.Penjual + ")";
+                         o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "', '" + o.Status + "', " + o.Cabang.Id + ", " +
+                         o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " + o.Promo.Id + ", " +
+                         o.Gift_redeem.Id + ", null)";
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
@@ -284,11 +284,11 @@ namespace OnlineMart_LIB
         public static Boolean TambahDataOrderPenjual(Order o)
         {
             string sql = "insert into orders (id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
-                         "penjual_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id) " +
+                         "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id, penjual_id) " +
                          "values (" + o.Id + ", '" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + o.Alamat_tujuan + "', " +
-                         o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "','" + o.Status + "', " + o.Penjual.Id + ", " +
+                         o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "','" + o.Status + "', null, " +
                          o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " + +o.Promo.Id + ", " +
-                         o.Gift_redeem.Id + ")";
+                         o.Gift_redeem.Id + ", " + o.Penjual.Id + ")";
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;

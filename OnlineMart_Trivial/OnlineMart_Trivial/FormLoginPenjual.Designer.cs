@@ -33,6 +33,8 @@ namespace OnlineMart_Trivial
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.labelRegistrasi = new System.Windows.Forms.Label();
+            this.pictureBoxMata = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMata)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxPassword
@@ -40,10 +42,10 @@ namespace OnlineMart_Trivial
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxPassword.Location = new System.Drawing.Point(52, 391);
+            this.textBoxPassword.Location = new System.Drawing.Point(51, 393);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⚉';
-            this.textBoxPassword.Size = new System.Drawing.Size(338, 19);
+            this.textBoxPassword.Size = new System.Drawing.Size(290, 19);
             this.textBoxPassword.TabIndex = 4;
             // 
             // textBoxUsername
@@ -92,6 +94,16 @@ namespace OnlineMart_Trivial
             this.labelRegistrasi.Text = "&Lakukan Registrasi";
             this.labelRegistrasi.Click += new System.EventHandler(this.labelRegistrasi_Click);
             // 
+            // pictureBoxMata
+            // 
+            this.pictureBoxMata.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxMata.Location = new System.Drawing.Point(348, 389);
+            this.pictureBoxMata.Name = "pictureBoxMata";
+            this.pictureBoxMata.Size = new System.Drawing.Size(49, 29);
+            this.pictureBoxMata.TabIndex = 7;
+            this.pictureBoxMata.TabStop = false;
+            this.pictureBoxMata.Click += new System.EventHandler(this.pictureBoxMata_Click);
+            // 
             // FormLoginPenjual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,6 +111,7 @@ namespace OnlineMart_Trivial
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Login_Penjual;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(434, 599);
+            this.Controls.Add(this.pictureBoxMata);
             this.Controls.Add(this.labelRegistrasi);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
@@ -109,6 +122,7 @@ namespace OnlineMart_Trivial
             this.Text = "Login Penjual";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoginPenjual_FormClosing);
             this.Load += new System.EventHandler(this.FormLoginPenjual_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,5 +134,6 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label labelRegistrasi;
+        private System.Windows.Forms.PictureBox pictureBoxMata;
     }
 }

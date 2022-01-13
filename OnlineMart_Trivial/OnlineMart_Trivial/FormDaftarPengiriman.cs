@@ -170,7 +170,7 @@ namespace OnlineMart_Trivial
                         Order.UbahData(o);
 
                         //buat notifikasi
-                        Notifikasi notifikasi = new Notifikasi("Order Cancelled", "order", "konsumen", DateTime.Now, o.Pelanggan, o.Driver, null, null);
+                        Notifikasi notifikasi = new Notifikasi("Order Cancelled", "order", "konsumen", DateTime.Now, o.Pelanggan, o.Driver);
                         Notifikasi.TambahData(notifikasi);
 
                         FormDaftarPengiriman_Load(sender, e);

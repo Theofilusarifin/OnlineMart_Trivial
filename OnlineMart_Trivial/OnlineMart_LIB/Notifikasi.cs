@@ -36,6 +36,86 @@ namespace OnlineMart_LIB
             this.Penjual = penjual;
         }
 
+        #region Detailed Constructors
+        public Notifikasi(int id, string isi, string tipe, string role_user, DateTime waktu, Pelanggan pelanggan, Driver driver)
+        {
+            this.Id = id;
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = pelanggan;
+            this.Driver = driver;
+            this.Pegawai = null;
+            this.Penjual = null;
+        }
+
+        public Notifikasi(int id, string isi, string tipe, string role_user, DateTime waktu, Pelanggan pelanggan, Pegawai pegawai)
+        {
+            this.Id = id;
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = pelanggan;
+            this.Driver = null;
+            this.Pegawai = pegawai;
+            this.Penjual = null;
+        }
+
+        public Notifikasi(int id, string isi, string tipe, string role_user, DateTime waktu, Pelanggan pelanggan, Penjual penjual)
+        {
+            this.Id = id;
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = pelanggan;
+            this.Driver = null;
+            this.Pegawai = null;
+            this.Penjual = penjual;
+        }
+
+        public Notifikasi(int id, string isi, string tipe, string role_user, DateTime waktu, Driver driver, Pegawai pegawai)
+        {
+            this.Id = id;
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = null;
+            this.Driver = driver;
+            this.Pegawai = pegawai;
+            this.Penjual = null;
+        }
+
+        public Notifikasi(int id, string isi, string tipe, string role_user, DateTime waktu, Driver driver, Penjual penjual)
+        {
+            this.Id = id;
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = null;
+            this.Driver = driver;
+            this.Pegawai = null;
+            this.Penjual = penjual;
+        }
+
+        public Notifikasi(int id, string isi, string tipe, string role_user, DateTime waktu, Pegawai pegawai, Penjual penjual)
+        {
+            this.Id = id;
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = null;
+            this.Driver = null;
+            this.Pegawai = pegawai;
+            this.Penjual = penjual;
+        }
+        #endregion Detailed Constructors
+
         public Notifikasi(string isi, string tipe, string role_user, DateTime waktu, Pelanggan pelanggan, Driver driver, Pegawai pegawai, Penjual penjual)
         {
             this.Isi = isi;
@@ -47,6 +127,81 @@ namespace OnlineMart_LIB
             this.Pegawai = pegawai;
             this.Penjual = penjual;
         }
+
+        #region Detailed Constructors (no Id)
+        public Notifikasi(string isi, string tipe, string role_user, DateTime waktu, Pelanggan pelanggan, Driver driver)
+        {
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = pelanggan;
+            this.Driver = driver;
+            this.Pegawai = null;
+            this.Penjual = null;
+        }
+
+        public Notifikasi(string isi, string tipe, string role_user, DateTime waktu, Pelanggan pelanggan, Pegawai pegawai)
+        {
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = pelanggan;
+            this.Driver = null;
+            this.Pegawai = pegawai;
+            this.Penjual = null;
+        }
+
+        public Notifikasi(string isi, string tipe, string role_user, DateTime waktu, Pelanggan pelanggan, Penjual penjual)
+        {
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = pelanggan;
+            this.Driver = null;
+            this.Pegawai = null;
+            this.Penjual = penjual;
+        }
+
+        public Notifikasi(string isi, string tipe, string role_user, DateTime waktu, Driver driver, Pegawai pegawai)
+        {
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = null;
+            this.Driver = driver;
+            this.Pegawai = pegawai;
+            this.Penjual = null;
+        }
+
+        public Notifikasi(string isi, string tipe, string role_user, DateTime waktu, Driver driver, Penjual penjual)
+        {
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = null;
+            this.Driver = driver;
+            this.Pegawai = null;
+            this.Penjual = penjual;
+        }
+
+        public Notifikasi(string isi, string tipe, string role_user, DateTime waktu, Pegawai pegawai, Penjual penjual)
+        {
+            this.Isi = isi;
+            this.Tipe = tipe;
+            this.Role_user = role_user;
+            this.Waktu = waktu;
+            this.Pelanggan = null;
+            this.Driver = null;
+            this.Pegawai = pegawai;
+            this.Penjual = penjual;
+        }
+        #endregion Detailed Constructors (no Id)
+
         #endregion
 
         #region Properties
@@ -105,38 +260,38 @@ namespace OnlineMart_LIB
             if (n.Pelanggan == null && n.Driver == null)
             {
                 sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
-                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
-                      n.Pelanggan + ", " + n.Driver + ", " + n.Pegawai.Id + ", " + n.Penjual.Id + ")";
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
+                      "null, null, " + n.Pegawai.Id + ", " + n.Penjual.Id + ")";
             }
             else if (n.Pelanggan == null && n.Pegawai == null)
             {
                 sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
-                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
-                      n.Pelanggan + ", " + n.Driver.Id + ", " + n.Pegawai + ", " + n.Penjual.Id + ")";
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
+                      "null, " + n.Driver.Id + ", null, " + n.Penjual.Id + ")";
             }
             else if (n.Pelanggan == null && n.Penjual == null)
             {
                 sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
-                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
-                      n.Pelanggan + ", " + n.Driver.Id + ", " + n.Pegawai.Id + ", " + n.Penjual + ")";
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
+                      "null, " + n.Driver.Id + ", " + n.Pegawai.Id + ", null)";
             }
             else if (n.Driver == null && n.Pegawai == null)
             {
                 sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
-                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
-                      n.Pelanggan.Id + ", " + n.Driver + ", " + n.Pegawai + ", " + n.Penjual.Id + ")";
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
+                      n.Pelanggan.Id + ", null, null, " + n.Penjual.Id + ")";
             }
             else if (n.Driver == null && n.Penjual == null)
             {
                 sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
-                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
-                      n.Pelanggan.Id + ", " + n.Driver + ", " + n.Pegawai.Id + ", " + n.Penjual + ")";
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
+                      n.Pelanggan.Id + ", null, " + n.Pegawai.Id + ", null)";
             }
             else if (n.Pegawai == null && n.Penjual == null)
             {
                 sql = "insert into notifikasis (isi, tipe, role_user, waktu, pelanggan_id, driver_id, pegawai_id, penjual_id) " +
-                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', " + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + ", " +
-                      n.Pelanggan.Id + ", " + n.Driver.Id + ", " + n.Pegawai + ", " + n.Penjual + ")";
+                      "values ('" + n.Isi + "', '" + n.Tipe + "', '" + n.Role_user + "', '" + n.Waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
+                      n.Pelanggan.Id + ", " + n.Driver.Id + ", null, null)";
             }
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
@@ -147,11 +302,11 @@ namespace OnlineMart_LIB
         public static List<Notifikasi> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "select * from notifikasis n " +
-                         "inner join pelanggans pel on n.pelanggan_id = pel.id " +
-                         "inner join drivers d on n.drivers_id = d.id " +
-                         "inner join pegawais peg on n.pegawai_id = peg.id " +
-                         "inner join penjuals pen on n.penjual_id = pen.id " +
-                         "inner join blacklists b on pen.blacklist_id = b.id ";
+                         "left join pelanggans pel on n.pelanggan_id = pel.id " +
+                         "left join drivers d on n.driver_id = d.id " +
+                         "left join pegawais peg on n.pegawai_id = peg.id " +
+                         "left join penjuals pen on n.penjual_id = pen.id " +
+                         "left join blacklists b on pen.blacklist_id = b.id ";
 
             if (kriteria != "") sql += "where " + kriteria + " like '%" + nilaiKriteria + "%' ";
 
@@ -163,17 +318,79 @@ namespace OnlineMart_LIB
 
             while (hasil.Read())
             {
-                Blacklist b = new Blacklist(hasil.GetInt32(37), hasil.GetString(38), hasil.GetString(39));
+                #region Note
+                /*
+                5 = pelanggan_id
+                6 = driver_id
+                7 = pegawai_id
+                8 = penjual_id
 
-                Penjual pen = new Penjual(hasil.GetInt32(29), hasil.GetString(30), hasil.GetString(31), hasil.GetString(32), hasil.GetString(33), hasil.GetString(34), hasil.GetString(35), b);
+                // kalau data null
+                if (hasil.IsDBNull(7) == true)
+                {
 
-                Pegawai peg = new Pegawai(hasil.GetInt32(23), hasil.GetString(25), hasil.GetString(24), hasil.GetString(26), hasil.GetString(27), hasil.GetString(28));
+                }
+                else if (hasil.IsDBNull(7) == false) // kalau data tidak null
+                {
 
-                Driver d = new Driver(hasil.GetInt32(17), hasil.GetString(19), hasil.GetString(18), hasil.GetString(20), hasil.GetString(21), hasil.GetString(22));
+                }*/
+                #endregion
 
-                Pelanggan pel = new Pelanggan(hasil.GetInt32(9), hasil.GetString(11), hasil.GetString(10), hasil.GetString(12), hasil.GetString(13), hasil.GetString(14), hasil.GetDouble(15), hasil.GetDouble(16));
+                Notifikasi n = null;
+                if (hasil.IsDBNull(5) && hasil.IsDBNull(6)) // kalau pelanggan & driver null
+                {
+                    Blacklist b = new Blacklist(hasil.GetInt32(37), hasil.GetString(38), hasil.GetString(39));
 
-                Notifikasi n = new Notifikasi(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(4), hasil.GetDateTime(3), pel, d, peg, pen);
+                    Penjual pen = new Penjual(hasil.GetInt32(29), hasil.GetString(30), hasil.GetString(31), hasil.GetString(32), hasil.GetString(33), hasil.GetString(34), hasil.GetString(35), b);
+
+                    Pegawai peg = new Pegawai(hasil.GetInt32(23), hasil.GetString(25), hasil.GetString(24), hasil.GetString(26), hasil.GetString(27), hasil.GetString(28));
+
+                    n = new Notifikasi(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(4), hasil.GetDateTime(3), peg, pen);
+                }
+                else if (hasil.IsDBNull(5) && hasil.IsDBNull(7)) // kalau pelanggan & pegawai null
+                {
+                    Blacklist b = new Blacklist(hasil.GetInt32(37), hasil.GetString(38), hasil.GetString(39));
+
+                    Penjual pen = new Penjual(hasil.GetInt32(29), hasil.GetString(30), hasil.GetString(31), hasil.GetString(32), hasil.GetString(33), hasil.GetString(34), hasil.GetString(35), b);
+
+                    Driver d = new Driver(hasil.GetInt32(17), hasil.GetString(19), hasil.GetString(18), hasil.GetString(20), hasil.GetString(21), hasil.GetString(22));
+
+                    n = new Notifikasi(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(4), hasil.GetDateTime(3), d, pen);
+                }
+                else if (hasil.IsDBNull(5) && hasil.IsDBNull(8)) // kalau pelanggan & penjual null
+                {
+                    Pegawai peg = new Pegawai(hasil.GetInt32(23), hasil.GetString(25), hasil.GetString(24), hasil.GetString(26), hasil.GetString(27), hasil.GetString(28));
+
+                    Driver d = new Driver(hasil.GetInt32(17), hasil.GetString(19), hasil.GetString(18), hasil.GetString(20), hasil.GetString(21), hasil.GetString(22));
+
+                    n = new Notifikasi(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(4), hasil.GetDateTime(3), d, peg);
+                }
+                else if (hasil.IsDBNull(6) && hasil.IsDBNull(7)) // kalau driver & pegawai null
+                {
+                    Blacklist b = new Blacklist(hasil.GetInt32(37), hasil.GetString(38), hasil.GetString(39));
+
+                    Penjual pen = new Penjual(hasil.GetInt32(29), hasil.GetString(30), hasil.GetString(31), hasil.GetString(32), hasil.GetString(33), hasil.GetString(34), hasil.GetString(35), b);
+
+                    Pelanggan pel = new Pelanggan(hasil.GetInt32(9), hasil.GetString(11), hasil.GetString(10), hasil.GetString(12), hasil.GetString(13), hasil.GetString(14), hasil.GetDouble(15), hasil.GetDouble(16));
+
+                    n = new Notifikasi(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(4), hasil.GetDateTime(3), pel, pen);
+                }
+                else if (hasil.IsDBNull(6) && hasil.IsDBNull(8)) // kalau driver & penjual null
+                {
+                    Pegawai peg = new Pegawai(hasil.GetInt32(23), hasil.GetString(25), hasil.GetString(24), hasil.GetString(26), hasil.GetString(27), hasil.GetString(28));
+
+                    Pelanggan pel = new Pelanggan(hasil.GetInt32(9), hasil.GetString(11), hasil.GetString(10), hasil.GetString(12), hasil.GetString(13), hasil.GetString(14), hasil.GetDouble(15), hasil.GetDouble(16));
+
+                    n = new Notifikasi(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(4), hasil.GetDateTime(3), pel, peg);
+                }
+                else if (hasil.IsDBNull(7) && hasil.IsDBNull(8)) // kalau pegawai & penjual null
+                {
+                    Driver d = new Driver(hasil.GetInt32(17), hasil.GetString(19), hasil.GetString(18), hasil.GetString(20), hasil.GetString(21), hasil.GetString(22));
+
+                    Pelanggan pel = new Pelanggan(hasil.GetInt32(9), hasil.GetString(11), hasil.GetString(10), hasil.GetString(12), hasil.GetString(13), hasil.GetString(14), hasil.GetDouble(15), hasil.GetDouble(16));
+
+                    n = new Notifikasi(hasil.GetInt32(0), hasil.GetString(1), hasil.GetString(2), hasil.GetString(4), hasil.GetDateTime(3), pel, d);
+                }
 
                 listNotifikasi.Add(n);
             }
@@ -198,7 +415,7 @@ namespace OnlineMart_LIB
         {
             string sql = "select * from notifikasis n " +
                          "inner join pelanggans pel on n.pelanggan_id = pel.id " +
-                         "inner join drivers d on n.drivers_id = d.id " +
+                         "inner join drivers d on n.driver_id = d.id " +
                          "inner join pegawais peg on n.pegawai_id = peg.id " +
                          "inner join penjuals pen on n.penjual_id = pen.id " +
                          "inner join blacklists b on pen.blacklist_id = b.id " +
@@ -225,6 +442,24 @@ namespace OnlineMart_LIB
             }
 
             return n;
+        }
+
+        public static List<string> AmbilTipe()
+        {
+            string sql = "select distinct(tipe) from notifikasis";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<string> listTipe = new List<string>();
+
+            while (hasil.Read())
+            {
+                string tipe = hasil.GetString(0);
+
+                listTipe.Add(tipe);
+            }
+
+            return listTipe;
         }
 
         public static int HitungNotifikasi(string role_user)

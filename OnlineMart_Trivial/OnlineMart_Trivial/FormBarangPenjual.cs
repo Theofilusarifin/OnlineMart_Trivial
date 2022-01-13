@@ -19,8 +19,9 @@ namespace OnlineMart_Trivial
 		}
 
         public static List<Barang> listBarang = new List<Barang>();
-        public static Barang barang;
         public static List<Penjual> listPenjual = new List<Penjual>();
+
+        public static Barang barang;
         Penjual penjual;
 
         #region No Tick Constrols

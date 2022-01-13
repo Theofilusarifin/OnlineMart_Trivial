@@ -33,6 +33,8 @@ namespace OnlineMart_Trivial
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
+            this.pictureBoxMata = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMata)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxPassword
@@ -43,7 +45,7 @@ namespace OnlineMart_Trivial
             this.textBoxPassword.Location = new System.Drawing.Point(49, 383);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⚉';
-            this.textBoxPassword.Size = new System.Drawing.Size(338, 19);
+            this.textBoxPassword.Size = new System.Drawing.Size(290, 19);
             this.textBoxPassword.TabIndex = 1;
             // 
             // textBoxUsername
@@ -77,6 +79,16 @@ namespace OnlineMart_Trivial
             this.buttonLogin.MouseEnter += new System.EventHandler(this.buttonLogin_MouseEnter);
             this.buttonLogin.MouseLeave += new System.EventHandler(this.buttonLogin_MouseLeave);
             // 
+            // pictureBoxMata
+            // 
+            this.pictureBoxMata.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxMata.Location = new System.Drawing.Point(348, 378);
+            this.pictureBoxMata.Name = "pictureBoxMata";
+            this.pictureBoxMata.Size = new System.Drawing.Size(48, 29);
+            this.pictureBoxMata.TabIndex = 3;
+            this.pictureBoxMata.TabStop = false;
+            this.pictureBoxMata.Click += new System.EventHandler(this.pictureBoxMata_Click);
+            // 
             // FormLoginPegawai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -84,6 +96,7 @@ namespace OnlineMart_Trivial
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Login_Pegawai;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(434, 541);
+            this.Controls.Add(this.pictureBoxMata);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.buttonLogin);
@@ -96,6 +109,7 @@ namespace OnlineMart_Trivial
             this.Text = "Login Pegawai";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoginPegawai_FormClosing);
             this.Load += new System.EventHandler(this.FormLoginPegawai_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +120,6 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.PictureBox pictureBoxMata;
     }
 }

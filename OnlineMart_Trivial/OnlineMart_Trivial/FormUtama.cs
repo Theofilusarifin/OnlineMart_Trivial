@@ -23,18 +23,20 @@ namespace OnlineMart_Trivial
         public static Pelanggan konsumen;
         public static List<Barang> keranjang = new List<Barang>();
         public static Koneksi koneksi = null;
-        public static Cabang cDipilih;
-        public static Penjual pDipilih;
+        public static Cabang cDipilih = null;
+        public static Penjual pDipilih = null;
+        public static bool firstLogin = true;
 
         // Ubah path sesuai dengan Path Resource masing-masing
 
         // Path Arifin
-        // public static string location = @"C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+        //public static string location = @"C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
         // Path Henri
-        //public static string location = @"D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+        public static string location = @"D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
-        public static string location = @"C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+        // Path Yaska
+        //public static string location = @"C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
         public FormUtama()
         {

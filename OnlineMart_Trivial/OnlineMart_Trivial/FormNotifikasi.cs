@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using OnlineMart_LIB;
+using System.IO;
 
 namespace OnlineMart_Trivial
 {
@@ -59,9 +60,28 @@ namespace OnlineMart_Trivial
             {
                 foreach (Notifikasi n in listNotifikasi)
                 {
-                    MessageBox.Show("Role user : " + n.Role_user + ", role : " + FormUtama.role + ", n.Pelanggan.Id : " + n.Pelanggan.Id + ", " +
-                                    "FormUtama.konsumen.Id : " + FormUtama.konsumen.Id + ", FormUtama.rider.Id : " + FormUtama.rider.Id + ", " +
-                                    "FormUtama.pegawai.Id : " + FormUtama.pegawai.Id + "FormUtama.penjual.Id : " + FormUtama.penjual.Id);
+                    //MessageBox.Show("Role user : " + n.Role_user + ", role : " + FormUtama.role + ", n.Pelanggan.Id : " + n.Pelanggan.Id + ", " +
+                    //                "FormUtama.konsumen.Id : " + FormUtama.konsumen.Id + ", FormUtama.rider.Id : " + FormUtama.rider.Id + ", " +
+                    //                "FormUtama.pegawai.Id : " + FormUtama.pegawai.Id + "FormUtama.penjual.Id : " + FormUtama.penjual.Id);
+                    
+                    string path = "";
+                    switch (n.Tipe)
+                    {
+                        case "order":
+                            //path = Path.Combine(FormUtama.location + "\\barang\\", bc.Barang.Path_gambar);
+                            break;
+                        case "chat":
+                            //path = Path.Combine(FormUtama.location + "\\barang\\", bc.Barang.Path_gambar);
+                            break;
+                    }
+
+                    //MessageBox.Show(path);
+                    PictureBox image = new PictureBox();
+                    image.Image = Image.FromFile(path);
+
+                    MemoryStream mmst = new MemoryStream();
+                    image.Image.Save(mmst, image.Image.RawFormat);
+                    byte[] img = mmst.ToArray();
 
                     if (n.Role_user == "konsumen" && FormUtama.role == "konsumen" && n.Pelanggan.Id == FormUtama.konsumen.Id)
                     {
@@ -118,20 +138,16 @@ namespace OnlineMart_Trivial
             {
                 List<string> listTipe = new List<string>();
 
-                FormatDataGrid();
-
                 listNotifikasi = Notifikasi.BacaData(kriteria, nilaiKriteria);
 
-                TampilDataGrid();
-
-                foreach (Notifikasi n in listNotifikasi)
-                {
-                    listTipe.Add(ToSentenceCase(n.Tipe));
-                }
+                listTipe = Notifikasi.AmbilTipe();
                 listTipe.Insert(0, "All");
 
                 comboBoxTipe.DataSource = listTipe;
                 comboBoxTipe.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                FormatDataGrid();
+                TampilDataGrid();
             }
             catch (Exception ex)
             {

@@ -34,6 +34,8 @@ namespace OnlineMart_Trivial
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.labelRegistrasi = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.pictureBoxMata = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMata)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -90,8 +92,18 @@ namespace OnlineMart_Trivial
             this.textBoxPassword.Location = new System.Drawing.Point(49, 400);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '⚉';
-            this.textBoxPassword.Size = new System.Drawing.Size(338, 19);
+            this.textBoxPassword.Size = new System.Drawing.Size(290, 19);
             this.textBoxPassword.TabIndex = 1;
+            // 
+            // pictureBoxMata
+            // 
+            this.pictureBoxMata.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxMata.Location = new System.Drawing.Point(348, 396);
+            this.pictureBoxMata.Name = "pictureBoxMata";
+            this.pictureBoxMata.Size = new System.Drawing.Size(48, 29);
+            this.pictureBoxMata.TabIndex = 4;
+            this.pictureBoxMata.TabStop = false;
+            this.pictureBoxMata.Click += new System.EventHandler(this.pictureBoxMata_Click);
             // 
             // FormLoginKonsumen
             // 
@@ -100,6 +112,7 @@ namespace OnlineMart_Trivial
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Login_Konsumen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(434, 599);
+            this.Controls.Add(this.pictureBoxMata);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelRegistrasi);
             this.Controls.Add(this.textBoxUsername);
@@ -113,6 +126,7 @@ namespace OnlineMart_Trivial
             this.Text = "Login Konsumen";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoginKonsumen_FormClosing);
             this.Load += new System.EventHandler(this.FormLoginKonsumen_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +138,6 @@ namespace OnlineMart_Trivial
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Label labelRegistrasi;
         private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.PictureBox pictureBoxMata;
     }
 }

@@ -18,6 +18,8 @@ namespace OnlineMart_Trivial
             InitializeComponent();
         }
 
+        bool passwordSeen = false;
+
         #region No Tick Constrols
         //Optimized Controls(No Tick)
         protected override CreateParams CreateParams
@@ -101,6 +103,20 @@ namespace OnlineMart_Trivial
             frm.Show();
             this.Owner.Hide();
             this.Hide();
+        }
+
+        private void pictureBoxMata_Click(object sender, EventArgs e)
+        {
+            if (!passwordSeen)
+            {
+                textBoxPassword.PasswordChar = '\0';
+                passwordSeen = true;
+            }
+            else if (passwordSeen)
+            {
+                textBoxPassword.PasswordChar = '⚉';
+                passwordSeen = false;
+            }
         }
     }
 }

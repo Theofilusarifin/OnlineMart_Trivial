@@ -130,7 +130,7 @@ namespace OnlineMart_Trivial
                 listBoxPesan.Items.Add("Me : " + chat.Isi);
 
                 // buat notifikasi
-                Notifikasi notifikasi = new Notifikasi(chat.Isi, "chat", "konsumen", DateTime.Now, o.Pelanggan, o.Driver, null, null);
+                Notifikasi notifikasi = new Notifikasi(chat.Isi, "chat", "konsumen", DateTime.Now, o.Pelanggan, o.Driver);
                 Notifikasi.TambahData(notifikasi);
 
                 // Bersihkan Text Box

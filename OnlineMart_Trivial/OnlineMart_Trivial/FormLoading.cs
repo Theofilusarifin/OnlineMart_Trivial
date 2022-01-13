@@ -26,7 +26,6 @@ namespace OnlineMart_Trivial
         int notifCountAkhir = 0;
         int notifCount = 0;
         string role_user = "";
-        bool firstLogin = true;
 
         #region No Tick Constrols
         //Optimized Controls(No Tick)
@@ -89,8 +88,9 @@ namespace OnlineMart_Trivial
                 else MessageBox.Show("Terjadi error, role tidak terdefinisi");
 
                 #region Notifikasi
+                //MessageBox.Show("firstLogin = " + FormUtama.firstLogin);
                 // kalau baru pertama kali login di user manapun
-                if (firstLogin == true)
+                if (FormUtama.firstLogin == true)
                 {
                     // hitung notifikasi awal setiap user
                     notifCountKonsumen = Notifikasi.HitungNotifikasi("konsumen");
@@ -98,15 +98,23 @@ namespace OnlineMart_Trivial
                     notifCountPegawai = Notifikasi.HitungNotifikasi("pegawai");
                     notifCountPenjual = Notifikasi.HitungNotifikasi("penjual");
 
-                    firstLogin = false;
+                    //MessageBox.Show("notifCountKonsumen = " + notifCountKonsumen +
+                    //                "\nnotifCountDriver = " + notifCountDriver +
+                    //                "\nnotifCountPegawai = " + notifCountPegawai +
+                    //                "\nnotifCountPenjual = " + notifCountPenjual);
+
+                    FormUtama.firstLogin = false;
+                    //MessageBox.Show("firstLogin = " + FormUtama.firstLogin);
                 }
 
-                if (firstLogin == false)
+                if (FormUtama.firstLogin == false)
                 {
                     // hitung notif akhir
                     notifCountAkhir = Notifikasi.HitungNotifikasi(role_user);
+                    //MessageBox.Show("notifCountAkhir = " + notifCountAkhir);
 
                     // hitung notif yang ditampilkan
+                    //MessageBox.Show("role_user = " + role_user);
                     switch (role_user)
                     {
                         case "konsumen":
@@ -124,6 +132,7 @@ namespace OnlineMart_Trivial
                     }
 
                     #region Tampilkan Notif
+                    //MessageBox.Show("notifCount = " + notifCount);
                     if (notifCount == 0)
                     {
                         FormUtama.frmUtama.NotifRedCircle.Image = null;

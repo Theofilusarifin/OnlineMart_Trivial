@@ -124,7 +124,7 @@ namespace OnlineMart_Trivial
             this.panelLeftNavbar.ForeColor = System.Drawing.Color.White;
             this.panelLeftNavbar.Location = new System.Drawing.Point(0, 0);
             this.panelLeftNavbar.Name = "panelLeftNavbar";
-            this.panelLeftNavbar.Size = new System.Drawing.Size(250, 961);
+            this.panelLeftNavbar.Size = new System.Drawing.Size(250, 749);
             this.panelLeftNavbar.TabIndex = 0;
             this.panelLeftNavbar.Visible = false;
             // 
@@ -735,7 +735,7 @@ namespace OnlineMart_Trivial
             this.panelHeader.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1534, 87);
+            this.panelHeader.Size = new System.Drawing.Size(1120, 87);
             this.panelHeader.TabIndex = 0;
             this.panelHeader.Visible = false;
             // 
@@ -746,7 +746,7 @@ namespace OnlineMart_Trivial
             this.labelNotifCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.labelNotifCount.Font = new System.Drawing.Font("Montserrat", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNotifCount.ForeColor = System.Drawing.Color.White;
-            this.labelNotifCount.Location = new System.Drawing.Point(1464, 16);
+            this.labelNotifCount.Location = new System.Drawing.Point(1050, 16);
             this.labelNotifCount.Name = "labelNotifCount";
             this.labelNotifCount.Size = new System.Drawing.Size(20, 11);
             this.labelNotifCount.TabIndex = 0;
@@ -758,7 +758,7 @@ namespace OnlineMart_Trivial
             this.NotifRedCircle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NotifRedCircle.BackColor = System.Drawing.Color.Transparent;
             this.NotifRedCircle.Image = global::OnlineMart_Trivial.Properties.Resources.notification;
-            this.NotifRedCircle.Location = new System.Drawing.Point(1460, 10);
+            this.NotifRedCircle.Location = new System.Drawing.Point(1046, 10);
             this.NotifRedCircle.Name = "NotifRedCircle";
             this.NotifRedCircle.Size = new System.Drawing.Size(25, 25);
             this.NotifRedCircle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -772,9 +772,9 @@ namespace OnlineMart_Trivial
             this.labelSaldo.BackColor = System.Drawing.Color.White;
             this.labelSaldo.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSaldo.ForeColor = System.Drawing.Color.Black;
-            this.labelSaldo.Location = new System.Drawing.Point(1203, 41);
+            this.labelSaldo.Location = new System.Drawing.Point(789, 41);
             this.labelSaldo.Name = "labelSaldo";
-            this.labelSaldo.Size = new System.Drawing.Size(59, 22);
+            this.labelSaldo.Size = new System.Drawing.Size(56, 22);
             this.labelSaldo.TabIndex = 7;
             this.labelSaldo.Text = "Saldo";
             this.labelSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -787,9 +787,9 @@ namespace OnlineMart_Trivial
             this.labelSaldoHeader.BackColor = System.Drawing.Color.White;
             this.labelSaldoHeader.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSaldoHeader.ForeColor = System.Drawing.Color.Gray;
-            this.labelSaldoHeader.Location = new System.Drawing.Point(1203, 18);
+            this.labelSaldoHeader.Location = new System.Drawing.Point(789, 18);
             this.labelSaldoHeader.Name = "labelSaldoHeader";
-            this.labelSaldoHeader.Size = new System.Drawing.Size(56, 21);
+            this.labelSaldoHeader.Size = new System.Drawing.Size(54, 21);
             this.labelSaldoHeader.TabIndex = 6;
             this.labelSaldoHeader.Text = "Saldo";
             this.labelSaldoHeader.Visible = false;
@@ -801,9 +801,9 @@ namespace OnlineMart_Trivial
             this.labelPoin.BackColor = System.Drawing.Color.White;
             this.labelPoin.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPoin.ForeColor = System.Drawing.Color.Black;
-            this.labelPoin.Location = new System.Drawing.Point(913, 40);
+            this.labelPoin.Location = new System.Drawing.Point(499, 40);
             this.labelPoin.Name = "labelPoin";
-            this.labelPoin.Size = new System.Drawing.Size(50, 22);
+            this.labelPoin.Size = new System.Drawing.Size(48, 22);
             this.labelPoin.TabIndex = 5;
             this.labelPoin.Text = "Poin";
             this.labelPoin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -816,9 +816,9 @@ namespace OnlineMart_Trivial
             this.labelPoinHeader.BackColor = System.Drawing.Color.White;
             this.labelPoinHeader.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPoinHeader.ForeColor = System.Drawing.Color.Gray;
-            this.labelPoinHeader.Location = new System.Drawing.Point(913, 17);
+            this.labelPoinHeader.Location = new System.Drawing.Point(499, 17);
             this.labelPoinHeader.Name = "labelPoinHeader";
-            this.labelPoinHeader.Size = new System.Drawing.Size(48, 21);
+            this.labelPoinHeader.Size = new System.Drawing.Size(46, 21);
             this.labelPoinHeader.TabIndex = 4;
             this.labelPoinHeader.Text = "Poin";
             this.labelPoinHeader.Visible = false;
@@ -827,7 +827,7 @@ namespace OnlineMart_Trivial
             // 
             this.pictureBoxSaldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxSaldo.Image = global::OnlineMart_Trivial.Properties.Resources.saldo_panel;
-            this.pictureBoxSaldo.Location = new System.Drawing.Point(1132, 15);
+            this.pictureBoxSaldo.Location = new System.Drawing.Point(718, 15);
             this.pictureBoxSaldo.Name = "pictureBoxSaldo";
             this.pictureBoxSaldo.Size = new System.Drawing.Size(237, 63);
             this.pictureBoxSaldo.TabIndex = 3;
@@ -838,7 +838,7 @@ namespace OnlineMart_Trivial
             // 
             this.pictureBoxPoin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxPoin.Image = global::OnlineMart_Trivial.Properties.Resources.coin_panel;
-            this.pictureBoxPoin.Location = new System.Drawing.Point(846, 15);
+            this.pictureBoxPoin.Location = new System.Drawing.Point(432, 15);
             this.pictureBoxPoin.Name = "pictureBoxPoin";
             this.pictureBoxPoin.Size = new System.Drawing.Size(237, 63);
             this.pictureBoxPoin.TabIndex = 3;
@@ -850,7 +850,7 @@ namespace OnlineMart_Trivial
             this.BelNotifikasi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BelNotifikasi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BelNotifikasi.Image = global::OnlineMart_Trivial.Properties.Resources.notification_panel;
-            this.BelNotifikasi.Location = new System.Drawing.Point(1422, 17);
+            this.BelNotifikasi.Location = new System.Drawing.Point(1008, 17);
             this.BelNotifikasi.Name = "BelNotifikasi";
             this.BelNotifikasi.Size = new System.Drawing.Size(57, 60);
             this.BelNotifikasi.TabIndex = 2;
@@ -861,7 +861,7 @@ namespace OnlineMart_Trivial
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::OnlineMart_Trivial.Properties.Resources.User;
-            this.pictureBox2.Location = new System.Drawing.Point(54, 18);
+            this.pictureBox2.Location = new System.Drawing.Point(-360, 18);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(57, 60);
             this.pictureBox2.TabIndex = 2;
@@ -873,9 +873,9 @@ namespace OnlineMart_Trivial
             this.labelNama.AutoSize = true;
             this.labelNama.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNama.ForeColor = System.Drawing.Color.White;
-            this.labelNama.Location = new System.Drawing.Point(297, 32);
+            this.labelNama.Location = new System.Drawing.Point(-117, 32);
             this.labelNama.Name = "labelNama";
-            this.labelNama.Size = new System.Drawing.Size(73, 26);
+            this.labelNama.Size = new System.Drawing.Size(71, 26);
             this.labelNama.TabIndex = 1;
             this.labelNama.Text = "Nama";
             // 
@@ -885,9 +885,9 @@ namespace OnlineMart_Trivial
             this.labelwelcome.AutoSize = true;
             this.labelwelcome.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelwelcome.ForeColor = System.Drawing.Color.White;
-            this.labelwelcome.Location = new System.Drawing.Point(129, 32);
+            this.labelwelcome.Location = new System.Drawing.Point(-285, 32);
             this.labelwelcome.Name = "labelwelcome";
-            this.labelwelcome.Size = new System.Drawing.Size(171, 26);
+            this.labelwelcome.Size = new System.Drawing.Size(167, 26);
             this.labelwelcome.TabIndex = 0;
             this.labelwelcome.Text = "Welcome Back,";
             // 
@@ -899,7 +899,7 @@ namespace OnlineMart_Trivial
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLeft.Location = new System.Drawing.Point(250, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(1534, 961);
+            this.panelLeft.Size = new System.Drawing.Size(1120, 749);
             this.panelLeft.TabIndex = 1;
             this.panelLeft.Visible = false;
             // 
@@ -909,7 +909,7 @@ namespace OnlineMart_Trivial
             this.panelActiveForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelActiveForm.Location = new System.Drawing.Point(0, 87);
             this.panelActiveForm.Name = "panelActiveForm";
-            this.panelActiveForm.Size = new System.Drawing.Size(1534, 874);
+            this.panelActiveForm.Size = new System.Drawing.Size(1120, 662);
             this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
             // 
@@ -918,14 +918,14 @@ namespace OnlineMart_Trivial
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
-            this.ClientSize = new System.Drawing.Size(1784, 961);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelLeftNavbar);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1800, 1000);
+            this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "FormUtama";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Online Mart";
