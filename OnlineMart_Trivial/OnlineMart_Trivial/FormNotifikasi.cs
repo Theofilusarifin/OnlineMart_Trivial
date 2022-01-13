@@ -75,13 +75,13 @@ namespace OnlineMart_Trivial
                             break;
                     }
 
-                    //MessageBox.Show(path);
-                    PictureBox image = new PictureBox();
-                    image.Image = Image.FromFile(path);
+                    ////MessageBox.Show(path);
+                    //PictureBox image = new PictureBox();
+                    //image.Image = Image.FromFile(path);
 
-                    MemoryStream mmst = new MemoryStream();
-                    image.Image.Save(mmst, image.Image.RawFormat);
-                    byte[] img = mmst.ToArray();
+                    //MemoryStream mmst = new MemoryStream();
+                    //image.Image.Save(mmst, image.Image.RawFormat);
+                    //byte[] img = mmst.ToArray();
 
                     if (n.Role_user == "konsumen" && FormUtama.role == "konsumen" && n.Pelanggan.Id == FormUtama.konsumen.Id)
                     {
@@ -183,18 +183,59 @@ namespace OnlineMart_Trivial
             {
                 if (e.ColumnIndex == dataGridView.Columns["btnDetail"].Index && e.RowIndex >= 0)
                 {
+                    // ambil index row noti dari datagrid
                     int index = dataGridView.CurrentRow.Index;
                     //MessageBox.Show("index : " + index);
 
+                    // ambil data notif
                     Notifikasi notifikasi = listNotifikasi[index];
                     idNotif = notifikasi.Id;
                     //MessageBox.Show("idNotif : " + idNotif);
 
-                    // Open FormDetailNotifikasi
-                    FormDetailNotifikasi frm = new FormDetailNotifikasi();
-                    frm.Owner = this;
-                    frm.Show();
-                    this.Enabled = false;
+                    switch (notifikasi.Tipe)
+                    {
+                        case "order":
+                            switch (FormUtama.role)
+                            {
+                                case "konsumen":
+                                    
+                                    break;
+                                case "rider":
+                                    FormUtama.frmUtama.openChildForm(new FormDaftarPengiriman());
+                                    break;
+                                case "pegawai":
+
+                                    break;
+                                case "penjual":
+
+                                    break;
+                            }
+                            break;
+
+                        case "chat":
+                            switch (FormUtama.role)
+                            {
+                                case "konsumen":
+                                    FormUtama.frmUtama.openChildForm(new FormCekPesanan());
+                                    break;
+                                case "rider":
+                                    FormUtama.frmUtama.openChildForm(new FormChatPelanggan());
+                                    break;
+                                case "pegawai":
+
+                                    break;
+                                case "penjual":
+
+                                    break;
+                            }
+                            break;
+                    }
+
+                    //// Open FormDetailNotifikasi
+                    //FormDetailNotifikasi frm = new FormDetailNotifikasi();
+                    //frm.Owner = this;
+                    //frm.Show();
+                    //this.Enabled = false;
                 }
             }
             catch (Exception ex)
