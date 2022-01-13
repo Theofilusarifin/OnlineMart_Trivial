@@ -79,6 +79,19 @@ namespace OnlineMart_Trivial
                     image.Image.Save(mmst, image.Image.RawFormat);
                     byte[] img = mmst.ToArray();
 
+                    //string path = "";
+                    //Bitmap img;
+                    //switch (n.Tipe)
+                    //{
+                    //    case "order":
+                    //        path = Path.Combine(FormUtama.location + "\\notif\\", "receipt");
+                    //        break;
+                    //    case "chat":
+                    //        path = Path.Combine(FormUtama.location + "\\notif\\", "bubble-chat");
+                    //        break;
+                    //}
+                    //img = new Bitmap(path);
+
                     if (n.Role_user == "konsumen" && FormUtama.role == "konsumen" && n.Pelanggan.Id == FormUtama.konsumen.Id)
                     {
                         dataGridView.Rows.Add(img, n.Isi, n.Waktu);

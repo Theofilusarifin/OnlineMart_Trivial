@@ -270,11 +270,11 @@ namespace OnlineMart_LIB
 		public static Boolean TambahDataOrderCabang(Order o)
 		{
             string sql = "insert into orders (id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
-                         "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id, penjual_id) " +
+                         "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id) " +
                          "values (" + o.Id + ", '" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + o.Alamat_tujuan + "', " +
                          o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "', '" + o.Status + "', " + o.Cabang.Id + ", " +
                          o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " + o.Promo.Id + ", " +
-                         o.Gift_redeem.Id + ", null)";
+                         o.Gift_redeem.Id + ")";
 
             int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDitambah == 0) return false;
@@ -284,9 +284,9 @@ namespace OnlineMart_LIB
         public static Boolean TambahDataOrderPenjual(Order o)
         {
             string sql = "insert into orders (id, tanggal_waktu, alamat_tujuan, ongkos_kirim, total_bayar, cara_bayar, status, " +
-                         "cabang_id, pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id, penjual_id) " +
+                         "pelanggan_id, driver_id, metode_pembayaran_id, promo_id, gift_redeem_id, penjual_id) " +
                          "values (" + o.Id + ", '" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + o.Alamat_tujuan + "', " +
-                         o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "','" + o.Status + "', null, " +
+                         o.Ongkos_kirim + ", " + o.Total_bayar + ", '" + o.Cara_bayar + "','" + o.Status + "', " +
                          o.Pelanggan.Id + ", " + o.Driver.Id + ", " + o.Metode_pembayaran.Id + ", " + +o.Promo.Id + ", " +
                          o.Gift_redeem.Id + ", " + o.Penjual.Id + ")";
 
@@ -298,15 +298,16 @@ namespace OnlineMart_LIB
         public static List<Order> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "select * from orders o " +
-                         "inner join cabangs c on o.cabang_id = c.id " +
-                         "inner join pegawais peg on c.pegawai_id = peg.id " +
-                         "inner join pelanggans pel on o.pelanggan_id = pel.id " +
-                         "inner join drivers d on o.driver_id = d.id " +
-                         "inner join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
-                         "inner join promos pr on o.promo_id = pr.id " +
-                         "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
-                         "inner join gifts g on gr.gift_id = g.id " + 
-                         "inner join penjuals pen on o.penjual_id = pen.id ";
+                         "left join cabangs c on o.cabang_id = c.id " +
+                         "left join pegawais peg on c.pegawai_id = peg.id " +
+                         "left join pelanggans pel on o.pelanggan_id = pel.id " +
+                         "left join drivers d on o.driver_id = d.id " +
+                         "left join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
+                         "left join promos pro on o.promo_id = pro.id " +
+                         "left join gift_redeems gr on o.gift_redeem_id = gr.id " +
+                         "left join gifts g on gr.gift_id = g.id " +
+                         "left join penjuals pen on o.penjual_id = pen.id " +
+                         "left join blacklists b on pen.blacklist_id = b.id ";
 
             if (kriteria != "") sql += " where " + kriteria + " like '%" + nilaiKriteria + "%' ";
 
@@ -333,16 +334,17 @@ namespace OnlineMart_LIB
                 Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
 
                 Order o = null;
-                int cabang_id = hasil.GetInt32(14);
 
-                if (cabang_id == 0)
+                if (hasil.IsDBNull(7)) // kalau cabang_id null
                 {
+                    Blacklist b = new Blacklist(hasil.GetInt32(61), hasil.GetString(62), hasil.GetString(63));
+
                     Penjual pen = new Penjual(hasil.GetInt32(53), hasil.GetString(54), hasil.GetString(55), hasil.GetString(56), hasil.GetString(57), hasil.GetString(58), hasil.GetString(59));
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), pel, d, mp, pr, gr, pen);
                 }
-                else
+                else // kalau penjual_id null
                 {
-                    Cabang c = new Cabang(cabang_id, hasil.GetString(15), hasil.GetString(16), peg);
+                    Cabang c = new Cabang(hasil.GetInt32(14), hasil.GetString(15), hasil.GetString(16), peg);
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
                 }
 
