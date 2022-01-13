@@ -125,7 +125,7 @@ namespace OnlineMart_Trivial
                     DataGridViewButtonColumn bcolLihatDetail = new DataGridViewButtonColumn();
 
                     bcolLihatDetail.HeaderText = "Detail barang";
-                    bcolLihatDetail.Text = "Lihat detail!";
+                    bcolLihatDetail.Text = "Lihat detail";
                     bcolLihatDetail.Name = "btnLihatDetailBarang";
                     bcolLihatDetail.UseColumnTextForButtonValue = true;
                     bcolLihatDetail.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;

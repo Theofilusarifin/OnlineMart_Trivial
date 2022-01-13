@@ -178,6 +178,14 @@ namespace OnlineMart_LIB
 			}
 			return null;
 		}
+		public static Boolean RemoveBlacklist(Penjual p, Blacklist b)
+		{
+			// Querry Insert
+			string sql = "update penjuals set username = '" + p.Username + "', nama = '" + p.Nama + "', email = '" + p.Email + "', password = SHA2('" + p.Password + "', 512), status = '" + p.Status + "', telpon = '" + p.Telpon + "', blacklist_id = " + b.Id + " where id = " + p.Id;
+			int jumlahDitambah = Koneksi.JalankanPerintahDML(sql);
+			if (jumlahDitambah == 0) return false;
+			else return true;
+		}
 		#endregion
 	}
 }

@@ -198,7 +198,7 @@ namespace OnlineMart_Trivial
                 if (e.ColumnIndex == dataGridView.Columns["btnRemoveBlacklist"].Index && e.RowIndex >= 0)
                 {
                     Blacklist b = null;
-                    //Penjual.UbahData(p, b);
+                    Penjual.RemoveBlacklist(penjual, b);
                     this.Hide();
                 }
             }
