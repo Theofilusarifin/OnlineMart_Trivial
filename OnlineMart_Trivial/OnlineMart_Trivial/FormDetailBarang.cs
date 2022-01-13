@@ -57,7 +57,7 @@ namespace OnlineMart_Trivial
             {
                 foreach (Penilaian p in listPenilaian)
                 {
-                    //dataGridView.Rows.Add(p.Id, p.Rating, p.Review, p.Barang.Id);
+                    dataGridView.Rows.Add(p.Id, p.Rating, p.Review, p.Barang.Id);
                 }
             }
             else
@@ -72,28 +72,26 @@ namespace OnlineMart_Trivial
 		{
             try
             {
-                ////Default list semua barang di cabang yang pertama
-                //listPenilaian = Penilaian.BacaData("", "");
+				//Default list semua barang di cabang yang pertama
+				listPenilaian = Penilaian.BacaData("barang_id", barangDipilih.Id.ToString());
 
-                ////Panggil Method untuk menambah kolom pada datagridview
-                //FormatDataGrid();
+				//Panggil Method untuk menambah kolom pada datagridview
+				FormatDataGrid();
 
-                ////Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
-                //TampilDataGrid();
-                //double rating = 0;
-                //for (int i = 0; i <= listPenilaian.Count; i++)
-                //{
-                //    Penilaian p = listPenilaian[i];
-                //    rating += p.Rating;
-                //    if (i == listPenilaian.Count)
-                //    {
-                //        rating /= i;
-                //    }
-                //}
-                //labelRating.Text = rating.ToString();
-                //comboBoxKriteria.Text = "Id";
+				//Tampilkan semua isi list di datagridview (Panggil method TampilDataGridView)
+				TampilDataGrid();
+				double rating = 0;
+                double pembilang = 0;
+				foreach (Penilaian p in listPenilaian)
+				{
+                    rating += p.Rating;
+                    pembilang++;
+				}
+                rating /= pembilang;
+				labelRating.Text = rating.ToString();
+				comboBoxKriteria.Text = "Id";
 
-                string path = Path.Combine(FormUtama.location + "\\barang\\", barangDipilih.Path_gambar);
+				string path = Path.Combine(FormUtama.location + "\\barang\\", barangDipilih.Path_gambar);
                 pictureBoxBarang.Image = Image.FromFile(path);
 
                 textBoxDeskripsiBarang.ReadOnly = true;
@@ -129,7 +127,6 @@ namespace OnlineMart_Trivial
         }
 
         #endregion
-
 
         #region Button
         private void buttonCloseForm_Click(object sender, EventArgs e)

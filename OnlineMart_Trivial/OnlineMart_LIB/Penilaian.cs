@@ -72,11 +72,13 @@ namespace OnlineMart_LIB
 			{
 				if (kriteria != "review")
 				{
-					sql = "select * from penilaians where " + kriteria + " = " + nilaiKriteria;
+					sql = "select p.id, p.rating, p.review, p.barang_id from penilaians p " +
+						"inner join barangs b on p.barang_id = b.id where p." + kriteria + " = " + nilaiKriteria;
 				}
 				else
 				{
-					sql = "select * from penilaians where " + kriteria + " like '%" + nilaiKriteria + "%'";
+					sql = "select * from penilaians p " +
+						"inner join barangs b on p.barang_id = b.id where p." + kriteria + " like '%" + nilaiKriteria + "%'";
 				}
 			}
 			else
