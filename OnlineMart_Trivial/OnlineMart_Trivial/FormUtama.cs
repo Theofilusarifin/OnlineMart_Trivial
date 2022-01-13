@@ -79,7 +79,7 @@ namespace OnlineMart_Trivial
 
         #region OpenChildForm
         public Form activeForm = null;
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (activeForm != null) activeForm.Close();
             activeForm = childForm;
@@ -184,6 +184,7 @@ namespace OnlineMart_Trivial
                 MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
             }
         }
+
         private void buttonCheckout_Click(object sender, EventArgs e)
         {
             try
