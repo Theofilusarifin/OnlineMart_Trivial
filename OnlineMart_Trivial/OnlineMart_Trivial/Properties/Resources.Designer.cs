@@ -283,6 +283,16 @@ namespace OnlineMart_Trivial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Closed_Eye {
+            get {
+                object obj = ResourceManager.GetObject("Closed Eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coin {
             get {
                 object obj = ResourceManager.GetObject("coin", resourceCulture);
@@ -676,6 +686,16 @@ namespace OnlineMart_Trivial.Properties {
         internal static System.Drawing.Bitmap Onboarding {
             get {
                 object obj = ResourceManager.GetObject("Onboarding", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Open_Eye {
+            get {
+                object obj = ResourceManager.GetObject("Open Eye", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
