@@ -34,7 +34,14 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Clear();
 
             //Menambah kolom di datagridview
-            dataGridView.Columns.Add("iconType", "Gambar"); // nanti ada gambar per tipe notif
+
+            DataGridViewImageColumn dgvimgcol = new DataGridViewImageColumn();
+            dgvimgcol.HeaderText = "Icon Notif";
+            dgvimgcol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+            dataGridView.Columns.Add(dgvimgcol);
+            dataGridView.RowTemplate.Height = 80;
+
             dataGridView.Columns.Add("isi", "");
             dataGridView.Columns.Add("waktu", "Waktu");
 
@@ -42,7 +49,6 @@ namespace OnlineMart_Trivial
             dataGridView.EnableHeadersVisualStyles = false;
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["iconType"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["isi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
@@ -64,33 +70,24 @@ namespace OnlineMart_Trivial
                     //                "FormUtama.konsumen.Id : " + FormUtama.konsumen.Id + ", FormUtama.rider.Id : " + FormUtama.rider.Id + ", " +
                     //                "FormUtama.pegawai.Id : " + FormUtama.pegawai.Id + "FormUtama.penjual.Id : " + FormUtama.penjual.Id);
 
+
+                    string path = "";
                     PictureBox image = new PictureBox();
                     switch (n.Tipe)
                     {
                         case "order":
-                            image.Image = Properties.Resources.receipt;
+                            path = Path.Combine(FormUtama.location + "\\notif\\", "receipt.png");
+                            image.Image = Image.FromFile(path);
                             break;
                         case "chat":
-                            image.Image = Properties.Resources.bubble_chat;
+                            path = Path.Combine(FormUtama.location + "\\notif\\", "bubble-chat.png");
+                            image.Image = Image.FromFile(path);
                             break;
                     }
 
                     MemoryStream mmst = new MemoryStream();
                     image.Image.Save(mmst, image.Image.RawFormat);
                     byte[] img = mmst.ToArray();
-
-                    //string path = "";
-                    //Bitmap img;
-                    //switch (n.Tipe)
-                    //{
-                    //    case "order":
-                    //        path = Path.Combine(FormUtama.location + "\\notif\\", "receipt");
-                    //        break;
-                    //    case "chat":
-                    //        path = Path.Combine(FormUtama.location + "\\notif\\", "bubble-chat");
-                    //        break;
-                    //}
-                    //img = new Bitmap(path);
 
                     if (n.Role_user == "konsumen" && FormUtama.role == "konsumen" && n.Pelanggan.Id == FormUtama.konsumen.Id)
                     {
