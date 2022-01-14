@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2022 at 06:02 AM
+-- Generation Time: Jan 14, 2022 at 05:19 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
@@ -41,21 +41,13 @@ CREATE TABLE `barangs` (
 --
 
 INSERT INTO `barangs` (`id`, `nama`, `harga`, `deskripsi`, `path_gambar`, `kategori_id`) VALUES
-(1, 'Nasi Goreng Pedas', '7500', 'a', 'a', 2),
-(2, 'masako', '2500', 'a', 'a', 5),
-(4, 'Ayam Goreng', '16000', 'a', 'a', 2),
-(6, 'Chikin Taro', '5000', 'a', 'aa', 2),
-(7, 'Walls', '7000', 'a', 'a', 12),
-(8, 'Indomie', '3500', 'a', 'a', 2),
-(9, 'Steak', '25000', 'a', 'a', 2),
-(10, 'Boba', '10000', 'a', 'a', 3),
-(11, 'Vas', '15000', 'a', 'a', 5),
-(12, 'Laptop', '3000000', 'a', 'a', 7),
-(13, 'Kabel', '60000', 'a', 'a', 7),
-(14, 'Your Name', '10000', 'a', 'a', 6),
-(15, 'Your Lie In April', '10000', 'a', 'a', 8),
-(16, 'My Hero Academia', '10000', 'a', 'a', 8),
-(17, 'Weathering With You', '10000', 'a', 'a', 6);
+(15, 'Asus ROG Phone', '15000000', 'Handphone dengan spek tertinggi!', 'Asus ROG Phone_ukMy7mGA.png', 5),
+(16, 'Ayam 100 Gram', '25000', 'Ayam lokal dengan kualitas Internasional', 'Ayam 100 Gram_xLmiivl2.png', 4),
+(17, 'Boba Tea', '10000', 'Minum boba tea akan menghilangkan dahaga dan stress anda', 'Boba Tea_Xyf5uHVp.png', 2),
+(18, 'Minyak Goreng Bimoli', '23000', 'Minyak goreng dengan warna kuning keemasan', 'Minyak Goreng Bimoli_FclXRrMV.png', 3),
+(20, 'Mie Ayam', '23000', 'Mie Ayam', 'Mie Ayam_XGED86wh.png', 1),
+(21, 'Daging Sapi 100 gr', '15000', 'Daging kualitas pilihan', 'Daging Sapi 100 gr_BLHcPZJD.png', 4),
+(22, 'Rice Bowl', '15000', 'Makanan Rice Bowl', 'Rice Bowl_SZAh5e80.png', 1);
 
 -- --------------------------------------------------------
 
@@ -74,22 +66,7 @@ CREATE TABLE `barang_cabang` (
 --
 
 INSERT INTO `barang_cabang` (`cabang_id`, `barang_id`, `stok`) VALUES
-(1, 2, 9996),
-(1, 11, 9998),
-(7, 1, 9999),
-(7, 4, 9999),
-(7, 6, 8000),
-(7, 8, 9999),
-(7, 9, 9999),
-(7, 10, 9999),
-(8, 12, 9999),
-(8, 13, 9999),
-(8, 14, 9999),
-(8, 15, 9999),
-(8, 16, 9999),
-(8, 17, 9999),
-(13, 9, 500),
-(14, 7, 9000);
+(1, 17, 149);
 
 -- --------------------------------------------------------
 
@@ -109,17 +86,10 @@ CREATE TABLE `barang_order` (
 --
 
 INSERT INTO `barang_order` (`jumlah`, `harga`, `order_id`, `barang_id`) VALUES
-(1, 7500, 202111250001, 1),
-(1, 7500, 202111280001, 1),
-(1, 2500, 202111280001, 2),
-(2, 5000, 202111280002, 2),
-(1, 5000, 202111280002, 6),
-(2, 5000, 202111280003, 2),
-(6, 15000, 202111280004, 2),
-(5, 12500, 202111280005, 2),
-(1, 2500, 202111280006, 2),
-(3, 7500, 202112010001, 2),
-(1, 15000, 202112010001, 11);
+(1, 10000, 202201140001, 17),
+(5, 115000, 202201140002, 18),
+(3, 69000, 202201140003, 18),
+(5, 115000, 202201140004, 18);
 
 -- --------------------------------------------------------
 
@@ -130,8 +100,17 @@ INSERT INTO `barang_order` (`jumlah`, `harga`, `order_id`, `barang_id`) VALUES
 CREATE TABLE `barang_penjual` (
   `penjual_id` int(10) UNSIGNED NOT NULL,
   `barang_id` int(10) UNSIGNED NOT NULL,
-  `stok` varchar(45) DEFAULT NULL
+  `stok` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `barang_penjual`
+--
+
+INSERT INTO `barang_penjual` (`penjual_id`, `barang_id`, `stok`) VALUES
+(1, 18, 137),
+(7, 20, 100),
+(8, 22, 1000);
 
 -- --------------------------------------------------------
 
@@ -144,6 +123,13 @@ CREATE TABLE `blacklists` (
   `jenis` varchar(45) NOT NULL,
   `alasan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `blacklists`
+--
+
+INSERT INTO `blacklists` (`id`, `jenis`, `alasan`) VALUES
+(1, 'Test', 'Test');
 
 -- --------------------------------------------------------
 
@@ -163,12 +149,11 @@ CREATE TABLE `cabangs` (
 --
 
 INSERT INTO `cabangs` (`id`, `nama`, `alamat`, `pegawai_id`) VALUES
-(1, 'UpNormal', 'Raya Timur no 6', 1),
-(7, 'Rungkut', 'Jln medokan asri raya III no 21 B, Surabaya', 5),
-(8, 'Tenggilis', 'tengilis jaya\r\n', 5),
-(13, 'Gubeng', 'guben intan timur XXX', 1),
-(14, 'Rungkut', 'Rungkut Asri Tirta Agug', 6),
-(16, 'default', 'default', 1);
+(1, 'Gubeng', 'Jl. Gubeng Airlangga I No.2, Airlangga', 2),
+(2, 'Manyar', 'Manyar Kartika Timur No.6 Surabaya', 3),
+(3, 'Ngagel', 'Jl. Ngagel Jaya Selatan No. 104', 5),
+(4, 'Wiyung', 'Jl. Raya Menganti Wiyung', 2),
+(5, 'Wonokromo', 'Jl. Cisadane No.51', 3);
 
 -- --------------------------------------------------------
 
@@ -177,7 +162,7 @@ INSERT INTO `cabangs` (`id`, `nama`, `alamat`, `pegawai_id`) VALUES
 --
 
 CREATE TABLE `chats` (
-  `id` int(11) NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `isi` text DEFAULT NULL,
   `waktu` datetime DEFAULT NULL,
   `role_pengirim` enum('driver','konsumen','penjual') DEFAULT NULL,
@@ -185,7 +170,7 @@ CREATE TABLE `chats` (
   `order_id` bigint(19) UNSIGNED NOT NULL,
   `driver_id` int(10) UNSIGNED DEFAULT NULL,
   `pelanggan_id` int(10) UNSIGNED NOT NULL,
-  `penjual_id` int(10) UNSIGNED DEFAULT NULL
+  `penjual_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -193,18 +178,9 @@ CREATE TABLE `chats` (
 --
 
 INSERT INTO `chats` (`id`, `isi`, `waktu`, `role_pengirim`, `role_tujuan`, `order_id`, `driver_id`, `pelanggan_id`, `penjual_id`) VALUES
-(5, 'a', '2021-11-23 05:45:23', 'konsumen', 'driver', 202112010008, 2, 4, NULL),
-(6, 'aaa', '2021-11-23 05:45:26', 'driver', 'konsumen', 202111280005, 2, 1, NULL),
-(7, 'yo', '2021-11-23 05:47:47', 'konsumen', 'driver', 202111280004, 2, 4, NULL),
-(8, 'aa', '2021-11-23 17:47:37', 'konsumen', 'driver', 202111280004, 2, 4, NULL),
-(9, 'yesy', '2021-11-23 17:47:42', 'konsumen', 'driver', 202111280004, 2, 4, NULL),
-(10, 'test', '2021-11-27 00:26:05', 'konsumen', 'driver', 202111280004, 2, 4, NULL),
-(11, 'woke', '2021-11-27 00:28:59', 'driver', 'konsumen', 202111280004, 2, 4, NULL),
-(12, 'siap', '2021-11-27 00:29:04', 'driver', 'konsumen', 202111280004, 2, 4, NULL),
-(13, 'Test', '2021-11-27 00:29:29', 'konsumen', 'driver', 202111280004, 2, 4, NULL),
-(14, 'Halo', '2021-11-28 16:55:37', 'konsumen', 'driver', 202111280004, 2, 4, NULL),
-(15, 'Halo  Juga', '2021-11-28 16:55:58', 'driver', 'konsumen', 202111280004, 2, 4, NULL),
-(16, 'Yoi men', '2021-11-28 16:56:32', 'konsumen', 'driver', 202111280004, 2, 4, NULL);
+(1, 'Halo', '2022-01-14 21:54:00', 'penjual', 'konsumen', 202201140002, NULL, 4, 1),
+(2, 'Titik jemput sesuai lokasi aplikasi ya pak', '2022-01-14 22:03:35', 'konsumen', 'driver', 202201140002, 2, 4, NULL),
+(3, 'Baik', '2022-01-14 23:10:58', 'driver', 'konsumen', 202201140002, 2, 4, NULL);
 
 -- --------------------------------------------------------
 
@@ -279,7 +255,9 @@ INSERT INTO `gift_redeems` (`id`, `waktu`, `poin_redeem`, `gift_id`) VALUES
 (3, '2021-11-28 23:23:18', 1000, 2),
 (4, '2021-11-28 23:47:08', 1000, 2),
 (5, '2021-11-28 23:52:03', 1000, 2),
-(6, '2021-12-01 22:34:48', 1000, 2);
+(6, '2021-12-01 22:34:48', 1000, 2),
+(7, '2022-01-14 17:24:50', 1000, 2),
+(8, '2022-01-14 23:14:14', 1000, 2);
 
 -- --------------------------------------------------------
 
@@ -297,13 +275,11 @@ CREATE TABLE `kategoris` (
 --
 
 INSERT INTO `kategoris` (`id`, `nama`) VALUES
-(2, 'Makanan Pedas Banget'),
-(3, 'Minuman'),
-(5, 'Rapuh'),
-(6, 'Movie'),
-(7, 'Alat Elektronik'),
-(8, 'Film'),
-(12, 'Es Krim');
+(1, 'Makanan'),
+(2, 'Minuman'),
+(3, 'Bumbu Dapur'),
+(4, 'Bahan Dapur'),
+(5, 'Alat Elektronik');
 
 -- --------------------------------------------------------
 
@@ -336,8 +312,28 @@ CREATE TABLE `notifikasis` (
   `isi` text NOT NULL,
   `tipe` varchar(45) NOT NULL,
   `waktu` datetime NOT NULL,
-  `pelanggan_id` int(10) UNSIGNED NOT NULL
+  `role_user` enum('driver','konsumen','penjual','pegawai') NOT NULL,
+  `pelanggan_id` int(10) UNSIGNED DEFAULT NULL,
+  `driver_id` int(10) UNSIGNED DEFAULT NULL,
+  `pegawai_id` int(10) UNSIGNED DEFAULT NULL,
+  `penjual_id` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `notifikasis`
+--
+
+INSERT INTO `notifikasis` (`id`, `isi`, `tipe`, `waktu`, `role_user`, `pelanggan_id`, `driver_id`, `pegawai_id`, `penjual_id`) VALUES
+(1, 'Order Masuk', 'order', '2022-01-14 17:17:59', 'driver', 4, 2, NULL, NULL),
+(2, 'Order Masuk', 'order', '2022-01-14 17:24:45', 'driver', 4, 2, NULL, NULL),
+(3, 'Order Cancelled', 'order', '2022-01-14 17:47:26', 'konsumen', 4, 2, NULL, NULL),
+(4, 'Order Cancelled', 'order', '2022-01-14 17:48:49', 'konsumen', 4, 2, NULL, NULL),
+(5, 'Titik jemput sesuai lokasi aplikasi ya pak', 'chat', '2022-01-14 22:03:35', 'driver', 4, 2, NULL, NULL),
+(6, 'Order Masuk', 'order', '2022-01-14 22:22:18', 'driver', 4, 2, NULL, NULL),
+(7, 'Order Cancelled', 'order', '2022-01-14 22:43:07', 'konsumen', 4, 2, NULL, NULL),
+(8, 'Order Cancelled', 'order', '2022-01-14 23:10:20', 'konsumen', 4, 2, NULL, NULL),
+(9, 'Baik', 'chat', '2022-01-14 23:10:58', 'konsumen', 4, 2, NULL, NULL),
+(10, 'Order Masuk', 'order', '2022-01-14 23:13:57', 'driver', 4, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -352,14 +348,14 @@ CREATE TABLE `orders` (
   `ongkos_kirim` float DEFAULT NULL,
   `total_bayar` float DEFAULT NULL,
   `cara_bayar` varchar(45) DEFAULT NULL,
-  `status` enum('Menunggu Pembayaran','Pesanan Diproses','Order Selesai') DEFAULT NULL,
-  `cabang_id` int(10) UNSIGNED DEFAULT 0,
+  `status` enum('Menunggu Pembayaran','Pesanan Diproses','Order Selesai','Cancelled') DEFAULT NULL,
+  `cabang_id` int(10) UNSIGNED DEFAULT NULL,
   `pelanggan_id` int(10) UNSIGNED NOT NULL,
   `driver_id` int(10) UNSIGNED NOT NULL,
   `metode_pembayaran_id` int(10) UNSIGNED NOT NULL,
   `promo_id` int(10) UNSIGNED DEFAULT NULL,
   `gift_redeem_id` int(10) UNSIGNED NOT NULL,
-  `penjual_id` int(10) UNSIGNED DEFAULT 0
+  `penjual_id` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -367,16 +363,10 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `tanggal_waktu`, `alamat_tujuan`, `ongkos_kirim`, `total_bayar`, `cara_bayar`, `status`, `cabang_id`, `pelanggan_id`, `driver_id`, `metode_pembayaran_id`, `promo_id`, `gift_redeem_id`, `penjual_id`) VALUES
-(202111250001, '2021-11-25 18:26:14', 'Medokan Asri', 10000, 7500, 'Transfer', 'Order Selesai', 1, 4, 1, 1, 1, 1, 0),
-(202111280001, '2021-11-28 16:54:25', 'Rungkut Kalibata', 10000, 10000, 'Transfer', 'Pesanan Diproses', 1, 4, 1, 1, 1, 1, 0),
-(202111280002, '2021-11-28 23:19:40', 'Jln Tenggilis Jaya Utara Selatan', 10000, 10000, 'Transfer', 'Pesanan Diproses', 1, 4, 1, 4, 5, 1, 0),
-(202111280003, '2021-11-28 23:20:41', 'Ngangel', 10000, 5000, 'Transfer', 'Pesanan Diproses', 1, 4, 1, 1, 3, 1, 0),
-(202111280004, '2021-11-28 23:45:28', 'Jln Mawar 13', 10000, 15000, 'Transfer', 'Pesanan Diproses', 1, 4, 1, 1, 1, 1, 0),
-(202111280005, '2021-11-28 23:45:39', 'Jln Melati 13', 10000, 12500, 'Transfer', 'Pesanan Diproses', 1, 4, 1, 1, 1, 1, 0),
-(202111280006, '2021-11-28 23:51:40', 'Jln Anggrek 13', 10000, 2500, 'Transfer', 'Pesanan Diproses', 1, 4, 1, 2, 2, 1, 0),
-(202112010001, '2021-12-01 22:16:45', '', 10000, 22500, 'Transfer', 'Pesanan Diproses', 1, 4, 1, 1, 1, 1, 0),
-(202112010002, '2021-12-01 22:34:23', '', 10000, 165000, 'Transfer', 'Pesanan Diproses', 1, 4, 1, 1, 1, 1, 0),
-(202112010008, '2021-12-01 22:34:23', 'Jln Anggrek 13', 10000, 165000, 'Transfer', 'Pesanan Diproses', 1, 1, 1, 1, 1, 1, 0);
+(202201140001, '2022-01-14 17:17:43', 'Jln Ngaggel jaya', 10000, 10000, 'Transfer', 'Cancelled', 1, 4, 2, 1, 1, 1, NULL),
+(202201140002, '2022-01-14 17:22:38', 'Jln Dr Sutomo no 13', 10000, 115000, 'Transfer', 'Order Selesai', NULL, 4, 2, 2, 4, 1, 1),
+(202201140003, '2022-01-14 22:19:31', 'Jln Ngangel', 10000, 69000, 'Transfer', 'Pesanan Diproses', NULL, 4, 2, 1, 1, 1, 1),
+(202201140004, '2022-01-14 23:07:38', 'Jln Tenggilis Mejoyo', 10000, 115000, 'Transfer', 'Pesanan Diproses', NULL, 4, 2, 4, 3, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -430,10 +420,11 @@ INSERT INTO `pelanggans` (`id`, `username`, `nama`, `email`, `password`, `telepo
 (1, 'konsumen', 'konsumen', 'konsumen@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', '01283013810', 0, 0),
 (2, 'yaska', 'yaska', 'yaska@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', '1083103810', 936000, 81500),
 (3, 'henri', 'henri', 'henri@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', '9021832108301', 0, 0),
-(4, 'arifin', 'arifin', 'arifin@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', '1932218310', 9947500, 10000),
+(4, 'arifin', 'arifin', 'arifin@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', '1932218310', 9638500, 11260),
 (5, 'ivan', 'ivan', 'ivan@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', '1932218', 1000000000, 0),
 (6, 'brian', 'brian', 'brian@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', '08128392173', 0, 0),
-(8, 'maya', 'Maya', 'maya@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', '08121902910', 0, 0);
+(8, 'maya', 'Maya', 'maya@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', '08121902910', 0, 0),
+(11, 'Akun', 'Akun', 'Akun@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', '013921830120', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -459,6 +450,15 @@ CREATE TABLE `penilaians` (
   `barang_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `penilaians`
+--
+
+INSERT INTO `penilaians` (`id`, `rating`, `review`, `barang_id`) VALUES
+(1, 1, 'Barangnya bagus sesuai pesanan tapi saya kasih bintang 1 karena saya jahat', 17),
+(2, 5, 'Barang jelek tidak sesuai pesanan, penjual babi tapi karena saya baik jadi saya kasih bintang 5', 17),
+(3, 5, 'Penjual baik dan ramah, barang yang dikirim sesuai dengan pesanan', 17);
+
 -- --------------------------------------------------------
 
 --
@@ -481,7 +481,14 @@ CREATE TABLE `penjuals` (
 --
 
 INSERT INTO `penjuals` (`id`, `username`, `nama`, `email`, `password`, `status`, `telepon`, `blacklist_id`) VALUES
-(0, 'arifin', 'arifin', 'arifin', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', 'OK', '901839218301', NULL);
+(1, 'arifin', 'arifin', 'arifin', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', 'OK', '901839218301', NULL),
+(2, 'yaska', 'yaska', 'yaska', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', 'OK', '901839218301', NULL),
+(3, 'henri', 'henri', 'henri', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', 'Pending', '901839218301', NULL),
+(4, 'ivan', 'ivan', 'ivan', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', 'Pending', '124104210', NULL),
+(5, 'akun', 'akun', 'akun@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', 'Pending', '03204203420', NULL),
+(6, 'crux', 'crux', 'crux@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', 'Pending', '92013821093', NULL),
+(7, 'tom', 'tom', 'tom@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', 'OK', '938208420', NULL),
+(8, 'tobey', 'tobey', 'tobey@gmail.com', 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', 'OK', '892371780381', NULL);
 
 -- --------------------------------------------------------
 
@@ -592,7 +599,7 @@ ALTER TABLE `cabangs`
 --
 ALTER TABLE `chats`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_chats_orders1_idx` (`order_id`,`driver_id`,`pelanggan_id`,`penjual_id`);
+  ADD KEY `fk_chats_orders1_idx` (`order_id`,`pelanggan_id`,`driver_id`);
 
 --
 -- Indexes for table `drivers`
@@ -630,7 +637,10 @@ ALTER TABLE `metode_pembayarans`
 --
 ALTER TABLE `notifikasis`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_notifikasis_pelanggans1_idx` (`pelanggan_id`);
+  ADD KEY `fk_notifikasis_pelanggans1_idx` (`pelanggan_id`),
+  ADD KEY `fk_notifikasis_drivers1_idx` (`driver_id`),
+  ADD KEY `fk_notifikasis_pegawais1_idx` (`pegawai_id`),
+  ADD KEY `fk_notifikasis_penjuals1_idx` (`penjual_id`);
 
 --
 -- Indexes for table `orders`
@@ -698,19 +708,25 @@ ALTER TABLE `riwayat_isi_saldos`
 -- AUTO_INCREMENT for table `barangs`
 --
 ALTER TABLE `barangs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `blacklists`
 --
 ALTER TABLE `blacklists`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cabangs`
 --
 ALTER TABLE `cabangs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `chats`
+--
+ALTER TABLE `chats`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `drivers`
@@ -728,13 +744,13 @@ ALTER TABLE `gifts`
 -- AUTO_INCREMENT for table `gift_redeems`
 --
 ALTER TABLE `gift_redeems`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `kategoris`
 --
 ALTER TABLE `kategoris`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `metode_pembayarans`
@@ -746,7 +762,7 @@ ALTER TABLE `metode_pembayarans`
 -- AUTO_INCREMENT for table `notifikasis`
 --
 ALTER TABLE `notifikasis`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pegawais`
@@ -758,7 +774,13 @@ ALTER TABLE `pegawais`
 -- AUTO_INCREMENT for table `pelanggans`
 --
 ALTER TABLE `pelanggans`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `penjuals`
+--
+ALTER TABLE `penjuals`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `promos`
@@ -813,7 +835,7 @@ ALTER TABLE `cabangs`
 -- Constraints for table `chats`
 --
 ALTER TABLE `chats`
-  ADD CONSTRAINT `fk_chats_orders1` FOREIGN KEY (`order_id`,`driver_id`,`pelanggan_id`,`penjual_id`) REFERENCES `orders` (`id`, `driver_id`, `pelanggan_id`, `penjual_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_chats_orders1` FOREIGN KEY (`order_id`,`pelanggan_id`,`driver_id`) REFERENCES `orders` (`id`, `pelanggan_id`, `driver_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `gift_redeems`
@@ -825,7 +847,10 @@ ALTER TABLE `gift_redeems`
 -- Constraints for table `notifikasis`
 --
 ALTER TABLE `notifikasis`
-  ADD CONSTRAINT `fk_notifikasis_pelanggans1` FOREIGN KEY (`pelanggan_id`) REFERENCES `pelanggans` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_notifikasis_drivers1` FOREIGN KEY (`driver_id`) REFERENCES `drivers` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_notifikasis_pegawais1` FOREIGN KEY (`pegawai_id`) REFERENCES `pegawais` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_notifikasis_pelanggans1` FOREIGN KEY (`pelanggan_id`) REFERENCES `pelanggans` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_notifikasis_penjuals1` FOREIGN KEY (`penjual_id`) REFERENCES `penjuals` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `orders`
