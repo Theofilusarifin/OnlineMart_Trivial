@@ -62,15 +62,6 @@ namespace OnlineMart_Trivial
                     FormUtama.frmUtama.labelPoin.Text = pelanggan.Poin.ToString();
                     FormUtama.frmUtama.labelSaldo.Text = pelanggan.Saldo.ToString();
 
-
-                    FormUtama.frmUtama.pictureBoxPoin.Show();
-                    FormUtama.frmUtama.pictureBoxSaldo.Show();
-                    FormUtama.frmUtama.labelPoinHeader.Show();
-                    FormUtama.frmUtama.labelPoin.Show();
-                    FormUtama.frmUtama.labelSaldoHeader.Show();
-                    FormUtama.frmUtama.labelSaldo.Show();
-
-
                     FormLoading form = new FormLoading(); //Create Object
                     form.Owner = this;
                     form.Show();

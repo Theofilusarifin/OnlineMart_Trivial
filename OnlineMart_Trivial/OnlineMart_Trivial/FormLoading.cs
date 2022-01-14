@@ -66,6 +66,21 @@ namespace OnlineMart_Trivial
                     FormUtama.frmUtama.panelKonsumen.Show();
 
                     role_user = "konsumen";
+
+                    FormUtama.frmUtama.pictureBoxPoin.Show();
+                    FormUtama.frmUtama.pictureBoxSaldo.Show();
+                    FormUtama.frmUtama.labelPoinHeader.Show();
+                    FormUtama.frmUtama.labelPoin.Show();
+                    FormUtama.frmUtama.labelPoin.Text = FormUtama.konsumen.Poin.ToString();
+                    FormUtama.frmUtama.labelSaldoHeader.Show();
+                    FormUtama.frmUtama.labelSaldo.Show();
+                    FormUtama.frmUtama.labelSaldo.Text = FormUtama.konsumen.Saldo.ToString();
+                    FormUtama.frmUtama.labelSaldoHeader.BringToFront();
+                    FormUtama.frmUtama.labelPoinHeader.BringToFront();
+                    FormUtama.frmUtama.labelSaldo.BringToFront();
+                    FormUtama.frmUtama.labelPoin.BringToFront();
+
+
                 }
                 else if (FormUtama.role == "rider")
                 {

@@ -160,13 +160,13 @@ namespace OnlineMart_LIB
         public static List<Chat> BacaData(string kriteria, string idOrder)
         {
             string sql = "select * from chats c " +
-                         "inner join orders o on c.order_id = o.id " +
-                         "inner join penjuals pj on o.penjual_id = pj.id " +
-                         "inner join pelanggans p on o.pelanggan_id = p.id " +
-                         "inner join drivers d on o.driver_id = d.id ";
+                         "left join orders o on c.order_id = o.id " +
+                         "left join penjuals pj on o.penjual_id = pj.id " +
+                         "left join pelanggans p on o.pelanggan_id = p.id " +
+                         "left join drivers d on o.driver_id = d.id ";
             
             //kalau tidak kosong tambahkan ini
-            if (kriteria != "") sql += " where " + kriteria + " like '%" + idOrder + "%'" + " order by c.waktu";
+            if (kriteria != "") sql += " where " + kriteria + " like '%" + idOrder + "%' order by c.waktu";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
@@ -184,7 +184,7 @@ namespace OnlineMart_LIB
                 if (role_pengirim == "driver" || role_tujuan == "driver")
                 {
                     Driver d = new Driver(hasil.GetInt32(39), hasil.GetString(40), hasil.GetString(41), hasil.GetString(42), hasil.GetString(43), hasil.GetString(44));
-                    Order o = new Order(long.Parse(hasil.GetString(4)), p, d);
+                    Order o = new Order(long.Parse(hasil.GetString(5)), p, d);
                     c = new Chat(hasil.GetInt32(0), hasil.GetString(1), DateTime.Parse(hasil.GetString(2)), role_pengirim, role_tujuan, o, d, p);
                 }
                 else if (role_pengirim == "penjual" || role_tujuan == "penjual")

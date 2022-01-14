@@ -81,7 +81,14 @@ namespace OnlineMart_Trivial
             {
                 foreach (Order o in listOrder)
                 {
-                    dataGridView.Rows.Add(o.Id, o.Tanggal_waktu, o.Alamat_tujuan, o.Ongkos_kirim, o.Total_bayar, o.Cara_bayar, o.Status, o.Cabang.Nama, o.Driver.Nama, o.Promo.Id, o.Gift_redeem.Id);
+                    if (o.Cabang != null)
+                    {
+                        dataGridView.Rows.Add(o.Id, o.Tanggal_waktu, o.Alamat_tujuan, o.Ongkos_kirim, o.Total_bayar, o.Cara_bayar, o.Status, o.Cabang.Nama, o.Driver.Nama, o.Promo.Id, o.Gift_redeem.Id);
+                    }
+                    else
+                    {
+                        dataGridView.Rows.Add(o.Id, o.Tanggal_waktu, o.Alamat_tujuan, o.Ongkos_kirim, o.Total_bayar, o.Cara_bayar, o.Status, o.Penjual.Nama, o.Driver.Nama, o.Promo.Id, o.Gift_redeem.Id);
+                    }
                 }
             }
             else

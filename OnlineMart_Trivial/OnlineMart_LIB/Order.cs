@@ -441,17 +441,16 @@ namespace OnlineMart_LIB
                 Pelanggan pel = new Pelanggan(hasil.GetInt32(24), hasil.GetString(26), hasil.GetString(25), hasil.GetString(27), hasil.GetString(28), hasil.GetString(29), hasil.GetDouble(30), hasil.GetDouble(31));
 
                 Order o = null;
-                int cabang_id = hasil.GetInt32(14);
 
-                if (hasil.IsDBNull(7))
+                if (hasil.IsDBNull(7)) // kalau cabang_id null
                 {
                     Penjual pen = new Penjual(hasil.GetInt32(53), hasil.GetString(54), hasil.GetString(55), hasil.GetString(56), hasil.GetString(57), hasil.GetString(58), hasil.GetString(59));
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), pel, d, mp, pr, gr, pen);
                 }
-                else if (hasil.IsDBNull(13))
+                else if (hasil.IsDBNull(13)) // kalau penjual_id null
                 {
                     Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
-                    Cabang c = new Cabang(cabang_id, hasil.GetString(15), hasil.GetString(16), peg);
+                    Cabang c = new Cabang(hasil.GetInt32(14), hasil.GetString(15), hasil.GetString(16), peg);
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
                 }
 
@@ -464,12 +463,8 @@ namespace OnlineMart_LIB
         public static Boolean UbahData(Order o)
         {
             // Querry Insert
-            string sql = "update orders set tanggal_waktu = '" + o.Tanggal_waktu.ToString("yyyy-MM-dd HH:mm:ss") + "', alamat_tujuan = '" + o.Alamat_tujuan + "', " +
-                         "ongkos_kirim = '" + o.Ongkos_kirim + "', total_bayar = '" + o.Total_bayar + "', cara_bayar = '" + o.Cara_bayar + "', " +
-                         "status = '" + o.Status + "', driver_id = '" + o.Driver.Id + "', cabang_id = '" + o.Cabang.Id + "', " +
-                         "metode_pembayaran_id = '" + o.Metode_pembayaran.Id + "', promo_id = '" + o.Promo.Id + "', " +
-                         "gift_redeem_id = '" + o.Gift_redeem.Id + "', pelanggan_id = '" + o.Pelanggan.Id + "' " +
-                         "where id = '" + o.Id + "'";
+            string sql = "update orders set status = '" + o.Status + "' " + 
+                         " where id = '" + o.Id + "'";
 
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDiubah == 0) return false;
@@ -568,11 +563,11 @@ namespace OnlineMart_LIB
                          "left join pelanggans pel on o.pelanggan_id = pel.id " +
                          "left join drivers d on o.driver_id = d.id " +
                          "left join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
-                         "left join promos pr on o.promo_id = pr.id " +
+                         "left join promos pro on o.promo_id = pro.id " +
                          "left join gift_redeems gr on o.gift_redeem_id = gr.id " +
                          "left join gifts g on gr.gift_id = g.id " +
                          "left join penjuals pen on o.penjual_id = pen.id " +
-                         "where o.id = " + id;
+                         "left join blacklists b on pen.blacklist_id = b.id where o.id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
@@ -592,8 +587,6 @@ namespace OnlineMart_LIB
 
                 Pelanggan pel = new Pelanggan(hasil.GetInt32(24), hasil.GetString(26), hasil.GetString(25), hasil.GetString(27), hasil.GetString(28), hasil.GetString(29), hasil.GetDouble(30), hasil.GetDouble(31));
 
-                int cabang_id = hasil.GetInt32(14);
-
                 if (hasil.IsDBNull(7))
                 {
                     Penjual pen = new Penjual(hasil.GetInt32(53), hasil.GetString(54), hasil.GetString(55), hasil.GetString(56), hasil.GetString(57), hasil.GetString(58), hasil.GetString(59));
@@ -602,7 +595,7 @@ namespace OnlineMart_LIB
                 else if (hasil.IsDBNull(13))
                 {
                     Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
-                    Cabang c = new Cabang(cabang_id, hasil.GetString(15), hasil.GetString(16), peg);
+                    Cabang c = new Cabang(hasil.GetInt32(14), hasil.GetString(15), hasil.GetString(16), peg);
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
                 }
 

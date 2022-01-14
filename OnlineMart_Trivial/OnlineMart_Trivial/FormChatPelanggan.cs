@@ -57,11 +57,11 @@ namespace OnlineMart_Trivial
                 // Tampilkan pesan
                 foreach (Chat c in listChat)
                 {
-                    if (c.Role_pengirim == "driver")
+                    if (c.Role_pengirim == "driver" && c.Role_tujuan == "konsumen")
                     {
                         listBoxPesan.Items.Add("Me : " + c.Isi);
                     }
-                    else
+                    else if (c.Role_pengirim == "konsumen" && c.Role_tujuan == "driver")
                     {
                         listBoxPesan.Items.Add("Konsumen : " + c.Isi);
                     }

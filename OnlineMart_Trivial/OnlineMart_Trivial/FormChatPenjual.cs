@@ -45,7 +45,7 @@ namespace OnlineMart_Trivial
                 listBoxPesan.Items.Clear();
 
                 // Define isi chat
-                listChat = Chat.BacaData("order_id", comboBoxNomorNota.Text);
+                listChat = Chat.BacaData("c.order_id", comboBoxNomorNota.Text);
 
                 // Ambil id order yang sedang dipilih
                 Order o = (Order)comboBoxNomorNota.SelectedItem;
@@ -59,11 +59,11 @@ namespace OnlineMart_Trivial
                     // Tampilkan pesan
                     foreach (Chat c in listChat)
                     {
-                        if (c.Role_pengirim == "penjual")
+                        if (c.Role_pengirim == "penjual" && c.Role_tujuan == "konsumen")
                         {
                             listBoxPesan.Items.Add("Me : " + c.Isi);
                         }
-                        else
+                        else if (c.Role_pengirim == "konsumen" && c.Role_tujuan == "penjual")
                         {
                             listBoxPesan.Items.Add("Konsumen : " + c.Isi);
                         }
