@@ -32,10 +32,10 @@ namespace OnlineMart_Trivial
         // Ubah path sesuai dengan Path Resource masing-masing
 
         // Path Arifin
-        //public static string location = @"C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+        public static string location = @"C:\Users\asus\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
         // Path Henri
-        public static string location = @"D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
+        //public static string location = @"D:\Kuliah\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
 
         // Path Yaska
         //public static string location = @"C:\Users\LENOVO\Documents\GitHub\OnlineMart_Trivial\OnlineMart_Trivial\OnlineMart_Trivial\Resources";
@@ -514,7 +514,15 @@ namespace OnlineMart_Trivial
         }
         private void buttonBlacklistPenjualPegawai_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                HideSubMenu();
+                openChildForm(new FormDaftarPenjual());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal membuka halaman. Pesan kesalahan : " + ex.Message, "Kesalahan");
+            }
         }
         #endregion
 

@@ -331,19 +331,16 @@ namespace OnlineMart_LIB
 
                 Pelanggan pel = new Pelanggan(hasil.GetInt32(24), hasil.GetString(26), hasil.GetString(25), hasil.GetString(27), hasil.GetString(28), hasil.GetString(29), hasil.GetDouble(30), hasil.GetDouble(31));
 
-                Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
-
                 Order o = null;
 
                 if (hasil.IsDBNull(7)) // kalau cabang_id null
                 {
-                    Blacklist b = new Blacklist(hasil.GetInt32(61), hasil.GetString(62), hasil.GetString(63));
-
                     Penjual pen = new Penjual(hasil.GetInt32(53), hasil.GetString(54), hasil.GetString(55), hasil.GetString(56), hasil.GetString(57), hasil.GetString(58), hasil.GetString(59));
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), pel, d, mp, pr, gr, pen);
                 }
-                else // kalau penjual_id null
+                else if(hasil.IsDBNull(13)) // kalau penjual_id null
                 {
+                    Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
                     Cabang c = new Cabang(hasil.GetInt32(14), hasil.GetString(15), hasil.GetString(16), peg);
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
                 }
@@ -387,19 +384,17 @@ namespace OnlineMart_LIB
 
                 Pelanggan pel = new Pelanggan(hasil.GetInt32(24), hasil.GetString(26), hasil.GetString(25), hasil.GetString(27), hasil.GetString(28), hasil.GetString(29), hasil.GetDouble(30), hasil.GetDouble(31));
 
-                Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
-
                 Order o = null;
-                int cabang_id = hasil.GetInt32(14);
 
-                if (cabang_id == 0)
+                if (hasil.IsDBNull(7)) // kalau cabang_id null
                 {
                     Penjual pen = new Penjual(hasil.GetInt32(53), hasil.GetString(54), hasil.GetString(55), hasil.GetString(56), hasil.GetString(57), hasil.GetString(58), hasil.GetString(59));
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), pel, d, mp, pr, gr, pen);
                 }
-                else
+                else if (hasil.IsDBNull(13)) // kalau penjual_id null
                 {
-                    Cabang c = new Cabang(cabang_id, hasil.GetString(15), hasil.GetString(16), peg);
+                    Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
+                    Cabang c = new Cabang(hasil.GetInt32(14), hasil.GetString(15), hasil.GetString(16), peg);
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
                 }
 
@@ -412,15 +407,15 @@ namespace OnlineMart_LIB
         public static List<Order> BacaOrderDiproses(string kriteria, string nilaiKriteria)
         {
             string sql = "select * from orders o " +
-                         "inner join cabangs c on o.cabang_id = c.id " +
-                         "inner join pegawais peg on c.pegawai_id = peg.id " +
-                         "inner join pelanggans pel on o.pelanggan_id = pel.id " +
-                         "inner join drivers d on o.driver_id = d.id " +
-                         "inner join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
-                         "inner join promos pr on o.promo_id = pr.id " +
-                         "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
-                         "inner join gifts g on gr.gift_id = g.id " +
-                         "inner join penjuals pen on o.penjual_id = pen.id " +
+                         "left join cabangs c on o.cabang_id = c.id " +
+                         "left join pegawais peg on c.pegawai_id = peg.id " +
+                         "left join pelanggans pel on o.pelanggan_id = pel.id " +
+                         "left join drivers d on o.driver_id = d.id " +
+                         "left join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
+                         "left join promos pr on o.promo_id = pr.id " +
+                         "left join gift_redeems gr on o.gift_redeem_id = gr.id " +
+                         "left join gifts g on gr.gift_id = g.id " +
+                         "left join penjuals pen on o.penjual_id = pen.id " +
                          "where o.status = 'Pesanan Diproses' ";
 
             if (kriteria != "") sql += " and " + kriteria + " = " + nilaiKriteria + " ";
@@ -445,18 +440,17 @@ namespace OnlineMart_LIB
 
                 Pelanggan pel = new Pelanggan(hasil.GetInt32(24), hasil.GetString(26), hasil.GetString(25), hasil.GetString(27), hasil.GetString(28), hasil.GetString(29), hasil.GetDouble(30), hasil.GetDouble(31));
 
-                Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
-
                 Order o = null;
                 int cabang_id = hasil.GetInt32(14);
 
-                if (cabang_id == 0)
+                if (hasil.IsDBNull(7))
                 {
                     Penjual pen = new Penjual(hasil.GetInt32(53), hasil.GetString(54), hasil.GetString(55), hasil.GetString(56), hasil.GetString(57), hasil.GetString(58), hasil.GetString(59));
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), pel, d, mp, pr, gr, pen);
                 }
-                else
+                else if (hasil.IsDBNull(13))
                 {
+                    Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
                     Cabang c = new Cabang(cabang_id, hasil.GetString(15), hasil.GetString(16), peg);
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
                 }
@@ -569,15 +563,15 @@ namespace OnlineMart_LIB
         public static Order AmbilData(long id)
         {
             string sql = "select * from orders o " +
-                         "inner join cabangs c on o.cabang_id = c.id " +
-                         "inner join pegawais peg on c.pegawai_id = peg.id " +
-                         "inner join pelanggans pel on o.pelanggan_id = pel.id " +
-                         "inner join drivers d on o.driver_id = d.id " +
-                         "inner join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
-                         "inner join promos pr on o.promo_id = pr.id " +
-                         "inner join gift_redeems gr on o.gift_redeem_id = gr.id " +
-                         "inner join gifts g on gr.gift_id = g.id " +
-                         "inner join penjuals pen on o.penjual_id = pen.id " +
+                         "left join cabangs c on o.cabang_id = c.id " +
+                         "left join pegawais peg on c.pegawai_id = peg.id " +
+                         "left join pelanggans pel on o.pelanggan_id = pel.id " +
+                         "left join drivers d on o.driver_id = d.id " +
+                         "left join metode_pembayarans mp on o.metode_pembayaran_id = mp.id " +
+                         "left join promos pr on o.promo_id = pr.id " +
+                         "left join gift_redeems gr on o.gift_redeem_id = gr.id " +
+                         "left join gifts g on gr.gift_id = g.id " +
+                         "left join penjuals pen on o.penjual_id = pen.id " +
                          "where o.id = " + id;
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -598,17 +592,16 @@ namespace OnlineMart_LIB
 
                 Pelanggan pel = new Pelanggan(hasil.GetInt32(24), hasil.GetString(26), hasil.GetString(25), hasil.GetString(27), hasil.GetString(28), hasil.GetString(29), hasil.GetDouble(30), hasil.GetDouble(31));
 
-                Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
-
                 int cabang_id = hasil.GetInt32(14);
 
-                if (cabang_id == 0)
+                if (hasil.IsDBNull(7))
                 {
                     Penjual pen = new Penjual(hasil.GetInt32(53), hasil.GetString(54), hasil.GetString(55), hasil.GetString(56), hasil.GetString(57), hasil.GetString(58), hasil.GetString(59));
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), pel, d, mp, pr, gr, pen);
                 }
-                else
+                else if (hasil.IsDBNull(13))
                 {
+                    Pegawai peg = new Pegawai(hasil.GetInt32(18), hasil.GetString(20), hasil.GetString(19), hasil.GetString(21), hasil.GetString(22), hasil.GetString(23));
                     Cabang c = new Cabang(cabang_id, hasil.GetString(15), hasil.GetString(16), peg);
                     o = new Order(long.Parse(hasil.GetString(0)), hasil.GetDateTime(1), hasil.GetString(2), hasil.GetFloat(3), hasil.GetFloat(4), hasil.GetString(5), hasil.GetString(6), c, pel, d, mp, pr, gr);
                 }

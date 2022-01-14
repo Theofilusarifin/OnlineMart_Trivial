@@ -57,14 +57,6 @@ namespace OnlineMart_Trivial
             this.buttonRekapPendapatan = new System.Windows.Forms.Button();
             this.buttonDaftarPengiriman = new System.Windows.Forms.Button();
             this.panelKonsumen = new System.Windows.Forms.Panel();
-            this.buttonMiniGames = new System.Windows.Forms.Button();
-            this.buttonIsiSaldo = new System.Windows.Forms.Button();
-            this.buttonProfile = new System.Windows.Forms.Button();
-            this.buttonCetakNota = new System.Windows.Forms.Button();
-            this.buttonCekPesanan = new System.Windows.Forms.Button();
-            this.buttonHistoriTransaksiKonsumen = new System.Windows.Forms.Button();
-            this.buttonCheckoutKonsumen = new System.Windows.Forms.Button();
-            this.buttonKeranjang = new System.Windows.Forms.Button();
             this.buttonBarangPenjual = new System.Windows.Forms.Button();
             this.buttonBarangDeals = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
@@ -85,6 +77,14 @@ namespace OnlineMart_Trivial
             this.labelwelcome = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelActiveForm = new System.Windows.Forms.Panel();
+            this.buttonKeranjang = new System.Windows.Forms.Button();
+            this.buttonCheckoutKonsumen = new System.Windows.Forms.Button();
+            this.buttonHistoriTransaksiKonsumen = new System.Windows.Forms.Button();
+            this.buttonCekPesanan = new System.Windows.Forms.Button();
+            this.buttonCetakNota = new System.Windows.Forms.Button();
+            this.buttonProfile = new System.Windows.Forms.Button();
+            this.buttonIsiSaldo = new System.Windows.Forms.Button();
+            this.buttonMiniGames = new System.Windows.Forms.Button();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPenjual.SuspendLayout();
             this.panelPegawai.SuspendLayout();
@@ -123,7 +123,7 @@ namespace OnlineMart_Trivial
             this.panelLeftNavbar.ForeColor = System.Drawing.Color.White;
             this.panelLeftNavbar.Location = new System.Drawing.Point(0, 0);
             this.panelLeftNavbar.Name = "panelLeftNavbar";
-            this.panelLeftNavbar.Size = new System.Drawing.Size(250, 749);
+            this.panelLeftNavbar.Size = new System.Drawing.Size(250, 961);
             this.panelLeftNavbar.TabIndex = 0;
             this.panelLeftNavbar.Visible = false;
             // 
@@ -501,134 +501,6 @@ namespace OnlineMart_Trivial
             this.panelKonsumen.TabIndex = 2;
             this.panelKonsumen.Visible = false;
             // 
-            // buttonMiniGames
-            // 
-            this.buttonMiniGames.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonMiniGames.FlatAppearance.BorderSize = 0;
-            this.buttonMiniGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMiniGames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMiniGames.Location = new System.Drawing.Point(0, 405);
-            this.buttonMiniGames.Name = "buttonMiniGames";
-            this.buttonMiniGames.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonMiniGames.Size = new System.Drawing.Size(233, 45);
-            this.buttonMiniGames.TabIndex = 17;
-            this.buttonMiniGames.Text = "MINI GAMES";
-            this.buttonMiniGames.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonMiniGames.UseVisualStyleBackColor = true;
-            this.buttonMiniGames.Click += new System.EventHandler(this.buttonMiniGamesKonsumen_Click);
-            // 
-            // buttonIsiSaldo
-            // 
-            this.buttonIsiSaldo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonIsiSaldo.FlatAppearance.BorderSize = 0;
-            this.buttonIsiSaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIsiSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIsiSaldo.Location = new System.Drawing.Point(0, 360);
-            this.buttonIsiSaldo.Name = "buttonIsiSaldo";
-            this.buttonIsiSaldo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonIsiSaldo.Size = new System.Drawing.Size(233, 45);
-            this.buttonIsiSaldo.TabIndex = 16;
-            this.buttonIsiSaldo.Text = "ISI SALDO";
-            this.buttonIsiSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonIsiSaldo.UseVisualStyleBackColor = true;
-            this.buttonIsiSaldo.Click += new System.EventHandler(this.buttonIsiSaldo_Click);
-            // 
-            // buttonProfile
-            // 
-            this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonProfile.FlatAppearance.BorderSize = 0;
-            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProfile.Location = new System.Drawing.Point(0, 315);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonProfile.Size = new System.Drawing.Size(233, 45);
-            this.buttonProfile.TabIndex = 15;
-            this.buttonProfile.Text = "PROFILE";
-            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProfile.UseVisualStyleBackColor = true;
-            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
-            // 
-            // buttonCetakNota
-            // 
-            this.buttonCetakNota.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCetakNota.FlatAppearance.BorderSize = 0;
-            this.buttonCetakNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCetakNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCetakNota.Location = new System.Drawing.Point(0, 270);
-            this.buttonCetakNota.Name = "buttonCetakNota";
-            this.buttonCetakNota.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonCetakNota.Size = new System.Drawing.Size(233, 45);
-            this.buttonCetakNota.TabIndex = 14;
-            this.buttonCetakNota.Text = "CETAK NOTA";
-            this.buttonCetakNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCetakNota.UseVisualStyleBackColor = true;
-            this.buttonCetakNota.Click += new System.EventHandler(this.buttonCetakNota_Click);
-            // 
-            // buttonCekPesanan
-            // 
-            this.buttonCekPesanan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCekPesanan.FlatAppearance.BorderSize = 0;
-            this.buttonCekPesanan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCekPesanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCekPesanan.Location = new System.Drawing.Point(0, 225);
-            this.buttonCekPesanan.Name = "buttonCekPesanan";
-            this.buttonCekPesanan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonCekPesanan.Size = new System.Drawing.Size(233, 45);
-            this.buttonCekPesanan.TabIndex = 13;
-            this.buttonCekPesanan.Text = "CEK PESANAN";
-            this.buttonCekPesanan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCekPesanan.UseVisualStyleBackColor = true;
-            this.buttonCekPesanan.Click += new System.EventHandler(this.buttonCekPesanan_Click);
-            // 
-            // buttonHistoriTransaksiKonsumen
-            // 
-            this.buttonHistoriTransaksiKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonHistoriTransaksiKonsumen.FlatAppearance.BorderSize = 0;
-            this.buttonHistoriTransaksiKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHistoriTransaksiKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHistoriTransaksiKonsumen.Location = new System.Drawing.Point(0, 180);
-            this.buttonHistoriTransaksiKonsumen.Name = "buttonHistoriTransaksiKonsumen";
-            this.buttonHistoriTransaksiKonsumen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonHistoriTransaksiKonsumen.Size = new System.Drawing.Size(233, 45);
-            this.buttonHistoriTransaksiKonsumen.TabIndex = 12;
-            this.buttonHistoriTransaksiKonsumen.Text = "HISTORI TRANSAKSI";
-            this.buttonHistoriTransaksiKonsumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHistoriTransaksiKonsumen.UseVisualStyleBackColor = true;
-            this.buttonHistoriTransaksiKonsumen.Click += new System.EventHandler(this.buttonHistoriTransaksi_Click);
-            // 
-            // buttonCheckoutKonsumen
-            // 
-            this.buttonCheckoutKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCheckoutKonsumen.FlatAppearance.BorderSize = 0;
-            this.buttonCheckoutKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCheckoutKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheckoutKonsumen.Location = new System.Drawing.Point(0, 135);
-            this.buttonCheckoutKonsumen.Name = "buttonCheckoutKonsumen";
-            this.buttonCheckoutKonsumen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonCheckoutKonsumen.Size = new System.Drawing.Size(233, 45);
-            this.buttonCheckoutKonsumen.TabIndex = 11;
-            this.buttonCheckoutKonsumen.Text = "CHECKOUT";
-            this.buttonCheckoutKonsumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCheckoutKonsumen.UseVisualStyleBackColor = true;
-            this.buttonCheckoutKonsumen.Click += new System.EventHandler(this.buttonCheckout_Click);
-            // 
-            // buttonKeranjang
-            // 
-            this.buttonKeranjang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonKeranjang.FlatAppearance.BorderSize = 0;
-            this.buttonKeranjang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKeranjang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKeranjang.Location = new System.Drawing.Point(0, 90);
-            this.buttonKeranjang.Name = "buttonKeranjang";
-            this.buttonKeranjang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonKeranjang.Size = new System.Drawing.Size(233, 45);
-            this.buttonKeranjang.TabIndex = 10;
-            this.buttonKeranjang.Text = "KERANJANG";
-            this.buttonKeranjang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonKeranjang.UseVisualStyleBackColor = true;
-            this.buttonKeranjang.Click += new System.EventHandler(this.buttonKeranjang_Click);
-            // 
             // buttonBarangPenjual
             // 
             this.buttonBarangPenjual.Dock = System.Windows.Forms.DockStyle.Top;
@@ -717,7 +589,7 @@ namespace OnlineMart_Trivial
             this.panelHeader.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1120, 87);
+            this.panelHeader.Size = new System.Drawing.Size(1534, 87);
             this.panelHeader.TabIndex = 0;
             this.panelHeader.Visible = false;
             // 
@@ -728,7 +600,7 @@ namespace OnlineMart_Trivial
             this.labelNotifCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.labelNotifCount.Font = new System.Drawing.Font("Montserrat", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNotifCount.ForeColor = System.Drawing.Color.White;
-            this.labelNotifCount.Location = new System.Drawing.Point(1050, 16);
+            this.labelNotifCount.Location = new System.Drawing.Point(1464, 16);
             this.labelNotifCount.Name = "labelNotifCount";
             this.labelNotifCount.Size = new System.Drawing.Size(20, 11);
             this.labelNotifCount.TabIndex = 0;
@@ -740,7 +612,7 @@ namespace OnlineMart_Trivial
             this.NotifRedCircle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NotifRedCircle.BackColor = System.Drawing.Color.Transparent;
             this.NotifRedCircle.Image = global::OnlineMart_Trivial.Properties.Resources.notification;
-            this.NotifRedCircle.Location = new System.Drawing.Point(1046, 10);
+            this.NotifRedCircle.Location = new System.Drawing.Point(1460, 10);
             this.NotifRedCircle.Name = "NotifRedCircle";
             this.NotifRedCircle.Size = new System.Drawing.Size(25, 25);
             this.NotifRedCircle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -754,9 +626,9 @@ namespace OnlineMart_Trivial
             this.labelSaldo.BackColor = System.Drawing.Color.White;
             this.labelSaldo.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSaldo.ForeColor = System.Drawing.Color.Black;
-            this.labelSaldo.Location = new System.Drawing.Point(789, 41);
+            this.labelSaldo.Location = new System.Drawing.Point(1203, 41);
             this.labelSaldo.Name = "labelSaldo";
-            this.labelSaldo.Size = new System.Drawing.Size(56, 22);
+            this.labelSaldo.Size = new System.Drawing.Size(59, 22);
             this.labelSaldo.TabIndex = 7;
             this.labelSaldo.Text = "Saldo";
             this.labelSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -769,9 +641,9 @@ namespace OnlineMart_Trivial
             this.labelSaldoHeader.BackColor = System.Drawing.Color.White;
             this.labelSaldoHeader.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSaldoHeader.ForeColor = System.Drawing.Color.Gray;
-            this.labelSaldoHeader.Location = new System.Drawing.Point(789, 18);
+            this.labelSaldoHeader.Location = new System.Drawing.Point(1203, 18);
             this.labelSaldoHeader.Name = "labelSaldoHeader";
-            this.labelSaldoHeader.Size = new System.Drawing.Size(54, 21);
+            this.labelSaldoHeader.Size = new System.Drawing.Size(56, 21);
             this.labelSaldoHeader.TabIndex = 6;
             this.labelSaldoHeader.Text = "Saldo";
             this.labelSaldoHeader.Visible = false;
@@ -783,9 +655,9 @@ namespace OnlineMart_Trivial
             this.labelPoin.BackColor = System.Drawing.Color.White;
             this.labelPoin.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPoin.ForeColor = System.Drawing.Color.Black;
-            this.labelPoin.Location = new System.Drawing.Point(499, 40);
+            this.labelPoin.Location = new System.Drawing.Point(913, 40);
             this.labelPoin.Name = "labelPoin";
-            this.labelPoin.Size = new System.Drawing.Size(48, 22);
+            this.labelPoin.Size = new System.Drawing.Size(50, 22);
             this.labelPoin.TabIndex = 5;
             this.labelPoin.Text = "Poin";
             this.labelPoin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -798,9 +670,9 @@ namespace OnlineMart_Trivial
             this.labelPoinHeader.BackColor = System.Drawing.Color.White;
             this.labelPoinHeader.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPoinHeader.ForeColor = System.Drawing.Color.Gray;
-            this.labelPoinHeader.Location = new System.Drawing.Point(499, 17);
+            this.labelPoinHeader.Location = new System.Drawing.Point(913, 17);
             this.labelPoinHeader.Name = "labelPoinHeader";
-            this.labelPoinHeader.Size = new System.Drawing.Size(46, 21);
+            this.labelPoinHeader.Size = new System.Drawing.Size(48, 21);
             this.labelPoinHeader.TabIndex = 4;
             this.labelPoinHeader.Text = "Poin";
             this.labelPoinHeader.Visible = false;
@@ -809,7 +681,7 @@ namespace OnlineMart_Trivial
             // 
             this.pictureBoxSaldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxSaldo.Image = global::OnlineMart_Trivial.Properties.Resources.saldo_panel;
-            this.pictureBoxSaldo.Location = new System.Drawing.Point(718, 15);
+            this.pictureBoxSaldo.Location = new System.Drawing.Point(1132, 15);
             this.pictureBoxSaldo.Name = "pictureBoxSaldo";
             this.pictureBoxSaldo.Size = new System.Drawing.Size(237, 63);
             this.pictureBoxSaldo.TabIndex = 3;
@@ -820,7 +692,7 @@ namespace OnlineMart_Trivial
             // 
             this.pictureBoxPoin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxPoin.Image = global::OnlineMart_Trivial.Properties.Resources.coin_panel;
-            this.pictureBoxPoin.Location = new System.Drawing.Point(432, 15);
+            this.pictureBoxPoin.Location = new System.Drawing.Point(846, 15);
             this.pictureBoxPoin.Name = "pictureBoxPoin";
             this.pictureBoxPoin.Size = new System.Drawing.Size(237, 63);
             this.pictureBoxPoin.TabIndex = 3;
@@ -832,7 +704,7 @@ namespace OnlineMart_Trivial
             this.BelNotifikasi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BelNotifikasi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BelNotifikasi.Image = global::OnlineMart_Trivial.Properties.Resources.notification_panel;
-            this.BelNotifikasi.Location = new System.Drawing.Point(1008, 17);
+            this.BelNotifikasi.Location = new System.Drawing.Point(1422, 17);
             this.BelNotifikasi.Name = "BelNotifikasi";
             this.BelNotifikasi.Size = new System.Drawing.Size(57, 60);
             this.BelNotifikasi.TabIndex = 2;
@@ -843,7 +715,7 @@ namespace OnlineMart_Trivial
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::OnlineMart_Trivial.Properties.Resources.User;
-            this.pictureBox2.Location = new System.Drawing.Point(-360, 18);
+            this.pictureBox2.Location = new System.Drawing.Point(54, 18);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(57, 60);
             this.pictureBox2.TabIndex = 2;
@@ -855,9 +727,9 @@ namespace OnlineMart_Trivial
             this.labelNama.AutoSize = true;
             this.labelNama.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNama.ForeColor = System.Drawing.Color.White;
-            this.labelNama.Location = new System.Drawing.Point(-117, 32);
+            this.labelNama.Location = new System.Drawing.Point(297, 32);
             this.labelNama.Name = "labelNama";
-            this.labelNama.Size = new System.Drawing.Size(71, 26);
+            this.labelNama.Size = new System.Drawing.Size(73, 26);
             this.labelNama.TabIndex = 1;
             this.labelNama.Text = "Nama";
             // 
@@ -867,9 +739,9 @@ namespace OnlineMart_Trivial
             this.labelwelcome.AutoSize = true;
             this.labelwelcome.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelwelcome.ForeColor = System.Drawing.Color.White;
-            this.labelwelcome.Location = new System.Drawing.Point(-285, 32);
+            this.labelwelcome.Location = new System.Drawing.Point(129, 32);
             this.labelwelcome.Name = "labelwelcome";
-            this.labelwelcome.Size = new System.Drawing.Size(167, 26);
+            this.labelwelcome.Size = new System.Drawing.Size(171, 26);
             this.labelwelcome.TabIndex = 0;
             this.labelwelcome.Text = "Welcome Back,";
             // 
@@ -881,7 +753,7 @@ namespace OnlineMart_Trivial
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLeft.Location = new System.Drawing.Point(250, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(1120, 749);
+            this.panelLeft.Size = new System.Drawing.Size(1534, 961);
             this.panelLeft.TabIndex = 1;
             this.panelLeft.Visible = false;
             // 
@@ -891,23 +763,151 @@ namespace OnlineMart_Trivial
             this.panelActiveForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelActiveForm.Location = new System.Drawing.Point(0, 87);
             this.panelActiveForm.Name = "panelActiveForm";
-            this.panelActiveForm.Size = new System.Drawing.Size(1120, 662);
+            this.panelActiveForm.Size = new System.Drawing.Size(1534, 874);
             this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
+            // 
+            // buttonKeranjang
+            // 
+            this.buttonKeranjang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonKeranjang.FlatAppearance.BorderSize = 0;
+            this.buttonKeranjang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKeranjang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonKeranjang.Location = new System.Drawing.Point(0, 90);
+            this.buttonKeranjang.Name = "buttonKeranjang";
+            this.buttonKeranjang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonKeranjang.Size = new System.Drawing.Size(233, 45);
+            this.buttonKeranjang.TabIndex = 10;
+            this.buttonKeranjang.Text = "KERANJANG";
+            this.buttonKeranjang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonKeranjang.UseVisualStyleBackColor = true;
+            this.buttonKeranjang.Click += new System.EventHandler(this.buttonKeranjang_Click);
+            // 
+            // buttonCheckoutKonsumen
+            // 
+            this.buttonCheckoutKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCheckoutKonsumen.FlatAppearance.BorderSize = 0;
+            this.buttonCheckoutKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCheckoutKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCheckoutKonsumen.Location = new System.Drawing.Point(0, 135);
+            this.buttonCheckoutKonsumen.Name = "buttonCheckoutKonsumen";
+            this.buttonCheckoutKonsumen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonCheckoutKonsumen.Size = new System.Drawing.Size(233, 45);
+            this.buttonCheckoutKonsumen.TabIndex = 11;
+            this.buttonCheckoutKonsumen.Text = "CHECKOUT";
+            this.buttonCheckoutKonsumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCheckoutKonsumen.UseVisualStyleBackColor = true;
+            this.buttonCheckoutKonsumen.Click += new System.EventHandler(this.buttonCheckout_Click);
+            // 
+            // buttonHistoriTransaksiKonsumen
+            // 
+            this.buttonHistoriTransaksiKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonHistoriTransaksiKonsumen.FlatAppearance.BorderSize = 0;
+            this.buttonHistoriTransaksiKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHistoriTransaksiKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHistoriTransaksiKonsumen.Location = new System.Drawing.Point(0, 180);
+            this.buttonHistoriTransaksiKonsumen.Name = "buttonHistoriTransaksiKonsumen";
+            this.buttonHistoriTransaksiKonsumen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonHistoriTransaksiKonsumen.Size = new System.Drawing.Size(233, 45);
+            this.buttonHistoriTransaksiKonsumen.TabIndex = 12;
+            this.buttonHistoriTransaksiKonsumen.Text = "HISTORI TRANSAKSI";
+            this.buttonHistoriTransaksiKonsumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonHistoriTransaksiKonsumen.UseVisualStyleBackColor = true;
+            this.buttonHistoriTransaksiKonsumen.Click += new System.EventHandler(this.buttonHistoriTransaksi_Click);
+            // 
+            // buttonCekPesanan
+            // 
+            this.buttonCekPesanan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCekPesanan.FlatAppearance.BorderSize = 0;
+            this.buttonCekPesanan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCekPesanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCekPesanan.Location = new System.Drawing.Point(0, 225);
+            this.buttonCekPesanan.Name = "buttonCekPesanan";
+            this.buttonCekPesanan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonCekPesanan.Size = new System.Drawing.Size(233, 45);
+            this.buttonCekPesanan.TabIndex = 13;
+            this.buttonCekPesanan.Text = "CEK PESANAN";
+            this.buttonCekPesanan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCekPesanan.UseVisualStyleBackColor = true;
+            this.buttonCekPesanan.Click += new System.EventHandler(this.buttonCekPesanan_Click);
+            // 
+            // buttonCetakNota
+            // 
+            this.buttonCetakNota.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCetakNota.FlatAppearance.BorderSize = 0;
+            this.buttonCetakNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCetakNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCetakNota.Location = new System.Drawing.Point(0, 270);
+            this.buttonCetakNota.Name = "buttonCetakNota";
+            this.buttonCetakNota.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonCetakNota.Size = new System.Drawing.Size(233, 45);
+            this.buttonCetakNota.TabIndex = 14;
+            this.buttonCetakNota.Text = "CETAK NOTA";
+            this.buttonCetakNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCetakNota.UseVisualStyleBackColor = true;
+            this.buttonCetakNota.Click += new System.EventHandler(this.buttonCetakNota_Click);
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonProfile.FlatAppearance.BorderSize = 0;
+            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProfile.Location = new System.Drawing.Point(0, 315);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonProfile.Size = new System.Drawing.Size(233, 45);
+            this.buttonProfile.TabIndex = 15;
+            this.buttonProfile.Text = "PROFILE";
+            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            // 
+            // buttonIsiSaldo
+            // 
+            this.buttonIsiSaldo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonIsiSaldo.FlatAppearance.BorderSize = 0;
+            this.buttonIsiSaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIsiSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIsiSaldo.Location = new System.Drawing.Point(0, 360);
+            this.buttonIsiSaldo.Name = "buttonIsiSaldo";
+            this.buttonIsiSaldo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonIsiSaldo.Size = new System.Drawing.Size(233, 45);
+            this.buttonIsiSaldo.TabIndex = 16;
+            this.buttonIsiSaldo.Text = "ISI SALDO";
+            this.buttonIsiSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonIsiSaldo.UseVisualStyleBackColor = true;
+            this.buttonIsiSaldo.Click += new System.EventHandler(this.buttonIsiSaldo_Click);
+            // 
+            // buttonMiniGames
+            // 
+            this.buttonMiniGames.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMiniGames.FlatAppearance.BorderSize = 0;
+            this.buttonMiniGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMiniGames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMiniGames.Location = new System.Drawing.Point(0, 405);
+            this.buttonMiniGames.Name = "buttonMiniGames";
+            this.buttonMiniGames.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonMiniGames.Size = new System.Drawing.Size(233, 45);
+            this.buttonMiniGames.TabIndex = 17;
+            this.buttonMiniGames.Text = "MINI GAMES";
+            this.buttonMiniGames.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMiniGames.UseVisualStyleBackColor = true;
+            this.buttonMiniGames.Click += new System.EventHandler(this.buttonMiniGamesKonsumen_Click);
             // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OnlineMart_Trivial.Properties.Resources.Background_Login_Register;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1784, 961);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelLeftNavbar);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1364, 726);
+            this.MinimumSize = new System.Drawing.Size(1800, 1000);
             this.Name = "FormUtama";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Online Mart";

@@ -54,16 +54,19 @@ namespace OnlineMart_Trivial
                     labelStatusPesanan.Text = o.Status.ToString();
                 }
 
-                // Tampilkan pesan
-                foreach (Chat c in listChat)
+                if (listChat.Count > 0)
                 {
-                    if (c.Role_pengirim == "penjual")
+                    // Tampilkan pesan
+                    foreach (Chat c in listChat)
                     {
-                        listBoxPesan.Items.Add("Me : " + c.Isi);
-                    }
-                    else
-                    {
-                        listBoxPesan.Items.Add("Konsumen : " + c.Isi);
+                        if (c.Role_pengirim == "penjual")
+                        {
+                            listBoxPesan.Items.Add("Me : " + c.Isi);
+                        }
+                        else
+                        {
+                            listBoxPesan.Items.Add("Konsumen : " + c.Isi);
+                        }
                     }
                 }
             }
@@ -79,14 +82,6 @@ namespace OnlineMart_Trivial
 		{
             try
             {
-                //listStatus = Order.AmbilStatus();
-                //listStatus.Insert(0, "");
-
-                //comboBoxStatus.DataSource = listStatus;
-                //comboBoxStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-
-                //listOrder = Order.BacaData(comboBoxStatus.SelectedItem.ToString(), "o.driver_id", FormUtama.rider.Id.ToString());
-
                 listOrder = Order.BacaData("o.penjual_id", FormUtama.penjual.Id.ToString());
 
                 comboBoxNomorNota.DataSource = listOrder;

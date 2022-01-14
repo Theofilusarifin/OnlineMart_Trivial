@@ -49,7 +49,7 @@ namespace OnlineMart_Trivial
             dataGridView.Columns.Clear();
 
             //Menambah kolom di datagridview
-            dataGridView.Columns.Add("cabang", "Cabang"); //dari order
+            dataGridView.Columns.Add("vendor", "Vendor"); //dari order
             dataGridView.Columns.Add("tanggal_waktu", "Tanggal Waktu"); // dari order
             dataGridView.Columns.Add("barang", "Nama Barang"); // dari barang
             dataGridView.Columns.Add("harga", "Harga"); // dari barang
@@ -60,7 +60,7 @@ namespace OnlineMart_Trivial
             dataGridView.EnableHeadersVisualStyles = false;
 
             //Agar lebar kolom dapat menyesuaikan panjang / isi data
-            dataGridView.Columns["cabang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["vendor"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["tanggal_waktu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["barang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -91,7 +91,14 @@ namespace OnlineMart_Trivial
                 {
                     foreach (Barang_Order bo in listPenjualanBarang)
                     {
-                        dataGridView.Rows.Add(bo.Order.Cabang.Nama, bo.Order.Tanggal_waktu, bo.Barang.Nama, bo.Barang.Harga, bo.Jumlah, bo.Harga);
+                        if (bo.Order.Cabang != null)
+                        {
+                            dataGridView.Rows.Add(bo.Order.Cabang.Nama, bo.Order.Tanggal_waktu, bo.Barang.Nama, bo.Barang.Harga, bo.Jumlah, bo.Harga);
+                        }
+                        else
+                        {
+                            dataGridView.Rows.Add(bo.Order.Penjual.Nama, bo.Order.Tanggal_waktu, bo.Barang.Nama, bo.Barang.Harga, bo.Jumlah, bo.Harga);
+                        }
                     }
                 }
                 else dataGridView.DataSource = null;

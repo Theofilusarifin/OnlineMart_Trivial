@@ -71,28 +71,33 @@ namespace OnlineMart_Trivial
 
             if (listPenjual.Count > 0)
             {
+                bool buttonAdded = false;
                 foreach (Penjual p in listPenjual)
                 {
                     dataGridView.Rows.Add(p.Id, p.Username, p.Nama, p.Email, p.Status, p.Telpon);
-                    if (p.Blacklist != null)
+                    if (!buttonAdded)
                     {
-                        DataGridViewButtonColumn bcolRemove = new DataGridViewButtonColumn();
+                        buttonAdded = true;
+                        if (p.Blacklist != null)
+                        {
+                            DataGridViewButtonColumn bcolRemove = new DataGridViewButtonColumn();
 
-                        bcolRemove.HeaderText = "Aksi";
-                        bcolRemove.Text = "Remove Blacklist";
-                        bcolRemove.Name = "btnRemoveBlacklist";
-                        bcolRemove.UseColumnTextForButtonValue = true;
-                        dataGridView.Columns.Add(bcolRemove);
-                    }
-                    else
-                    {
-                        DataGridViewButtonColumn bcolAdd = new DataGridViewButtonColumn();
+                            bcolRemove.HeaderText = "Aksi";
+                            bcolRemove.Text = "Remove Blacklist";
+                            bcolRemove.Name = "btnRemoveBlacklist";
+                            bcolRemove.UseColumnTextForButtonValue = true;
+                            dataGridView.Columns.Add(bcolRemove);
+                        }
+                        else
+                        {
+                            DataGridViewButtonColumn bcolAdd = new DataGridViewButtonColumn();
 
-                        bcolAdd.HeaderText = "Aksi";
-                        bcolAdd.Text = "Tambah Blacklist";
-                        bcolAdd.Name = "btnAddBlacklist";
-                        bcolAdd.UseColumnTextForButtonValue = true;
-                        dataGridView.Columns.Add(bcolAdd);
+                            bcolAdd.HeaderText = "Aksi";
+                            bcolAdd.Text = "Tambah Blacklist";
+                            bcolAdd.Name = "btnAddBlacklist";
+                            bcolAdd.UseColumnTextForButtonValue = true;
+                            dataGridView.Columns.Add(bcolAdd);
+                        }
                     }
                 }
             }
@@ -171,15 +176,14 @@ namespace OnlineMart_Trivial
             {
                 int id = int.Parse(dataGridView.CurrentRow.Cells["id"].Value.ToString());
                 Penjual p = Penjual.AmbilData(id);
-                if (e.ColumnIndex == dataGridView.Columns["btnBlacklist"].Index && e.RowIndex >= 0)
+                if (e.ColumnIndex == dataGridView.Columns["btnAddBlacklist"].Index && e.RowIndex >= 0)
                 {
                     FormBlacklist.penjual = p;
                     FormBlacklist formBlacklist = new FormBlacklist();
                     formBlacklist.Owner = this;
                     formBlacklist.ShowDialog();
-                    this.Hide();
                 }
-                if (e.ColumnIndex == dataGridView.Columns["btnRemoveBlacklist"].Index && e.RowIndex >= 0)
+                else if (e.ColumnIndex == dataGridView.Columns["btnRemoveBlacklist"].Index && e.RowIndex >= 0)
                 {
                     Penjual.RemoveBlacklist(p);
                     FormDaftarPenjual_Load(sender, e);  
