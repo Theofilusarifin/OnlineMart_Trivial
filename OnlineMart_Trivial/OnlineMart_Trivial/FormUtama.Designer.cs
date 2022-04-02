@@ -57,6 +57,14 @@ namespace OnlineMart_Trivial
             this.buttonRekapPendapatan = new System.Windows.Forms.Button();
             this.buttonDaftarPengiriman = new System.Windows.Forms.Button();
             this.panelKonsumen = new System.Windows.Forms.Panel();
+            this.buttonMiniGames = new System.Windows.Forms.Button();
+            this.buttonIsiSaldo = new System.Windows.Forms.Button();
+            this.buttonProfile = new System.Windows.Forms.Button();
+            this.buttonCetakNota = new System.Windows.Forms.Button();
+            this.buttonCekPesanan = new System.Windows.Forms.Button();
+            this.buttonHistoriTransaksiKonsumen = new System.Windows.Forms.Button();
+            this.buttonCheckoutKonsumen = new System.Windows.Forms.Button();
+            this.buttonKeranjang = new System.Windows.Forms.Button();
             this.buttonBarangPenjual = new System.Windows.Forms.Button();
             this.buttonBarangDeals = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
@@ -77,14 +85,6 @@ namespace OnlineMart_Trivial
             this.labelwelcome = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelActiveForm = new System.Windows.Forms.Panel();
-            this.buttonKeranjang = new System.Windows.Forms.Button();
-            this.buttonCheckoutKonsumen = new System.Windows.Forms.Button();
-            this.buttonHistoriTransaksiKonsumen = new System.Windows.Forms.Button();
-            this.buttonCekPesanan = new System.Windows.Forms.Button();
-            this.buttonCetakNota = new System.Windows.Forms.Button();
-            this.buttonProfile = new System.Windows.Forms.Button();
-            this.buttonIsiSaldo = new System.Windows.Forms.Button();
-            this.buttonMiniGames = new System.Windows.Forms.Button();
             this.panelLeftNavbar.SuspendLayout();
             this.panelPenjual.SuspendLayout();
             this.panelPegawai.SuspendLayout();
@@ -501,6 +501,134 @@ namespace OnlineMart_Trivial
             this.panelKonsumen.TabIndex = 2;
             this.panelKonsumen.Visible = false;
             // 
+            // buttonMiniGames
+            // 
+            this.buttonMiniGames.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMiniGames.FlatAppearance.BorderSize = 0;
+            this.buttonMiniGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMiniGames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMiniGames.Location = new System.Drawing.Point(0, 405);
+            this.buttonMiniGames.Name = "buttonMiniGames";
+            this.buttonMiniGames.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonMiniGames.Size = new System.Drawing.Size(233, 45);
+            this.buttonMiniGames.TabIndex = 17;
+            this.buttonMiniGames.Text = "MINI GAMES";
+            this.buttonMiniGames.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMiniGames.UseVisualStyleBackColor = true;
+            this.buttonMiniGames.Click += new System.EventHandler(this.buttonMiniGamesKonsumen_Click);
+            // 
+            // buttonIsiSaldo
+            // 
+            this.buttonIsiSaldo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonIsiSaldo.FlatAppearance.BorderSize = 0;
+            this.buttonIsiSaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIsiSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIsiSaldo.Location = new System.Drawing.Point(0, 360);
+            this.buttonIsiSaldo.Name = "buttonIsiSaldo";
+            this.buttonIsiSaldo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonIsiSaldo.Size = new System.Drawing.Size(233, 45);
+            this.buttonIsiSaldo.TabIndex = 16;
+            this.buttonIsiSaldo.Text = "ISI SALDO";
+            this.buttonIsiSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonIsiSaldo.UseVisualStyleBackColor = true;
+            this.buttonIsiSaldo.Click += new System.EventHandler(this.buttonIsiSaldo_Click);
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonProfile.FlatAppearance.BorderSize = 0;
+            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProfile.Location = new System.Drawing.Point(0, 315);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonProfile.Size = new System.Drawing.Size(233, 45);
+            this.buttonProfile.TabIndex = 15;
+            this.buttonProfile.Text = "PROFILE";
+            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            // 
+            // buttonCetakNota
+            // 
+            this.buttonCetakNota.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCetakNota.FlatAppearance.BorderSize = 0;
+            this.buttonCetakNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCetakNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCetakNota.Location = new System.Drawing.Point(0, 270);
+            this.buttonCetakNota.Name = "buttonCetakNota";
+            this.buttonCetakNota.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonCetakNota.Size = new System.Drawing.Size(233, 45);
+            this.buttonCetakNota.TabIndex = 14;
+            this.buttonCetakNota.Text = "CETAK NOTA";
+            this.buttonCetakNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCetakNota.UseVisualStyleBackColor = true;
+            this.buttonCetakNota.Click += new System.EventHandler(this.buttonCetakNota_Click);
+            // 
+            // buttonCekPesanan
+            // 
+            this.buttonCekPesanan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCekPesanan.FlatAppearance.BorderSize = 0;
+            this.buttonCekPesanan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCekPesanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCekPesanan.Location = new System.Drawing.Point(0, 225);
+            this.buttonCekPesanan.Name = "buttonCekPesanan";
+            this.buttonCekPesanan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonCekPesanan.Size = new System.Drawing.Size(233, 45);
+            this.buttonCekPesanan.TabIndex = 13;
+            this.buttonCekPesanan.Text = "CEK PESANAN";
+            this.buttonCekPesanan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCekPesanan.UseVisualStyleBackColor = true;
+            this.buttonCekPesanan.Click += new System.EventHandler(this.buttonCekPesanan_Click);
+            // 
+            // buttonHistoriTransaksiKonsumen
+            // 
+            this.buttonHistoriTransaksiKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonHistoriTransaksiKonsumen.FlatAppearance.BorderSize = 0;
+            this.buttonHistoriTransaksiKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHistoriTransaksiKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHistoriTransaksiKonsumen.Location = new System.Drawing.Point(0, 180);
+            this.buttonHistoriTransaksiKonsumen.Name = "buttonHistoriTransaksiKonsumen";
+            this.buttonHistoriTransaksiKonsumen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonHistoriTransaksiKonsumen.Size = new System.Drawing.Size(233, 45);
+            this.buttonHistoriTransaksiKonsumen.TabIndex = 12;
+            this.buttonHistoriTransaksiKonsumen.Text = "HISTORI TRANSAKSI";
+            this.buttonHistoriTransaksiKonsumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonHistoriTransaksiKonsumen.UseVisualStyleBackColor = true;
+            this.buttonHistoriTransaksiKonsumen.Click += new System.EventHandler(this.buttonHistoriTransaksi_Click);
+            // 
+            // buttonCheckoutKonsumen
+            // 
+            this.buttonCheckoutKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCheckoutKonsumen.FlatAppearance.BorderSize = 0;
+            this.buttonCheckoutKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCheckoutKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCheckoutKonsumen.Location = new System.Drawing.Point(0, 135);
+            this.buttonCheckoutKonsumen.Name = "buttonCheckoutKonsumen";
+            this.buttonCheckoutKonsumen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonCheckoutKonsumen.Size = new System.Drawing.Size(233, 45);
+            this.buttonCheckoutKonsumen.TabIndex = 11;
+            this.buttonCheckoutKonsumen.Text = "CHECKOUT";
+            this.buttonCheckoutKonsumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCheckoutKonsumen.UseVisualStyleBackColor = true;
+            this.buttonCheckoutKonsumen.Click += new System.EventHandler(this.buttonCheckout_Click);
+            // 
+            // buttonKeranjang
+            // 
+            this.buttonKeranjang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonKeranjang.FlatAppearance.BorderSize = 0;
+            this.buttonKeranjang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKeranjang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonKeranjang.Location = new System.Drawing.Point(0, 90);
+            this.buttonKeranjang.Name = "buttonKeranjang";
+            this.buttonKeranjang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonKeranjang.Size = new System.Drawing.Size(233, 45);
+            this.buttonKeranjang.TabIndex = 10;
+            this.buttonKeranjang.Text = "KERANJANG";
+            this.buttonKeranjang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonKeranjang.UseVisualStyleBackColor = true;
+            this.buttonKeranjang.Click += new System.EventHandler(this.buttonKeranjang_Click);
+            // 
             // buttonBarangPenjual
             // 
             this.buttonBarangPenjual.Dock = System.Windows.Forms.DockStyle.Top;
@@ -766,134 +894,6 @@ namespace OnlineMart_Trivial
             this.panelActiveForm.Size = new System.Drawing.Size(1534, 874);
             this.panelActiveForm.TabIndex = 1;
             this.panelActiveForm.Visible = false;
-            // 
-            // buttonKeranjang
-            // 
-            this.buttonKeranjang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonKeranjang.FlatAppearance.BorderSize = 0;
-            this.buttonKeranjang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKeranjang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKeranjang.Location = new System.Drawing.Point(0, 90);
-            this.buttonKeranjang.Name = "buttonKeranjang";
-            this.buttonKeranjang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonKeranjang.Size = new System.Drawing.Size(233, 45);
-            this.buttonKeranjang.TabIndex = 10;
-            this.buttonKeranjang.Text = "KERANJANG";
-            this.buttonKeranjang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonKeranjang.UseVisualStyleBackColor = true;
-            this.buttonKeranjang.Click += new System.EventHandler(this.buttonKeranjang_Click);
-            // 
-            // buttonCheckoutKonsumen
-            // 
-            this.buttonCheckoutKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCheckoutKonsumen.FlatAppearance.BorderSize = 0;
-            this.buttonCheckoutKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCheckoutKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheckoutKonsumen.Location = new System.Drawing.Point(0, 135);
-            this.buttonCheckoutKonsumen.Name = "buttonCheckoutKonsumen";
-            this.buttonCheckoutKonsumen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonCheckoutKonsumen.Size = new System.Drawing.Size(233, 45);
-            this.buttonCheckoutKonsumen.TabIndex = 11;
-            this.buttonCheckoutKonsumen.Text = "CHECKOUT";
-            this.buttonCheckoutKonsumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCheckoutKonsumen.UseVisualStyleBackColor = true;
-            this.buttonCheckoutKonsumen.Click += new System.EventHandler(this.buttonCheckout_Click);
-            // 
-            // buttonHistoriTransaksiKonsumen
-            // 
-            this.buttonHistoriTransaksiKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonHistoriTransaksiKonsumen.FlatAppearance.BorderSize = 0;
-            this.buttonHistoriTransaksiKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHistoriTransaksiKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHistoriTransaksiKonsumen.Location = new System.Drawing.Point(0, 180);
-            this.buttonHistoriTransaksiKonsumen.Name = "buttonHistoriTransaksiKonsumen";
-            this.buttonHistoriTransaksiKonsumen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonHistoriTransaksiKonsumen.Size = new System.Drawing.Size(233, 45);
-            this.buttonHistoriTransaksiKonsumen.TabIndex = 12;
-            this.buttonHistoriTransaksiKonsumen.Text = "HISTORI TRANSAKSI";
-            this.buttonHistoriTransaksiKonsumen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHistoriTransaksiKonsumen.UseVisualStyleBackColor = true;
-            this.buttonHistoriTransaksiKonsumen.Click += new System.EventHandler(this.buttonHistoriTransaksi_Click);
-            // 
-            // buttonCekPesanan
-            // 
-            this.buttonCekPesanan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCekPesanan.FlatAppearance.BorderSize = 0;
-            this.buttonCekPesanan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCekPesanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCekPesanan.Location = new System.Drawing.Point(0, 225);
-            this.buttonCekPesanan.Name = "buttonCekPesanan";
-            this.buttonCekPesanan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonCekPesanan.Size = new System.Drawing.Size(233, 45);
-            this.buttonCekPesanan.TabIndex = 13;
-            this.buttonCekPesanan.Text = "CEK PESANAN";
-            this.buttonCekPesanan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCekPesanan.UseVisualStyleBackColor = true;
-            this.buttonCekPesanan.Click += new System.EventHandler(this.buttonCekPesanan_Click);
-            // 
-            // buttonCetakNota
-            // 
-            this.buttonCetakNota.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCetakNota.FlatAppearance.BorderSize = 0;
-            this.buttonCetakNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCetakNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCetakNota.Location = new System.Drawing.Point(0, 270);
-            this.buttonCetakNota.Name = "buttonCetakNota";
-            this.buttonCetakNota.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonCetakNota.Size = new System.Drawing.Size(233, 45);
-            this.buttonCetakNota.TabIndex = 14;
-            this.buttonCetakNota.Text = "CETAK NOTA";
-            this.buttonCetakNota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCetakNota.UseVisualStyleBackColor = true;
-            this.buttonCetakNota.Click += new System.EventHandler(this.buttonCetakNota_Click);
-            // 
-            // buttonProfile
-            // 
-            this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonProfile.FlatAppearance.BorderSize = 0;
-            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProfile.Location = new System.Drawing.Point(0, 315);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonProfile.Size = new System.Drawing.Size(233, 45);
-            this.buttonProfile.TabIndex = 15;
-            this.buttonProfile.Text = "PROFILE";
-            this.buttonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProfile.UseVisualStyleBackColor = true;
-            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
-            // 
-            // buttonIsiSaldo
-            // 
-            this.buttonIsiSaldo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonIsiSaldo.FlatAppearance.BorderSize = 0;
-            this.buttonIsiSaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIsiSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIsiSaldo.Location = new System.Drawing.Point(0, 360);
-            this.buttonIsiSaldo.Name = "buttonIsiSaldo";
-            this.buttonIsiSaldo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonIsiSaldo.Size = new System.Drawing.Size(233, 45);
-            this.buttonIsiSaldo.TabIndex = 16;
-            this.buttonIsiSaldo.Text = "ISI SALDO";
-            this.buttonIsiSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonIsiSaldo.UseVisualStyleBackColor = true;
-            this.buttonIsiSaldo.Click += new System.EventHandler(this.buttonIsiSaldo_Click);
-            // 
-            // buttonMiniGames
-            // 
-            this.buttonMiniGames.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonMiniGames.FlatAppearance.BorderSize = 0;
-            this.buttonMiniGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMiniGames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMiniGames.Location = new System.Drawing.Point(0, 405);
-            this.buttonMiniGames.Name = "buttonMiniGames";
-            this.buttonMiniGames.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonMiniGames.Size = new System.Drawing.Size(233, 45);
-            this.buttonMiniGames.TabIndex = 17;
-            this.buttonMiniGames.Text = "MINI GAMES";
-            this.buttonMiniGames.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonMiniGames.UseVisualStyleBackColor = true;
-            this.buttonMiniGames.Click += new System.EventHandler(this.buttonMiniGamesKonsumen_Click);
             // 
             // FormUtama
             // 
